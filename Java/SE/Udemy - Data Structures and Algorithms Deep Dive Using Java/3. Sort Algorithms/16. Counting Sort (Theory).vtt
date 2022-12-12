@@ -1,0 +1,319 @@
+WEBVTT
+
+00:05.260 --> 00:11.000
+Los algoritmos que hemos buscado hasta el momento no hacen suposiciones sobre los datos que están ordenando.
+
+00:11.020 --> 00:15.050
+Podemos ordenar enteros flotantes cadenas de objetos cualquier cosa.
+
+00:15.190 --> 00:22.720
+Los algoritmos no suponen que ciertas implementaciones específicas de tipos de datos sí pero no los algoritmos mismos.
+
+00:22.720 --> 00:27.310
+Tampoco asumen que los datos que se están ordenando están vinculados de ninguna manera.
+
+00:27.310 --> 00:32.330
+Por ejemplo, no suponen que todos los valores que se están ordenando serán inferiores a 100.
+
+00:32.380 --> 00:38.160
+Existen algoritmos para hacer suposiciones sobre los datos que se ordenan y, debido a que suponen que
+
+00:38.170 --> 00:40.710
+pueden ordenar los datos de manera más eficiente.
+
+00:40.750 --> 00:48.430
+De hecho, pueden lograr un tiempo lineal de 0 hasta la complejidad final y, por lo tanto, los siguientes
+
+00:48.430 --> 00:52.830
+algoritmos que vamos a analizar suponen los datos que están ordenando.
+
+00:52.990 --> 00:56.430
+Y el primer algoritmo se llama clasificación de conteo.
+
+00:56.860 --> 01:03.670
+Así que el tipo de conteo hace suposiciones sobre los datos que está ordenando. Supone que todos los
+
+01:03.670 --> 01:07.510
+valores son discretos y están dentro de un rango específico.
+
+01:07.570 --> 01:13.980
+Entonces, este algoritmo solo funciona con valores discretos no negativos, no podemos ordenar los números de coma flotante.
+
+01:13.990 --> 01:18.890
+No podemos ordenar cadenas porque no tienen valores discretos.
+
+01:19.000 --> 01:23.760
+Prácticamente hablando, generalmente usarás este algoritmo con números enteros.
+
+01:23.770 --> 01:29.770
+Entonces, la forma en que funciona es que no usa comparación, por lo que no compara los valores en la matriz
+
+01:29.770 --> 01:30.870
+uno contra el otro.
+
+01:30.880 --> 01:35.470
+En cambio, cuenta el número de ocurrencias de cada valor.
+
+01:35.680 --> 01:43.300
+Y verás cómo funciona esto cuando revisamos el algoritmo para una matriz específica en solo un minuto.
+
+01:43.300 --> 01:49.130
+Ahora, como dije, los valores deben estar dentro de un rango específico y el rango debe ser razonable.
+
+01:49.150 --> 01:50.890
+No puede ser enorme
+
+01:50.980 --> 01:57.940
+No va a utilizar el recuento de dolor para ordenar valores que están entre 1 y un millón, por ejemplo.
+
+01:57.940 --> 02:04.150
+Ahora nuestra matriz, la matriz habitual que hemos estado usando, no es un buen candidato para contar,
+
+02:04.150 --> 02:05.310
+tiene números negativos.
+
+02:05.320 --> 02:10.090
+Así que vamos a utilizar una matriz diferente para pasar a través de este algoritmo a mano.
+
+02:10.270 --> 02:15.460
+Y entonces esta es la matriz que vamos a utilizar Vamos a suponer que estamos ordenando
+
+02:15.460 --> 02:17.890
+valores que están entre 1 y 10 inclusive.
+
+02:17.890 --> 02:23.350
+Entonces los valores pueden ser 1 2 3 4 5 6 7 8 9 o 10.
+
+02:23.350 --> 02:25.470
+Tenemos 10 valores posibles.
+
+02:25.510 --> 02:30.190
+Y entonces, lo que hacemos es crear una matriz de conteo de 10 de longitud.
+
+02:30.190 --> 02:34.210
+Así que esto va a ser una matriz separada de la que estamos ordenando.
+
+02:34.330 --> 02:40.060
+Y luego atravesamos la matriz de entrada, la que estamos ordenando de izquierda a derecha y, usando la matriz de
+
+02:40.060 --> 02:43.690
+conteo, rastreamos cuántos de cada valor hay en la matriz de entrada.
+
+02:43.780 --> 02:50.050
+Y luego, una vez que hemos recorrido toda la matriz de entrada utilizando los recuentos en la matriz de conteo, volvemos
+
+02:50.050 --> 02:53.790
+a escribir los valores en orden ordenado en la matriz de entrada.
+
+02:53.790 --> 02:57.350
+Y entonces vamos a ordenar la matriz que ves en la pantalla.
+
+02:57.370 --> 03:04.020
+Entonces cuando iguale a cero vamos a ver el valor en la posición 0, vemos que es 2.
+
+03:04.030 --> 03:11.170
+Y entonces agregamos 1 a la matriz de conteo en la posición 1 porque sabemos que los valores están entre 1 y
+
+03:11.320 --> 03:17.800
+10 en la posición de la matriz de conteo 0 va a contener el número de unidades que encontramos la
+
+03:17.800 --> 03:23.550
+posición 1 mantendrá el número de dos en la posición 2 sostendrá el número de tres que encontramos, etc.
+
+03:23.830 --> 03:31.240
+Y así, en la primera posición, encontramos dos, por lo que incrementamos el índice de matriz de conteo cuando lo incrementamos
+
+03:31.240 --> 03:33.940
+en uno, luego vamos a incrementar a 1.
+
+03:34.030 --> 03:38.140
+Y en la posición de matriz de entrada 1 tenemos un 5.
+
+03:38.140 --> 03:44.110
+Así que vamos a incrementar la matriz de recuento 4 porque allí es donde estamos contando el
+
+03:44.680 --> 03:47.010
+número de cincos que incrementamos a 2.
+
+03:47.080 --> 03:53.930
+Tenemos un 9 así que vamos a incrementar la posición de la matriz de conteo de 8 por 1 porque hemos encontrado 1 9.
+
+03:54.010 --> 03:55.830
+Cuando le pregunté a 3 tenemos un 8.
+
+03:55.840 --> 04:01.870
+Así que vamos a incrementar la matriz de conteo 7 en 1 posición 4, encontramos otras 2.
+
+04:02.010 --> 04:07.540
+Y así vamos a incrementar la matriz de conteo uno por uno, así que ahora tenemos 2 allí porque hasta
+
+04:07.540 --> 04:09.880
+ahora hemos visto dos parejas en nuestra matriz.
+
+04:09.880 --> 04:11.630
+Luego encontramos otros ocho.
+
+04:11.680 --> 04:14.380
+Así que contar la matriz 7 se incrementará en 1.
+
+04:14.380 --> 04:17.540
+Así que ahora tenemos un 2 allí porque hemos visto dos ochos.
+
+04:17.560 --> 04:18.810
+Entonces encontramos un siete.
+
+04:18.850 --> 04:21.920
+Así que vamos a incriminar contando su aumento de seis.
+
+04:21.970 --> 04:25.610
+Encontramos un 10, así que vamos a aumentar el conteo de arrays de nueve.
+
+04:25.690 --> 04:26.680
+Encontramos un 4.
+
+04:26.680 --> 04:29.640
+Así que vamos a incrementar el recuento de borrado tres.
+
+04:29.710 --> 04:34.790
+Y finalmente encontramos un tres y vamos a incrementar la matriz de conteo de dos en uno.
+
+04:34.840 --> 04:40.240
+Y en este punto hemos recorrido toda nuestra matriz de entrada y hemos contado cuántas veces
+
+04:40.240 --> 04:41.730
+hemos visto cada valor.
+
+04:41.740 --> 04:49.120
+Y entonces, lo que queremos hacer ahora es usar la matriz de conteo, vamos a volver a escribir los valores en la matriz original,
+
+04:49.120 --> 04:56.220
+así que cuando esta diapositiva la matriz de conteo está en la parte superior y la matriz de entrada está en la parte inferior.
+
+04:56.220 --> 05:01.270
+Después de que lo hayamos escrito, la forma en que esto funcionaría es que atravesaríamos la matriz de
+
+05:01.270 --> 05:06.170
+conteo y diríamos que está bien, así que no hay cero, así que no tenemos que hacer nada.
+
+05:06.190 --> 05:08.820
+Simplemente pasamos a la siguiente posición en la matriz de conteo.
+
+05:08.890 --> 05:15.040
+De acuerdo, hay dos y así que estamos en este punto vamos a escribir dos pares en la matriz de entrada y
+
+05:15.040 --> 05:19.120
+luego hay uno tres, así que escribiremos uno tres en la matriz de entrada.
+
+05:19.120 --> 05:23.290
+Hay uno para solar o escribiremos uno para la matriz de entrada.
+
+05:23.290 --> 05:27.100
+Hay 1 5, así que tenemos razón de 1 5 para la matriz de entrada.
+
+05:27.340 --> 05:30.240
+Hay cero seises así que no hacemos nada.
+
+05:30.370 --> 05:34.680
+Hay 1 7 para reescribir, escribimos 1 7 en la matriz de entrada.
+
+05:34.780 --> 05:36.060
+Hay dos ochos.
+
+05:36.130 --> 05:40.300
+Así que vamos a escribir en ocho a la matriz de entrada hay 1 9.
+
+05:40.300 --> 05:42.870
+Por lo tanto, vuelva a escribir 1 9 en la matriz de entrada.
+
+05:42.970 --> 05:47.210
+Y finalmente hay 1 10 y entonces escribimos 110 en la matriz de entrada.
+
+05:47.230 --> 05:52.750
+Así que el tipo de recuento esencialmente tiene dos fases, la primera fase es que atravesamos la matriz de
+
+05:52.750 --> 05:54.890
+entrada y contamos cuántos de cada valor tenemos.
+
+05:55.000 --> 06:01.330
+Y luego, la segunda fase usando la matriz de conteo, volvemos a escribir los valores en la matriz de entrada.
+
+06:01.420 --> 06:07.990
+Y como pueden ver que nuestra matriz de entrada ahora está ordenada y no hicimos ninguna comparación, no comparamos
+
+06:08.140 --> 06:10.080
+ninguno de los elementos entre sí.
+
+06:10.120 --> 06:15.640
+Simplemente estamos contando cuántos de cada valor tenemos y es por eso que el algoritmo se llama
+
+06:15.640 --> 06:16.510
+clasificación de conteo.
+
+06:16.510 --> 06:19.900
+Ahora bien, este no es un algoritmo in situ como hemos visto.
+
+06:19.900 --> 06:26.650
+Tenemos que crear una matriz de conteo y la longitud de la matriz de conteo dependerá del rango
+
+06:26.740 --> 06:28.030
+de valores que tengamos.
+
+06:28.030 --> 06:36.310
+Y debido a este tipo de recuento es mejor usarlo cuando el rango de valores que tiene es de aproximadamente la misma
+
+06:36.310 --> 06:38.260
+longitud del conjunto de entrada.
+
+06:38.260 --> 06:44.740
+Entonces, si tiene una matriz de entrada de 20, idealmente, la cantidad de valores que desea que sean alrededor
+
+06:44.740 --> 06:46.690
+de 20, porque piense en ello.
+
+06:46.780 --> 06:53.230
+Si tiene una matriz de 10 elementos y el rango de valores puede ir de 1 a 10000,
+
+06:53.230 --> 07:00.280
+entonces tendrá que crear una matriz de conteo de 10000 de longitud para ordenar 10 elementos que obviamente serían ridículos.
+
+07:00.640 --> 07:07.750
+Entonces, el tipo de recuento funciona mejor cuando el rango de valores que puede tener la cantidad de valores en
+
+07:07.750 --> 07:12.820
+ese rango es más o menos equivalente al número de valores que desea ordenar.
+
+07:12.820 --> 07:18.750
+Entonces, en nuestro caso, teníamos un rango de 10 valores y teníamos una matriz de 10, así que era perfecto.
+
+07:18.790 --> 07:25.330
+Como mencioné, este algoritmo puede lograr tiempo lineal y puede hacerlo porque está haciendo suposiciones sobre
+
+07:25.330 --> 07:26.220
+los datos.
+
+07:26.380 --> 07:31.230
+Y así porque puede hacer estas suposiciones, puede lograr tiempo lineal.
+
+07:31.240 --> 07:34.250
+Ahora el tipo de conteo que te mostré es inestable.
+
+07:34.330 --> 07:41.530
+Si queremos que sea estable, hay pasos adicionales que podemos tomar contando espada en lugar de simplemente incrementar
+
+07:41.530 --> 07:42.970
+un contador, por ejemplo.
+
+07:43.000 --> 07:47.650
+Quizás uses lo que se llama listas de enlaces en la matriz de conteo, vamos a cubrir las listas de
+
+07:47.650 --> 07:48.390
+enlaces más adelante.
+
+07:48.550 --> 07:52.990
+OK, eso es todo para saber qué es el algoritmo de clasificación de conteo.
+
+07:52.990 --> 07:54.360
+Avancemos y lo implementemos.
+
+07:54.400 --> 07:55.790
+Te veré en el próximo video.

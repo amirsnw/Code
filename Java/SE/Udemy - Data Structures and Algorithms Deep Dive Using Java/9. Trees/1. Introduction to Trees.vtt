@@ -1,0 +1,40 @@
+WEBVTT
+
+00:05.230 --> 00:08.360
+Nesta seção, vamos dar uma olhada nas árvores.
+
+00:08.410 --> 00:11.440
+Agora algumas pessoas dizem que as árvores são estruturas de dados.
+
+00:11.470 --> 00:13.530
+Outros dizem que são tipos de dados abstratos.
+
+00:13.530 --> 00:21.220
+Há um pouco de área cinzenta porque as árvores ditam como organizar os dados e você pode escrever uma árvore
+
+00:21.220 --> 00:28.270
+usando árvore e árvore sem classes e isso é comumente feito, mas você também pode voltar certos tipos
+
+00:28.270 --> 00:29.740
+de árvores com matrizes.
+
+00:29.740 --> 00:31.360
+E então é um pouco de uma área cinza.
+
+00:31.360 --> 00:36.410
+Você vai ouvi-los referidos como estruturas de dados e como tipos de dados abstratos.
+
+00:36.460 --> 00:41.410
+Então, vamos começar esta seção observando as características das árvores em geral e, em
+
+00:41.410 --> 00:48.040
+seguida, vamos passar para um tipo especial de árvore chamado árvore de pesquisa binária, porque essa é uma árvore
+
+00:48.160 --> 00:50.470
+que você provavelmente usará na prática .
+
+00:50.470 --> 00:51.760
+E então vamos começar.
+
+00:51.820 --> 00:53.020
+Eu vou te ver no próximo vídeo.

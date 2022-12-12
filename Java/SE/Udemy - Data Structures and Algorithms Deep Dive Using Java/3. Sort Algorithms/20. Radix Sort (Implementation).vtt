@@ -1,0 +1,481 @@
+WEBVTT
+
+00:05.450 --> 00:07.410
+Tudo bem, então vamos implementar o tipo radix.
+
+00:07.410 --> 00:12.930
+Eu criei um projeto que eu coloquei o código na academia de pacotes para aprender programação não radix tipo.
+
+00:12.960 --> 00:15.840
+Eu criei nossa matriz que vamos classificar.
+
+00:15.840 --> 00:21.050
+É a mesma matriz que passamos nos slides e eu tenho código para imprimir a matriz após
+
+00:21.060 --> 00:21.740
+o tipo.
+
+00:21.780 --> 00:28.200
+Nós vamos criar dois métodos, um chamado radix sort e um chamado rate x single sort e você verá o que eles
+
+00:28.200 --> 00:29.370
+fazem em um minuto.
+
+00:29.370 --> 00:36.060
+Então, vamos começar com o radix Orsola, digamos que o tipo estático estático estático.
+
+00:36.300 --> 00:46.110
+Nós vamos aceitar nossa matriz de entrada, a taxa xe as larguras lembram que para ordenar radix todos os valores devem ter
+
+00:46.110 --> 00:53.820
+a mesma raiz e a mesma com sua numeração para dizer quatro e minha igual a zero.
+
+00:54.240 --> 00:57.840
+Eu menos que larguras mais mais.
+
+00:57.900 --> 01:04.080
+E vamos chamar a taxa x método de classificação única que ainda não
+
+01:04.080 --> 01:09.250
+escrevemos e vamos passar a entrada e a taxa X. E basicamente o que estamos fazendo aqui é
+
+01:09.770 --> 01:16.260
+chamar rate x single sort para cada posição em nossos valores.
+
+01:16.470 --> 01:17.340
+E então nós temos um Witz de quatro.
+
+01:17.340 --> 01:20.340
+E então vamos fazer um loop quatro vezes e
+
+01:20.340 --> 01:26.250
+cada vez que chamamos de rate x single sort ele fará o sortimento baseado em uma das posições
+
+01:26.250 --> 01:33.660
+e, como você verá, ele começará com a posição mais à direita e então passará para o mais à direita menos uma posição etc. Então, ele estará se movendo ao longo dos dígitos do dígito menos significativo para o dígito mais significativo
+
+01:33.810 --> 01:36.130
+da direita para a esquerda.
+
+01:36.180 --> 01:42.660
+Então, vamos escrever os métodos de ordenação única raid do tipo public static void RADICH single sort.
+
+01:42.660 --> 01:43.460
+E é
+
+01:43.470 --> 01:51.070
+necessária a posição da matriz de entrada e a leitura X, então a primeira coisa que vamos
+
+01:51.070 --> 01:52.920
+fazer é dizer isso.
+
+01:56.820 --> 02:00.660
+Nove itens são iguais à matriz de entrada Lent.
+
+02:04.640 --> 02:07.810
+Então, isso apenas armazena quantos itens seriam classificados.
+
+02:07.850 --> 02:12.710
+E então vamos dizer que não contamos Hooray iguais.
+
+02:12.710 --> 02:16.610
+E vamos criar um array de contadores que seja grande o suficiente para
+
+02:16.910 --> 02:20.610
+conter todos os valores possíveis que nossa taxa x será 10 porque teremos
+
+02:20.660 --> 02:22.100
+dígitos de 0 a 9
+
+02:25.040 --> 02:30.920
+e então teremos uma matriz de contagem de lenth 10 e então estamos vai dizer por na entrada de valor.
+
+02:30.920 --> 02:38.000
+Então, para cada valor em nossa matriz de entrada, vamos contar quantos valores têm um certo
+
+02:38.080 --> 02:42.770
+dígito em qualquer posição que estamos olhando e vamos tê-lo.
+
+02:42.770 --> 02:53.750
+Então, vamos chamar de dígito
+
+02:53.750 --> 02:56.340
+Nós vamos escrever este método em um minuto.
+
+02:56.450 --> 02:57.920
+Nós vamos passar a posição do valor e da taxa.
+
+02:57.950 --> 02:59.870
+E esse método vai retornar
+
+02:59.940 --> 03:05.630
+o dígito Então, ele retornará 0 a 9 e, em seguida, incrementaremos a contagem em 1.
+
+03:06.740 --> 03:14.720
+Então, quando passamos o primeiro valor 47 25 5 vai voltar como o dígito.
+
+03:14.720 --> 03:16.510
+E assim, vamos incrementar o array de contagem 5 por 1.
+
+03:16.520 --> 03:23.300
+Então, antes de irmos adiante, vamos escrever o dígito get. Quer dizer, removeremos essa linha em branco. Na verdade, não precisamos dela, vamos
+
+03:23.330 --> 03:27.550
+usar o método dos dígitos para que você possa ver o que ela faz.
+
+03:27.560 --> 03:32.500
+Então, vamos salvar public static e get digit ele aceita um valor de posição
+
+03:32.510 --> 03:37.000
+e a taxa que é necessária e não é um método difícil.
+
+03:37.100 --> 03:50.150
+Vai devolver o valor.
+
+03:50.150 --> 03:52.870
+Nós vamos passar isso para polegadas porque nós queremos que nós não queremos ter um valor de ponto flutuante
+
+03:52.880 --> 03:54.950
+retornado e ele vai passar em massa ponto Powell 10 posição modificada pela taxa X. OK, então o que diabos isso está fazendo.
+
+03:54.950 --> 04:02.460
+Enquanto a matemática pensa em matemática, pega o primeiro parâmetro e
+
+04:03.230 --> 04:15.120
+o eleva para o segundo parâmetro que passamos na posição zero, porque aqui estamos começando em zero.
+
+04:15.340 --> 04:17.270
+Então passamos em 0 para a posição.
+
+04:17.300 --> 04:22.850
+Temos 47 25 para o valor e 10 para a taxa x e assim vamos obter o mascote POW 10 elevado para o zero que é 1
+
+04:23.000 --> 04:26.970
+porque qualquer coisa que suba para a potência zero é uma e o operador de divisão tem precedência sobre
+
+04:27.050 --> 04:29.180
+o operador de módulo então vamos dividir o valor por 1.
+
+04:29.210 --> 04:35.750
+47 25 dividido por 1 é, obviamente, 47 25 e, em seguida, estamos indo para MMOG que pelas classificações, que é 10.
+
+04:35.750 --> 04:43.280
+Bem, 47 25.
+
+04:43.280 --> 04:48.030
+Divida por 10 é 472 e o restante será 5 e é isso que vamos retornar.
+
+04:48.090 --> 04:55.670
+E assim, para a posição zero, estaremos sempre retornando uma vez na posição.
+
+04:55.760 --> 04:57.680
+Então, digamos que nós chamamos de dígito com a posição 2.
+
+04:57.690 --> 05:03.900
+Então, em vez de chamá-lo com a posição 0, chamamos de posição
+
+05:03.890 --> 05:08.680
+2, o que significa que estamos lidando com as centenas.
+
+05:09.200 --> 05:13.460
+Nós teríamos 10 ao poder de dois que é 100.
+
+05:13.460 --> 05:17.810
+Nós dividimos 47 25 por cem.
+
+05:17.810 --> 05:18.680
+E nós temos 47 e então nós mod 47 com 10 e isso nos daria um resto de sete.
+
+05:18.710 --> 05:22.840
+E então retornamos sete para a 100ª posição, se quiséssemos a posição de 10s, isso seria um.
+
+05:22.850 --> 05:25.910
+E assim nós dividimos por 40 42
+
+05:25.970 --> 05:33.870
+75 por 10 e nós obteríamos 4:27 e então nós modificaríamos 10 e o restante seria sete.
+
+05:33.890 --> 05:40.150
+E é assim que eles obtêm o método
+
+05:40.250 --> 05:50.600
+do dígito para descobrir qual é o valor do dígito em cada posição.
+
+05:50.600 --> 05:51.410
+OK, então estamos voltando ao nosso método de classificação único para cada valor.
+
+05:51.410 --> 05:57.290
+Nós vamos pegar o dígito na posição e então na primeira chamada essa posição será zero, então nós estaremos retornando todas as
+
+05:57.290 --> 05:57.830
+1 posições.
+
+05:57.830 --> 06:02.540
+E assim vai incrementar o array do contador.
+
+06:02.570 --> 06:08.300
+Vai contar todos os valores que têm zero em seu médico todos os valores
+
+06:08.300 --> 06:11.000
+que tenham um a três extras.
+
+06:11.000 --> 06:15.300
+Então, quando terminamos esse loop, temos uma matriz de contagem convencional.
+
+06:15.350 --> 06:21.230
+Somos tudo o que estamos fazendo, é contar o número de valores que têm um dígito específico na posição de alguém.
+
+06:21.230 --> 06:22.920
+Mas queremos que isso seja um tipo de contagem estável.
+
+06:23.090 --> 06:28.440
+E agora vamos fazer o passo que discutimos nos slides e precisamos ajustar essas
+
+06:28.440 --> 06:34.800
+contagens de modo que, em vez de apenas contagens brutas de quantos valores possuam um dígito específico.
+
+06:35.150 --> 06:39.450
+Queremos que cada posição na matriz de
+
+06:39.470 --> 06:47.720
+contagem contenha quantos valores têm esse dígito ou menos que esse dígito.
+
+06:47.810 --> 06:53.620
+E como eu disse, quando fomos aos slides, tudo o que precisamos
+
+06:53.630 --> 07:00.980
+fazer é resumir todas as contagens até e incluindo o dígito em que estamos trabalhando.
+
+07:00.980 --> 07:01.720
+Então, para obter
+
+07:01.730 --> 07:07.760
+o número de valores que têm 3 ou menos nas posições, temos que somar as contagens nas posições 0 1 2 e 3.
+
+07:07.760 --> 07:10.850
+E então vamos fazer isso agora.
+
+07:10.850 --> 07:17.300
+Então, vamos dizer quatro e J é igual a 1, não temos que lidar com o primeiro índice porque o número de valores que têm zero ou menos na
+
+07:17.360 --> 07:19.700
+posição de alguém será o número de valores e terá zero.
+
+07:19.710 --> 07:21.020
+Portanto, não precisamos nos preocupar em alterar a primeira contagem.
+
+07:21.020 --> 07:28.340
+Nós apenas temos que nos preocupar em mudar a contagem das posições de pecado 1 e além.
+
+07:28.340 --> 07:33.740
+Então, para J igual a minha, J é menor que a taxa correta X, porque esse é o tamanho da nossa matriz de contagem.
+
+07:33.740 --> 07:37.560
+J mais classe e nós apenas dizemos contagem array J.
+
+07:37.760 --> 07:42.440
+Mais é igual ao contador Ray J menos 1.
+
+07:42.500 --> 07:48.670
+E então o que este loop está fazendo é somar com J é 3, tudo se soma no
+
+07:48.820 --> 07:56.980
+C 0 1 2 e 3 e atribui e isso será o que o array de contagem 3 acaba sendo de contra-corrida 5.
+
+07:57.950 --> 08:03.430
+Permitiu os índices 0 1 2 3 4 e 5.
+
+08:03.510 --> 08:12.200
+É isso que a matriz de contagem 5 vai acabar sendo.
+
+08:12.340 --> 08:16.390
+Então, no final disso, colocarei um comentário aqui apenas na matriz de contagem.
+
+08:16.400 --> 08:19.600
+E assim, no final desse loop, a taxa do contador foi ajustada.
+
+08:19.610 --> 08:21.470
+Portanto, em vez de conter contagens brutas,
+
+08:21.470 --> 08:27.880
+ele agora contém o número de valores que têm esse dígito ou menos que esse dígito na posição em que estamos trabalhando.
+
+08:28.600 --> 08:32.050
+Então, nesse ponto, vamos fazer o passo
+
+08:32.060 --> 08:39.030
+que passamos nos slides, onde vamos copiar os valores em um array temporário.
+
+08:39.030 --> 08:43.670
+Vamos trabalhar da direita para a esquerda para preservar a ordem relativa de duplicatas.
+
+08:43.670 --> 08:48.590
+Então, vamos criar esse array temporário.
+
+08:48.590 --> 08:52.090
+Então, vamos dizer que 10 é igual a new int e precisamos que seja o suficiente para manter o número de itens que temos.
+
+08:52.100 --> 08:57.420
+Então, vamos dizer alguns itens e, em seguida, quatro em dez índices equivale a itens num, menos um.
+
+08:57.440 --> 08:59.570
+Então, estamos começando no índice temporário final Rayder igual a zero.
+
+08:59.570 --> 09:09.290
+E vamos documentar isso em cada iteração, vamos dizer 10 menos menos a matriz de contagem.
+
+09:09.290 --> 09:19.520
+E mais uma vez, vamos usar input de posição de
+
+09:19.520 --> 09:26.910
+dígito em x e x igual a
+
+09:27.680 --> 09:38.140
+X e isso vai igualar o índice de entrada 10.
+
+09:38.210 --> 09:40.100
+Agora, quando passamos pelos slides, eu realmente chamei de índice de temperatura k.
+
+09:42.820 --> 09:50.900
+Então, estamos fazendo exatamente o mesmo código em que passamos nos slides.
+
+09:53.530 --> 09:58.240
+Então, estamos trabalhando da direita para a esquerda e estamos olhando para a matriz de contagem que estamos diminuindo, lembrando-se de usar
+
+09:58.240 --> 10:02.260
+o operador de prefixo, então diminuímos a contagem do valor na matriz do contador para o primeiro dígito.
+
+10:02.320 --> 10:08.530
+E então usamos esse índice para indexar na matriz temporária e atribuímos o
+
+10:08.590 --> 10:16.120
+valor ao índice temporário de entrada porque é com isso que estamos trabalhando e o índice
+
+10:16.120 --> 10:23.140
+temporário inicia no final da matriz de entrada e se move da direita para a esquerda.
+
+10:23.140 --> 10:31.360
+Então, como estamos nos movendo para a direita para a esquerda com a matriz de entrada e porque estamos escrevendo da direita
+
+10:31.360 --> 10:37.780
+para a esquerda no intervalo de posições ocupadas por um dígito específico, preservamos a ordenação do valor duplicado.
+
+10:37.780 --> 10:39.160
+Então, se você está confuso com o que esse código está fazendo, vá para o último vídeo, porque passamos por lá.
+
+10:39.160 --> 10:45.070
+Apenas lembre-se de que eu chamei o código que mostrei para você o índice temporário e o K é o mesmo.
+
+10:45.070 --> 10:53.080
+Ok, neste ponto copiamos nossos valores para o array temporário em
+
+10:53.080 --> 10:57.490
+ordem de classificação no apagamento temporário.
+
+10:57.610 --> 11:03.990
+A última coisa que temos que fazer é copiá-los de volta do array temporário para o array de entrada.
+
+11:04.130 --> 11:10.420
+Portanto, poderíamos usar o sistema, não a cópia da matriz, mas vamos apenas fazer isso usando um loop antigo regular.
+
+11:10.420 --> 11:11.530
+Então, para ele usar um
+
+11:11.530 --> 11:17.000
+índice temporário novamente, o índice temporário é igual a zero índices temporários a menos do que o número de itens e vamos apenas
+
+11:17.470 --> 11:21.480
+incrementar o índice temporário mais mais o índice temporário de entrada igual ao índice temp temp.
+
+11:21.490 --> 11:31.630
+Nada quebra a terra acontecendo aqui apenas um loop antigo regular e assim para recapitular fazemos a contagem.
+
+11:31.810 --> 11:41.080
+Acabamos de obter as contagens brutas de quantos valores têm um dígito específico na posição em que estamos trabalhando.
+
+11:43.780 --> 11:48.430
+Em seguida, ajustamos essas contagens como vimos nos slides do último vídeo.
+
+11:48.550 --> 11:55.750
+Em seguida, escrevemos os valores em uma matriz temporária, como vimos nos slides do último vídeo e, na etapa final,
+
+11:55.750 --> 12:02.620
+copiamos a matriz temporária de volta para a matriz de entrada e, em seguida, retornamos desse método e quando voltamos
+
+12:02.620 --> 12:06.850
+aqui para radix, classificamos os valores foram classificados com base nessa posição.
+
+12:06.850 --> 12:12.850
+E como você pode ver, estamos indo de 0 1 2 3 4 5 etc. dependendo da largura.
+
+12:12.850 --> 12:19.510
+0 é a posição mais à direita, é o dígito menos significativo.
+
+12:19.600 --> 12:26.040
+É assim que esse método de dígito obtido opera porque aumenta a tendência para a posição.
+
+12:26.290 --> 12:31.870
+Na verdade, há um erro aqui, isso deve ser classificado como x.
+
+12:31.930 --> 12:36.970
+Tudo bem, então a última coisa que nos resta fazer é realmente chamar esse método.
+
+12:36.970 --> 12:43.390
+Então, vamos chamar radix sort e vamos passar.
+
+12:43.390 --> 12:47.240
+Nossa taxa de aceleração é a nossa matriz de entrada nossa taxa x é 10 e R com 4.
+
+12:48.010 --> 12:52.270
+E vamos correr e temos 13:30 noventa e quatro
+
+12:52.270 --> 12:56.620
+para 45 86 47 25 50 7:29 e 87 92.
+
+12:56.620 --> 13:02.290
+Nós classificamos nossa matriz.
+
+13:02.800 --> 13:03.820
+E lembre-se que a principal coisa aqui é que isso tem que ser um tipo estável.
+
+13:08.390 --> 13:19.550
+E é por isso que estamos fazendo essas etapas extras.
+
+13:19.550 --> 13:21.480
+Precisamos de uma ordenação de contagem estável aqui e a
+
+13:21.530 --> 13:25.670
+ordenação de contagem instável não funcionará porque ela iria desfazer os tipos anteriores que classificamos em posições de dígito menos significativas.
+
+13:25.670 --> 13:29.490
+Então, fizemos um trabalho extra aqui para tornar
+
+13:29.630 --> 13:37.430
+a nossa contagem estável e, por causa disso, nossa classificação de base pode classificar esses valores.
+
+13:37.430 --> 13:42.210
+Tudo bem.
+
+13:42.260 --> 13:48.020
+Então é isso para classificar algoritmos.
+
+13:48.020 --> 13:50.640
+No momento, vamos ver mais alguns no final do curso, depois de termos abordado mais algumas estruturas de dados, porque elas fazem
+
+13:50.690 --> 13:51.220
+uso dessas estruturas de dados.
+
+13:51.230 --> 13:54.350
+Mas por enquanto é isso.
+
+13:54.350 --> 13:59.750
+Então, eu vou te ver no próximo vídeo.
+
+13:59.780 --> 14:01.880
+&nbsp;
+
+14:01.880 --> 14:03.860
+&nbsp;
+
+14:03.860 --> 14:05.310
+&nbsp;

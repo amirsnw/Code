@@ -1,0 +1,102 @@
+<div class="alert alert-info">
+  مشاهده ابلاغ الکترونیک
+</div>
+<app-sso-debit-objection-search #search serviceName='announcement'
+                                (Submitt)="onSearchAnnouncement($event)"></app-sso-debit-objection-search>
+<div class="row">
+  <div class="col-12">
+    <div class="panel">
+      <div class="panel-title">لیست</div>
+      <div class="panel-body">
+        <tamin-data-grid
+          #dataGrid
+          (itemAction)="onView($event)"
+          (beforeRefreshData)="selectedItem = null"
+          (itemSelect)="selectedItem = $event"></tamin-data-grid>
+      </div>
+    </div>
+  </div>
+  <div class="col-12" *ngIf="selectedItem!=null">
+    <div class="panel" [hidden]="!selectedItem.details">
+      <div class="panel-title">جزییات</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>شماره:</td>
+
+                <div *ngIf="selectedItem.details!=null">
+                  <td>   {{selectedItem.details.eblaghNo}}      </td>
+                </div>
+
+              </tr>
+              <tr>
+                <td>تاریخ صدور:</td>
+                <div *ngIf="selectedItem.details!=null">
+                  <td>  {{getPersianDate(selectedItem.details.docDate)}} </td>
+                </div>
+              </tr>
+            </table>
+          </div>
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>نام کارگاه:</td>
+                <div *ngIf="selectedItem.details!=null">
+                  <td> {{selectedItem.details.workshopName}} </td>
+                </div>
+              </tr>
+              <tr>
+                <td>کدکارگاه:</td>
+                <div *ngIf="selectedItem.details!=null">
+                  <td>{{selectedItem.details.workshopCode}}</td>
+                </div>
+              </tr>
+            </table>
+          </div>
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>کدشعبه:</td>
+                <div *ngIf="selectedItem.details!=null">
+                  <td>{{selectedItem.details.branchCode}}</td>
+                </div>
+              </tr>
+              <tr>
+                <td>نام شعبه:</td>
+                <div *ngIf="selectedItem.details!=null">
+                  <td>{{selectedItem.details.branchName}}</td>
+                </div>
+              </tr>
+            </table>
+          </div>
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>ردیف پیمان:</td>
+                <div *ngIf="selectedItem.details!=null">
+                  <td>{{selectedItem.details.pymanSEQ}}</td>
+                </div>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<tamin-modal #theModal title="رویت ابلاغ">
+  <tamin-tab-panel #smsTab>
+    <tamin-tab title="اس ام اس">
+      <p #text></p>
+    </tamin-tab>
+    <tamin-tab title="پی دی اف" #pdfTab>
+      <!--      <iframe #iframe style="width: 100%;height: 80vh"></iframe>-->
+      <tamin-document-viewer #documentViewer width="100%"></tamin-document-viewer>
+    </tamin-tab>
+    <tamin-tab title="تصویر" #imageTab>
+      <img alt="none" #image class="responsive">
+    </tamin-tab>
+  </tamin-tab-panel>
+</tamin-modal>

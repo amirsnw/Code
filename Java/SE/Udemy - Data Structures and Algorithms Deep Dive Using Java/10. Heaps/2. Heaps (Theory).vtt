@@ -1,0 +1,304 @@
+WEBVTT
+
+00:05.340 --> 00:07.490
+Muy bien, entonces, ¿cuál es el odio?
+
+00:07.530 --> 00:13.980
+Bueno, un montón es un árbol binario completo que satisface la propiedad de montón.
+
+00:13.980 --> 00:16.410
+Entonces, veamos esos dos requisitos.
+
+00:16.410 --> 00:18.800
+Entonces es un árbol binario completo.
+
+00:18.810 --> 00:26.100
+Y recuerde que para un árbol binario, cada nodo en el árbol puede tener 0 1 o 2 hijos y tiene
+
+00:26.100 --> 00:27.970
+que ser un árbol completo.
+
+00:28.080 --> 00:31.370
+Y revisamos lo que eso significa en un video anterior.
+
+00:31.370 --> 00:38.880
+Significa que cada nivel del árbol está lleno, excepto potencialmente el último nivel y en el último nivel si
+
+00:38.880 --> 00:44.740
+no está completo, lo que significa que cada padre de Leif no tiene dos hijos.
+
+00:44.760 --> 00:51.780
+Entonces, si hay espacio en ese nivel inferior, las hojas existentes deben estar lo más a la
+
+00:51.780 --> 00:52.590
+izquierda posible.
+
+00:52.680 --> 00:56.180
+Y revisaremos esto y algunas diapositivas.
+
+00:56.190 --> 01:00.330
+Entonces, el primer requisito es que un montón sea un árbol binario completo.
+
+01:00.330 --> 01:06.570
+El segundo requisito es que debe satisfacer la propiedad de montón y esa propiedad de montón dependerá de si
+
+01:06.570 --> 01:11.360
+estamos hablando de un montón máximo o un montón mínimo con un montón máximo.
+
+01:11.370 --> 01:16.360
+Cada padre debe tener un valor mayor o igual que sus hijos.
+
+01:16.450 --> 01:22.480
+Y en un montón mínimo, cada padre debe tener un valor que sea menor o igual que sus hijos.
+
+01:22.530 --> 01:25.370
+Y entonces hay dos tipos máximo montón y Min.
+
+01:25.680 --> 01:33.150
+Y entonces, como dije un binario, debe ser un árbol completo y los llamamos montones binarios porque son
+
+01:33.150 --> 01:34.170
+árboles binarios.
+
+01:34.170 --> 01:38.300
+Cuando creamos un montón agregamos niños en cada nivel de izquierda a derecha.
+
+01:38.310 --> 01:43.530
+Entonces, si agregamos un grupo de valores en un montón vacío, el primer valor se convertiría en la raíz;
+
+01:43.530 --> 01:47.030
+el segundo valor se convertiría en el hijo izquierdo de la raíz.
+
+01:47.070 --> 01:51.420
+El tercer valor se convertiría en el hijo correcto de la raíz y luego habríamos
+
+01:51.420 --> 01:56.960
+pasado al próximo nivel siguiente, por lo que el cuarto valor se convertiría en el hijo izquierdo del hijo
+
+01:56.980 --> 02:03.420
+izquierdo de la raíz y el quinto valor se convertiría en el hijo correcto del hijo izquierdo de la raíz y veremos
+
+02:03.600 --> 02:05.210
+esto en un par de diapositivas.
+
+02:05.400 --> 02:12.510
+Por lo general, se implementan como matrices, por lo que vimos una implementación de un árbol binario que usa clases que usan una clase de
+
+02:12.510 --> 02:14.930
+árbol en una clase de nodo de árbol.
+
+02:14.940 --> 02:22.110
+Bien, cuando tienes un árbol binario completo, puedes respaldarlos mediante matrices y así es como generalmente se
+
+02:22.110 --> 02:27.680
+implementan montones y nuestra implementación usará una matriz para que puedas ver cómo funciona.
+
+02:27.810 --> 02:34.320
+Ahora, debido a la propiedad de calor, el valor máximo o mínimo siempre estará en la raíz del árbol.
+
+02:34.320 --> 02:35.940
+Y es por eso que existen montones.
+
+02:35.940 --> 02:42.380
+Si se está preguntando bien, ¿cuál es el problema si conoce árboles completos que satisfagan la propiedad del calor?
+
+02:42.420 --> 02:48.690
+Es porque el valor máximo en el caso de un montón máximo o el valor mínimo en el caso de un
+
+02:48.720 --> 02:50.420
+hombre siempre estará en la raíz.
+
+02:50.460 --> 02:58.050
+Y así puede obtener el valor mínimo o máximo en tiempo constante porque acceder a la ruta es una operación
+
+02:58.050 --> 02:59.250
+de tiempo constante.
+
+02:59.250 --> 03:07.020
+Ahora, cuando insertamos un nodo en un árbol, generalmente lo agregamos al nivel inferior porque, como ya he dicho, cuando estás construyendo el árbol, empiezas desde arriba
+
+03:07.020 --> 03:12.030
+y luego pasas al siguiente nivel y añades nodos de izquierda a derecha y luego al siguiente nivel
+
+03:12.030 --> 03:14.860
+y agrega nodos a la izquierda o a la derecha.
+
+03:14.970 --> 03:21.060
+Y así, cuando agregamos una nota a un árbol ya existente, lo agregamos en el primer lugar disponible en el
+
+03:21.060 --> 03:21.690
+nivel inferior.
+
+03:21.780 --> 03:28.200
+Pero, por supuesto, una vez que hemos hecho eso, el árbol ya no puede cumplir con la propiedad de montón y
+
+03:28.200 --> 03:34.770
+tenemos que arreglar el árbol, y ese es un proceso conocido como montón de volar el árbol. Es el proceso de
+
+03:34.770 --> 03:37.390
+convertir un árbol binario en un árbol. montón.
+
+03:37.530 --> 03:42.840
+Y tenemos que hacer esto después de insertar un nodo y también tenemos que hacerlo después de eliminar un nodo
+
+03:42.840 --> 03:47.130
+porque después de que hemos eliminado un nodo es posible que la propiedad ya no se cumpla.
+
+03:47.130 --> 03:52.950
+Ahora, una cosa importante a tener en cuenta es que no se requiere ordenar entre hermanos, así que cuando tienes nodos en
+
+03:52.950 --> 03:57.650
+el mismo nivel, no tienen que estar en orden ascendente o descendente ni nada por el estilo.
+
+03:57.660 --> 04:04.080
+La relación importante cuando se trata de montones es los valores relativos entre padres e hijos en un Maxey el
+
+04:04.290 --> 04:08.330
+padre tiene que tener un valor mayor que igual a sus hijos.
+
+04:08.520 --> 04:12.390
+Y en un montón mínimo, el padre debe tener un valor menor o igual que sus hijos.
+
+04:12.390 --> 04:14.030
+Así que aquí hay un árbol.
+
+04:14.160 --> 04:15.450
+Y esto no es un montón.
+
+04:15.450 --> 04:16.860
+Ahora, ¿por qué está aquí hoy?
+
+04:16.890 --> 04:19.080
+Bueno, en realidad falla dos requisitos.
+
+04:19.080 --> 04:22.650
+En primer lugar, no es un árbol completo si se trata de un árbol completo.
+
+04:22.650 --> 04:29.310
+14 tendrían que ser 22 niños porque recuerden en un árbol completo que cada nivel tiene que estar en caída excepto el último
+
+04:29.310 --> 04:34.400
+y si el último no está lleno, los niños tienen que estar lo más a la izquierda posible.
+
+04:34.470 --> 04:38.980
+Así que aquí podemos ver que el Nivel 2 no cae porque a 22 le falta un niño.
+
+04:39.000 --> 04:40.500
+Y entonces esto no es un odio.
+
+04:40.500 --> 04:47.400
+Por esa razón, pero tampoco es un montón porque no cumple con las relaciones de valores entre padres e hijos.
+
+04:47.400 --> 04:52.470
+No es un montón máximo porque en un montón máximo el padre siempre tiene un valor mayor
+
+04:52.470 --> 04:58.590
+o igual que sus hijos y 15 es menor que 22 y no es un hombre odiado porque un administrador odia
+
+04:58.590 --> 05:05.990
+que el padre siempre tenga un valor menor o igual que sus hijos y 22 es mayor que 19 y 18 es mayor 14: 4
+
+05:05.990 --> 05:06.860
+es mayor que tres.
+
+05:06.860 --> 05:12.470
+Y entonces esto no es un montón, no es un árbol binario completo y no cumple con los requisitos
+
+05:12.470 --> 05:16.390
+cuando se trata de los valores relativos entre el padre y los hijos.
+
+05:16.460 --> 05:18.440
+OK, esto tampoco es un montón.
+
+05:18.440 --> 05:24.660
+Este realmente cumple con los requisitos de un montón máximo en lo que respecta a los valores relativos.
+
+05:24.680 --> 05:33.020
+Entonces 22 es mayor que 19 19 es mayor que 3 22 es mayor que 18 18 es mayor que 15 en 14 y
+
+05:33.020 --> 05:37.370
+15 es mayor que 4, pero no es un árbol binario completo.
+
+05:37.370 --> 05:40.540
+19 le falta un niño, por lo que no es un montón.
+
+05:40.550 --> 05:42.410
+Este es un montón.
+
+05:42.440 --> 05:48.920
+Es un árbol binario completo porque cada nivel está lleno, excepto el último y en el último nivel, el
+
+05:48.920 --> 05:52.030
+niño está más a la izquierda que puede estar.
+
+05:52.070 --> 05:59.000
+Y es un montón máximo porque cada padre tiene un valor que es mayor o igual que su hijo, así
+
+05:59.000 --> 06:03.740
+que tenemos 22 19 15 y 12 y 19 es mayor que 3.
+
+06:03.800 --> 06:06.410
+18 es mayor que 14 y 4.
+
+06:06.410 --> 06:13.850
+Ahora, una característica interesante de un montón máximo es que, si viaja desde la raíz hasta todas las hojas, todos los valores
+
+06:13.910 --> 06:17.180
+a lo largo de la ruta están en orden descendente.
+
+06:17.210 --> 06:21.860
+Y, por supuesto, lo contrario sería cierto si comenzó en una hoja y viajó hasta la raíz de todos los
+
+06:21.860 --> 06:25.000
+valores a lo largo de la ruta que estaría en una orden de envío.
+
+06:25.040 --> 06:30.200
+Si desea verificar si algo es bueno, intente encontrar un camino para el cual no sea cierto.
+
+06:30.200 --> 06:36.680
+Entonces, si está comprobando si esto era un montón máximo, diría que si viajo a todas las hojas, todos los valores a lo
+
+06:36.680 --> 06:41.510
+largo de cada pase deben estar en orden descendente, si no lo están, entonces no es un montón.
+
+06:41.510 --> 06:46.160
+O puede comenzar en las hojas y viajar hasta la raíz, en cuyo caso están en orden
+
+06:46.160 --> 06:51.230
+ascendente y, por supuesto, lo contrario sería cierto para un montón mínimo para un Hape mínimo donde el valor
+
+06:51.230 --> 06:56.350
+del padre debe ser menor que o igual a sus hijos que viajan desde la raíz hasta las hojas.
+
+06:56.350 --> 06:59.180
+Todas las rutas estarían en un orden de envío.
+
+06:59.180 --> 07:04.080
+Y si comenzaba una hoja y viajaba hasta la raíz, todos los caminos estarían en orden descendente.
+
+07:04.160 --> 07:09.440
+Y entonces este es un montón, el camino hacia abajo a 12 es 22 19 15 y 12.
+
+07:09.440 --> 07:19.190
+Así que eso es descender 22 19 y 3 lleva esto a 3 22 18 y 14 nos lleva a 14 y 22 18 y 4 nos lleva
+
+07:19.190 --> 07:19.730
+a cuatro.
+
+07:19.730 --> 07:24.450
+Entonces, el valor máximo en este árbol en este montón está en la raíz.
+
+07:24.470 --> 07:29.850
+Entonces, si queríamos obtener el valor máximo, simplemente miramos la raíz y esa es una operación de tiempo constante.
+
+07:29.900 --> 07:37.200
+Y es por eso que existen montones de minimax y verá un uso específico de un montón máximo en un par de videos.
+
+07:37.280 --> 07:44.720
+La forma en que a menudo respaldamos un montón es usando una matriz y podemos hacerlo porque puede realizar una copia de
+
+07:44.720 --> 07:49.910
+seguridad de árboles binarios utilizando una matriz y veremos cómo se hace en el próximo video.
+
+07:49.910 --> 07:50.900
+Te veré allá.

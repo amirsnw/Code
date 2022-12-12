@@ -1,0 +1,29 @@
+<p><strong>@JoinColum ... where does it find the column?<br></strong></p><p><strong>Question</strong></p><p>In the Course class,we have OneToMany relation with reviews with join column course_id.</p>
+
+<p>But in course table we do not have column course_id.</p>
+
+<p>Ideally when we say @JoinColumn a new column should be created in course table ... isn't it?</p><p>How does @JoinColum know where to find the join column?</p><p>---<br></p><p><strong>Answer</strong></p><p>The JoinColumn is actually fairly complex and it goes through a number of advanced steps to find the desired column.</p>
+
+<p>This info below is from the documentation</p>
+
+<p>Source: http://docs.oracle.com/javaee/7/api/javax/persistence/JoinColumn.html#name--</p>
+
+<p>---</p>
+
+<p>The table in which it is found depends upon the context.</p>
+
+<p>- If the join is for a OneToOne or ManyToOne mapping using a foreign key mapping strategy, the foreign key column is in the table of the source entity or embeddable.</p>
+
+<p>- If the join is for a unidirectional OneToMany mapping using a foreign key mapping strategy, the foreign key is in the table of the target entity.</p>
+
+<p>- If the join is for a ManyToMany mapping or for a OneToOne or bidirectional ManyToOne/OneToMany mapping using a join table, the foreign key is in a join table.</p>
+
+<p>- If the join is for an element collection, the foreign key is in a collection table.</p>
+
+<p>--</p>
+
+<p>So as you can see, it depends on the context.</p>
+
+<p>In our training video, we are using @OneToMany uni-directional (course has one-to-many reviews).</p>
+
+<p>As a result, the join column / foreign key column is in the target entity. In this case, the target entity is the Review class. So, you will find the join column "course_id" in the "review" table.</p><br>

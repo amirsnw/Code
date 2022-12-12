@@ -1,0 +1,46 @@
+WEBVTT
+
+00:05.220 --> 00:05.780
+Todo bien.
+
+00:05.800 --> 00:11.460
+Por lo tanto, el primer desafío para esta sección va a ser bastante fácil y será un desafío de calentamiento.
+
+00:11.470 --> 00:19.120
+Lo que quiero que hagas es modificar el algoritmo de ordenación por fusión para que ordene los enteros en
+
+00:19.210 --> 00:20.170
+orden descendente.
+
+00:20.170 --> 00:26.240
+Ahora quiero que ordene la matriz de ejemplo habitual que usamos para la mayoría de los algoritmos de clasificación.
+
+00:26.260 --> 00:32.890
+Y en la sección de recursos hay un proyecto de inicio que básicamente contiene lo que hicimos en el video de implementación
+
+00:32.890 --> 00:37.860
+de ordenación por fusión, por lo que tiene la matriz y luego la llamada para fusionar ordenación.
+
+00:37.860 --> 00:44.200
+Y luego tiene el código de clasificación de fusión, excepto el código de ordenación por fusión que implementamos ordena los enteros
+
+00:44.200 --> 00:45.830
+en una orden de envío.
+
+00:45.850 --> 00:52.810
+Por lo tanto, quiero que modifique la implementación para que ordene los enteros en orden descendente.
+
+00:52.840 --> 00:59.950
+Le recomiendo encarecidamente que realmente haga estos desafíos, incluso si lucha y no lo
+
+00:59.950 --> 01:00.550
+resuelve.
+
+01:00.640 --> 01:06.460
+Va a estar un poco más adelante intentándolo de lo que lo estará si solo hace clic en el siguiente botón de
+
+01:06.460 --> 01:07.780
+video y mira la solución.
+
+01:07.780 --> 01:11.780
+Así que pruébalo y te veré en el video de la solución.

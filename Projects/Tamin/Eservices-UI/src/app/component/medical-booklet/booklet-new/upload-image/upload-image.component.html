@@ -1,0 +1,25 @@
+<div class="panel">
+  <div class="alert alert-info">
+    <p>- در این قسمت، فایل اسناد مورد نیاز ، شامل عکس، صفحه اول شناسنامه، و روی کارت ملی را بارگذاری نمایید.</p>
+    <p>- در صورتی که اطلاعات افراد تحت پوشش خود را ثبت کرده اید، فایل تصویر صفحه دوم شناسنامه خود را نیز بارگذاری کنید.</p>
+    <p>- در صورتی که مشخصات شما تغییر کرده و در شناسنامه توضیحات مربوط به آن ذکر شده است، صفحه دوم را نیز بارگذاری کنید.</p>
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="documenteditForm" autocomplete="off">
+      <div class="form-control-container">
+        <div class="row">
+          <!-------------------------------------------------------------------->
+          <div class="col-6 col-s-6">
+            <h4 style="margin-top: 10px;">تصویر :</h4>
+            <tamin-field-image-upload #pbl1 controlName="DesignGuid1" [imageGuid]="documentModelUi?.DesignGuid1" [restUrl]="restUrlImages"
+              (change)="pbl1.uploadBase64($event)" (onImageDeleted)="onImageGuidDeleted1($event)" (onImageUploaded)="onImageGuidUploaded1($event)">
+            </tamin-field-image-upload>
+            <input type="text" formControlName="DesignGuid1" value="" style="background-color: #eee;display:none;" />
+          </div>
+          <div class="col-6 col-s-6">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

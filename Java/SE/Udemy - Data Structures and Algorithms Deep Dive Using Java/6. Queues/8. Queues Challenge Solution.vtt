@@ -1,0 +1,340 @@
+WEBVTT
+
+00:05.490 --> 00:05.940
+Tudo bem.
+
+00:05.940 --> 00:08.310
+Então vamos resolver esse desafio.
+
+00:08.310 --> 00:15.750
+A chave para isso é perceber isso porque stacks são life lifeso significando last in first
+
+00:15.750 --> 00:25.980
+out e Qs ou Firefall significando first in first out se somarmos tudo ao nosso Q Então o q conterá o string
+
+00:25.980 --> 00:26.850
+original.
+
+00:26.910 --> 00:32.780
+E se empurrarmos tudo para nossa pilha, nossa pilha conterá a string original.
+
+00:32.790 --> 00:36.790
+Claro que removeremos pontuação e espaços ao fazermos isso.
+
+00:36.810 --> 00:43.710
+E assim, uma vez que preenchemos nossa sugestão e preenchemos nossa pilha, então tudo o que temos a
+
+00:43.710 --> 00:52.170
+fazer é percorrer a pilha, digamos, e vamos colocar cada caractere fora da pilha e compará-lo com o elemento principal na fila.
+
+00:52.230 --> 00:59.160
+E porque o cubo retornará a leitura dos caracteres da esquerda para a direita e a pilha exibirá
+
+00:59.160 --> 01:02.870
+os caracteres na ordem da direita para a esquerda.
+
+01:03.090 --> 01:06.020
+Nós só temos dois em cada iteração.
+
+01:06.120 --> 01:13.560
+Puxe o primeiro item da sugestão para o item que está na cabeça da sugestão e insira o primeiro caractere
+
+01:13.560 --> 01:15.200
+na pilha e compare-os.
+
+01:15.300 --> 01:17.970
+E se eles são iguais, então estamos bem.
+
+01:18.000 --> 01:24.810
+Se em uma das iterações nós puxarmos o elemento de cabeça para fora da dica e nós tirarmos o personagem de cima da
+
+01:24.810 --> 01:26.640
+pilha e eles não forem iguais.
+
+01:26.640 --> 01:28.810
+Isso significa que não temos um palíndromo.
+
+01:28.830 --> 01:32.810
+E assim, por exemplo, se apenas olharmos para a palavra pai.
+
+01:33.270 --> 01:45.810
+E então digamos que temos uma pilha e empurramos D e depois empurramos um e depois empurramos D.
+
+01:45.900 --> 01:52.480
+E assim nossa pilha vai acabar tendo o A D nela.
+
+01:52.590 --> 01:58.680
+E então isso está levando a loucura inteligente porque não sabe o que estou fazendo aqui por causa de
+
+01:59.270 --> 02:00.720
+todos os erros de sintaxe.
+
+02:00.990 --> 02:09.470
+Então, com essa sugestão, nós e D e, em seguida, adicionar um e, em seguida, adicionar D.
+
+02:09.480 --> 02:12.760
+E assim nossas pistas vão conter D A D.
+
+02:12.780 --> 02:19.760
+Mas a chave aqui é quando nós colocamos esses itens da pilha, na verdade, estamos colocando-os na ordem
+
+02:19.770 --> 02:23.800
+inversa, então na dica, esse D é o primeiro D.
+
+02:23.820 --> 02:29.000
+Então, quando puxarmos o primeiro item da sugestão, vamos obter este D.
+
+02:29.040 --> 02:32.240
+Mas quando saímos da pilha vamos pegar esse D.
+
+02:32.370 --> 02:38.520
+E assim, por causa do comportamento da Vida, os personagens serão o pote da pilha na ordem inversa e,
+
+02:38.520 --> 02:43.740
+por causa do comportamento de cinco vezes, os personagens serão retirados da sugestão na ordem direta.
+
+02:43.740 --> 02:49.710
+E então o que vamos fazer é fazer um loop e cada vez que cada iteração do loop puxar
+
+02:49.710 --> 02:53.130
+um caractere da sugestão e colocar um caractere fora da pilha.
+
+02:53.130 --> 02:58.250
+E assim, para a sugestão, estamos basicamente lendo da esquerda para a direita e para a pilha que estamos lendo da direita para a esquerda.
+
+02:58.260 --> 03:04.050
+E assim, se retirarmos o primeiro caractere da dica, receberemos esse D e, então, colocaremos o primeiro
+
+03:04.050 --> 03:06.630
+caractere da pilha e obteremos o último D.
+
+03:06.650 --> 03:11.220
+Esta seria a nossa primeira iteração e nós os comparamos e eles se igualam.
+
+03:11.220 --> 03:18.300
+E isso significa que até agora nossa string está lendo na mesma ordem, da esquerda para a direita, da esquerda para
+
+03:18.300 --> 03:19.060
+a direita.
+
+03:19.050 --> 03:21.050
+E até agora temos um palíndromo.
+
+03:21.150 --> 03:26.760
+E então, quando aparecermos o próximo item da pilha, obteremos um e nós vamos retirar a
+
+03:26.820 --> 03:28.810
+sugestão e obteremos um compará-los.
+
+03:28.830 --> 03:30.220
+Por enquanto, tudo bem.
+
+03:30.300 --> 03:36.990
+E então, finalmente, tiraremos o último D da dica e colocaremos o primeiro item na pilha, que neste
+
+03:36.990 --> 03:41.520
+ponto seria o primeiro D e eles se comparam e estamos prontos.
+
+03:41.520 --> 03:45.990
+E assim, porque todos os personagens comparados são iguais, temos um palíndromo.
+
+03:46.080 --> 03:50.330
+Por outro lado, se tivéssemos eu não sei, vamos colocar da D.
+
+03:50.370 --> 03:57.000
+Basicamente, temos essa situação, mas vamos ser quando nós estouramos, estamos puxando itens do final e, assim, na primeira
+
+03:57.150 --> 04:02.100
+iteração, vamos perceber que isso não é um palíndromo, porque vamos puxar D fora
+
+04:02.100 --> 04:08.320
+da sugestão porque estamos lendo da esquerda para a direita e depois lendo da direita para a esquerda.
+
+04:08.370 --> 04:14.120
+O primeiro item que o pote será e porque foi o último que fizemos e vamos comparar com
+
+04:14.170 --> 04:16.490
+o easy e eles não são iguais.
+
+04:16.500 --> 04:18.120
+Então isso não é um palíndromo.
+
+04:18.120 --> 04:25.050
+Então, a chave é apenas perceber que, se passarmos pela corda original e à medida que formos, empurraremos
+
+04:25.050 --> 04:32.100
+itens para a pilha e adicionaremos itens ao Q porque um é lifeso e o outro é Fyffe
+
+04:32.100 --> 04:38.310
+Então, se passarmos novamente e em cada iteração, exibimos um item da pilha e removemos um
+
+04:38.310 --> 04:39.210
+item da fila.
+
+04:39.210 --> 04:44.790
+A fila é basicamente lendo a string da esquerda para a direita e a pilha está lendo a string da direita
+
+04:44.790 --> 04:45.570
+para a esquerda.
+
+04:45.570 --> 04:51.960
+E assim, se a string ler a mesma da esquerda para a direita, como acontece da direita para a esquerda, então, em
+
+04:52.320 --> 04:57.710
+cada iteração, o caractere que aparecermos da pilha no caractere que retiramos da sugestão deve ser igual ao outro.
+
+04:57.810 --> 05:00.290
+E se eles não o fizerem, não temos um palíndromo.
+
+05:00.300 --> 05:03.540
+E assim, com isso em mente, vamos em frente e implementar a solução.
+
+05:03.540 --> 05:08.130
+Então, mais uma vez, vou para uma lista vinculada e vou usar uma lista vinculada para a pilha
+
+05:08.130 --> 05:09.020
+e o q.
+
+05:09.510 --> 05:14.110
+Então, eu vou dizer pilha de caracteres é igual a nova lista vinculada.
+
+05:15.730 --> 05:23.320
+E então essa é a nossa pilha e eu vou dizer o caractere de lista vinculada e esta será minha sugestão igual a novo
+
+05:23.320 --> 05:29.920
+caractere de lista vinculada e eu vou carregar em minúsculas uma string para que eu não tenha que me preocupar em
+
+05:29.920 --> 05:33.080
+fazer isso quando eu m empurrando e adicionando ao cubo.
+
+05:33.090 --> 05:40.190
+Então, eu vou dizer letras minúsculas é igual a string para minúsculas.
+
+05:40.570 --> 05:45.280
+OK, então agora eu vou dar a volta e em cada iteração eu vou
+
+05:45.280 --> 05:52.170
+fazer a mesma coisa que fiz no desafio de ações e verificar se o personagem está entre as letras minúsculas e
+
+05:52.180 --> 05:59.930
+minúsculas Zed inclusive e se for, eu sou vai empurrá-lo para a pilha e adicioná-lo à sugestão e dizer que é igual a zero.
+
+05:59.940 --> 06:01.790
+Eu sou menor que minúscula.
+
+06:01.870 --> 06:17.740
+Lenth I plus plus Vou obter char c é igual a caracteres minúsculos no meu se C maior que ou igual a a e c é
+
+06:17.740 --> 06:18.280
+menor
+
+06:20.860 --> 06:26.990
+ou igual a Zed, então estou interessado em seu personagem.
+
+06:27.010 --> 06:30.550
+Então, vou adicioná-lo ao Q e vou adicioná-lo como o último.
+
+06:30.550 --> 06:39.100
+Eu poderia apenas dizer add mas porque este é um Q eu vou usar no final e vou empurrá-lo para a pilha.
+
+06:39.100 --> 06:41.720
+Então, pressione o botão C.
+
+06:42.010 --> 06:49.030
+E assim, quando abandonamos esse loop, removi a pontuação e removi espaços em qualquer espaço em branco.
+
+06:49.120 --> 06:54.460
+Eu coloquei todos os caracteres entre as extremidades na pilha e adicionei todos os caracteres entre
+
+06:54.460 --> 06:55.720
+os anes na sugestão.
+
+06:55.720 --> 06:58.200
+E agora precisamos de outro loop.
+
+06:58.300 --> 07:04.300
+E o que vamos fazer neste loop é apenas percorrer a pilha até que ela esteja vazia e
+
+07:04.300 --> 07:09.550
+em cada iteração vamos pegar um personagem da pilha e vamos remover um caractere da sugestão
+
+07:09.550 --> 07:15.340
+e nós Vamos compará-los e a pilha estará efetivamente lendo a seqüência da direita para a esquerda
+
+07:15.340 --> 07:19.230
+na sugestão será efetivamente lendo a seqüência da esquerda para a direita.
+
+07:19.240 --> 07:25.000
+E assim, se em cada iteração o personagem que pop e o personagem que removemos
+
+07:25.030 --> 07:28.230
+do Q for igual, então ainda teremos um palíndromo.
+
+07:28.270 --> 07:33.310
+Se nós tivéssemos acertado uma instância onde o personagem que nós pegamos na pilha não é igual ao personagem
+
+07:33.310 --> 07:35.770
+que pegamos da dica, então nós não temos um palíndromo.
+
+07:35.800 --> 07:40.760
+E então vamos dizer que a parede não empilhada está vazia.
+
+07:41.320 --> 07:44.860
+Se não empilhou pote é igual
+
+07:47.260 --> 07:51.280
+a Q Dot remover primeiro, então não
+
+07:54.100 --> 07:56.320
+temos um palíndromo.
+
+07:56.470 --> 08:02.200
+Caso contrário, se sairmos do loop sem retornar, todos os personagens ganhos da pilha equivalem
+
+08:02.260 --> 08:04.690
+ao personagem que removemos da fila.
+
+08:04.690 --> 08:07.880
+E, nesse caso, temos um palíndromo.
+
+08:07.900 --> 08:09.730
+E assim retornará verdadeiro.
+
+08:09.790 --> 08:15.010
+Essa é uma solução mais curta e mais elegante do que a que fizemos no desafio do
+
+08:15.310 --> 08:21.730
+saque, mas ainda não tínhamos aprendido o desafio das pilhas e, portanto, a solução envolvia um pouco mais de trabalho manual.
+
+08:21.730 --> 08:25.980
+Eu diria agora que sabemos que temos a solução mais elegante.
+
+08:26.050 --> 08:30.910
+E se lhe pedissem para verificar um palíndromo e não lhe dissessem como fazê-lo, ou apenas disseram usar
+
+08:30.910 --> 08:32.380
+uma pilha ou algo assim.
+
+08:32.380 --> 08:34.650
+Esta é uma solução mais elegante.
+
+08:34.660 --> 08:36.280
+Então, mais uma vez, devemos conseguir.
+
+08:36.280 --> 08:38.310
+Verdadeiro verdadeiro verdadeiro falso e verdadeiro.
+
+08:38.310 --> 08:43.460
+Então, vamos tentar.
+
+08:43.700 --> 08:44.600
+E nós conseguimos.
+
+08:44.600 --> 08:46.700
+Verdadeiro verdadeiro verdadeiro falso e verdadeiro.
+
+08:46.730 --> 08:48.140
+Então é isso para sugestões.
+
+08:48.140 --> 08:49.750
+Eu vejo você na próxima seção.

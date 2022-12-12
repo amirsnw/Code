@@ -1,0 +1,54 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>امکان پیگیری درخواست تقسیط بدهی</span>
+</div>
+<div class="panel">
+  <div class="page-title">جستجوی تقسیط</div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off" novalidate (ngSubmit)="onSearchSubmit()">
+      <div class="form-control-container row">
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="workshopId">شماره کارگاه:</tamin-field-label>
+          <tamin-field-validator formControlName="workshopId"></tamin-field-validator>
+          <tamin-field-text formControlName="workshopId" placeholder="شماره کارگاه"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="letterDate">:تاریخ تقسیط</tamin-field-label>
+          <tamin-field-validator formControlName="letterDate"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="letterDate" placeholder="تاریخ تقسیط"></tamin-field-persian-date>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <p style="margin-top:5px;">
+          <button type="submit" class="button normal">جستجو</button>
+          <button type="button" class="button normal orange" (click)="resetSerachForm()">نمایش همه</button>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="page-title">لیست تقسیط ها</div>
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>برای پرداخت بروی عملیات کلیک کنید</span>
+  </div>
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>برای مشاهده درخواست بروی هر عملیات کلیک کنید</span>
+  </div>
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>برای رویت برگه پرداخت بروی هر رکورد کلیک کنید</span>
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #theGrid (itemAction)="onGridAction($event)" (itemSelect)="clickGridItem($event)"></tamin-data-grid>
+  </div>
+  <div class="page-title">پرداخت های انجام شده و برگه پرداخت</div>
+  <div class="panel-body">
+    <tamin-data-grid #paidGrid (itemAction)="onPaidGridAction($event)"></tamin-data-grid>
+  </div>
+</div>
+<tamin-modal #theModal title="مشاهده درخواست">
+  <tamin-document-viewer #documentViewer width="100%"></tamin-document-viewer>
+</tamin-modal>

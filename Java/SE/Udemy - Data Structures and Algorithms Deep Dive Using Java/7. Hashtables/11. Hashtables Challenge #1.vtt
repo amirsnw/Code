@@ -1,0 +1,73 @@
+WEBVTT
+
+00:05.470 --> 00:10.420
+Tudo bem, então vamos começar com um desafio para testar seu conhecimento sobre o que uma função hash
+
+00:10.420 --> 00:11.230
+deveria estar fazendo.
+
+00:11.230 --> 00:14.320
+Então este é o projeto inicial na seção de recursos.
+
+00:14.320 --> 00:18.880
+Tem uma classe Employee porque vamos usar isso no próximo desafio, então você pode simplesmente ignorar
+
+00:18.880 --> 00:20.180
+isso para esse desafio.
+
+00:20.200 --> 00:24.020
+Para este desafio, tudo o que quero que você faça é escrever essa função hash.
+
+00:24.050 --> 00:30.790
+E então o que estamos fazendo aqui é que temos uma matriz de números inteiros e comprimento 10 e eu quero
+
+00:31.000 --> 00:33.790
+que você adicione esses números inteiros nessa matriz.
+
+00:33.820 --> 00:41.470
+Então nós temos um número para adicionar matriz e temos 15 1382 etc. e eu quero que você adicione aqueles ao array
+
+00:41.590 --> 00:47.360
+para que você possa recuperar esses números do array apenas recebendo o número.
+
+00:47.440 --> 00:53.080
+E, claro, para fazer isso, você terá que alterar os números porque, de outra forma, não há
+
+00:53.080 --> 00:55.520
+como saber onde esses números estão no array.
+
+00:55.540 --> 01:02.650
+E nesse loop estamos passando e estamos preenchendo o array e você pode ver aqui que o
+
+01:02.650 --> 01:06.820
+índice para este array é o resultado da função hash.
+
+01:06.910 --> 01:12.310
+E aqui está a função hash aqui que não compila agora porque tem um valor de retorno
+
+01:12.310 --> 01:14.200
+INT e não está retornando nada.
+
+01:14.260 --> 01:22.000
+E o seu desafio é escrever essa função hash para que você possa retornar índices para valores inteiros que
+
+01:22.000 --> 01:23.070
+você recebe agora.
+
+01:23.080 --> 01:28.900
+Não se preocupe com colisões Eu escolhi deliberadamente números que não colidirão um com o outro, porque
+
+01:28.900 --> 01:34.090
+o propósito deste desafio é apenas para ter certeza de que você entende por que
+
+01:34.090 --> 01:42.490
+a função de hash deveria estar fazendo e como escrever uma quando você quiser para conseguir valores hash para índices de matriz e, portanto, não
+
+01:42.490 --> 01:43.870
+se preocupe com colisões.
+
+01:43.870 --> 01:46.900
+Tudo o que quero que você faça é escrever essa função hash.
+
+01:46.900 --> 01:50.740
+Divirta-se com isso e TODOS OS VÊM NO vídeo SOLUTION.

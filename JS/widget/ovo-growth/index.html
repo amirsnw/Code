@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script src="js/chart.min.js"></script>
+		<script src="js/ovo-baby-growth.js"></script>
+    </head>
+    <body>
+        <div class="ovo-growth-form">
+			<div class="chart-tabs-wrapper">
+				<div class="gender-tabs">
+					<div>
+						<a class="button gender-tab" href="#" data-field="boy">پسر</a>
+						<a class="button gender-tab curr-tab" href="#" data-field="girl">دختر</a>
+						</div>
+				</div>
+				<div  class="service-tabs" style="display: none;">
+					<div>
+						<a class="button service-tab curr-tab" href="#" data-service="weight">سن-وزن</a>
+						<a class="button service-tab" href="#" data-service="height">سن-قد</a>
+						<a class="button service-tab" href="#" data-service="head">سن-دور سر</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="boys-chart" class="chart-gen-items-wrapper" style="display: none;">
+				<div class="chart-item-wrapper">
+					<div class="chart-form-col">
+						<div class="baby-chart-forms">
+							<form id="form-boy" action="redirect('#')" method="GET">
+								<div class="form-g-cu">
+									<div>
+										<select id="boy-age" class="age-input" name="baby-age" placeholder="سن(ماه)">
+											<option value="1">ماه 1</option>
+											<option value="2">ماه 2</option>
+											<option value="3">ماه 3</option>
+											<option value="4">ماه 4</option>
+											<option value="5">ماه 5</option>
+											<option value="6">ماه 6</option>
+											<option value="7">ماه 7</option>
+											<option value="8">ماه 8</option>
+											<option value="9">ماه 9</option>
+											<option value="10">ماه 10</option>
+											<option value="11">ماه 11</option>
+											<option value="12">ماه 12</option>
+											<option value="13">ماه 13</option>
+											<option value="14">ماه 14</option>
+											<option value="15">ماه 15</option>
+											<option value="16">ماه 16</option>
+											<option value="17">ماه 17</option>
+											<option value="18">ماه 18</option>
+											<option value="19">ماه 19</option>
+											<option value="20">ماه 20</option>
+											<option value="21">ماه 21</option>
+											<option value="22">ماه 22</option>
+											<option value="23">ماه 23</option>
+											<option value="24">ماه 24</option>
+										</select>
+									</div>
+									<div><input id="boy-weight" name="baby-weight" type="text" placeholder="وزن(کیلوگرم)" /></div>
+									<div><input id="boy-height" name="baby-weight" type="text" placeholder="قد(سانتی متر)" /></div>
+									<div><input id="boy-head" name="baby-head" type="text" placeholder="دور سر(سانتی متر)" /></div>
+								</div>
+								<div class="chart-btn-wrapper"><button class="chartSubmitWgh" type="submit">مشاهده نمودار رشد</button></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="girls-chart" class="chart-gen-items-wrapper" style="display: none;">
+				<div class="chart-item-wrapper">
+					<div class="chart-form-col">
+						<div class="baby-chart-forms">
+							<form id="form-girl" action="" method="GET">
+								<div class="form-g-cu">
+									<div>
+										<select id="girl-age" class="age-input" name="baby-age" placeholder="سن(ماه)">
+											<option value="1">ماه 1</option>
+											<option value="2">ماه 2</option>
+											<option value="3">ماه 3</option>
+											<option value="4">ماه 4</option>
+											<option value="5">ماه 5</option>
+											<option value="6">ماه 6</option>
+											<option value="7">ماه 7</option>
+											<option value="8">ماه 8</option>
+											<option value="9">ماه 9</option>
+											<option value="10">ماه 10</option>
+											<option value="11">ماه 11</option>
+											<option value="12">ماه 12</option>
+											<option value="13">ماه 13</option>
+											<option value="14">ماه 14</option>
+											<option value="15">ماه 15</option>
+											<option value="16">ماه 16</option>
+											<option value="17">ماه 17</option>
+											<option value="18">ماه 18</option>
+											<option value="19">ماه 19</option>
+											<option value="20">ماه 20</option>
+											<option value="21">ماه 21</option>
+											<option value="22">ماه 22</option>
+											<option value="23">ماه 23</option>
+											<option value="24">ماه 24</option>
+										</select>
+									</div>
+									<div><input id="girl-weight" name="baby-weight" type="text" placeholder="وزن(کیلوگرم)" /></div>
+									<div><input id="girl-height" name="baby-height" type="text" placeholder="قد(سانتی متر)" /></div>
+									<div><input id="girl-head" name="baby-head" type="text" placeholder="دور سر(سانتی متر)" /></div>
+								</div>
+								<div class="chart-btn-wrapper"><button class="chartSubmitWgh" type="submit">مشاهده نمودار رشد</button></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="ovo-growth-error" style="margin-top: 40px">
+			</div>
+		</div>
+	
+        <div style="display: none;" class="ovo-growth-canvas" class="wms-responsive" align="center">
+            <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
+                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
+            </div>
+            <canvas id="ovo-growth-chart" class="chcanvas chartjs-render-monitor" width="500" height="350"></canvas>
+			<<div class="chart-btn-wrapper"><button id="btn-ovo-recalc" class="chartSubmitWgh">محاسبه مجدد</button></div>
+        </div>
+    </body>
+	<style>
+		#btn-ovo-recalc {
+			cursor: pointer;
+		}
+	</style>
+	<!--<script src="https://chaptertest.com/wp-content/themes/woodmart-child/bmi/js/ovo-baby-growth.js"></script>
+		<script src="https://chaptertest.com/wp-content/themes/woodmart-child/bmi/js/chart.min.js"></script>-->
+</html>

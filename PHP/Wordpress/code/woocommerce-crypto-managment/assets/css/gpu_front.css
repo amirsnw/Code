@@ -1,0 +1,32 @@
+.gold-important-info
+{
+    display:block;
+    width:100%;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 1.2143em;
+}
+
+.gold-important-info .gold-im-info
+{
+    display:inline-block;
+    margin-top:1px;
+}
+
+.gold-important-info .gold-info
+{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+.woocommerce-variation-custom_field .woo_gpu_variation_field
+{
+    margin-bottom: 17px;
+}
+.woocommerce-variation-custom_field .woo_gpu_variation_field:last-child
+{
+    margin-bottom: 0px;
+}
+.woocommerce-variation-custom_field .woo_gpu_variation_field .gold-info
+{
+    margin-right: 10px;
+    margin-left: 5px;
+}

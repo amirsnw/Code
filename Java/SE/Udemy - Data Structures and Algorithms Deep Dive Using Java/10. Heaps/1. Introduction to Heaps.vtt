@@ -1,0 +1,25 @@
+WEBVTT
+
+00:05.270 --> 00:09.930
+Nesta seção, vamos dar uma olhada em heaps agora heaps não tem nada a ver com a memória.
+
+00:09.950 --> 00:13.440
+Você pode ter ouvido o termo que ele discutiu em relação à memória.
+
+00:13.550 --> 00:15.820
+Isso não tem absolutamente nenhuma relação com isso.
+
+00:15.860 --> 00:19.440
+Um heap é um tipo especial de árvore binária.
+
+00:19.490 --> 00:22.110
+E é isso que vamos dar uma olhada nesta seção.
+
+00:22.250 --> 00:26.940
+Comece discutindo o que é um monte e depois codificaremos um simples ele.
+
+00:26.960 --> 00:27.920
+Então vamos indo.
+
+00:27.920 --> 00:29.050
+Eu vou te ver no próximo vídeo.

@@ -1,0 +1,34 @@
+WEBVTT
+
+00:05.410 --> 00:08.410
+Nesta seção, vamos ver as matrizes.
+
+00:08.440 --> 00:14.830
+Agora você pode estar pensando bem array isso é ente iniciante curso de programação e a maioria das pessoas tem
+
+00:14.830 --> 00:21.710
+usado matrizes e isso é verdade, mas este é um curso de estruturas de dados eo array é uma estrutura de dados.
+
+00:21.760 --> 00:28.270
+Então, vamos começar fazendo uma breve revisão de como usar um array em Java e, em seguida, vamos dar
+
+00:28.270 --> 00:32.650
+uma olhada no array como uma estrutura de dados, vamos ver como os
+
+00:32.650 --> 00:40.030
+arrays são armazenados na memória e por que eles são fantásticos para acesso aleatório quando você conhece o índice do elemento que
+
+00:40.030 --> 00:41.290
+você deseja acessar.
+
+00:41.290 --> 00:45.220
+Nós também vamos olhar para o que é chamado de notação Big O.
+
+00:45.220 --> 00:49.380
+É uma maneira de medir o desempenho de um algoritmo.
+
+00:49.450 --> 00:51.510
+Então, vamos seguir em frente e analisar as matrizes.
+
+00:51.550 --> 00:52.810
+Eu vou te ver no próximo vídeo.

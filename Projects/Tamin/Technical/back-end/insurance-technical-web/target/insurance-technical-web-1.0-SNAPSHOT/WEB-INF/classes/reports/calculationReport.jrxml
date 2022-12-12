@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="calculationReport" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15" uuid="809e01dd-d7d8-473c-bb3b-a66970448cf6">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="reportDate" class="java.lang.String"/>
+	<parameter name="startDate" class="java.lang.String"/>
+	<parameter name="endDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="branch.branchCode" class="java.lang.String"/>
+	<field name="branch.branchName" class="java.lang.String"/>
+	<field name="broker.branchCode" class="java.lang.String"/>
+	<field name="broker.branchName" class="java.lang.String"/>
+	<field name="nationalCode" class="java.lang.String"/>
+	<field name="amount" class="java.lang.Long"/>
+	<field name="brokerWage" class="java.lang.Long"/>
+	<field name="paymentMonthCount" class="java.lang.String"/>
+	<field name="percent" class="java.lang.Long"/>
+	<field name="monthWage" class="java.lang.Long"/>
+	<field name="contractNumber" class="java.lang.String"/>
+	<field name="contractDate" class="java.lang.String"/>
+	<variable name="sum" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="233" y="10" width="88" height="20" backcolor="#E2E2E2" uuid="eddaa76c-4886-4742-9343-7b9f88ab122b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[بسمه تعالی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="40" width="277" height="20" backcolor="#E2E2E2" uuid="5cb4b049-c113-4f52-82ca-f51ce6e2b286"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[گزارش ریز محاسبه حق‌الزحمه کارگزاری‌ها]]></text>
+			</staticText>
+			<image>
+				<reportElement x="491" y="0" width="64" height="64" uuid="ae35631e-cf40-4dbe-b94a-f90680430389"/>
+				<imageExpression><![CDATA["/reports/images/sazman.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="207" y="60" width="83" height="20" uuid="9946b0d9-d7c9-465e-9f51-fa384622c48b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="259" y="60" width="107" height="20" backcolor="#E2E2E2" uuid="78889563-7e2b-4804-89d8-8c7bd28cab48"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[تاریخ استخراج گزارش:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="80" width="79" height="20" backcolor="#E2E2E2" uuid="247a3870-df19-4087-8a52-d161dac49912"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[دوره گزارش :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="80" width="35" height="20" backcolor="#E2E2E2" uuid="8dd73483-2b8c-4d3d-a3ad-d6305efa0f88"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[لغایت]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="268" y="80" width="76" height="20" uuid="3f0eb422-b7fc-4d04-9638-ec3fd84e75f7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{startDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="80" width="72" height="20" uuid="f3e919b4-d90b-4cd6-aeb8-4b83cbe5ed17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{endDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="11" width="565" height="34" backcolor="#F2F2F2" uuid="b3a327a7-3034-4d62-900c-559375058946">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="284" y="11" width="54" height="34" backcolor="#E2E2E2" uuid="7845df42-c16c-40eb-b945-e75098c58996">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[مبلغ پرداختی]]></text>
+			</staticText>
+			<line>
+				<reportElement x="143" y="11" width="1" height="34" uuid="823fbd3b-3c07-42bb-9f2d-fe84e3a53da0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="338" y="11" width="53" height="34" backcolor="#E2E2E2" uuid="a8f7819d-10ca-4ed7-8740-5479f834f551">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[کدملی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="27" width="59" height="18" backcolor="#E2E2E2" uuid="5a08acce-9695-456f-a50c-daa64d53168b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[دستمزد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="11" width="14" height="34" backcolor="#E2E2E2" uuid="6381869b-04e2-4977-abab-5b7801d8c418">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[ردیف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="11" width="54" height="34" backcolor="#E2E2E2" uuid="476c9fa9-2561-4cea-8510-1ca58893baf8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[حق‌الزحمه متعلقه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="11" width="50" height="34" backcolor="#E2E2E2" uuid="aed4052d-c5b3-43d4-9960-6541719c1f58">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[نام شعبه]]></text>
+			</staticText>
+			<line>
+				<reportElement x="437" y="11" width="1" height="34" uuid="5a565d1f-5fd5-4061-934e-d01e21bbe157">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="392" y="11" width="45" height="34" backcolor="#E2E2E2" uuid="aac2616a-ff50-474e-83a5-61b4ad32c7cb">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[نام کارگزاری]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="5" width="28" height="34" backcolor="#E2E2E2" uuid="3a60b535-f473-4929-b00c-083c9d82535d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[کد شعبه]]></text>
+			</staticText>
+			<line>
+				<reportElement x="474" y="11" width="1" height="34" uuid="abcb5583-229f-4beb-ab19-ee3187822116">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="144" y="11" width="29" height="34" backcolor="#E2E2E2" uuid="78371301-0186-4ad6-af84-628a17f50e79">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[نرخ حق‌بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="11" width="36" height="34" backcolor="#E2E2E2" uuid="fcf94d44-0284-4174-9434-6c1e23b4c2fb">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[کد کارگزاری]]></text>
+			</staticText>
+			<line>
+				<reportElement x="337" y="11" width="1" height="34" uuid="745912d4-7168-43e7-a343-a31a91eb09c4">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="523" y="11" width="1" height="34" uuid="f29bcbd4-9525-4009-a36b-0d72d59e606b">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="229" y="11" width="1" height="34" uuid="0bec11bc-b43c-45c5-9a0c-e339af2b454a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="391" y="11" width="1" height="34" uuid="b5170bc6-fa6d-4a47-a0af-f881cc08f666">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="174" y="11" width="1" height="34" uuid="eb01ce84-9885-4f3a-940f-000bdb3a87b6">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="550" y="11" width="1" height="34" uuid="1203c0a1-c2c4-4c3e-856e-0357553d26d5">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="170" y="11" width="60" height="34" backcolor="#E2E2E2" uuid="2e15c3d1-baa4-44f0-8068-0e349fb82d45">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[تعداد ماه های پرداختی]]></text>
+			</staticText>
+			<line>
+				<reportElement x="283" y="11" width="1" height="34" uuid="b0663156-15f7-401a-9f94-ee4881db393a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="38" y="27" width="47" height="18" backcolor="#E2E2E2" uuid="ab84385a-8e46-49ec-8844-4956bfa1e97d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[شماره]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="27" width="38" height="18" backcolor="#E2E2E2" uuid="87d2455e-52de-40bf-97a3-3d6808d6358f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[تاریخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="11" width="143" height="16" backcolor="#E2E2E2" uuid="4bbeb3b4-5054-4732-8783-424b3db895fd">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[قرارداد]]></text>
+			</staticText>
+			<line>
+				<reportElement x="38" y="27" width="1" height="18" uuid="c51c7ecf-e9fc-486a-9620-fef1b9e4115d">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="84" y="27" width="1" height="18" uuid="2ce05b75-d379-4246-a44d-0c6f40878947">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="27" width="143" height="1" uuid="5914fbd0-e46b-4d6c-961d-e1ebe12489e7">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="565" height="30" backcolor="#FFFFFF" uuid="54c623b6-3594-45ea-bd33-902a546c762d">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement x="550" y="0" width="1" height="30" uuid="7571ad75-b10a-4f81-9f60-2d416f95d75f">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="523" y="0" width="1" height="30" uuid="146f9a4d-aa0a-4659-8e61-e009528d2ab2">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="474" y="0" width="1" height="30" uuid="55ae072e-ca0d-4d90-ac7a-dcca989afe21">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="437" y="0" width="1" height="30" uuid="8ce9c5c3-7d2b-4323-ae16-86809cb6c575">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="391" y="0" width="1" height="30" uuid="f92d478f-8801-4846-87d4-1b04ce9bcc04">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="337" y="0" width="1" height="30" uuid="caf4a2d5-d72e-4880-8b6a-79b056af82d8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="283" y="0" width="1" height="30" uuid="cde4a9e0-4ca7-48b9-9985-0a1dcf94024d">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="229" y="0" width="1" height="30" uuid="c030adc4-f938-44d0-bf6c-92579b4e0148">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="174" y="0" width="1" height="30" uuid="97e17cf3-ec15-4f22-bf68-e037c88a82d3">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="143" y="0" width="1" height="30" uuid="ead0714d-1c34-42e5-8769-2e64d7d1565a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="84" y="0" width="1" height="30" uuid="6bc28ea2-c657-42fc-b990-3974e2240363">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="38" y="0" width="1" height="30" uuid="03c40a53-837e-4e26-8e0b-3486ebed08d7">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="551" y="0" width="14" height="30" uuid="fd1d3d09-a24f-4287-bf9c-a34ae52d600f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="524" y="0" width="26" height="30" uuid="47726142-16ab-49ca-93c9-65b073e07061">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch.branchCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="48" height="30" uuid="5ed4df6e-b1cc-4899-bc8b-b9871f313119">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branch.branchName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="0" width="36" height="30" uuid="db25be1f-06ba-4a37-9c44-b5e6ad9e8334">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{broker.branchCode}!= null ? $F{broker.branchCode} :"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="0" width="45" height="30" uuid="5087bcf3-6d98-4032-b338-8697d586541a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{broker.branchName}!=null ? $F{broker.branchName} :"-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="53" height="30" uuid="3e0794bf-cb5d-43f7-9079-c4dc8cec02e8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nationalCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="0" width="55" height="30" uuid="6ffe5468-9a36-4c6b-a9b4-8a5fb3b03d1e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("$ #,##0").format(Double.valueOf($F{amount}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="0" width="55" height="30" uuid="6786c6d4-2e71-48c1-bb93-063927c3bfa1">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("$ #,##0").format(Double.valueOf($F{brokerWage}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="0" width="54" height="30" uuid="18e649d0-d9a2-4219-b9c5-413665b8dc31">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paymentMonthCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="29" height="30" uuid="49b8a73b-bc4e-481b-81f4-e132fb436936">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["%"+$F{percent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="0" width="60" height="30" uuid="b6a31a32-c4a3-4634-a369-6452ac9a984a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("$ #,##0").format(Double.valueOf($F{monthWage}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="0" width="45" height="30" uuid="0bb0452b-da34-487f-96f5-88916e31e6ed">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contractNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="38" height="30" uuid="9c2b6683-72b4-46d0-bad7-38a4c64c030e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contractDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="271" y="5" width="14" height="12" uuid="ca6b625b-4a74-4a5d-8e6b-3657019c6e62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[از]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="5" width="32" height="12" uuid="d811fd2e-7a99-41b6-b999-bb8980750779"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[صفحه]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="250" y="5" width="24" height="12" uuid="a4c757ce-7860-4aa0-9b7b-9673d0c483c3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="5" width="18" height="12" uuid="852d677c-8656-474b-befa-b6d4657c3c74"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="74">
+			<rectangle>
+				<reportElement x="0" y="0" width="565" height="20" backcolor="#F9F9F9" uuid="55e37cef-a672-4726-9dd5-e1cb956d2ab1">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement x="345" y="0" width="1" height="20" uuid="11e4d26d-e057-4eaf-8a18-b64238687933">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="346" y="0" width="113" height="20" backcolor="#E2E2E2" uuid="164d10df-fb00-4cc1-947b-f83ac2da542d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[جمع حق الزحمه بازاریابی]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="238" y="0" width="99" height="20" uuid="29fc4747-7bd6-4255-94f7-30cd82e5b451"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="191" y="0" width="49" height="20" backcolor="#E2E2E2" uuid="a8f7819d-10ca-4ed7-8740-5479f834f551">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="38" width="118" height="22" uuid="11785bf2-1fe4-4cda-8ad8-825af6584e9a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[امضای کارشناس شعبه:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="219" y="38" width="118" height="22" uuid="79f352cb-a22f-4fed-aa88-41d8c3e537b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[امضای مسئول فنی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="38" width="118" height="22" uuid="db2e2d31-5d0e-45f1-aaaa-17cf26073a67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[امضای مسئول شعبه:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

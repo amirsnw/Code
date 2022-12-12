@@ -1,0 +1,15 @@
+<div class="alert alert-info">
+  مشاهده فیش مستمری
+</div>
+<!--<div class="alert alert-danger" *ngIf="!isAccessible">-->
+<!--  کاربر گرامی، سایت به علت محاسبه لیست مستمری ماهانه هم اکنون در حال بروزرسانی است، لطفا در روزهای آینده مجددا اقدام نمایید.-->
+<!--</div>-->
+<div>
+  <app-edict-view #paymentViewComponent></app-edict-view>
+  <app-edict-payment-search (afterSubmit)="loadData($event)" #paymentSearchComponent></app-edict-payment-search>
+  <app-edict-payment-list #paymentListComponent
+                          [insuranceNumber]="paymentViewComponent.getInsuranceNumber()"></app-edict-payment-list>
+</div>
+
+
+

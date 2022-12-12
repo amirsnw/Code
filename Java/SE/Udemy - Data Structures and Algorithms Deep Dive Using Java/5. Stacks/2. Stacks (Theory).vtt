@@ -1,0 +1,298 @@
+WEBVTT
+
+00:05.230 --> 00:05.710
+Todo bien.
+
+00:05.710 --> 00:07.570
+Así que sigamos.
+
+00:07.570 --> 00:09.810
+Hablando de pilas.
+
+00:09.940 --> 00:16.300
+Ahora, como mencioné en la introducción, la pila es un tipo de datos conceptual o abstracto.
+
+00:16.360 --> 00:23.290
+Entonces, lo que hace es dictar las operaciones que podemos realizar en un conjunto de datos, pero no nos dice
+
+00:23.290 --> 00:25.110
+cómo deben almacenarse los datos.
+
+00:25.110 --> 00:31.030
+Un Stack dice que no me importa cómo se organicen los datos, pero estas son las operaciones que se le permiten hacer
+
+00:31.030 --> 00:31.770
+con los datos.
+
+00:31.840 --> 00:36.710
+Y, básicamente, una pila puede respaldarse con cualquier estructura de datos.
+
+00:36.730 --> 00:42.610
+Ahora no tiene sentido que esté respaldado por algunas estructuras de datos, pero podrías respaldar una pila con cualquier
+
+00:42.610 --> 00:44.320
+estructura de datos que quisieras.
+
+00:44.320 --> 00:47.300
+Entonces hablemos de las operaciones que podemos hacer en una pila.
+
+00:47.320 --> 00:55.720
+Bueno, una característica de las pilas es que el último objeto, el último elemento que agregue a una pila, es siempre
+
+00:55.720 --> 00:59.510
+el primer elemento que puede eliminar de la pila.
+
+00:59.530 --> 01:04.360
+Y entonces eso se conoce como Lifeso Last In First Out.
+
+01:04.360 --> 01:07.530
+Entonces eso significa que no hay acceso aleatorio.
+
+01:07.570 --> 01:13.090
+No podemos hacer lo que podemos hacer con una matriz y solo decir "oye, dame el elemento
+
+01:13.090 --> 01:18.300
+de la posición 5" porque solo puedes quitar el último elemento que agregaste a la pila.
+
+01:18.370 --> 01:23.980
+Y debido a eso, como veremos en las próximas diapositivas, la pila tiene un concepto de una cima.
+
+01:24.010 --> 01:30.190
+Así que hablamos sobre la parte superior de la pila. El elemento que está en la parte superior de la pila es el único elemento al
+
+01:30.190 --> 01:32.770
+que podemos acceder, y es el único al que podemos mirar.
+
+01:32.770 --> 01:35.160
+Y es el único que podemos eliminar.
+
+01:35.200 --> 01:38.970
+Y entonces imagina un mazo de cartas o una pila de papeles.
+
+01:38.980 --> 01:46.120
+Entonces, si tiene una pila de papel, si quiere acceder al papel de 10 páginas en la pila, primero
+
+01:46.120 --> 01:49.380
+debe quitar las nueve páginas que están encima.
+
+01:49.390 --> 01:55.660
+O si tienes un mazo de cartas y quieres llegar a la décima carta en el mazo, debes quitar las
+
+01:55.660 --> 02:01.680
+primeras nueve cartas antes de que esa décima carta esté en la parte superior de la pila de cartas.
+
+02:01.690 --> 02:04.080
+Entonces es el último en entrar primero en salir.
+
+02:04.270 --> 02:10.510
+Si agregamos un papel a la pila, la próxima vez que necesitemos un papel vamos a tomar el papel
+
+02:10.510 --> 02:12.160
+que agregamos por última vez.
+
+02:12.160 --> 02:15.580
+Ahora hemos visto un uso para una pila y esa es la pila de llamadas.
+
+02:15.580 --> 02:21.970
+Cuando miramos la recursividad hablé acerca de empujar las llamadas a métodos a la pila de llamadas y eliminarlas
+
+02:21.970 --> 02:28.630
+de la pila de llamadas, en cuyo caso el último método que llamamos siempre fue el primero que se eliminó
+
+02:28.630 --> 02:30.150
+de la pila de llamadas.
+
+02:30.160 --> 02:37.150
+Me refiero a que si el método foo se llama barra de método, no tendría sentido que el método de comida regrese antes de que la
+
+02:37.150 --> 02:41.840
+barra de método lo haga, porque la comida tiene que esperar hasta que la barra termine de ejecutarse.
+
+02:42.070 --> 02:47.140
+Entonces, una pila es la estructura de datos perfecta para usar en la pila de llamadas.
+
+02:47.140 --> 02:53.830
+Ahora podemos realizar tres operaciones en una pila, podemos agregar un elemento a la parte superior de la pila que
+
+02:53.860 --> 02:55.830
+se conoce como operación de empuje.
+
+02:55.870 --> 03:02.950
+Podemos eliminar el elemento superior en la pila y eso se conoce como la operación pop y podemos echar un vistazo a lo que está en
+
+03:03.100 --> 03:04.810
+la parte superior de la pila.
+
+03:04.810 --> 03:10.740
+Ahora cuando echamos un vistazo podemos obtener el primer elemento en la pila, pero en realidad no lo eliminamos.
+
+03:10.780 --> 03:14.680
+Y entonces una olla elimina el elemento de la parte superior de la pila.
+
+03:14.860 --> 03:20.560
+Pero solo nos permite acceder al elemento pero lo dejamos en la pila.
+
+03:20.560 --> 03:24.340
+Ahora dije que una pila puede respaldarse con cualquier estructura de datos.
+
+03:24.430 --> 03:30.160
+Puede ser respaldado por una matriz pero si lo piensas una lista vinculada es la estructura de datos perfecta
+
+03:30.160 --> 03:36.510
+para una pila porque en una lista vinculada siempre queremos trabajar con el elemento al principio de la lista si es
+
+03:36.520 --> 03:38.070
+una lista individualmente vinculada .
+
+03:38.110 --> 03:43.660
+Así que agregamos elementos al principio de la lista y eliminamos elementos del anverso de la
+
+03:43.660 --> 03:49.330
+lista y, al hacerlo, significa que el último elemento que añadimos siempre será el primero que eliminemos.
+
+03:49.330 --> 03:55.200
+Entonces, una lista vinculada es una estructura de datos perfecta para respaldar la pila.
+
+03:55.330 --> 03:58.820
+Y en ese caso un empuje sería un método de agregar al frente.
+
+03:58.870 --> 04:05.590
+Un pop sería un método de eliminación del frente y un vistazo simplemente nos daría el elemento principal sin eliminarlo
+
+04:05.590 --> 04:06.630
+de la lista.
+
+04:06.640 --> 04:10.420
+Entonces, es bastante común tener una pila respaldada por una lista vinculada.
+
+04:10.420 --> 04:13.620
+Pero como dije, también puedes respaldar una pila con una matriz.
+
+04:13.690 --> 04:16.930
+Echemos un vistazo a la pila, así que aquí hay una pila vacía.
+
+04:16.930 --> 04:18.210
+No hay nada en eso.
+
+04:18.220 --> 04:22.060
+Entonces la parte superior sería Knol si estuviéramos lidiando con una lista vinculada.
+
+04:22.150 --> 04:24.220
+Y luego digamos que empujamos a Jane.
+
+04:24.300 --> 04:32.260
+Jane ahora irá a la pila y ella es el elemento superior en la pila, así que tenemos un puntero superior o una variable
+
+04:32.260 --> 04:36.180
+tensa que apunta a Jane y luego vamos a presionar a John.
+
+04:36.190 --> 04:40.120
+Entonces John está ahora en la parte superior de la pila y luego empujaremos a Mary.
+
+04:40.120 --> 04:42.700
+Así que Mary ahora está en la cima de la pila.
+
+04:42.700 --> 04:49.200
+Ahora si hiciéramos un pop en este punto, Mary sería el valor del bote porque Mary está en la parte superior de
+
+04:49.210 --> 04:52.680
+la pila. Fue el último elemento que se agregó a la pila.
+
+04:52.690 --> 04:59.080
+Y si hacemos un pop, el valor pop será Mary y el nuevo top de la pila será John.
+
+04:59.080 --> 05:05.090
+Ahora, si hacemos un pico, el valor máximo será Jaun. Pero notará que John todavía está en el.
+
+05:05.160 --> 05:08.160
+Así que aquí está el estado de nuestra pila antes de hacer el pico.
+
+05:08.160 --> 05:14.450
+Y después del pico John todavía está en la pila pero hemos podido acceder a él, lo hemos almacenado en alguna
+
+05:14.450 --> 05:18.270
+variable para que podamos ver cuál es el elemento superior en una pila.
+
+05:18.270 --> 05:23.220
+Así que esas son las tres operaciones que podemos hacer en una pila de push pop y peek.
+
+05:23.310 --> 05:26.400
+Y debido a esa pila tiene el comportamiento de Life.
+
+05:26.460 --> 05:31.830
+El último elemento insertado en la pila siempre será el elemento que se extrajo de la pila.
+
+05:31.830 --> 05:38.070
+Así que hablemos de la complejidad del tiempo, mientras que esto dependerá de cómo esté respaldando la pila qué estructura
+
+05:38.070 --> 05:40.770
+de datos está utilizando para implementar la pila.
+
+05:40.770 --> 05:47.070
+Ahora, si estamos usando una lista vinculada, las operaciones push pop y peek van a ser de tiempo constante porque
+
+05:47.070 --> 05:53.580
+cuando miramos las listas enlazadas discutimos eso porque siempre estamos operando en el caso de una lista individualmente vinculada, que es
+
+05:53.580 --> 05:57.780
+todo lo que necesita para stack para el caso de una lista individualmente vinculada.
+
+05:57.780 --> 06:03.360
+Para agregar un elemento al principio de la lista, el tiempo constante para eliminar un elemento para el frente de la
+
+06:03.390 --> 06:04.670
+lista es el tiempo constante.
+
+06:04.710 --> 06:09.210
+Y si queríamos obtener el encabezado de la lista, que sería un pico que es el tiempo constante.
+
+06:09.210 --> 06:16.620
+Ahora, si tuviéramos que usar una matriz, pulsar podría ser un tiempo lineal porque si la matriz estuviera llena tendríamos que cambiar el
+
+06:16.620 --> 06:22.790
+tamaño de la matriz y tendríamos que copiar todos los elementos existentes en la pila a la nueva matriz.
+
+06:22.800 --> 06:27.450
+Entonces, como dije, la complejidad del tiempo de las operaciones dependerá de cómo implemente
+
+06:27.450 --> 06:30.090
+la pila qué estructura de datos está usando.
+
+06:30.100 --> 06:31.260
+Tabac la pila.
+
+06:31.260 --> 06:36.090
+Ahora bien, si conoce la cantidad máxima de elementos que siempre habrá en la pila, una matriz podría ser
+
+06:36.090 --> 06:41.280
+una buena opción porque podría declarar una matriz lo suficientemente grande como para contener la cantidad máxima de elementos y
+
+06:41.280 --> 06:43.500
+la matriz nunca tendría que cambiar de tamaño.
+
+06:43.530 --> 06:49.320
+Si la memoria es escasa, una matriz puede ser una buena opción, ya que con una matriz no tiene la
+
+06:49.410 --> 06:55.770
+carga de tener que tener un campo siguiente, pero si la memoria no es estrecha y no sabe cuál es el número
+
+06:55.770 --> 06:59.450
+máximo de elementos. va a ser entonces la lista vinculada es ideal.
+
+06:59.550 --> 07:04.350
+E incluso si, si la memoria es escasa, una lista vinculada sería ideal si no lo es.
+
+07:04.350 --> 07:07.130
+Si no espera agregar una tonelada completa de artículos.
+
+07:07.230 --> 07:13.920
+Quiero decir que una lista vinculada realmente se presta bien a las restricciones de comportamiento que tiene una acción.
+
+07:13.920 --> 07:19.590
+Entonces, ahora que entendemos qué es una pila y entendemos las operaciones que podemos hacer en una pila,
+
+07:19.710 --> 07:21.120
+implementemos una pila simple.
+
+07:21.120 --> 07:22.340
+Te veré en el próximo video.

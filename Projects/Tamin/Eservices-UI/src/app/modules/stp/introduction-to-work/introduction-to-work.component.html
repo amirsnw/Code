@@ -1,0 +1,91 @@
+<div class="alert alert-info">
+  معرفی نامه بیمه شده
+</div>
+
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <div class="panel" #panel>
+    <div class="panel-title"> معرفی نامه از شعبه به کارفرما </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="risuid">شماره بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="risuid" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="risuname">نام و نام خانوادگی</tamin-field-label>
+          <tamin-field-static-text formControlName="risuname" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="nationalid">کدملی</tamin-field-label>
+          <tamin-field-static-text formControlName="nationalid" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="reqSerial">سریال درخواست </tamin-field-label>
+          <tamin-field-static-text formControlName="reqSerial" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="rwshname">نام کارگاه </tamin-field-label>
+          <tamin-field-static-text formControlName="rwshname" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="brhName">شعبه </tamin-field-label>
+          <tamin-field-static-text formControlName="brhName" placeholder=""></tamin-field-static-text>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="intlno">شماره معرفی نامه </tamin-field-label>
+          <tamin-field-static-text formControlName="intlno" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="intDate">تاریخ معرفی نامه </tamin-field-label>
+          <tamin-field-static-text formControlName="intDate" placeholder=""></tamin-field-static-text>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel" #dataPanel>
+    <div class="panel-title">نامه پاسخ کارفرما </div>
+    <div class="panel-body">
+
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="intRdate">تاریخ پاسخ کارفرما </tamin-field-label>
+          <tamin-field-validator formControlName="intRdate"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="intRdate" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="intEmpdat">تاریخ آخرین روز اشتغال </tamin-field-label>
+          <tamin-field-validator formControlName="intEmpdat"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="intEmpdat" placeholder=""></tamin-field-persian-date>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="intFromDate">تاریخ شروع عدم اشتغال </tamin-field-label>
+          <tamin-field-validator formControlName="intFromDate"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="intFromDate" placeholder=""></tamin-field-persian-date>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="intToDate">تاریخ خاتمه عدم اشتغال </tamin-field-label>
+          <tamin-field-validator formControlName="intToDate"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="intToDate" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <tamin-field-label formControlName="intCmt">توضیحات </tamin-field-label>
+            <tamin-field-persian-text formControlName="intCmt" placeholder=""></tamin-field-persian-text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<div class="button-container" style="margin: 3px">
+  <button class="button normal" (click)="onSaveIntro()">
+    <i class="icon-ok"></i>
+    <span>ارسال </span>
+  </button>
+
+</div>

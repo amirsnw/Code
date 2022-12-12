@@ -1,0 +1,855 @@
+f<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exeAccountDetentionReport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="561" leftMargin="17" rightMargin="17" topMargin="20" bottomMargin="20" uuid="f80fad99-a9c6-4752-81de-213abf88a86e">
+	<property name="ireport.zoom" value="0.9330147604194671"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="945"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="datasetTable" uuid="a3697809-559b-4a03-84a8-cf465d13d5e6">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="ID" class="java.lang.Long">
+			<fieldDescription><![CDATA[ID]]></fieldDescription>
+		</field>
+		<field name="immunity" class="java.lang.Long">
+			<fieldDescription><![CDATA[immunity]]></fieldDescription>
+		</field>
+		<field name="reportDesc" class="java.lang.String">
+			<fieldDescription><![CDATA[reportDesc]]></fieldDescription>
+		</field>
+		<field name="debitSum" class="java.lang.Long">
+			<fieldDescription><![CDATA[debitSum]]></fieldDescription>
+		</field>
+		<field name="finishDate" class="java.util.Date">
+			<fieldDescription><![CDATA[finishDate]]></fieldDescription>
+		</field>
+		<field name="penaltyAmount" class="java.lang.Long">
+			<fieldDescription><![CDATA[penaltyAmount]]></fieldDescription>
+		</field>
+		<field name="descJan" class="java.lang.String">
+			<fieldDescription><![CDATA[descJan]]></fieldDescription>
+		</field>
+		<field name="orderNoDate" class="java.lang.String">
+			<fieldDescription><![CDATA[orderNoDate]]></fieldDescription>
+		</field>
+		<field name="executeDebitSum" class="java.lang.Long">
+			<fieldDescription><![CDATA[executeDebitSum]]></fieldDescription>
+		</field>
+		<field name="deleted" class="java.lang.Boolean">
+			<fieldDescription><![CDATA[deleted]]></fieldDescription>
+		</field>
+		<field name="debitStatus" class="java.lang.String">
+			<fieldDescription><![CDATA[debitStatus]]></fieldDescription>
+		</field>
+		<field name="lastModificationTime" class="java.util.Date">
+			<fieldDescription><![CDATA[lastModificationTime]]></fieldDescription>
+		</field>
+		<field name="debitAmount" class="java.lang.Long">
+			<fieldDescription><![CDATA[debitAmount]]></fieldDescription>
+		</field>
+		<field name="debitExpDate" class="java.util.Date">
+			<fieldDescription><![CDATA[debitExpDate]]></fieldDescription>
+		</field>
+		<field name="debitStatusDate" class="java.util.Date">
+			<fieldDescription><![CDATA[debitStatusDate]]></fieldDescription>
+		</field>
+		<field name="debitNo" class="java.lang.String">
+			<fieldDescription><![CDATA[debitNo]]></fieldDescription>
+		</field>
+		<field name="lastModifiedBy" class="java.lang.String">
+			<fieldDescription><![CDATA[lastModifiedBy]]></fieldDescription>
+		</field>
+		<field name="debitStepDesc" class="java.lang.String">
+			<fieldDescription><![CDATA[debitStepDesc]]></fieldDescription>
+		</field>
+		<field name="debitStepType" class="java.lang.String">
+			<fieldDescription><![CDATA[debitStepType]]></fieldDescription>
+		</field>
+		<field name="starttDate" class="java.util.Date">
+			<fieldDescription><![CDATA[starttDate]]></fieldDescription>
+		</field>
+		<field name="unemploymentAmount" class="java.lang.Long">
+			<fieldDescription><![CDATA[unemploymentAmount]]></fieldDescription>
+		</field>
+		<variable name="amountSum" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{debitAmount}]]></variableExpression>
+		</variable>
+		<variable name="unemploySum" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{unemploymentAmount}]]></variableExpression>
+		</variable>
+		<variable name="penaltySum" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{penaltyAmount}]]></variableExpression>
+		</variable>
+		<variable name="executeSum" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{executeDebitSum}]]></variableExpression>
+		</variable>
+		<variable name="debitSum" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{debitSum}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="INKNO" class="java.lang.String"/>
+	<parameter name="INKDATE" class="java.lang.String"/>
+	<parameter name="BRHNAME" class="java.lang.String"/>
+	<parameter name="SEXCODE" class="java.lang.String"/>
+	<parameter name="RISUFNAME" class="java.lang.String"/>
+	<parameter name="RISULNAME" class="java.lang.String"/>
+	<parameter name="RISUID" class="java.lang.String"/>
+	<parameter name="RISUNATCODE" class="java.lang.String"/>
+	<parameter name="RISUIDNO" class="java.lang.String"/>
+	<parameter name="EXPCITYNAME" class="java.lang.String"/>
+	<parameter name="RISUBIRTHDATE" class="java.lang.String"/>
+	<parameter name="RISUDNAME" class="java.lang.String"/>
+	<parameter name="ENTMOAS" class="java.lang.String"/>
+	<parameter name="PENSIONFUNDSDESC" class="java.lang.String"/>
+	<parameter name="HIS_DAYS" class="java.lang.String"/>
+	<parameter name="BADDR" class="java.lang.String"/>
+	<parameter name="ENTREQNO" class="java.lang.String"/>
+	<parameter name="ENTREQDATE" class="java.lang.String"/>
+	<parameter name="CONTRACTDATE" class="java.lang.String"/>
+	<parameter name="CONTRACTEXPIREDATE" class="java.lang.String"/>
+	<parameter name="ENTEMPSDATE" class="java.lang.String"/>
+	<parameter name="ENTEMPEDATE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="variable1" class="java.lang.String"/>
+	<variable name="variable2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802">
+			<rectangle>
+				<reportElement uuid="ace4b07a-eb7b-4365-a3c6-172f20052836" x="17" y="98" width="523" height="120"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="14f94f5e-9b9b-4340-ba41-40db95d16096" x="509" y="120" width="19" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9689ac40-c0c2-4966-b523-eb136cb7eefb" x="390" y="647" width="145" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام و نام خانوادگی رئیس شعبه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eafe85bd-8f32-49bb-915c-d4d05625a737" x="449" y="667" width="31" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[امضا]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b7bcd641-7d1e-47b6-8029-559b369fac5f" x="364" y="120" width="145" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RISUFNAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="725ae4c6-4f02-4377-a3a5-34d1b0032a52" x="490" y="290" width="51" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به نشانی]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2899a634-65f3-4500-9f1f-456a262ae560" x="17" y="120" width="76" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RISUID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f2868007-678c-4f23-a9b6-c7cf39f71e93" x="167" y="270" width="92" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[کد ملی]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="01233990-d0e4-4fc9-9c22-e989bac29480" x="128" y="270" width="93" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RISUNATCODE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b50f50d9-93e9-46c0-8878-b47ef8a1c798" x="156" y="250" width="72" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="13" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره شناسنامه]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="8f8b9f97-faf5-48dd-b8f8-3d0010a34815" x="55" y="250" width="101" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RISUIDNO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c4da40f6-9de4-4fe2-8ac7-12f4a8fdb24f" x="259" y="270" width="210" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EXPCITYNAME}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="51a058e7-eed1-4fe2-aaaf-6bdab2068f7a" x="228" y="250" width="73" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RISUBIRTHDATE}.substring( 0, 4 )+'/'+$P{RISUBIRTHDATE}.substring( 4, 6 )+'/'+$P{RISUBIRTHDATE}.substring( 6, 8 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ccdab8d1-ae8b-4ac7-a29b-35809c302d16" x="-38" y="250" width="93" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="13" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[محـــل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a702c419-304c-4c4d-8fee-83be9b3776d1" x="17" y="71" width="473" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="13" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[قرارداد انتقال کسور بازنشستگی از سایر صندوقها به صندوق تامین اجتماعی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="55fda535-9817-43e6-a843-c8afe08c7a7a" x="87" y="27" width="41" height="27"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9877f545-54b8-4afe-9679-da7d70be1069" x="87" y="0" width="41" height="27"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="aeac8c58-97e2-474c-8888-e05348078b9c" x="156" y="120" width="145" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RISULNAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fc64f4df-a24f-4808-a85e-8a623e305a7f" x="301" y="120" width="63" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام خانوادگی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20254138-08b7-468b-9e75-877e2d8d93e0" x="69" y="120" width="87" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ شماره بیمه:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ac78c89a-7b68-44b8-bb28-76cc5cbde329" x="319" y="140" width="209" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام دستگاه محل خدمت قبلی:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2a30cdc1-ead2-450f-8e36-d23c73f87d2d" x="17" y="140" width="398" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ENTMOAS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="522610aa-493e-4b77-9d99-0b751b4c3496" x="290" y="160" width="238" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام صندوق بازنشستگی ذیربط قبلی:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7a514dce-7361-441a-974e-20f42fb0e23a" x="17" y="160" width="366" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PENSIONFUNDSDESC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="87be1be1-0947-42fa-a199-4f53407fe39d" x="259" y="180" width="269" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مدت سابقه پرداخت کسور حسب اظهار متقاضی:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7f50aee5-90d4-4926-8487-6f8096a6ec3d" x="259" y="180" width="72" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{HIS_DAYS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6a71dcb2-4ade-46bc-996e-79fd1d969e69" x="219" y="180" width="40" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[از تاریخ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc430ab3-c00c-422d-8263-5f824a40c44d" x="100" y="180" width="40" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[لغایت:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="ad6999d9-1dc3-49a4-a524-f15bea9b9133" x="140" y="180" width="79" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ENTEMPSDATE}.substring( 0, 4 )+'/'+$P{ENTEMPSDATE}.substring( 4, 6 )+'/'+$P{ENTEMPSDATE}.substring( 6, 8 )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="43e68d1d-1b5d-4c19-a1fb-098e4880e70f" x="17" y="180" width="83" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ENTEMPEDATE}.substring( 0, 4 )+'/'+$P{ENTEMPEDATE}.substring( 4, 6 )+'/'+$P{ENTEMPEDATE}.substring( 6, 8 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="354dd27e-c068-4b5a-85a0-dea48630a3ee" x="290" y="230" width="251" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[این قرارداد بین صندوق تامین اجتماعی شعبه]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="69685e83-a6d0-46ba-a99d-82892c910092" x="140" y="230" width="224" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BRHNAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1760965a-a6f1-403e-8e7c-36a3e4e8c3bb" x="-101" y="230" width="238" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[و متقاضی مذکور با مشخصات ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b98f29f-4fd5-4d17-b691-8df847ab8298" x="509" y="250" width="32" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام پدر]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a1adc1c7-3b36-4b34-873f-3972c5bbbbde" x="343" y="250" width="166" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RISUDNAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="69c00d51-aca8-4bf5-bf6d-f1987632e757" x="301" y="250" width="41" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ تولد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="42c2b78f-1689-4ee2-98dc-a2ffc0567721" x="469" y="270" width="72" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[صدور شناسنامه]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="48775872-852c-4ee5-947f-c58474fe1031" x="17" y="290" width="473" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BADDR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ff0ada3a-5a3b-42cf-818f-56bcdff1e9df" x="-75" y="310" width="616" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با آگاهی کامل از مقررات قانونی مربوط به انتقال کسور بازنشستگی مندرج در ظهر این قرارداد و براساس درخواست کتبی وی که طی ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="22dcfc3f-f62e-448f-b9d7-b84c92bd3b67" x="469" y="330" width="72" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7df2f79f-e22b-43fa-b928-2c5aea5f41b5" x="415" y="330" width="95" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ENTREQNO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="88a9eeab-7596-4b19-8709-297f99857ec5" x="364" y="330" width="51" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مورخ:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="34a81e1b-de96-4a2c-9d2c-6c54560bc4ab" x="301" y="330" width="82" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ENTREQDATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5e4fcf53-9f14-411d-86f8-2f72822d008f" x="-87" y="330" width="388" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ثبت دفتر شعبه تامین اجتماعی مزبور گردیده و به منظور برخورداری ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c333cf2-b0d1-43c8-8adf-d0c44d23ff21" x="0" y="350" width="541" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[از حمایت های بازنشستگی، فوت و ازکارافتادگی با شرایط زیر منعقد میگردد:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b1dc5a4b-fd52-41ea-9c6f-bcc452253ef5" x="228" y="370" width="315" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-1 شروع این قرارداد به اعتبار درخواست مزبور تاریخ ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="0f81c399-86ce-48ed-a457-a3d5e25d32a2" x="259" y="370" width="60" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CONTRACTDATE}.substring( 0, 4 )+'/'+$P{CONTRACTDATE}.substring( 4, 6 )+'/'+$P{CONTRACTDATE}.substring( 6, 8 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="15ba640f-72eb-4dbb-8ada-a4bd115e0dfa" x="126" y="370" width="133" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[و پایان آن نیز تاریخ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="02aebc82-7221-477e-afba-b6360dfb6153" x="100" y="370" width="64" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isUnderline="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CONTRACTEXPIREDATE}.substring( 0, 4 )+'/'+$P{CONTRACTEXPIREDATE}.substring( 4, 6 )+'/'+$P{CONTRACTEXPIREDATE}.substring( 6, 8 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0fe14b01-4dee-4fdc-a2ad-db2e2c40e3fd" x="-57" y="370" width="157" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با مدت اعتبار یک]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2d188da-aa84-40e1-93f3-dcf9d234f90f" x="331" y="390" width="210" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ساله میباشد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="77fb6acb-6890-4e66-982b-fbc5b8e72d9a" x="-113" y="410" width="654" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-2 شعبه تامین اجتماعی مکلف است بلافاصله پس از انعقاد قرارداد به منظور اخذ مدارک مربوط به انتقال کسور با صندوق بازنشستگی ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a6ac186b-2d5b-44b1-ad23-0b4205921a3b" x="-75" y="430" width="616" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[یا دستگاه ذیربط قبلی بیمه شده مکاتبه نماید و این امر می بایست تا پایان مدت قرارداد جهت انجام تشریفات مورد نظر به طور مرتب و]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="162ce3b8-9f11-4f2e-b7f4-8ecdd27a7ad5" x="156" y="450" width="385" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ماهانه پیگیری شود.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8e9ac3cb-9571-4f70-80de-ac4a1fa56aae" x="-201" y="470" width="744" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-3 بعد از انعقاد قرارداد متقاضی نیز مکلف است نسبت به پیگیری و ارائه مدارک مرتبط با امر انتقال کسوربازنشستگی از جمله وجوه ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="edbdb3e2-da8f-4fe8-ae69-61af7b64542c" x="-138" y="490" width="681" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مورد نظر به حساب صندوق تامین اجتماعی نزد شعبه یاد شده در مهلت مقرر و مندرج در این قرارداد اقدام نماید.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d2c330e9-07c5-45f9-8557-7b37755c830b" x="-127" y="528" width="670" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بازنشستگی از سوی صندوق قبلی به حساب صندوق تامین اجتماعی اقدام ننماید، قرارداد منعقده ملغی و احتساب سوابق منتقله مورد نظر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="172af702-414d-46f7-b54b-4ee63e18e8b8" x="-101" y="508" width="644" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-4 چنانچه متقاضی در مهلت مقرر یک ساله مندرج در این قرارداد به هر نحو درخصوص ارائه مدارک مربوطه و همچنین انتقال کسور]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e1f0f692-7998-411c-853f-f0370b2f95ca" x="-174" y="548" width="717" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[موکول به تسلیم درخواست جدید و تجدید محاسبه مابه التفاوت متعلقه با رعایت مقررات مربوطه خواهد بود.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="825771a4-18bd-4bea-a96c-44e81b6cb9dd" x="-237" y="568" width="780" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-5 استفاده از مزایای بلند مدت قانونی پس از پرداخت کامل مبلغ مابه التفاوت متعلقه ناشی از انتقال کسور سوابق خدمت گذشته به صندوق ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8934ba08-919d-426b-b04c-a810af7f7b03" x="-148" y="588" width="691" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تامین اجتماعی در مهلت های تعیین شده خواهد بود.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ae1080cc-7bb2-4394-b3f2-56e2ab7be2bd" x="219" y="647" width="145" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام و نام خانوادگی مسئول امور فنی بیمه شدگان ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3e5eaba1-ff41-4cc0-af5f-00c2ef9469fe" x="278" y="686" width="31" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[امضا]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="69fe34ff-f7ca-40f2-80fa-42ba05dd73e7" x="38" y="647" width="129" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام و نام خانوادگی متقاضی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="18478633-e6d0-4dfe-baea-b359db173956" x="59" y="667" width="87" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[امضا و اثر انگشت]]></text>
+			</staticText>
+		</band>
+		<band height="705">
+			<staticText>
+				<reportElement uuid="a8504970-b1bd-4864-b5f1-888619ff6d10" x="141" y="0" width="400" height="27"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[اطلاعات مربوط به  تقاضای انتقال کسور بازنشستگی از سایر صندوقها به صندوق تأمین اجتماعی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2ee8120-1723-4923-94b8-e768d12fc919" x="17" y="27" width="524" height="261"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[1-انتقال کسور بازنشستگی از سایر صندوقها به صندوق تأمین اجتماعی در صورت ارائه تقاضای فرد و عدم دریافت کسور بازنشستگی و موجود بودن وجوه مورد نظر نزد صندوق بازنشستگی متبوع مقدور خواهد بود.
+2-در صورت ارائه تقاضا و پس از طی تشریفات مقرر قانونی ازجمله انتقال کسور بازنشستگی سوابق خدمت مورد نظر و پرداخت         مابه التفاوت متعلقه که حسب ضوابط قانونی امری اجتناب ناپذیر می باشد، زمینه احتساب سوابق منتقله و برخورداری از مزایای قانونی آن نزد صندوق تأمین اجتماعی فراهم خواهد شد.
+3-  به استناد قانون نحوۀ تأثیر سوابق منتقله بر صندوق تأمین اجتماعی ... مصوب 9/2/80 مجلس شورای اسلامی :
+3-1-سوابق منتقله عیناً در احراز شرایط و تعیین میزان مستمریهای ازکارافتادگی و فوت ملاک محاسبه قرار خواهد گرفت .
+3-2-سوابق منتلقه در صورتی در احراز شرایط مستمری بازنشستگی قابل احتساب می باشد که بیمه شده در زمان درخواست بازنشستگی دارای حداقل سابقه پرداخت حق بیمه مقرر در قانون تأمین اجتماعی ( که در حال حاضر برای این قبیل افراد 10 سال تمام    می باشد) و تغییرات بعدی را نزد صندوق تأمین اجتماعی باشد.
+4-به موجب قانون استفساریه قانون نحوۀ تأثیر سوابق منتقله ... مصوب 7/11/83 مجلس شورای اسلامی ، متقاضیانی که تاریخ بازخریدی آنان از محل خدمت گذشته و در نتیجه خروج از شمول مقررات صندوقی که قبلاً مشترک آن بوده اند قبل از تاریخ 9/2/80  می باشد یا به هر نحو قبل از تاریخ اخیرالذکر طبق ضوابط قانونی بیمه پرداز صندوق تأمین اجتماعی شده اند ، صرفنظر از تاریخ ارائه درخواست انتقال کسور و همچنین پرداخت مابه التفاوت متعلقه به شعبه ذیربط ( حسب ضوابط مربوطه )  قبل یا بعد از تاریخ 9/2/80 ، مجموع سوابق منتقله از سایر صندوقها و سوابق پرداخت حق بیمه آنان نزد صندوق تأمین اجتماعی برای احراز شرایط بازنشستگی ملاک محاسبه خواهد بود.
+5- نحوۀ محاسبۀ مابه التفاوت متعلقه ناشی از انتقال کسور بازنشستگی مشمولین قانون نقل وانتقال حق بیمه یا بازنشستگی مصوب 27/3/65 مجلس شورای اسلامی ( افرادیکه رابطۀ استخدامی آنان با دستگاه دولتی قبلی به واسطه استعفاء ، اخراج ، انفصال دائم ، بازخرید خدمت عادی " به جز قانون تعدیل "و انتقال قطع گردیده یا می گردد) به استناد تبصره های الحاقی به آئین نامه اصلاحی تبصره «3» ماده واحده قانون مذکور مصوب 3/8/77 هیأت وزیران به شرح زیر خواهد بود. ضمناً  مابه­التفاوت متعلقه سهم این قبیل بیمه شدگان متقاضی به اقساط ماهانه ( حداکثر معادل عدد سنوات خدمت) قابل وصول می باشد.
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="13102295-2446-487f-bdd2-23986193f929" x="482" y="288" width="63" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[میزان وجوه منتقله از صندوق قبلی
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e8ccd9cd-65c7-4fdc-8d0a-a61ddd3d4cae" x="399" y="288" width="79" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مدت سابقه خدمت  که بابت آن کسور منتقل شده (به روز)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f46f434-9855-46fa-9952-917429f8f025" x="143" y="288" width="256" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[آخرین حقوق و مزایای مبنای برداشت کسور (روزانه)درمحل خدمت قبلی یا حقوق و مزایای مبنای کسر حق بیمه (روزانه) زمان تقاضا در محل خدمت جدید  ( هرکدام بیشتر باشد )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d3eb2058-0555-41e8-8fd5-1f6b7697a442" x="103" y="288" width="40" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[%18]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c3e1329-f41c-4d59-a75a-ed95a68446df" x="33" y="288" width="70" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[= مابه  التفاوت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7972db79-a0c6-4747-aabe-34958837e61d" x="31" y="354" width="510" height="59"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[6-نحوۀ محاسبه مابه التفاوت متعلقه ناشی از انتقال کسور مشمولین ماده یک قانون نحوه تعدیل نیروی انسانی دستگاههای دولتی مصوب 27/10/66 مجلس شورای اسلامی (افرادیکه به استناد قانون اصلاح تبصره یک ماده 74 قانون استخدام کشوری ازدستگاههای دولتی بازخرید شده­اند) به استناد ماده یک اصلاحی آئین نامه اجرائی قانون مزبور مصوب 3/8/77 هیأت وزیران به شرح زیر خواهد بود که از متقاضی وصول می گردد. ضمناً مبلغ مابه التفاوت متعلقه برای این قبیل مشمولین حداکثر یک ماه پس از ابلاغ به طور یکجا قابل وصول می باشد.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="117741c8-7f9f-40e0-a850-5902c7524696" x="146" y="413" width="257" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[آخرین حقوق و مزایای مبنای برداشت کسور بازنشستگی (روزانه)درصندوق قبلی یا حداقل دستمزد ( روزانه ) کارگر عادی در زمان پرداخت مابه التفاوت  ( هرکدام بیشتر باشد )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c32419b2-46c3-42fc-9c5b-f97ed9068728" x="37" y="413" width="70" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[= مابه  التفاوت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="67cc2b02-b51e-4847-a8d2-2e16b828206d" x="482" y="413" width="63" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[میزان وجوه منتقله از صندوق قبلی
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="df9e2b88-d4d5-4645-b906-4efb4c87a543" x="107" y="413" width="39" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[%15]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="89e95e26-91a4-449e-8368-4c6bc7328b42" x="403" y="413" width="79" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مدت سابقه خدمت  که بابت آن کسور منتقل شده (به روز)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="62efe7ff-4a7b-4188-bb5e-a21082d2f1af" x="146" y="536" width="248" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[آخرین حقوق و مزایای مبنای برداشت کسور بازنشستگی (روزانه) در صندوق قبلی یا اولین حقوق و مزایای مبنای کسر حق بیمه (روزانه) در صندوق  تأمین اجتماعی ( هر کدام بیشتر باشد)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e1c23cb8-fb1b-4888-96a5-65f981acf681" x="36" y="536" width="70" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[= مابه  التفاوت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7612d6e3-bb42-4401-887c-5ae4ea664e3b" x="473" y="536" width="63" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[میزان وجوه منتقله از صندوق قبلی
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c9ee38e0-cb04-4e42-adca-6955dc60dffd" x="106" y="536" width="40" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[%21]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="573ec253-6c02-4753-9dfc-3c2fe17aa867" x="394" y="536" width="79" height="64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="false" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مدت سابقه خدمت  که بابت آن کسور منتقل شده (به روز)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cef1823d-1df9-4941-9d74-bb3781cfd164" x="35" y="477" width="510" height="59"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[7- نحوه محاسبه مابه التفاوت متعلقه ناشی از تغییر صندوق بازنشستگی افرادیکه با تمایل خود صندوق قبلی خود را تغییر و به عضویت صندوق تأمین اجتماعی درآمده اند. (موضوع مشمولین ماده 42 قانون برنامه سوم توسعه دولت که به ترتیب به موجب ماده 103 و بند «ب» ماده 28 قوانین برنامه های چهارم و پنجم توسعه تنفیذ گردیده است) تا تصویب آئین نامه قانون اخیرالذکر به استناد ماده 4 ضوابط اجرائی قانون مذکور مصوب 27/3/80 هیأت وزیران طبق روش زیر محاسبه و تماماً از بیمه شده به صورت نقد یا اقساط ماهانه قابل وصول  می باشد.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e7ab885-782c-4769-884e-15aadfd4b392" x="29" y="600" width="510" height="72"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true" isItalic="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تذکر: با توجه به اینکه طبق ضوابط قانونی تغییر صندوق بیمه ای با تقاضای کتبی بیمه شده به صندوق جدید و مورد انتخاب صورت می­پذیرد، لذا پس از انتقال کسور بازنشستگی به حساب صندوق تأمین اجتماعی (صندوق جدید بیمه شده) انصراف از آن امکانپذیر نمی باشد.
+8-  چنانچه بیمه شده ( متقاضی ) انتقال کسور ظرف مهلت مقرر نسبت به پرداخت مابه التفاوت متعلقه اقدام ننماید ، پذیرش سوابق مورد نظر در کلیه موارد با اخذ درخواست جدید و تجدید محاسبه با رعایت ضوابط قانونی مربوط میسر خواهد بود.]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

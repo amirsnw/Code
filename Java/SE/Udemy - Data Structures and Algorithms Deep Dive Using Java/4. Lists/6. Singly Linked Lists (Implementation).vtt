@@ -1,0 +1,688 @@
+WEBVTT
+
+00:05.440 --> 00:10.280
+Tudo bem, então vamos implementar uma simples classe de lista vinculada.
+
+00:10.430 --> 00:16.100
+Eu criei um projeto que eu estou colocando o código na academia de pacotes para aprender programação tenho
+
+00:16.220 --> 00:20.710
+listas vinculadas que criei são para funcionários que usamos no vídeo da lista de matriz.
+
+00:20.720 --> 00:27.380
+Desta vez, eu os atribuímos a variáveis ​​de funcionários e também adicionei a classe Employee e tudo o que
+
+00:27.380 --> 00:33.590
+fiz foi copiado e colado a classe do projeto de lista de arrays, então é uma classe simples.
+
+00:33.590 --> 00:37.650
+Nós temos três campos e apenas temos o código padrão habitual.
+
+00:37.670 --> 00:41.230
+Nós temos o nosso método equals e temos a nossa substituição para string.
+
+00:41.330 --> 00:48.610
+Ok, então a primeira aula em que trabalharemos é a classe Node e essa classe vai precisar de duas variáveis, uma para
+
+00:48.710 --> 00:55.340
+a instância do funcionário e outra para o próximo nó da lista, porque lembre-se de quando estamos trabalhando com uma
+
+00:55.340 --> 00:59.540
+lista vinculada a cada nó sabe sobre o próximo nó na lista.
+
+00:59.540 --> 01:03.950
+E então precisamos de um campo que contenha uma referência ao próximo nó na lista.
+
+01:03.950 --> 01:06.650
+E é por isso que a estrutura de dados é chamada de lista vinculada.
+
+01:06.650 --> 01:08.730
+Se você ainda não tivesse percebido isso.
+
+01:08.930 --> 01:15.000
+Agora, em Java by contém um link, significa que ele armazena a referência do objeto do próximo nó.
+
+01:15.050 --> 01:22.940
+Então, vamos adicionar uma classe de nó, então eu direi nova classe Java e vou chamar esse nó de funcionário em
+
+01:22.940 --> 01:28.880
+vez de simplesmente nó antigo porque não vou usar genéricos para escrever essa lista de links.
+
+01:28.880 --> 01:34.550
+Quero que nos concentremos apenas na implementação da lista vinculada e, além disso, você não vai escrever sua
+
+01:34.550 --> 01:35.410
+própria lista vinculada.
+
+01:35.410 --> 01:37.490
+Você acabará usando o do JDK.
+
+01:37.550 --> 01:43.490
+E mesmo que você tenha escrito uma classe de lista vinculada para seu aplicativo, você provavelmente a tornará específica para o tipo de
+
+01:43.490 --> 01:44.930
+dados com o qual está lidando.
+
+01:44.930 --> 01:49.520
+A única razão pela qual você precisaria usar genéricos é se você
+
+01:49.520 --> 01:54.610
+vai escrever uma classe que será lançada publicamente e que muitos aplicativos irão usá-la.
+
+01:54.680 --> 02:00.920
+E nesse caso, você gostaria de usar genéricos, porque você gostaria que fosse utilizável com uma variedade de tipos
+
+02:00.920 --> 02:01.600
+de objetos.
+
+02:01.850 --> 02:06.290
+Mas, para nossos propósitos, vamos nos concentrar apenas na implementação da lista encadeada.
+
+02:06.290 --> 02:10.760
+Portanto, não vou usar genéricos e, por isso, estou chamando esse nó de funcionário
+
+02:10.760 --> 02:14.500
+para deixar claro que esse nó só funcionará com instâncias de funcionários.
+
+02:15.180 --> 02:19.210
+OK, então como eu disse que vamos comer dois campos, vamos precisar de
+
+02:22.820 --> 02:28.900
+um para o funcionário e vamos precisar de um campo que armazene uma referência ao próximo nó da lista.
+
+02:29.150 --> 02:32.680
+Então, vamos ligar para o próximo.
+
+02:32.680 --> 02:40.960
+Então, para o construtor, nós só precisamos dos funcionários, então eu direi o nó do funcionário público
+
+02:40.960 --> 02:44.300
+e só precisamos do funcionário para isso.
+
+02:44.500 --> 02:50.190
+E então, vamos apenas dizer que este funcionário do ponto é igual ao empregado.
+
+02:51.460 --> 02:57.010
+E para tornar as coisas mais rápidas e fáceis, vou ter a ideia de apenas criar um monte
+
+02:57.010 --> 03:02.920
+de conjuntos e obter tudo o que dizem gerar getter e setter Eu quero isso para ambos os campos.
+
+03:03.160 --> 03:04.990
+Clique em OK e lá vamos nós.
+
+03:04.990 --> 03:12.550
+Nós temos nossos conjuntos e obtemos para que o construtor use apenas o funcionário, pois quando construímos uma instância
+
+03:12.580 --> 03:15.740
+ainda não sabemos qual será o próximo nó.
+
+03:15.850 --> 03:20.980
+Mais tarde veremos quando implementamos o método de inserção, criamos o nó primeiro
+
+03:21.160 --> 03:25.560
+e depois descobrimos qual nó deve ser atribuído ao próximo campo.
+
+03:25.570 --> 03:31.300
+Agora, como vimos nos slides, se um nó é o último nó da lista, o que significa que não há
+
+03:31.300 --> 03:34.370
+nenhum nó seguindo-o, então o próximo campo será definido como Não.
+
+03:34.420 --> 03:37.890
+E quando atravessamos Syllis É assim que saberemos que chegamos ao fim.
+
+03:37.900 --> 03:43.550
+Não precisamos definir o próximo ao Knol no construtor, porque esse é o valor padrão para os campos Objeto.
+
+03:43.600 --> 03:46.210
+OK, então temos uma classe para o nó.
+
+03:46.240 --> 03:48.130
+E sobre a lista ligada em si.
+
+03:48.130 --> 03:53.500
+Bem, como vimos nos slides, tudo o que precisamos saber para a lista encadeada é o nó principal.
+
+03:53.530 --> 03:54.280
+É isso aí.
+
+03:54.280 --> 04:00.230
+A partir daí, controvertimos a lista inteira porque cada nó da lista contém um link para o próximo nó.
+
+04:00.280 --> 04:09.820
+E então vamos criar uma classe para nossa lista de links e eu vou chamar essa lista vinculada de funcionários mais uma vez para
+
+04:09.820 --> 04:16.510
+deixar claro que isso só funciona com anotações de funcionários e isso só precisa de um campo
+
+04:16.510 --> 04:20.340
+que precisa de um campo para os nós principais empregado
+
+04:23.520 --> 04:24.280
+sem cabeça.
+
+04:24.340 --> 04:25.120
+É isso aí.
+
+04:25.120 --> 04:31.000
+Tudo bem, então vamos dizer que queremos adicionar um item à lista vinculada para o melhor desempenho.
+
+04:31.000 --> 04:36.100
+Devemos adicionar itens ao início para que não tenhamos que percorrer a lista procurando um ponto
+
+04:36.100 --> 04:36.820
+de inserção.
+
+04:36.880 --> 04:40.240
+Então, vamos codificar um anúncio para o método frontal.
+
+04:40.570 --> 04:49.390
+Então, vamos dizer que o vazio público teve que ser usado e precisamos da instância do funcionário que queremos adicionar.
+
+04:50.500 --> 04:55.780
+Então, vamos dizer que o nó do nó do empregado é igual ao novo nó do funcionário.
+
+04:55.810 --> 05:03.190
+E nós só temos que passar o empregado e, em seguida, precisamos definir este novo próximo campo de nós Bem,
+
+05:03.190 --> 05:09.610
+é novo nós próximo campo vai apontar para qualquer cabeça está apontando, porque quando nós adicionamos um
+
+05:09.640 --> 05:16.870
+novo não para a frente da lista O atual chefe da lista agora se tornará o segundo nó na
+
+05:16.870 --> 05:17.260
+lista.
+
+05:17.260 --> 05:22.380
+E então este novo nó vai apontar para a cabeça atual como vimos nos slides.
+
+05:22.420 --> 05:27.090
+Então, vamos dizer não definir próxima cabeça.
+
+05:27.310 --> 05:32.780
+E então, claro, a última coisa que queremos fazer é definir a cabeça para o novo nó.
+
+05:32.800 --> 05:37.420
+Então, se você está tendo problemas para entender isso, volte para os slides, mas
+
+05:37.420 --> 05:43.840
+essencialmente estamos inserindo o nó bem na frente da lista, então não diga que nossa lista contém a funcionária Jane
+
+05:43.840 --> 05:50.350
+e estamos inserindo John enquanto estamos na frente. O campo estará apontando para Jane quando terminarmos de inserir John, queremos
+
+05:50.350 --> 05:54.810
+que John esteja apontando para Jane e o campo principal apontando para John.
+
+05:54.820 --> 05:59.650
+Então, primeiro criamos o novo nó e depois definimos John, que é o novo não.
+
+05:59.650 --> 06:05.980
+O próximo campo de John para Jane, porque atualmente é o que está sendo apontado pela cabeça e, em seguida, dissemos que
+
+06:06.010 --> 06:06.990
+tinha a John.
+
+06:07.090 --> 06:12.520
+E assim acabamos com um campo de cabeça que aponta para o próximo campo de John e John, aponta para Jane.
+
+06:12.640 --> 06:14.520
+Vou apenas deletar essa linha em branco aqui.
+
+06:14.530 --> 06:21.320
+E agora vamos voltar ao nosso método principal e vamos criar uma lista vinculada e adicionar alguns funcionários a ela.
+
+06:21.640 --> 06:31.000
+Então, vamos dizer lista de funcionários ligados e eu vou chamar lista é igual a nova lista de funcionários ligados
+
+06:31.000 --> 06:42.490
+e, em seguida, vamos dizer lista de ponto adicionar à frente e vamos adicionar lista de Jane Jones ponto adicionar à lista Jondo frente adicionar
+
+06:43.030 --> 06:47.360
+à frente Mary Smith e vamos começar pela frente.
+
+06:47.440 --> 06:53.380
+Mike Wilson e vamos precisar de uma maneira de imprimir nossa lista, então vamos voltar para nossa classe de lista vinculada
+
+06:53.380 --> 06:55.670
+e adicionar um método de lista de impressão.
+
+06:56.080 --> 07:03.140
+Então, nós vamos dizer public void print list e nós vamos fazer o mesmo.
+
+07:03.200 --> 07:10.080
+Nenhuma corrente é igual à cabeça da lista porque vamos começar de
+
+07:10.080 --> 07:15.280
+cabeça e vou imprimir algo aqui que diz cabeça.
+
+07:17.050 --> 07:20.530
+E então queremos continuar a percorrer a lista até os hits atuais.
+
+07:20.530 --> 07:21.050
+Não.
+
+07:21.160 --> 07:24.050
+Então minha corrente de parede atual não é igual a não.
+
+07:24.250 --> 07:32.110
+Porque quando ele atinge o conhecimento, chegamos ao fim da lista e digamos que o sistema sai da corrente de impressão
+
+07:32.110 --> 07:39.110
+e eu vou mudar isso para imprimir também porque eu não quero que seja impresso em sua própria linha.
+
+07:41.110 --> 07:42.760
+E então todos imprimir por conta própria
+
+07:45.990 --> 07:48.260
+e, em seguida, queremos passar para o próximo não.
+
+07:48.460 --> 07:52.020
+Então atual é igual ao atual doc.
+
+07:52.030 --> 07:53.080
+Agora isso não é perfeito.
+
+07:53.080 --> 07:55.370
+Nós vamos acabar com uma flecha depois.
+
+07:55.380 --> 07:58.480
+Mas eu posso dizer que o sistema saiu da linha de impressão.
+
+07:58.510 --> 07:59.130
+Não.
+
+07:59.200 --> 08:03.520
+E assim o último item da lista será não.
+
+08:03.520 --> 08:05.010
+Agora isso vai funcionar bem.
+
+08:05.020 --> 08:10.960
+Mas o que veremos agora, se chamarmos isso, é um monte de referências a objetos, porque sobrescrevemos o
+
+08:11.170 --> 08:16.810
+funcionário e sobrescrevemos o método e o funcionário de duas strings, mas não o anulamos em nossa
+
+08:16.810 --> 08:18.040
+classe de nó.
+
+08:18.040 --> 08:19.820
+Então vamos fazer isso agora.
+
+08:21.170 --> 08:27.350
+E o que eu realmente quero imprimir é a informação do funcionário, quando imprimimos, as notas são apenas
+
+08:27.350 --> 08:29.900
+chamadas de funcionários para o método string.
+
+08:30.260 --> 08:38.720
+Então eu vou dizer string pública para string e eu quero retornar o ponto empregado para string.
+
+08:38.720 --> 08:45.780
+E assim, quando imprimimos um nó, o que realmente será impresso é o resultado desse método de duas cadeias.
+
+08:45.850 --> 08:54.670
+Então vamos chamar nosso método de lista de impressão agora e vamos rodar.
+
+08:54.730 --> 09:00.460
+OK, então temos a cabeça da nossa lista e, em seguida, você verá que Mike Wilson vem em primeiro lugar.
+
+09:00.460 --> 09:06.820
+Nós adicionamos o Gene primeiro, mas estamos constantemente adicionando novos funcionários à frente da lista, então toda
+
+09:06.820 --> 09:11.430
+vez que adicionarmos um novo funcionário, os funcionários existentes serão eliminados da lista.
+
+09:11.440 --> 09:16.810
+Então nós adicionamos Mike por último, então ele será o líder da lista,
+
+09:17.110 --> 09:27.430
+porque estamos sempre adicionando à frente, seguido por Mary Smith seguido por Jondo e seguido por Jane Jones e ela estará apontando para não, porque ela
+
+09:27.430 --> 09:30.130
+é o último nó em a lista.
+
+09:30.130 --> 09:35.410
+E isso é tudo o que há para inserir um nó na lista vinculada na frente da lista.
+
+09:35.410 --> 09:41.470
+Agora podemos escrever um método que adicione funcionários ao final da lista ou que você saiba que parece
+
+09:41.470 --> 09:46.960
+um funcionário muito específico na lista e adicione um funcionário depois desse funcionário ou antes do empregado.
+
+09:47.050 --> 09:53.500
+Mas esses métodos serão da ordem de oh evento eles serão lineares porque então nós temos que percorrer a lista
+
+09:53.500 --> 09:57.910
+e o pior caso sempre será que nós temos que percorrer toda a lista.
+
+09:57.970 --> 10:00.430
+Isso seria verdade se quiséssemos adicionar uma nota ao final.
+
+10:00.430 --> 10:07.120
+Agora, algumas implementações da lista encadeada terão um ponteiro para o final da lista, o último nó da lista,
+
+10:07.120 --> 10:11.200
+mas essa não é realmente uma lista vinculada única e verdadeira.
+
+10:11.200 --> 10:16.360
+É uma variação deles, mas você poderia fazer isso se você pensasse que você iria querer adicionar
+
+10:16.360 --> 10:22.180
+itens ao final da lista constantemente, você poderia manter uma referência ao último para o último nó na lista que
+
+10:22.180 --> 10:23.340
+é chamado de cauda.
+
+10:23.350 --> 10:28.230
+Mas, para a implementação da lista de discussão, é apenas manter a referência à cabeça.
+
+10:28.420 --> 10:34.630
+Se você quiser inserir itens no final, você terá que percorrer toda a lista e, de qualquer forma, se
+
+10:34.630 --> 10:40.060
+você manteve uma referência à cauda ou não, se quiser inserir itens em um ponto específico
+
+10:40.060 --> 10:44.530
+da lista, como antes um funcionário específico, você terá que percorrer a lista
+
+10:44.530 --> 10:45.440
+procurando esse funcionário.
+
+10:45.520 --> 10:52.390
+E assim, uma lista vinculada individualmente é melhor usada quando você deseja inserir e remover itens da frente
+
+10:52.390 --> 10:53.290
+da lista.
+
+10:53.290 --> 10:59.040
+Agora, a outra coisa a notar é que uma lista vinculada pode continuar a crescer sem precisar ser redimensionada.
+
+10:59.040 --> 11:01.720
+Lembre-se com matrizes, uma vez que a matriz é queda.
+
+11:01.720 --> 11:04.680
+Se quisermos adicionar mais itens a ele, temos que redimensionar o array.
+
+11:04.840 --> 11:09.100
+Mas isso não é verdade em relação a uma lista encadeada com uma lista encadeada que você está apenas limitada
+
+11:09.100 --> 11:10.260
+pela memória que tem agora.
+
+11:10.270 --> 11:15.940
+Falando sobre a memória uma desvantagem para uma lista vinculada é que você tem que armazenar esse campo extra com todos
+
+11:15.940 --> 11:16.620
+os valores.
+
+11:16.690 --> 11:21.790
+Você não precisa fazer isso com matrizes, portanto, se a memória estiver realmente restrita, isso pode ser uma desvantagem do uso
+
+11:21.790 --> 11:22.780
+de uma lista vinculada.
+
+11:22.780 --> 11:28.780
+Mesmo que você queira apenas adicionar e excluir itens da frente, se a memória estiver apertada e você tiver
+
+11:28.780 --> 11:32.430
+muitos itens, talvez uma lista vinculada não seja sua melhor escolha.
+
+11:32.440 --> 11:37.310
+Então, como de costume, vai depender do seu aplicativo a plataforma que você está executando, o que o aplicativo
+
+11:37.310 --> 11:39.090
+vai querer fazer com os dados, etc. Não há uma resposta única para todos.
+
+11:39.100 --> 11:41.760
+Tudo bem, então vamos dizer que queríamos saber quantos itens estão na lista de links.
+
+11:41.770 --> 11:45.130
+Bem, poderíamos percorrer a lista e contar quantos itens existem,
+
+11:45.130 --> 11:50.470
+mas outra maneira de fazer isso seria apenas manter uma contagem de quantos nós estão na lista.
+
+11:50.470 --> 11:53.890
+E nós vamos fazer isso dessa maneira.
+
+11:53.890 --> 11:56.180
+Então, vamos voltar para a nossa classe de lista vinculada e vamos adicionar um campo de tamanho.
+
+11:56.350 --> 12:00.820
+É também um tamanho privado e que será inicializado como zero por padrão
+
+12:00.950 --> 12:07.360
+quando a lista é criada e, em seguida, sempre que adicionarmos um funcionário, é claro que queremos incrementar o
+
+12:07.390 --> 12:13.150
+tamanho e seria bom para nós ter um desconto. porque é rápido, tão público que ganha tamanho.
+
+12:13.150 --> 12:19.100
+E nós apenas retornamos o tamanho.
+
+12:19.690 --> 12:21.590
+Então, vamos voltar ao
+
+12:21.730 --> 12:27.940
+nosso método principal e chamar nosso método get size depois que adicionamos esses funcionários
+
+12:27.940 --> 12:41.310
+dizem que o sistema não tem tamanho de lista de impressão e você deve obter para ele é executado e com certeza nós temos quatro funcionários em nossa lista.
+
+12:41.340 --> 12:42.330
+Então, podemos adicionar o método vazio que nos informa se a lista vinculada está vazia.
+
+12:42.510 --> 12:47.640
+Poderíamos apenas chamar para obter o método de tamanho e testar se o número de itens na lista é zero.
+
+12:47.640 --> 12:53.300
+Mas há outra maneira de testar se uma lista está vazia.
+
+12:53.310 --> 12:56.070
+Você pode pensar sobre o que é isso se olharmos para
+
+12:56.070 --> 13:01.380
+a implementação da lista encadeada por um minuto? Você pode criar uma maneira rápida de testar se uma lista encadeada está vazia?
+
+13:01.380 --> 13:06.250
+Bem, se a cabeça não é isso significa que a lista está vazia.
+
+13:06.420 --> 13:09.760
+Certo.
+
+13:09.780 --> 13:10.310
+Porque cabeça não é, não está apontando para nenhum nó.
+
+13:10.380 --> 13:12.930
+Então, uma maneira de escrever
+
+13:13.020 --> 13:22.650
+um método vazio é dizer que booleano público está vazio e lemos que retorno é igual a não.
+
+13:22.680 --> 13:25.930
+E assim, se voltarmos para o principal Agora, nós
+
+13:26.310 --> 13:32.730
+chamamos isso logo no topo antes de adicionarmos qualquer coisa e dizemos que o sistema não foi retirado.
+
+13:32.730 --> 13:33.290
+A lista de linhas de impressão está vazia, devemos ser verdadeiras aqui.
+
+13:33.310 --> 13:37.590
+Vamos correr e com certeza nos tornamos verdade.
+
+13:38.160 --> 13:42.750
+Nossa lista está vazia antes de adicionarmos alguma coisa a ela.
+
+13:42.770 --> 13:45.970
+OK, então o último método Vamos
+
+13:46.040 --> 13:51.290
+ver como removemos itens da frente e vimos isso nos slides.
+
+13:51.290 --> 13:51.830
+Vamos para
+
+13:51.830 --> 13:57.650
+a nossa classe de lista vinculada e vamos escrever o símbolo do método para dizer public e vamos retornar a nota que removemos.
+
+13:57.650 --> 13:59.630
+Caso o chamador queira fazer alguma coisa com ele, digamos remover do francês.
+
+14:00.080 --> 14:05.830
+Nós não precisamos passar nada, porque nós estamos sempre indo para remover o não.
+
+14:05.900 --> 14:09.490
+Isso está bem na frente.
+
+14:09.500 --> 14:10.790
+Então, a primeira coisa que
+
+14:10.910 --> 14:15.910
+precisamos fazer é testar se a lista está vazia, porque se a lista estiver vazia, não há nada para remover.
+
+14:15.920 --> 14:17.000
+Então, vamos dizer se está vazio, vamos apenas retornar.
+
+14:17.000 --> 14:21.690
+Não, nós não temos, não temos nada para fazer.
+
+14:21.690 --> 14:25.830
+Se a lista não estiver vazia, o que vamos fazer é armazenar a primeira nota e a lista.
+
+14:26.070 --> 14:33.680
+Eu chamarei esse nó de remoção.
+
+14:33.780 --> 14:35.180
+Isso é o que eu chamei nos slides é o nó principal.
+
+14:35.190 --> 14:39.480
+Certo.
+
+14:39.510 --> 14:40.050
+Então a
+
+14:40.050 --> 14:45.300
+nota que vamos remover é apontada pela cabeça Não, essa é a referência de objeto armazenada no campo principal.
+
+14:45.360 --> 14:46.860
+Então, vamos atribuir isso
+
+14:46.860 --> 14:54.460
+para remover o nó e, em seguida, queremos mover a cabeça a cabeça será igual a um ponto de cabeça a seguir.
+
+14:54.470 --> 14:55.490
+Então, se tivermos
+
+14:55.500 --> 15:01.800
+a situação em que estamos apontando para Mike, a cabeça está apontando para Mike e queremos que Mike seja removido.
+
+15:01.800 --> 15:02.690
+Queremos que o campo principal aponte para o que o próximo campo de Mike estiver apontando.
+
+15:02.700 --> 15:07.530
+Então, porque agora esse é o segundo item na lista e que vai se tornar a
+
+15:07.560 --> 15:11.550
+frente da lista quando Mike for removido, então é isso que estamos fazendo aqui.
+
+15:11.550 --> 15:14.270
+Claro que temos que documentar o tamanho porque agora teremos um último item.
+
+15:14.310 --> 15:19.030
+E finalmente retornamos o nó removido.
+
+15:19.050 --> 15:22.760
+Agora, se quisermos que seja realmente diligente, poderíamos dizer que foi removido.
+
+15:23.490 --> 15:27.060
+No dot set next não e isso removeria completamente o Mike ou quem quer que estivéssemos saindo da lista.
+
+15:27.120 --> 15:35.530
+E isso vai ser uma nota isolada novamente.
+
+15:35.550 --> 15:38.120
+Mas nós realmente não temos que fazer isso porque
+
+15:38.130 --> 15:43.270
+o fato de que o próximo campo ainda está definido para um nó e a lista não significa que
+
+15:43.270 --> 15:49.440
+podemos alcançar o nó que estamos removendo porque o campo principal agora aponta para o nó depois o nó que estamos removendo.
+
+15:49.440 --> 15:51.530
+Mas poderíamos fazer isso apenas para estarmos realmente limpos e nos certificarmos de que estamos limpando todas as referências.
+
+15:51.570 --> 15:57.470
+Então, vamos para o método principal agora e vamos remover o item
+
+15:57.510 --> 16:03.210
+na frente da lista, então depois de adicionarmos nossos quatro ou
+
+16:03.300 --> 16:14.160
+quatro funcionários e imprimi-los, vamos dizer lista remover da frente e vamos imprimir o tamanho do sistema novamente a linha de impressão.
+
+16:14.160 --> 16:17.190
+Vamos obter o tamanho apenas para ter certeza
+
+16:17.440 --> 16:22.140
+de que estamos diminuindo o tamanho corretamente e depois imprimiremos nossa lista novamente.
+
+16:22.140 --> 16:22.920
+E então
+
+16:22.910 --> 16:24.000
+vamos rodar OK
+
+16:27.460 --> 16:34.530
+então aqui está nossa lista depois de adicionarmos quatro funcionários e veremos que Mike é o primeiro item da lista.
+
+16:34.530 --> 16:35.030
+E depois de ligarmos, somos movidos da frente.
+
+16:35.040 --> 16:37.470
+Nosso tamanho desce para três e veremos que Mary é agora a primeira funcionária da lista.
+
+16:37.470 --> 16:44.130
+E se formos ao final, veremos que a nossa lista é de um funcionário menor.
+
+16:44.990 --> 16:50.620
+Então, mais uma vez, se usar uma lista vinculada, uma matriz ou uma lista dependerá do que
+
+16:50.640 --> 16:55.980
+seu aplicativo quer fazer se quiser fazer um monte de acessos aleatórios, então uma lista encadeada
+
+16:55.980 --> 17:02.610
+seria uma má escolha, porque você sempre terá estar percorrendo a lista para chegar ao que você deseja acessar.
+
+17:02.610 --> 17:07.100
+Mas se você quiser carregar um monte de dados na lista e você sempre estará mais
+
+17:07.140 --> 17:11.670
+interessado no que estiver na frente da lista de links, essa pode ser uma boa escolha.
+
+17:11.670 --> 17:15.870
+Uma lista encadeada pode ser uma boa escolha para a
+
+17:15.960 --> 17:21.390
+estrutura de dados, dependendo do que mais seu aplicativo deseja fazer com os dados.
+
+17:21.390 --> 17:22.590
+Portanto, esta é uma implementação simples de uma lista ligada individualmente.
+
+17:22.710 --> 17:26.970
+Só para você ter uma ideia do que estaria acontecendo embaixo das
+
+17:26.970 --> 17:33.240
+capas e da implementação de uma lista vinculada no próximo vídeo, daremos uma olhada nas listas duplamente vinculadas.
+
+17:33.330 --> 17:36.670
+Eu te vejo lá.
+
+17:36.690 --> 17:37.620
+&nbsp;

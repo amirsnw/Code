@@ -1,0 +1,274 @@
+WEBVTT
+
+00:05.240 --> 00:11.080
+Neste vídeo, vamos começar a ver as listas de links. Uma lista de links é uma estrutura de dados.
+
+00:11.090 --> 00:13.340
+Diz a lista seqüencial de objetos.
+
+00:13.370 --> 00:17.430
+Mas desta vez as matrizes não estão envolvidas em uma lista vinculada.
+
+00:17.450 --> 00:24.500
+Cada item na lista está ciente de outro item na lista porque cada item na lista contém um
+
+00:24.500 --> 00:27.130
+link para o próximo item na lista.
+
+00:27.380 --> 00:34.040
+Agora, isso é diferente de arrays e listas que são apoiadas por arrays com um array, cada item na
+
+00:34.040 --> 00:40.820
+lista é completamente inconsciente de outros itens no array, mas os itens em uma lista vinculada sabem qual item
+
+00:40.820 --> 00:46.710
+vem depois deles e isso significa que temos que armazene alguma informação extra com cada item.
+
+00:46.790 --> 00:52.420
+Quando temos uma matriz de inteiros, temos apenas que armazenar o valor inteiro em cada posição.
+
+00:52.430 --> 00:58.610
+Mas quando se trata de uma lista vinculada, temos que armazenar o valor inteiro e temos que armazenar
+
+00:58.610 --> 01:01.210
+uma referência ao próximo número inteiro na lista.
+
+01:01.220 --> 01:06.290
+Então, quando chegarmos à implementação, vou usar a classe Employee que usamos quando analisamos
+
+01:06.290 --> 01:14.220
+as listas de arrays e, assim, na tela, eu tenho uma lista vinculada e isso seria Jane John Mary e Mike.
+
+01:14.240 --> 01:18.800
+E como podemos ver, esse bloco azul seria o objeto empregado.
+
+01:18.860 --> 01:24.050
+E então haverá um campo que contém uma referência ao próximo item da lista.
+
+01:24.050 --> 01:27.600
+Cada um desses itens é referido como um nó.
+
+01:27.650 --> 01:33.890
+E o primeiro item da lista é o cabeçalho da lista e o último item da lista sempre aponta para
+
+01:33.890 --> 01:34.330
+Não.
+
+01:34.340 --> 01:36.430
+Porque nada vem depois.
+
+01:36.440 --> 01:43.310
+E então o que nós teremos é uma classe de nó que contém um campo para qualquer dado que você
+
+01:43.310 --> 01:49.730
+esteja segurando no nó no nosso caso terá um campo de funcionário e então teremos um próximo campo e
+
+01:49.730 --> 01:55.910
+o próximo campo será do tipo nó porque cada nó aponta para o nó que vem depois dele.
+
+01:55.910 --> 01:58.260
+Agora vou inserir um spoiler aqui em Java.
+
+01:58.280 --> 02:00.410
+Você não implementaria uma lista vinculada.
+
+02:00.410 --> 02:01.800
+Há uma classe de lista vinculada.
+
+02:01.820 --> 02:08.210
+Mas para nos ajudar a entender o que é uma lista vinculada e quais são suas vantagens, codificaremos uma implementação simples.
+
+02:08.270 --> 02:14.630
+Então, como eu disse quando se trata de uma lista encadeada, haverá um campo principal e o chefe irá apontar para
+
+02:14.630 --> 02:16.330
+o primeiro item da lista.
+
+02:16.340 --> 02:21.060
+Então, se você tiver uma referência ao cabeçalho, poderá percorrer toda a lista.
+
+02:21.110 --> 02:24.640
+Você começaria na cabeça e então você iria para a próxima.
+
+02:24.650 --> 02:29.150
+E então você iria para o próximo campo que o próximo até chegar ao nº.
+
+02:29.210 --> 02:35.720
+Portanto, para uma lista vinculada, a única coisa que você precisa armazenar é uma referência ao cabeçalho ou ao primeiro nó
+
+02:35.720 --> 02:36.230
+da lista.
+
+02:36.260 --> 02:39.980
+E a partir disso você pode acessar todos os itens da lista.
+
+02:39.980 --> 02:44.420
+Então, vamos falar sobre o que teríamos que fazer para inserir um item nessa lista.
+
+02:44.450 --> 02:49.790
+Então, digamos que nós quiséssemos inserir o projeto de lei, enquanto a primeira coisa que teríamos que fazer é criar
+
+02:49.790 --> 02:54.640
+um novo nó para o Bill, de modo que tivéssemos uma caixa em algum lugar que contivesse o Bill.
+
+02:54.770 --> 03:02.180
+Quando se trata de listas vinculadas, você sempre insere um novo elemento na frente da lista e pode
+
+03:02.180 --> 03:06.260
+entender por que só armazenamos uma referência ao primeiro elemento.
+
+03:06.260 --> 03:11.660
+Então, se quiséssemos inserir um item em qualquer lugar além da frente, teríamos que percorrer a lista
+
+03:11.660 --> 03:12.530
+para chegar lá.
+
+03:12.560 --> 03:18.830
+E uma das vantagens de usar uma lista vinculada é que, se você inserir itens na frente da
+
+03:18.830 --> 03:24.950
+lista, poderá fazê-lo em complexidade de tempo constante, pois as etapas a serem executadas não dependem do número
+
+03:24.950 --> 03:26.190
+de itens na lista.
+
+03:26.240 --> 03:28.550
+Você sempre fará o mesmo número de etapas.
+
+03:28.550 --> 03:34.640
+Então, criamos um novo nó para o Bill e vamos colocar a conta aqui ou aparecer na frente.
+
+03:34.640 --> 03:36.830
+Bill vai querer apontar para Jane.
+
+03:36.860 --> 03:41.510
+Então, depois de criarmos o novo nó, atribuiremos o próximo campo, Jane.
+
+03:41.570 --> 03:47.480
+E então vamos atribuir a cabeça para Bill porque Bill será o novo líder da lista e então é só
+
+03:47.480 --> 03:53.930
+isso que temos que fazer para inserir uma nota que criamos a instância do nó real, apontamos o próximo campo no cabeçalho
+
+03:53.930 --> 03:57.800
+atual como um lista porque o novo nó vai se tornar o novo chefe.
+
+03:58.010 --> 04:03.800
+E então nós apontamos o campo principal para o novo Noack e isso sempre será uma complexidade de tempo constante, porque
+
+04:03.800 --> 04:04.720
+isso não importa.
+
+04:04.720 --> 04:09.410
+Você pode ter três itens em uma lista ou um milhão de itens na lista e você
+
+04:09.410 --> 04:13.420
+fará o mesmo número de etapas, desde que esteja inserindo na frente da lista.
+
+04:13.460 --> 04:16.500
+E assim, após a inserção, essa é a aparência da lista.
+
+04:16.520 --> 04:22.250
+O próximo campo de Bill aponta para Jane e o campo principal agora aponta para Bill porque ele está na
+
+04:22.250 --> 04:23.030
+frente da lista.
+
+04:23.030 --> 04:24.350
+Então, como sobre a exclusão?
+
+04:24.390 --> 04:29.410
+Agora, e se quisermos retirar a fatura e, mais uma vez, desejaremos excluir da frente para a lista.
+
+04:29.420 --> 04:34.270
+Caso contrário, teremos que percorrer a lista procurando o nó que queremos excluir.
+
+04:34.280 --> 04:39.410
+Agora, na implementação, mostrarei a você quando fizermos uma exclusão, retornaremos a observação que excluímos.
+
+04:39.410 --> 04:43.850
+Então, vamos primeiro atribuir a conta a uma variável temporária chamada nó removido.
+
+04:43.940 --> 04:45.190
+E então o que queremos fazer?
+
+04:45.200 --> 04:51.770
+Bem, tudo o que vamos fazer é passar a cabeça para Jane, porque isso remove efetivamente a fatura da lista,
+
+04:51.920 --> 04:56.360
+porque, para uma lista vinculada, o único tipo de informação que temos é essa.
+
+04:56.360 --> 05:03.410
+HADFIELD E se quebrarmos esse link para Bill e mudarmos de ideia, então ele está apontando para Jane.
+
+05:03.410 --> 05:08.470
+Bill efetivamente removeu da lista, não há como ir da cabeça para o Bill.
+
+05:08.510 --> 05:14.450
+E então, nesse ponto, retornaríamos o nó de remoção que anteriormente armazenamos no campo e isso é tudo o
+
+05:14.600 --> 05:18.110
+que precisamos fazer para excluir um nó da frente da lista.
+
+05:18.110 --> 05:23.030
+Mais uma vez, isso será uma complexidade de tempo constante, porque não importa quantos itens estão
+
+05:23.030 --> 05:25.640
+na lista, você fará o mesmo número de etapas.
+
+05:25.640 --> 05:31.210
+Então, depois que deletamos o Bill, essa é uma situação em que o Bill estará pendurado aqui.
+
+05:31.220 --> 05:37.090
+Ele ainda estará apontando para Jane, mas não há como chegarmos a ele do topo da lista.
+
+05:37.100 --> 05:42.400
+E se quiséssemos fazer a limpeza, poderíamos definir o próximo campo de Bill para sabermos se queríamos.
+
+05:42.410 --> 05:46.000
+E é isso para o tipo de teoria das listas vinculadas.
+
+05:46.010 --> 05:48.470
+Eles não são tão complicados.
+
+05:48.470 --> 05:50.540
+Eles são a segunda estrutura de dados que analisamos.
+
+05:50.540 --> 05:57.080
+O primeiro é arrays e eles diferem de um aumento em que, enquanto eles estão inserindo e excluindo
+
+05:57.080 --> 06:02.660
+da frente da lista as inserções e exclusões são feitas em tempo constante e isso
+
+06:02.660 --> 06:04.850
+é porque não há mudança envolvida.
+
+06:04.850 --> 06:12.890
+E esse tipo de lista é chamado de lista ligada unicamente porque temos um link entre cada nó em pouco tempo,
+
+06:12.890 --> 06:14.680
+e vamos ver a lista.
+
+06:14.690 --> 06:16.470
+É chamado de uma lista duplamente vinculada.
+
+06:16.520 --> 06:21.320
+Mas nós estamos começando com uma lista ligada individualmente e quando você está trabalhando com uma lista
+
+06:21.320 --> 06:27.590
+ligada individualmente você deseja inserir e excluir itens na frente da lista, porque você só tem uma referência ao chefe da lista
+
+06:27.590 --> 06:28.300
+de itens.
+
+06:28.310 --> 06:32.510
+Então, se você quiser inserir e excluir itens em qualquer outro lugar, você tem que começar de cabeça e
+
+06:32.510 --> 06:35.620
+você tem que percorrer toda a lista para encontrar o que você está procurando.
+
+06:35.620 --> 06:39.400
+Tudo bem, então agora que sabemos um pouco sobre a lista ligada individualmente, vamos implementar uma.
+
+06:39.410 --> 06:40.730
+Eu vou te ver no próximo vídeo.

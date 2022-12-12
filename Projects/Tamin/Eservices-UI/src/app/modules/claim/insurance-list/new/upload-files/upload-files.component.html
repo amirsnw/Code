@@ -1,0 +1,41 @@
+<div class="panel">
+  <div class="panel-title">بارگزاری فایل های لیست حق بیمه</div>
+  <div class="panel-body">
+    <div class="alert alert-info">
+      <i class="icon-info-circled"></i>
+      <span>بیمه شده گرامی، در این بخش امکان بارگزاری فایل لیست حق بیمه جدید فراهم شده است.</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="row">
+      <form [formGroup]="theForm" novalidate autocomplete="off">
+        <div class="col-6">
+          <tamin-field-label formControlName="workshop">کد / نام کارگاه</tamin-field-label>
+          <tamin-field-validator formControlName="workshop"></tamin-field-validator>
+          <tamin-field-auto-complete-data-grid
+            formControlName="workshop"
+            #workshopAutoComplete>
+          </tamin-field-auto-complete-data-grid>
+        </div>
+        <div class="col-6">
+          <tamin-field-label formControlName="contactTitle">ردیف پیمان</tamin-field-label>
+          <tamin-field-validator formControlName="contactTitle"></tamin-field-validator>
+          <tamin-field-static-text formControlName="contactTitle"></tamin-field-static-text>
+        </div>
+        <div class="col-6">
+          <tamin-field-label formControlName="file1">فایل اطلاعات ماهیانه کارگاه</tamin-field-label>
+          <tamin-field-validator formControlName="file1"></tamin-field-validator>
+          <tamin-field-file-upload formControlName="file1"></tamin-field-file-upload>
+        </div>
+        <div class="col-6">
+          <tamin-field-label formControlName="file2">فایل اطلاعات ماهیانه بیمه شدگان</tamin-field-label>
+          <tamin-field-validator formControlName="file2"></tamin-field-validator>
+          <tamin-field-file-upload formControlName="file2"></tamin-field-file-upload>
+        </div>
+      </form>
+    </div>
+    <div class="row" style="text-align: left">
+      <button type="button" class="button normal" (click)="redirectTo('il/workshop-history')">انصراف</button>
+      <button type="button" class="button normal" (click)="sendFiles()">ثبت لیست بیمه</button>
+    </div>
+  </div>
+</div>

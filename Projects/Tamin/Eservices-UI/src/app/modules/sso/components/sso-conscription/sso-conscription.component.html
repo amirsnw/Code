@@ -1,0 +1,249 @@
+<div class="alert alert-success">
+  <p>محاسبه حق بیمه مدت خدمت نظام وظیفه و حضور در جبهه</p>
+</div>
+
+<div class="alert alert-info">
+  <p><i class="icon-lightbulb"></i>
+    در این فرم نحوه محاسبه حق بیمه دوره خدمت نظام وظیفه و حضور در جبهه نمایش داده شده است.
+  </p>
+  <br>
+  <p><i class="icon-lightbulb"></i>
+    کلیه بیمه شدگان تامین اجتماعی در صورتیکه دارای دو سال سابقه بیمه پردازی نزد این سازمان باشند، می توانند درخواست
+    احتساب سوابق خدمت نظام وظیفه را ارائه نمایند و پس از پرداخت حق بیمه محاسبه شده، مدت خدمت و حضور در جبهه بعنوان
+    سابقه پرداخت حق بیمه متقاضی منظور خواهد شد. لازم به ذکر است متقاضی در زمان ارائه درخواست می بایست بیمه پرداز سازمان
+    باشد.
+  </p>
+  <br>
+  <p><i class="icon-lightbulb"></i>
+    اگر پیش از این درخواست احتساب سوابق خدمت نظام وظیفه و حضور درجبهه داده اید این محاسبات را نادیده بگیرید. این
+    محاسبات صرفا برای کسانی است که تاکنون درخواست مذکور را ارائه نکرده باشند.
+  </p><br>
+  <p><i class="icon-lightbulb"></i>
+    در صورتیکه متوسط دستمزد دو سال آخر بیمه شده، کمتر از حداقل دستمزد مصوب سال باشد، دستمزد مبنای محاسبه برابر با حداقل
+    دستمزد مصوب سال خواهد بود.
+  </p>
+</div>
+<div class="alert alert-danger" *ngIf="!isEligible">
+  کاربر گرامی، سابقه بیمه پردازی این شخص کمتر ار دو سال بوده و در حال حاضر واجد شرایط استفاده از این سرویس نمی باشد.
+</div>
+<div class="panel" *ngIf="isEligible">
+  <div class="page-title">
+    محاسبه حق بیمه سربازی
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="calculateDataForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-12">
+          <div class="panel">
+            <div class="panel-title">جستجو</div>
+            <div class="panel-body">
+              <app-conscription-search (afterSubmit)="onSearch($event)"></app-conscription-search>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="panel-body">
+            <div class="col-2">
+              <tamin-field-label formControlName="insuranceNumber">شماره بیمه</tamin-field-label>
+              <tamin-field-static-text formControlName="insuranceNumber"></tamin-field-static-text>
+            </div>
+            <div class="col-2">
+              <tamin-field-label formControlName="firstName">نام</tamin-field-label>
+              <tamin-field-static-text formControlName="firstName"></tamin-field-static-text>
+            </div>
+            <div class="col-2">
+              <tamin-field-label formControlName="lastName">نام خانوادگی</tamin-field-label>
+              <tamin-field-static-text formControlName="lastName"></tamin-field-static-text>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="panel-body">
+            <div class="col-4">
+              <tamin-field-label formControlName="duration">مدت خدمت (ماه)</tamin-field-label>
+              <tamin-field-mask formControlName="duration" mask="00"></tamin-field-mask>
+              <div class="hint"><i class="icon-lightbulb"></i><span>بین ۱ تا ۳۰ ماه</span></div>
+            </div>
+            <div class="col-4">
+              <tamin-field-label formControlName="wageAverage">متوسط دستمزد ماهانه دو سال آخر</tamin-field-label>
+              <tamin-field-static-text formControlName="wageAverage"></tamin-field-static-text>
+            </div>
+            <div class="col-4">
+              <tamin-field-label formControlName="amount">مبلغ قابل پرداخت توسط بیمه شده (ریال)</tamin-field-label>
+              <tamin-field-static-text formControlName="amount"></tamin-field-static-text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="alert alert-info">
+      <h3 style="text-align: center; color: white; border-bottom: dotted 1px white">طریقه محاسبه</h3>
+
+      <br>
+      <p style="text-align: center">
+        <span style="background-color: white; color: #3498db; padding: 5px">مدت خدمت (ماه)</span> <i
+        class="icon-cancel"></i> <span style="background-color: white; color: #3498db; padding: 5px">%۷</span> <i
+        class="icon-cancel"></i> <span style="background-color: white; color: #3498db; padding: 5px">متوسط دستمزد ماهانه دو سال آخر</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="table-container" *ngIf="renderMode==='desktop'">
+  <table class="desktop-table" *ngIf="data">
+    <thead>
+    <tr>
+      <th>سال</th>
+      <th>فروردین</th>
+      <th>اردیبهشت</th>
+      <th>خرداد</th>
+      <th>تیر</th>
+      <th>مرداد</th>
+      <th>شهریور</th>
+      <th>مهر</th>
+      <th>آیان</th>
+      <th>آذر</th>
+      <th>دی</th>
+      <th>بهمن</th>
+      <th>اسفند</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let row of data; let i = index">
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">{{row.year | persianNumber}}</td>
+        <td>{{row.month1_days | persianNumber}}</td>
+        <td>{{row.month2_days | persianNumber}}</td>
+        <td>{{row.month3_days | persianNumber}}</td>
+        <td>{{row.month4_days | persianNumber}}</td>
+        <td>{{row.month5_days | persianNumber}}</td>
+        <td>{{row.month6_days | persianNumber}}</td>
+        <td>{{row.month7_days | persianNumber}}</td>
+        <td>{{row.month8_days | persianNumber}}</td>
+        <td>{{row.month9_days | persianNumber}}</td>
+        <td>{{row.month10_days | persianNumber}}</td>
+        <td>{{row.month11_days | persianNumber}}</td>
+        <td>{{row.month12_days | persianNumber}}</td>
+        <td>روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month1_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month2_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month3_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month4_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month5_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month6_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month7_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month8_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month9_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month10_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month11_wage | persianNumber:'cs'}}</td>
+        <td>{{row.month12_wage | persianNumber:'cs'}}</td>
+        <td>ریال</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="renderMode==='mobile'">
+  <table class="desktop-table">
+    <tbody>
+    <ng-container *ngFor="let row of data; let i = index">
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>سال</td>
+        <td>{{row.year | persianNumber}}</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">فروردین</td>
+        <td>{{row.month1_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month1_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">اردیبهشت</td>
+        <td>{{row.month2_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month2_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">خرداد</td>
+        <td>{{row.month3_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month3_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">تیر</td>
+        <td>{{row.month4_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month4_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">مرداد</td>
+        <td>{{row.month5_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month5_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">شهریور</td>
+        <td>{{row.month6_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month6_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">مهر</td>
+        <td>{{row.month7_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month7_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">آیان</td>
+        <td>{{row.month8_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month8_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">آذر</td>
+        <td>{{row.month9_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month9_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">دی</td>
+        <td>{{row.month10_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month10_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">بهمن</td>
+        <td>{{row.month11_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month11_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td rowspan="2">اسفند</td>
+        <td>{{row.month12_days | persianNumber}} روز</td>
+      </tr>
+      <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+        <td>{{row.month12_wage | persianNumber:'cs'}} ریال</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+
+<div class="alert alert-info">
+  <p>با توجه به غیر قطعی بودن میزان سابقه، مبلغ محاسبه شده قابل استناد در مراجع قانونی نمی باشد.</p>
+</div>

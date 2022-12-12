@@ -1,0 +1,25 @@
+<div class="alert  alert-info">
+  پیامک های ارسالی
+</div>
+<div class="panel">
+  <div class="panel-title">جستجو</div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off" novalidate>
+      <div class="form-control-container row">
+        <div class="col-3" >
+          <tamin-field-label formControlName="phoneNumber">شماره موبایل</tamin-field-label>
+          <tamin-field-text formControlName="phoneNumber"></tamin-field-text>
+        </div>
+        <div class="col-3" >
+          <tamin-field-label formControlName="date">تاریخ</tamin-field-label>
+          <tamin-field-persian-date formControlName="date"></tamin-field-persian-date>
+        </div>
+      </div>
+      <p style="margin-top:5px;">
+        <button type="submit" class="button normal" (click)="onSearch()">جستجو</button>
+      </p>
+    </form>
+  </div>
+</div>
+
+<tamin-data-grid #dataGrid (beforeRefreshData)="onBeforeRefreshDataGrid()"></tamin-data-grid>

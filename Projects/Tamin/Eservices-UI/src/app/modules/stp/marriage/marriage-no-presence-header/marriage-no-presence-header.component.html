@@ -1,0 +1,41 @@
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <div class="panel" #panel>
+    <div class="panel-title">مشخصات درخواست</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="risuid">شماره بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="risuid" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="fullName">نام و نام خانوادگی</tamin-field-label>
+          <tamin-field-static-text formControlName="fullName" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="insuranceTypeDesc">نوع بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="insuranceTypeDesc" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="insuranceStatusDesc">وضعیت بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="insuranceStatusDesc" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="bankAccount">شماره حساب</tamin-field-label>
+          <tamin-field-static-text formControlName="bankAccount" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="bankName">نام بانک</tamin-field-label>
+          <tamin-field-static-text formControlName="bankName" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="branchName">آخرین شعبه بیمه پردازی</tamin-field-label>
+          <tamin-field-static-text formControlName="branchName" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="mobilNumber">شماره همراه</tamin-field-label>
+          <tamin-field-static-text formControlName="mobilNumber" placeholder=""></tamin-field-static-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

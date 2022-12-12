@@ -1,0 +1,805 @@
+WEBVTT
+
+00:05.200 --> 00:12.320
+Are right in this video we're going to look at merge sort now merge sort is a divide and conquer algorithm
+
+00:12.320 --> 00:15.290
+because it involves splitting the array.
+
+00:15.410 --> 00:21.860
+You want to store it into a bunch of smaller arrays and it's usually implemented using recursion.
+
+00:21.860 --> 00:28.100
+You can write the algorithm using loops but it's usually written recursively merge sort involves two
+
+00:28.190 --> 00:29.720
+major phases.
+
+00:29.720 --> 00:35.480
+The first phase is the splitting phase and the second phase is the merging phase.
+
+00:35.480 --> 00:43.040
+We do the sorting during the merging phase the splitting phase is a preparation phase to make sorting
+
+00:43.040 --> 00:45.470
+faster during the merging phase.
+
+00:45.470 --> 00:49.460
+Now I want to make it clear that the splitting is logical.
+
+00:49.460 --> 00:52.810
+We don't create new arrays when we do the splitting.
+
+00:52.940 --> 00:59.270
+We use indices to keep track of where the array has been split so went during the splitting phase we're
+
+00:59.270 --> 01:02.240
+not actually creating new array instances.
+
+01:02.240 --> 01:07.490
+So let's look at this splitting phase and the splitting phase we start with the unsorted array and we
+
+01:07.490 --> 01:09.760
+divide the array into two arrays.
+
+01:09.920 --> 01:16.220
+And remember both of the arrays will be unsorted and we call the first array the left array and the
+
+01:16.220 --> 01:20.770
+second array the right array and we generally just divide the array down the middle.
+
+01:20.780 --> 01:25.670
+If you have an odd number of elements it will depend on the implementation some implementation will
+
+01:25.670 --> 01:31.310
+put the extra element into the left array and some implementations will put the extra element into the
+
+01:31.310 --> 01:32.130
+right array.
+
+01:32.330 --> 01:38.300
+But the important point is you're dividing the array or splitting the array into two arrays.
+
+01:38.300 --> 01:43.720
+The left array and the right array and then once you've done that you keep splitting down even further
+
+01:43.730 --> 01:50.420
+so now you go to the left array and you split that into a left and a right array and then you split
+
+01:50.480 --> 01:56.810
+that left array into a left and right array and you keep going splitting all the arrays and the sub
+
+01:56.810 --> 02:05.120
+arrays until you split the original array into a bunch of one element arrays and remember from our discussion
+
+02:05.150 --> 02:12.420
+of insertion sort a one element array is sorted by default because there's only one element in it.
+
+02:12.500 --> 02:18.200
+So in the splitting phase you're taking the array you're dividing it in half and then you're dividing
+
+02:18.200 --> 02:25.430
+the two subways in half and you're dividing those four separate in half etc. until you get down to a
+
+02:25.430 --> 02:29.780
+bunch of one element arrays and that is the splitting phase.
+
+02:29.810 --> 02:34.880
+Once you've done that you're going to enter the merging phase and in the merging phase you're going
+
+02:34.880 --> 02:40.330
+to merge every left right pair into a sorted array.
+
+02:40.550 --> 02:46.640
+So let's say we have an array of four elements just to explain this so we're going to split that into
+
+02:46.640 --> 02:55.130
+two arrays of lence to each and then we're going to split those two separate into two arrays of one
+
+02:55.130 --> 02:55.640
+element.
+
+02:55.640 --> 03:01.200
+So from that four element array we're going to end up with for one element sub arrays.
+
+03:01.280 --> 03:07.730
+So we split the original array into a left and right array and then we split the left subarray into
+
+03:07.790 --> 03:12.530
+left and right and the right sidebar right into left and right and then what we do is we take the two
+
+03:12.530 --> 03:19.490
+one element arrays from the left subarray and we merge them back into a two element array.
+
+03:19.490 --> 03:22.380
+The merged two element array will be sorted.
+
+03:22.550 --> 03:24.250
+So when we do the merge it.
+
+03:24.290 --> 03:26.090
+That's the point when we do the sort.
+
+03:26.150 --> 03:31.490
+And then we'll take the two elements from the right sub array and we'll merge them into a two element
+
+03:31.720 --> 03:32.510
+sub array.
+
+03:32.510 --> 03:38.840
+So now we have we're back to two arrays a left and a right array except this time the left and the right
+
+03:38.870 --> 03:40.050
+array are sorted.
+
+03:40.070 --> 03:46.160
+And then we'll merge the left and right array which are now two elements each back into a four element
+
+03:46.160 --> 03:46.910
+array.
+
+03:47.090 --> 03:50.480
+And at that point when we do the merge we sort.
+
+03:50.480 --> 03:56.180
+So we get a four element to re that's sorted and we have sorted our array.
+
+03:56.210 --> 04:03.050
+So basically we take the bunch of one element arrays and we keep merging them into two element for Element
+
+04:03.080 --> 04:09.650
+8 element etc. and at each merge we're making sure that the resulting arrays are sorted until we've
+
+04:09.650 --> 04:15.500
+merged all the arrays back into one array and at that point that array will be sorted because one remerging
+
+04:15.560 --> 04:16.430
+we're sorting.
+
+04:16.580 --> 04:20.270
+So every resulting array from the merge will be sorted.
+
+04:20.270 --> 04:23.440
+Now the merging phase does not happen in place.
+
+04:23.450 --> 04:30.930
+It uses temporary arrays so the splitting phase is in place but we need temporary erase to do the merge.
+
+04:30.950 --> 04:37.820
+So let's look at our usual array here our start index will be Ciro our end will be 7 which is equal
+
+04:37.820 --> 04:45.170
+to a radar lenth and we're going to get our midpoint by dividing start plus and by 2 so our midpoint
+
+04:45.170 --> 04:46.150
+will be three.
+
+04:46.280 --> 04:52.420
+And in the implementation I'm going to show you the extra element we'll go into the right array.
+
+04:52.430 --> 04:59.840
+So the first time we split the array elements 0 1 and 2 will go into the left array and elements 3 4
+
+04:59.840 --> 05:02.500
+5 and 6 we'll go into the right array.
+
+05:02.720 --> 05:05.770
+And so now let's split the left array.
+
+05:05.870 --> 05:10.220
+So we're not going to do anything with the right array that's in black now and we're going to look at
+
+05:10.220 --> 05:16.250
+the left brain for the left array the start index is zero and the end index is three the end index is
+
+05:16.250 --> 05:20.740
+always one greater than the index of the last element in the array.
+
+05:20.870 --> 05:25.580
+So once again we're going to take the midpoint by adding start to end and dividing by two.
+
+05:25.580 --> 05:28.220
+So we'll have three over 2 which has one.
+
+05:28.250 --> 05:35.480
+And that means that the first element is going to go in to the left array and elements 1 to 2 are going
+
+05:35.480 --> 05:37.180
+to go into the right array.
+
+05:37.200 --> 05:39.280
+And so now we have this situation.
+
+05:39.320 --> 05:41.780
+Now we have finished splitting 20.
+
+05:41.870 --> 05:46.060
+We can't split that any further it's already a one element array.
+
+05:46.130 --> 05:49.780
+So we only have to worry at this point about splitting the right array.
+
+05:49.780 --> 05:54.070
+So we need to split the array that's occupying positions 1 and 2.
+
+05:54.260 --> 05:58.090
+And so the start index is one the end index is three.
+
+05:58.160 --> 06:01.500
+The midpoint will be one plus three over two which is two.
+
+06:01.520 --> 06:06.560
+And so we're going to put the first element into the left array and the second element into the right
+
+06:06.560 --> 06:07.060
+array.
+
+06:07.130 --> 06:12.640
+And we have now completed splitting the left array into one element arrays.
+
+06:12.650 --> 06:19.340
+Now one in two are both colored in a green shade because they're actually sibling arrays.
+
+06:19.370 --> 06:23.750
+We go up for a minute or so left and right arrays are the sibling arrays so these are the two arrays
+
+06:23.750 --> 06:29.460
+we're going to merge when we split the left array we ended up with a one element and two element array.
+
+06:29.510 --> 06:31.580
+And those arrays are sibling array.
+
+06:31.580 --> 06:37.790
+So when we do the merge we'll be merging the array that has 20 with the array that has 35 and minus
+
+06:37.790 --> 06:38.390
+15.
+
+06:38.390 --> 06:41.640
+We were able to split the right array one more time.
+
+06:41.660 --> 06:44.110
+And so the first merge will do.
+
+06:44.110 --> 06:48.330
+On the left side we'll be merging 35 with minus 15.
+
+06:48.410 --> 06:51.340
+So we're always merging the last split.
+
+06:51.470 --> 06:54.340
+OK so let's look at the writer right now.
+
+06:54.470 --> 06:57.700
+So the star index is three the end is seven.
+
+06:57.710 --> 06:59.400
+The midpoint will be five.
+
+06:59.580 --> 07:04.460
+So elements three and four will go into the left array and elements five to six will go into the right
+
+07:04.460 --> 07:05.120
+array.
+
+07:05.120 --> 07:08.840
+Now let's work on the left array the one that has 7 and 55.
+
+07:08.840 --> 07:10.530
+The midpoint will be four.
+
+07:10.610 --> 07:15.620
+So we're going to put element 3 to 3 into left and 4 to foreign to right.
+
+07:15.620 --> 07:20.340
+And we've now finished splitting the left array on the right side.
+
+07:20.360 --> 07:23.720
+So now we're going to split the right array on the right side.
+
+07:23.810 --> 07:26.140
+So the start index is 5.
+
+07:26.240 --> 07:27.800
+The end index is 7.
+
+07:27.800 --> 07:29.500
+The midpoint is 6.
+
+07:29.570 --> 07:34.520
+So we're going to put element 5 into the left array and element 6 into the right array.
+
+07:34.640 --> 07:41.750
+And we have now completed splitting the right array into one element arrays and once again 7 and 55
+
+07:41.750 --> 07:47.330
+are both shaded gold yellow brown whatever you want to however you want to look at that there are shaded
+
+07:47.330 --> 07:51.150
+the same because there are sibling arrays there are going to get merged together first.
+
+07:51.170 --> 07:52.790
+And the same applies to one.
+
+07:52.820 --> 07:54.290
+And mine is 22.
+
+07:54.500 --> 07:57.650
+So now we need to merge these arrays back together.
+
+07:57.890 --> 08:01.750
+Remember when we do the merge we actually sort.
+
+08:01.940 --> 08:05.590
+So every time we merge the resulting array is sorted.
+
+08:05.720 --> 08:12.950
+So as I mentioned 35 and minus 15 or sibling left right arrays so they're going to get merged 7 and
+
+08:12.950 --> 08:20.390
+55 are going to get merged one in minus 22 are going to get merged 20 won't get merged right now because
+
+08:20.390 --> 08:22.460
+it doesn't have a sibling at the moment.
+
+08:22.490 --> 08:29.060
+So we started with our original array and then we split that into a left array and the right array and
+
+08:29.060 --> 08:35.750
+then that left array was split into left and right and that right array was split into left and right
+
+08:35.840 --> 08:41.420
+and then here the right array was split into two element to raise and then they were each split into
+
+08:41.420 --> 08:45.390
+two one element to raise and that's what we just went through in the slides.
+
+08:45.410 --> 08:51.410
+Now because of the recursive nature of the implementation it's important to note that we're going to
+
+08:51.440 --> 08:57.980
+handle the entire left side of the array before we start working with the right side of the array because
+
+08:57.980 --> 09:03.780
+you'll see from the implementation that we call a method to partition the left side and then we call
+
+09:03.780 --> 09:05.620
+the method to partition the right side.
+
+09:05.630 --> 09:08.420
+But that method will call itself recursively.
+
+09:08.480 --> 09:14.510
+And so we'll call the method to partition the left side and then it will call methods to partition itself
+
+09:14.510 --> 09:18.910
+into left and right and this one we'll call a method to partition itself into left and right.
+
+09:18.950 --> 09:23.790
+And so once we start down this path we go down the recursive rabbit hole.
+
+09:23.810 --> 09:30.770
+And so by the time the method call to partition the left returns we'll have done all this work and the
+
+09:30.770 --> 09:32.510
+same goes for the right side.
+
+09:32.570 --> 09:38.450
+So let's move on to the merging step now and you'll see that when we do the merging step we merge backwards
+
+09:38.450 --> 09:42.110
+so we merge bottom up and we're going to merge sibling array.
+
+09:42.110 --> 09:48.750
+So we'll start by merging 35 with minus 15 and then 7 with 55 and then 1 with minus 22.
+
+09:48.800 --> 09:55.370
+And only after we've merged 35 and minus 15 back into a two element sorted array will we then merge
+
+09:55.370 --> 09:57.900
+20 with the result etc..
+
+09:58.040 --> 10:00.640
+So we're going to merge all these one element to race.
+
+10:00.650 --> 10:05.960
+We always merge sibling left and right and each merged array it will be sorted.
+
+10:05.960 --> 10:10.890
+And as I said 20 doesn't have a sibling so it's not going to get merged on the first round.
+
+10:11.060 --> 10:16.580
+So the way that the merging works is we merge sibling left and right arrays and what we do is we create
+
+10:16.610 --> 10:22.880
+a temporary array large enough to hold all the elements in the arrays remerging So on the first round
+
+10:23.080 --> 10:29.660
+are temporary arrays will be of lines too because we're going to be merging to one element arrays and
+
+10:29.660 --> 10:36.770
+what we do is we set to the first index of the left array and J to the first index of the right array.
+
+10:36.770 --> 10:42.860
+And when I say left and right array I mean the two arrays remerging and then we compare the value at
+
+10:43.070 --> 10:47.850
+the position in left to the value at the J position in the right array.
+
+10:47.900 --> 10:54.030
+And if the value in the left array is smaller we copy that to the temporary array and we increment by
+
+10:54.080 --> 11:00.470
+one if the value on the right array is smaller than we copy that to the temporary array and increment
+
+11:00.470 --> 11:01.280
+J by 1.
+
+11:01.280 --> 11:07.250
+So essentially what we're doing is we're stepping through the left and right arrays and where we're
+
+11:07.430 --> 11:13.460
+taking the smallest value between the left and the right and copying it into the temporary Iran if we
+
+11:13.460 --> 11:14.610
+keep doing that.
+
+11:14.660 --> 11:18.680
+That temporary array will contain the values in sorted order.
+
+11:18.680 --> 11:23.310
+So we're going to repeat that until all the elements in both arrays have been processed.
+
+11:23.330 --> 11:29.210
+And as I said at that point the temporary array will contain the merged values in sorted order and then
+
+11:29.210 --> 11:34.090
+we have one final step to remember we've been copying these values into a temporary array.
+
+11:34.100 --> 11:41.570
+So we then have to copy the sorted values back into the original input array the one that we're sorting
+
+11:42.050 --> 11:43.780
+at the correct positions.
+
+11:43.790 --> 11:50.810
+And so if the left array is that positions X to Y in the original array and the right array is at positions
+
+11:51.140 --> 11:52.820
+y plus 1 to Zed.
+
+11:52.820 --> 11:58.310
+Then after the copy positions X does and will be sorted in the original array.
+
+11:58.340 --> 12:03.160
+So we're going to overwrite what's there in the original array with the sorted values.
+
+12:03.200 --> 12:08.570
+So we're going to start by merging the two siblings on the left 35 and minus 15.
+
+12:08.570 --> 12:12.200
+So what we'll do is we'll create a temporary two element array.
+
+12:12.200 --> 12:19.100
+I will be initialized to 1 because that's the first index in the left array and j will be initialized
+
+12:19.100 --> 12:22.320
+to 2 because that's the first index in the right array.
+
+12:22.370 --> 12:28.250
+And then we compare array to array J minus 15 is smaller than 35.
+
+12:28.250 --> 12:30.660
+There's a typo there that should be 35.
+
+12:30.740 --> 12:34.500
+And so we copy minus 15 to the temporary array.
+
+12:34.580 --> 12:40.430
+Then we're going to copy 35 to the temporary array and at this point the temporary array will be minus
+
+12:40.430 --> 12:41.910
+15 and 35.
+
+12:41.960 --> 12:47.800
+And we've now seen all of the elements in the left array and right array that were merging.
+
+12:47.810 --> 12:53.960
+So at this point we want a copy of the temporary array back into positions 1 and 2 in the original array.
+
+12:53.990 --> 12:58.310
+And so at this point minus 15 and 35 are sorted.
+
+12:58.350 --> 13:05.660
+Now they're not in sorted position in the array but the merged array is sorted and the two sibling arrays
+
+13:05.660 --> 13:07.480
+have now been merged.
+
+13:07.520 --> 13:15.620
+So now we're back to two arrays on the left hand side we're about to 20 and we're back to minus 15 and
+
+13:15.620 --> 13:16.310
+35.
+
+13:16.310 --> 13:22.030
+So at this point the left array contains 20 and the right array contains minus 15 and 35.
+
+13:22.100 --> 13:30.140
+So now we're going to merge those two arrays because 20 and minus 15 and 35 are sibling arrays.
+
+13:30.140 --> 13:35.440
+Now there we originally got those two arrays when we flipped the left array.
+
+13:35.570 --> 13:38.540
+So we create a temporary array of length 3.
+
+13:38.600 --> 13:46.220
+I will be initialized to 0 and j will be initialized to 1 and then we compare arrays 0 to array 1 minus
+
+13:46.220 --> 13:46.850
+15.
+
+13:46.850 --> 13:50.750
+It's less than 20 so it's going to be copy to the temporary array.
+
+13:50.780 --> 13:57.620
+And because we copy the value from the right array into the temporary array we increment J by 1 because
+
+13:57.630 --> 14:02.650
+we've processed minus 15 is still zero because we haven't processed 20 yet.
+
+14:02.660 --> 14:07.870
+So now we compare 20 to 35 20 is smaller than 35.
+
+14:07.870 --> 14:15.440
+So it gets copied next and now only 35 remains and so it's copied last and so the temporary array consists
+
+14:15.440 --> 14:18.100
+of minus 15 20 and 35.
+
+14:18.140 --> 14:23.290
+And now we copy that back into position 0 to 2 in the original array.
+
+14:23.360 --> 14:27.720
+And so at this point we have completed merging the left subgrade.
+
+14:27.800 --> 14:30.310
+And as you can see it's in sorted order.
+
+14:30.440 --> 14:34.430
+So now we're going to repeat this process with the right part of the array.
+
+14:34.430 --> 14:39.680
+We have two sets of siblings 755 and one in minus 22.
+
+14:39.680 --> 14:42.910
+So we're going to start by emerging 7 and 55.
+
+14:42.950 --> 14:45.800
+So we're going to create a temporary array of lence too.
+
+14:45.950 --> 14:49.780
+I will be initialized to 3 and j will be initialized to 4.
+
+14:49.790 --> 14:57.080
+We're going to compare array to a Ray-J 7 is smaller than 55 so it gets copied into the temporary array
+
+14:57.080 --> 14:59.650
+first and then 55 will get copied.
+
+14:59.720 --> 15:03.390
+And then we copy the temporary back to physicians 3 and four.
+
+15:03.410 --> 15:11.450
+And so we've now merged the left array of the right part of the original array and 755 or in sorted
+
+15:11.450 --> 15:12.170
+order.
+
+15:12.170 --> 15:18.080
+Now we repeat this process to merge one in minus 22 the temporary array is going to end up being minus
+
+15:18.080 --> 15:19.540
+22 in one.
+
+15:19.580 --> 15:28.130
+We're going to copy that back into positions 5 and 6 and we're back to minus 22 and the merged array
+
+15:28.130 --> 15:30.920
+is in sorted order it's minus 22 in 1.
+
+15:30.920 --> 15:34.770
+So now we have two arrays of lens to them we need to merge those.
+
+15:34.880 --> 15:41.390
+So we're going to create a temporary array of length for I will be initialized to 3 and j to 5 minus
+
+15:41.390 --> 15:43.370
+22 is less than 7.
+
+15:43.490 --> 15:49.470
+So we're going to copy minus 22 to the temporary array and j will be incremented to 6.
+
+15:49.490 --> 15:52.350
+So then we're going to compare 7 to one.
+
+15:52.370 --> 15:53.720
+One is less than seven.
+
+15:53.720 --> 15:58.420
+So one is going to be copy to the temporary array and j will be incremented to 7.
+
+15:58.430 --> 16:04.460
+Now only elements in the left array are left and we know that they're sorted because all the merged
+
+16:04.460 --> 16:09.860
+arrays are sorted and so all we have to do at this point is just copy the two elements from the left
+
+16:09.860 --> 16:16.300
+array into the temporary array and when we've done that the temporary array will be minus 22 1 7 and
+
+16:16.300 --> 16:20.710
+55 and we just have to copy that back into positions 3 to 6.
+
+16:20.810 --> 16:27.140
+And so now we're back down to just two arrays a left array and a right array that are both in sorted
+
+16:27.170 --> 16:31.850
+order and our final step is to merge these left and right arrays.
+
+16:31.940 --> 16:36.810
+And so we're going to create a temporary array that has enough room to hold seven elements.
+
+16:36.830 --> 16:43.670
+We're going to initialize IDE is 0 and J is 3 minus 22 is less than minus 15 So we're going to copy
+
+16:43.670 --> 16:50.060
+minus 22 to the temporary array and then we're going to increment J to 4 minus 15 is less than 1.
+
+16:50.060 --> 16:55.420
+So we're going to copy minus 15 to the temporary array and I is going to get incremented to 1.
+
+16:55.490 --> 16:56.870
+One is less than 20.
+
+16:56.870 --> 17:04.670
+So we copy 1 to the temporary array and we increment J to 5 7 is less than 20 so we copy 7 to the temporary
+
+17:04.670 --> 17:06.730
+array and we increment J to 6.
+
+17:06.740 --> 17:08.780
+20 is less than 55.
+
+17:08.780 --> 17:16.430
+So we copy 20 to the temporary array and we increment to 2 and finally 35 is less than 55.
+
+17:16.460 --> 17:22.600
+So we copy 35 to the temporary array and we increment to three and at this point only 55 is left.
+
+17:22.600 --> 17:29.930
+So we copy it to the temporary array and now we copy the temporary array back into position 0 to 6 because
+
+17:29.930 --> 17:34.800
+we've looked at all the elements and when we do that the array is sorted.
+
+17:34.820 --> 17:40.760
+It is quite a bit of work but because we're dividing and conquering we're splitting the array into two
+
+17:40.760 --> 17:42.060
+at each phase.
+
+17:42.110 --> 17:46.190
+It actually performs better than the algorithms we've seen so far.
+
+17:46.190 --> 17:52.220
+So just to remind you of what we had when we started the merging phase we had done all of this splitting.
+
+17:52.220 --> 17:55.700
+And then in the merging phase we went from the bottom back up.
+
+17:55.700 --> 18:02.500
+So we merged 35 and minus 15 into a two element sorted array minus 15 and 35.
+
+18:02.500 --> 18:07.240
+And we did the same thing with these two elements and the same thing with one in minus 22.
+
+18:07.310 --> 18:13.550
+And then at that point these guys are now sibling arrays and so we merged the left array with the right
+
+18:13.550 --> 18:19.540
+array and we got a sorted three elements array minus 15 20 and 35.
+
+18:19.610 --> 18:24.880
+And on this side we had two two element sibling arrays left and right.
+
+18:24.920 --> 18:32.780
+We merged them into a sorted array and then finally we merged the original left and right arrays we
+
+18:32.780 --> 18:38.750
+got from splitting the whole array except this time they're sorted because we've undergone the merge
+
+18:38.750 --> 18:47.030
+step and so we merged the sorted left array with the sorted right array and our result from emerge is
+
+18:47.060 --> 18:51.680
+always a sorted array and so we get our original array sorted.
+
+18:51.680 --> 18:57.490
+So let's take a look at how this algorithm performs well first of all as I said previously it's not
+
+18:57.490 --> 19:04.790
+an in place algorithm the splitting phase is in place but when we do the merging phase we use a temporary
+
+19:04.790 --> 19:08.180
+array to merge each pair of sibling arrays.
+
+19:08.180 --> 19:15.650
+Now this has of time complexity of 0 to the end log N and the log is to the base 2 and why is that.
+
+19:15.650 --> 19:20.510
+Well we're repeatedly dividing the array in half during the splitting phase.
+
+19:20.540 --> 19:23.570
+And so this is a logarithmic algorithm.
+
+19:23.570 --> 19:32.480
+It's a stable sort algorithm because when we do the merging we check whether the element in the right
+
+19:32.540 --> 19:35.960
+array is greater than the element in the left array.
+
+19:36.080 --> 19:41.540
+And if it isn't if it's equal to it then the element in the left array will be the one that's copied
+
+19:41.540 --> 19:43.390
+into the temporary array first.
+
+19:43.390 --> 19:47.840
+And because of that the relative ordering of duplicate items will be preserved.
+
+19:47.840 --> 19:53.360
+Now as I mentioned on the last slide the implementation I'm going to show you has a couple of optimizations
+
+19:53.450 --> 19:56.540
+and I'll explain those when we go through the implementation.
+
+19:56.540 --> 20:00.740
+But it's still merge sort and it's still a logarithmic algorithm.
+
+20:00.770 --> 20:07.290
+Now these days memory is cheap and plentiful so the fact it's nodded in place algorithms shouldn't dissuade
+
+20:07.290 --> 20:08.290
+you from using it.
+
+20:08.310 --> 20:14.790
+But if memory is an issue then that's a consideration because there's a lot of temporary array instances
+
+20:14.790 --> 20:20.040
+created and of course the amount of memory you're going to need is going to grow as the number of items
+
+20:20.040 --> 20:21.490
+you're sorting grows.
+
+20:21.600 --> 20:29.130
+As you'll see the next sort algorithm we look at also uses a divide and conquer philosophy and is also
+
+20:29.340 --> 20:32.910
+a logarithmic algorithm but it's an in-place algorithm.
+
+20:33.000 --> 20:35.690
+So we'll see that coming up in a couple of videos.
+
+20:35.760 --> 20:36.240
+All right.
+
+20:36.240 --> 20:37.800
+So that's how Mirch sort works.
+
+20:37.800 --> 20:38.970
+Let's implement it.
+
+20:38.970 --> 20:40.110
+I'll see you in the next video.

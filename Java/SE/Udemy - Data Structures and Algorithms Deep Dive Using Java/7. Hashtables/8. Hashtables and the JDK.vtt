@@ -1,0 +1,649 @@
+WEBVTT
+
+00:05.440 --> 00:10.280
+OK, agora que vimos como as tabelas de hash funcionam, vamos ver o que está disponível no JDK.
+
+00:10.330 --> 00:14.270
+Agora a interface primária para tabelas de hash é o mapa.
+
+00:14.350 --> 00:18.980
+E como podemos ver, K é o tipo de chaves mantidas por este mapa.
+
+00:18.980 --> 00:26.620
+Inveja é o tipo de valor do mapa, portanto, é um par de valores-chave e a interface IMAP é um objeto que mapeia
+
+00:26.620 --> 00:27.710
+chaves para valores.
+
+00:27.940 --> 00:31.870
+Agora diz aqui que um mapa não pode conter chaves duplicadas.
+
+00:31.870 --> 00:34.540
+Cada chave pode mapear mais para um valor.
+
+00:34.540 --> 00:39.330
+Agora, o que isto significa é que isso não significa que não pode haver colisões.
+
+00:39.370 --> 00:41.900
+Não está falando sobre os valores de hash.
+
+00:42.010 --> 00:48.910
+No nosso caso, se tivéssemos que adicionar um funcionário com a chave Smyth's e, em seguida, adicionamos
+
+00:48.910 --> 00:56.250
+outro funcionário e também usamos a chave Smaltz, o primeiro funcionário que adicionamos seria substituído pelo segundo funcionário.
+
+00:56.260 --> 01:02.320
+E assim, há apenas um funcionário na tabela que pode ser associado aos principais Smiths e
+
+01:02.320 --> 01:03.430
+isso faz sentido.
+
+01:03.460 --> 01:09.370
+Porque caso contrário, se entrarmos e fornecermos a chave Smith, não haveria como
+
+01:09.370 --> 01:11.170
+saber qual funcionário queremos.
+
+01:11.170 --> 01:17.440
+Agora, não lidamos com isso em nossas implementações de tabela de hash, mas em nossas implementações, as
+
+01:17.440 --> 01:23.260
+duas que fizemos para sondagem linear e encadeamento e a implementação simples não são implementações robustas.
+
+01:23.260 --> 01:28.480
+Quero dizer, se você fosse usar essas tabelas de hash em um aplicativo do mundo real, teríamos muito mais
+
+01:28.480 --> 01:29.230
+trabalho a fazer.
+
+01:29.230 --> 01:31.760
+Quer dizer, não estamos lidando com redimensionamento ou algo assim.
+
+01:31.810 --> 01:37.570
+Isso é o que isso significa aqui, apenas significa que não podemos usar a mesma chave para adicionar mais
+
+01:37.570 --> 01:42.050
+de um valor, porque, do contrário, na recuperação, não há como saber qual valor queremos.
+
+01:42.160 --> 01:47.010
+OK, então vamos para a classe de mapa hash que implementa o mapa.
+
+01:47.260 --> 01:51.370
+E esta é uma classe concreta, então é isso que você realmente usa.
+
+01:51.370 --> 01:55.570
+E diz: É claro que é baseado em uma implementação da interface do mapa.
+
+01:55.570 --> 01:59.560
+Essa implementação permite valores nulos na chave knol.
+
+01:59.590 --> 02:04.390
+Ele diz que fornece desempenho de tempo constante para as operações básicas.
+
+02:04.390 --> 02:11.950
+Agora, enquanto você lê, você verá, é claro, que se o Hastur redimensionar o array e repetir, você não terá tempo
+
+02:11.950 --> 02:17.170
+constante, mas há uma boa discussão aqui sobre a capacidade inicial e o fator de
+
+02:17.170 --> 02:20.940
+carga que você pode definir fator de carga que você deseja.
+
+02:20.950 --> 02:27.460
+E isso significa que, quando esse fator de carga é excedido, a tabela de hash é redimensionada.
+
+02:27.520 --> 02:29.610
+O padrão é o ponto setenta e cinco.
+
+02:29.650 --> 02:34.870
+A implementação não é sincronizada, portanto, se você quiser usá-lo para vários encadeamentos, eles
+
+02:34.870 --> 02:40.090
+sugerem que você o envolva usando o método de mapa sincronizado de incremento da coleção.
+
+02:40.150 --> 02:48.080
+Então, vamos voltar para a inteligência e usar um mapa de hash.
+
+02:48.090 --> 02:50.160
+OK, então aqui estamos de volta à inteligência.
+
+02:50.160 --> 02:56.100
+Eu adicionei os habituais quatro funcionários em nossa classe Employee e vamos em frente e criar um mapa
+
+02:56.100 --> 03:04.200
+de hash, então vamos dizer mapa e nossa chave é uma string e nosso valor será um funcionário sem necessidade de nos preocuparmos com
+
+03:04.410 --> 03:06.260
+o funcionário armazenado e tudo.
+
+03:06.280 --> 03:11.670
+Não somos nós que estamos escrevendo o mapa hash agora, porque é claro que você provavelmente não implementaria sua
+
+03:11.670 --> 03:12.780
+própria tabela de hash.
+
+03:12.780 --> 03:15.670
+Em Java, você usaria uma das classes no JDK.
+
+03:15.720 --> 03:21.450
+Então, alguém já escreveu uma tabela de hash para nós que está cuidando das colisões.
+
+03:21.480 --> 03:33.660
+Então eu vou dizer hash map e deixe-me trazer a importação aqui é igual ao novo mapa de hash e
+
+03:33.660 --> 03:35.760
+queremos trazer um funcionário.
+
+03:36.690 --> 03:48.960
+Então eu vou dizer hash mapa ponto colocar e vamos usar Jones é a chave e Jane Jones hash mapa ponto colocar Doe John
+
+03:48.960 --> 04:02.700
+Doe e hash mapa ponto colocar Smyth Mary Smith e vamos imprimir a nossa tabela de hash agora ou o nosso mapa de hash que é essencialmente
+
+04:02.700 --> 04:04.530
+uma tabela de hash.
+
+04:04.530 --> 04:08.600
+Podemos fazer isso de duas maneiras e, na verdade, provavelmente existem várias maneiras de fazer isso.
+
+04:08.610 --> 04:09.690
+Mas eu vou te mostrar dois.
+
+04:09.690 --> 04:11.960
+Então o primeiro é usar um iterador.
+
+04:12.300 --> 04:18.810
+Então, vamos dizer iterador e vamos apenas imprimir os funcionários, então vamos dizer
+
+04:19.650 --> 04:24.000
+iterador empregado iterador igual a hash mapa Daut.
+
+04:24.030 --> 04:27.480
+E eu só quero imprimir os funcionários.
+
+04:27.480 --> 04:30.590
+Então vou chamar o método de valores aqui.
+
+04:30.590 --> 04:38.540
+Isso nos dá os valores no mapa de hash e eu quero o iterador para os valores e, em seguida, a maioria do
+
+04:38.730 --> 04:40.110
+iterador de Savol DOT.
+
+04:40.110 --> 04:40.830
+O próximo
+
+04:43.440 --> 04:44.320
+sistema saiu.
+
+04:44.320 --> 04:46.320
+Não imprima linha.
+
+04:46.770 --> 04:48.880
+Ponto do iterador ao lado.
+
+04:49.540 --> 04:51.150
+Então, vamos em frente e executar
+
+04:53.980 --> 04:56.190
+isso e vamos ver que temos nossos três funcionários.
+
+04:56.200 --> 05:00.510
+E é importante notar que eles não estão na ordem em que os adicionamos corretamente.
+
+05:00.520 --> 05:07.000
+Nós adicionamos Jane John e Mary e estamos recebendo Jane Mary em Xion, porque onde eles são colocados na
+
+05:07.060 --> 05:10.610
+tabela de hash vai depender do valor de hash das chaves.
+
+05:10.810 --> 05:13.850
+OK, então agora vamos dar uma olhada na outra maneira de fazer isso.
+
+05:13.840 --> 05:20.470
+Eu vou comentar isso e isso só estará disponível no Java 8 e além.
+
+05:20.470 --> 05:27.580
+Nós podemos usar o método para cada expressão de terra, então eu direi hash mapeado para cada um e então
+
+05:27.580 --> 05:33.490
+eu vou dizer Cavey e nós vamos dizer que o sistema tem uma linha de impressão.
+
+05:33.490 --> 05:38.950
+E neste caso eu estou imprimindo a chave e o valor então k será a chave e V será o valor.
+
+05:38.950 --> 05:51.690
+E assim, todos dizem iguais, mais K mais empregado igual a mais V.
+
+05:52.070 --> 05:53.980
+E então vamos seguir em frente e
+
+05:57.110 --> 06:04.010
+executar isso e nós temos JONES chave Temos Jane Jones para K. Smith temos Mary Smith e para Kido temos
+
+06:04.010 --> 06:12.230
+John Doe há uma chave contém e contém método de valor para ver se um mapa contém uma chave ou
+
+06:12.230 --> 06:23.810
+um valor para podermos dizer que o sistema saiu do mapa hash da linha de impressão que contém a chave e nós posso dizer que você contém a
+
+06:23.810 --> 06:24.190
+chave.
+
+06:24.190 --> 06:24.940
+Doh
+
+06:25.250 --> 06:33.230
+E o mapa hash da linha de impressão Out-Trump do sistema que contém valor e poderíamos dizer que você contém o valor.
+
+06:33.230 --> 06:37.420
+Jane Jones agora esperamos que isso seja bom.
+
+06:37.430 --> 06:42.440
+Este método será mais rápido do que este método porque neste estamos passando a chave
+
+06:42.440 --> 06:48.470
+e assim debaixo das tampas a chave será dividida e o método será capaz de pular direto para
+
+06:48.470 --> 06:54.320
+aquele lugar na implementação subjacente e checar por massa para isto método quando estamos apenas passando o objeto.
+
+06:54.320 --> 06:55.150
+Não pode fazer isso.
+
+06:55.160 --> 06:59.870
+Não há nenhum valor para o hash, então ele terá que começar na frente da tabela de hash e
+
+06:59.870 --> 07:00.820
+procurar por Jane Jones.
+
+07:00.830 --> 07:02.860
+E é sempre melhor ter a chave.
+
+07:02.870 --> 07:09.110
+Então, vamos correr e nos tornamos verdade para ambos, que é o que esperamos.
+
+07:09.110 --> 07:15.680
+Agora, como eu disse anteriormente no vídeo, se tentarmos colocar um funcionário no mapa usando uma
+
+07:15.680 --> 07:22.820
+chave que já usamos, o funcionário que estamos adicionando substituirá o funcionário existente que adicionamos com essa
+
+07:22.820 --> 07:23.150
+chave.
+
+07:23.150 --> 07:30.290
+Então, por exemplo, se tentarmos colocar outro funcionário com a chave, então qualquer funcionário que adicionarmos
+
+07:30.290 --> 07:31.550
+substituirá John Doe.
+
+07:31.550 --> 07:32.480
+Então vamos fazer isso.
+
+07:32.480 --> 07:41.180
+Vamos dizer que o mapa de hash doc coloca a massa e vamos colocar Mike Wilson usando a massa de chave e o que esperamos que
+
+07:41.180 --> 07:47.420
+aconteça é que Mike Wilson substituirá John Doe e, de fato, o método put retorna o funcionário que
+
+07:47.420 --> 07:48.340
+costumava estar lá.
+
+07:48.710 --> 07:55.340
+Assim, o mesmo empregado empregado é igual e isso retornará John Doe porque ele substituirá John Doe
+
+07:55.340 --> 08:01.780
+por Mike Wilson, porque você pode ter apenas um funcionário por chave e eles retornarão John Doe.
+
+08:01.940 --> 08:09.120
+Eu vou comentar essas duas linhas e vamos imprimir o empregado, nós pegamos os fatos e dizemos que o
+
+08:09.140 --> 08:16.600
+sistema saiu do empregado da linha de impressão e vamos correr de novo e veremos o que vamos receber daqui.
+
+08:16.600 --> 08:20.320
+Vamos ver o que tabela Cinar hash.
+
+08:20.340 --> 08:24.930
+Então pegamos John Doe de volta como esperávamos, porque ele será substituído por Mike.
+
+08:24.930 --> 08:29.280
+E agora Mike está na tabela de hash, em vez de John Doe.
+
+08:29.280 --> 08:31.440
+Agora você pode não querer que isso aconteça.
+
+08:31.440 --> 08:34.240
+Você usa uma chave que já foi usada.
+
+08:34.240 --> 08:41.280
+Você não quer colocar para ir em frente e se esse for o caso, você pode usar o put se
+
+08:41.370 --> 08:47.790
+o método ausente o método put se ausente só irá inserir se o Kido não tiver sido usado.
+
+08:47.790 --> 08:56.280
+Então, eu vou comentar isso para que você possa ver e, em seguida, vamos dizer que o ponto de
+
+08:56.280 --> 09:03.160
+mapa hash se ausente e vamos dizer Joe e Mike Wilson irá comentar isso também.
+
+09:03.400 --> 09:06.570
+E vamos correr agora e ver como é a nossa tabela de hash.
+
+09:08.710 --> 09:13.980
+E você verá desta vez que John ainda está na tabela de hash, porque isso só vai seguir em frente
+
+09:13.980 --> 09:14.730
+com o putt.
+
+09:14.790 --> 09:17.380
+Se a massa da chave ainda não tiver sido usada.
+
+09:17.430 --> 09:23.180
+Agora, se chamarmos put, se estiver ausente, a massa foi usada antes de voltarmos.
+
+09:23.190 --> 09:31.840
+O empregado está atualmente armazenado aqui, portanto, se dissermos que o empregado empregado é igual colocado se ausente.
+
+09:31.860 --> 09:33.830
+E deixe-me comentar isso de novo.
+
+09:33.900 --> 09:40.800
+Esperamos que John Doe seja devolvido, então isso diz ao interlocutor ei que você tentou colocar um funcionário em uma
+
+09:40.800 --> 09:45.570
+chave que já foi usada e esse é o empregado que usou essa chave.
+
+09:45.920 --> 09:52.450
+E então vamos correr e vamos ver que temos John Doe de volta para o put se ausente.
+
+09:52.530 --> 09:59.430
+Agora, vamos dar uma olhada, vamos saber, nós olhamos para colocar Vamos olhar para começar, então vamos fazer um
+
+09:59.460 --> 10:06.350
+simples Vamos dizer que o sistema não está fora do mapa hash da linha de impressão e obter Smith.
+
+10:07.350 --> 10:08.840
+E esperamos que Maria volte e
+
+10:12.530 --> 10:13.450
+lá está ela.
+
+10:13.450 --> 10:16.010
+Então nós pegamos Mary de volta para o Natal.
+
+10:16.010 --> 10:17.810
+Agora digamos que você consiga.
+
+10:17.840 --> 10:19.610
+E não há nada na mesa.
+
+10:19.610 --> 10:20.900
+Então vamos ver o que recebemos de volta.
+
+10:20.920 --> 10:23.510
+Então, vamos apenas dizer que você conhece alguém.
+
+10:23.810 --> 10:27.610
+Nós sabemos que não há ninguém lá e você verá que nós voltamos.
+
+10:27.610 --> 10:28.170
+Não.
+
+10:28.170 --> 10:29.770
+Agora você pode não querer isso.
+
+10:29.820 --> 10:36.600
+E assim há um método get ou default que permite especificar um valor padrão.
+
+10:36.720 --> 10:41.580
+E se não houver um funcionário na tabela para a chave que usamos, o método
+
+10:41.580 --> 10:42.760
+retornará o valor padrão.
+
+10:42.780 --> 10:49.380
+E então, nesse caso, você apenas diz ter mais padrão e nós pegamos a chave e então podemos dizer bem, você
+
+10:49.380 --> 10:53.910
+sabe que, se isso não for tudo de volta, Mike, nós queremos Mike de volta.
+
+10:53.940 --> 10:57.780
+E agora, se corrermos, devemos ver Mike Wilson e nós.
+
+10:57.930 --> 11:00.660
+Então, isso apenas impedirá que o método retorne NULL.
+
+11:00.660 --> 11:11.160
+Agora é claro que podemos remover o funcionário para que possamos dizer sistema não fora de linha de impressão ponto de mapa
+
+11:11.190 --> 11:14.800
+de dinheiro remover e vamos remover Jane Jones.
+
+11:15.150 --> 11:22.270
+E isso deve devolver o funcionário que removemos e acontece, e veremos agora que, quando imprimimos o
+
+11:22.270 --> 11:25.370
+mapa de hash, só temos Merrion John.
+
+11:25.390 --> 11:30.160
+Portanto, há mais métodos na classe hash map, mas eu só queria dar um gostinho do que você pode fazer,
+
+11:30.160 --> 11:33.420
+como você pode ver, há muito mais em termos de puts e gets.
+
+11:33.430 --> 11:36.560
+Vamos voltar ao mapa de hash.
+
+11:36.740 --> 11:37.240
+Dawk
+
+11:41.810 --> 11:47.810
+E se olharmos para os métodos que estão disponíveis, veremos que você obtém o padrão, coloque todos
+
+11:47.840 --> 11:52.840
+colocados se ausentes, para poder colocar mais de uma coisa no mapa de cada vez.
+
+11:52.880 --> 11:53.930
+Aqui está o.
+
+11:53.960 --> 12:00.680
+Você pode dar a chave a versão de remoção onde você passa uma chave e um valor e você só vai realmente remover o
+
+12:00.680 --> 12:04.710
+valor da tabela de hash se usar essa chave que você tem de substituir.
+
+12:04.730 --> 12:13.400
+Assim, você pode realmente substituir o valor de uma chave e, assim, permitiremos que você explore essas informações por conta própria, já que é
+
+12:13.400 --> 12:18.320
+possível ver uma das subclasses do mapa de hash vinculada ao mapa de hash.
+
+12:18.380 --> 12:20.370
+E se você der uma olhada nisso.
+
+12:20.540 --> 12:27.350
+Por isso, diz que esta é uma tabela de hash e implementação de lista vinculada da interface do mapa.
+
+12:27.350 --> 12:33.530
+Agora isso não significa que esta implementação é apoiada por uma lista vinculada porque ela diz que é uma tabela de hash
+
+12:33.530 --> 12:40.850
+e uma lista vinculada e também sabemos que é uma subclasse de mapa de hash e o mapa de hash é uma implementação de matriz.
+
+12:40.850 --> 12:46.880
+Se voltarmos ao mapa de hash, há uma grande discussão aqui sobre o fator de carga no redimensionamento e outras coisas, e eu
+
+12:46.880 --> 12:50.720
+não olhei para o código, mas posso dizer que é uma implementação de array.
+
+12:50.930 --> 12:56.100
+Então, se voltarmos ao mapa de hash vinculado, é uma tabela de hash e é uma implementação de lista vinculada agora.
+
+12:56.120 --> 12:58.130
+Mais tarde, aqui, eles dão mais detalhes.
+
+12:58.130 --> 13:03.740
+Essa implementação difere do mapa de hash na medida em que mantém uma lista duplamente vinculada percorrendo todas
+
+13:03.830 --> 13:09.440
+as suas entradas e diz que essa lista vinculada define a ordem de iteração que normalmente é a
+
+13:09.470 --> 13:12.410
+ordem na qual as chaves foram inseridas no mapa.
+
+13:12.410 --> 13:15.760
+Então, o que isto significa é que ainda está sendo apoiado por um array.
+
+13:15.800 --> 13:20.600
+Mas eles também colocaram todas as entradas em uma lista vinculada.
+
+13:20.600 --> 13:26.020
+Mais uma vez a implementação não está sincronizada e você pode usar o mesmo método de
+
+13:26.020 --> 13:31.370
+mapa sincronizado de pontos de coleções para envolver essa implementação para obter um mapa sincronizado.
+
+13:31.370 --> 13:36.750
+Agora a maioria dos métodos será a mesma porque isso implementa a interface do mapa,
+
+13:39.460 --> 13:47.410
+mas há um método de remoção de entrada mais antiga e usando esse método você pode especificar que deseja que o mapa
+
+13:47.410 --> 13:53.620
+exclua sua entrada mais antiga sempre que adicionar um novo e estar perguntando por que diabos você
+
+13:53.620 --> 13:54.340
+quer fazer isso.
+
+13:54.340 --> 13:58.620
+Bem, é possível que você esteja usando a instância do mapa como um cache.
+
+13:58.720 --> 14:03.510
+E se esse fosse o caso, você não gostaria que o mapa continuasse crescendo, crescendo e crescendo corretamente.
+
+14:03.510 --> 14:10.380
+Porque para um cache Basicamente é para acesso mais rápido de coisas que foram usadas recentemente.
+
+14:10.390 --> 14:16.390
+E é por isso que você deseja remover a entrada mais velha ou mais antiga que está na lista há
+
+14:16.390 --> 14:16.930
+tanto tempo.
+
+14:16.940 --> 14:23.290
+Então, se você decidir que vai usar essa classe para implementar um cache e você só quer manter,
+
+14:23.290 --> 14:29.350
+digamos, 100 itens, então se é cair e você vem em um e fora e outro item
+
+14:29.350 --> 14:35.770
+que você vai tirar o item mais antigo no novo item porque o dinheiro está lá para fornecer
+
+14:35.770 --> 14:37.580
+acesso rápido aos itens usados ​​recentemente.
+
+14:37.600 --> 14:40.370
+O item mais antigo será o item mais obsoleto.
+
+14:40.480 --> 14:42.520
+E é isso que você vai expulsar.
+
+14:42.520 --> 14:45.700
+E essa é a classe de mapa de hash vinculada.
+
+14:45.700 --> 14:50.950
+Agora nós também temos a classe de tabela de hash que eu vou mudar isso para uma tabela de hash e
+
+14:50.950 --> 14:52.170
+vamos ver se isso funciona.
+
+14:53.500 --> 14:56.010
+E isso acontece com a classe da tabela de hash.
+
+14:56.020 --> 14:58.720
+E isso difere do mapa de hash de duas maneiras.
+
+14:58.720 --> 15:02.980
+Primeiro de tudo você não pode adicionar nenhuma chave nula ou valores.
+
+15:02.980 --> 15:09.060
+Vimos que o mapa hash permite a chave knol e valores nulos.
+
+15:09.060 --> 15:10.320
+Bem, este não.
+
+15:10.330 --> 15:14.110
+Então, se você estiver usando uma tabela de hash, tudo terá que ser não-nulo.
+
+15:14.110 --> 15:16.530
+A segunda diferença é que isso é sincronizado.
+
+15:16.720 --> 15:21.350
+Se você não precisa de sincronização, não quer usar tabela de hash.
+
+15:21.370 --> 15:27.130
+Esta é a mesma situação que estava com a lista de vetores e vetores, onde a lista de matrizes
+
+15:27.160 --> 15:32.040
+não é sincronizada e o vetor é como discutimos, então a sincronização vem com uma sobrecarga.
+
+15:32.050 --> 15:36.940
+E assim, se você não precisa de sincronização, não use tabela de hash.
+
+15:37.060 --> 15:42.850
+Se você não quiser usar a tabela de hash, digamos que esta é uma implementação mais antiga, bem, então digamos que você
+
+15:42.850 --> 15:47.190
+queira usar o mapa de hash, mas você quer sincronizá-lo, você pode envolvê-lo da maneira que vimos.
+
+15:47.200 --> 15:55.150
+Mas também, se voltarmos ao mapa de hash ou mapearmos até o final, veremos que há um mapa de hash
+
+15:55.150 --> 15:58.070
+simultâneo aqui e que está no pacote simultâneo.
+
+15:58.090 --> 16:01.840
+E esta é uma implementação sincronizada.
+
+16:01.870 --> 16:08.030
+Ele diz que suporta total simultaneidade de recuperações e alta concorrência esperada para atualizações.
+
+16:08.080 --> 16:12.610
+E assim, se você realmente quer a concorrência e você vai lidar com um monte de itens, isso seria
+
+16:12.610 --> 16:13.860
+uma boa classe para usar.
+
+16:13.900 --> 16:18.590
+OK, então, se voltarmos ao mapa, podemos ver que há muitas classes que implementam a interface.
+
+16:18.710 --> 16:23.080
+Eles são geralmente usados ​​em circunstâncias específicas daqueles que nós não olhamos.
+
+16:23.080 --> 16:25.810
+Então deixarei para você explorá-los.
+
+16:25.810 --> 16:32.470
+Mas há muito suporte para tabelas de hash no JDK Então, se você está trabalhando em um aplicativo e você está pensando que, oh,
+
+16:32.470 --> 16:37.760
+você sabe o que eu preciso de uma tabela de hash e tabela de hash funcionaria muito bem aqui.
+
+16:37.840 --> 16:43.540
+Em seguida, dê uma olhada em quais são os seus requisitos e dê uma olhada nas classes que implementam a
+
+16:43.570 --> 16:46.930
+interface do mapa para ver qual delas atende melhor às suas necessidades.
+
+16:46.930 --> 16:47.670
+Tudo bem.
+
+16:47.800 --> 16:48.940
+É isso por agora.
+
+16:48.940 --> 16:50.530
+Eu vou te ver no próximo vídeo.

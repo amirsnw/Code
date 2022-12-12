@@ -1,0 +1,120 @@
+<div class="panel">
+  <form [formGroup]="newForm" autocomplete="off" novalidate>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-6">
+          <tamin-field-label formControlName="bookletReciever">دریافت کننده دفترچه بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="bookletReciever"></tamin-field-static-text>
+          <tamin-field-label formControlName="nationalCode">کد ملی</tamin-field-label>
+          <tamin-field-static-text formControlName="nationalCode"></tamin-field-static-text>
+          <tamin-field-label formControlName="mobileNumber">شماره موبایل</tamin-field-label>
+          <tamin-field-validator formControlName="mobileNumber"></tamin-field-validator>
+          <tamin-field-text formControlName="mobileNumber"></tamin-field-text>
+        </div>
+        <div class="col-6" style="text-align: left">
+          <img [attr.src]="photoSource" alt="" style="border: solid 1px;width: 150px;height: 200px;" *ngIf="hasPhoto">
+          <img src="assets/images/nophoto.jpg" alt="" style="border: solid 1px;width: 150px;height: 200px;" *ngIf="!hasPhoto">
+        </div>
+      </div>
+      <hr style="margin-top: 10px; margin-bottom: 10px">
+      <div class="row">
+        <!--<div class="col-4">-->
+          <!--<tamin-field-label formControlName="mobileNumber">شماره موبایل</tamin-field-label>-->
+          <!--<tamin-field-validator formControlName="mobileNumber"></tamin-field-validator>-->
+          <!--<tamin-field-text formControlName="mobileNumber"></tamin-field-text>-->
+        <!--</div>-->
+        <div class="col-4">
+          <tamin-field-label formControlName="requestType">نوع درخواست</tamin-field-label>
+          <tamin-field-validator formControlName="requestType"></tamin-field-validator>
+          <tamin-field-combo-box-static
+            formControlName="requestType"
+            [dataItems]="requestTypes" displayField="name"
+            placeHolder="انتخاب کنید ..."
+            valueField="value"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="recieveType">نحوه دریافت</tamin-field-label>
+          <tamin-field-validator formControlName="recieveType"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="recieveType" [dataItems]="recieveTypes" displayField="name"
+                                        placeHolder="انتخاب کنید ..."
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="province">استان</tamin-field-label>
+          <tamin-field-validator formControlName="province"></tamin-field-validator>
+          <tamin-field-auto-complete-data-grid formControlName="province" placeholder="استان"
+                                               #province></tamin-field-auto-complete-data-grid>
+          <div class="hint"><i class="icon-lightbulb"></i><span>قسمتی از نام استان را تایپ نمایید</span></div>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="city">شهر</tamin-field-label>
+          <tamin-field-validator formControlName="city"></tamin-field-validator>
+          <!-- <tamin-field-auto-complete-data-grid formControlName="city" placeholder="شهر" #city></tamin-field-auto-complete-data-grid> -->
+          <tamin-field-combo-box-static formControlName="city" #city [dataItems]="cities"
+                                        displayField="name"
+                                        valueField="value"></tamin-field-combo-box-static>
+          <div class="hint"><i class="icon-lightbulb"></i><span>شهر مورد نظر خود را انتخاب نمایید</span></div>
+        </div>
+
+        <div class="col-4">
+          <tamin-field-label formControlName="branchCode">کارگزاری/شعبه محل دریافت دفترچه</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="branchCode" #city [dataItems]="branchCodes"
+                                        displayField="name"
+                                        valueField="value"></tamin-field-combo-box-static>
+          <div class="hint"><i class="icon-lightbulb"></i><span>محل دریافت دفترچه را مشخص نمایید،توجه کنید اولویت با کارگزاریها می باشد</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="recieveDate">انتخاب زمان تحویل دفترچه</tamin-field-label>
+          <tamin-field-validator formControlName="recieveDate"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="recieveDate" #recieveDate [dataItems]="branchQuatos"
+                                        displayField="name" placeHolder="لطفا ابتدا شعبه را مشخص نمایید"
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="recieveTime">بازه زمانی دریافت</tamin-field-label>
+          <tamin-field-validator formControlName="recieveTime"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="recieveTime" [dataItems]="recieveTimes" displayField="name"
+                                        placeHolder="انتخاب کنید ..."
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="col-4" [ngStyle]="{'display' : showAddress ? 'block' : 'none'}">
+            <tamin-field-label formControlName="zipCode">کد پستی</tamin-field-label>
+            <tamin-field-validator formControlName="zipCode"></tamin-field-validator>
+            <tamin-field-text formControlName="zipCode"></tamin-field-text>
+            <div [ngStyle]="{'display' : showAddress ? 'block' : 'none'}">
+              <button type="button" class="button normal dark" (click)="onGetAddress()">دریافت آدرس</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-8" [ngStyle]="{'display' : showAddress ? 'block' : 'none'}">
+          <tamin-field-label formControlName="address">آدرس</tamin-field-label>
+          <tamin-field-validator formControlName="address"></tamin-field-validator>
+          <tamin-field-text formControlName="address"></tamin-field-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="button-container">
+            <button type="submit" class="button normal">
+              تایید و ثبت درخواست
+            </button>
+            <button type="button" class="button normal dark" >پاک کردن فرم</button>
+            <button type="button" class="button normal gray" (click)="onReturn()">بازگشت</button>
+            <button type="button" class="button normal orange" (click)="onShowUserPicture()">نمایش تصویر متقاضی
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

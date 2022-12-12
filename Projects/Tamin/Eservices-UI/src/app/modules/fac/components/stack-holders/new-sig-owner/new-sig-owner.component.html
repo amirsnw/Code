@@ -1,0 +1,70 @@
+<div class="panel col-6 col-s-6">
+  <div class="panel-title">  {{buttonTitle}} </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate (ngSubmit)="onSave(editForm.value,editForm.valid)">
+      <div class="form-control-container">
+        <div class="row col-12 col-s-12">
+            <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="nationality">ملیت</tamin-field-label>
+            <tamin-field-combo-box-static  formControlName="nationality" displayField="name" valueField="value" #nationalityCodeCombobBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-6 col-s-6" >
+            <tamin-field-label formControlName="character">شخصیت کارگاه</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="character" displayField="name" valueField="value" #characterCombobBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="nationCode">{{nationalName}}</tamin-field-label>
+            <tamin-field-validator formControlName="nationCode"></tamin-field-validator>
+            <tamin-field-natioanl-id formControlName="nationCode"></tamin-field-natioanl-id>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="birthDate">تاريخ تولد</tamin-field-label>
+            <tamin-field-validator  formControlName="birthDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="birthDate" placeholder=""></tamin-field-persian-date>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="firstName" >نام</tamin-field-label>
+            <tamin-field-validator formControlName="firstName"></tamin-field-validator>
+            <tamin-field-text formControlName="firstName"  ></tamin-field-text>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="lastName">نام خانوادگی</tamin-field-label>
+            <tamin-field-validator formControlName="lastName"></tamin-field-validator>
+            <tamin-field-text formControlName="lastName"></tamin-field-text>
+          </div>
+          <div class="col-6 col-s-6" [hidden]=setPositiont>
+            <tamin-field-label formControlName="positiont" >سمت</tamin-field-label>
+            <tamin-field-validator formControlName="positiont"></tamin-field-validator>
+            <tamin-field-text  formControlName="positiont"  ></tamin-field-text>
+          </div>
+          <div class="col-6 col-s-6"  [hidden]=!setPositiont>
+            <tamin-field-label formControlName="position"  [disabled]="true">سمت</tamin-field-label>
+            <tamin-field-combo-box-static  [disabled]="true" formControlName="position" displayField="name" valueField="value" #positionCombobBox></tamin-field-combo-box-static>
+           </div>
+          <div class="col-6 col-s-6"  [hidden]=setSahebeEmza>
+            <tamin-field-label  formControlName="sigOwner">صاحب امضاء</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="sigOwner" displayField="name" valueField="value" #sigOwnerCombobBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-6 col-s-6"  [hidden]=setMovazaf>
+            <tamin-field-label formControlName="movazaf">عضو موظف / غیر موظف</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="movazaf" displayField="name" valueField="value" #movazafCombobBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-6 col-s-6"  [hidden]=setStartDate>
+            <tamin-field-label formControlName="startDate" >دوره تصدی از</tamin-field-label>
+            <tamin-field-validator  formControlName="startDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="startDate"  placeholder=""></tamin-field-persian-date>
+          </div>
+          <div class="col-6 col-s-6"  [hidden]=setEndDate>
+            <tamin-field-label formControlName="endDate">دوره تصدی تا</tamin-field-label>
+            <tamin-field-validator  formControlName="endDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="endDate" placeholder=""></tamin-field-persian-date>
+          </div>
+         </div>
+      </div>
+<!--&lt;!&ndash;      [disabled]="!setEnableSave"&ndash;&gt;        [hidden]=!setEnableSave-->
+      <button #submitButton type="submit" class="button normal">ذحیره </button>
+      <button type="button" class="button normal orange" (click)="back()">انصراف</button>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link href="css/preg.css" rel="stylesheet" type="text/css" />
+        <link href="css/chart.css" rel="stylesheet" type="text/css" />
+        <link href="css/chart.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="js/pregnancywg.js"></script>
+        <script src="js/chart.min.js"></script>
+    </head>
+    <body>
+        <div class="ovo-form">
+            <form id="formc" action="./" method="post" name="formc">
+                <div class="ovo-group">
+                    <input id="p1B1" class="infull" name="p1B1" size="7" type="text" placeholder="وزن پیش از بارداری (kg)" />
+                </div>
+                <div class="ovo-group">
+                    <input id="p1Bc" class="infull" name="p1Bc" size="7" type="text" placeholder="وزن فعلی شما (kg)" />
+                </div>
+                <div class="ovo-group">
+                    <select id="currentw" class="infull" name="currentw" placeholder=" هفته بارداری شما" onchange="recalc_onclick('currentw')">
+                        <option value="1">هفته 1</option>
+                        <option value="2">هفته 2</option>
+                        <option value="3">هفته 3</option>
+                        <option value="4">هفته 4</option>
+                        <option value="5">هفته 5</option>
+                        <option value="6">هفته 6</option>
+                        <option value="7">هفته 7</option>
+                        <option value="8">هفته 8</option>
+                        <option value="9">هفته 9</option>
+                        <option value="10">هفته 10</option>
+                        <option value="11">هفته 11</option>
+                        <option value="12">هفته 12</option>
+                        <option value="13">هفته 13</option>
+                        <option value="14">هفته 14</option>
+                        <option value="15">هفته 15</option>
+                        <option value="16">هفته 16</option>
+                        <option value="17">هفته 17</option>
+                        <option value="18">هفته 18</option>
+                        <option value="19">هفته 19</option>
+                        <option value="20">هفته 20</option>
+                        <option value="21">هفته 21</option>
+                        <option value="22">هفته 22</option>
+                        <option value="23">هفته 23</option>
+                        <option value="24">هفته 24</option>
+                        <option value="25">هفته 25</option>
+                        <option value="26">هفته 26</option>
+                        <option value="27">هفته 27</option>
+                        <option value="28">هفته 28</option>
+                        <option value="29">هفته 29</option>
+                        <option value="30">هفته 30</option>
+                        <option value="31">هفته 31</option>
+                        <option value="32">هفته 32</option>
+                        <option value="33">هفته 33</option>
+                        <option value="34">هفته 34</option>
+                        <option value="35">هفته 35</option>
+                        <option value="36">هفته 36</option>
+                        <option value="37">هفته 37</option>
+                        <option value="38">هفته 38</option>
+                        <option value="39">هفته 39</option>
+                        <option value="40">هفته 40</option>
+                    </select>
+                </div>
+                <div class="ovo-group">
+                    <input id="p1B2" class="infull" name="p1B2" size="7" type="text" placeholder="قد شما (سانتی متر)" />
+                </div>
+                <!--<div class="chart-btn-wrapper">
+                    <input id="btn-ovo-calc" class="btn btn-primary" type="button" value="مشاهده نمودار" name="do_calc" />
+                </div>-->
+				<div id="ovo-error" style="margin-top: 40px;">
+				</div>
+            </form>
+        </div>
+
+        <div class="row ovo-calc" style="display: none;" align="center">
+            <form id="formo" action="./" method="post" name="formo">
+                <table class="table ovo-table">
+                    <tbody>
+                        <tr id="bmiText">
+                            <td>BMI شما <span class="bmiValue"></span> می باشد و نسبت به حد نرمال لاغر هستید.</td>
+                            <td>تبریک! BMI شما <span class="bmiValue"></span> می باشد و کاملا نرمال است.</td>
+                            <td>BMI شما <span class="bmiValue"></span> می باشد و نسبت به حد نرمال چاغ هستید.</td>
+                        </tr>
+                        <tr id="weight">
+                            <td style="border-bottom: none">در حال حاظر <span id="weightValue"></span> دارید. نگران نباشید، در مقاله زیر آسانترین راه های کاهش وزن در بارداری را معرفی کرده ایم. <br><br><a style="color: #20acc9" href="#">10 راهکار جلوگیری از اضافه وزن در دوران بارداری</a></td>
+                            <td style="border-bottom: none">در حال حاظر وزن شما مناسب می باشد.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="row ovo-calc" style="display: none;" align="center">
+            <canvas id="myChart" class="chcanvas chartjs-render-monitor" style="display: block; height: 165px; width: 330px;" width="412" height="206"></canvas>
+        </div>
+        <script src="https://chaptertest.com/wp-content/themes/woodmart-child/bmi/js/pregnancywg.js"></script>
+        <script src="https://chaptertest.com/wp-content/themes/woodmart-child/bmi/js/chart.min.js"></script>
+        <style>
+			.ovo-form>form {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.ovo-group {
+				margin: 2px;
+				width: 45%;
+			}
+			#btn-ovo-calc {
+				border-radius: 30px;
+				cursor: pointer;
+			}
+			.ovo-calc {
+				padding: 12px;
+			}
+            .ovo-group {
+                padding-top: 24px;
+            }
+            .table.ovo-table tbody tr td {
+                padding: 30px;
+            }
+        </style>
+    </body>
+</html>

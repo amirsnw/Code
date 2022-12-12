@@ -1,0 +1,20 @@
+<div class="panel">
+  <div class="part-title">
+    لیست درخواست های ثبت شده
+  </div>
+  <div class="panel-body">
+    <p style="margin:5px;">
+      <!-- <button type="button" class="button normal orange" (click)="addNewRequestButtonClick()">ايجاد درخواست جديد</button> -->
+      <button type="button" class="button normal orange icon-plus-circled" (click)="addNewRequestButtonClick()">ثبت درخواست جديد</button>
+    </p>
+    <tamin-data-grid #dataGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+  </div>
+</div>
+<app-agreement #agreement (agree)="onAgree()"></app-agreement>
+
+<form method="GET" action="https://apipost.jabeja.ir/api/v1/transaction/pay" style="visibility: hidden;" id="form">
+  <input type="text" name="amount" id="amount" />
+  <input type="text" name="key" id="key" />
+  <input type="text" name="username" id="username" />
+  <input type="text" name="callback" id="callback" />
+</form>

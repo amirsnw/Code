@@ -1,0 +1,7 @@
+<div class="alert alert-info">
+  <span>{{getPersianNumber('مشاهده عناوین شغلی از سال 1395')}}</span>
+</div>
+
+<app-sso-occupation-search #ssoOccupationSearchComponent (Submitt)="onSearchSubmit($event)"  (ClearForm)="onClearForm($event)"></app-sso-occupation-search>
+<app-sso-occupation-view #ssoOccupationViewComponent></app-sso-occupation-view>
+<app-sso-occupation-list #ssoOccupationListComponent></app-sso-occupation-list>

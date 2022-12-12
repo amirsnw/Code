@@ -1,0 +1,433 @@
+WEBVTT
+
+00:05.410 --> 00:05.800
+Tudo bem.
+
+00:05.800 --> 00:11.920
+Então terminei o último vídeo dizendo que temos um bug nesse código ou
+
+00:11.920 --> 00:20.410
+pelo menos a implementação tem um saco e que quando removemos os funcionários, definimos a posição para saber.
+
+00:20.470 --> 00:25.840
+Mas isso significa que quando estamos fazendo nosso teste linear, não conseguiremos encontrar alguns de
+
+00:25.840 --> 00:26.500
+nossos itens.
+
+00:26.500 --> 00:34.000
+Por exemplo, Mary Smyth, quando colocamos Mary Smith na mesa, Jane Jones ocupava a posição 5
+
+00:34.000 --> 00:37.480
+e Mike Wilson ocupava as posições 6.
+
+00:37.480 --> 00:41.350
+E então tivemos que usar duas sondas para encontrar os médicos sete.
+
+00:41.350 --> 00:42.360
+Mas depois apagamos.
+
+00:42.370 --> 00:51.460
+Jane e Mike, e quando chegamos a Mary e estamos fazendo nossa chave de busca neste loop, deixamos o loop assim que
+
+00:51.460 --> 00:56.210
+atingimos uma posição nula e vamos atingir essa posição nula imediatamente .
+
+00:56.230 --> 00:59.180
+E isso significa que não podemos mais encontrar Mary.
+
+00:59.200 --> 01:02.470
+E há duas maneiras de resolver esse problema.
+
+01:02.560 --> 01:09.760
+Você pode remover, você pode refazer todos os itens que já estão na tabela de hash, então você pode
+
+01:09.760 --> 01:17.020
+dizer OK, vamos começar com uma nova tabela de hash, então você criaria uma nova tabela de hash e
+
+01:17.020 --> 01:22.930
+então você iria para percorrer o array existente e você vai refazer todos os valores, porque
+
+01:22.960 --> 01:26.880
+depois de deletarmos Jane, moveríamos Mary para a posição 5 correta.
+
+01:26.890 --> 01:31.690
+Porque quando nós fazemos a revisão quando chegamos a Mary, vamos mudar a chave dela, que
+
+01:31.690 --> 01:33.040
+vai acabar sendo cinco.
+
+01:33.070 --> 01:36.270
+E na nova posição da tabela de hash 5 estaria vazia.
+
+01:36.280 --> 01:38.380
+Então essa é uma maneira de fazer isso.
+
+01:38.410 --> 01:45.310
+Claro que isso significa que a cada remoção você terá que iterar sobre todos os elementos restantes e refazê-los
+
+01:45.310 --> 01:47.540
+e há um impacto no desempenho.
+
+01:47.560 --> 01:53.830
+E é claro que isso significa que as retiradas não serão mais feitas em tempo constante, mesmo se o funcionário que você
+
+01:53.830 --> 01:57.370
+está removendo estiver na posição em que você espera que ele esteja.
+
+01:57.370 --> 02:02.860
+Então, para Jane Jones, por exemplo, ela estaria na posição 5 e boom, vamos encontrá-la na posição
+
+02:02.860 --> 02:03.490
+cinco imediatamente.
+
+02:03.490 --> 02:07.220
+Ainda vamos ter que percorrer todo o array e refazer tudo.
+
+02:07.240 --> 02:09.390
+Então tem suas desvantagens.
+
+02:09.400 --> 02:17.230
+A segunda maneira de lidarmos com esse problema é, em vez de nobter o funcionário ou a posição na
+
+02:17.230 --> 02:23.860
+matriz, em vez disso, podemos adicionar um campo à classe Employee armazenada que diz se um
+
+02:23.860 --> 02:25.510
+funcionário foi excluído ou não.
+
+02:25.510 --> 02:26.820
+Agora, como isso ajudaria?
+
+02:26.860 --> 02:34.030
+Bem, nos deixaria distinguir entre posições que sempre foram vazias, significando que nada foi adicionado
+
+02:34.030 --> 02:40.420
+a elas e posições que costumavam ter algo nelas, mas que algo foi deletado.
+
+02:40.540 --> 02:47.020
+E, nesse caso, quando fizemos a nossa chave de busca quando estávamos fazendo esse loop, a posição dos funcionários excluídos
+
+02:47.020 --> 02:48.110
+não seria Não.
+
+02:48.160 --> 02:51.560
+E assim, quando deletamos Jane, não a removemos.
+
+02:51.560 --> 02:54.990
+Nós apenas definimos a exclusão dela para parecer muito verdadeiro.
+
+02:55.060 --> 02:58.080
+E quando apagamos o Mike, não o removíamos.
+
+02:58.080 --> 03:01.090
+Acabamos de dizer que o campo deletado dele é verdadeiro.
+
+03:01.090 --> 03:06.640
+E assim, quando viemos à procura do prefeito, três posições cinco e seis não seriam normais
+
+03:06.640 --> 03:07.620
+e poderíamos encontrá-la.
+
+03:07.630 --> 03:09.670
+Agora, claro, isso tem desvantagens.
+
+03:09.670 --> 03:14.410
+Primeiro de tudo você vai acabar com uma tabela de hash poluída porque você vai
+
+03:14.440 --> 03:17.080
+ter uma mistura de valores ao vivo e excluídos.
+
+03:17.080 --> 03:23.540
+A outra coisa é que, mesmo que você esteja excluindo itens, seu fator de carga não vai mudar.
+
+03:23.590 --> 03:29.800
+E isso significa que você vai ter que fazer muito mais sondagem linear, porque quando você vai
+
+03:29.800 --> 03:35.770
+adicionar um item se ele colide com um item excluído, então você tem que fazer sondagem linear.
+
+03:35.800 --> 03:40.810
+E assim, na primeira solução, você será atingido quando fizer ou remover, porque
+
+03:40.810 --> 03:44.710
+terá que refazer a tabela inteira com a segunda solução.
+
+03:44.710 --> 03:51.190
+Você vai ser atingido quando você faz anúncios porque haverá mais colisões e você terá que fazer muito mais
+
+03:51.190 --> 03:55.890
+sondagens lineares porque você nunca remove nada da tabela essencialmente E então, como
+
+03:55.900 --> 04:01.810
+de costume, depende de onde você está disposto a levar o hit você quer levá-lo em get.
+
+04:01.810 --> 04:03.640
+Então você quer levá-lo em remove.
+
+04:03.640 --> 04:05.910
+Eu preferiria levá-lo na remoção.
+
+04:06.010 --> 04:07.960
+Eu refiz a mesa.
+
+04:07.960 --> 04:10.370
+E então vamos tentar fazer isso.
+
+04:10.660 --> 04:13.170
+Então, mais uma vez, para lembrá-lo de qual é o problema.
+
+04:13.180 --> 04:16.390
+Se corrermos isso agora, veremos que não podemos encontrar Mary.
+
+04:16.390 --> 04:21.820
+Então, ao invés de usar o marcador vamos colocar aqui, vou refazer a tabela porque
+
+04:21.820 --> 04:23.620
+isso manterá a tabela limpa.
+
+04:23.710 --> 04:26.010
+E isso significa que vai manter o.
+
+04:26.010 --> 04:31.240
+Isso reduzirá o número de colisões e o fator de carga também será ajudado por isso.
+
+04:31.240 --> 04:39.320
+Então, quando nós removemos um funcionário em vez de fazer esta linha aqui, esta tabela de hash acabou de ser comentada.
+
+04:39.510 --> 04:46.490
+OK, então primeiro vamos salvar nossa tabela de hash atual em uma variável temporária, então diremos que a tabela de hash antiga do
+
+04:47.150 --> 04:50.070
+funcionário da loja é igual à tabela de hash.
+
+04:50.750 --> 04:58.310
+E agora vamos criar um novo array de funcionários de loja que será do mesmo
+
+04:58.340 --> 05:01.550
+tamanho que nossa velha tabela de hash.
+
+05:01.820 --> 05:10.010
+E então nós temos nossa velha tabela de hash velha e tabela de hash aqui agora contém nossa nova tabela de
+
+05:10.010 --> 05:19.160
+hash, então se nós chamarmos de get ou put ou o que quer que seja nesse ponto ele estará operando nesta nova tabela
+
+05:19.160 --> 05:28.800
+de hash então nós estamos vai dizer que é igual a zero por menos, em seguida, chamado tabela de hash que empresta mais eu mais.
+
+05:29.660 --> 05:35.360
+E queremos colocar todos os valores na velha tabela de hash e colocá-los na nova tabela de hash.
+
+05:35.360 --> 05:37.610
+Agora temos que verificar todos os valores obviamente.
+
+05:37.610 --> 05:46.430
+Então, vamos dizer se a tabela de hash do potro II não é igual ao Knol, então queremos reescrevê-la.
+
+05:46.430 --> 05:52.730
+Nós vamos apenas fazer isso colocando-o na nova tabela de hash, então vamos dizer
+
+05:52.730 --> 06:01.010
+colocar a velha tabela de hash pela chave Daut que será a chave que queremos usar e o valor
+
+06:01.010 --> 06:06.090
+será o hash antigo mesa pelo funcionário DOT e é isso.
+
+06:06.170 --> 06:07.950
+Essa é a nossa rehashing.
+
+06:08.030 --> 06:15.070
+E assim, porque aqui nós atribuímos a nossa variável de membro com a tabela de hash vazia, foi a
+
+06:15.070 --> 06:22.850
+primeira vez que ele chamou de usar o que conhecia todos os nossos métodos e aqui estaremos usando essa nova tabela
+
+06:22.850 --> 06:31.580
+de hash e isso deve resultar em Mary ser movida para a posição 5, porque se nós removemos Jane, Mary terá sido movida
+
+06:31.580 --> 06:33.130
+para a posição cinco.
+
+06:33.140 --> 06:34.820
+Agora eu disse que isso é trabalho.
+
+06:34.820 --> 06:39.560
+Isso significa que toda vez que fizermos uma remoção, estaremos revivendo. Mas se não fizermos o trabalho
+
+06:39.560 --> 06:44.390
+aqui, vamos criar muito mais trabalho para nós mesmos no método put e no método get, porque isso
+
+06:44.390 --> 06:48.620
+significa nós somos todos nós nunca vamos remover nada da tabela de hash essencialmente estamos
+
+06:48.620 --> 06:54.080
+indo para o mercado como excluído e isso vai resultar em um maior fator de carga e muito mais colisões.
+
+06:54.080 --> 07:00.680
+Agora poderíamos ter código para redimensionar o array e uma implementação de tabela hash robusta teria isso no
+
+07:00.710 --> 07:01.250
+put.
+
+07:01.250 --> 07:06.710
+Estaríamos verificando o fator de carga e, se necessário, redimensionando o array e, quando fizermos o redimensionamento,
+
+07:06.710 --> 07:08.180
+teríamos que refazer tudo.
+
+07:08.240 --> 07:13.730
+Mas isso significaria que, como estamos mantendo muitos itens excluídos, poderíamos estar usando muito mais
+
+07:13.730 --> 07:17.870
+memória e é tudo porque você nunca se livra de nada.
+
+07:17.870 --> 07:21.560
+Portanto, sempre há vantagens e desvantagens em tudo.
+
+07:21.620 --> 07:26.150
+Mas eu gosto da reformulação melhor para essa implementação simples.
+
+07:26.150 --> 07:27.960
+Então vamos ao nosso método principal agora.
+
+07:28.010 --> 07:33.950
+Então vamos adicionar quatro funcionários recuperados dois deles e depois vamos remover Mike e
+
+07:34.010 --> 07:35.090
+Jane e eles.
+
+07:35.100 --> 07:40.610
+Agora devemos ser capazes de pegar Mary e, de fato, quando imprimirmos a tabela de hash, Mary deve estar na
+
+07:40.610 --> 07:41.200
+posição 5.
+
+07:41.210 --> 07:48.260
+Então vamos correr.
+
+07:48.270 --> 07:54.900
+Tudo bem, então estes são os nossos resultados e isso não parece certo para mim, porque na
+
+07:54.990 --> 08:00.660
+segunda impressão ainda temos Mike e Jane na matriz, então estamos recuperando Mary, porque
+
+08:00.660 --> 08:08.510
+na verdade não apagamos nada, então vamos ver no nosso código e acho que é porque eu comentei a linha
+
+08:08.540 --> 08:10.430
+que realmente anula o funcionário.
+
+08:10.430 --> 08:16.160
+Então, quando rehashed tudo o nosso empregado, nós excluímos não era não.
+
+08:16.310 --> 08:17.960
+Então vamos rodar isso de novo.
+
+08:19.970 --> 08:20.610
+ESTÁ BEM.
+
+08:20.610 --> 08:24.800
+E desta vez as coisas funcionam do jeito que estamos esperando.
+
+08:24.800 --> 08:30.110
+Então, temos Maria na posição 5 e João na posição três e somos capazes de encontrar Maria.
+
+08:30.110 --> 08:39.270
+Então, essa impressão é depois que adicionamos os quatro funcionários e, em seguida, se olharmos para o nosso método principal, recuperamos Mike
+
+08:42.650 --> 08:43.880
+e Mary e
+
+08:46.550 --> 08:50.030
+isso funciona bem, porque ninguém foi excluído ainda.
+
+08:50.050 --> 08:55.270
+E então nós deletamos Mike e Jane e depois tentamos recuperar Meirion depois de deletarmos.
+
+08:55.280 --> 09:02.060
+Mike e Jane nós estamos imprimindo a tabela de hash novamente e como você pode ver agora só John e Mary
+
+09:02.060 --> 09:08.450
+são esquerdos e Mary está agora em posição 5 porque quando nós fizemos o refazer depois que nós apagamos Jane
+
+09:08.450 --> 09:09.940
+posição cinco estava livre.
+
+09:10.070 --> 09:14.050
+E então, quando formos buscar Mary Smith, podemos chegar até ela.
+
+09:14.180 --> 09:19.580
+E assim como você pode ver quando você usa sondagem linear, há muito mais trabalho envolvido
+
+09:19.580 --> 09:23.020
+no melhor caso usando sondagem linear ainda é tempo constante.
+
+09:23.030 --> 09:28.040
+Se a posição com a qual você deseja trabalhar estiver vazia.
+
+09:28.040 --> 09:33.200
+Então, se você está adicionando um funcionário, essa posição está vazia e, se você está recebendo um funcionário,
+
+09:33.320 --> 09:38.420
+a chave na posição com hash é aquela em que você está interessado, o que é constante.
+
+09:38.420 --> 09:43.580
+Agora, se você realmente tiver que usar testes, enviar o pior caso é tempo linear,
+
+09:43.580 --> 09:49.220
+porque é possível que você tenha que percorrer todo o array antes de encontrar uma posição vazia
+
+09:49.220 --> 09:53.170
+no caso de um ADD ou antes de encontrar a chave interessada.
+
+09:53.180 --> 09:57.470
+Agora, isso significa que a sondagem linear não é boa para ser usada para lidar com colisões.
+
+09:57.470 --> 10:03.110
+Bem, não, porque com uma função de hash decente e se você está redimensionando o array ocasionalmente, então você
+
+10:03.110 --> 10:05.330
+está mantendo o fator de carga razoável.
+
+10:05.360 --> 10:08.630
+Você nunca precisará usar muitas probes no caso médio.
+
+10:08.630 --> 10:13.760
+Você não terá que usar uma tonelada de probes que você não terá que percorrer toda a matriz.
+
+10:13.910 --> 10:19.580
+Mas como eu disse muitas vezes a função hash e mantendo o fator de carga razoável é o que vai
+
+10:19.580 --> 10:22.110
+fazer ou quebrar o desempenho das tabelas de hash.
+
+10:22.190 --> 10:28.760
+Portanto, se você tiver uma função hash que produz toneladas de colisões o tempo todo ou se a sua tabela de hash
+
+10:28.760 --> 10:33.130
+estiver realmente cheia e você não redimensioná-la com muita frequência, seu desempenho vai sofrer.
+
+10:33.140 --> 10:39.920
+Agora, antes de deixarmos a sondagem linier Uma variação é a sondagem quadrática e quando você usa sondagem quadrática em
+
+10:39.920 --> 10:45.800
+vez de incrementar o valor de hash em um, você o incrementa por alguma constante ao quadrado.
+
+10:45.800 --> 10:50.920
+Então, por exemplo, você começa incrementando o valor de hash em um quadrado e, em seguida, adiciona
+
+10:50.960 --> 10:53.710
+incremento por dois quadrados e depois três quadrados etc. Tudo bem, então é quando você está investigando
+
+10:53.710 --> 10:58.910
+no próximo vídeo, vamos dar uma olhada na segunda estratégia para lidar com colisões.
+
+10:58.910 --> 11:00.250
+E é uma estratégia que é chamada de encadeamento.
+
+11:00.260 --> 11:02.870
+Eu te vejo lá.
+
+11:02.870 --> 11:03.800
+&nbsp;

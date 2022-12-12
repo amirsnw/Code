@@ -1,0 +1,64 @@
+WEBVTT
+
+00:05.490 --> 00:10.530
+Muy bien en este desafío, quiero que elimines elementos duplicados de una lista vinculada y
+
+00:10.530 --> 00:15.940
+quiero que tu solución haga dos cosas. Quiero que use la clase de la lista enlazada eks.
+
+00:15.960 --> 00:22.260
+Y, de hecho, el proyecto inicial en la sección de recursos tiene el código para crear la lista
+
+00:22.260 --> 00:25.230
+vinculada y completarla con algunas instancias de empleados.
+
+00:25.230 --> 00:28.010
+Y quiero que tu solución use un mapa hash.
+
+00:28.050 --> 00:34.590
+Ahora, en su solución, no debería tener que mantener ningún campo adicional que apunte a los elementos de la
+
+00:34.590 --> 00:35.290
+lista vinculada.
+
+00:35.370 --> 00:40.350
+De acuerdo, no debería tener que tener ningún campo e intenta hacer un seguimiento de dónde están las cosas
+
+00:40.350 --> 00:42.720
+en la lista vinculada, ya que está eliminando duplicados.
+
+00:42.750 --> 00:47.880
+En su lugar, su solución debe usar un mapa hash y dejar que se dé cuenta de cómo debe usar
+
+00:47.880 --> 00:48.730
+ese mapa hash.
+
+00:48.900 --> 00:51.410
+Y así comienza con el proyecto inicial.
+
+00:51.420 --> 00:56.010
+Notarás que el código del último desafío aún está allí. Lo acabo de comentar.
+
+00:56.070 --> 01:04.980
+Y una cosa importante aquí es que puede suponer que si un empleado tiene la misma clave que
+
+01:04.980 --> 01:07.240
+otro empleado, entonces se duplica.
+
+01:07.370 --> 01:10.920
+Y entonces no necesita verificar la instancia completa.
+
+01:10.920 --> 01:17.270
+No tiene que decir si los ID son iguales si los primeros nombres son iguales y si los apellidos son iguales, no tiene que hacer eso para
+
+01:17.280 --> 01:23.040
+este desafío, vamos a decir si dos empleados tienen el mismo I. RE.
+
+01:23.340 --> 01:29.010
+entonces son el mismo empleado porque cualquier compañía en la que trabajemos para los ID es única.
+
+01:29.010 --> 01:32.910
+No puede asignar la misma ID a dos empleados diferentes.
+
+01:32.910 --> 01:36.570
+Está bien, así que con eso en mente buena suerte y te veré cuando el video de la solución.

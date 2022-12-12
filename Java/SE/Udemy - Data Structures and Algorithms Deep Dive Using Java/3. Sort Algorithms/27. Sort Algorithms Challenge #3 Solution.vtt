@@ -1,0 +1,346 @@
+WEBVTT
+
+00:05.350 --> 00:05.850
+Tudo bem.
+
+00:05.850 --> 00:09.490
+Então eu comecei a solução um pouco.
+
+00:09.500 --> 00:16.100
+Isto é o que estava disponível no projeto na seção de recursos para o último vídeo e depois eu copiei
+
+00:16.100 --> 00:21.980
+sobre o tipo radix e a taxa de métodos de classificação única da implementação em que trabalhamos quando
+
+00:22.070 --> 00:23.610
+cobrimos o tipo radix.
+
+00:23.690 --> 00:29.670
+Eu não copiei o método get digit porque estamos classificando strings para que não precisemos.
+
+00:29.750 --> 00:35.540
+Então vamos pensar sobre o método que vamos ter que substituir para obter o dígito Massad com
+
+00:35.540 --> 00:37.160
+o que realmente queremos fazer.
+
+00:37.280 --> 00:41.760
+Bem, estamos indo ao vento para obter a carta na posição que estamos olhando.
+
+00:41.870 --> 00:48.620
+Então, quando ordenamos as strings, vamos começar da direita, como fizemos com os valores
+
+00:48.620 --> 00:55.430
+inteiros, porque a posição menos significativa está à direita e, assim como os números
+
+00:55.460 --> 01:01.280
+decimais, queremos ir da direita para a esquerda, quando estamos classificando com
+
+01:01.280 --> 01:05.980
+base na última posição na cadeia, vamos querer FCECD e B.
+
+01:06.020 --> 01:12.340
+Então, precisamos de um método que aceite uma posição e descubra a letra que estamos examinando.
+
+01:12.350 --> 01:17.030
+E isso é realmente mais fácil de fazer do que era para números decimais.
+
+01:17.390 --> 01:20.600
+Então vamos primeiro e eu vou chamá-lo.
+
+01:20.610 --> 01:26.890
+Obtenha o índice porque o que estamos basicamente procurando é que queremos o índice na matriz de contagem.
+
+01:26.900 --> 01:28.750
+É isso que queremos que o método retorne.
+
+01:28.820 --> 01:37.700
+Então, eu vou dizer public static int get index e isso vai aceitar a posição que estamos
+
+01:37.700 --> 01:38.420
+olhando.
+
+01:38.450 --> 01:40.590
+E a corda.
+
+01:41.720 --> 01:50.870
+Então, se queremos obter F C D etc. Vamos passar para o índice porque desta vez queremos o índice baseado
+
+01:50.870 --> 01:53.960
+em zero e passaríamos o valor da string.
+
+01:53.990 --> 02:03.470
+E dentro de tudo o que temos a fazer é chamar o método char para que possamos retornar o valor Daut char na posição.
+
+02:03.680 --> 02:12.050
+Isso nos daria, por exemplo, f, mas não é isso que queremos, porque queremos retornar onde f está
+
+02:12.050 --> 02:14.780
+sendo contado na matriz de contagem.
+
+02:14.780 --> 02:19.790
+Agora a estará na posição zero na matriz de contagem B estará na posição 1.
+
+02:19.790 --> 02:24.110
+C estará na posição 2 D estará na posição 3 etc. Então a é essa posição 0.
+
+02:24.200 --> 02:26.060
+Então, se quisermos descobrir
+
+02:26.060 --> 02:34.220
+onde f é, obteremos F e depois subtrairemos um e isso nos dará a posição na matriz de contagem.
+
+02:34.220 --> 02:36.460
+Lembre-se de que os caracteres são, na verdade, novos valores numéricos nas capas.
+
+02:36.500 --> 02:42.120
+Então, se a tem um valor numérico de.
+
+02:42.140 --> 02:45.540
+Eu acho que é 65 em ASCII, mas eu não tenho absolutamente certeza disso,
+
+02:45.680 --> 02:53.180
+mas se é 65 em ASCII as letras de A a Zed em letras minúsculas são todas valores contíguos então é digamos que o valor 65 seja 66 a 67 68 etc. Então, se quisermos obter a posição na matriz
+
+02:53.210 --> 03:05.850
+de contagem, precisamos traduzir essas letras para os índices de 0 a 25.
+
+03:05.870 --> 03:13.670
+E assim seria um 65 menos 65 é 0.
+
+03:13.670 --> 03:15.400
+Então, é na posição zero na matriz de contagem B seria 66 menos 65, que é 1.
+
+03:15.770 --> 03:20.330
+Portanto, é a posição 1 na matriz de contagem que
+
+03:20.330 --> 03:26.660
+seria 67 menos 65, que deveria ser a Posição 2 na matriz de contagem extra.
+
+03:26.690 --> 03:34.010
+E o que estamos fazendo com isso é que estamos traduzindo o valor numérico para o caractere em um
+
+03:34.010 --> 03:36.000
+índice na matriz de contagem.
+
+03:36.020 --> 03:43.910
+E porque as letras de A a Zed no sistema ascii têm valor de dígito tem valor 65 66 67 e
+
+03:44.000 --> 03:45.650
+continuamos aumentando em 1
+
+03:45.650 --> 03:55.940
+todo o caminho para dizer que podemos traduzir um caractere para sua posição na matriz de contagem apenas subtraindo a do valor seria tem o valor para esse caractere.
+
+03:55.940 --> 04:02.000
+E é isso que estamos fazendo aqui e isso nos retornará o índice na matriz de contagem.
+
+04:02.000 --> 04:06.930
+OK um breve tempo aqui fora.
+
+04:07.100 --> 04:11.600
+Depois que eu terminei de gravar este vídeo eu procurei um minúsculo na tabela ASCII e descobriu-se que minúsculas um tem um valor de 97 é maiúsculo um que
+
+04:13.800 --> 04:15.810
+tem um valor de 65, então eu suponho que eu estava meio certo.
+
+04:15.810 --> 04:22.380
+Mas a discussão ainda permanece porque a minúscula a está em 97, a letra minúscula b está em 98.
+
+04:22.470 --> 04:31.110
+O minúsculo c está em noventa e nove, etc. todo o caminho até Zed.
+
+04:31.260 --> 04:39.150
+Podemos traduzir o valor numérico de um caractere minúsculo para seu índice no array de contagem
+
+04:39.150 --> 04:43.460
+subtraindo o caractere a.
+
+04:43.530 --> 04:51.060
+Mas eu pensei em gravar este breve intervalo no caso de alguém perceber que eu estava realmente usando o código ASCII para uma letra maiúscula quando eu estava
+
+04:51.060 --> 04:52.810
+discutindo como estávamos fazendo a tradução.
+
+04:52.860 --> 04:59.730
+Então é isso.
+
+04:59.730 --> 05:04.340
+Agora vamos voltar ao nosso vídeo programado regularmente.
+
+05:04.440 --> 05:05.100
+E assim, por
+
+05:05.100 --> 05:12.770
+causa disso, podemos entrar aqui e podemos mudar o dígito para obter o índice e queremos passar a posição e o valor, e isso é tudo de que precisamos.
+
+05:12.930 --> 05:20.250
+Nós não precisamos da taxa X. e vamos corrigir esse erro mais tarde.
+
+05:22.860 --> 05:26.940
+Agora estávamos pensando que o valor era um inteiro.
+
+05:26.940 --> 05:31.350
+Então é tudo que precisamos aqui para isso.
+
+05:31.350 --> 05:33.970
+Obter índice e o mesmo para este, então vamos mudar isso para obter o índice e podemos apenas remover
+
+05:34.260 --> 05:36.140
+mais uma vez a taxa X irá corrigir os outros erros mais tarde.
+
+05:36.140 --> 05:44.130
+Então, agora que temos nosso índice Get neste que provavelmente foi a parte mais difícil de modificar a taxa X ou dois
+
+05:44.250 --> 05:48.030
+que podemos classificar strings, vamos consertar o resto do código.
+
+05:48.030 --> 05:53.970
+Então, primeiro vamos chamar nossa taxa X ou mais quando fizermos isso, passaremos uma matriz de strings.
+
+05:53.970 --> 05:57.690
+Então, vamos modificar esse similis dizer string.
+
+05:57.690 --> 06:03.830
+Nós ainda estamos, então eu quero pegar o X no chicote agora aqui nós
+
+06:03.840 --> 06:09.540
+realmente queremos modificar o loop porque a posição que passamos queremos começar na
+
+06:10.140 --> 06:16.350
+posição mais à direita, foi OK para nós começarmos em zero e incrementarmos quando
+
+06:16.410 --> 06:24.750
+estavam lidando com números decimais porque eles recebiam o dígito Massad foi codificado de tal forma que quando eu
+
+06:24.750 --> 06:31.380
+tinha 0 nós estávamos na verdade aumentando 10 para 0 e então nós estávamos recebendo o.
+
+06:31.410 --> 06:37.560
+E o cálculo que estávamos fazendo nos dava o dígito mais à direita.
+
+06:37.560 --> 06:38.030
+Mas agora que
+
+06:38.040 --> 06:41.830
+estamos apenas usando a posição do gráfico de valor, na verdade, queremos fazer uma contagem regressiva do comprimento da string até zero.
+
+06:42.120 --> 06:48.750
+E assim, queremos contar.
+
+06:48.750 --> 06:50.690
+Eu quero começar com menos um.
+
+06:50.730 --> 06:52.020
+Nós vamos continuar enquanto ele for maior ou igual a zero.
+
+06:52.020 --> 06:55.950
+E vamos diminuir.
+
+06:57.270 --> 07:02.230
+E desta vez nós realmente queremos eu por causa da maneira como o método get index é codificado.
+
+07:02.580 --> 07:04.780
+Nós realmente queremos começar às quatro e depois descer para zero e então.
+
+07:05.460 --> 07:11.280
+Então é só isso que temos que mudar aqui para o único tipo.
+
+07:11.280 --> 07:17.440
+Agora vamos aceitar um array de strings, então mudaremos isso para a força.
+
+07:17.490 --> 07:20.850
+E por causa disso nós temos algumas correções que precisamos
+
+07:20.850 --> 07:25.910
+fazer aqui, nós vamos ter um valor de string e aqui embaixo nossa temp.
+
+07:26.090 --> 07:33.890
+Nós vamos ter um valor de string para o loop e, em seguida, aqui para baixo
+
+07:33.920 --> 07:35.690
+são temporários, na verdade,
+
+07:35.690 --> 07:39.860
+vai ser uma matriz de string e é isso.
+
+07:39.860 --> 07:40.310
+É tudo o que precisamos mudar.
+
+07:43.250 --> 07:46.630
+Então, como eu disse, provavelmente a parte mais difícil foi descobrir isso.
+
+07:46.910 --> 07:48.240
+Então, vamos executar e não vamos
+
+07:48.230 --> 07:51.640
+ver nada ordenado, porque precisamos realmente chamar rate x sort, então vamos fazer isso.
+
+07:53.020 --> 07:56.540
+Então, um tipo de radix.
+
+07:59.120 --> 08:05.700
+Nós vamos passar o nosso array de strings desta vez temos um raio de 26 porque existem 26 letras no alfabeto e nosso chicote é cinco
+
+08:06.080 --> 08:08.480
+porque cada uma das nossas strings tem cinco letras.
+
+08:09.020 --> 08:16.640
+Então agora ele é executado
+
+08:16.640 --> 08:23.210
+e nós classificamos nossas strings.
+
+08:23.480 --> 08:24.500
+ABC a B B B B C D E F D seja Q C e O M A D D.
+
+08:27.740 --> 08:29.390
+E como eu disse,
+
+08:29.390 --> 08:38.690
+provavelmente, a parte mais desafiadora disso foi descobrir como obter esse índice e talvez você não tenha achado isso muito desafiador.
+
+08:38.780 --> 08:43.730
+E é claro que precisávamos modificar esse loop porque agora queremos começar
+
+08:43.790 --> 08:46.310
+na posição mais à direita por
+
+08:46.310 --> 08:56.360
+causa da maneira como codificamos esse método e o resto era basicamente uma questão de consertar a chamada para obter um dígito mudando-o para
+
+08:56.390 --> 09:04.040
+chamar o Pegue o índice e arrume as áreas em que usamos, quando realmente precisávamos de uma string agora.
+
+09:04.040 --> 09:11.630
+Como você pode ver a partir desses desafios, uma vez que você conhece uma implementação de um algoritmo de classificação, não é tão difícil
+
+09:11.630 --> 09:12.890
+modificá-lo para classificar tipos
+
+09:12.890 --> 09:18.290
+de dados de tipos diferentes ou para classificar em ordem decrescente em vez de uma ordem permanente.
+
+09:18.290 --> 09:24.470
+Portanto, o mais importante é que você entenda os passos que um algoritmo toma para classificar um conjunto
+
+09:24.500 --> 09:27.140
+de valores, pois assim que conhecer as etapas
+
+09:27.170 --> 09:33.200
+envolvidas em um algoritmo de classificação, você poderá codificar a implementação necessária para realizar o que deseja realizar.
+
+09:33.200 --> 09:39.950
+Tudo bem.
+
+09:39.950 --> 09:43.220
+Então, para algoritmos de classificação, por enquanto, na próxima seção, vamos começar a ver as listas.
+
+09:43.220 --> 09:43.620
+Eu te vejo lá.
+
+09:43.640 --> 09:48.670
+&nbsp;
+
+09:48.710 --> 09:49.930
+&nbsp;

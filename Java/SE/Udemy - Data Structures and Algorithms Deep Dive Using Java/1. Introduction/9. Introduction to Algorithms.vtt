@@ -1,0 +1,181 @@
+WEBVTT
+
+00:05.520 --> 00:05.970
+Todo bien.
+
+00:05.970 --> 00:07.800
+Entonces, ¿qué es un algoritmo?
+
+00:07.800 --> 00:13.830
+Un algoritmo describe los pasos que debe realizar para realizar una tarea específica.
+
+00:13.830 --> 00:19.230
+Ahora, un ejemplo común que se usa a menudo cuando se enseñan algoritmos son los pasos para preparar una
+
+00:19.230 --> 00:20.180
+taza de café.
+
+00:20.220 --> 00:23.260
+Soy un bebedor de té, así que voy a usar té en su lugar.
+
+00:23.310 --> 00:27.080
+Y aquí hay un algoritmo para hacer té en el primer paso.
+
+00:27.120 --> 00:31.280
+Hiervemos agua en el paso dos y agregamos una bolsita de té a una taza.
+
+00:31.380 --> 00:35.040
+En el Paso Tres vertimos el agua hirviendo en la taza.
+
+00:35.100 --> 00:42.390
+En el Paso Cuatro, retiramos la bolsita de té cuando el té está listo, lo que significa que es muy empinado hasta el grado deseado, ya
+
+00:42.390 --> 00:45.200
+sea té fuerte o té fuerte o té entre medio.
+
+00:45.240 --> 00:48.770
+En el Paso Cinco agregamos la cantidad deseada de leche a la taza.
+
+00:48.870 --> 00:54.690
+En el Paso Seis agregamos la cantidad deseada de azúcar a la Copa y en el Paso Siete removimos
+
+00:54.690 --> 00:58.760
+el contenido de la taza con una cuchara y nuestro té está listo.
+
+00:58.770 --> 01:03.630
+Ahora podría estar mirando esto y pensando en esperar un minuto, así no es como hago el té.
+
+01:03.660 --> 01:08.760
+No pongo la bolsita de té en la taza. Pongo la bolsa de té en una tetera, hiervo el
+
+01:08.760 --> 01:15.420
+agua y la vierto en la tetera y luego agrego leche en la taza antes de verter de la tetera en la taza. porque eso
+
+01:15.420 --> 01:18.570
+quema la leche le da al equipo un sabor un poco diferente.
+
+01:18.630 --> 01:23.150
+Pero notarás que dije He aquí un algoritmo para hacer té.
+
+01:23.160 --> 01:26.490
+No dije Heres el algoritmo para hacer té.
+
+01:26.550 --> 01:32.500
+Puede haber más de un algoritmo para llevar a cabo una tarea y verá que cuando cubrimos algoritmos de ordenamiento, hay
+
+01:32.500 --> 01:34.820
+muchas formas en que podemos ordenar los datos.
+
+01:34.980 --> 01:37.170
+Y entonces hay muchos algoritmos de ordenamiento.
+
+01:37.170 --> 01:43.800
+No hay solo un algoritmo de ordenamiento y esta es la única forma en que puede ordenar los datos de este algoritmo que está
+
+01:43.800 --> 01:48.950
+viendo al hacer el algoritmo, hacer algunas suposiciones que asumen que estamos usando un T-Bag y que nosotros '
+
+01:48.960 --> 01:53.170
+Estoy haciendo el té directamente en la taza como dije en vez de usar una tetera.
+
+01:53.280 --> 01:56.470
+Y no es inusual que un algoritmo haga suposiciones.
+
+01:56.490 --> 02:01.550
+Algunos de los algoritmos de clasificación cubrirán suposiciones sobre los datos que están ordenando y otros no.
+
+02:01.680 --> 02:05.520
+Entonces puede haber muchos algoritmos que realicen la misma tarea.
+
+02:05.520 --> 02:11.930
+Ahora hay una distinción realmente importante que debes entender que un algoritmo no es una implementación.
+
+02:11.970 --> 02:13.430
+No son lo mismo.
+
+02:13.500 --> 02:20.070
+Un algoritmo describe los pasos que debe realizar y la implementación es el código que escribe para
+
+02:20.070 --> 02:23.000
+realizar esos pasos si hablamos de programación.
+
+02:23.040 --> 02:26.590
+Puede haber muchas implementaciones del mismo algoritmo.
+
+02:26.610 --> 02:29.750
+Por ejemplo, veamos nuestro algoritmo de creación nuevamente.
+
+02:29.820 --> 02:34.790
+En el Paso uno no especificamos cómo hervir el agua, solo dijimos que tenía que hervir agua.
+
+02:34.860 --> 02:40.860
+Por lo tanto, no importa si el agua se hierve en un hervidor o en una cacerola o si alguien
+
+02:40.860 --> 02:44.580
+la está hirviendo en una olla sobre una fogata mientras hierva el agua.
+
+02:44.610 --> 02:46.180
+Estás realizando el paso 1.
+
+02:46.200 --> 02:51.960
+De la misma manera, cuando implementamos un algoritmo, es posible implementar un paso de muchas
+
+02:51.960 --> 02:52.730
+maneras diferentes.
+
+02:52.800 --> 02:59.700
+Y en este curso, les mostraré una implementación de cada algoritmo que estudiamos.
+
+02:59.700 --> 03:04.260
+Pero puede haber, y probablemente haya, otras implementaciones de los algoritmos.
+
+03:04.290 --> 03:10.560
+Tan solo para perforar ese hogar pueden haber muchos algoritmos que realizan la misma tarea si miran
+
+03:10.560 --> 03:14.730
+esta sección de algoritmos de ordenamiento, verán que hay al menos ocho.
+
+03:14.730 --> 03:15.840
+Puede haber más.
+
+03:15.870 --> 03:21.300
+Cubrimos los populares y también puede haber muchas implementaciones del mismo algoritmo.
+
+03:21.300 --> 03:26.990
+Así que te mostraré una implementación, pero es posible que veas otras implementaciones para los mismos algoritmos.
+
+03:27.000 --> 03:32.880
+Siempre que el código que está escribiendo siga los pasos descritos por el algoritmo, tiene una implementación
+
+03:32.880 --> 03:34.050
+para el algoritmo.
+
+03:34.050 --> 03:39.810
+Ahora, a menudo, el algoritmo y la implementación de la palabra se usan indistintamente aunque sean diferentes.
+
+03:39.820 --> 03:42.340
+Probablemente haga lo mismo de vez en cuando.
+
+03:42.360 --> 03:46.450
+De vez en cuando puedo usar algoritmo cuando debería estar usando la implementación.
+
+03:46.470 --> 03:52.590
+Así que recuerde que un algoritmo puede tener muchas implementaciones y, como dije, puede haber muchos algoritmos para
+
+03:52.590 --> 03:54.640
+llevar a cabo la misma tarea.
+
+03:54.690 --> 03:57.840
+Entonces esos algoritmos no son terriblemente complicados.
+
+03:57.840 --> 04:03.270
+Simplemente describen los pasos que debe seguir para realizar una tarea específica y, por lo tanto,
+
+04:03.270 --> 04:09.540
+ahora que hemos analizado qué es una estructura de datos y hemos analizado qué es un algoritmo, sigamos
+
+04:09.570 --> 04:13.520
+adelante y comencemos a buscar en nuestra primera estructura de datos. formación.
+
+04:13.620 --> 04:14.780
+Te veré allá.

@@ -1,0 +1,439 @@
+WEBVTT
+
+00:05.300 --> 00:05.770
+Tudo bem.
+
+00:05.780 --> 00:10.850
+Então, vamos começar com a implementação de classificação por inserção que passamos no vídeo de classificação de
+
+00:10.850 --> 00:13.610
+inserção, e é exatamente isso que eu tenho aqui.
+
+00:13.610 --> 00:20.120
+Este é o projeto inicial do último vídeo e esta é uma implementação iterativa.
+
+00:20.120 --> 00:24.170
+Nós não estamos usando recursão, não há nenhum método aqui que esteja chamando a si mesmo.
+
+00:24.170 --> 00:30.140
+Agora, é claro, a recursão é um método que se chama assim, portanto, vamos querer mover
+
+00:30.140 --> 00:37.310
+alguns dos códigos para um método e, essencialmente, precisamos pensar sobre o que está acontecendo em cada iteração desse
+
+00:37.310 --> 00:38.030
+loop externo.
+
+00:38.240 --> 00:47.180
+O que está acontecendo é que em cada iteração estamos expandindo a partição ordenada por um, porque se você se lembra no começo,
+
+00:47.330 --> 00:52.400
+estamos assumindo que o primeiro elemento na matriz é classificado e, em seguida,
+
+00:52.400 --> 00:59.000
+escolhemos o primeiro elemento na partição não classificada e inseri-lo na partição ordenada e assim expandimos o
+
+00:59.000 --> 01:04.280
+tipo de partição por um e depois retiramos o próximo elemento na partição
+
+01:04.340 --> 01:06.950
+não classificada, etc. até que estejam todos classificados.
+
+01:06.980 --> 01:14.330
+Seria bom ter um método que podemos chamar com o número de itens que queremos classificar, porque se começarmos
+
+01:14.390 --> 01:20.330
+com os dois primeiros itens e os classificarmos, então ordenamos três itens e quatro itens e
+
+01:20.330 --> 01:25.940
+cinco itens e, em seguida, seis itens e, em seguida, sete itens acabaram por classificar
+
+01:25.940 --> 01:27.120
+a matriz inteira.
+
+01:27.230 --> 01:34.010
+Então, vamos mover nosso código para um método que aceite uma matriz e o número de itens
+
+01:34.010 --> 01:35.070
+que queremos classificar.
+
+01:35.180 --> 01:41.990
+Então, nós vamos dizer public static void insertion sort.
+
+01:41.990 --> 01:48.890
+E vai receber uma interface do array de entrada e um int do número de itens que queremos
+
+01:48.890 --> 01:49.310
+classificar.
+
+01:49.310 --> 01:52.390
+E sempre assumimos que estamos começando na frente da matriz.
+
+01:52.400 --> 01:57.410
+Então, em nosso método, nosso método recursivo, vamos precisar de uma pausa na condição, queremos
+
+01:57.410 --> 02:03.380
+saber quando parar a recursão e a condição de quebra que usaremos se o número de itens for
+
+02:03.380 --> 02:04.360
+menor que 2.
+
+02:05.130 --> 02:11.660
+E se é que vamos retornar, porque quando temos um item por definição, um item é classificado e, quando
+
+02:11.870 --> 02:17.930
+chegamos a chamar este tipo de inserção com um item que irá quebrar a recursão e, em seguida,
+
+02:17.930 --> 02:19.760
+o que queremos fazer aqui.
+
+02:19.790 --> 02:29.390
+Bem, queremos fazer uma classificação de inserção com a mesma matriz de entrada, mas com um item a menos.
+
+02:29.390 --> 02:36.410
+Então, quando somos chamados com dois itens ou mais, o que significa que temos trabalho a fazer antes de classificar
+
+02:36.410 --> 02:40.350
+os itens que foram chamados com os itens adormecidos menos um.
+
+02:40.460 --> 02:47.150
+Então, se formos chamados no começo para classificar sete itens, vamos dizer que vamos classificar primeiro os
+
+02:47.150 --> 02:56.450
+seis primeiros itens e, depois de termos classificado os seis primeiros itens, classificaremos o item final e assim diremos essencialmente o que fizemos
+
+02:56.450 --> 02:57.670
+aqui em cima.
+
+02:57.710 --> 03:01.300
+E então eu vou copiar esse código.
+
+03:01.410 --> 03:04.260
+Nós vamos ter que mudar um pouco e eu vou colá-lo aqui.
+
+03:04.440 --> 03:08.100
+Deixe-me mudar todas as ocorrências de
+
+03:10.440 --> 03:19.560
+Interrail para entrada de entrada e entrada de entrada e vamos colocar a entrada aqui.
+
+03:20.310 --> 03:26.100
+E em vez de um primeiro índice não classificado, usaremos itens
+
+03:29.270 --> 03:37.700
+num, menos um item de símbolo colocado aqui, e colocaremos itens num, menos um aqui e pronto.
+
+03:37.700 --> 03:38.750
+Isso é tudo que temos que fazer.
+
+03:38.750 --> 03:40.270
+Então, o que está acontecendo aqui?
+
+03:40.340 --> 03:46.840
+Bem, quando chamamos o método com toda a matriz, teremos sete itens.
+
+03:46.840 --> 03:50.140
+Então, vamos verificar se temos mais de um item e o fazemos.
+
+03:50.140 --> 03:54.340
+E então o que vamos dizer é Bem, vamos primeiro classificar os seis primeiros itens.
+
+03:54.340 --> 04:00.370
+E assim, quando voltamos desse método, os primeiros seis itens da matriz foram ordenados e
+
+04:00.460 --> 04:01.590
+queremos apenas ordenar.
+
+04:01.600 --> 04:04.830
+Agora o sétimo item é o último item.
+
+04:04.840 --> 04:11.170
+Então começamos com a coisa toda quando chegamos aqui, classificamos os seis primeiros elementos para
+
+04:11.920 --> 04:13.090
+que todos resolvessem.
+
+04:13.120 --> 04:20.840
+Neste ponto, exceto menos 22, o que vamos fazer é apenas uma ordenação de inserção regular, mas em vez de um
+
+04:20.840 --> 04:27.600
+loop, estamos apenas fazendo uma iteração e isso será para o elemento que define os itens menos um.
+
+04:27.770 --> 04:35.180
+Assim, para toda a matriz que seria a entrada 6, que é menos 22 e, em seguida, vamos dizer que eu igual a
+
+04:35.200 --> 04:40.720
+seis é maior que zero e a entrada I menos um é maior que o novo elemento.
+
+04:40.760 --> 04:47.210
+Então, estamos procurando o ponto de inserção aqui menos menos, desde que o elemento seja maior que o novo elemento que
+
+04:47.210 --> 04:51.770
+continuaremos procurando pelo ponto de inserção, porque queremos encontrar o primeiro elemento que é menor
+
+04:51.810 --> 04:56.480
+ou igual ao que nós quero inserir porque, quando encontrarmos esse elemento, saberemos que encontramos
+
+04:56.480 --> 04:58.020
+o ponto de inserção.
+
+04:58.070 --> 05:02.810
+E assim como estamos procurando por esse elemento, estamos mudando os elementos porque temos que dar
+
+05:02.810 --> 05:04.090
+espaço para a inserção.
+
+05:04.100 --> 05:09.240
+E quando abandonarmos esse loop, serei o ponto de inserção do novo elemento.
+
+05:09.290 --> 05:18.740
+Então, em vez de usar um loop para aumentar a partição ordenada da esquerda para a direita, estamos usando a recursão para aumentar a partição classificada da esquerda
+
+05:18.830 --> 05:24.410
+para a direita e mostrarei que em um minuto eu adiciono algumas instruções de linha de impressão
+
+05:24.410 --> 05:26.600
+para vermos o que está acontecendo.
+
+05:26.600 --> 05:30.040
+Então o que eu vou fazer é comentar esse tipo.
+
+05:30.080 --> 05:32.720
+Obviamente vou deixá-lo lá para que você possa ver.
+
+05:32.780 --> 05:35.940
+E vamos fazer a primeira chamada para o tipo de inserção.
+
+05:36.350 --> 05:40.100
+Então, isso será inserção de classificação e será toda a nossa matriz.
+
+05:40.460 --> 05:46.550
+E quando chamamos o método, queremos classificar a matriz inteira.
+
+05:46.910 --> 05:52.150
+E então o que vai acontecer é que vamos entrar aqui sem itens será 7 porque é
+
+05:52.160 --> 05:53.270
+de comprimento intermediário.
+
+05:53.330 --> 05:59.750
+Esta condição falhará e nós vamos dizer OK bem então vamos chamar inserção de ordenação para ordenar os primeiros seis itens na matriz
+
+05:59.990 --> 06:06.080
+e então isso virá e dirá OK bem vamos chamar ordenação de inserção para ordenar os primeiros cinco itens na matriz e
+
+06:06.080 --> 06:12.080
+depois os primeiros quatro itens três itens dois itens etc. até entrarmos com apenas um item e, em
+
+06:12.080 --> 06:18.050
+seguida, a pilha recursiva começar a desvendar a chamada recursiva que chamada inserção de inserção com
+
+06:18.050 --> 06:23.740
+um item será capaz de continuar a execução e, como você pode ver, não há
+
+06:23.780 --> 06:25.220
+nenhum loop aqui.
+
+06:25.220 --> 06:29.170
+E assim, cada chamada recursiva manipula um elemento.
+
+06:29.270 --> 06:33.690
+E assim cada chamada recursiva aumenta o ordenado particionado por um.
+
+06:33.690 --> 06:40.310
+É exatamente o que estávamos fazendo aqui neste loop externo, exceto que essencialmente substituímos esse loop
+
+06:40.790 --> 06:41.840
+por recursão.
+
+06:41.900 --> 06:44.640
+Então, vamos correr só para ver se isso funciona.
+
+06:47.870 --> 06:53.150
+Eu estou indo para reconstruir o projeto que às vezes acontece, então eu vou dizer
+
+06:56.440 --> 06:57.740
+reconstruir o projeto e
+
+07:00.350 --> 07:06.370
+agora vamos tentar executar e temos menos 20 a menos 15 1 7 20 35 e 55.
+
+07:06.380 --> 07:11.780
+Então, nosso tipo recursivo está funcionando, digamos, algumas instruções de linha de impressão para que possamos entender melhor o
+
+07:11.780 --> 07:12.550
+que está acontecendo.
+
+07:12.560 --> 07:16.790
+Eu vou adicionar alguns realmente até o fim aqui.
+
+07:16.850 --> 07:22.610
+Depois que terminamos uma chamada para o tipo de inserção logo antes de sairmos,
+
+07:23.870 --> 07:37.400
+eu direi que o resultado da chamada da linha de saída é cancelado quando os itens do namn são iguais e nós os imprimimos os itens e depois dizemos que quatro é igual
+
+07:37.400 --> 07:38.310
+a zero.
+
+07:38.630 --> 07:49.700
+Eu saí do centro radar empresta mais mais que deve ser entrada, na verdade, porque estamos dentro do sistema
+
+07:49.700 --> 07:54.050
+método saiu da entrada da linha de impressão.
+
+07:54.730 --> 08:03.080
+Vamos apenas imprimir tudo em uma linha e depois vamos dizer que o sistema ficou esgotado e colocaremos uma vírgula
+
+08:03.110 --> 08:03.410
+lá.
+
+08:03.410 --> 08:10.910
+Então, vamos imprimir a matriz em uma linha e, em seguida, tudo apenas um sistema que sai da linha de impressão
+
+08:10.910 --> 08:18.410
+para que possamos obter uma nova linha lá e eu também vou imprimir um divisor para que possamos ver o que
+
+08:18.410 --> 08:20.210
+está acontecendo em cada iteração.
+
+08:20.540 --> 08:22.020
+OK, então vamos correr de novo.
+
+08:23.710 --> 08:28.470
+OK, então deixe-me puxar isso um pouco para que possamos ver o que está acontecendo.
+
+08:29.820 --> 08:36.420
+Então, quando o número de itens é para me deixar me rolar aqui, então esta é a nossa matriz
+
+08:36.420 --> 08:39.440
+original e começamos dizendo que 20 é classificado.
+
+08:39.510 --> 08:45.990
+Essa é a maneira que o tipo de inserção funciona tão 20 anos ordenados e queremos pegar o primeiro
+
+08:46.020 --> 08:50.910
+elemento na partição não classificada e inseri-lo em seu devido lugar na partição ordenada.
+
+08:50.910 --> 08:55.900
+Então, quando o número de itens é igual ao resultado do nosso tipo é 20 e 35.
+
+08:55.900 --> 09:01.280
+Parece que não fizemos nada, mas temos apenas 35 que é maior que 20 quando
+
+09:01.290 --> 09:03.670
+o número de itens é três.
+
+09:03.660 --> 09:10.020
+Você notará que nós pegamos menos 15 e colocamos em sua posição ordenada correta e isso é exatamente o
+
+09:10.020 --> 09:15.090
+que estávamos fazendo no tipo de inserção iterativa, exceto que estávamos fazendo isso como parte
+
+09:15.090 --> 09:20.820
+de um loop for, mas agora cada destes é uma chamada para o método de classificação de inserção.
+
+09:20.820 --> 09:23.000
+Então somos como eu disse antes.
+
+09:23.070 --> 09:28.980
+Em vez de usar um loop for, estamos substituindo isso por chamadas recursivas quando o número de itens é quatro.
+
+09:28.980 --> 09:32.510
+Queremos adicionar sete na partição ordenada e nós fizemos.
+
+09:32.520 --> 09:37.560
+Então agora sete está em seu ponto correto quando o número de itens é 5.
+
+09:38.850 --> 09:41.000
+55 foi adicionado em.
+
+09:41.120 --> 09:44.950
+Quando o número de itens é 6, adicionamos em um.
+
+09:45.030 --> 09:51.390
+E então, finalmente, quando o número de itens é 7, adicionamos em menos 22 e terminamos, e você notará
+
+09:51.390 --> 09:55.990
+que as chamadas recursivas são concluídas na ordem inversa em que foram chamadas.
+
+09:56.010 --> 09:57.780
+Eu só vou puxar isso agora.
+
+09:59.030 --> 10:08.680
+Porque nós chamamos de inserção com sete, mas a primeira chamada a retornar é aquela com dois itens.
+
+10:08.680 --> 10:14.980
+Não vemos uma impressão para itens num iguais a 1 porque acabamos de retornar, de modo que nunca chegamos
+
+10:14.980 --> 10:16.480
+às declarações de impressão.
+
+10:16.480 --> 10:19.150
+Então, quando o número é um, nós apenas expulsamos.
+
+10:19.210 --> 10:24.740
+E quando isso acontece, retornamos à chamada recursiva com nove nove itens iguais a 2.
+
+10:24.790 --> 10:27.630
+E assim continuaria a execução daqui.
+
+10:27.640 --> 10:32.680
+E quando o número de itens é 2, ele quer garantir que os dois primeiros elementos da matriz sejam
+
+10:32.680 --> 10:33.070
+classificados.
+
+10:33.070 --> 10:34.830
+Então, vai lidar com 35.
+
+10:34.870 --> 10:39.130
+E quando o número de itens é três, uma vez para ter certeza de
+
+10:39.130 --> 10:46.070
+que os três primeiros itens estão classificados e é quando ele lida com menos 15 que é uma classificação de inserção recursiva tão ampla.
+
+10:46.070 --> 10:53.240
+Parece que, como eu disse, em vez de usar um loop para aumentar a partição classificada, estamos usando a
+
+10:53.240 --> 10:56.590
+recursão para aumentar a partição classificada na solução iterativa.
+
+10:56.600 --> 11:01.930
+Cada iteração do loop aumenta a partição classificada por um e na classificação por inserção.
+
+11:01.970 --> 11:06.140
+Cada chamada para o método aumenta o ordenado particionado por um.
+
+11:06.140 --> 11:10.810
+Então, esperamos que estas declarações impressas tenham ajudado você a ver o que está acontecendo.
+
+11:10.850 --> 11:13.380
+Lembre-se que precisávamos de uma condição de quebra.
+
+11:13.520 --> 11:16.430
+Caso contrário, esta recursão nunca terminaria.
+
+11:16.520 --> 11:21.280
+Mas, do contrário, o código é muito muito semelhante, além de fazer a chamada recursiva.
+
+11:21.290 --> 11:23.200
+Este aqui foi um trabalho de colar e copiar.
+
+11:23.210 --> 11:26.350
+Precisamos apenas alterá-lo para usar o número de itens menos um.
+
+11:26.360 --> 11:29.780
+E é claro que a gente mudou integrar a entrada.
+
+11:29.780 --> 11:35.490
+Mas esse código aqui está fazendo exatamente o que esse código aqui está fazendo.
+
+11:35.600 --> 11:39.140
+E assim, para a recursão, precisamos apenas substituir o loop.
+
+11:39.440 --> 11:41.670
+OK, então é isso para o desafio número dois.
+
+11:41.690 --> 11:43.770
+Vejo você no desafio número três.

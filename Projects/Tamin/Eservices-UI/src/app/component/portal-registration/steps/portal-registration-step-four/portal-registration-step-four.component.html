@@ -1,0 +1,77 @@
+<div class="alert alert-info">
+  مرحله چهارم ثبت نام: بازبینی و ثبت درخواست
+</div>
+
+<table class="summary">
+  <tr>
+    <td>کد ملی</td>
+    <td>{{preview.nationalCode | persianNumber}}</td>
+  </tr>
+  <tr>
+    <td>موبایل</td>
+    <td>{{preview.mobile | persianNumber}}</td>
+  </tr>
+  <tr>
+    <td>نام خانوادگی</td>
+    <td>{{preview.lastName}}</td>
+  </tr>
+  <tr>
+    <td>نام</td>
+    <td>{{preview.firstName}}</td>
+  </tr>
+  <tr>
+    <td>شماره شناسنامه</td>
+    <td>{{preview.idNo | persianNumber}}</td>
+  </tr>
+  <tr>
+    <td>تاریخ تولد</td>
+    <td>{{preview.birthDate | persianDateTime | persianNumber}}</td>
+  </tr>
+  <tr>
+    <td>جنسیت</td>
+    <td>{{preview.gender == 'f' ? 'زن' : 'مرد'}}</td>
+  </tr>
+  <tr>
+    <td>ایمیل</td>
+    <td>{{preview.email}}</td>
+  </tr>
+  <tr>
+    <td>
+      <span>سوال امنیتی اول</span>
+      <span>(</span>
+      <strong>{{getQuestionText(preview.question)}}</strong>
+      <span>)</span>
+    </td>
+    <td>{{preview.answer}}</td>
+  </tr>
+  <tr>
+    <td>
+      <span>سوال امنیتی دوم</span>
+      <span>(</span>
+      <strong>{{getQuestionText(preview.question2)}}</strong>
+      <span>)</span>
+    </td>
+    <td>{{preview.answer2}}</td>
+  </tr>
+  <tr>
+    <td>
+      <span>سوال امنیتی سوم</span>
+      <span>(</span>
+      <strong>{{getQuestionText(preview.question3)}}</strong>
+      <span>)</span>
+    <td>{{preview.answer3}}</td>
+  </tr>
+</table>
+<div class="panel">
+  <div class="panel-body">
+    <button type="button" class="button normal blue" (click)="onPrevStep()">
+      <i class="icon-right-big"></i>
+      <span>مرحله قبل</span>
+    </button>
+    <button type="button" class="button normal blue" (click)="onSubmit()" style="float: left">
+      <i class="icon-ok"></i>
+      <span>تایید و ارسال درخواست</span>
+    </button>
+  </div>
+</div>
+

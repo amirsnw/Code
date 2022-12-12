@@ -1,0 +1,649 @@
+WEBVTT
+
+00:05.320 --> 00:05.800
+Tudo bem.
+
+00:05.800 --> 00:09.940
+Então vamos em frente e implementar um Q e vamos usar um array.
+
+00:10.030 --> 00:16.480
+Então, eu criei um projeto que estou colocando o código no pacote Academia, aprendo dicas de programação
+
+00:16.480 --> 00:18.740
+e copiei a classe Employee usual.
+
+00:18.760 --> 00:20.200
+Nenhuma alteração lá.
+
+00:20.230 --> 00:22.900
+Então, a primeira coisa que vou fazer é criar uma classe para o Q. Então diga nova classe Java e eu vou chamá-lo de Araik e então precisamos de três campos nesta fila.
+
+00:22.930 --> 00:32.280
+Precisamos de um para o array.
+
+00:32.290 --> 00:34.040
+Precisamos de um que acompanhe
+
+00:34.090 --> 00:40.000
+a frente da fila e precisamos de um que rastreie a parte de trás da fila.
+
+00:40.000 --> 00:40.670
+Então eu vou dizer que o
+
+00:40.720 --> 00:42.850
+funcionário privado Q privado int frente e privado e de volta agora, como de costume eu não estou usando genéricos.
+
+00:45.610 --> 00:54.070
+Eu poderia ter criado um Q e usado genéricos e, em seguida, a fila pode ser usada em qualquer tipo de objeto.
+
+00:54.070 --> 01:00.150
+Mas eu quero apenas focar na implementação, então os campos frontal e traseiro
+
+01:00.160 --> 01:06.760
+serão inicialmente 0, assim como o topo era inicialmente 0 para o topo da pilha.
+
+01:06.790 --> 01:09.580
+Então, quando começamos na frente e no verso, ambos
+
+01:09.610 --> 01:14.530
+apontam para 0 e, portanto, não precisamos inicializá-los no construtor, só precisamos criar nossa matriz.
+
+01:14.530 --> 01:19.000
+Portanto, uma fila de matriz pública salva e que o chamador nos
+
+01:19.030 --> 01:27.040
+informará o número máximo de elementos que deseja na fila e diremos q é igual a uma nova capacidade de funcionário.
+
+01:27.040 --> 01:36.370
+Tudo bem então agora vamos falar sobre como adicionar um elemento.
+
+01:36.370 --> 01:39.460
+Vamos adicionar elementos ao final da fila
+
+01:39.460 --> 01:45.220
+e teremos que nos preocupar em redimensionar o array quando a fila estiver cheia.
+
+01:45.220 --> 01:47.090
+Portanto, para essa implementação, o elemento
+
+01:47.170 --> 01:53.790
+frontal é sempre a frente do índice e o elemento de retorno está sempre no índice de retorno menos um.
+
+01:53.790 --> 01:56.200
+Portanto, se você se lembrar de quando
+
+01:56.200 --> 02:01.810
+implementamos as pilhas, o campo superior estava sempre apontando para a próxima posição disponível na pilha.
+
+02:01.810 --> 02:03.380
+Bem, é o mesmo com o backfield.
+
+02:03.550 --> 02:05.860
+O backfield estará sempre apontando para a próxima posição disponível na fila.
+
+02:05.860 --> 02:10.030
+E assim, se a parte de trás é, digamos, apontando
+
+02:10.180 --> 02:17.200
+para a posição 3, então isso significa que o final da sugestão é, na verdade, na posição 2.
+
+02:17.200 --> 02:18.340
+E assim, o final do
+
+02:18.490 --> 02:24.310
+Q está na verdade posicionado acima da posição de volta menos 1 e voltar é onde adicionaríamos o próximo elemento que está entrando na fila.
+
+02:24.310 --> 02:26.540
+Então, quando não há elementos no q, adicionamos um item.
+
+02:26.560 --> 02:30.310
+Nós vamos adicioná-lo na posição 0 porque quando criamos esta instância pela
+
+02:30.340 --> 02:36.010
+frente e para trás, ambas 0 e depois vamos incrementar de volta para 1, porque uma será a
+
+02:36.010 --> 02:42.010
+próxima posição disponível e então, após adicionar o primeiro item, a frente será 0 e de volta será 1.
+
+02:42.010 --> 02:45.140
+Se adicionarmos outro item, a frente ainda será zero.
+
+02:45.160 --> 02:48.530
+Nós vamos adicionar o item na posição 1 e, em seguida, vamos incrementar de volta para 2.
+
+02:48.580 --> 02:52.080
+E assim, quando adicionamos um item, o campo da frente nunca muda, porque sempre adicionamos itens à parte de trás.
+
+02:52.090 --> 02:58.270
+Tudo bem, então vamos implementar o método para adicionar um item à fila, então vamos dizer public void ad e
+
+02:58.270 --> 03:03.800
+vamos aceitar o funcionário que queremos adicionar e a primeira coisa que vamos fazer é verificar se o
+
+03:04.240 --> 03:06.830
+fila está cheia agora a fila estará cheia.
+
+03:10.200 --> 03:14.920
+Se voltar iguala a duração da fila digamos que criamos uma fila de 10 enquanto
+
+03:14.920 --> 03:21.430
+uma volta igual a nove a próxima posição disponível na fila é nove e está tudo bem, podemos colocar um item
+
+03:21.430 --> 03:25.840
+lá, mas depois incrementamos de volta para 10 e a próxima posição disponível seria 10.
+
+03:25.840 --> 03:29.820
+Isso seria uma exceção de índice fora dos limites.
+
+03:29.830 --> 03:32.040
+Então, quando a parte de trás é igual ao comprimento da fila, precisamos redimensionar a matriz.
+
+03:32.110 --> 03:37.000
+Então, diremos se back é igual a tamanho da fila e vamos
+
+03:37.330 --> 03:46.930
+redimensionar a matriz exatamente da mesma maneira que fizemos para a stack tão bem que a nova matriz é igual a um novo funcionário.
+
+03:46.930 --> 03:54.260
+E vamos dobrar o tamanho atual duas vezes.
+
+03:54.820 --> 04:00.300
+Tem comprimentos e, em seguida, precisamos copiar os itens existentes na
+
+04:00.900 --> 04:08.470
+fila para o novo array, assim dizeremos que o sistema recebeu uma cópia do array.
+
+04:08.470 --> 04:10.750
+Nós vamos copiar da fila.
+
+04:10.750 --> 04:12.330
+Nós vamos começar do começo.
+
+04:12.370 --> 04:14.270
+Nós vamos copiar para o novo
+
+04:14.320 --> 04:21.910
+array começando no começo e queremos copiar os elementos do comprimento da fila e, finalmente, vamos dizer q é igual a um novo array.
+
+04:24.120 --> 04:29.300
+E até agora isso está parecendo exatamente com o método push.
+
+04:30.540 --> 04:34.600
+E depois que tivermos certeza de que o
+
+04:35.080 --> 04:42.400
+backfield não apontará para um índice inválido, basta ir em frente e designar o novo
+
+04:42.430 --> 04:52.870
+funcionário para voltar, para que a fila de volta seja igual a funcionário e, por fim, queremos voltar atrás e pronto.
+
+04:52.870 --> 04:55.410
+Esse é o nosso método Add.
+
+04:55.420 --> 04:56.670
+Verificamos se a fila está cheia
+
+04:56.680 --> 05:02.740
+se formos redimensionar a matriz à qual atribuímos o funcionário para o qual a back está apontando, porque o back sempre aponta para a próxima posição disponível na fila.
+
+05:02.740 --> 05:07.030
+E então nós incrementamos de volta.
+
+05:07.270 --> 05:08.640
+OK, então agora vamos remover um elemento da fila.
+
+05:08.710 --> 05:12.770
+Então, vamos dizer funcionário
+
+05:13.210 --> 05:15.760
+público remover.
+
+05:18.180 --> 05:19.110
+Sempre removemos o primeiro item na fila para não precisarmos passar nada.
+
+05:19.360 --> 05:23.570
+Agora, a primeira coisa que precisamos verificar é se a fila está vazia.
+
+05:23.620 --> 05:27.200
+E como faremos isso?
+
+05:27.310 --> 05:28.870
+Como vamos verificar se a fila
+
+05:28.870 --> 05:34.000
+está vazia porque à medida que adicionamos e removemos funcionários, as posições de frente e de trás serão alteradas.
+
+05:34.060 --> 05:35.650
+Bem, devemos ser capazes de subtrair frente de trás e isso nos dará um número de itens na fila.
+
+05:35.650 --> 05:42.100
+Lembre-se que voltar é sempre uma posição maior que o final da fila.
+
+05:42.100 --> 05:45.580
+Então, digamos que quando criamos a fila, entramos e adicionamos nosso primeiro item.
+
+05:45.580 --> 05:49.670
+Então, acabamos de ver que quando adicionamos nosso primeiro item no final, o incremento volta para 1 e o amigo para zero.
+
+05:49.690 --> 05:56.330
+Então, temos um item na fila.
+
+05:56.560 --> 05:58.930
+Voltar é 1 frente é 0 atrás menos frente seria 1 menos Saro que é 1.
+
+05:58.960 --> 06:04.120
+Então, temos um item na fila.
+
+06:04.150 --> 06:05.680
+Se chegássemos e adicionássemos outro item de volta, seria incrementado para 2.
+
+06:05.680 --> 06:09.600
+Não tocamos no ponteiro da frente quando adicionamos
+
+06:09.610 --> 06:14.650
+um funcionário porque estamos sempre trabalhando no final da fila.
+
+06:14.650 --> 06:15.340
+Então, se
+
+06:15.370 --> 06:21.250
+nós chegássemos e adicionássemos um segundo empregado de volta, seria incrementado para dois frente ainda seria 0 2 0 é 2.
+
+06:21.640 --> 06:23.150
+Nós temos dois itens na fila.
+
+06:23.170 --> 06:24.630
+Se, em seguida, removermos um
+
+06:24.640 --> 06:29.410
+item da fila, não tocaremos no ponteiro de volta porque sempre retiramos itens da frente da fila.
+
+06:29.410 --> 06:30.960
+Então, o que nós vamos fazer
+
+06:30.970 --> 06:36.010
+é incrementar como você vai ver em um minuto irá incrementar a frente da fila então irá incrementar a
+
+06:36.010 --> 06:42.130
+frente para 1 e então nesse ponto nós teríamos que menos 1 é 1 e então começamos com dois funcionários na fila.
+
+06:42.130 --> 06:42.700
+Nós tiramos uma e nós temos uma esquerda.
+
+06:42.700 --> 06:44.880
+Então, basicamente, podemos obter o tamanho subtraindo a frente de trás.
+
+06:44.890 --> 06:49.690
+Então, vou colocar isso em seu próprio método, então vou salvar o público.
+
+06:49.700 --> 06:56.500
+Tamanho e vamos voltar de volta menos à frente.
+
+06:56.610 --> 07:02.610
+Agora, se você for realmente astuto, pode ter notado algo um pouco estranho sobre o método add.
+
+07:02.620 --> 07:08.140
+Não se preocupe, vamos voltar a isso.
+
+07:08.140 --> 07:09.780
+Então, no método Remove, vamos dizer
+
+07:09.790 --> 07:18.100
+se o tamanho é zero, o que significa que não há nada na fila, então vamos lançar uma exceção new no such element e isso está no pacote obsoleto do Java.
+
+07:18.530 --> 07:26.360
+Então, se você tentar remover algo de uma fila vazia, vamos lançar uma exceção, se não
+
+07:26.470 --> 07:32.020
+for o caso, e houver algo na fila. Bem, sempre pegamos elementos
+
+07:32.020 --> 07:36.450
+da frente da fila, então vamos dizer funcionário empregado.
+
+07:36.460 --> 07:45.370
+é igual à frente da fila porque esse é o funcionário que vamos remover, então vamos acabar com tudo.
+
+07:45.370 --> 07:49.110
+Q frente.
+
+07:49.110 --> 07:49.730
+Isso está apenas fazendo um pouco de limpeza.
+
+07:49.750 --> 07:52.130
+Então, vamos incrementar a frente porque, se
+
+07:52.240 --> 07:59.950
+começarmos, digamos que as frontais são as que queremos remover o funcionário na posição 1, enquanto depois disso a nova frente
+
+07:59.950 --> 08:05.050
+da fila será dois, porque uma nova frente será a próxima. empregado na fila.
+
+08:05.050 --> 08:08.150
+Agora há um pouco de otimização que podemos fazer aqui neste momento.
+
+08:08.160 --> 08:12.150
+Neste ponto, podemos verificar se o tamanho é zero se removemos o único item na fila.
+
+08:12.190 --> 08:18.080
+Então, se o tamanho é igual a zero, então podemos redefinir as posições
+
+08:18.130 --> 08:29.680
+de frente e de trás de volta para o início da matriz, de modo que podemos dizer frente igual a zero e voltar igual a zero.
+
+08:29.690 --> 08:33.870
+Então, se depois de retirar o empregado, não restar
+
+08:34.510 --> 08:39.850
+nada na fila, nós apenas resetaremos a frente e o verso.
+
+08:39.850 --> 08:40.240
+Então, é como redefinir a fila para uma fila vazia.
+
+08:40.240 --> 08:42.750
+E, finalmente, é claro que queremos devolver o empregado que saímos da fila.
+
+08:43.030 --> 08:47.380
+E assim, para remover algo da fila, primeiro verificamos se a
+
+08:47.590 --> 08:51.970
+fila estava vazia e, se estivermos, lançamos uma exceção e terminamos.
+
+08:51.970 --> 08:53.800
+Caso contrário, salvamos o funcionário na frente da fila como funcionário.
+
+08:53.830 --> 08:58.650
+Nós sabemos sobre essa posição na fila apenas um pouquinho de limpeza e
+
+08:58.690 --> 09:03.250
+então nós incrementamos o campo frontal porque a nova frente da fila vai
+
+09:03.430 --> 09:09.640
+ser frontal mais plus e então nós verificamos o tamanho e se não sobrar nada no fila.
+
+09:09.640 --> 09:11.560
+Então, basicamente, nós removemos o único empregado, então colocamos a frente e de volta a zero.
+
+09:11.560 --> 09:16.190
+Então estamos basicamente redefinindo a fila.
+
+09:16.240 --> 09:19.180
+E finalmente, é claro, devolveremos o empregado.
+
+09:19.240 --> 09:21.760
+E assim ainda temos nosso método de pico.
+
+09:21.820 --> 09:24.640
+Então eu vou dizer pico funcionário público e assim como com a remoção.
+
+09:25.180 --> 09:35.130
+Vamos verificar se a fila está vazia e se formos lançar uma exceção.
+
+09:35.140 --> 09:38.260
+Então, vou copiar o código de lá.
+
+09:38.260 --> 09:42.050
+Agora, se a fila não estiver vazia, só queremos retornar o funcionário na frente da fila.
+
+09:42.160 --> 09:46.380
+Mas não queremos remover o funcionário da fila.
+
+09:46.390 --> 09:49.210
+Lembre-se que quando espiamos uma pilha, retornamos ao topo
+
+09:49.210 --> 09:54.400
+da pilha, mas não mudamos a pilha de forma alguma, é a mesma coisa na fila.
+
+09:54.400 --> 09:56.040
+Retornamos o funcionário na frente da fila, mas não alteramos a fila de forma alguma.
+
+09:56.080 --> 10:00.800
+Então, tudo o que temos a fazer é dizer que estamos na frente da fila
+
+10:01.090 --> 10:07.750
+de retorno e terminamos, não queremos mudar o campo frontal e eu vou deletar aquela linha em branco e pronto.
+
+10:07.860 --> 10:11.220
+Essa é a nossa implementação da sugestão.
+
+10:11.230 --> 10:13.730
+Agora, um método final que adicionarei é um método para
+
+10:13.750 --> 10:18.460
+imprimir a sugestão para que, quando começarmos a brincar com nossa implementação, possamos imprimir o que está na sugestão.
+
+10:18.460 --> 10:21.300
+Então, eu vou dizer public voice print Q E nossa fila
+
+10:21.310 --> 10:29.320
+é uma matriz, então deve ser bastante simples, só temos que ter em mente que, se vamos imprimir a sugestão de frente para trás na frente, pode não ser zero.
+
+10:29.320 --> 10:34.720
+Então, vamos dizer quatro na minha frente igual a menos de VAP I mais plus.
+
+10:35.080 --> 10:45.560
+E vou dizer que o sistema saiu da linha de impressão.
+
+10:46.570 --> 10:50.320
+P Agora eu lembro que o back aponta para
+
+10:50.350 --> 10:58.910
+a próxima posição disponível, então o final da fila é na verdade um back menos um, então o único a incrementar até
+
+10:58.910 --> 11:06.340
+que all seja menor que back quando eu igualar back foi na verdade um além do final da fila.
+
+11:06.340 --> 11:08.570
+OK agora que terminamos nossa implementação Vamos ao método principal.
+
+11:08.710 --> 11:12.820
+Eu já adicionei o código para criar nossos cinco funcionários habituais, então vamos criar nossa fila.
+
+11:12.850 --> 11:19.540
+Eu vou dizer array whew hew é igual a um novo array Q. E eu vou fazer isso 10.
+
+11:19.540 --> 11:25.310
+Assim como eu fiz com a pilha e vamos adicionar funcionários à fila, então eu vou dizer isso como Jim Jones.
+
+11:25.330 --> 11:32.770
+Você não adiciona Jondo enorme adicionar Mary Smith.
+
+11:33.340 --> 11:40.760
+Fofa.
+
+11:41.120 --> 11:41.740
+E Mike Wilson e finalmente Pudong adicionam Bill e deixam a impressora na fila de impressão.
+
+11:41.830 --> 11:51.940
+Então vamos em frente e corra e vamos ver nossos 5
+
+11:52.060 --> 11:53.310
+funcionários.
+
+11:57.780 --> 11:59.570
+Agora, desta vez, eles são impressos
+
+11:59.570 --> 12:07.350
+na ordem em que os adicionamos, porque isso não é uma pilha, portanto, não vemos os itens na ordem inversa em que adicionamos Jane à fila primeiro.
+
+12:07.350 --> 12:11.320
+Então ela está na frente da fila e então nós adicionamos John, então ele está em segundo lugar na fila do que Mary.
+
+12:11.340 --> 12:16.650
+Então Mike.
+
+12:16.650 --> 12:17.370
+Então Bill.
+
+12:17.370 --> 12:18.140
+Então, vamos remover dois
+
+12:18.210 --> 12:25.110
+funcionários e esperamos remover Jane e John porque Jane é a primeira na fila e John, um segundo civil, diz Q-Bot remove e faremos de novo e, em seguida, vamos fazer fila na impressora.
+
+12:25.110 --> 12:32.250
+Eu vou comentar essa impressão.
+
+12:32.790 --> 12:35.140
+Então vamos correr e vamos ver que só temos
+
+12:35.140 --> 12:36.230
+três funcionários na fila.
+
+12:39.000 --> 12:41.800
+Mary Mike e Bill, então Jane e John foram removidos porque é o primeiro a sair primeiro.
+
+12:41.800 --> 12:46.560
+Então Jane foi a primeira a entrar.
+
+12:46.570 --> 12:48.070
+Então ela é a primeira a sair e depois John ficou em segundo, então ele é o próximo a ser retirado.
+
+12:48.100 --> 12:52.800
+Q.
+
+12:52.800 --> 12:53.610
+Então vamos dar uma olhada no nosso Q E devemos ver a Mary.
+
+12:53.770 --> 12:57.880
+Então eu vou dizer sistema caiu fora da linha de impressão.
+
+12:58.180 --> 13:02.470
+Q ponto p.
+
+13:02.470 --> 13:04.260
+E vamos imprimir o nosso Q Depois disso para mostrar que o Q não foi alterado.
+
+13:05.500 --> 13:09.310
+Então, vou comentar essa impressão.
+
+13:09.370 --> 13:12.970
+Então vamos pegar Mary e então devemos ver exatamente
+
+13:12.970 --> 13:18.760
+a mesma impressão para o Q Porque quando você espiar você não muda a sugestão.
+
+13:18.760 --> 13:20.600
+Vamos correr e vamos ver Mary imprimi-lo duas vezes.
+
+13:20.650 --> 13:24.880
+Isso é do pico.
+
+13:24.890 --> 13:26.130
+E então esta parte é a fila de impressão.
+
+13:26.240 --> 13:28.820
+Então, nós escolhemos Maria, fomos capazes de ver o que o primeiro funcionário da fila é.
+
+13:28.880 --> 13:33.370
+Mas nós não mudamos a fila.
+
+13:33.380 --> 13:35.120
+Tudo bem.
+
+13:35.120 --> 13:35.540
+Então,
+
+13:35.540 --> 13:42.590
+apenas por diversão, vamos remover os três funcionários restantes e, em seguida, a fila da impressora para que todos comentem isso.
+
+13:42.770 --> 13:43.870
+E eu vou adicionar mais três Q-Bot remove.
+
+13:43.880 --> 13:47.490
+Então deixe-me copiar este aqui aqui e vou adicionar mais um.
+
+13:47.510 --> 13:53.310
+E não devemos ver nada impresso.
+
+13:54.080 --> 13:55.770
+Porque o nosso Q deve
+
+13:55.790 --> 14:00.920
+estar vazio Estamos apenas testando para garantir que nada de ruim aconteça quando puxarmos o último funcionário.
+
+14:00.920 --> 14:02.140
+E de fato nós não fazemos.
+
+14:03.740 --> 14:05.140
+Agora, se fôssemos fazer um sexto remover neste momento a fila está vazia.
+
+14:05.170 --> 14:10.590
+Portanto, este seis removido deve resultar em uma exceção de nenhum tal elemento.
+
+14:10.640 --> 14:14.940
+Vamos tentar.
+
+14:14.950 --> 14:16.110
+E de fato é isso que ficamos on-line 29, aqui temos a exceção de nenhum tal elemento.
+
+14:17.370 --> 14:24.460
+Vou comentar que os últimos removem e vamos tentar adicionar um funcionário agora só para garantir
+
+14:24.630 --> 14:30.780
+que, ao removermos o último funcionário, redefinimos a frente e o verso corretamente.
+
+14:30.780 --> 14:35.300
+Então ainda há espaço na fila.
+
+14:35.300 --> 14:36.890
+Vamos adicionar o Mike Wilson.
+
+14:37.020 --> 14:39.220
+E aqui está uma fila de impressão aqui.
+
+14:40.050 --> 14:42.090
+Então vamos correr e só o Mike
+
+14:42.090 --> 14:42.990
+está na fila.
+
+14:45.710 --> 14:47.590
+Então é isso para implementação agora.
+
+14:47.630 --> 14:49.870
+Se nós voltarmos para te quebrar e me
+
+14:49.910 --> 14:57.830
+deixar fechar, eu disse que há algo estranho sobre este anúncio e é realmente aqui quando estamos checando se a volta é igual a SECU dot lenth.
+
+14:57.830 --> 15:02.320
+Esse é o cheque que estamos usando para ver se a fila está cheia.
+
+15:02.330 --> 15:06.650
+Agora quero que você pense sobre o que aconteceria nessa situação.
+
+15:06.650 --> 15:10.460
+Vamos supor que adicionemos dois funcionários e depois removamos um
+
+15:10.460 --> 15:17.000
+funcionário e adicionamos outro funcionário e removemos outro funcionário e adicionamos outro funcionário e continuamos fazendo isso.
+
+15:17.000 --> 15:21.290
+Portanto, nunca temos mais de dois funcionários na fila por vez.
+
+15:21.350 --> 15:25.730
+Você acha que o array deve ser redimensionado?
+
+15:25.730 --> 15:28.910
+A resposta deveria ser não.
+
+15:28.910 --> 15:30.140
+Certo.
+
+15:30.140 --> 15:30.470
+Quero
+
+15:30.470 --> 15:36.650
+dizer, se tivermos um QI de tamanho 10 e tivermos apenas dois funcionários na fila, o array nunca precisará ser redimensionado.
+
+15:36.650 --> 15:37.890
+Mas com a nossa implementação, será esse o caso.
+
+15:37.910 --> 15:40.640
+Pense um pouco e, no próximo vídeo, veremos como podemos melhorar essa implementação.
+
+15:40.640 --> 15:46.340
+Eu te vejo lá.
+
+15:46.340 --> 15:47.270
+&nbsp;

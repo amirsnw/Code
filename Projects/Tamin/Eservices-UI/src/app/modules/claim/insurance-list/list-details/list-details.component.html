@@ -1,0 +1,88 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>نمایش جزئیات لیست بیمه کارگاه </span>
+</div>
+<div class="panel-body">
+  <div class="row">
+    <form [formGroup]="detailForm" autocomplete="off" novalidate>
+      <div>
+        <fieldset style="padding: 5px;">
+          <div class="col-12 col-s-12">
+            <div class="col-6 col-s-6">
+              <div class="confirmation">
+                <h3 style="margin-top: 10px;">کد کارگاه :{{ listDetailModel?.workshopId | persianNumber}}</h3>
+                <h3 style="margin-top: 10px;">شماره لیست :{{ listDetailModel?.listNumber | persianNumber}}</h3>
+              </div>
+            </div>
+            <div class="col-6 col-s-6">
+              <div class="confirmation">
+                <h3 style="margin-top: 10px;">نام کارگاه : {{ listDetailModel?.workshopTitle | persianNumber}}</h3>
+                <h3 style="margin-top: 10px;">سال و ماه : {{ listDetailModel?.yearAndMonthDescription }}</h3>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div style="margin-top: 15px;">
+        <fieldset style="padding: 5px;">
+          <div class="col-6 col-s-6" style="padding-right:5px;">
+            <tamin-field-label formControlName="totalEmployeePremium">سهم بیمه شده</tamin-field-label>
+            <tamin-field-validator formControlName="totalEmployeePremium"></tamin-field-validator>
+            <tamin-field-number formControlName="totalEmployeePremium" regex="^\d+$"></tamin-field-number>
+          </div>
+          <div class="col-6 col-s-6" style="padding-right:5px;">
+            <tamin-field-label formControlName="totalEmployerPremium">سهم کارفرما</tamin-field-label>
+            <tamin-field-validator formControlName="totalEmployerPremium"></tamin-field-validator>
+            <tamin-field-number formControlName="totalEmployerPremium" regex="^\d+$"></tamin-field-number>
+          </div>
+          <div class="col-6 col-s-6" style="padding-right:5px;">
+            <tamin-field-label formControlName="hardJobPremium">حق بیمه مشاغل سخت و زیان آور</tamin-field-label>
+            <tamin-field-validator formControlName="hardJobPremium"></tamin-field-validator>
+            <tamin-field-number formControlName="hardJobPremium" regex="^\d+$"></tamin-field-number>
+          </div>
+          <div class="col-6 col-s-6" style="padding-right:5px;">
+            <tamin-field-label formControlName="totalUnemploymentPremium">بیمه بیکاری</tamin-field-label>
+            <tamin-field-validator formControlName="totalUnemploymentPremium"></tamin-field-validator>
+            <tamin-field-number formControlName="totalUnemploymentPremium" regex="^\d+$"></tamin-field-number>
+          </div>
+        </fieldset>
+      </div>
+      <div style="margin-top: 15px;">
+        <fieldset style="padding: 5px;">
+          <div class="col-12 col-s-12">
+            <div class="col-6 col-s-6">
+              <div class="confirmation">
+                <h3 style="margin-top: 10px;">تعداد نفرات : {{ listDetailModel?.employeesCount }}</h3>
+                <h3 style="margin-top: 10px;">مشمول : {{ persianNumberPipe.transform(listDetailModel?.totalInclusiveBenefit, 'cs')}}&nbsp; ریال </h3>
+                <h3 style="margin-top: 10px;">غیر مشمول :  {{ persianNumberPipe.transform(listDetailModel?.exclusive, 'cs')}}&nbsp; ریال</h3>
+                <h3 style="margin-top: 10px;">مشمول و غیر مشمول : {{ persianNumberPipe.transform(listDetailModel?.totalWageAndBenefit, 'cs')}}&nbsp; ریال</h3>
+              </div>
+            </div>
+            <div class="col-6 col-s-6">
+              <div class="confirmation">
+                <h3 style="margin-top: 10px;">جمع روزهای کارکرد :{{ listDetailModel?.totalWorkingDays }}</h3>
+                <h3 style="margin-top: 10px;">جمع دستمزد روزانه :{{ persianNumberPipe.transform(listDetailModel?.totalDailyWages, 'cs')}}&nbsp; ریال </h3>
+                <h3 style="margin-top: 10px;">جمع دستمزد ماهانه :{{  persianNumberPipe.transform(listDetailModel?.totalMonthlyWages, 'cs')}}&nbsp; ریال </h3>
+                <h3 style="margin-top: 10px;">جمع دستمزدومزایای ماهانه مشمول :{{persianNumberPipe.transform(listDetailModel?.totalInclusiveWageAndBenefit, 'cs')}}&nbsp; </h3>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+  <div class="panel">
+    <div class="page-title">
+      اطلاعات بیمه شدگان
+    </div>
+    <div>
+      <div class="panel-body">
+        <tamin-data-grid #taminDataGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-s-12">
+    <button type="button" class="button normal" (click)="newCustomer()">ایجاد بیمه شده</button>
+    <button type="button" class="button normal" (click)="saveForm(detailForm.value)">ذخیره</button>
+  </div>
+</div>

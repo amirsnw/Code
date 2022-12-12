@@ -1,0 +1,271 @@
+WEBVTT
+
+00:05.350 --> 00:05.680
+Todo bien.
+
+00:05.680 --> 00:09.870
+Entonces en este video vamos a echar un vistazo a estas selecciones para ordenar el algoritmo.
+
+00:09.880 --> 00:16.010
+Ahora este algoritmo divide la matriz en particiones ordenadas y ordenadas como lo hace bubble sort.
+
+00:16.030 --> 00:22.840
+Y lo que hacemos es atravesar la matriz y buscamos el elemento más grande en la partición sin clasificar.
+
+00:22.900 --> 00:28.850
+Y cuando lo encontramos, lo intercambiamos con el último elemento en la partición sin clasificar.
+
+00:29.110 --> 00:35.050
+Y en ese momento ese elemento desplazado estará en su posición ordenada correcta.
+
+00:35.140 --> 00:40.480
+Y al igual que con el tipo de burbuja al comienzo del algoritmo, toda la matriz no está ordenada.
+
+00:40.480 --> 00:42.990
+Entonces, el último índice sin clasificar es seis.
+
+00:43.000 --> 00:48.420
+Y al igual que con el tipo burbuja, vamos a hacer crecer la partición ordenada de derecha a izquierda.
+
+00:48.430 --> 00:56.380
+Vamos a inicializar un campo más grande a cero así que cuando comenzamos decimos que sabes qué 20 es el elemento
+
+00:56.410 --> 00:58.580
+más grande que conocemos hasta ahora.
+
+00:58.630 --> 01:01.890
+Entonces, lo que esté en la posición 0 será el elemento más grande.
+
+01:02.020 --> 01:09.040
+Y vamos a comenzar comparando el elemento en la posición 1 con lo que sea esa posición 0.
+
+01:09.040 --> 01:15.490
+Así que vamos a comenzar con igual a 1 vamos a usar II para atravesar la partición sin clasificar
+
+01:15.490 --> 01:17.720
+y encontrar el elemento más grande.
+
+01:17.860 --> 01:24.220
+Entonces estos son nuestros valores iniciales, el último índice sin clasificar es 6 porque toda la matriz no ordenada
+
+01:24.750 --> 01:25.530
+es uno.
+
+01:25.570 --> 01:31.810
+Vamos a comenzar nuestro recorrido aquí y hemos inicializado el más grande que contendrá el índice del
+
+01:31.810 --> 01:34.920
+elemento más grande en la partición sin clasificar.
+
+01:34.960 --> 01:36.840
+Eso se inicializa a cero.
+
+01:36.850 --> 01:43.060
+Entonces vamos a comparar 35 a 20 y vamos a decir que hey 35 es más grande que 20 y por
+
+01:43.090 --> 01:49.090
+eso vamos a cambiar a 1 más grande y luego vamos a incrementar i a dos y nos ' vamos
+
+01:49.090 --> 01:56.110
+a comparar menos 15 con el elemento más grande que ahora es uno de posición y vamos a decir que bien menos 15
+
+01:56.110 --> 01:57.280
+es menos de 35.
+
+01:57.280 --> 01:59.460
+Entonces vamos a incrementar a tres.
+
+01:59.470 --> 02:05.740
+Vamos a comparar 7 con el elemento más grande que todavía está en la posición 1 7 y es menor que 35.
+
+02:05.740 --> 02:08.010
+Entonces solo incrementamos a 4.
+
+02:08.020 --> 02:14.020
+Ahora vamos a comparar 55 a 35 y 55 es mayor que 35.
+
+02:14.020 --> 02:21.250
+Entonces, en este punto vamos a cambiar a 4, porque el elemento más grande que encontramos hasta el momento
+
+02:21.250 --> 02:25.950
+en la partición sin clasificar es ese índice e incrementamos a cinco.
+
+02:26.260 --> 02:30.450
+Comparamos uno con cincuenta y cinco, mientras que uno es menor que 55.
+
+02:30.490 --> 02:32.540
+Entonces, simplemente incrementamos a seis.
+
+02:32.560 --> 02:37.320
+Comparamos menos 22 a 55 menos 22 es menos de 55.
+
+02:37.330 --> 02:38.770
+Entonces no hacemos nada.
+
+02:38.770 --> 02:43.120
+Y en este punto, estoy igual al último índice sin clasificar.
+
+02:43.120 --> 02:46.730
+Y así hemos completado nuestro primer recorrido de la matriz.
+
+02:46.780 --> 02:51.700
+Así que vamos a cambiar el elemento más grande que encontramos en la partición sin clasificar y
+
+02:51.720 --> 02:56.880
+establecer la posición cuatro con el último elemento en la partición sin clasificar y establecer la posición 6.
+
+02:56.880 --> 03:02.940
+Entonces, lo que vamos a hacer es cambiar 55 y menos 22 y ahora hemos completado nuestra
+
+03:02.950 --> 03:07.430
+primera poligonal, y en este momento 55 está en su posición correcta.
+
+03:07.450 --> 03:13.450
+Y así vamos a disminuir el último índice sin clasificar a cinco y vamos a reinicializarlo a 1 y vamos
+
+03:13.510 --> 03:18.730
+a decir que el elemento más grande en la partición sin clasificar está en la posición cero.
+
+03:18.790 --> 03:20.360
+Y repetimos el proceso.
+
+03:20.380 --> 03:23.070
+Entonces vamos a comparar 35 contra 20.
+
+03:23.090 --> 03:27.270
+Treinta y cinco es mayor que 20, así que vamos a establecer el más grande en 1.
+
+03:27.310 --> 03:35.650
+Ahora incrementamos I para que comparemos menos 15 contra 35 porque 35 es ahora el elemento más grande menos 15 es
+
+03:35.650 --> 03:36.880
+menor que 35.
+
+03:36.880 --> 03:40.390
+Entonces, simplemente incrementamos a 3 7, es menos de 35.
+
+03:40.390 --> 03:45.190
+Entonces simplemente incrementamos ita por menos 22 es menos de 35.
+
+03:45.190 --> 03:47.360
+Así que simplemente incrementamos a 5.
+
+03:47.380 --> 03:49.740
+Y, por supuesto, uno es menos de 35.
+
+03:49.750 --> 03:55.840
+Y en este punto, igualaré el último índice sin clasificar, así que hemos completado nuestro segundo recorrido de
+
+03:55.840 --> 03:56.400
+la matriz.
+
+03:56.440 --> 04:03.640
+Y lo que queremos hacer en este momento es cambiar el elemento más grande que está en la posición uno con
+
+04:03.640 --> 04:08.160
+el último elemento en la partición sin clasificar que es ese índice 5.
+
+04:08.380 --> 04:11.250
+Y entonces vamos a SWAT 35 y 1.
+
+04:11.590 --> 04:21.940
+Y en este punto, 35 y 55 están en posiciones ordenadas correctas y disminuimos el último índice
+
+04:21.940 --> 04:22.990
+sin clasificar.
+
+04:23.020 --> 04:28.460
+Y ahora el último índice sin clasificar de la partición sin clasificar es cuatro.
+
+04:28.510 --> 04:35.620
+Y reiniciaríamos la reinicialización de mayor a cero y debería ser una que deberíamos
+
+04:35.650 --> 04:37.530
+reiniciar. mi. a 1.
+
+04:37.900 --> 04:39.420
+Y vamos a repetir el proceso.
+
+04:39.430 --> 04:45.730
+Sabes que vamos a comparar uno con los 20 más grandes va a quedar 0, etc. hasta que todo el conjunto esté
+
+04:45.730 --> 04:46.210
+ordenado.
+
+04:46.210 --> 04:51.250
+Y así es como funciona la ordenación por selección y se llama selección por selección porque en
+
+04:51.310 --> 04:56.170
+cada recorrido estamos seleccionando el elemento más grande y lo estamos moviendo a la partición ordenada.
+
+04:56.170 --> 05:00.610
+Entonces, el algoritmo de ordenación por selección no está en su lugar, no usa memoria extra.
+
+05:00.610 --> 05:06.370
+Como dije con la ordenación por burbujas, está bien usar algunos campos adicionales a lo largo de la memoria extra que está
+
+05:06.490 --> 05:09.230
+utilizando, no depende de la cantidad de elementos que está ordenando.
+
+05:09.280 --> 05:11.020
+Es un algoritmo in situ.
+
+05:11.200 --> 05:16.440
+Es un algoritmo cuadrático por lo que tiene una complejidad de tiempo de 0 al final al cuadrado.
+
+05:16.480 --> 05:23.750
+Porque tenemos un elemento en la matriz y para cada elemento atravesamos y elementos.
+
+05:23.780 --> 05:25.840
+Entonces es cuadrático
+
+05:25.840 --> 05:29.170
+Sin embargo, no requiere tanto intercambio como sortear burbujas.
+
+05:29.170 --> 05:36.760
+Notarás que solo intercambiamos una vez por recorrido, por lo que la ordenación por selección generalmente tendrá un mejor rendimiento que
+
+05:36.760 --> 05:37.650
+sort de burbuja.
+
+05:37.660 --> 05:43.590
+Digo usualmente porque dependiendo de usted, puede que tenga una matriz que está casi ordenada y, por lo tanto, la ordenación de burbujas
+
+05:43.600 --> 05:44.870
+no tiene que cambiar mucho.
+
+05:44.950 --> 05:50.630
+Pero en el caso promedio todas las demás cosas son iguales, en general, el tipo de selección tendrá un mejor rendimiento.
+
+05:50.660 --> 05:55.560
+Sin embargo, la ordenación por selección es un algoritmo inestable y puede ver por qué es correcto.
+
+05:55.570 --> 06:01.540
+Porque si tenemos elementos duplicados, no hay garantía de que se conservará su orden original relativa
+
+06:01.540 --> 06:07.660
+a los demás porque en cada pasada intercambiamos el elemento más grande con lo que ocupa la
+
+06:07.660 --> 06:10.360
+última posición en la partición sin clasificar.
+
+06:10.360 --> 06:17.650
+Y entonces es muy posible que podamos tomar el segundo valor duplicado y moverlo en frente de su
+
+06:17.650 --> 06:18.250
+gemelo.
+
+06:18.250 --> 06:21.800
+Entonces, debido a esa selección, el género es un algoritmo inestable.
+
+06:21.820 --> 06:26.630
+Entonces, si necesita un algoritmo de ordenación estable, entonces no desea usar selecciones o.
+
+06:26.650 --> 06:29.170
+De acuerdo, entonces eso es todo por esta teoría.
+
+06:29.170 --> 06:31.660
+Avancemos e implementemos la ordenación por selección.
+
+06:31.660 --> 06:33.070
+Te veré en el próximo video.

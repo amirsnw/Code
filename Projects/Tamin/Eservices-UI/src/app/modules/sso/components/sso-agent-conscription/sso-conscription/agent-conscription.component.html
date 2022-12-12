@@ -1,0 +1,384 @@
+<ng-container *ngIf="this.firstState">
+  <div class="alert alert-success">
+    <p>محاسبه حق بیمه مدت خدمت نظام وظیفه و حضور در جبهه</p>
+  </div>
+  <div class="alert alert-danger">
+    <p><i class="icon-attention"></i>
+      هشدار امنیتی:
+      بیمه شده گرامی، پرداخت حق بیمه زیر، مستقیما از طریق درگاه بانکی همین سامانه، مجاز و قابل قبول است. سازمان تامین
+      اجتماعی، مسئولیتی در قبال پرداخت از طرق دیگر نظیر کارتخوان، انتقال وجه و ... ندارد و به حساب بیمه شده منظور نخواهد
+      شد.
+    </p>
+  </div>
+  <div class="alert alert-info">
+    <p><i class="icon-lightbulb"></i>
+      در این فرم نحوه محاسبه حق بیمه دوره خدمت نظام وظیفه و حضور در جبهه نمایش داده شده است.
+    </p>
+    <br>
+    <p><i class="icon-lightbulb"></i>
+      کلیه بیمه شدگان تامین اجتماعی در صورتیکه دارای دو سال سابقه بیمه پردازی نزد این سازمان باشند، می توانند درخواست
+      احتساب سوابق خدمت نظام وظیفه را ارائه نمایند و پس از پرداخت حق بیمه محاسبه شده، مدت خدمت و حضور در جبهه بعنوان
+      سابقه پرداخت حق بیمه متقاضی منظور خواهد شد. لازم به ذکر است متقاضی در زمان ارائه درخواست می بایست بیمه پرداز
+      سازمان
+      باشد.
+    </p>
+    <br>
+    <p><i class="icon-lightbulb"></i>
+      اگر پیش از این درخواست احتساب سوابق خدمت نظام وظیفه و حضور درجبهه داده اید این محاسبات را نادیده بگیرید. این
+      محاسبات صرفا برای کسانی است که تاکنون درخواست مذکور را ارائه نکرده باشند.
+    </p><br>
+    <p><i class="icon-lightbulb"></i>
+      در صورتیکه متوسط دستمزد دو سال آخر بیمه شده، کمتر از حداقل دستمزد مصوب سال باشد، دستمزد مبنای محاسبه برابر با
+      حداقل
+      دستمزد مصوب سال خواهد بود.
+    </p><br>
+    <p><i class="icon-lightbulb"></i>
+      طول دوره خدمت نظام وظیفه حداکثر تا سقف 30 ماه قابل قبول است.
+    </p>
+  </div>
+  <div class="page-title">
+    اطلاعات بیمه پردازی دو سال آخر شما
+  </div>
+
+  <div *ngIf="renderMode==='desktop'" class="table-container">
+    <table *ngIf="data" class="desktop-table">
+      <thead>
+      <tr>
+        <th>سال</th>
+        <th>فروردین</th>
+        <th>اردیبهشت</th>
+        <th>خرداد</th>
+        <th>تیر</th>
+        <th>مرداد</th>
+        <th>شهریور</th>
+        <th>مهر</th>
+        <th>آیان</th>
+        <th>آذر</th>
+        <th>دی</th>
+        <th>بهمن</th>
+        <th>اسفند</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let row of data; let i = index">
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">{{row.year | persianNumber}}</td>
+          <td>{{row.month1_days | persianNumber}}</td>
+          <td>{{row.month2_days | persianNumber}}</td>
+          <td>{{row.month3_days | persianNumber}}</td>
+          <td>{{row.month4_days | persianNumber}}</td>
+          <td>{{row.month5_days | persianNumber}}</td>
+          <td>{{row.month6_days | persianNumber}}</td>
+          <td>{{row.month7_days | persianNumber}}</td>
+          <td>{{row.month8_days | persianNumber}}</td>
+          <td>{{row.month9_days | persianNumber}}</td>
+          <td>{{row.month10_days | persianNumber}}</td>
+          <td>{{row.month11_days | persianNumber}}</td>
+          <td>{{row.month12_days | persianNumber}}</td>
+          <td>روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month1_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month2_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month3_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month4_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month5_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month6_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month7_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month8_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month9_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month10_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month11_wage | persianNumber:'cs'}}</td>
+          <td>{{row.month12_wage | persianNumber:'cs'}}</td>
+          <td>ریال</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="renderMode==='mobile'">
+    <table class="desktop-table">
+      <tbody>
+      <ng-container *ngFor="let row of data; let i = index">
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>سال</td>
+          <td>{{row.year | persianNumber}}</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">فروردین</td>
+          <td>{{row.month1_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month1_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">اردیبهشت</td>
+          <td>{{row.month2_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month2_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">خرداد</td>
+          <td>{{row.month3_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month3_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">تیر</td>
+          <td>{{row.month4_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month4_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">مرداد</td>
+          <td>{{row.month5_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month5_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">شهریور</td>
+          <td>{{row.month6_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month6_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">مهر</td>
+          <td>{{row.month7_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month7_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">آیان</td>
+          <td>{{row.month8_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month8_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">آذر</td>
+          <td>{{row.month9_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month9_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">دی</td>
+          <td>{{row.month10_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month10_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">بهمن</td>
+          <td>{{row.month11_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month11_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td rowspan="2">اسفند</td>
+          <td>{{row.month12_days | persianNumber}} روز</td>
+        </tr>
+        <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          <td>{{row.month12_wage | persianNumber:'cs'}} ریال</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+<!-- </div> -->
+
+<div class="panel" *ngIf="this.firstState">
+  <div class="page-title">
+    اطلاعات بیمه پردازی شما
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="insuredDataForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="isuType">نوع بیمه پردازی آخرین ردیف سابقه</tamin-field-label>
+          <tamin-field-static-text formControlName="isuType"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="historyDays">مجموع روز سابقه فعلی</tamin-field-label>
+          <tamin-field-static-text formControlName="historyDays"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="lastBranchCode"> آخرین شعبه بیمه پردازی</tamin-field-label>
+          <tamin-field-static-text formControlName="lastBranchCode"></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel" *ngIf="this.firstState">
+  <div class="page-title">
+    اطلاعات خدمت نظام وظیفه شما طبق اعلام ناجا
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="calculateDataForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="durationMonths">مدت خدمت (ماه)</tamin-field-label>
+          <tamin-field-static-text formControlName="durationMonths" ></tamin-field-static-text>
+          <div class="hint"><i class="icon-lightbulb"></i><span>بین ۱ تا ۳۰ ماه</span></div>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="durationStartDate">تاریخ شروع</tamin-field-label>
+          <tamin-field-static-text formControlName="durationStartDate"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="durationEndDate">تاریخ پایان</tamin-field-label>
+          <tamin-field-static-text formControlName="durationEndDate"></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel" id="pay" *ngIf="this.firstState">
+  <div class="page-title">
+    محاسبه حق بیمه سربازی
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-info">
+      <h3 style="text-align: center; color: white; border-bottom: dotted 1px white; padding-bottom: 12px;">محاسبه حق بیمه دوران خدمت سربازی و حضور در جبهه</h3>
+      <div class="soldierCalculateForm">
+        <span>متوسط دستمزد ماهانه دو سال آخر (ریال)</span>
+        <i class="icon-cancel"></i>
+        <span>%۷</span>
+        <i class="icon-cancel"></i>
+        <span>مدت خدمت (ماه)</span>
+        <i> = </i>
+        <span>مبلغ قابل پرداخت (ریال)</span>
+      </div>
+      <div class="soldierCalculateForm">
+        <span>{{this.wageAverageField}}</span>
+        <i class="icon-cancel"></i>
+        <span>%۷</span>
+        <i class="icon-cancel"></i>
+        <span>{{this.monthDuration}}</span>
+        <i> = </i>
+        <span>{{this.amountField}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-warning" *ngIf="!isEligible && !(middleState || finalState)">
+  <p style="text-align: center;">
+    <span style="padding: 5px">{{message}}</span>
+  </p>
+</div>
+
+<div class="panel" *ngIf="isEligible && !finalState">
+  <div class="page-title">
+    اطلاعات پرداخت
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-info">
+      <p [hidden]="!this.firstState"><i class="icon-lightbulb"></i>
+        مطابق ضوابط قید شده ، شما حائز شرایط خرید خدمت سربازی می باشید،شما می توانید مبلغ حق بیمه فوق را
+        بصورت نقد یا اقساط ( حداکثر 12 قسط )پرداخت نمایید .در صورت پرداخت نقدی ،بلافاصله سوابق متناظر با دوره خدمت ایجاد
+        خواهد شد.
+      </p>
+      <p *ngIf="middleState"><i class="icon-lightbulb"></i>
+        بیمه شده گرامی ، سوابق پس از پرداخت آخرین قسط ، بشرط آنکه تمام اقساط در مهلت پرداخت شده باشد، ایجاد
+        خواهد شد.
+      </p>
+      <p *ngIf="firstState"><i class="icon-lightbulb"></i>
+        در صورت انتخاب گزینه تقسیط ، سوابق پس از پرداخت آخرین قسط ، بشرط آنکه تمام اقساط در مهلت پرداخت شده باشد، ایجاد
+        خواهد شد.
+      </p>
+      <p><i class="icon-lightbulb"></i>
+        در صوت عدم پرداخت اقساط در مهلت تعیین شده، مبلغ مابه التفاوت براساس متوسط دستمزد روز شما محاسبه و دریافت خواهد
+        شد.
+      </p>
+    </div>
+
+    <div class="row" [hidden]="!firstState">
+      <form [formGroup]="installmentForm"  autocomplete="off" novalidate>
+        <div class="col-3" >
+          <tamin-field-label formControlName="paymentType"> نوع پرداخت   :</tamin-field-label>
+          <tamin-field-validator formControlName="paymentType"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="paymentType"  placeHolder="انتخاب کنید ..." valueField="value" displayField="name" [dataItems]="types"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!isInstallment">
+          <tamin-field-label formControlName="installmentCount">تعداد تقسیط مورد نظر:</tamin-field-label>
+          <tamin-field-combo-box-static formControlName="installmentCount"  placeHolder="انتخاب کنید ..." valueField="value" displayField="value" [dataItems]="months"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!isInstallment">
+          <tamin-field-label formControlName="installmentSelect">نمایش قسط:</tamin-field-label>
+          <tamin-field-combo-box-static formControlName="installmentSelect"  placeHolder="قسط اول" valueField="value" displayField="value" [dataItems]="installmentSelectNumbers"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!isInstallment" >
+          <tamin-field-label formControlName="installmentPrice"> مبلغ قسط مورد نظر:</tamin-field-label>
+          <tamin-field-static-text  formControlName="installmentPrice"></tamin-field-static-text>
+        </div>
+        <div class=col-12 >
+          <div class="installmentList" [hidden]="!isInstallment" *ngIf= "installmentDetailList.length != 0">
+            <span *ngFor="let item of installmentDetailList">{{item}}</span>
+          </div>
+        </div>
+        <div class="col-12" style="padding: 5px;">
+          <button type="button" class="button normal green" (click)="onSend()">پرداخت</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="panel" *ngIf="finalState || middleState">
+  <div class="page-title">
+    اطلاعات درخواست احتساب سوابق خدمت سربازی شما
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="finalDetailsForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="insuredAmount">مبلغ حق بیمه سربازی</tamin-field-label>
+          <tamin-field-static-text formControlName="insuredAmount"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="esoldierNajaDuration">مدت خدمت (ماه)</tamin-field-label>
+          <tamin-field-static-text formControlName="esoldierNajaDuration"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="averageWage">دستمزد مبنای محاسبه</tamin-field-label>
+          <tamin-field-static-text formControlName="averageWage"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="requestDate">تاریخ درخواست</tamin-field-label>
+          <tamin-field-static-text formControlName="requestDate"></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel" [hidden]="!((middleState || finalState) && isInstallment )">
+  <div class="panel-body">
+    <div class="table-container">
+      <tamin-data-grid #dataGrid ></tamin-data-grid>
+      <div class="col-12" style="padding: 5px;" *ngIf="!finalState">
+        <button type="button" class="button normal green" (click)="onSend()">پرداخت</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-success" *ngIf="finalState">
+  <p style="text-align: center;">
+    <span style="padding: 5px">{{message}}</span>
+  </p>
+</div>

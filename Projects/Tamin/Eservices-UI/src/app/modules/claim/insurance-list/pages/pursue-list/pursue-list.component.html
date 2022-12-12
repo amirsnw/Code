@@ -1,0 +1,69 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>امکان نمایش وضیعت لیست بیمه کارگاه ها</span>
+</div>
+<div class="panel">
+  <div class="page-title">
+    جستجو پیگیری وضعیت لیست
+  </div>
+  <div>
+    <form [formGroup]="searchForm" autocomplete="off" novalidate>
+      <div class="form-control-container row">
+        <!-------------------------------------------------------------------------------->
+        <div class="col-4 col-s-4" style="padding: 3px;">
+          <tamin-field-label formControlName="traceCode">شماره پیگیری:</tamin-field-label>
+          <tamin-field-text formControlName="traceCode" placeholder="شماره پیگیری"></tamin-field-text>
+        </div>
+        <!---------------------------------------------------------------------------------->
+        <div class="col-4 col-s-4" style="padding: 3px;">
+          <tamin-field-label formControlName="statusId">وضعیت دخواست</tamin-field-label>
+          <tamin-field-combo-box-static formControlName="statusId" [dataItems]="docStates" displayField="statusDescription"
+            valueField="id"></tamin-field-combo-box-static>
+        </div>
+        <!-------------------------------------------------------------------------------->
+        <div class="col-4 col-s-4" style="padding: 3px;">
+          <tamin-field-label formControlName="stateDate">تاریخ تولد</tamin-field-label>
+          <tamin-field-persian-date formControlName="stateDate"></tamin-field-persian-date>
+        </div>
+        <!-------------------------------------------------------------------------------->
+        <div class="col-12 col-s-12" style="padding: 3px;">
+          <div class="col-4 col-s-4" style="padding: 3px;">
+            <tamin-field-label formControlName="branchId">شعبه</tamin-field-label>
+            <tamin-field-auto-complete-data-grid formControlName="branchId" placeholder="شعبه" #branch></tamin-field-auto-complete-data-grid>
+          </div>
+          <!-------------------------------------------------------------------------------->
+          <div class="col-4 col-s-4" style="padding: 3px;">
+            <tamin-field-label formControlName="workshopSpecificationId">کارگاه</tamin-field-label>
+            <tamin-field-auto-complete-data-grid formControlName="workshopSpecificationId" placeholder="کارگاه"
+              #workshopSpecification></tamin-field-auto-complete-data-grid>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------->
+        <p style="padding: 3px;">
+          <button type="submit" class="button normal">جستجو</button>
+          <button type="button" class="button normal dark" (click)="resetForm()">نمایش همه</button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="panel">
+  <div class="page-title">
+    لیست پیگیری وضعیت
+  </div>
+  <div>
+    <div class="panel-body">
+      <tamin-data-grid #taminDataGrid [serviceUrl]="restUrl" [loadDataOnInit]='true' [visibleColumns]="visibleColumns"
+        [searchParams]="searchParams" [sortParams]="sortParams" viewType="GridView" showActionColumn="true"
+        [actionColumns]="actionColumns" showFooter="false" showPager="true" pagerSize="10" pagerCurrentPage="1"
+        (itemAction)="onGridAction($event)">
+      </tamin-data-grid>
+    </div>
+  </div>
+  <div class="panel">
+    <p style="margin:5px;">
+      <button type="button" class="button normal" (click)='addList()'>بارگذاری فایل لیست حق بیمه</button>
+    </p>
+  </div>
+</div>
+<app-upload-file-model #uploadFileModel ></app-upload-file-model>

@@ -1,0 +1,139 @@
+WEBVTT
+
+00:05.520 --> 00:09.800
+Bienvenido a las estructuras de datos y algoritmos para el curso de Jafa.
+
+00:09.810 --> 00:15.480
+Felicitaciones por tomar una gran decisión al tomar este curso como desarrollador de software.
+
+00:15.480 --> 00:21.450
+Es importante que comprenda las opciones disponibles para usted en términos de las estructuras de datos que
+
+00:21.450 --> 00:26.750
+puede usar en sus aplicaciones y los algoritmos que puede usar para ordenar y buscar datos.
+
+00:26.760 --> 00:32.790
+Así que vamos a comenzar el curso repasando algunas definiciones, vamos a discutir qué es una
+
+00:32.790 --> 00:40.530
+estructura de datos y qué es un algoritmo y luego vamos a cubrir también la notación de Big O. La notación
+
+00:40.530 --> 00:48.360
+de Big O es una forma de comparando cómo los diferentes algoritmos funcionan de una manera objetiva que no depende del hardware.
+
+00:48.480 --> 00:54.110
+Vamos a cubrir un montón de estructuras de datos en este curso y algunos de esos son tipos de
+
+00:54.120 --> 01:01.770
+datos abstractos y usted aprenderá cuáles son esos en el núcleo. Así que vamos a cubrir las listas de matrices apila el árbol de tablas hash
+
+01:01.810 --> 01:02.400
+de CU.
+
+01:02.410 --> 01:09.150
+Nos centraremos principalmente en los árboles de búsqueda binarios en los montones de sección de árbol y en un breve
+
+01:09.180 --> 01:16.460
+vistazo a los conjuntos de algoritmos, y vamos a cubrir los algoritmos de búsqueda, que son solo dos que cubriremos la
+
+01:16.470 --> 01:18.880
+búsqueda lineal y la búsqueda binaria. .
+
+01:18.930 --> 01:23.670
+Vamos a ver un montón de algoritmos de ordenación. No los voy a enumerar
+
+01:23.670 --> 01:28.900
+a todos, sino a solo una muestra de tipo de combinación de tipo de burbuja.
+
+01:28.950 --> 01:30.570
+Un buen número de otros.
+
+01:30.720 --> 01:37.020
+Y también vamos a ver la recursión que podría revisarse, pero muchos de los algoritmos usan
+
+01:37.020 --> 01:42.840
+recursión, por lo que vamos a revisar qué es la recursión y cómo funciona.
+
+01:42.840 --> 01:46.710
+Entonces, la forma en que la mayoría de las secciones irán es que comenzaremos con alguna teoría.
+
+01:46.830 --> 01:51.360
+Por ejemplo, si estamos discutiendo un algoritmo vamos a repasar los pasos para el algoritmo.
+
+01:51.360 --> 01:57.060
+Si hablamos de una estructura de datos, discutiremos qué es la estructura de datos y cuáles son sus
+
+01:57.060 --> 02:01.320
+ventajas y desventajas, y luego codificaremos cuando se trate de una estructura de datos.
+
+02:01.320 --> 02:07.300
+Una implementación simple si es un algoritmo codificará una implementación representativa.
+
+02:07.620 --> 02:13.320
+Y después veremos qué hay disponible en el JDK porque este es un curso de cuatro Jadick y
+
+02:13.320 --> 02:19.200
+en la práctica no vas a codificar los algoritmos y las estructuras de datos porque el equipo de
+
+02:19.200 --> 02:21.200
+Javid ya lo hizo por nosotros.
+
+02:21.270 --> 02:25.760
+La mayoría de las veces hay casos en los que no hay mucho disponible en el JDK.
+
+02:25.830 --> 02:27.870
+Pero para las estructuras de datos que veremos.
+
+02:27.870 --> 02:30.590
+Existe un buen soporte en el JDK para la mayoría de ellos.
+
+02:30.660 --> 02:38.160
+Y cuando se trata de los algoritmos de clasificación, el JDK tiene métodos para ordenar colecciones.
+
+02:38.160 --> 02:43.920
+Ahora es importante que mires los videos en orden porque los videos posteriores suponen que sabes lo
+
+02:43.920 --> 02:51.750
+que hemos cubierto en videos anteriores para que las secciones posteriores se basen en secciones anteriores, por ejemplo, cuando llegamos a una pila,
+
+02:51.900 --> 02:55.950
+digamos mientras puedes implementar una pila usando un lista de laicos
+
+02:55.980 --> 03:01.290
+Si no comprende la lista vinculada porque no ha visto los videos en la sección de la
+
+03:01.650 --> 03:05.220
+lista enlazada, puede tener problemas para seguir la discusión sobre las pilas.
+
+03:05.280 --> 03:10.650
+Y para aprovechar al máximo este curso, es mejor que vea los videos en orden, incluso si cree
+
+03:10.650 --> 03:12.830
+que algunos de los videos podrían ser revisados.
+
+03:12.840 --> 03:15.980
+Nunca se sabe que puede recoger algo que no sabía.
+
+03:15.990 --> 03:21.390
+He sido desarrollador de software por más de 25 años y cada vez que tomo un curso de
+
+03:21.390 --> 03:26.700
+tecnología siempre veo los videos de principio a fin porque usualmente hay una o dos pequeñas pepitas que
+
+03:26.790 --> 03:28.170
+recojo que no sabía.
+
+03:28.170 --> 03:32.150
+Para obtener el mejor conjunto de The Course, le recomiendo que vea los videos en orden.
+
+03:32.220 --> 03:37.440
+Ok, no quería pasar mucho tiempo presentando el curso porque sé que quieres entrar en
+
+03:37.440 --> 03:39.030
+el material y yo también.
+
+03:39.030 --> 03:40.400
+Así que empecemos.
+
+03:40.530 --> 03:42.020
+Te veré en el próximo video.

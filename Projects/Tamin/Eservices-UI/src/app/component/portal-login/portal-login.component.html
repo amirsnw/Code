@@ -1,0 +1,74 @@
+<div class="row login-page-background">
+    <div class="col-12 col-s-12 portal-login-all-content">
+        <div class="portal-login">
+            <form [formGroup]="formLogin" autocomplete="off" novalidate>
+                <div class="row portal-login-form">
+                    <div class="form-control-container">
+                        <div class="portal-login-button-up">
+                            سازمان تامین اجتماعی
+                        </div>
+                        <div class="form-control-container col-12 col-s-12">
+                            <tamin-field-label formControlName="loginType">نحوه احراز هویت</tamin-field-label>
+                            <tamin-field-combo-box-static formControlName="loginType" [dataItems]="loginTypes" displayField="name" valueField="id" placeHolder="انتخاب کنید"
+                                (onItemSelect)="onLoginTypeSelect($event)">
+                            </tamin-field-combo-box-static>
+                        </div>
+                        <div class="form-control-container col-12 col-s-12">
+                            <tamin-field-label formControlName="userName">نام کاربری</tamin-field-label>
+                            <tamin-field-validator formControlName="userName"></tamin-field-validator>
+                            <tamin-field-text formControlName="userName"></tamin-field-text>
+                        </div>
+                        <div class="form-control-container col-12 col-s-12">
+                            <tamin-field-label formControlName="password">کلمه عبور</tamin-field-label>
+                            <tamin-field-validator formControlName="password"></tamin-field-validator>
+                            <tamin-field-password formControlName="password" [showPasswordMeter]="false"></tamin-field-password>
+                        </div>
+                        <div class="form-control-container col-12 col-s-12" style="text-align: center;">
+                            <!--<button type="button" class="button normal" (click)="loginButtonClicked()" style="width:150px;" [disabled]="!formLogin.valid">
+                                <i class="icon-login"></i>
+                                <a>ورود</a>
+                            </button>-->
+                            <div *ngIf="isWeb" class="portal-login-button-down" (click)="loginButtonClicked()">
+                                ورود به سامانه
+                            </div>
+                            <div *ngIf="!isWeb" class="portal-login-button-down" style="margin-top:-5px !important;" (click)="loginButtonClicked()">
+                                 ورود به سامانه
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="portal-advices">
+            <div class="page-title" style="background-color: rgba(58, 58, 58, 0.8);">
+                نکات امنیتی
+            </div>
+            <div style="padding: 5px;">
+                <p id="advice3">رمز عبور خود را در فواصل زمانی کوتاه تغییر دهید.</p>
+                <p id="advice4">پس از اتمام کار، حتما از سیستم خارج شوید.</p>
+                <p id="advice5">هرگز نام کاربری و رمز خود را در اختیار دیگران قرار ندهید.</p>
+            </div>
+        </div>
+        <div class="portal-login-buttons">
+            <button type="button" class="button normal green login" (click)="onButtonClicked('registration')">
+                <i class="icon-plus-circled"></i>
+                <a>ثبت نام</a>
+            </button>
+            <button type="button" class="button normal orange login" (click)="downloadPdf()">
+                <i class="icon-info"></i>
+                <span>راهنمای ثبت نام</span>
+            </button>
+            <button type="button" class="button normal blue login" (click)="onButtonClicked('register-pursue')">
+                <i class="icon-user"></i>
+                <a>پیگیری ثبت نام</a>
+            </button>
+            <button type="button" class="button normal red login" (click)="onButtonClicked('contact')">
+                <i class="icon-mobile"></i>
+                <a>تماس با ما</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="picture-info">
+    <a style="cursor: pointer;" (click)="onButtonClicked('login')">عکس : باغ ارم شیراز / عکاس : نامشخص</a>
+</div>

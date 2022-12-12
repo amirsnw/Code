@@ -1,0 +1,139 @@
+WEBVTT
+
+00:05.210 --> 00:10.850
+Neste vídeo, vamos dar uma breve olhada no que está disponível no JDK para árvores,
+
+00:10.850 --> 00:13.930
+principalmente porque não há muitas classes para árvores.
+
+00:13.940 --> 00:20.810
+O que você provavelmente usará é a classe de mapa de árvore que a classe de mapa de árvore usa pares de
+
+00:20.810 --> 00:24.870
+valores chave e, portanto, digamos que queremos armazenar nossos funcionários em uma árvore.
+
+00:24.890 --> 00:30.740
+Poderíamos fornecer uma chave como uma chave inteira e, em seguida, o objeto empregado como o valor.
+
+00:30.740 --> 00:37.220
+Agora ele diz que esta é uma implementação de mapa navegável de Navarrete baseada em árvore negra vermelha.
+
+00:37.210 --> 00:43.770
+E eu mencionei árvores negras vermelhas em um dos vídeos lá uma árvore de auto-equilíbrio.
+
+00:43.790 --> 00:50.660
+E assim, o que eles fazem é após cada inserção ou exclusão, eles verificam a árvore para ver como ela
+
+00:50.660 --> 00:51.330
+está equilibrada.
+
+00:51.500 --> 00:56.460
+Agora, uma árvore negra vermelha não equilibra perfeitamente uma árvore, mas é boa o suficiente.
+
+00:56.480 --> 01:04.190
+E é a árvore de auto balanceamento preferida atualmente porque tem um bom equilíbrio entre equilibrar
+
+01:04.190 --> 01:07.840
+uma árvore e um bom grau e desempenho.
+
+01:07.850 --> 01:12.700
+Então, se você usa uma aula de tratamento, na verdade você está usando uma árvore preta vermelha no fundo.
+
+01:12.710 --> 01:20.450
+Agora ele diz que ele garante log e time para contém key get put e remove e é porque uma árvore
+
+01:20.450 --> 01:23.370
+preta vermelha é uma árvore de busca binária.
+
+01:23.450 --> 01:31.280
+E assim, como sabemos com árvores de busca binária, desde que não estejam muito desequilibradas, você pode
+
+01:31.430 --> 01:36.780
+fazer inserções de exclusões e recuperações em todo o log e hora.
+
+01:36.780 --> 01:41.760
+Uma última coisa a notar é que isto não é sincronizado, então se você quiser usá-lo
+
+01:41.760 --> 01:48.090
+para vários threads, eles sugerem que você envolva essa classe chamando as coleções de pontos sincronizar o mapa ordenado Massad.
+
+01:48.450 --> 01:55.140
+E se olharmos para os métodos com os quais estamos familiarizados com alguns deles, já os examinamos antes.
+
+01:56.490 --> 02:02.140
+Podemos ver que ela desce de um mapa abstrato, então um mapa abstrato implementa a interface do mapa.
+
+02:02.140 --> 02:07.800
+Então, nós olhamos para isso em um vídeo anterior e quando estávamos olhando para tabelas de hash e
+
+02:07.800 --> 02:14.880
+então não vamos passar por isso e não vamos codificá-lo porque é apenas uma questão de ler as descrições do método e
+
+02:14.880 --> 02:15.540
+codificá-lo .
+
+02:15.540 --> 02:18.230
+Nós implementamos uma árvore simples e você sabe como eles funcionam.
+
+02:18.240 --> 02:24.690
+E esta é apenas uma implementação, então você sabe se você quer adicionar um nó que você usa para colocar o Massad
+
+02:24.690 --> 02:29.520
+como você faria com qualquer mapa, se você quiser recuperar um nó para usar o método get.
+
+02:29.880 --> 02:36.480
+Você pode remover os nós que podem substituir nós, o que significa que você substituiria o valor do nó, mas
+
+02:36.480 --> 02:37.440
+a chave especificada.
+
+02:37.440 --> 02:43.680
+Portanto, basicamente, essa implementação procuraria o nó com essa chave e definiria o valor da nota para
+
+02:43.680 --> 02:44.910
+o novo valor.
+
+02:44.940 --> 02:49.560
+Você pode descobrir quantos nós estão na árvore e há algumas outras coisas que você pode fazer.
+
+02:49.560 --> 02:52.860
+Então, vou deixar você explorar essa aula sozinho.
+
+02:55.670 --> 02:59.200
+Há também uma classe de conjunto de árvore, creio eu.
+
+02:59.240 --> 03:02.020
+Deixe-me subir aqui.
+
+03:04.530 --> 03:05.960
+Nós não cobrimos isso ainda.
+
+03:05.970 --> 03:09.420
+Eu vou ter um breve vídeo sobre eles no final do curso.
+
+03:09.420 --> 03:15.000
+Basicamente, um conjunto apenas significa que a estrutura de dados não pode conter elementos duplicados.
+
+03:15.000 --> 03:18.440
+Portanto, é um tipo de dados abstrato porque você pode ter um conjunto de árvores.
+
+03:18.440 --> 03:21.020
+Você pode ter uma lista como um conjunto.
+
+03:21.060 --> 03:23.670
+E vamos analisar brevemente os conjuntos no final do curso.
+
+03:23.670 --> 03:29.760
+Eu só quero que você saiba agora que há uma classe de conjunto de árvores e esta é uma implementação baseada
+
+03:29.760 --> 03:31.020
+no mapa de árvores.
+
+03:31.020 --> 03:37.800
+Então é isso que é tudo o que vamos analisar para o JDK e esse é o final da seção sobre árvores. Na
+
+03:37.800 --> 03:42.720
+próxima seção, vamos dar uma olhada nos heaps heaps que são um tipo especial de árvore.
+
+03:42.870 --> 03:43.860
+E então eu vou te ver lá.

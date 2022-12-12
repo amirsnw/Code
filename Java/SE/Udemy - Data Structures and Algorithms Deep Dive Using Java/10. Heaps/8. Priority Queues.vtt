@@ -1,0 +1,415 @@
+WEBVTT
+
+00:05.260 --> 00:13.060
+Eu mencionei o termo prioridade fila algumas vezes em relação a pilhas e isso porque um uso muito comum de
+
+00:13.060 --> 00:18.000
+pilhas é usá-las como o que é chamado de fila de prioridade.
+
+00:18.010 --> 00:24.970
+Agora, lembre-se que as filas são geralmente as primeiras a serem removidas da fila na ordem em que
+
+00:24.970 --> 00:25.800
+foram adicionadas.
+
+00:25.840 --> 00:31.900
+Mas e se quisermos mudar isso um pouco e dizer que sempre queremos acessar o item de
+
+00:31.900 --> 00:32.500
+maior prioridade.
+
+00:32.590 --> 00:38.830
+E assim, em vez de sempre remover os itens na ordem em que foram adicionados quando adicionamos um item, atribuímos uma
+
+00:38.830 --> 00:39.850
+prioridade a ele.
+
+00:39.850 --> 00:45.040
+E quando vamos remover um item, o item de maior prioridade é aquele que é removido, de modo
+
+00:45.040 --> 00:50.250
+que não seja o primeiro a sair ou o Firefall, é o item que tiver a prioridade mais alta.
+
+00:50.260 --> 00:55.840
+Como se não fosse Phifer quando você vai a uma sala de emergência, se você já foi a um
+
+00:55.840 --> 00:57.990
+pronto-socorro de um hospital que usa lixo.
+
+00:58.030 --> 01:02.710
+Eles não vêem pacientes na ordem em que chegam em alguém que está tendo um ataque cardíaco
+
+01:02.710 --> 01:05.860
+que vai ser visto antes de alguém que talvez precise de pontos.
+
+01:05.950 --> 01:10.900
+Portanto, é a mesma ideia para as filas de prioridade quando tiramos um item da fila e queremos sempre
+
+01:10.900 --> 01:12.750
+o item de prioridade mais alta primeiro.
+
+01:12.760 --> 01:20.050
+Portanto, se os valores nos nós indicarem a prioridade, é possível que o heap máximo seja uma estrutura de
+
+01:20.050 --> 01:26.890
+dados ideal para isso, porque o valor com a prioridade mais alta está sempre na raiz do heap.
+
+01:26.890 --> 01:32.010
+E assim, quando você deseja remover o item de maior prioridade de um heap máximo, basta remover a raiz.
+
+01:32.020 --> 01:33.990
+E isso pode ser feito em tempo constante.
+
+01:34.000 --> 01:38.950
+Agora, como os heaps são geralmente implementados como matrizes, isso significa que estamos sempre removendo o
+
+01:38.950 --> 01:44.740
+item na posição 0 e, depois, removemos o item de maior prioridade e corrigimos o heap, o que significa
+
+01:44.740 --> 01:47.860
+que o próximo item de maior prioridade está agora na raiz.
+
+01:48.070 --> 01:51.060
+E quando queremos que possamos remover isso em tempo constante.
+
+01:51.310 --> 01:57.850
+E se adicionarmos um novo item ao heap que tenha uma prioridade mais alta depois de corrigirmos o heap, o item
+
+01:57.850 --> 01:59.770
+de maior prioridade estará na raiz.
+
+01:59.890 --> 02:04.920
+E assim podemos sempre obter o item de maior prioridade em tempo constante.
+
+02:05.020 --> 02:10.920
+E assim, uma fila de prioridade é um tipo de dados abstrato que é comumente implementado como um heap máximo.
+
+02:10.990 --> 02:16.470
+Cada item no heap tem uma prioridade e nós construímos um maxi com base no valor de prioridade.
+
+02:16.570 --> 02:22.360
+Então, se estamos lidando com números inteiros como se estivéssemos em nosso código na implementação que
+
+02:22.360 --> 02:25.760
+fizemos, então os números inteiros são seus valores de prioridade.
+
+02:25.810 --> 02:30.040
+Mas mais comumente você estará lidando com outros tipos de objetos
+
+02:30.040 --> 02:35.370
+e haverá algo no objeto que indica qual é a prioridade para esse objeto.
+
+02:35.380 --> 02:41.500
+Assim, quando se trata de filas de prioridade, as operações comuns são inseridas com Prioridade, remova o item de
+
+02:41.500 --> 02:47.980
+maior prioridade e isso é chamado pull and peek, que retornará o item com a prioridade mais alta, mas não
+
+02:48.190 --> 02:49.750
+o removerá do heap.
+
+02:49.750 --> 02:52.210
+Isso é o mesmo que espiar uma pilha ou uma fila.
+
+02:52.210 --> 02:56.210
+Agora, quando removemos o item de maior prioridade, é claro que podemos ter que consertar o heap.
+
+02:56.230 --> 03:00.330
+Mas quando espiamos o monte, não o fazemos porque não removemos nada.
+
+03:00.340 --> 03:06.390
+Então, Java tem uma classe de fila de prioridade que é o que está na tela, então não há necessidade de codificar a sua.
+
+03:06.400 --> 03:12.460
+Mas é claro que se você tivesse apenas codificado um heap máximo e veríamos que essa é uma fila de prioridades
+
+03:12.460 --> 03:18.940
+ilimitada baseada em um heap de prioridade e isso significa que não há limite para o número de itens que podem ser retidos.
+
+03:19.030 --> 03:24.090
+Agora, uma coisa interessante sobre essa fila de prioridades é que ela é, na verdade, um heap mínimo.
+
+03:24.100 --> 03:30.350
+A cabeça dessa fila é o menor elemento em relação à ordenação especificada da especificação.
+
+03:30.460 --> 03:33.770
+Então, quanto menor o número, maior a prioridade.
+
+03:33.790 --> 03:39.730
+Você sabe que se você é o número 9 9 9 você é uma prioridade menor do que alguém que tem uma prioridade de 10.
+
+03:39.730 --> 03:41.650
+É uma implementação de array.
+
+03:41.660 --> 03:46.600
+Podemos ver aqui que uma fila de prioridades é ilimitada, mas tem uma capacidade interna que rege
+
+03:46.600 --> 03:50.080
+o tamanho de uma matriz e, portanto, eles estão redimensionando a matriz.
+
+03:50.080 --> 03:55.390
+Se você tentar adicionar algo a uma fila de prioridades que já esteja cheia.
+
+03:55.390 --> 04:01.540
+Isso não é sincronizado, portanto, se você quiser usá-lo para vários segmentos, deverá usar a fila
+
+04:01.540 --> 04:03.090
+de bloqueio de prioridade.
+
+04:03.250 --> 04:07.920
+Só existe desde 1. 5 Então é uma adição bastante recente.
+
+04:08.020 --> 04:12.710
+OK, então vamos para a ideia agora e experimente essa classe.
+
+04:17.420 --> 04:24.560
+Tudo bem, então aqui estamos no ID e vamos usar a prioridade do JDK para a classe e vamos usá-lo com
+
+04:24.560 --> 04:25.250
+o inteiro.
+
+04:25.280 --> 04:27.570
+Apenas para demonstrar alguns dos métodos.
+
+04:27.620 --> 04:35.660
+Então, vamos criar uma fila de prioridade para a fila de prioridade e teremos uma
+
+04:35.660 --> 04:46.330
+fila de prioridade de número inteiro e eu vou chamá-la de fila de prioridade snoo PQ igual e vamos
+
+04:46.370 --> 04:55.170
+adicionar alguns itens a ela, então vou dizer PQ que adicionar 25 pontos PQ menos 22.
+
+04:55.540 --> 05:09.530
+Ele Q-Bot adiciona 13 43 P-Q não adiciona 54 vamos adicionar 0 e irá adicionar outro número negativo e isso será
+
+05:09.530 --> 05:17.830
+negativo 3 4 9 2 e P Q Ponto adiciona 4 a 9.
+
+05:18.950 --> 05:24.860
+Então, agora vamos ver o que alguns dos métodos nos dão quando os chamamos, então diremos Linha de impressão outtalk
+
+05:24.860 --> 05:28.140
+do ponto do sistema e vamos espiar essa fila de prioridades.
+
+05:28.480 --> 05:34.540
+Então, vamos dizer peek e vamos executar isso agora, ver o que temos.
+
+05:38.060 --> 05:41.120
+E vamos ver que conseguimos o menor número na fila.
+
+05:41.120 --> 05:47.100
+Lembre-se de que essa implementação é um heap mínimo e, portanto, o valor mínimo será na raiz.
+
+05:47.210 --> 05:52.400
+E assim, quanto menor for essa redução, maior será seu número de prioridade.
+
+05:53.000 --> 05:59.590
+Então 3 menos 3 4 9 2 ainda está no heap porque o pico não altera o heap de nenhuma maneira.
+
+05:59.690 --> 06:08.100
+Então, vamos agora remover o item com a maior prioridade, então vamos dizer P-Q remove e vamos espiar.
+
+06:08.120 --> 06:17.000
+Depois que fizemos isso para ver se o heap mudou de alguma forma e é claro que sim.
+
+06:17.030 --> 06:25.770
+Então, antes de removermos menos 3 4 9 2 que estava na raiz, o método Remove realmente retorna o item removido e assim vemos
+
+06:25.850 --> 06:32.360
+menos 3 4 9 2 novamente e depois que eles removerem tudo menos 22 está agora na raiz.
+
+06:32.390 --> 06:38.770
+Então, conseguimos isso com o pico e esse é de fato o próximo item com a maior prioridade.
+
+06:38.780 --> 06:40.690
+Então, agora vamos ligar para o Paul.
+
+06:40.760 --> 06:46.610
+Então, o sistema Asay saiu da linha de impressão P-Q drop poll e vamos espiar
+
+06:49.880 --> 06:52.280
+a fila depois de termos feito
+
+06:56.610 --> 07:02.850
+isso tão bem correr os animais ver que quando nós entrevistamos menos 22 foi devolvido.
+
+07:02.860 --> 07:07.000
+E então, quando chegamos ao pico, estamos recebendo zero pool e removidos ou a mesma coisa.
+
+07:07.000 --> 07:11.590
+Então, ambos removem o item de prioridade mais alta e o retornam.
+
+07:11.590 --> 07:19.000
+E então menos 22 será retornado e, em seguida, 0 estará agora na raiz do heap, porque agora é o
+
+07:19.000 --> 07:19.780
+valor mínimo.
+
+07:19.780 --> 07:23.220
+Agora, se você quiser, pode remover apenas um número aleatório.
+
+07:23.230 --> 07:32.860
+Então vai dizer sistema saiu da linha de impressão P-Q ponto para remover e vamos apenas remover 54 digamos.
+
+07:33.250 --> 07:38.140
+E agora nós espiamos novamente nós ainda devemos ver 0 no topo Então vamos correr
+
+07:41.410 --> 07:44.890
+e você verá que aqui nós temos um verdadeiro retorno.
+
+07:44.950 --> 07:49.900
+Ele não retorna o objeto removido porque você está realmente passando o que deseja remover.
+
+07:49.900 --> 07:55.210
+Então, seria meio redundante retornar o que você deseja remover Em vez disso, diz Sim, eu removi isso com
+
+07:55.210 --> 08:00.790
+sucesso, então se isso era falso, isso significaria que ele não poderia encontrar isso na pilha e zero ainda
+
+08:00.790 --> 08:01.650
+está na raiz.
+
+08:01.660 --> 08:05.870
+E assim, para uma chamada final, vamos adicionar outro valor.
+
+08:05.920 --> 08:10.510
+Bem, isso é algo que tem prioridade maior que a raiz, então 0 é a raiz, então adicionaremos
+
+08:10.510 --> 08:11.330
+outro número negativo.
+
+08:11.470 --> 08:20.050
+Então, vamos dizer P-Q add e vamos adicionar menos 1 e, em seguida, se nós escolhermos o Q Depois de fazer isso,
+
+08:20.050 --> 08:22.300
+devemos ver menos um na raiz.
+
+08:22.600 --> 08:25.030
+Então vamos correr de novo.
+
+08:25.500 --> 08:28.410
+E nós vemos menos 1 na raiz.
+
+08:28.410 --> 08:33.380
+Então, a diferença entre enquete e remover quando você passar um valor.
+
+08:33.420 --> 08:39.870
+E, de fato, remover quando você não é, se você chamar remover sem um valor ou você chamar poll ele sempre remove
+
+08:39.870 --> 08:43.970
+a raiz se você passar um valor específico, então ele não remove a raiz.
+
+08:43.980 --> 08:45.840
+Em vez disso, remove esse valor.
+
+08:45.840 --> 08:50.970
+Agora, se você quisesse criar uma fila de prioridades usando instâncias que não são inteiros, é claro
+
+08:50.970 --> 08:57.870
+que tudo ficaria bem, desde que a classe implementasse a interface comparável, para que a fila de prioridades pudesse comparar as instâncias.
+
+08:57.870 --> 09:01.450
+Você também pode fornecer um concorrente ao construir o cubo.
+
+09:01.500 --> 09:05.540
+Existe uma versão do construtor que permite passar o Imperator.
+
+09:05.580 --> 09:08.750
+Agora podemos obter o array da fila.
+
+09:08.790 --> 09:13.380
+E assim, a maneira que faríamos isso seria chamar o método de 2 matrizes.
+
+09:13.380 --> 09:18.160
+E então vamos fazer isso depois de termos removido 54 só para ver o que temos.
+
+09:18.290 --> 09:27.370
+Então eu vou dizer objeto vamos obter uma matriz ints é igual a P-Q ponto a matriz.
+
+09:27.990 --> 09:36.100
+E por último dizer para o número do objeto em seu sistema sair.
+
+09:36.150 --> 09:39.300
+Imprimir linha num só para ver o que temos.
+
+09:39.660 --> 09:40.590
+Então, vamos executar
+
+09:43.340 --> 09:51.170
+isso e eu acho que não é muito útil, porque não podemos realmente ver onde ele começa, então vou comentar todas
+
+09:51.170 --> 09:52.580
+as outras linhas de
+
+09:57.630 --> 10:01.950
+impressão para que possamos ver a matriz depois de removermos 54.
+
+10:01.980 --> 10:11.160
+Então, vamos correr e temos negativo 3 4 9 2 0 menos 22 54 25 13 43 e para 29.
+
+10:11.160 --> 10:17.100
+Então, como eu comentei todos os conjuntos de impressão, na verdade estamos removendo as coisas, então estamos basicamente obtendo todo o
+
+10:17.100 --> 10:22.740
+heap depois de adicionarmos os itens e você perceberá que se você se lembrar de como as coisas são armazenadas
+
+10:22.740 --> 10:30.510
+é um array, então temos menos 3 4 9 2 e, em seguida, 0 e menos 22 é de crianças e por isso esse cara é menor.
+
+10:30.510 --> 10:37.500
+Lembre-se que isto é e então ele tem menos de zero e menos 22 e então zero crianças seria 54
+
+10:37.500 --> 10:44.760
+e 25 e 0 é menor do que ambos e menos 20 filhos seria 13 43 e para 29 e claro
+
+10:44.760 --> 10:47.490
+menos 22 é menor que os dois.
+
+10:47.490 --> 10:55.560
+Deixe-me subir agora e comentar a linha de remoção 54 apenas para que possamos ver 54 desaparecerem e se corrermos novamente,
+
+10:55.560 --> 11:01.910
+veremos que agora 54 se foi e chegamos a essa verdade aqui na linha de impressão.
+
+11:01.920 --> 11:06.810
+Esta classe é bastante simples e você sabe o que é um Q, mesmo que este seja um tipo diferente de
+
+11:06.810 --> 11:08.720
+Q Você sabe o que é uma pilha.
+
+11:08.720 --> 11:11.320
+É só uma questão de explorar a documentação.
+
+11:11.370 --> 11:17.190
+Mas se você precisar de uma fila de prioridades em Java, pode dar uma olhada nesta implementação no JDK.
+
+11:17.190 --> 11:20.220
+Apenas lembre-se que é um calor.
+
+11:20.220 --> 11:23.190
+Agora você pode estar pensando bem e se eu precisar de um heap máximo.
+
+11:23.310 --> 11:29.220
+Bem, não se esqueça que você pode fornecer um comparativo para a classe, então você pode fornecer um concorrente
+
+11:29.220 --> 11:36.270
+que irá obter o comportamento desejado e construir um heap máximo em vez de um heap mínimo e, assim, você precisará de um
+
+11:36.600 --> 11:42.840
+concorrente que analise o dois valores e sempre que você tiver um valor maior que o outro, de fato, você
+
+11:42.840 --> 11:44.580
+deseja retornar a esses Valores menos.
+
+11:44.580 --> 11:49.510
+Você gostaria de inverter as coisas para que essa classe realmente estivesse criando um heap máximo.
+
+11:49.650 --> 11:55.110
+Portanto, se você quiser um heap máximo, precisará fornecer um comparativo com a classe para obter esse comportamento.
+
+11:55.290 --> 11:57.000
+Tudo bem, é isso para montes.
+
+11:57.000 --> 11:58.260
+Vejo você no próximo vídeo.

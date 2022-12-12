@@ -1,0 +1,463 @@
+WEBVTT
+
+00:05.160 --> 00:08.190
+É bonito eu ia em frente e baixar e instalar.
+
+00:08.330 --> 00:14.040
+Idéia inteligente que é a idéia de editor que vamos usar neste curso e vamos
+
+00:14.040 --> 00:18.730
+fazê-lo para uma plataforma Linux especificamente para o Linux dezesseis pontos quatro.
+
+00:18.960 --> 00:24.990
+Agora, se você estiver usando o Windows ou um Mac, verifique os vídeos que configuramos para
+
+00:24.990 --> 00:28.240
+os sistemas operacionais da BIOS nesta seção do curso.
+
+00:28.380 --> 00:31.060
+E isso porque o preço da instalação é um pouco diferente.
+
+00:31.380 --> 00:33.970
+Mas para o Linux este é o vídeo correto.
+
+00:34.180 --> 00:38.520
+Então, a primeira coisa a fazer é abrir a Fox ou o navegador de sua escolha.
+
+00:38.540 --> 00:47.400
+Queremos que seja um guia para o site do Brian Web site do cérebro de Brian.
+
+00:47.620 --> 00:55.620
+E assim que chegamos lá, queremos capturar a página onde podemos fazer o download inteligente ou eu não costumo dizer essa
+
+00:55.710 --> 00:59.770
+opção aqui na tela, porque é um dos produtos mais populares.
+
+00:59.840 --> 01:04.690
+Brian é a empresa que eu criei este produto para que eles tenham selecionado todos eles brancos que
+
+01:04.710 --> 01:09.300
+você pode dizer que por algum motivo chegar aqui e como uma inteligência que costumava ser a
+
+01:09.300 --> 01:11.170
+primeira opção ou muito perto da primeira opção.
+
+01:11.360 --> 01:15.200
+É o tipo de PIJ que clica no download e o que
+
+01:19.680 --> 01:22.990
+vamos fazer é começar o tantalised para a edição da comunidade.
+
+01:23.160 --> 01:27.660
+Bem, isso é tentador. Voltaremos a esta página e falaremos sobre as adições finais e da comunidade
+
+01:27.690 --> 01:29.620
+e quais são as diferenças entre as duas.
+
+01:31.330 --> 01:35.180
+Nós vamos primeiro dizer que eles irão para a minha pasta de downloads.
+
+01:35.420 --> 01:40.510
+Você acabou de mencionar aqui a sociedade pode dar uma olhada nas duas opções.
+
+01:40.550 --> 01:44.390
+Nós temos a última edição que é a edição comunitária da Paullus.
+
+01:44.390 --> 01:48.950
+Agora a edição da comunidade que eu estou deliciando é a versão gratuita e de código aberto e você nunca
+
+01:48.980 --> 01:50.090
+terá que pagar essa opção.
+
+01:50.090 --> 01:54.740
+Então, se você quiser seguir em frente e usar essa opção, é uma boa opção e certamente funcionará
+
+01:54.740 --> 01:55.610
+bem neste curso.
+
+01:55.670 --> 01:58.380
+O Old Home Edition vem com um teste.
+
+01:58.430 --> 02:02.970
+No entanto, se depois desse período de teste, se você ainda quiser usá-lo, precisará pagar por isso.
+
+02:03.320 --> 02:08.000
+E a diferença entre os dois é que o Ultimate Edition tem recursos extras e é
+
+02:08.000 --> 02:10.690
+realmente bom para outras coisas além da linguagem padrão.
+
+02:10.710 --> 02:16.160
+Então, é bom para o Java entrar na prostituição e você pode dizer que os frameworks e bancos de dados e assim
+
+02:16.160 --> 02:16.710
+por diante.
+
+02:16.910 --> 02:22.250
+Então o que você pode fazer é se você decidir experimentar a última edição que você pode experimentar por 30 dias.
+
+02:22.280 --> 02:26.540
+Os construtores de ferragens dão a você um teste de 30 dias para testá-lo e você pode sempre voltar
+
+02:26.540 --> 02:28.260
+e deixar a comunidade decidir mais tarde.
+
+02:28.290 --> 02:33.440
+E a outra coisa a ter em mente é que eu posso aumentar esse período de
+
+02:33.440 --> 02:39.860
+Tatro por mais 90 dias, dando-lhe 120 dias, dando-lhe um cupom que permitiria a extensão desse período de tempo.
+
+02:39.860 --> 02:45.050
+Agora, se você quiser tirar proveito disso e experimentar a edição definitiva dos detalhes completos de 120 dias que estão
+
+02:45.140 --> 02:47.100
+em uma palestra nesta seção do curso.
+
+02:47.300 --> 02:48.800
+Mas novamente nenhuma das versões funcionará.
+
+02:48.800 --> 02:54.320
+E se você quiser experimentar a edição de outubro você pode colocar no meu caso você me vendeu baixar
+
+02:54.330 --> 02:55.530
+a edição da comunidade.
+
+02:55.640 --> 03:00.770
+Tudo bem, então vamos em frente agora e instalar a versão que eu baixei e ele ou eu podemos
+
+03:00.770 --> 03:03.010
+ver agora que a minha versão está concluída.
+
+03:03.020 --> 03:07.670
+Então eu vou apenas colocar isso de novo na pasta onde foi realmente baixado Eu deveria
+
+03:07.670 --> 03:09.350
+querer fazer é só descer aqui.
+
+03:10.760 --> 03:14.850
+Como presidente, podemos dizer que está na pasta Downloads.
+
+03:15.180 --> 03:21.400
+E eu vou colocar este software em uma pasta no meu computador, então eu vou primeiro colocá-lo com o gerente do Rockoff e então o
+
+03:21.400 --> 03:22.220
+que eu vou
+
+03:25.200 --> 03:28.980
+fazer é voltar para a minha pasta pessoal e eu vou para criar uma pasta
+
+03:28.980 --> 03:31.550
+para meus aplicativos, então vou clicar em você para frente.
+
+03:31.960 --> 03:36.650
+E eu recebi uma ligação que fez e foi meio que na pasta que vou colocar em inteligente.
+
+03:36.840 --> 03:41.880
+Agora você é nosso custo livre para colocar este software onde quiser, mas esse é o local
+
+03:41.880 --> 03:42.990
+onde eu vou executá-lo.
+
+03:43.350 --> 03:47.770
+Uma vez que você tenha feito isso, você selecionou a pasta que
+
+03:47.760 --> 03:52.590
+queremos que você volte aqui e então você pode literalmente clicar e arrastá-la
+
+03:52.590 --> 03:58.040
+e mover os arquivos para esse local assim que terminar e fechado e por essas janelas.
+
+03:58.220 --> 04:02.660
+E nós não queremos entrar no terminal, então vamos clicar nos terminais ou você vai ao prompt de comando
+
+04:02.660 --> 04:05.850
+do terminal, seja lá o que for chamado em sua análise de instalação.
+
+04:06.350 --> 04:07.200
+Eles querem navegar.
+
+04:07.200 --> 04:08.820
+Agora para essa pasta.
+
+04:08.990 --> 04:11.490
+Então, vamos pegar um CD no meu caso.
+
+04:11.750 --> 04:13.470
+Eu não olho para a foto atual.
+
+04:13.860 --> 04:19.560
+Quero dizer, a minha casa antes de eu clicar no CD dev se eu não olhei para o meu topo eu sim, você pode
+
+04:19.570 --> 04:21.220
+dizer que é a instalação da ideia.
+
+04:21.530 --> 04:28.160
+Então eu acabei de receber um tempero de CD Toppin e eu e eu podemos ir para a lixeira das pastas uma caixa de
+
+04:28.160 --> 04:32.940
+temperos CD que vai olhar para isso de novo e você pode ver que há vários seguidores lá.
+
+04:33.170 --> 04:35.510
+Então, o que queremos começar é ideia.
+
+04:35.540 --> 04:40.060
+SH Sargen dot Ford slash ideia.
+
+04:43.160 --> 04:44.160
+Para.
+
+04:45.170 --> 04:50.660
+E a primeira vez que você carrega no still ou você realmente inicia o Yardy inteligente ele
+
+04:50.730 --> 04:53.090
+leva você a um prompt para importar configurações.
+
+04:53.120 --> 04:57.470
+Então, se você tem uma versão existente de inteligente, você pode importar as configurações e, particularmente,
+
+04:57.470 --> 05:02.280
+se você personalizou a versão alterada, talvez talvez tenha sido usado com fontes e outras coisas pode ser
+
+05:02.270 --> 05:05.700
+uma boa maneira de impedir que você configure tudo novamente novamente do zero.
+
+05:05.930 --> 05:10.790
+No meu caso eu não tenho nenhuma cidade para importar, então vou selecionar essa opção e essa é provavelmente
+
+05:10.790 --> 05:14.840
+a opção que você escolhe na maioria dos casos, porque você provavelmente não teve inteligência instalada
+
+05:14.840 --> 05:15.780
+no seu computador antes.
+
+05:15.920 --> 05:16.980
+Então clico em OK.
+
+05:18.480 --> 05:25.010
+E pronto para aceitar a política de privacidade clicando em go, exceto que você tem algumas opções de como você quer
+
+05:25.020 --> 05:27.700
+tema ou qual é o tema da inteligência.
+
+05:27.930 --> 05:31.150
+E você pode ver se eu seleciono ler dizer opções diferentes.
+
+05:31.370 --> 05:36.060
+OK escolha inteligente que seja a opção padrão com o fundo branco, mas escolha
+
+05:36.060 --> 05:42.210
+o que achar adequado e tenha em mente que sempre pode vir aqui para voltar às configurações com
+
+05:42.210 --> 05:47.010
+uma aparência inteligente de comportamento ou aparência e mudar isso mais tarde Se você
+
+05:47.010 --> 05:47.840
+sente que precisa.
+
+05:47.840 --> 05:50.200
+Depois de ter feito isso, clique no próximo.
+
+05:50.220 --> 05:54.890
+Agora queremos criar automaticamente esta entrada de tipo para nós, para que não tenhamos que ir para o terminal.
+
+05:54.890 --> 05:59.110
+Fale sobre um aviso para iniciar a conversa na Internet.
+
+05:59.280 --> 06:01.830
+Então eu vou deixar o bilhete e fazer isso.
+
+06:01.930 --> 06:05.270
+E novamente sentados em volta, voltam para as Ferramentas corretas.
+
+06:05.290 --> 06:05.480
+Senhora.
+
+06:05.500 --> 06:09.270
+Tippett Você quer fazer isso no futuro e não quer fazer isso por algum motivo.
+
+06:09.420 --> 06:11.000
+Então eu posso deixar essa opção selecionada.
+
+06:11.120 --> 06:15.300
+Bem, eu não vou criá-lo para você, se você quiser, por algum motivo, você pode clicar
+
+06:16.050 --> 06:20.790
+nessa caixa de seleção, clique no dia seguinte, você não pode usar inteligência na linha de comando, se quiser.
+
+06:20.820 --> 06:21.940
+Você pode invocá-lo.
+
+06:21.950 --> 06:25.620
+E essa é uma opção, se você quiser, eu vou clicar nisso,
+
+06:25.620 --> 06:30.880
+mesmo que, provavelmente, não façamos isso no curso sexualmente, se você quiser apenas se quiser se conectar.
+
+06:31.050 --> 06:35.880
+Agora que tipo um número de plugins que você pode configurar em alguns destes já estão configurados.
+
+06:35.880 --> 06:38.880
+Assim, você pode ativar o Diebold para decidir com eles ou personalizá-los.
+
+06:38.880 --> 06:43.970
+Eu sugiro que você deixe tudo como está, porque você pode sempre voltar depois e configurar
+
+06:44.070 --> 06:45.480
+plugins adicionais a qualquer momento.
+
+06:45.480 --> 06:47.800
+Então vou deixar tudo como está lá.
+
+06:48.000 --> 06:52.750
+Apenas uma outra coisa a ter em mente é se você está ficando sem adição e até o
+
+06:52.760 --> 06:55.970
+prato da comunidade e, em seguida, instalando Você provavelmente terá opções extras.
+
+06:56.220 --> 07:00.630
+Por causa da funcionalidade extra que você quer, a adição final de inteligência lhe dá.
+
+07:00.770 --> 07:05.040
+Mas no meu caso eu não vou fazer nada, só vou clicar em seguida e temos
+
+07:05.040 --> 07:07.380
+algumas outras opções para agradar alguns plugins em destaque.
+
+07:07.410 --> 07:10.170
+Nós não vamos usar esses plugins nesta causa também.
+
+07:10.350 --> 07:12.940
+Então, vou clicar em começar a usar o áudio inteligente.
+
+07:14.790 --> 07:22.970
+Eu preciso digitar minha senha e isso é para configurar o código instalador lançador em corte e até que eu
+
+07:23.130 --> 07:29.010
+deveria começar como você pode ver que começou OK eu com ele instalar inteligência.
+
+07:29.120 --> 07:33.140
+Há algumas configurações que precisamos configurar para que possamos vir aqui e
+
+07:33.140 --> 07:34.310
+clicar em configure.
+
+07:34.770 --> 07:42.910
+Venha até aqui para projetar padrões e selecione estrutura do projeto o que precisamos fazer é configurar um projeto é STK nunca clique em
+
+07:42.940 --> 07:48.420
+que é o momento em que você pode dizer claramente que não há STK para encontrar.
+
+07:48.490 --> 07:54.520
+Então, o que precisamos fazer agora é associar o kit de desenvolvimento Java que instalamos em um vídeo
+
+07:54.850 --> 07:55.900
+anterior com inteligência.
+
+07:56.230 --> 08:02.520
+Então, para fazer isso, vamos clicar em você e vir até aqui e selecionar o JDK.
+
+08:02.570 --> 08:09.190
+Agora o que deve acontecer é o utilitário que eu vou seguir e o kit de desenvolvimento Java para uma espécie de médico e você
+
+08:09.190 --> 08:13.970
+pode ver neste caso em particular ele fez isso por alguma razão que não segue isso para você
+
+08:14.270 --> 08:18.830
+automaticamente você pode precisar ir em frente e escolha manualmente o local e escolha o diretório inicial.
+
+08:18.830 --> 08:21.620
+Mas no meu caso, mais uma vez, você pode dizer que é o iCade padrão.
+
+08:21.800 --> 08:26.960
+Então eu não preciso fazer mais nada além de clicar no Makai e você pode ver uma vez que
+
+08:26.960 --> 08:32.720
+eu fiz isso agora mudou e nós temos a versão Java mostrando agora e se por algum motivo ainda não foi
+
+08:32.720 --> 08:33.170
+selecionado .
+
+08:33.170 --> 08:35.830
+Certifique-se de que você tenha selecionado e.
+
+08:36.050 --> 08:40.900
+A outra coisa aqui que queremos ter selecionado é o padrão STK que é selecionado para o
+
+08:40.920 --> 08:44.290
+mais recente ou está escolhendo a versão mais recente que está correta.
+
+08:44.510 --> 08:46.850
+Então, precisamos fazer alguma alteração nisso.
+
+08:46.910 --> 08:50.330
+E, aliás, eu mencionei anteriormente mais cedo, mas se por acaso você chegasse na tela
+
+08:50.330 --> 08:55.870
+e não conseguisse ver a opção que eu poderia ver, o Project é a opção que você selecionaria para ver aqueles na tela.
+
+08:56.220 --> 09:01.610
+Certo, então vou clicar em OKno e em algumas outras opções do Ramada para configurar.
+
+09:01.610 --> 09:03.200
+Então vamos em frente e fazer isso.
+
+09:03.420 --> 09:10.540
+Você pode configurar e clicar em configurações e o que você quer fazer é preencher aqui e eles são capazes de expandir essa
+
+09:11.150 --> 09:14.630
+lista de opções e eles geralmente não fazem a mesma coisa.
+
+09:14.630 --> 09:18.120
+Clique na primeira coisa que você deseja clicar ou importar.
+
+09:18.240 --> 09:23.930
+Seria chamado de caixa de seleção e clique na caixa de seleção em um grande U. S. importações em tempo real e, em seguida,
+
+09:23.990 --> 09:27.240
+a caixa de seleção deve clicar para otimizar as importações em tempo real.
+
+09:27.500 --> 09:34.130
+Então eu clico em aplicar para isso e, em seguida, ele pode aqui para a aparência que queremos ter certeza de que ela mentiu números
+
+09:34.130 --> 09:36.920
+está marcada e você pode dizer que, por padrão, está marcada.
+
+09:36.940 --> 09:38.580
+Mas por alguma razão não é.
+
+09:38.600 --> 09:39.910
+Certifique-se de verificar isso lá.
+
+09:40.070 --> 09:42.990
+Mas você pode dizer que, no meu caso, vai clicar em OK.
+
+09:43.570 --> 09:49.290
+Naquele ponto, eles terminaram a configuração da ID de inteligência. O que vou fazer agora é
+
+09:49.290 --> 09:50.070
+encerrar isso.
+
+09:50.830 --> 09:55.990
+E eu vou fechar a linha de comando no terminal e nós poderemos vir
+
+09:56.740 --> 10:02.930
+aqui e dar uma olhada inteligente, você poderia dizer que a inteligência agora está aparecendo lá.
+
+10:02.940 --> 10:06.180
+Então, sim, eu acabei de tomar atalhos e ele chamou isso.
+
+10:06.330 --> 10:11.390
+E é assim que eu posso ir em frente e instalar ou executar, até que eu o imagine no futuro.
+
+10:12.950 --> 10:14.660
+E você pode ver que começou a cair.
+
+10:15.080 --> 10:15.860
+Tudo bem então é isso.
+
+10:15.890 --> 10:19.400
+Essa é a instalação e configuração da ideia inteligente.
+
+10:19.480 --> 10:21.220
+Isso é ninguém votar no próximo vídeo.

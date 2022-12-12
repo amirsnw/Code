@@ -1,0 +1,170 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i><span>در اين قسمت می توانيد درخواست بازنشستگی خود را ثبت  نماييد.</span>
+</div>
+
+<div class="panel">
+  <div class="page-title">مشخصات بیمه شده</div>
+  <div class="panel-body">
+    <form [formGroup]="pensionRequestForm" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="part-title">
+          <span style="color: rgb(0, 133, 133); font-weight: bold;"> اطلاعات بیمه شده   (ورود اطلاعات این بخش اجباری می باشد)</span>
+                  <div class="row">
+                    <div class="col-4">
+                      <tamin-field-label formControlName="firstName"> نام:</tamin-field-label>
+                      <tamin-field-static-text formControlName="firstName" placeholder=""></tamin-field-static-text>
+                    </div>
+                    <div class="col-4">
+                      <tamin-field-label formControlName="fullName"> نام خانوادگی:</tamin-field-label>
+                      <tamin-field-static-text formControlName="fullName" placeholder=""></tamin-field-static-text>
+                    </div>
+                    <div class="col-4">
+                      <tamin-field-label formControlName="fatherName"> نام پدر:</tamin-field-label>
+                      <tamin-field-static-text formControlName="fatherName" placeholder=""></tamin-field-static-text>
+                    </div>
+
+
+
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <tamin-field-label formControlName="nationalId"> کد ملی:</tamin-field-label>
+                      <tamin-field-static-text formControlName="nationalId" placeholder="" ></tamin-field-static-text>
+                    </div>
+                    <div class="col-4">
+                      <tamin-field-label formControlName="insuranceNumber">شماره بیمه:</tamin-field-label>
+                      <tamin-field-static-text formControlName="insuranceNumber" placeholder="" mask="0000000000"></tamin-field-static-text>
+                    </div>
+                    <div class="col-4">
+                      <tamin-field-label formControlName="idNumber">شماره شناسنامه:</tamin-field-label>
+                      <tamin-field-static-text formControlName="idNumber" placeholder="" mask="0000000000"></tamin-field-static-text>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <tamin-field-label formControlName="gender">جنسیت</tamin-field-label>
+                      <tamin-field-static-text formControlName="gender"  placeholder="جنسیت"></tamin-field-static-text>
+                    </div>
+                    <div class="col-4">
+                      <tamin-field-label formControlName="birthDate">تاریخ تولد</tamin-field-label>
+                      <tamin-field-static-persian-date formControlName="birthDate"></tamin-field-static-persian-date>
+                    </div>
+                    <div class="col-4">
+                      <tamin-field-label formControlName="age">سن:</tamin-field-label>
+                      <tamin-field-static-text formControlName="age" placeholder=""></tamin-field-static-text>
+                    </div>
+
+
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <tamin-field-label formControlName="issueplaceName">محل صدور:</tamin-field-label>
+                      <tamin-field-static-text formControlName="issueplaceName" placeholder=""></tamin-field-static-text>
+                    </div>
+
+                    <div class="col-4">
+                      <tamin-field-label formControlName="mobileNumber">شماره همراه:</tamin-field-label>
+                      <tamin-field-static-text formControlName="mobileNumber" placeholder="" mask="00000000000"></tamin-field-static-text>
+
+                    </div>
+
+                    <div class="col-4">
+                      <tamin-field-label formControlName="tel">شماره تلفن:</tamin-field-label>
+                      <tamin-field-validator formControlName="tel"></tamin-field-validator>
+                      <tamin-field-mask formControlName="tel" placeholder="" mask="00000000000"></tamin-field-mask>
+                    </div>
+
+
+                    <div class="col-12 col-s-12" style="padding-right:5px;">
+                      <tamin-field-label formControlName="address">نشانی محل سکونت:</tamin-field-label>
+                      <tamin-field-validator formControlName="address"></tamin-field-validator>
+                      <tamin-field-text formControlName="address"></tamin-field-text>
+                    </div>
+
+                  </div>
+        </div>
+        <div class="part-title" style="margin-top:10px;">
+          <span style="color: rgb(0, 133, 133); font-weight: bold;">مشخصات شعبه</span>
+          <div class="row">
+            <!--<div class="col-4">-->
+              <!--<tamin-field-label formControlName="province">استان</tamin-field-label>-->
+              <!--<tamin-field-auto-complete-data-grid formControlName="province" #province></tamin-field-auto-complete-data-grid>-->
+              <!--<div class="hint"><i class="icon-lightbulb"></i><span>قسمتی از نام استان را تایپ نمایید</span></div>-->
+            <!--</div>-->
+            <div class="col-4">
+              <tamin-field-label formControlName="province">استان</tamin-field-label>
+              <tamin-field-static-text formControlName="province" ></tamin-field-static-text>
+            </div>
+
+            <div class="col-4">
+              <tamin-field-label formControlName="branch">کد آخرین شعبه بیمه پردازی</tamin-field-label>
+              <tamin-field-static-text formControlName="branch" ></tamin-field-static-text>
+            </div>
+            <div class="col-4">
+            <tamin-field-label formControlName="branchName">نام آخرین شعبه بیمه پردازی</tamin-field-label>
+            <tamin-field-static-text  formControlName="branchName"></tamin-field-static-text>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="part-title" style="margin-top:10px;">
+          <span style="color: rgb(0, 133, 133); font-weight: bold;">مشخصات آخرین کارگاه   (ورود اطلاعات این بخش اختیاری می باشد)</span>
+          <div class="row">
+            <div class="col-4">
+              <tamin-field-label formControlName="workshopName">نام کارگاه</tamin-field-label>
+              <tamin-field-validator formControlName="workshopName"></tamin-field-validator>
+              <tamin-field-persian-text formControlName="workshopName" placeholder=""></tamin-field-persian-text>
+            </div>
+            <div class="col-4">
+              <tamin-field-label formControlName="workshopNumber">شماره کارگاه</tamin-field-label>
+              <tamin-field-validator formControlName="workshopNumber"></tamin-field-validator>
+              <tamin-field-mask formControlName="workshopNumber" placeholder="" mask="0000000000"></tamin-field-mask>
+            </div>
+            <div class="col-4">
+              <tamin-field-label formControlName="workshopManager">نام کارفرما</tamin-field-label>
+              <tamin-field-validator formControlName="workshopManager"></tamin-field-validator>
+              <tamin-field-persian-text formControlName="workshopManager" placeholder=""></tamin-field-persian-text>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <tamin-field-label formControlName="activityName">فعالیت</tamin-field-label>
+              <tamin-field-validator formControlName="activityName"></tamin-field-validator>
+              <tamin-field-persian-text formControlName="activityName" placeholder=""></tamin-field-persian-text>
+            </div>
+            <div class="col-12">
+              <tamin-field-label formControlName="workshopAddress">آدرس کارگاه</tamin-field-label>
+              <tamin-field-validator formControlName="workshopAddress"></tamin-field-validator>
+              <tamin-field-text formControlName="workshopAddress" placeholder="آدرس کارگاه"></tamin-field-text>
+            </div>
+
+
+          </div>
+
+        </div>
+        <!--<p style="margin-top:5px;">-->
+          <!--<button type="button" class="button normal blue" (click)="viewHistory()" [disabled]="!pensionRequestForm.valid">مشاهده سابقه</button>-->
+          <!--<button type="button" class="button normal blue" (click)="saveForm()" [disabled]="!pensionRequestForm.valid">ثبت</button>-->
+           <!--<button type="button" class="button normal gray" (click)="backToListClick()">بازگشت</button>-->
+        <!--</p>-->
+      </div>
+    </form>
+  </div>
+</div>
+<!--<app-pension-agreement #agreement  (disagree)="onDisagree()"></app-pension-agreement>-->
+<app-pension-save-agreement #agreementSave  (agree)="onAgreeSave()"></app-pension-save-agreement>
+<app-pension-request-combined-history>#history</app-pension-request-combined-history>
+<p style="margin-top:5px;">
+  <button type="button" class="button normal blue" (click)="historyObjection()" >اعتراض به سابقه</button>
+  <button type="button" class="button normal green" (click)="saveForm()" [disabled]="!pensionRequestForm.valid">تایید سابقه و ثبت درخواست</button>
+  <button type="button" class="button normal gray" (click)="backToListClick()">بازگشت</button>
+</p>
+
+
+
+
+
+
+

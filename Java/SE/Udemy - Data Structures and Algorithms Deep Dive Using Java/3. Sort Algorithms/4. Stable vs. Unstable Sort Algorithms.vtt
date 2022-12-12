@@ -1,0 +1,187 @@
+WEBVTT
+
+00:05.220 --> 00:10.650
+Antes de continuar con la observación de algunos de los otros algoritmos de clasificación, quiero
+
+00:10.860 --> 00:14.720
+presentar el concepto de una clasificación estable frente a una inestable.
+
+00:14.820 --> 00:19.630
+Cuando se trata de ordenar algoritmos hay géneros estables y hay géneros inestables.
+
+00:19.650 --> 00:26.490
+Entonces, ¿qué significa esto mientras que estable frente a inestable entra en juego cuando tiene valores duplicados en los
+
+00:26.490 --> 00:27.780
+datos que está ordenando.
+
+00:27.780 --> 00:31.380
+Por ejemplo, tengo una matriz en la pantalla aquí y contiene dos nueves.
+
+00:31.380 --> 00:34.920
+Hay un nueve en la posición 1 y hay un 9 en la posición 3.
+
+00:34.950 --> 00:42.910
+Entonces, la pregunta es cuando ordenamos esta matriz, se conservará el orden original de los dos nueves.
+
+00:42.960 --> 00:49.750
+En otras palabras, en la matriz ordenada, las nueve blancas aún aparecerán antes que las 9 negras.
+
+00:49.770 --> 00:54.800
+O habrán cambiado sus posiciones para que el 9 negro venga antes que el blanco nueve.
+
+00:54.900 --> 01:03.510
+Si una espada es inestable, eso significa que no se conservará el orden relativo de los elementos duplicados.
+
+01:03.570 --> 01:10.820
+Y así, en un tipo inestable, los nueve negros terminarán llegando antes que los nueve blancos.
+
+01:10.830 --> 01:19.260
+Entonces, lo que sucederá es que los nueves están ordenados ahora, la matriz está ordenada, pero los dos nueves han volteado la posición,
+
+01:19.380 --> 01:21.750
+su ordenamiento relativo no se ha conservado.
+
+01:21.750 --> 01:25.700
+Entonces cuando el arreglo original el blanco nueve vino antes del nueve negro.
+
+01:25.710 --> 01:29.930
+Y en la matriz ordenada, el Bloque 9 viene antes que el Caballero Blanco.
+
+01:29.940 --> 01:34.770
+Y entonces, cuando esto sucede cuando el orden relativo de los elementos duplicados no se preserva.
+
+01:34.800 --> 01:40.980
+Cuando ordena, se considera que es un tipo inestable y verá que algunos de los algoritmos
+
+01:40.980 --> 01:43.620
+que observamos son algoritmos de ordenación inestables.
+
+01:43.710 --> 01:46.430
+Ahora, por contraste primer tipo estable.
+
+01:46.440 --> 01:48.430
+Estamos empezando con la misma matriz.
+
+01:48.780 --> 01:54.730
+Pero después de haber ordenado, el blanco nueve todavía aparece antes del nueve negro.
+
+01:54.750 --> 02:01.020
+Por lo tanto, el orden relativo de los elementos duplicados se ha conservado y en este caso es un tipo estable.
+
+02:01.020 --> 02:07.620
+Ahora todo lo demás es igual a un tipo estable es preferible a un tipo inestable.
+
+02:07.620 --> 02:13.110
+Ahora puede ver esto y decir bien, usted sabe a quién le importa si el orden relativo de la posición de cambio
+
+02:13.110 --> 02:17.220
+de nueves y para los enteros realmente no importa un 9 es un nueve es un 9.
+
+02:17.250 --> 02:23.480
+Pero si está ordenando objetos, podría hacer una diferencia dependiendo de cómo lo esté usando, por ejemplo.
+
+02:23.490 --> 02:25.070
+Quieres hacer una especie dentro de un género.
+
+02:25.080 --> 02:30.090
+Entonces, por ejemplo, primero puede ordenar según el nombre y luego desea ordenar según la edad o algo así.
+
+02:30.090 --> 02:36.870
+Bueno, si el segundo tipo hace que las posiciones que obtuviste desde el primer tipo para voltear eso
+
+02:36.870 --> 02:37.930
+sea un problema.
+
+02:37.950 --> 02:40.380
+Entonces, para los enteros no importa.
+
+02:40.560 --> 02:43.580
+Y dependiendo de cómo uses los datos, puede que no importe.
+
+02:43.590 --> 02:50.040
+Pero en algunas situaciones va a importar y no va a querer una especie para cambiar el orden
+
+02:50.040 --> 02:51.330
+de los elementos duplicados.
+
+02:51.330 --> 02:57.120
+Y a medida que avanzamos y observamos los ritmos de ordenamiento, pensaremos si son estables o inestables,
+
+02:57.120 --> 03:04.920
+entonces, ¿qué ocurre con el tipo de burbuja? Se trata de un algoritmo de clasificación estable o un algoritmo de clasificación inestable.
+
+03:04.920 --> 03:06.120
+Piensa en esto por un minuto.
+
+03:06.120 --> 03:09.090
+Piense en el código y cómo funciona el tipo de burbuja.
+
+03:09.090 --> 03:14.280
+La respuesta es que sort de burbuja es un algoritmo de ordenación estable y por qué es eso.
+
+03:14.310 --> 03:23.040
+Bueno, cuando comparamos elementos adyacentes, solo los intercambiamos si el elemento II es mayor que el elemento e
+
+03:23.040 --> 03:24.590
+I más 1.
+
+03:24.630 --> 03:29.760
+Y entonces, cuando esos dos nueves terminen uno junto al otro, eventualmente los
+
+03:29.760 --> 03:31.920
+nueve blancos terminarán en posición.
+
+03:31.950 --> 03:35.050
+Y los nueve negros terminarán en la posición más 1.
+
+03:35.220 --> 03:40.190
+Y cuando los comparamos porque nueve no es mayor que nueve no los intercambiamos.
+
+03:40.200 --> 03:42.690
+Entonces sus posiciones siguen siendo las mismas.
+
+03:42.690 --> 03:49.770
+El orden relativo si el algoritmo dijo que es mayor que igual o que la implementación dijo que es mayor es igual a
+
+03:49.770 --> 03:52.380
+lo que intercambiamos y que sería un tipo inestable.
+
+03:52.380 --> 03:56.190
+Y no desea convertir un tipo estable en un tipo inestable.
+
+03:56.190 --> 04:02.490
+Y es realmente fácil de hacer y he visto casos en Internet en publicaciones de blogs y cosas por
+
+04:02.580 --> 04:07.940
+el estilo en las que se ha codificado un algoritmo de clasificación estable para que sea inestable.
+
+04:08.010 --> 04:11.660
+Ese pequeño y molesto igual puede marcar una gran diferencia.
+
+04:11.670 --> 04:12.750
+Así que ten en cuenta esto.
+
+04:12.750 --> 04:16.740
+Tenga en cuenta esto cuando esté leyendo un código en Internet y tenga en cuenta esto cuando
+
+04:16.740 --> 04:17.760
+escriba su propio código.
+
+04:17.760 --> 04:24.850
+Asegúrese de que si un algoritmo de ordenamiento es estable, su implementación no lo cambia inadvertidamente
+
+04:24.870 --> 04:26.760
+a un algoritmo inestable.
+
+04:26.760 --> 04:33.300
+Entonces, en pocas palabras, un algoritmo de clasificación estable preserva el orden relativo de los elementos duplicados y un algoritmo
+
+04:33.300 --> 04:35.480
+de ordenación inestable no lo hace.
+
+04:35.520 --> 04:39.090
+Y en ese sentido, pasemos al siguiente algoritmo de ordenación.
+
+04:39.090 --> 04:40.230
+Te veré en el próximo video.

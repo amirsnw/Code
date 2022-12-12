@@ -1,0 +1,382 @@
+WEBVTT
+
+00:05.230 --> 00:05.660
+Tudo bem.
+
+00:05.660 --> 00:08.750
+Então vamos em frente e começar a implementar o delete.
+
+00:08.750 --> 00:14.480
+Agora normalmente temos colocado um método na classe de nó da árvore e um na classe de árvore, mas
+
+00:14.510 --> 00:17.140
+para excluir vamos fazer tudo na classe de árvore.
+
+00:17.180 --> 00:23.430
+Então, vou passar por cima de cada árvore e adicionarei o método delete após o método get.
+
+00:23.960 --> 00:27.460
+Então, eu vou dizer public void delete.
+
+00:27.530 --> 00:29.500
+E nós queremos o valor que queremos em Delhi.
+
+00:29.510 --> 00:36.770
+Então, vamos dizer em valor e o que vamos fazer aqui é chamar um segundo método que será
+
+00:36.770 --> 00:42.310
+um método recursivo e vamos dizer que a raiz é igual a delete.
+
+00:42.620 --> 00:47.040
+E vamos passar a raiz e o valor que estamos recebendo um erro agora.
+
+00:47.060 --> 00:48.860
+Ainda não escrevi um segundo método de exclusão.
+
+00:48.860 --> 00:54.740
+O que estamos fazendo aqui é que estamos passando como o primeiro valor que estamos passando a
+
+00:54.770 --> 00:57.460
+raiz da subárvore que queremos procurar pelo valor.
+
+00:57.500 --> 01:01.430
+E quando chamamos esse método, é claro, queremos procurar na árvore.
+
+01:01.430 --> 01:04.740
+Ainda não sabemos em que direção entrar, por isso estamos passando o caminho.
+
+01:04.910 --> 01:08.570
+E então estamos passando o valor que queremos deletar.
+
+01:08.600 --> 01:14.450
+E o que vamos finalmente retornar é a raiz da raiz da árvore.
+
+01:14.450 --> 01:20.150
+Agora isso pode não mudar, mas se a raiz for o valor que queremos excluir, a
+
+01:20.150 --> 01:21.320
+raiz será alterada.
+
+01:21.320 --> 01:25.650
+Então, vamos codificar esse método porque as coisas provavelmente se tornarão mais claras nesse ponto.
+
+01:25.670 --> 01:31.350
+Então, digo privado porque não precisamos expor esse método ao mundo externo.
+
+01:31.370 --> 01:36.760
+Eles chamariam esse método delete com o valor tão privado Turino.
+
+01:37.040 --> 01:42.970
+Isso essencialmente retorna o nó de substituição se um nó não precisar ser substituído.
+
+01:42.980 --> 01:45.190
+Então você acabou de obter o mesmo nó de volta.
+
+01:45.260 --> 01:51.670
+E então, aqui, se a rota não foi substituída, apenas obtemos o mesmo nó para a exclusão da raiz.
+
+01:51.710 --> 01:57.000
+E para isso precisamos da raiz da sub-árvore.
+
+01:57.080 --> 02:01.730
+Então esta é a raiz da subárvore que queremos pesquisar e quando começamos, queremos procurar a árvore
+
+02:01.730 --> 02:04.330
+inteira porque não sabemos em que direção entrar ainda.
+
+02:04.340 --> 02:10.320
+Então, estamos passando a raiz da árvore inteira e precisamos do valor que queremos excluir.
+
+02:10.430 --> 02:14.270
+E quando eu digo a busca, é claro, precisamos encontrar o valor que queremos excluir.
+
+02:14.270 --> 02:16.680
+Então, nós sabemos qual nó realmente deletar.
+
+02:16.850 --> 02:21.200
+OK, então a primeira coisa que vamos verificar é se isso é normal e que seria o caso de
+
+02:21.200 --> 02:22.010
+a árvore estar vazia.
+
+02:22.010 --> 02:32.330
+Então, vamos dizer se alguma raiz da árvore é igual a não, então vamos apenas retornar algumas raízes da árvore.
+
+02:32.390 --> 02:36.330
+Quero dizer, se não é que estamos essencialmente retornando NULL, poderíamos colocar o Knol aqui.
+
+02:36.530 --> 02:41.360
+Então basicamente nós estaríamos apenas atribuindo NULL para fazer o root novamente e o root também já está.
+
+02:41.390 --> 02:42.350
+Isso é bom.
+
+02:42.440 --> 02:47.270
+No caso de uma subárvore, isso significaria que decidimos que queremos olhar para a esquerda ou para a
+
+02:47.270 --> 02:49.520
+subárvore direita e não há nenhuma criança lá.
+
+02:49.550 --> 02:52.630
+E assim isso interromperia a recursão essencialmente.
+
+02:52.640 --> 02:58.370
+Então, neste ponto, existem três possibilidades: a raiz da subárvore é o valor que estamos procurando, então
+
+02:58.370 --> 03:03.980
+essa é a estrada que queremos excluir ou temos que descer e procurar a subárvore esquerda ou
+
+03:03.980 --> 03:05.000
+a subárvore direita.
+
+03:05.040 --> 03:14.480
+E assim, vamos dizer se o valor é menor do que a rota da subárvore não obtém dados, então queremos procurar
+
+03:14.510 --> 03:18.450
+a subárvore esquerda e assim dizer subtree Ru Cadotte.
+
+03:18.470 --> 03:22.630
+Agora lembre-se que este método retorna o nó de substituição.
+
+03:22.730 --> 03:29.030
+E assim, vamos dizer que definimos o filho da esquerda com qualquer método que este método retorne,
+
+03:29.030 --> 03:36.040
+porque vamos chamar esse método aqui, então vamos dizer "delete subtree root dot" para obter o filho da esquerda.
+
+03:36.500 --> 03:39.890
+E o mesmo valor que estamos procurando.
+
+03:39.890 --> 03:47.120
+E então o que isto está dizendo é que se o valor for menor que a raiz da subárvore que estamos procurando
+
+03:47.150 --> 03:53.570
+então nós queremos passar para as subárvores deixadas criança e no final vamos substituir as subárvores deixadas criança com
+
+03:53.570 --> 03:56.330
+qualquer que seja o resultado da exclusão é.
+
+03:56.330 --> 04:02.960
+Agora é possível que isso signifique que isso será substituído pelo filho da esquerda porque o filho da esquerda será o valor
+
+04:02.960 --> 04:07.070
+que realmente queremos excluir ou é possível que ele não seja alterado e, se
+
+04:07.070 --> 04:11.110
+ele não for alterado, será mesmo nó de volta que já deixou criança.
+
+04:11.210 --> 04:17.150
+Então, isso lida com o caso de se o valor for menor que a raiz da subárvore.
+
+04:17.150 --> 04:24.010
+Então agora, claro, queremos verificar se o valor é maior agora se o valor for maior
+
+04:24.050 --> 04:27.250
+que a raiz da subárvore não obter dados.
+
+04:27.320 --> 04:30.230
+Nesse caso, queremos fazer a mesma coisa, mas vamos para a direita.
+
+04:30.230 --> 04:33.230
+Então, vamos dizer que o ponto raiz da árvore esteja correto.
+
+04:33.230 --> 04:42.310
+A criança exclui um ponto raiz da árvore para obter o filho certo e o valor é o mesmo, aqui vamos olhar
+
+04:42.310 --> 04:43.820
+para a subárvore direita.
+
+04:43.840 --> 04:49.400
+E se o filho certo precisar ser substituído, o que será retornado será o novo nó e, portanto, o filho
+
+04:49.410 --> 04:52.780
+certo será definido para essa nova nota, se não precisar ser substituído.
+
+04:52.790 --> 04:54.510
+Nós vamos apenas voltar o mesmo nó.
+
+04:54.710 --> 04:59.690
+Agora, se o valor não for menor que a raiz e não for maior que a raiz, isso significa que é igual
+
+04:59.690 --> 05:00.040
+à raiz.
+
+05:00.050 --> 05:05.870
+E isso significa essencialmente que descobrimos o que queremos excluir e é a rota da
+
+05:05.890 --> 05:06.380
+subárvore.
+
+05:06.470 --> 05:13.120
+Então, vamos dizer mais e agora vamos lidar com os dois primeiros casos em que a rota da subárvore
+
+05:13.130 --> 05:17.230
+não tem filhos ou a rota da subárvore tem um filho.
+
+05:17.360 --> 05:28.130
+Então, vamos dizer que se alguma raiz da árvore não for deixada, o filho é igual a não.
+
+05:28.280 --> 05:30.330
+Agora existem duas possibilidades aqui.
+
+05:30.350 --> 05:32.240
+Ou isso é uma folha.
+
+05:32.240 --> 05:35.880
+E assim a criança certa também é nova ou tem um filho certo.
+
+05:36.050 --> 05:39.700
+E então, com o que queremos substituir este nó?
+
+05:39.710 --> 05:45.410
+Portanto, se esse nó tiver zero filhos, o que significa que o filho da esquerda não é e o filho da direita também é
+
+05:45.590 --> 05:49.580
+o Knol, então queremos apenas bloquear o nó e, portanto, o nó de substituição não é nada.
+
+05:49.610 --> 05:50.420
+Não é.
+
+05:50.510 --> 05:54.760
+Se tiver um filho certo e o nó de substituição for o filho certo.
+
+05:54.770 --> 06:02.940
+Então, o que vamos fazer é retornar alguns Daut root tree get right child porque isso funciona em ambos os casos em
+
+06:02.960 --> 06:07.080
+que esse nó da árvore está retornando o nó de substituição.
+
+06:07.400 --> 06:11.420
+E então, se isso é uma folha, então a criança será conhecida.
+
+06:11.420 --> 06:16.190
+E isso funciona porque estamos vendo o nó de substituição não é tudo e então o que
+
+06:16.190 --> 06:21.760
+isso vai fazer alternadamente por causa da recursão é o filho apropriado do pai será retorcido porque aqui como
+
+06:21.770 --> 06:26.450
+você pode ver onde estamos definindo a esquerda e crianças certas com o resultado da exclusão.
+
+06:26.480 --> 06:30.760
+E assim, por retornar Nall, isso significaria que o filho da esquerda ou da direita está sendo definido como Não.
+
+06:30.770 --> 06:36.560
+E assim, no caso de Alif, nós retornamos todo o significado de que estamos dizendo aos pais para que deixem seu filho da esquerda ou
+
+06:36.770 --> 06:38.720
+da direita no Knol, porque eu já fui embora.
+
+06:38.720 --> 06:44.540
+Se ele tiver um filho certo, queremos que o filho certo substitua o RWB da subárvore. Portanto,
+
+06:44.540 --> 06:49.770
+queremos que o filho certo substitua o filho esquerdo ou direito desse pai de aviso.
+
+06:49.880 --> 06:56.240
+Agora nós fazemos a mesma coisa para o escritório caso contrário elf se alguma raiz da árvore não tiver o direito
+
+06:56.810 --> 07:05.330
+filho igual a não então nós vamos retornar a subárvore através do cão e deixar a criança e isso faz a mesma coisa que estamos dizendo OK se
+
+07:05.330 --> 07:10.790
+eu Não tenho um filho certo e eu não tenho um filho de esquerda, então apenas me trancar
+
+07:10.790 --> 07:12.040
+para retornar o conhecimento.
+
+07:12.080 --> 07:17.120
+E então nesse ponto quando a chamada recursiva retorna e estamos lidando com o pai, o pai
+
+07:17.210 --> 07:22.610
+vai dizer que é filho da esquerda ou da direita para saber se ele tem um filho esquerdo,
+
+07:22.610 --> 07:29.120
+então queremos pai, queremos que o filho esquerdo substitua o nó está excluindo e assim, devido à recursão, o pai configurará
+
+07:29.120 --> 07:33.410
+seu filho esquerdo ou direito para o filho esquerdo do nó que estamos excluindo.
+
+07:33.410 --> 07:35.620
+E então o que vamos voltar no fundo agora.
+
+07:35.660 --> 07:38.770
+Este é o caso 0 e 1 Deixe-me colocar isso aqui.
+
+07:38.780 --> 07:49.890
+Portanto, os casos 0 e 1 nó que sabem apagar tem zero ou 1 filho 0 ou 1 filho.
+
+07:49.920 --> 07:54.500
+As crianças corrigem gramaticalmente o caso de um filho.
+
+07:54.500 --> 07:56.210
+Nós não lidamos com o caso 2 ainda.
+
+07:56.210 --> 08:01.790
+Nós vamos fazer isso em outro vídeo, mas aqui embaixo quando terminarmos, vamos retornar a rota
+
+08:01.790 --> 08:02.320
+da subárvore.
+
+08:02.420 --> 08:08.770
+E assim como eu disse, se chegarmos aqui significa que esse nó não é o nó que queremos excluir.
+
+08:08.780 --> 08:11.300
+E assim nós apenas desobedecemos a raiz da árvore.
+
+08:11.540 --> 08:13.190
+Não é a nota que queremos excluir.
+
+08:13.190 --> 08:15.080
+E então nós só queremos devolvê-lo.
+
+08:15.440 --> 08:19.860
+E é por isso que isso funciona porque estamos sempre retornando o nó de substituição.
+
+08:19.880 --> 08:25.610
+E se este não for o nó que queremos deletar, nós apenas queremos o mesmo nó, essencialmente, o nó
+
+08:25.610 --> 08:27.860
+será um nó substituto para ele mesmo.
+
+08:27.880 --> 08:29.910
+Se não é o nó que estamos excluindo.
+
+08:29.990 --> 08:34.790
+E assim, quando voltamos para o pai e estamos definindo o filho da esquerda e da direita,
+
+08:34.790 --> 08:38.720
+estaríamos basicamente definindo o filho da esquerda e da direita para o valor existente.
+
+08:38.720 --> 08:45.150
+Tudo bem, então é isso para o primeiro caso no segundo caso.
+
+08:45.260 --> 08:46.730
+Eu acho que esta é a sua própria.
+
+08:46.730 --> 08:48.280
+Eu acho que estou fazendo um aumento aqui.
+
+08:48.290 --> 08:49.530
+Casos 1 e 2.
+
+08:49.630 --> 08:50.140
+ESTÁ BEM.
+
+08:50.150 --> 08:52.790
+Então esse é o caso é 1 em 2.
+
+08:52.880 --> 08:54.290
+Nós temos o terceiro caso a fazer.
+
+08:54.290 --> 08:59.390
+Nós não vamos testar isso até adicionarmos o código para o terceiro caso no terceiro caso, é
+
+08:59.390 --> 09:05.420
+claro, quando o nó está na folha e o nó não tem apenas um filho, mas o nó tem dois filhos.
+
+09:05.470 --> 09:08.200
+Então, vamos seguir em frente para como lidar com esse caso.
+
+09:08.210 --> 09:09.400
+Eu vou te ver no próximo vídeo.

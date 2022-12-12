@@ -1,0 +1,289 @@
+WEBVTT
+
+00:05.420 --> 00:08.470
+Tudo bem, então vamos começar com essa solução.
+
+00:08.540 --> 00:13.660
+SIMON A classe de lista vinculada inteira que foi incluída no projeto inicial.
+
+00:13.660 --> 00:16.000
+E aqui está o insert classificado como Massad.
+
+00:16.010 --> 00:22.200
+Então eu vou deletar esse comentário e como podemos ver ele aceita um valor inteiro.
+
+00:22.220 --> 00:27.530
+Então, a primeira coisa que precisamos fazer é verificar se a lista está vazia, porque se a
+
+00:27.530 --> 00:33.890
+lista estiver vazia, podemos obviamente apenas inserir o nó e a outra coisa que vamos verificar é se o primeiro
+
+00:33.890 --> 00:38.990
+nó da lista será A lista não está vazia Vamos verificar se a primeira nota na
+
+00:38.990 --> 00:45.080
+lista é maior ou igual ao valor que estamos inserindo porque, nesse caso, podemos simplesmente inserir a nova nota
+
+00:45.080 --> 00:46.650
+no topo da lista.
+
+00:46.730 --> 00:54.940
+E então nós vamos dizer se nós tivemos iguais em todos, porque isso significa que a lista está vazia ou hed obter
+
+00:54.950 --> 01:01.910
+valor é maior ou igual ao valor que queremos inserir em ambos os casos, queremos apenas ir em frente
+
+01:01.910 --> 01:04.660
+e adicione o novo valor na frente.
+
+01:04.660 --> 01:09.370
+Então, vamos apenas chamar nosso anúncio para o método da frente com o valor e pronto.
+
+01:09.380 --> 01:11.090
+E depois, claro, queremos voltar.
+
+01:11.090 --> 01:15.860
+E assim, se a lista estiver vazia, só precisamos adicionar esse novo valor
+
+01:15.860 --> 01:24.200
+na frente porque ele estará na ordem de classificação por padrão ou se o valor da cabeça for maior ou igual ao valor,
+
+01:24.200 --> 01:31.220
+então também sabemos que a posição correta da classificação está bem na frente da lista porque no método principal, onde
+
+01:31.220 --> 01:36.750
+estamos sempre chamando insert classificado, então a suposição que estamos fazendo aqui e eu vou colocar
+
+01:39.290 --> 01:42.070
+isso aqui supondo que a lista está ordenada.
+
+01:42.230 --> 01:43.550
+Isso não funcionaria.
+
+01:43.550 --> 01:46.520
+Esta parte não funcionaria se a lista de itens não fosse classificada.
+
+01:46.520 --> 01:51.080
+Obviamente, se a lista não fosse ordenada, nem chamaríamos esse método, não faria muito sentido.
+
+01:51.380 --> 01:57.620
+OK, supondo que não tenhamos um desses dois casos, então não vamos inserir o novo valor
+
+01:57.620 --> 01:59.300
+na frente da lista.
+
+01:59.300 --> 02:02.290
+Em seguida, precisamos encontrar o ponto de inserção.
+
+02:02.990 --> 02:05.030
+Então vamos encontrar o ponto de inserção.
+
+02:05.030 --> 02:08.860
+Agora, uma ruga aqui é que temos uma lista unicamente ligada.
+
+02:08.870 --> 02:13.700
+Então, o que vamos fazer é percorrer a lista procurando o primeiro nó com
+
+02:13.730 --> 02:17.180
+um valor maior ou igual ao valor que queremos inserir.
+
+02:17.180 --> 02:18.890
+Então digamos que encontramos esse nó.
+
+02:18.900 --> 02:25.100
+Então, digamos que temos um nó atual e esse nó está apontando para o No que tem um valor
+
+02:25.100 --> 02:27.740
+maior ou igual ao valor que queremos inserir.
+
+02:27.740 --> 02:33.900
+Embora seja fácil para nós criar um novo nó e apontar o próximo campo dos novos nós para o nó atual.
+
+02:34.010 --> 02:37.460
+Mas o que acontece com os nós anteriores próximo campo.
+
+02:37.580 --> 02:43.220
+Atualmente está apontando para o nó atual e precisamos alterar seu próximo campo para que ele possa apontar
+
+02:43.220 --> 02:45.220
+para o nó com o novo valor.
+
+02:45.260 --> 02:51.410
+Mas é uma lista ligada unicamente, portanto, se tivermos apenas um ponteiro para o atual Não há como
+
+02:51.590 --> 02:53.660
+voltarmos ao nó anterior da lista.
+
+02:53.660 --> 02:58.580
+Então, teremos que ter dois campos, um para percorrer a lista e, em
+
+02:58.580 --> 03:02.570
+seguida, outro campo, que será uma posição atrás do campo atual.
+
+03:02.570 --> 03:07.640
+E assim, quando finalmente atingirmos uma nota que tenha um valor maior ou igual ao
+
+03:07.850 --> 03:12.440
+que estamos inserindo, o campo anterior estará apontando para o nó antes disso.
+
+03:12.440 --> 03:14.770
+Então, vamos dizer corrente do nó inteiro.
+
+03:14.810 --> 03:20.390
+Este é o único que vamos usar para percorrer a lista que vai ser igual a Head-On, mas chegar em seguida, não
+
+03:20.390 --> 03:22.870
+temos que verificar a cabeça, porque já fizemos isso aqui.
+
+03:22.970 --> 03:29.450
+E se estamos aqui, sabemos que o valor em head é menor que o valor que estamos inserindo.
+
+03:29.450 --> 03:31.200
+Portanto, não precisamos verificar novamente.
+
+03:32.150 --> 03:37.910
+Mas nós vamos ter um anterior E isso vai apontar para a cabeça.
+
+03:37.910 --> 03:40.840
+Então, quando começarmos, nossa nota atual vai começar.
+
+03:40.850 --> 03:43.040
+Eles tinham cabeças em seguida.
+
+03:43.040 --> 03:48.530
+Esse é o primeiro valor que vamos verificar e nosso nó anterior é que se nosso nó
+
+03:48.530 --> 03:54.630
+anterior fosse sempre um por trás do nó atual e, em seguida, vamos dizer que a corrente de
+
+03:55.940 --> 04:04.720
+parede não é igual a não e o valor atual de Get é menos do que o valor que estamos inserindo porque, no momento em que
+
+04:04.730 --> 04:09.300
+atingimos um valor maior ou igual a nós, queremos parar enquanto isso é verdade.
+
+04:09.440 --> 04:18.250
+Vamos definir anterior para atual e vamos definir atual para atual não chegar a próxima.
+
+04:18.590 --> 04:26.970
+E assim, ao fazer isso, estamos constantemente mantendo o anterior de onde a corrente está.
+
+04:27.160 --> 04:30.740
+E assim, quando abandonamos o loop, há duas possibilidades aqui.
+
+04:30.740 --> 04:36.450
+Atual é tudo ou atual não significa agora que atingimos um nó com um valor maior ou
+
+04:36.450 --> 04:38.650
+igual ao valor que queremos inserir.
+
+04:38.690 --> 04:45.050
+Agora nós não temos que lidar com o caso especial da corrente, não porque não vamos mudar nada
+
+04:45.050 --> 04:45.920
+na corrente.
+
+04:46.050 --> 04:52.090
+Portanto, não precisamos nos preocupar com o fato de que todos nós chegamos ao fim da lista se chegarmos ao final da lista.
+
+04:52.130 --> 04:58.020
+Isso significa que vamos inserir o novo valor como o último nó da lista e tudo bem.
+
+04:58.250 --> 05:03.060
+Nós não temos que nos preocupar com oh se estamos no final da lista, então temos que fazer algo diferente.
+
+05:03.080 --> 05:04.170
+Não precisamos nos preocupar com isso.
+
+05:04.210 --> 05:10.910
+Você verá que agora precisamos criar um nó para o novo valor que precisamos para definir esse próximo campo
+
+05:10.910 --> 05:16.840
+de nós e precisamos definir o próximo campo de qualquer anterior apontando para o novo nó.
+
+05:17.210 --> 05:26.810
+E então vamos dizer nó inteiro nó novo igual a novo nó inteiro para o valor e, em seguida, vamos dizer novo não definido
+
+05:26.810 --> 05:37.520
+próximo conjunto próximo atual porque estamos inserindo o novo nó antes do nó atual porque queremos adicionar ordem classificada e sabemos que a corrente tem um valor
+
+05:37.520 --> 05:42.290
+é o primeiro nó que vimos que tem um valor que é
+
+05:42.290 --> 05:46.040
+maior que ou igual ao desvaloramento que queremos inserir.
+
+05:46.040 --> 05:51.500
+Então, vamos inserir o novo nó na frente do atual Assim, o próximo campo apontará para
+
+05:51.500 --> 05:58.910
+o atual e agora temos que lidar com o próximo campo anterior dele, porque o que quer que esteja apontando para ele
+
+05:58.910 --> 06:02.480
+agora quer apontar para o novo nó ou anterior conjunto.
+
+06:02.480 --> 06:05.450
+Próximo novo nó.
+
+06:05.480 --> 06:10.490
+E finalmente precisamos atualizar o tamanho e é isso.
+
+06:10.490 --> 06:15.530
+Então, se nós estivéssemos inserindo isso no final do último, a corrente será não.
+
+06:15.530 --> 06:19.440
+Então é perfeitamente bom para nós dizer que você conhece o novo romance sem dúvida.
+
+06:19.460 --> 06:24.580
+É uma operação redundante, mas não é cara, então vamos em frente e fazer isso.
+
+06:24.590 --> 06:31.690
+Então vamos ao nosso método principal e aqui criamos para inteiros um dois três e quatro e vamos
+
+06:31.750 --> 06:34.360
+inserir três para um em quatro.
+
+06:34.360 --> 06:35.290
+Então vamos
+
+06:39.850 --> 06:44.890
+correr e vamos ver que começamos inserindo três e depois inserimos dois.
+
+06:44.890 --> 06:46.550
+Então agora nós vamos ter dois três.
+
+06:46.600 --> 06:49.000
+Nós inserimos um, então teremos dois dois.
+
+06:49.000 --> 06:50.840
+E finalmente nós inserimos quatro.
+
+06:50.860 --> 06:52.390
+E assim nós temos um dois três quatro.
+
+06:52.390 --> 06:58.210
+É exatamente o que queremos e você verá que no último caso estávamos inserindo no
+
+06:58.210 --> 07:01.050
+final da lista e não tivemos nenhum problema.
+
+07:01.060 --> 07:06.700
+Então, eu acho que a única parte complicada para este é por isso que eu queria usar uma
+
+07:06.940 --> 07:10.300
+única lista vinculada para perceber que precisamos ter dois campos.
+
+07:10.300 --> 07:14.980
+Agora você pode ter uma implementação diferente, pode haver uma maneira de fazer isso sem
+
+07:15.100 --> 07:16.090
+usar dois campos.
+
+07:16.120 --> 07:22.480
+Você pode, de alguma forma, ser um par de nós em B e B usando Got get a x e não o próximo.
+
+07:22.480 --> 07:27.220
+Mas eu gosto de escrever um código realmente claro, então eu fiz assim usando dois campos.
+
+07:27.220 --> 07:28.900
+Tudo bem, é isso para este desafio.

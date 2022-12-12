@@ -1,0 +1,331 @@
+WEBVTT
+
+00:05.300 --> 00:05.690
+Todo bien.
+
+00:05.690 --> 00:11.360
+Entonces, como mencioné en la breve introducción, una tabla hash es un tipo de datos abstracto, por lo
+
+00:11.360 --> 00:13.620
+que no dicta cómo almacenar los datos.
+
+00:13.640 --> 00:21.460
+Puede respaldar una tabla hash con lo que quiera, una tabla hash proporciona acceso a los datos mediante las teclas.
+
+00:21.470 --> 00:26.870
+Entonces, cuando se trata de tablas hash, constan de pares clave de valores.
+
+00:27.080 --> 00:32.570
+Cuando agrega un artículo y proporciona la clave en el valor y cuando desea recuperar el
+
+00:32.570 --> 00:33.840
+artículo, proporciona la clave.
+
+00:33.950 --> 00:40.100
+Y a partir de ahí, la tabla hash puede recuperar el valor y puede hacerlo realmente muy rápido.
+
+00:40.100 --> 00:46.490
+Así que las tablas hash están optimizadas para su recuperación cuando conoces la clave, obviamente, si no conoces
+
+00:46.490 --> 00:49.240
+la clave, la recuperación no será muy rápida.
+
+00:49.240 --> 00:51.340
+Puedes hacerlo, pero va a ser lento.
+
+00:51.620 --> 00:58.880
+Entonces, cuando hablamos de una carrera, podemos ver que el índice de matriz es la clave y el valor es el elemento
+
+00:58.880 --> 00:59.820
+de la matriz.
+
+00:59.900 --> 01:03.670
+Pero para las tablas hash, la clave no tiene que ser un número entero.
+
+01:03.710 --> 01:07.520
+Puede usar lo que quiera, puede usar cualquier tipo de objeto que desee.
+
+01:07.520 --> 01:11.030
+Las cadenas son un tipo de datos común que se usa para las claves.
+
+01:11.030 --> 01:17.270
+De hecho, si has trabajado con lenguajes como P que tienen matrices asociativas, las matrices asociativas son un
+
+01:17.270 --> 01:18.780
+tipo de tabla hash.
+
+01:18.830 --> 01:24.800
+Y entonces, en ese caso, está usando una cadena como clave en los valores de la matriz.
+
+01:24.800 --> 01:31.730
+Ahora, los pares de valores clave no tienen que coincidir con los tipos de datos, de modo que, como verán, se utilizará una
+
+01:31.730 --> 01:34.080
+cadena como clave para recuperar objetos de empleados.
+
+01:34.100 --> 01:40.220
+Vamos a usar el apellido del empleado como la clave y, por lo tanto, las tablas hash constan de pares
+
+01:40.220 --> 01:40.990
+clave de valores.
+
+01:41.000 --> 01:49.760
+Están optimizados para su recuperación y brindan acceso directo a los valores en la tabla usando claves.
+
+01:49.760 --> 01:55.280
+Ahora otra palabra para una tabla hash también se les conoce como mapas de diccionarios.
+
+01:55.320 --> 02:00.950
+Si alguna vez ha usado una de las clases de mapas en Java, está trabajando con tablas de búsqueda de tablas hash.
+
+02:00.950 --> 02:03.300
+Y como dije asociado de matrices.
+
+02:03.390 --> 02:08.480
+OK, así que mencioné que las claves pueden ser de cualquier tipo de datos para que pueda tener una cadena, es una clave, puede
+
+02:08.480 --> 02:09.880
+tener lo que quiera como clave.
+
+02:09.920 --> 02:14.910
+Pero debajo de las cubiertas esas claves se están convirtiendo en enteros.
+
+02:14.930 --> 02:19.210
+Una forma común de respaldar una tabla hash es usar una matriz.
+
+02:19.210 --> 02:26.810
+Y, por supuesto, para una matriz, debe tener índices enteros y, por lo tanto, para convertir las claves en
+
+02:26.960 --> 02:29.180
+enteros, debe tener la clave.
+
+02:29.180 --> 02:31.580
+Y este es un proceso conocido como hash.
+
+02:31.720 --> 02:39.090
+Y así, el hash mapea las claves de cualquier tipo de datos en un entero y, por lo tanto, esencialmente una función hash mapea las claves
+
+02:39.160 --> 02:39.850
+para int.
+
+02:39.860 --> 02:47.190
+Ahora en Java, la función hash es código hash y la clase Object tiene un método de código hash.
+
+02:47.300 --> 02:53.630
+Y así, cada objeto en el JDK tiene este método de código hash, por supuesto, puede anularlo y, a
+
+02:53.630 --> 02:54.590
+menudo, se reemplaza.
+
+02:54.590 --> 03:03.160
+Ahora es posible que el método de hash produzca el mismo número entero para más de un valor.
+
+03:03.200 --> 03:06.130
+Y cuando eso sucede se conoce como una colisión.
+
+03:06.230 --> 03:13.130
+Entonces, en nuestro caso, digamos que como dije antes, vamos a usar el apellido de nuestro empleado
+
+03:13.130 --> 03:13.980
+como clave.
+
+03:13.990 --> 03:20.000
+Bueno, si tenemos más de un empleado con el apellido Jones, entonces cuando vayamos a agregar a Jane Jones
+
+03:20.000 --> 03:27.470
+a la tabla hash, Jones se dividirá en hash en un entero y si agregamos a Mike Jones a la tabla hash Jones será
+
+03:27.650 --> 03:31.130
+hash a un entero y van a obtener el mismo resultado.
+
+03:31.130 --> 03:34.600
+Entonces, los valores clave hash van a ser el mismo entero.
+
+03:34.730 --> 03:37.300
+Y cuando eso sucede se conoce como una colisión.
+
+03:37.400 --> 03:41.510
+Y hay estrategias para enfrentar las colisiones y las veremos más adelante.
+
+03:41.510 --> 03:46.240
+Por lo tanto, algunos ejemplos de claves y valores serían los productos y el número de productos.
+
+03:46.250 --> 03:52.430
+De modo que tendría el número de producto como clave y el producto como valor.
+
+03:52.430 --> 03:56.330
+Ahora bien, podría estar diciendo que si el número del producto es un número entero, ¿por qué tendríamos que hacerlo?
+
+03:56.330 --> 04:02.930
+Bueno, es posible que solo tenga 10 números de producto y que correspondan a valores de código de barras, por ejemplo.
+
+04:02.930 --> 04:11.150
+Y para que sepa que solo puede tener 10 productos distintos en su negocio, pero las ID de productos son cosas como
+
+04:11.150 --> 04:13.960
+5 8 2 9 8 7 5 4.
+
+04:13.970 --> 04:17.750
+Obviamente, no va a usar eso como un índice de matriz, de modo
+
+04:17.750 --> 04:24.230
+que tendrá que ajustar esos valores en un índice de matriz de 0 a 9 identificadores de empleado y objetos de empleado.
+
+04:24.230 --> 04:29.510
+Ese es otro posible par de valores clave que podríamos usar en lugar de usar el apellido para los
+
+04:29.630 --> 04:31.440
+nombres de usuario y perfiles clave.
+
+04:31.460 --> 04:38.630
+Cuando creas una cuenta en un sitio web y proporcionas un nombre de usuario que puede abarcar desde hash
+
+04:38.630 --> 04:44.960
+hasta un entero y ese entero, lo que se usa para buscar tu perfil y, por supuesto,
+
+04:45.080 --> 04:46.670
+hay muchos más ejemplos.
+
+04:46.670 --> 04:53.240
+Ahora, un valor importante para las tablas hash es el factor de carga, el factor de carga nos dice qué tan completa es una
+
+04:53.240 --> 04:56.520
+tabla hash, digamos que estamos respaldando la tabla hash con una matriz.
+
+04:56.540 --> 04:59.700
+El factor de carga nos dice qué tan completa está la matriz.
+
+04:59.750 --> 05:06.050
+Y podemos obtener eso dividiendo el número de elementos por la capacidad que esencialmente el tamaño sobre la
+
+05:06.060 --> 05:14.610
+capacidad, así que si tuviéramos una matriz de 10 respaldando nuestra tabla hash y tuviéramos cinco empleados actualmente en la tabla hash, el factor
+
+05:14.610 --> 05:17.990
+de carga sería 0. 5.
+
+05:18.000 --> 05:21.520
+Entonces eso nos dice que nuestra matriz está medio llena.
+
+05:21.600 --> 05:27.990
+Entonces, el factor de carga se usa para decidir cuándo redimensionar la matriz que respalda la tabla hash que estoy usando y el
+
+05:28.020 --> 05:29.510
+tren es como un ejemplo.
+
+05:29.520 --> 05:31.380
+Ahora es como un acto de equilibrio.
+
+05:31.380 --> 05:36.540
+No queremos que el factor de carga sea demasiado bajo porque eso significa que hay mucho espacio vacío, quiero
+
+05:36.540 --> 05:42.540
+decir si sus factores de carga apuntan a 1. Esto significa que solo el 10 por ciento de su matriz está ocupada.
+
+05:42.630 --> 05:47.500
+Pero no queremos que sea demasiado alto porque eso aumentará la probabilidad de colisiones.
+
+05:47.550 --> 05:53.700
+Si la mayor parte de la matriz está llena y sigue agregando elementos, con el tiempo
+
+05:53.700 --> 05:58.780
+tendrá colisiones porque básicamente está calculando las claves de un rango de valores.
+
+05:58.830 --> 06:01.260
+Esencialmente los índices válidos en la matriz.
+
+06:01.380 --> 06:06.840
+Entonces, si su matriz ya está bastante llena y va a agregar muchos más elementos,
+
+06:06.840 --> 06:08.270
+comenzará a tener colisiones.
+
+06:08.370 --> 06:14.460
+Por lo tanto, para agregar a una tabla hash respaldada por una matriz, proporcionaríamos el par de valores clave y luego usaríamos
+
+06:14.460 --> 06:20.250
+una función hash o en el caso de Java diríamos un método hash para asignar la clave a un valor int.
+
+06:20.250 --> 06:26.220
+Entonces, digamos que queremos agregar a Jane Jones y le proporcionamos la clave Jones, tendríamos una función de
+
+06:26.220 --> 06:33.610
+hash que ajusta a Jones a un valor int y luego almacenaríamos a Jane Jones en el valor de la clave hash.
+
+06:33.690 --> 06:42.310
+Entonces, si Jones calcula el entero 4, almacenaríamos a Jane Jones en el índice 4 de la matriz.
+
+06:42.310 --> 06:44.550
+Eso es lo que respalda la tabla hash.
+
+06:44.550 --> 06:51.240
+Ahora, cuando quisiéramos recuperar al empleado con la llave Jones, le daríamos la clave y, obviamente, tiene que
+
+06:51.240 --> 06:56.600
+ser el dicho que usó cuando agregó el objeto o que no va a funcionar.
+
+06:56.670 --> 07:01.740
+Y luego volveremos a sacar la clave y obviamente tiene que usar la misma función hash
+
+07:01.860 --> 07:03.750
+que está usando para agregar valores.
+
+07:03.750 --> 07:05.480
+De lo contrario, no va a funcionar.
+
+07:05.520 --> 07:12.450
+Y así proporcionará la clave. Jones usará la misma función hash para asignar la clave a un valor
+
+07:12.450 --> 07:13.860
+in y obtendría cuatro.
+
+07:14.100 --> 07:19.170
+Y luego entramos y obtenemos el elemento almacenado en la posición 4 de la matriz.
+
+07:19.170 --> 07:25.080
+Ahora bien, si por casualidad hubiéramos tenido colisiones, por supuesto, tendríamos que buscar entre todos los elementos;
+
+07:25.080 --> 07:30.990
+en ese caso, nuestra matriz probablemente contendría una lista vinculada o contendría cada elemento en la matriz
+
+07:30.990 --> 07:32.370
+como otra matriz.
+
+07:32.370 --> 07:38.400
+Y entonces tendríamos que buscar como dijimos que veremos más adelante cómo manejar las colisiones, así veremos algunas
+
+07:38.400 --> 07:44.670
+de las formas en que algunas de las estrategias para lidiar con colisiones y cómo podemos almacenar elementos que
+
+07:44.670 --> 07:46.500
+tienen mismo valor de clave hash.
+
+07:46.590 --> 07:51.750
+Así que, como acabo de ver, si quisiéramos agregar a Jane Jones con la clave de JONES, usamos una
+
+07:51.750 --> 07:58.020
+función hash para asignar a Jones a un int y asumiremos que obtenemos el valor de n para que almacenemos a Jane Jones
+
+07:58.290 --> 08:01.810
+en el arreglo 4 y luego para obtener al empleado con la llave Jones.
+
+08:01.860 --> 08:08.730
+Proporcionamos la clave que usamos la misma función hash a Matt Jones hasta el final y deberíamos obtener cuatro porque estamos
+
+08:08.730 --> 08:10.310
+usando la misma función hash.
+
+08:10.320 --> 08:17.430
+Así que solo vamos al índice de matriz y eso nos devolvería a James Jones y así es como funcionan las
+
+08:17.430 --> 08:17.960
+tablas hash.
+
+08:18.060 --> 08:19.260
+Así que sigamos adelante.
+
+08:19.260 --> 08:24.380
+Y como de costumbre, implementará una tabla hash simple.
+
+08:24.420 --> 08:25.600
+Te veré en el próximo video.

@@ -1,0 +1,274 @@
+WEBVTT
+
+00:05.290 --> 00:10.210
+All right so now we're going to handle the case of deleting to children and because we have a recursive
+
+00:10.210 --> 00:15.910
+method it's easy to do it's actually longer to explain what we're doing than it is to implement it.
+
+00:15.910 --> 00:18.440
+So let's add case 3.
+
+00:18.440 --> 00:20.710
+The love child is not we handle it here.
+
+00:20.710 --> 00:22.970
+If the right child is not we've handled it here.
+
+00:22.990 --> 00:29.290
+If both of these conditions fail that means that we have a node with two children and so down here we're
+
+00:29.290 --> 00:36.900
+going to handle that case so Case 3 node to delete has 2 children.
+
+00:37.150 --> 00:43.030
+And of course because we return in both of these blocks we won't make it down here unless we haven't
+
+00:43.030 --> 00:44.340
+returned from the method yet.
+
+00:44.410 --> 00:45.940
+And so what do we want to do.
+
+00:45.940 --> 00:53.090
+We want to do what we discussed in the slides we want to find the minimum value in the right subtree
+
+00:53.200 --> 00:55.640
+and we can do that just by calling them in math.
+
+00:55.660 --> 00:58.470
+That's why I wanted the main method to just return an int.
+
+00:58.490 --> 01:01.130
+Here's the main method down here.
+
+01:01.130 --> 01:04.750
+And so what we're going to do is we're going to say subtree route.
+
+01:04.900 --> 01:09.160
+Remember at this point subtree route is the route that we want to delete.
+
+01:09.160 --> 01:16.510
+And so what we want to do is we want to replace the value in the subtree root node with the smallest
+
+01:16.510 --> 01:19.080
+value from the right subtree.
+
+01:19.150 --> 01:24.730
+Because if we replace it with the smallest value from the right subtree we know that everything remaining
+
+01:24.730 --> 01:28.020
+in the right subtree will be greater than the subtree root.
+
+01:28.030 --> 01:31.960
+And so the characteristic of the binary search tree is preserved.
+
+01:32.080 --> 01:35.170
+And so we're not actually going to rewire any nodes.
+
+01:35.170 --> 01:39.490
+We're not going to physically take the replacement node and move it in the tree.
+
+01:39.490 --> 01:47.230
+Instead we're just going to set the data of the existing node to the value of the replacement node and
+
+01:47.230 --> 01:49.490
+then we're going to delete the replacement node.
+
+01:49.570 --> 01:56.590
+And so we're going to say a subtree root Daut set data and we want to set it to the minimum value in
+
+01:56.590 --> 02:05.020
+the right subtree so we're going to say stub tree root dot get right child Doughton And so this finds
+
+02:05.020 --> 02:07.560
+us the minimum value in the right subtree.
+
+02:07.570 --> 02:14.260
+And we're going to replace the value of the node we're deleting with that value and then we have to
+
+02:14.260 --> 02:16.450
+delete the replacement node.
+
+02:16.450 --> 02:17.740
+So how are we going to do that.
+
+02:17.740 --> 02:19.940
+Well we're going to use our delete method.
+
+02:20.140 --> 02:26.370
+I mean we know the root of the tree that we want to search for the value we have it right here.
+
+02:26.410 --> 02:32.100
+It's actually the tree root get right child and we know the value we want to delete.
+
+02:32.120 --> 02:35.390
+It's now the subtree root don't get data.
+
+02:35.470 --> 02:45.140
+And so all we have to do is say subtree root dot set bright child and we're going to call our delete
+
+02:45.140 --> 02:53.920
+method that should be of tree root root and we're going to call our delete method and we're going to
+
+02:53.920 --> 03:04.150
+pass it our subtree root Daut get right child and the value we want to delete is subtree root Daut get
+
+03:04.150 --> 03:04.600
+data
+
+03:08.020 --> 03:20.080
+replace the value in the subtree root node with the smallest value from the right subtree and then delete
+
+03:20.140 --> 03:27.490
+the node that has the smallest value in the rights of tree because obviously conceptually what we're
+
+03:27.490 --> 03:32.950
+doing is we're moving the node with the smallest value in the right subtree where we're moving it to
+
+03:32.950 --> 03:34.590
+the root of this subtree.
+
+03:34.600 --> 03:37.690
+And so we need to delete it from its old position.
+
+03:37.690 --> 03:42.280
+And so what we're doing here is we're not actually physically moving the node we're just replacing the
+
+03:42.280 --> 03:47.890
+value with the minimum value and then we need to delete the node that contains that minimum value.
+
+03:47.980 --> 03:50.460
+And we're just going to do that by calling our delete method.
+
+03:50.470 --> 03:56.710
+And so we're going to replace the right child of the node that was the deleted node.
+
+03:56.830 --> 04:00.700
+We didn't physically delete it of course but we're going to replace it's right child.
+
+04:00.700 --> 04:08.530
+Now if this subtree has a lot of levels to it then this will end up being a redundant replacement.
+
+04:08.680 --> 04:16.060
+But if we have a situation where the node that is the smallest value is the immediate child and this
+
+04:16.060 --> 04:21.370
+will this will actually result in the right child being set to something new.
+
+04:21.520 --> 04:22.270
+And that's it.
+
+04:22.300 --> 04:25.380
+That's all we need to do to handle the case of two children.
+
+04:25.420 --> 04:30.190
+And so now that we have a method that's handling all the cases let's go to the main method and try this
+
+04:30.280 --> 04:30.980
+out.
+
+04:31.000 --> 04:35.830
+I'm going to comment these out and I'm actually going to bring back these two lines so that we can see
+
+04:35.830 --> 04:38.580
+what the tree looks like before we do any deletions.
+
+04:38.620 --> 04:47.200
+And let's say inte tree dropped delete and let's do the cases he went through in the slide so I think
+
+04:47.200 --> 04:52.090
+we deleted 15 and then in-tree you delete.
+
+04:52.130 --> 05:01.270
+And I think we did 20 did we do twenty or twenty seven let's do twenty seven.
+
+05:01.840 --> 05:04.290
+I can't remember if that's what we did but let's do it anyway.
+
+05:04.300 --> 05:06.760
+And then delete the root.
+
+05:07.790 --> 05:09.260
+So we'll delete 25.
+
+05:09.290 --> 05:13.830
+And in fact let's do these separately so that we can we can see the results of each delete.
+
+05:13.850 --> 05:16.450
+So I'm going to copy these two lines.
+
+05:20.090 --> 05:24.770
+And so the first note we're going to try deleting is 15 and we know from the slides that 15 has one
+
+05:24.770 --> 05:26.370
+child 17.
+
+05:26.390 --> 05:27.140
+So let's run.
+
+05:27.140 --> 05:29.150
+So that will be case 1.
+
+05:29.150 --> 05:33.350
+So let's run this and we'll see that before the deletion.
+
+05:33.350 --> 05:41.840
+We have 15 17:20 etc. and after the deletion 15 is gone and are in order traversal is still working
+
+05:42.140 --> 05:45.760
+properly still printing out the numbers in ascending order.
+
+05:45.770 --> 05:48.080
+So that's the case 1.
+
+05:48.140 --> 05:50.010
+Let's delete 17.
+
+05:50.120 --> 05:55.050
+So let's change this to 17 because that would be case 0 we know 17 is a leaf.
+
+05:55.080 --> 05:56.220
+Let's run that.
+
+05:57.830 --> 06:06.680
+And 17 is gone so we have 15 17:20 before the deletion and now we have 15 20 22 etc and everything looks
+
+06:06.680 --> 06:14.210
+ok so for the case of two children while we know the route has two children so by by root so root is
+
+06:14.210 --> 06:15.150
+25.
+
+06:15.290 --> 06:19.700
+Let's run and 25 is gone.
+
+06:19.700 --> 06:29.090
+So we've got 15 17 20 22 25 before the deletion 15 17 20 22 26 after that deletion and everything looks
+
+06:29.090 --> 06:31.850
+good so it looks like our three cases are working.
+
+06:31.850 --> 06:39.450
+Let's try it 8 8 8 just to make sure that that one's working and hopefully our tree won't fall apart.
+
+06:41.380 --> 06:46.270
+And you can see that there's no deletions and we're not getting any nasty exceptions so if we try to
+
+06:46.270 --> 06:49.410
+delete something that's not in a tree it's essentially a no op.
+
+06:49.540 --> 06:50.850
+And so that's delete.
+
+06:50.870 --> 06:59.020
+It turns out that it's longer to explain case to you than it is to implement it when we're using recursion.
+
+06:59.110 --> 07:05.320
+If we were to use an iterative implementation the code for deleting a node with two children is actually
+
+07:05.770 --> 07:13.300
+goes from two lines of code to 30 lines of code so that's it for delete.
+
+07:13.330 --> 07:14.790
+I'll see you in the next video.

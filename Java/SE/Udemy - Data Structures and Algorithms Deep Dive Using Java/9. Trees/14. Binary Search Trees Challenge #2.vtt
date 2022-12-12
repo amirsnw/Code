@@ -1,0 +1,403 @@
+WEBVTT
+
+00:05.740 --> 00:06.390
+Ella tiene razón
+
+00:06.420 --> 00:12.780
+Entonces, para finalizar esta sección, voy a hacer que practiques la inserción y eliminación de notas de un árbol de búsqueda binario
+
+00:12.780 --> 00:17.340
+y vamos a ir a través de esto usando diapositivas porque eso es lo que realmente
+
+00:17.340 --> 00:18.380
+tienes que entender.
+
+00:18.390 --> 00:25.410
+Ya hemos codificado cierta eliminación y obtener y obtener el valor mínimo y obtener el
+
+00:25.410 --> 00:27.990
+valor máximo y atravesar el árbol.
+
+00:28.020 --> 00:32.640
+Pensé que sería bueno solo practicar la inserción y eliminación de valores, así que vamos a comenzar
+
+00:32.640 --> 00:33.590
+con este árbol.
+
+00:33.600 --> 00:39.630
+Y lo que sugiero que hagas es simplemente hacer una copia de esto usando lápiz y papel y luego vamos
+
+00:39.630 --> 00:45.300
+a practicar la inserción y eliminación de nodos, así que vamos a ir a través de una serie de
+
+00:45.300 --> 00:47.800
+inserciones y luego veremos una serie de eliminaciones
+
+00:47.970 --> 00:55.290
+Entonces, lo primero que quiero hacer es insertar el nodo 28 en este árbol, así que tenemos el valor 28 y
+
+00:55.290 --> 00:58.170
+queremos insertarlo en este árbol de búsqueda binaria.
+
+00:58.170 --> 01:00.210
+Y así adelante y haz eso.
+
+01:00.240 --> 01:04.790
+Y dibuje con lápiz y digo lápiz porque va a eliminar nodos más adelante.
+
+01:04.800 --> 01:08.490
+Así que usa lápiz o lapicera lo que sea que funcione mejor para ti.
+
+01:08.580 --> 01:11.580
+Adelante, apúntate.
+
+01:11.700 --> 01:12.030
+No.
+
+01:12.070 --> 01:15.830
+28 donde debería pertenecer en este árbol.
+
+01:15.840 --> 01:18.280
+Así que pausa el video ahora y hazlo.
+
+01:18.300 --> 01:21.420
+Reinicia el video cuando hayas insertado el 28
+
+01:26.360 --> 01:26.870
+OK.
+
+01:26.870 --> 01:29.500
+Espero que hayas insertado las notas para que entremos.
+
+01:29.500 --> 01:32.620
+Y 28 es mayor que 25.
+
+01:32.670 --> 01:34.090
+Así que vamos a ir a la derecha.
+
+01:34.170 --> 01:38.040
+Veintiocho es mayor que 27, así que vamos a ir a la derecha.
+
+01:38.150 --> 01:40.250
+Veintiocho es menos de 30.
+
+01:40.260 --> 01:47.580
+Así que vamos a ir a la izquierda y 28 es menos de 29, así que vamos a ir a la izquierda y
+
+01:47.580 --> 01:48.690
+28 deberían ir aquí.
+
+01:48.750 --> 01:55.140
+Y así es como se ve nuestro árbol después de haber insertado el nº 28, recuerda que para un árbol de búsqueda binaria
+
+01:55.140 --> 01:56.190
+vamos a la izquierda.
+
+01:56.220 --> 02:02.130
+Si el valor es más pequeño que el nodo Estamos comprobando y vamos a la derecha si el valor es más grande que
+
+02:02.130 --> 02:03.440
+el nodo que estamos comprobando.
+
+02:03.440 --> 02:06.170
+Muy bien, así que vamos a mantener 20 en nuestro árbol.
+
+02:06.180 --> 02:11.630
+Y ahora quiero que insertes el valor 16 para pausar un video y darle una
+
+02:16.990 --> 02:18.930
+oportunidad. Espero que puedas hacer eso.
+
+02:18.930 --> 02:20.160
+Así que vamos a entrar.
+
+02:20.200 --> 02:26.440
+16 es menos de 25, así que vamos a ir a la izquierda 16 es menos de 20.
+
+02:26.440 --> 02:28.650
+Así que vamos a ir a la izquierda.
+
+02:28.990 --> 02:36.670
+16 es mayor que 15 Así que vamos a ir a la derecha y 16 es menos de 17, así que vamos a
+
+02:36.670 --> 02:42.520
+ir a la izquierda y por lo tanto 16 deben insertarse cuando siete adolescentes abandonen al niño.
+
+02:42.640 --> 02:44.850
+Y ahí es donde 16 pertenece.
+
+02:44.950 --> 02:48.790
+Está bien, entonces 16 todavía están en nuestro árbol, excepto que olvidé colorearlo de blanco.
+
+02:48.790 --> 02:50.530
+Así que pretenden que es blanco ahora.
+
+02:50.680 --> 02:52.550
+Y vamos a insertar ahora.
+
+02:52.610 --> 02:54.160
+Devalor 23.
+
+02:54.160 --> 02:56.570
+Video tan positivo y pruébalo.
+
+03:02.170 --> 03:02.780
+Todo bien.
+
+03:02.780 --> 03:03.990
+Entonces entramos
+
+03:03.990 --> 03:06.170
+23 es menos de 25.
+
+03:06.170 --> 03:15.080
+Así que vamos a la izquierda 23 es mayor que 20, así que vamos a la derecha y 23 es mayor que 22, así que vamos
+
+03:15.080 --> 03:16.050
+a la derecha.
+
+03:16.220 --> 03:20.950
+Entonces, vamos a insertar 23 como el hijo correcto de 22.
+
+03:21.140 --> 03:22.760
+Y ahí vamos.
+
+03:22.760 --> 03:34.760
+Muy bien, hagamos 14 pausa el video e inserte el valor 14 en el árbol.
+
+03:34.780 --> 03:36.250
+Está bien, así que vamos a entrar.
+
+03:36.250 --> 03:38.050
+14 es menos de 25.
+
+03:38.050 --> 03:42.340
+Así que vamos a la izquierda 14 es menos de 20, así que vamos a la izquierda.
+
+03:42.400 --> 03:43.960
+14 es menos de 15.
+
+03:43.960 --> 03:49.570
+Entonces vamos a la izquierda, entonces vamos a insertar 14 aquí y eso no debería ser una sorpresa porque 14 es
+
+03:49.720 --> 03:50.950
+el valor más bajo.
+
+03:50.950 --> 03:52.490
+Entonces es el valor mínimo.
+
+03:52.510 --> 03:57.280
+Y como sabemos que para encontrar el valor mínimo en un árbol de búsqueda binaria, comienzas en la raíz y simplemente
+
+03:57.280 --> 04:01.670
+sigues viajando a lo largo de los bordes izquierdos hasta que tocas una nota que no tiene un hijo izquierdo.
+
+04:01.780 --> 04:07.360
+Y entonces no debería ser una sorpresa que 14 siendo el valor mínimo va a ser insertado como el
+
+04:07.360 --> 04:08.630
+hijo izquierdo de 15.
+
+04:08.830 --> 04:10.090
+Y ahí vamos.
+
+04:10.090 --> 04:12.180
+14 ha sido insertado.
+
+04:12.190 --> 04:18.400
+OK, entonces nuestro árbol está bastante lleno ahora, así que es hora de eliminar algunos nodos, así que quiero que elimines
+
+04:18.400 --> 04:20.260
+el nodo con el valor 28.
+
+04:20.380 --> 04:22.280
+Haga una pausa en el video y
+
+04:27.800 --> 04:31.760
+pruébelo. Bueno, 28 es que Alif sabe que ese es el caso más fácil.
+
+04:31.760 --> 04:33.680
+Solo tenemos que detenerlo.
+
+04:33.680 --> 04:38.130
+Entonces, básicamente, noqueamos a los 2009s.
+
+04:38.360 --> 04:39.410
+Y ahí vamos.
+
+04:39.410 --> 04:43.960
+Veintiocho ya no está y nuestro árbol permanece igual.
+
+04:43.970 --> 04:47.330
+Así que ahora borremos el valor 22.
+
+04:47.390 --> 04:50.410
+¿Cómo se verá el árbol después de 22?
+
+04:50.420 --> 04:51.450
+Pruébalo.
+
+04:57.840 --> 05:00.880
+Bien, bien 22 solo tiene un hijo.
+
+05:00.890 --> 05:06.630
+Entonces, cuando estamos eliminando un nodo con un hijo, ese niño simplemente reemplaza el nodo eliminado para que
+
+05:06.630 --> 05:08.340
+se convierta en el nuevo.
+
+05:08.400 --> 05:12.480
+El hijo derecho 23 se convertirá en el nuevo hijo derecho de 20.
+
+05:12.550 --> 05:17.030
+Y así es como se verá el árbol una vez que hayamos eliminado 22.
+
+05:17.040 --> 05:23.340
+De acuerdo, ahora quiero que elimines 15 y quiero que mires hacia abajo en el subárbol derecho para ver el valor
+
+05:23.430 --> 05:24.140
+de reemplazo.
+
+05:24.300 --> 05:29.240
+Así que elimine 15 y encuentre el valor de reemplazo en el subárbol derecho.
+
+05:29.280 --> 05:31.520
+Pausa el video y pruébalo.
+
+05:37.050 --> 05:40.610
+De acuerdo, entonces esta vez 15 tiene dos hijos.
+
+05:40.620 --> 05:46.080
+Y entonces tenemos que encontrar un valor de reemplazo y podemos hacerlo mirando a la izquierda o a la derecha.
+
+05:46.080 --> 05:48.480
+Pero como dije, siempre sé consistente.
+
+05:48.480 --> 05:52.560
+Si está escribiendo un método de eliminación, siempre vaya a la izquierda o siempre vaya a la derecha.
+
+05:52.560 --> 05:54.970
+Así que vamos a ir a la derecha.
+
+05:55.260 --> 06:02.130
+Y como estamos mirando el subárbol correcto, queremos encontrar el valor más pequeño en el subárbol correcto y queremos hacerlo
+
+06:02.130 --> 06:08.460
+porque luego, cuando movemos ese valor en lugar de 15, sabemos que todo lo que quede atrás seguirá siendo
+
+06:08.460 --> 06:13.590
+mayor que sea lo que sea aquí porque estamos tomando el valor más pequeño y
+
+06:13.590 --> 06:17.770
+sabemos que esa característica de un árbol de búsqueda binaria se conservará.
+
+06:17.820 --> 06:23.190
+Y entonces comenzaremos a las 15 o nos vamos a mover a la raíz del árbol y luego básicamente
+
+06:23.190 --> 06:27.900
+queremos encontrar el valor mínimo en el árbol correcto y entonces vamos a viajar por la
+
+06:27.900 --> 06:31.590
+izquierda bordes hasta que golpeemos un no que no tenga un hijo izquierdo.
+
+06:31.590 --> 06:35.070
+Y en este caso no nos va a llevar mucho tiempo porque sería 16.
+
+06:35.130 --> 06:41.630
+Y entonces vamos a reemplazar el valor de 15 por 16 y luego, por supuesto, tenemos que eliminar esta nota.
+
+06:41.700 --> 06:47.430
+Y así es como se verá el árbol después de que la eliminación 15 haya desaparecido, el
+
+06:47.430 --> 06:53.110
+nodo 16 se habrá ido y el valor de donde solía estar 15 ahora es 16.
+
+06:53.280 --> 06:58.920
+OK, así que ahora quiero que elimines 27 y una vez más quiero que busques el reemplazo en
+
+06:58.920 --> 06:59.770
+el subárbol derecho.
+
+06:59.880 --> 07:07.130
+Entonces dale una oportunidad.
+
+07:07.150 --> 07:10.750
+OK, entonces vamos a buscar el nodo de reemplazo y el subárbol correcto.
+
+07:10.750 --> 07:13.270
+Así que vamos a comenzar en 27 el nodo que queremos eliminar.
+
+07:13.270 --> 07:19.030
+Nos moveremos al subárbol correcto y luego queremos encontrar el valor mínimo en el subárbol correcto y eso por
+
+07:19.030 --> 07:24.240
+supuesto significa viajar por los bordes izquierdos hasta que lleguemos a un no que no tenga un hijo.
+
+07:24.250 --> 07:26.710
+Y vamos a golpear ese nodo muy rápido, es no.
+
+07:26.710 --> 07:32.220
+29 Y entonces vamos a mover 29 hasta donde está 27 y eliminarlo de aquí.
+
+07:32.350 --> 07:34.440
+Y así es como se verá nuestro árbol.
+
+07:34.780 --> 07:42.100
+De acuerdo, he agregado algunos nodos nuevos en el árbol y quiero que elimines
+
+07:42.100 --> 07:53.030
+40 y, como de costumbre, miraré hacia abajo el subárbol correcto y, por lo tanto, el video positivo y elimino 40.
+
+07:53.030 --> 07:58.700
+De acuerdo, vamos a mirar hacia abajo el subárbol correcto, así que vamos a comenzar a los 40 y vamos a
+
+07:58.690 --> 07:59.650
+ir a la raíz.
+
+07:59.660 --> 08:06.830
+Y luego queremos encontrar el valor mínimo y lo hacemos al viajar por los bordes izquierdos, pero 46 no tiene ningún borde
+
+08:06.830 --> 08:10.940
+izquierdo, por lo que este es nuestro valor mínimo y el subárbol correcto.
+
+08:10.940 --> 08:14.010
+Y entonces queremos reemplazar 40 por 46.
+
+08:14.030 --> 08:20.570
+Y en este caso podemos ver que 46 tiene un hijo correcto y dado que es el valor
+
+08:20.570 --> 08:25.760
+mínimo, solo puede tener un hijo correcto y es perfectamente seguro arrastrar todo este subárbol.
+
+08:25.760 --> 08:32.270
+Y entonces 46 va a venir aquí y su subárbol vendrá para el viaje.
+
+08:32.330 --> 08:37.980
+Entonces, después de la eliminación, tendremos 46 66 60 en 62.
+
+08:38.000 --> 08:46.490
+Y, básicamente, acabamos de tomar todo este subárbol y reemplazamos a 30s right child con este
+
+08:46.520 --> 08:51.520
+subárbol y el New Left child de 46 será 34.
+
+08:51.560 --> 08:55.750
+Y así es como se ve nuestro nuevo árbol y sigue siendo un árbol binario.
+
+08:55.760 --> 08:58.190
+Todo a la izquierda es más pequeño que 30.
+
+08:58.190 --> 09:04.610
+Todo a la derecha es más grande que 30 y todo a la izquierda 46 es más pequeño que 46 y todo
+
+09:04.610 --> 09:06.410
+a la derecha es más grande.
+
+09:06.410 --> 09:11.820
+Y eso es todo por practicar inserciones y eliminaciones si entiendes cómo hacerlo.
+
+09:11.820 --> 09:15.050
+Entonces entiendes los árboles de búsqueda binarios.
+
+09:15.200 --> 09:17.350
+Te veré en la siguiente sección.

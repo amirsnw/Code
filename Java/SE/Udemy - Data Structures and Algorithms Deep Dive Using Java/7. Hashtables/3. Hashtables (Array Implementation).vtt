@@ -1,0 +1,505 @@
+WEBVTT
+
+00:05.370 --> 00:05.910
+Tudo bem.
+
+00:05.940 --> 00:13.920
+Portanto, existem tabelas de hash para fornecer recuperação rápida de dados e realizamos isso usando uma chave.
+
+00:13.950 --> 00:20.610
+Tomamos esse valor de chave e usamos uma função hash para mapeá-lo para um inteiro e, em seguida, usamos esse
+
+00:20.640 --> 00:22.290
+inteiro para recuperar o item.
+
+00:22.290 --> 00:28.860
+Agora, obviamente, uma estrutura de dados que se presta muito bem para isso é a matriz, porque quando
+
+00:28.860 --> 00:34.570
+nós hash a chave para um inteiro, podemos usar esse inteiro como o índice na matriz.
+
+00:34.590 --> 00:39.890
+E é isso que vamos fazer pela nossa implementação simples de tabela de hash.
+
+00:39.900 --> 00:45.590
+Então, vamos armazenar funcionários em nossa tabela de hash, então criei um projeto.
+
+00:45.600 --> 00:51.930
+Eu coloquei o código na academia para aprender a programar com hash table e copiei a usual
+
+00:51.930 --> 00:52.550
+classe Employee.
+
+00:52.620 --> 00:59.160
+Então, agora vou adicionar uma classe para nossas tabelas de hash para nova classe Java e
+
+01:00.030 --> 01:08.130
+vamos chamá-la de tabela de hash simples e vamos precisar da matriz que vamos usar para fazer o backup
+
+01:08.130 --> 01:18.540
+da tabela de hash então eu vou dizer tabela de hash de empregado privado e vai precisar de um construtor que vai criar o nosso
+
+01:18.540 --> 01:22.210
+array, então vamos dizer tabela de hash pública simples.
+
+01:22.650 --> 01:30.150
+Eu vou definir a capacidade dentro do construtor para que o chamador não tenha que fazer isso e eu
+
+01:30.150 --> 01:38.260
+vou dizer que a tabela de hash é igual a um novo funcionário e nós vamos dar uma capacidade de 10.
+
+01:38.370 --> 01:40.020
+Nós vamos precisar de uma função de hashing.
+
+01:40.050 --> 01:47.520
+Então, eu vou dizer privado porque você não precisa expor a função hash para o mundo
+
+01:47.550 --> 01:48.490
+tão privado.
+
+01:48.500 --> 01:53.260
+E eu vou chamá-lo de chave de hash e nós vamos aceitar uma string porque.
+
+01:53.280 --> 02:00.150
+Como discutimos no vídeo anterior, vamos usar o sobrenome do funcionário como a chave
+
+02:00.150 --> 02:01.410
+e vamos retornar.
+
+02:01.460 --> 02:09.140
+Ele obteve empréstimos modificados pelo comprimento da tabela de hash.
+
+02:10.200 --> 02:13.760
+E então isso está tomando uma string e está chegando ao fim.
+
+02:13.800 --> 02:17.520
+Isso é exatamente o que uma função hash faz.
+
+02:17.520 --> 02:25.380
+Então, digamos que queremos fazer Jane Jones vamos manter a Quaresma será de cinco e a duração da tabela de hash
+
+02:25.410 --> 02:26.570
+é de 10.
+
+02:26.580 --> 02:32.170
+E então vamos retornar cinco porque cinco dividido por 10 é zero para o restante de 5.
+
+02:32.190 --> 02:41.280
+E assim, esperamos que a chave Jones retorne um valor de hash de cinco e cinco é o que usaremos para indexar na
+
+02:41.280 --> 02:47.880
+matriz de suporte. É importante entender que a chave e o valor de hash não são a
+
+02:47.880 --> 02:48.860
+mesma coisa.
+
+02:48.870 --> 02:52.840
+Pegamos a chave e a transformamos em hash.
+
+02:52.860 --> 02:58.560
+A chave pode ser qualquer coisa, pode ser uma string, pode ser um personagem, pode ser o que você
+
+02:58.560 --> 02:59.920
+quiser, pode ser um funcionário.
+
+02:59.970 --> 03:03.510
+O valor em hash é sempre um inteiro.
+
+03:03.510 --> 03:07.350
+Agora eu não estou afirmando que esta é uma função hash maravilhosa.
+
+03:07.350 --> 03:14.480
+É apenas algo que eu inventei para obter índices no intervalo de 0 a 9, porque estamos modificando
+
+03:14.490 --> 03:16.610
+pelo comprimento da tabela de hash.
+
+03:16.650 --> 03:23.280
+Como eu disse anteriormente, a função de hashing vai desempenhar um grande papel na rapidez das suas
+
+03:23.280 --> 03:23.840
+recuperações.
+
+03:23.850 --> 03:29.140
+Quero dizer, se você tem uma função de hash que acaba com hash cada chave para o mesmo valor que você
+
+03:29.160 --> 03:33.750
+está recuperando vai ser muito lento, porque todos os seus valores vão para o mesmo índice na matriz
+
+03:33.750 --> 03:37.470
+e você vai ter que pesquisar todos os seus valores para encontrar o que você
+
+03:37.470 --> 03:37.980
+está procurando.
+
+03:37.980 --> 03:45.060
+Se você tem uma função de hash que distribui uniformemente os valores na matriz, então as recuperações
+
+03:45.060 --> 03:45.870
+serão melhores.
+
+03:45.870 --> 03:50.350
+Então, obviamente, o caso ideal é que você só tem um valor por chave.
+
+03:50.430 --> 03:57.300
+Agora, no mundo real, nós provavelmente usamos o ID como a chave, porque eles provavelmente serão únicos,
+
+03:57.420 --> 04:03.720
+mas ainda temos que acertá-los porque podemos ser uma pequena empresa e podemos ter apenas
+
+04:03.720 --> 04:08.040
+20 funcionários, mas nossa ideia, mas nossos IDs têm cinco dígitos.
+
+04:08.080 --> 04:12.490
+Talvez os cartões-chave que tenhamos exigem IDs com cinco dígitos.
+
+04:12.690 --> 04:19.700
+Portanto, podemos ter apenas uma matriz de funcionários de Lyn's 20, mas os IDs estão no formato 1 2 3 4 5.
+
+04:19.710 --> 04:25.800
+Então, nesse caso, ainda teríamos que fazer o hash do inteiro, porque teríamos que mapear os IDs para os índices
+
+04:25.800 --> 04:26.660
+de matriz válidos.
+
+04:26.730 --> 04:33.630
+OK, agora que temos uma função de hash, vamos adicionar o método que permite que os chamadores coloquem coisas
+
+04:33.630 --> 04:37.130
+na tabela de hash e chamaremos esse método de put.
+
+04:37.170 --> 04:42.900
+Então, vamos dizer publicamente que evitamos e vamos precisar da chave que será
+
+04:42.930 --> 04:46.480
+uma string e o valor que queremos adicionar.
+
+04:46.890 --> 04:51.840
+Lembre-se que, quando se trata de tabelas de hash, estamos sempre lidando com pares de valores de chaves e, quando
+
+04:51.840 --> 04:57.330
+você adiciona a uma tabela de hash, você precisa fornecer a chave e o valor e veremos quando você deseja recuperar algo
+
+04:57.330 --> 05:02.400
+da tabela de hash. você tem que fornecer a chave a mesma chave que você usa para adicionar o valor.
+
+05:02.400 --> 05:12.530
+Então, a primeira coisa que vamos fazer é o hash sticky tão bem dizer que a chave do interpretado em cache é igual à chave do hash.
+
+05:13.610 --> 05:17.900
+Assim, a chave hash nos dará o índice para o array.
+
+05:17.960 --> 05:22.330
+E então nós vamos ter uma tabela de hash realmente simples como eu disse.
+
+05:22.340 --> 05:25.850
+E assim esta tabela de hash não suporta colisões.
+
+05:25.880 --> 05:34.040
+E assim, se tentarmos colocar um funcionário na tabela de hash e quando alterarmos a chave, o valor com hash será
+
+05:34.040 --> 05:37.570
+o mesmo valor para um funcionário que já adicionamos.
+
+05:37.580 --> 05:42.920
+Nós não vamos adicionar o empregado que estamos apenas indo para imprimir algo dizendo
+
+05:42.950 --> 05:49.790
+desculpas que a posição Auray já está tomada porque esta mesa a dinheiro não lida com colisões
+
+05:49.790 --> 05:59.360
+dirá se a chave hash da tabela de hash não for igual ao significado do Knol que já há empregador e empregado nessa posição
+
+05:59.360 --> 06:03.180
+na matriz, vamos dizer que não há linha de impressão.
+
+06:03.770 --> 06:05.200
+Desculpa.
+
+06:05.330 --> 06:09.640
+Já existe um funcionário na posição e a vontade
+
+06:12.210 --> 06:20.410
+e o mundo incluirão o caso com hash e podemos ver em qual posição ele está.
+
+06:20.600 --> 06:27.740
+Se esse não for o caso, basta ir em frente e atribuir o funcionário ao caso hash do índice de tabela
+
+06:27.740 --> 06:28.250
+hash.
+
+06:28.250 --> 06:35.910
+Eu direi a chave hash da tabela de hash igual ao empregado.
+
+06:36.710 --> 06:37.780
+E é isso.
+
+06:37.820 --> 06:42.050
+Esse é o nosso método de colocação muito simples.
+
+06:42.050 --> 06:48.620
+E assim chegamos ao hash, o significado chave que mapeamos a chave que eles fornecem a um inteiro e,
+
+06:48.620 --> 06:54.190
+em seguida, verificamos essa posição na matriz e, se estiver vazia, atribuímos o funcionário a essa posição.
+
+06:54.200 --> 06:59.720
+Se não estiver vazio, essa primeira implementação inicial não suporta colisões, então somos como oops, desculpe,
+
+06:59.810 --> 07:02.560
+não consigo chegar lá, já tem alguém lá.
+
+07:02.630 --> 07:08.270
+E isso não será difícil, porque tudo o que precisamos é de dois funcionários com sobrenomes
+
+07:08.270 --> 07:11.080
+que tenham o mesmo tamanho e que colidiremos.
+
+07:11.090 --> 07:13.340
+Agora há outras coisas que poderíamos ter feito.
+
+07:13.340 --> 07:18.530
+Por exemplo, poderíamos ter uma matriz de funcionários de 26 e, em seguida, poderíamos ter olhado para a
+
+07:18.530 --> 07:23.960
+primeira letra do sobrenome que também levaria a colisões, porque tudo o que precisávamos era que dois funcionários dariam
+
+07:23.960 --> 07:27.460
+nomes que começassem com a mesma letra e nós teríamos uma colisão.
+
+07:27.530 --> 07:32.930
+Então, como eu disse na prática, pode ser difícil criar uma função de hash que nunca
+
+07:32.930 --> 07:34.050
+lhe dará colisões.
+
+07:34.100 --> 07:37.180
+Então, felizmente, temos estratégias para lidar com eles.
+
+07:37.190 --> 07:43.340
+OK, agora que podemos colocar um funcionário na tabela de hash, vamos escrever o método para recuperar um.
+
+07:43.340 --> 07:48.170
+Então, vamos dizer funcionário público porque vamos devolver o funcionário.
+
+07:48.200 --> 07:56.870
+E neste caso precisamos da chave e a chave obviamente tem que ser o ditado que ele usou aqui.
+
+07:56.870 --> 08:02.690
+Então mais uma vez a primeira coisa que temos que fazer é alterar a chave porque precisamos obter o valor inteiro que precisamos
+
+08:02.690 --> 08:04.310
+para obter o índice no array.
+
+08:04.310 --> 08:12.320
+Então, vamos dizer int chave de caixa igual a chave de hash e vamos passar a chave que eles nos deram e,
+
+08:12.320 --> 08:21.650
+em seguida, tudo o que temos a fazer é retornar hash tabela de hash chave falando sobre a complexidade do tempo, você pode ver que a
+
+08:21.650 --> 08:22.730
+recuperação é constante.
+
+08:22.760 --> 08:28.280
+Estamos apenas fazendo um bom acesso direto à matriz e podemos fazer isso em tempo constante.
+
+08:28.280 --> 08:33.980
+Isso não depende do número de itens que estão na matriz e é por isso que as tabelas de hash são
+
+08:34.010 --> 08:37.180
+tão boas na recuperação se você as fizer voltar com uma matriz.
+
+08:37.220 --> 08:44.560
+Então você pode usar algo como uma chave de string para obter um valor que você adicionou anteriormente em tempo
+
+08:44.560 --> 08:45.090
+constante.
+
+08:45.170 --> 08:48.230
+E é isso que queremos que seja o que as tabelas de hash fazem por nós.
+
+08:48.230 --> 08:51.440
+Tudo bem, então eu vou adicionar um método de tabela de hash de impressão.
+
+08:52.220 --> 09:02.530
+Então, eu vou dizer public hash print hash table e uma vez que é uma matriz, isso será realmente simples,
+
+09:02.540 --> 09:10.870
+vamos apenas dizer quatro em zero igual a menos e hash tabelas de comprimento mais plus.
+
+09:11.600 --> 09:20.810
+E vamos dizer que o sistema saiu da linha hash da tabela II e pronto.
+
+09:20.810 --> 09:22.540
+Então vamos ao nosso método principal.
+
+09:22.550 --> 09:30.410
+Eu já adicionei os funcionários usuais com os quais trabalhamos e vamos criar uma tabela de hash simples para uma simples
+
+09:30.410 --> 09:37.730
+tabela de hash. Vou chamá-la de H. T. é igual a nova tabela de hash simples e não precisamos passar uma capacidade.
+
+09:37.820 --> 09:40.010
+E nós vamos dizer H. T. saída.
+
+09:40.010 --> 09:42.130
+Agora precisamos de uma chave e um valor.
+
+09:42.140 --> 09:43.960
+Nós vamos usar o sobrenome é uma chave.
+
+09:43.970 --> 09:52.520
+Então eu vou dizer Jones vou colocar Jane Jones sob Jones e depois H. T. ponto colocar e
+
+09:52.520 --> 10:02.350
+vamos colocar John Doe digamos Doe John Doe e vamos colocar Mike.
+
+10:02.450 --> 10:03.500
+Então Wilson e
+
+10:07.950 --> 10:15.240
+Mike e, em seguida, vamos colocar alguém que sabemos que vai causar uma colisão e lembre-se que a nossa função de
+
+10:15.240 --> 10:20.610
+hash muito simples só olha para o comprimento do sobrenome, então só precisamos usar alguém
+
+10:20.610 --> 10:24.130
+que tem um sobrenome é o mesmo comprimento como Jain.
+
+10:24.130 --> 10:25.990
+Não Jones Dougher Wilson.
+
+10:26.000 --> 10:31.990
+Então Mary Smith tem cinco personagens e isso é o mesmo que Jane, então vamos adicioná-la.
+
+10:31.990 --> 10:41.170
+Alguns dirão Smith Mary Smith e isso deve resultar em desculpe, não podemos fazê-lo.
+
+10:41.250 --> 10:42.160
+Imprima isso.
+
+10:42.360 --> 10:44.430
+E finalmente vou imprimir a tabela de hash.
+
+10:44.430 --> 10:47.310
+Então, H. T. não imprima a tabela de hash.
+
+10:47.310 --> 10:48.480
+Tudo bem, então
+
+10:53.880 --> 11:03.270
+vamos correr OK então isso aqui desculpe já existe um funcionário na posição 5 é para quando vamos para adicionar Maria porque quando
+
+11:03.360 --> 11:05.880
+nós hash Smith vamos conseguir cinco.
+
+11:05.880 --> 11:07.890
+E Jones também nos dá cinco.
+
+11:07.890 --> 11:14.670
+Então, nós já temos a posição 5 na nossa tabela de hash ocupada por Jane e então esta é a impressão
+
+11:14.670 --> 11:22.320
+da nossa tabela de hash, deixe-me puxar para cima, então esta aqui é a impressão assim que temos John Doe posição 3 assim 0
+
+11:22.320 --> 11:27.120
+1 2 3 e isso faz sentido porque ele tem três personagens e seu sobrenome.
+
+11:27.120 --> 11:35.060
+E então Jane está na posição 5 e Wilson está na posição 6 e assim as tabelas de hash estão funcionando como esperamos.
+
+11:35.100 --> 11:41.310
+É claro que não é uma ótima função hash porque as colisões serão abundantes se você estiver
+
+11:41.310 --> 11:42.370
+adicionando muita gente.
+
+11:42.420 --> 11:44.210
+E não estamos lidando com eles.
+
+11:44.250 --> 11:50.640
+Então isso é uma espécie de implementação barebones de uma tabela de hash para dar uma idéia de como
+
+11:50.670 --> 11:54.140
+fazemos o hashing sob as capas quando colocamos e pegamos funcionários.
+
+11:54.300 --> 11:56.360
+Então vamos em frente e conseguir um empregado.
+
+11:56.580 --> 12:01.230
+Então, eu vou dizer systemd dot dot print line.
+
+12:02.840 --> 12:11.270
+Nós vamos recuperar a chave, vamos dizer Wilson e nós vamos dizer que HD vai.
+
+12:11.310 --> 12:17.820
+E nossa chave é Wilson e eu vou comentar isso aqui, para
+
+12:17.820 --> 12:22.730
+não vermos toda a impressão novamente e vamos rodar.
+
+12:23.510 --> 12:25.460
+E lá nós pegamos Mike Wilson de volta.
+
+12:25.460 --> 12:32.270
+Então, aqui está a nossa pena quando adicionamos a Mary, tente adicionar a Mary aqui e esta é a nossa chave de recuperação, Wilson,
+
+12:32.300 --> 12:34.040
+e temos Mike Wilson de volta.
+
+12:34.070 --> 12:41.340
+E assim, debaixo das cobertas aqui, vamos pegar a chave novamente Wilson, nós temos seis.
+
+12:41.360 --> 12:48.260
+E o Mike Wilson estava na mesa hash 6 porque é onde o colocamos quando o adicionamos à mesa de hash.
+
+12:48.260 --> 12:52.160
+E assim, esses são os elementos essenciais de uma tabela de hash.
+
+12:52.160 --> 12:58.640
+Quando você coloca o empregado, você marca a chave e, em seguida, usando essa chave, você coloca o empregado no
+
+12:58.640 --> 12:59.140
+lugar apropriado.
+
+12:59.150 --> 13:03.300
+E quando você recebe o empregado, você precisa fornecer a mesma chave.
+
+13:03.320 --> 13:09.770
+Você tem que usar o mesmo hash função para hash essa chave e, em seguida, você usa o resultado para
+
+13:09.830 --> 13:10.900
+recuperar o item.
+
+13:10.910 --> 13:18.720
+Portanto, a beleza das tabelas de hash é que você pode usar chaves não inteiras para recuperar itens em tempo constante.
+
+13:18.800 --> 13:24.560
+Como eu mencionei o fator de carga na função de hash que você usa vai influenciar isso, então se você estiver
+
+13:24.680 --> 13:29.510
+usando uma função de hash de baixa qualidade ou o seu fator de carga é realmente muito alto.
+
+13:29.510 --> 13:34.850
+Então, quando você está adicionando Você está tendo muitas colisões, obviamente, você recupera toda a complexidade do tempo que
+
+13:34.850 --> 13:36.080
+vai começar a degradar.
+
+13:36.080 --> 13:38.110
+Então você pode não conseguir tempo constante.
+
+13:38.240 --> 13:44.210
+Tudo bem, agora que vimos essa implementação realmente simples que resultará em
+
+13:44.210 --> 13:45.430
+muitas colisões.
+
+13:45.440 --> 13:51.290
+Nós todos vamos dar uma olhada em estratégias que são usadas para lidar com colisões e faremos isso
+
+13:51.290 --> 13:52.240
+no próximo vídeo.
+
+13:52.310 --> 13:53.140
+Eu vou ver se

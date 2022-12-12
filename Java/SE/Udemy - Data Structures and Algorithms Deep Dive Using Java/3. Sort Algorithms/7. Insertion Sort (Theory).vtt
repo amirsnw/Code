@@ -1,0 +1,298 @@
+WEBVTT
+
+00:05.220 --> 00:10.410
+Muy bien, el siguiente algoritmo que vamos a ver es la ordenación por inserción, como los
+
+00:10.410 --> 00:14.850
+otros algoritmos que hemos visto, que divide la matriz en particiones ordenadas y ordenadas.
+
+00:14.910 --> 00:21.200
+Pero esta vez la implementación que mostraré hace crecer la partición ordenada de izquierda a derecha.
+
+00:21.420 --> 00:24.490
+Por lo tanto, crece la partición ordenada desde el frente de la matriz.
+
+00:24.630 --> 00:30.840
+Entonces, ¿cómo funciona la inserción de clasificación mientras comienza diciendo que el elemento a la posición 0 está en
+
+00:30.840 --> 00:31.920
+la partición ordenada.
+
+00:31.920 --> 00:38.040
+Y dado que la partición ordenada es de longitud 1 por defecto, el elemento se clasifica porque si tiene una
+
+00:38.040 --> 00:42.160
+matriz de lenth wine o una partición de lenth 1, está ordenada correctamente.
+
+00:42.240 --> 00:43.530
+Solo hay un elemento
+
+00:43.560 --> 00:50.370
+Así que al principio los elementos de la posición 1 a la derecha están en la partición sin clasificar.
+
+00:50.370 --> 00:53.890
+Así que vamos a establecer un primer campo de índice sin clasificar en 1.
+
+00:53.940 --> 01:00.180
+Ahora en cada iteración tomamos el primer elemento en la partición sin clasificar que será el elemento
+
+01:00.270 --> 01:05.680
+en la matriz del primer índice sin clasificar y lo insertamos en la partición ordenada.
+
+01:05.790 --> 01:10.030
+Y así, al final de cada iteración habremos crecido esta partición ordenada por uno.
+
+01:10.050 --> 01:16.260
+Y entonces, lo que haremos en la primera iteración es que tomaremos 35 porque ese es el primer valor sin
+
+01:16.350 --> 01:19.030
+clasificar y lo insertaremos en la partición ordenada.
+
+01:19.040 --> 01:23.550
+Y al final de la iteración, los primeros dos elementos de la matriz se ordenarán.
+
+01:23.550 --> 01:25.530
+Entonces, ¿cómo se inserta cada elemento?
+
+01:25.530 --> 01:33.300
+Bien, lo que hacemos es comparar el valor que estamos insertando con los valores en la partición ordenada y decimos que atravesamos
+
+01:33.310 --> 01:39.350
+la partición ordenada de derecha a izquierda y buscamos un valor que sea menor o igual al
+
+01:39.350 --> 01:45.240
+que estamos tratando de insertar porque una vez que encontramos ese valor podemos dejar de buscar.
+
+01:45.240 --> 01:51.360
+Hemos encontrado la posición de inserción correcta para el nuevo valor que estamos tratando de insertar porque recuerde cuando
+
+01:51.480 --> 01:55.760
+estamos insertando el valor en el que estamos trabajando dentro de la partición ordenada.
+
+01:55.800 --> 02:02.400
+Entonces si el elemento en el índice o en el alto en la partición ordenada es menor o igual que el
+
+02:02.400 --> 02:09.210
+elemento que estamos tratando de insertar, entonces todos los valores a la izquierda del elemento I serán menores o iguales al
+
+02:09.210 --> 02:13.590
+valor que estamos tratando de insertar porque todos los valores están en orden ordenado.
+
+02:13.590 --> 02:20.190
+Entonces, cuando buscamos la posición de inserción correcta, cambiamos los valores en la partición ordenada a la derecha y
+
+02:20.280 --> 02:22.560
+verá esto en acción en este momento.
+
+02:22.650 --> 02:24.060
+Repasemos esto a mano.
+
+02:24.060 --> 02:32.340
+Entonces en la primera iteración vamos a asignar 35 a un nuevo campo de elemento porque 35 es el primer elemento en
+
+02:32.340 --> 02:33.760
+la partición sin clasificar.
+
+02:33.840 --> 02:38.910
+Y luego usamos II para atravesar la partición ordenada de derecha a izquierda.
+
+02:38.910 --> 02:42.060
+Entonces comparamos 35 a 20.
+
+02:42.120 --> 02:50.130
+Ahora 35 es mayor que 20, por lo que 35 ya se encuentra en su posición correcta en la partición ordenada.
+
+02:50.130 --> 02:54.450
+No está en su posición correcta en la matriz, pero está en la partición ordenada.
+
+02:54.450 --> 03:01.140
+Por lo tanto, después de la primera iteración, la partición clasificada ha crecido a dos longitudes 2 y los primeros dos
+
+03:01.140 --> 03:03.230
+elementos están en su posición correcta.
+
+03:03.270 --> 03:10.080
+Y ahora, el primer índice sin clasificar está en el índice 2 y se le asigna 1 porque ese es el índice más
+
+03:10.110 --> 03:11.630
+correcto en la partición ordenada.
+
+03:11.640 --> 03:18.510
+Entonces asignamos menos 15 al nuevo elemento y ahora necesitamos insertar menos 15 en la partición ordenada.
+
+03:18.510 --> 03:28.020
+Así que comparamos menos 15 contra 35 menos 15 como menos de 35, por lo que queremos desplazar menos 15 hacia abajo en la
+
+03:28.020 --> 03:28.500
+matriz.
+
+03:28.500 --> 03:34.950
+Pero otra forma de verlo es que vamos a desplazar 35 a la derecha para dejar espacio a
+
+03:34.950 --> 03:38.750
+menos 15, por lo que asignamos 35 a la posición dos.
+
+03:38.760 --> 03:44.430
+Ahora no te preocupes porque hemos sobrescrito menos 15 porque lo tenemos guardado en un nuevo campo de elemento.
+
+03:44.430 --> 03:50.610
+Así que ahora vamos a comparar menos 15 a 20 menos 15 es menos de 20, así que vamos a cambiar
+
+03:50.610 --> 03:53.400
+20 a la derecha para dejar espacio a menos 15.
+
+03:53.400 --> 03:59.090
+Y en este punto, hemos tocado el frente de la matriz, por lo que no tenemos nada más que comparar menos 15 a.
+
+03:59.130 --> 04:02.380
+Básicamente tenemos el elemento más pequeño en el tipo de partición.
+
+04:02.430 --> 04:07.080
+Y porque hemos golpeado al frente de la matriz. Aquí es donde vamos a insertar menos
+
+04:07.080 --> 04:10.460
+15, así que seguimos adelante y logramos finalizar la segunda iteración.
+
+04:10.470 --> 04:16.450
+Y en este punto hemos aumentado la partición ordenada a 3 y los primeros tres elementos en la matriz
+
+04:16.460 --> 04:20.930
+que es la partición ordenada están en sus posiciones correctas en la partición ordenada.
+
+04:21.030 --> 04:24.480
+Entonces, el primer índice sin clasificar está en la posición 3.
+
+04:24.480 --> 04:30.420
+Así que vamos a asignar el valor de 7 a un nuevo elemento y vamos a comparar
+
+04:30.420 --> 04:31.330
+7 contra 35.
+
+04:31.350 --> 04:33.000
+Siete es menos de 35.
+
+04:33.000 --> 04:35.310
+Así que vamos a cambiar 35 a la derecha.
+
+04:35.310 --> 04:40.920
+Comparamos siete con veintisiete y es menor que 20, por lo que vamos a desplazar 20 a la derecha
+
+04:40.920 --> 04:43.350
+y luego a comparar 7 con menos 15.
+
+04:43.350 --> 04:45.480
+Siete es mayor que menos 15.
+
+04:45.480 --> 04:50.820
+Así que hemos encontrado que la posición de inserción recuerda que estamos trabajando dentro de la partición ordenada.
+
+04:50.850 --> 04:56.660
+Entonces, si hubiera algo a la izquierda de menos 15, todos esos valores serían menos de menos 15.
+
+04:56.670 --> 05:02.190
+Por lo tanto, no es necesario seguir atravesando la partición ordenada en el momento en que golpeamos un elemento que
+
+05:02.190 --> 05:07.420
+es menor o igual que el que estamos tratando de insertar. Encontramos que la posición de inserción es correcta.
+
+05:07.550 --> 05:13.170
+Y entonces vamos a insertar siete en la posición uno y hemos completado otra iteración.
+
+05:13.190 --> 05:19.230
+Hemos aumentado la partición ordenada en uno y todos los elementos en la partición ordenada están ordenados.
+
+05:19.310 --> 05:22.670
+Entonces, el próximo elemento que vamos a querer insertar es 55.
+
+05:22.730 --> 05:27.110
+Entonces comparamos 55 contra 35 55 es mayor que 35.
+
+05:27.110 --> 05:30.230
+Así que ya hemos encontrado que es la posición correcta.
+
+05:30.230 --> 05:35.000
+Y así completamos esta iteración y ahora los primeros cinco elementos en la matriz
+
+05:35.000 --> 05:36.590
+están en su posición correcta.
+
+05:36.590 --> 05:41.930
+Ahora no voy a pasar por uno en menos 22 porque uno va a cambiar todo el
+
+05:41.930 --> 05:48.830
+camino a la posición 1 y luego menos 22 se desplazará hasta la posición cero, así que no te aburriré con
+
+05:48.830 --> 05:50.120
+las diapositivas haciendo eso.
+
+05:50.120 --> 05:53.690
+Creo que en este momento obtienes la esencia del algoritmo.
+
+05:53.750 --> 05:55.310
+Y entonces eso es tipo de inserción.
+
+05:55.310 --> 06:00.770
+Comienza diciendo que el primer elemento está ordenando la implementación o al menos la implementación que
+
+06:00.770 --> 06:02.930
+voy a mostrar que hace eso.
+
+06:02.930 --> 06:09.530
+Crece la partición clasificada de izquierda a derecha y en cada iteración selecciona el primer elemento en la partición
+
+06:09.530 --> 06:15.050
+sin clasificar y lo inserta en la posición correcta en la partición clasificada y lo hace
+
+06:15.050 --> 06:19.660
+desplazando los elementos a la derecha para hacer espacio para la nuevo elemento.
+
+06:19.820 --> 06:25.070
+Entonces el ordenamiento por inserción es un algoritmo en el lugar, no necesitamos crear arreglos temporales.
+
+06:25.070 --> 06:31.970
+Tenemos algunos campos adicionales, pero como he dicho antes, siempre y cuando la memoria extra que estamos utilizando no dependa de la cantidad de
+
+06:32.060 --> 06:35.300
+elementos que hayamos ordenado, se trata de un algoritmo in situ.
+
+06:35.360 --> 06:39.650
+Es un algoritmo cuadrático y es un algoritmo estable.
+
+06:39.710 --> 06:45.290
+Es estable porque cuando seleccionamos elementos lo hacemos de izquierda a derecha.
+
+06:45.290 --> 06:52.520
+Entonces, si vamos a decir que hay dos nueves en la matriz, primero vamos a insertar las nueve más a la izquierda y luego, cuando lleguemos
+
+06:52.520 --> 06:54.590
+a las nueve más a la derecha.
+
+06:54.620 --> 07:00.710
+Recuerde que cuando buscamos la posición de inserción, nos detenemos cuando pulsamos un elemento que es
+
+07:00.710 --> 07:03.720
+menor o igual que el que estamos insertando.
+
+07:03.770 --> 07:09.620
+Entonces, cuando insertemos el 9, finalmente llegaremos a los primeros nueve y lo insertamos en la
+
+07:09.620 --> 07:15.360
+partición ordenada y los segundos nueve se insertarán a la derecha de los primeros nueve.
+
+07:15.380 --> 07:19.700
+Y así se conservarán las posiciones relativas de esos dos nueves.
+
+07:19.700 --> 07:23.020
+Y entonces el género de inserción es un algoritmo de ordenación estable.
+
+07:23.170 --> 07:27.210
+OK, así que es una excelente explicación del tipo de inserción.
+
+07:27.230 --> 07:29.770
+Y hemos revisado la implementación que voy a mostrarles.
+
+07:29.770 --> 07:32.600
+Así que vamos a programar esa implementación.
+
+07:32.600 --> 07:33.940
+Te veré en el próximo video.

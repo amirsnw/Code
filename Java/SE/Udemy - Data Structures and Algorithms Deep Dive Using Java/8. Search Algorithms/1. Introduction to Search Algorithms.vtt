@@ -1,0 +1,31 @@
+WEBVTT
+
+00:08.630 --> 00:12.740
+Tudo bem, vamos fazer uma pausa agora e analisar os algoritmos de busca.
+
+00:12.780 --> 00:20.300
+Então, o que um algoritmo de busca faz bem em um algoritmo de busca encontrará um valor em uma estrutura de dados.
+
+00:20.310 --> 00:24.960
+E assim, os algoritmos de pesquisa que veremos encontrarão um valor em uma matriz.
+
+00:24.960 --> 00:30.310
+Agora você pode usá-los para pesquisar listas de links e outras estruturas de dados, mas veremos as matrizes.
+
+00:30.330 --> 00:35.580
+Não vamos olhar para tantos algoritmos quanto para o tipo, porque existe um algoritmo de
+
+00:35.580 --> 00:37.390
+busca que funciona muito bem.
+
+00:37.410 --> 00:42.540
+Então, vamos olhar para o algoritmo de busca linear e, em seguida, vamos examinar o algoritmo
+
+00:42.540 --> 00:43.590
+de busca binária.
+
+00:43.590 --> 00:44.790
+Então, vamos pular direto.
+
+00:44.790 --> 00:45.950
+Eu vou te ver no próximo vídeo.

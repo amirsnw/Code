@@ -1,0 +1,370 @@
+WEBVTT
+
+00:05.300 --> 00:12.020
+Así que en el último video manejamos los casos de eliminación de un nodo sin hijos y leafnode o un
+
+00:12.020 --> 00:18.630
+nodo con un hijo y ahora tenemos que manejar el caso más complejo que es un nodo con dos hijos.
+
+00:18.740 --> 00:24.950
+Entonces, ¿cómo hacemos eso porque no podemos simplemente tomar los dos hijos y pegarlo al padre del nodo
+
+00:25.070 --> 00:31.280
+eliminado porque en un árbol de búsqueda binaria cada nodo solo puede tener dos hijos y es posible
+
+00:31.280 --> 00:33.400
+que el padre ya tenga dos niños.
+
+00:33.410 --> 00:34.760
+Asi que que hacemos.
+
+00:34.760 --> 00:40.310
+Bueno, hagamos lo que hagamos, no queremos alterar la estructura de árbol existente para que coincida con el significado,
+
+00:40.310 --> 00:43.170
+no queremos tener que desplazarnos por un montón de nodos.
+
+00:43.250 --> 00:47.380
+Lo que vamos a hacer es buscar el nodo de reemplazo.
+
+00:47.570 --> 00:54.530
+Entonces, cuando un nodo tiene dos hijos vamos a reemplazar ese nodo con uno de los nodos de sus subárboles y vamos
+
+00:54.770 --> 00:59.930
+a tomar un nodo del árbol izquierdo o un nodo del subárbol correcto y cuando escribas
+
+00:59.930 --> 01:02.890
+tu eliminación código de palo con uno o el otro.
+
+01:02.930 --> 01:08.240
+Por lo tanto, su código de eliminación buscará en el subárbol izquierdo el nodo de reemplazo o
+
+01:08.240 --> 01:11.290
+buscará en el subárbol derecho el nodo de reemplazo.
+
+01:11.480 --> 01:15.900
+Entonces, ¿cómo encontramos el nodo de reemplazo qué valor deberíamos buscar?
+
+01:16.130 --> 01:21.130
+Si bien tenemos que asegurarnos de que se conservan las características de un árbol de búsqueda binario.
+
+01:21.200 --> 01:28.650
+Entonces, si tomamos el valor del subárbol izquierdo, tenemos que tomar el valor más grande en el subárbol izquierdo.
+
+01:28.670 --> 01:34.580
+Si vamos a reabastecernos, reemplace el nodo eliminado con un nodo de su subárbol, de modo que ahora el
+
+01:34.610 --> 01:41.240
+nodo eliminado es la raíz de un subárbol en un árbol de búsqueda binario, todo a la izquierda tiene que ser menor
+
+01:41.240 --> 01:42.380
+que el valor eliminado.
+
+01:42.500 --> 01:47.780
+Y si vamos a buscar un valor de reemplazo en el subárbol izquierdo si tomamos el
+
+01:47.930 --> 01:55.460
+valor más grande en el subárbol izquierdo, tomamos ese nodo y reemplazamos el nodo eliminado con ese nodo porque hemos tomado el
+
+01:55.460 --> 02:01.010
+valor más grande del subárbol izquierdo, sabemos que todo lo que queda en el subárbol izquierdo
+
+02:01.010 --> 02:04.020
+seguirá siendo más pequeño que la raíz del subárbol.
+
+02:04.040 --> 02:09.280
+Y entonces sabremos que la característica de un árbol binario de búsqueda se conserva.
+
+02:09.440 --> 02:13.940
+Y entonces vamos a mirar hacia la izquierda, vamos a buscar el valor máximo en el subhebra
+
+02:14.030 --> 02:18.050
+izquierdo, que es el nodo que vamos a usar para reemplazar la raíz del subárbol.
+
+02:18.050 --> 02:22.550
+Y debido a que estamos tomando el valor máximo, sabemos que todo en el subárbol izquierdo
+
+02:22.550 --> 02:23.480
+seguirá siendo menor.
+
+02:23.480 --> 02:28.880
+Ahora, si lo hiciéramos a partir de las tasas de árbol, querríamos buscar el valor más pequeño por
+
+02:28.880 --> 02:29.930
+la misma razón.
+
+02:30.020 --> 02:36.350
+Después de tomar el nodo del nodo de reemplazo y ponerlo en la raíz del árbol, todo en el árbol derecho tiene
+
+02:36.350 --> 02:41.330
+que ser mayor que la raíz del árbol secundario y la forma en que garantizamos que es
+
+02:41.360 --> 02:46.910
+tomar el valor más pequeño en el subárbol correcto porque si es el valor más pequeño en el subárbol
+
+02:47.030 --> 02:50.640
+correcto, entonces sabemos que todos los otros nodos son mayores que ese valor.
+
+02:50.720 --> 02:53.980
+Y entonces es seguro para nosotros tomar ese valor y ponerlo en la raíz.
+
+02:54.050 --> 02:59.060
+Entonces, si vamos a tomar el valor de reemplazo de la izquierda, queremos buscar el valor más grande
+
+02:59.150 --> 03:00.170
+en el subárbol izquierdo.
+
+03:00.170 --> 03:04.300
+Y si vamos a tomar el valor de reemplazo de la derecha, buscamos el valor más pequeño.
+
+03:04.340 --> 03:07.670
+Así que veamos una imagen porque con suerte esto aclarará las cosas.
+
+03:07.730 --> 03:11.710
+Y entonces aquí está el árbol que tenemos ahora que estamos construyendo en nuestro código.
+
+03:11.730 --> 03:14.530
+Ahora digamos que venimos queríamos diariamente 20.
+
+03:14.600 --> 03:16.220
+Y entonces queríamos tener 20.
+
+03:16.220 --> 03:23.270
+Entonces, lo que vamos a hacer es seleccionar un nodo de subárboles y poner ese nodo en lugar
+
+03:23.270 --> 03:24.030
+de 20.
+
+03:24.110 --> 03:28.100
+Y entonces digamos que vamos a buscar ese nodo de reemplazo en el subárbol izquierdo.
+
+03:28.130 --> 03:33.590
+Y entonces vamos a movernos al subárbol izquierdo y luego queremos buscar el valor más grande en el subárbol izquierdo y
+
+03:33.590 --> 03:38.930
+la forma en que se encuentra el valor máximo a medida que avanzamos por el borde derecho es hasta que tocas
+
+03:38.930 --> 03:41.240
+una nota que no tiene un hijo de tasa.
+
+03:41.240 --> 03:46.160
+Entonces, en nuestro caso, no nos llevará mucho tiempo porque vamos a bajar a 15 y luego vamos a
+
+03:46.160 --> 03:48.830
+comenzar a viajar hacia la derecha y oh, encontramos 17.
+
+03:48.920 --> 03:53.140
+Entonces, lo que vamos a hacer es tomar la nota 17 y ponerla aquí.
+
+03:53.180 --> 03:57.180
+Y, obviamente, sabríamos sobre el niño de 15 años.
+
+03:57.200 --> 04:00.880
+Y así después de la eliminación Así es como se verá nuestro árbol.
+
+04:00.920 --> 04:07.900
+Tenemos 17 aquí y 15 es aún menos desde el 17 y 22 es aún mayor.
+
+04:07.970 --> 04:14.240
+Y debido a las características de un árbol de búsqueda binario porque tomamos el valor más grande en el subárbol izquierdo,
+
+04:14.240 --> 04:19.340
+sabemos que todo lo demás en el subárbol izquierdo va a ser más pequeño que ese valor,
+
+04:19.340 --> 04:24.770
+y algo así cuando lo guardamos aquí. saber que todo en el subárbol izquierdo va a ser más pequeño.
+
+04:24.770 --> 04:27.070
+Entonces el subárbol izquierdo se conserva.
+
+04:27.230 --> 04:31.210
+Y porque sabemos que todo en el subárbol correcto es mayor que este valor.
+
+04:31.340 --> 04:33.380
+Y todo aquí es menos.
+
+04:33.380 --> 04:37.960
+Sabemos que cualquier cosa que tomemos de aquí va a ser menor que lo que está en el subárbol correcto.
+
+04:37.970 --> 04:41.250
+Y así se conservará la característica del subárbol correcto.
+
+04:41.270 --> 04:49.010
+Y así es como se ve el árbol de búsqueda binaria después de que hemos eliminado el 20 y el 17
+
+04:49.040 --> 04:50.750
+como el valor de reemplazo.
+
+04:50.750 --> 04:55.940
+Ahora hay diferentes formas en que puede implementar eliminaciones independientemente de la situación en la que se encuentre.
+
+04:55.940 --> 05:02.000
+Puedes mover físicamente el nodo para que podamos tomar este nodo y moverlo físicamente hacia arriba y
+
+05:02.000 --> 05:08.790
+luego tenemos que volver a conectarlo o simplemente podemos tomar el valor de 17 y reemplazar el valor en
+
+05:08.790 --> 05:09.920
+el nodo existente.
+
+05:09.930 --> 05:15.600
+Así que básicamente hacemos un conjunto de datos sobre el know existente para configurarlo en 17 y luego, por
+
+05:15.600 --> 05:17.650
+supuesto, tenemos que limpiar las referencias aquí.
+
+05:17.670 --> 05:25.630
+Ahora si 17 había tenido un hijo porque estamos buscando el valor más grande, 17 no puede tener un hijo correcto.
+
+05:25.650 --> 05:29.640
+Solo puede tener un hijo de la izquierda si tiene un hijo derecho, no sería el valor más grande por lo
+
+05:29.640 --> 05:30.510
+que no se seleccionaría.
+
+05:30.510 --> 05:35.700
+Entonces, el nodo que encontremos será una hoja o tendrá un único hijo aleft.
+
+05:35.700 --> 05:44.160
+Y entonces, si 17 tenían un hijo izquierdo, ese niño reemplazaría a 17 y, por lo tanto, 17 se convertirían en el nodo que
+
+05:44.190 --> 05:46.640
+aparece y el hijo dejado sería 15.
+
+05:46.650 --> 05:47.390
+Hijo correcto.
+
+05:47.400 --> 05:53.550
+Y entonces, cuando hacemos esto, si el nodo de reemplazo tiene un hijo, simplemente reemplaza el nodo en el árbol.
+
+05:53.550 --> 06:01.170
+De modo que el nodo de reemplazo se convierte en la nueva raíz del subárbol y si tiene un elemento secundario, es reemplazado por
+
+06:01.170 --> 06:02.070
+su elemento secundario.
+
+06:02.070 --> 06:09.980
+Probemos otro, así que si bajamos aquí, nuestro árbol ahora se ha restablecido y borremos veintisiete.
+
+06:10.200 --> 06:14.030
+Y entonces en este caso vamos a buscar el subárbol correcto.
+
+06:14.040 --> 06:17.600
+No harías esto en un método de eliminación que siempre harías a la izquierda o a la derecha.
+
+06:17.610 --> 06:22.710
+Pero quiero mostrar ambas formas, así que en esta situación queremos eliminar 27.
+
+06:22.710 --> 06:24.100
+Y vamos a mirar hacia abajo allí, a la derecha.
+
+06:24.120 --> 06:29.790
+Entonces, en este caso, queremos el valor más pequeño por la misma razón que queremos en el valor más grande
+
+06:29.790 --> 06:31.680
+cuando miramos hacia abajo el subárbol izquierdo.
+
+06:31.680 --> 06:38.070
+Queremos el valor más pequeño porque cuando reemplazamos 27 con el valor, todo en el subárbol derecho todavía
+
+06:38.070 --> 06:40.280
+tiene que ser mayor que 27.
+
+06:40.290 --> 06:45.900
+Y la forma de garantizar eso es elegir el valor más pequeño porque si tomamos el valor
+
+06:45.900 --> 06:51.720
+más pequeño del subárbol derecho, podemos garantizar que cuando movemos el valor más pequeño aquí arriba, todo
+
+06:51.720 --> 06:54.940
+lo que quede atrás es mayor que la nueva ruta.
+
+06:54.960 --> 06:59.040
+Y así se conservarán las características de un árbol de búsqueda binaria.
+
+06:59.040 --> 07:04.530
+Y entonces en este caso vamos a movernos a la raíz del subárbol vamos a buscar el valor
+
+07:04.530 --> 07:05.060
+de reemplazo.
+
+07:05.070 --> 07:10.230
+Y debido a que estamos buscando el valor mínimo en el subárbol, nos moveremos a lo largo de los bordes izquierdos
+
+07:10.470 --> 07:13.260
+hasta que toquemos una nota que no tenga un hijo izquierdo.
+
+07:13.290 --> 07:15.060
+Y entonces vamos a encontrar 29.
+
+07:15.060 --> 07:17.250
+29 es el valor mínimo.
+
+07:17.310 --> 07:20.050
+Vamos a mover esa nota para 29 aquí.
+
+07:20.070 --> 07:23.490
+Y, obviamente, saldrás Knol 30s de la prueba.
+
+07:23.520 --> 07:30.370
+Ahora, al igual que con el subárbol izquierdo, si 29 tenían un hijo, tendría que ser un hijo correcto.
+
+07:30.510 --> 07:34.120
+No podría ser un niño abandonado, de lo contrario, 29 no sería el mínimo.
+
+07:34.320 --> 07:39.510
+Entonces, si 29 tiene un hijo correcto, ese niño simplemente lo reemplaza en el árbol.
+
+07:39.510 --> 07:46.380
+Entonces, si 29 tenían un hijo derecho tomamos el nodo por 29 y lo colocamos aquí y el niño correcto reemplazaría la nota en
+
+07:46.380 --> 07:49.560
+el árbol y si esa nota tuviera un subárbol no importaría.
+
+07:49.560 --> 07:52.020
+Quiero decir que el árbol vendrá solo para el viaje.
+
+07:52.020 --> 07:57.870
+Y entonces vamos a reemplazar el No 27 con el no 29 y después de eso, así es como se
+
+07:57.870 --> 07:58.620
+verá nuestro árbol.
+
+07:58.620 --> 08:02.430
+Hagamos una más, veamos qué pasaría si elimináramos la raíz.
+
+08:02.580 --> 08:06.630
+Y entonces vamos a mirar hacia abajo el subárbol correcto y queremos encontrar el valor mínimo.
+
+08:06.630 --> 08:12.360
+Así que esta vez la última vez lo borramos 27, así que solo estábamos mirando este subárbol correcto. Pero ahora estamos
+
+08:12.360 --> 08:17.160
+eliminando la raíz, así que vamos a ver su subárbol correcto y vamos a movernos a la raíz
+
+08:17.160 --> 08:22.950
+de la derecha. Subárbol y luego comenzar a viajar por los bordes izquierdos hasta que golpeemos una nota que no tiene
+
+08:22.950 --> 08:26.080
+un niño izquierdo que será el mínimo y vamos a encontrar 26.
+
+08:26.100 --> 08:33.030
+Y entonces, lo que vamos a hacer es reemplazar el nodo raíz con este nodo y, por supuesto, Knol eliminará al hijo
+
+08:33.030 --> 08:33.700
+de 2007.
+
+08:33.750 --> 08:41.220
+Y luego de que hayamos hecho eso después de que hayamos movido 26 appere y anulado el 2007, esta es una
+
+08:41.220 --> 08:42.120
+situación que tendremos.
+
+08:42.120 --> 08:46.590
+Bien, ahora que sabemos cómo vamos a manejar el caso de eliminar un nodo con
+
+08:46.590 --> 08:50.220
+dos hijos, sigamos adelante y manejemos ese caso en nuestro método Doleac.
+
+08:50.220 --> 08:51.360
+Te veré en el próximo video.

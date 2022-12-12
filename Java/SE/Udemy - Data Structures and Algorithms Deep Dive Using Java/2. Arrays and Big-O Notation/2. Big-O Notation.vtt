@@ -1,0 +1,517 @@
+WEBVTT
+
+00:05.250 --> 00:05.700
+Tudo bem.
+
+00:05.700 --> 00:12.150
+Então, em alguns vídeos, vamos começar a procurar por algoritmos de ordenação e
+
+00:12.150 --> 00:18.130
+seria realmente útil podermos comparar o desempenho de um algoritmo com outro algoritmo.
+
+00:18.180 --> 00:24.930
+Então, você pode pensar que uma maneira de fazer isso é implementar um algoritmo e, em seguida, colocar uma linha
+
+00:24.930 --> 00:31.740
+de código que registre a hora de início e, em seguida, executar a implementação e ter uma linha de código que
+
+00:31.740 --> 00:38.070
+registre a hora de término e subtrair hora de início do tempo final e temos o tempo de execução
+
+00:38.070 --> 00:43.470
+da implementação desse algoritmo e, em seguida, fazemos o mesmo para outro algoritmo e apenas comparamos
+
+00:43.470 --> 00:43.990
+os dois.
+
+00:44.130 --> 00:50.190
+Parece ótimo na teoria, mas infelizmente isso não é uma boa maneira de fazê-lo porque o hardware
+
+00:50.190 --> 00:53.520
+de hardware vai influenciar o tempo de execução desses algoritmos.
+
+00:53.520 --> 01:01.490
+Penso nisso se tivéssemos de executar uma implementação em um computador de mesa que foi criado em 2017 e comparar isso com
+
+01:01.980 --> 01:08.280
+o tempo de execução da mesma implementação em um computador de mesa que foi construído há 20
+
+01:08.280 --> 01:14.360
+anos e talvez como um computador Pentium antigo ou vai até mais longe do que isso e
+
+01:14.430 --> 01:18.040
+executa a implementação em um Commodore 64 ou algo parecido.
+
+01:18.180 --> 01:23.220
+Obviamente, as implementações serão executadas mais lentamente no hardware mais antigo.
+
+01:23.430 --> 01:28.620
+E se fôssemos executar uma implementação em um supercomputador, ele seria executado realmente muito rápido,
+
+01:28.620 --> 01:31.660
+mesmo que pudesse ser um algoritmo realmente ineficiente.
+
+01:31.710 --> 01:36.820
+Portanto, precisamos de uma medida mais objetiva do que apenas o tempo de execução da distração.
+
+01:36.870 --> 01:46.560
+Então, o que fazemos é observar o número de etapas necessárias para executar um algoritmo e chamamos
+
+01:46.560 --> 01:49.200
+isso de complexidade de tempo.
+
+01:49.200 --> 01:55.200
+Existem dois tipos de complexidade: há complexidade de tempo, que é o número de etapas envolvidas para
+
+01:55.410 --> 01:56.570
+executar um algoritmo.
+
+01:56.580 --> 02:01.770
+E há a complexidade da memória, que é a quantidade de memória necessária para executar um algoritmo.
+
+02:01.770 --> 02:07.060
+Hoje em dia, porque a memória é tão barata, a complexidade da memória não é um problema.
+
+02:07.260 --> 02:13.410
+Então, atualmente, nos preocupamos principalmente com a complexidade do tempo, então estamos interessados ​​em quantos passos
+
+02:13.410 --> 02:15.840
+são necessários para executar um algoritmo.
+
+02:15.870 --> 02:21.300
+Agora, quando estamos fazendo isso, nós gostamos de olhar para o pior caso olhando para o melhor caso não
+
+02:21.300 --> 02:24.260
+nos ajuda, porque você raramente vai ter o melhor caso.
+
+02:24.270 --> 02:31.550
+Agora podemos pegar o caso médio, mas isso não nos dirá a pior complexidade absoluta do tempo.
+
+02:31.560 --> 02:37.110
+Então, se queremos saber qual é o limite superior, qual é o pior que podemos
+
+02:37.110 --> 02:38.280
+esperar desse algoritmo.
+
+02:38.280 --> 02:40.850
+É muito mais útil olhar para o pior caso.
+
+02:40.920 --> 02:47.130
+Portanto, é útil comparar o pior cenário para um algoritmo com o pior cenário para o
+
+02:47.130 --> 02:50.320
+outro algoritmo e é assim que o fazemos.
+
+02:50.340 --> 02:54.110
+Então, vamos ver o algoritmo que eu tenho nesta tela.
+
+02:54.120 --> 02:56.630
+Já analisamos um algoritmo para fazer chá.
+
+02:56.620 --> 03:02.970
+Então, agora vamos dar uma olhada em um pequeno passo e temos um algoritmo para adicionar açúcar ao chá.
+
+03:03.120 --> 03:08.460
+Portanto, neste algoritmo, o primeiro passo é pegar a tigela contendo o açúcar.
+
+03:08.460 --> 03:10.570
+O segundo passo é pegar uma colher.
+
+03:10.740 --> 03:13.350
+Então, estamos assumindo que temos açúcar solto aqui.
+
+03:13.350 --> 03:20.130
+O terceiro passo é retirar o açúcar usando a colher eo Passo Quatro é despejar o açúcar da colher no
+
+03:20.130 --> 03:27.660
+chá e, claro, se você quiser mais do que uma colher de chá, então você tem que repetir os passos três e
+
+03:27.660 --> 03:30.330
+quatro até adicionar o desejado. quantidade de açúcar.
+
+03:30.330 --> 03:35.910
+Agora podemos ver que o número de passos necessários para adicionar açúcar ao
+
+03:35.910 --> 03:41.010
+chá dependerá de quantos açúcares você quiser se quiser apenas um açúcar.
+
+03:41.010 --> 03:44.360
+Então este algoritmo será executado em quatro etapas.
+
+03:44.370 --> 03:49.350
+Mas se você quiser dois açúcares, serão necessários seis passos, porque você terá que repetir os passos
+
+03:49.350 --> 03:50.380
+três e quatro.
+
+03:50.520 --> 03:54.600
+Então, vamos dar uma olhada no que acontece com o número de açúcares.
+
+03:54.600 --> 04:00.690
+Então, se você tem um açúcar, você só precisa fazer quatro etapas, se tiver dois açúcares, você
+
+04:00.690 --> 04:06.180
+precisará de seis etapas, se quiser três açúcares em seu chá, precisará de oito etapas,
+
+04:06.180 --> 04:09.840
+porque precisará repita os passos três e quatro três vezes.
+
+04:09.840 --> 04:14.220
+E se você quiser quatro açúcares em seu chá, tenho certeza que a maioria de nós já teria se libertado.
+
+04:14.220 --> 04:19.320
+Mas eu tenho um amigo que eu digo toma chá com seu açúcar, e não o contrário.
+
+04:19.320 --> 04:24.990
+Então, se ela quiser fazer quatro açúcares no chá, você terá que
+
+04:24.990 --> 04:28.440
+repetir os passos três e quatro quatro vezes.
+
+04:28.440 --> 04:31.770
+E então você vai tomar 10 passos para colocar açúcar no seu chá.
+
+04:31.800 --> 04:38.160
+Assim, como podemos ver o número de etapas ou a complexidade do tempo do nosso algoritmo de açúcar depende
+
+04:38.160 --> 04:42.430
+de quantos açúcar alguém quer em 30, se eles querem apenas um açúcar.
+
+04:42.480 --> 04:44.020
+Leva apenas quatro passos.
+
+04:44.040 --> 04:47.880
+Mas se eles quiserem quatro açúcares, serão necessários 10 passos.
+
+04:47.910 --> 04:54.180
+Assim, a complexidade do tempo nos dá uma idéia de como um algoritmo irá funcionar à medida que o número de
+
+04:54.180 --> 04:56.030
+itens que tem que lidar cresce.
+
+04:56.070 --> 05:02.460
+Então, como podemos ver como o número de açúcares que esse algoritmo tem a acrescentar a T aumenta, o número
+
+05:02.460 --> 05:08.770
+de passos requeridos aumenta e outra maneira de dizer isso é nos diz o quão bem um algoritmo será escalonado.
+
+05:08.900 --> 05:15.370
+Então, quão bem ele fará quando tiver que lidar com 100 itens versus mil itens versus um milhão de itens.
+
+05:15.590 --> 05:20.700
+E veremos que alguns algoritmos serão muito bem dimensionados e outros não tão bem.
+
+05:20.720 --> 05:25.070
+Quanto mais itens houver, mais o desempenho dos algoritmos será degradado.
+
+05:25.250 --> 05:32.210
+Agora, a notação Big O é uma maneira de expressar a complexidade relacionada ao número de itens com os quais
+
+05:32.210 --> 05:38.550
+um algoritmo tem que lidar e é escrita como uma maiúscula O seguida por uma expressão entre parênteses.
+
+05:38.660 --> 05:44.540
+Então vamos calcular o grande valor O para nosso algoritmo de açúcar.
+
+05:44.570 --> 05:50.500
+Por isso, é convencional designar o número de itens por N.
+
+05:50.720 --> 05:58.970
+Assim, no nosso caso, o número de açúcares desejados será igual a n e, como podemos ver em
+
+05:58.970 --> 06:07.540
+nossa tabela e de nosso algoritmo de volta aqui, o número de etapas será duas vezes e mais duas.
+
+06:07.880 --> 06:14.360
+E a razão para isso é que você tem que repetir os passos 3 e 4 para o número de açúcares que você tem.
+
+06:14.360 --> 06:19.180
+Então, esses são os dois N e, em seguida, o mais 2 é os passos 1 e 2.
+
+06:19.190 --> 06:23.110
+Agora, como vimos, quando n cresce, o número de etapas aumenta.
+
+06:23.120 --> 06:29.810
+Agora observe que os 2 isto vai ser difícil para mim dizer mas o para escolher nos dois
+
+06:29.810 --> 06:32.000
+quando Mais dois eles permanecem constantes.
+
+06:32.000 --> 06:38.750
+Eles não mudam à medida que o número de açúcares muda e, por causa disso, não os consideramos
+
+06:38.750 --> 06:40.970
+quando chegamos ao grande valor O.
+
+06:40.970 --> 06:44.050
+É um que está influenciando o número de etapas.
+
+06:44.060 --> 06:51.110
+Assim, neste caso, dizemos que a complexidade de tempo para este algoritmo é o de então e porque a
+
+06:51.110 --> 06:57.500
+complexidade de tempo para este algoritmo aumenta de maneira linear, consideramos que isso é uma complexidade de
+
+06:57.500 --> 06:58.310
+tempo linear.
+
+06:58.320 --> 07:06.500
+Então, uma complexidade de tempo de todo o evento é complexidade de tempo linear e se voltarmos para a nossa mesa,
+
+07:06.500 --> 07:14.870
+vamos ver que vamos para 6 8 10 e, claro, vamos continuar 12 14 16 18 que é uma progressão linear
+
+07:14.870 --> 07:16.480
+é uma seqüência linear.
+
+07:16.550 --> 07:23.930
+E assim a complexidade do tempo de adicionar açúcares ao algoritmo é de 10.
+
+07:23.930 --> 07:32.030
+Então, estes são os grandes valores que vamos ver principalmente neste curso, temos todos um que é complexidade de tempo constante todo
+
+07:32.120 --> 07:39.950
+o log e que é complexidade de tempo logarítmica e que log para a base para não logar à base 10
+
+07:39.950 --> 07:47.360
+por isso é logado na base para um O de N que é complexidade de tempo linear e então nós
+
+07:47.360 --> 07:52.520
+temos todo um log e qual é e o tempo de log para a base.
+
+07:52.540 --> 08:01.190
+E isso é e registra a complexidade de tempo e temos 0 de extremidade quadrada que é a complexidade de tempo quadrática,
+
+08:01.190 --> 08:06.800
+você verá que quando olhamos para algoritmos de ordenação os primeiros que observamos serão
+
+08:06.920 --> 08:11.300
+realmente quadráticos e a ordem na tabela é melhor para o pior.
+
+08:11.300 --> 08:19.190
+Então, se você pode usar um algoritmo de tempo constante que é muito melhor do que um algoritmo de tempo quadrático.
+
+08:19.190 --> 08:23.740
+Agora, como eu disse, você me ouviu dizer tudo de vinho e tudo.
+
+08:23.750 --> 08:25.560
+E é assim que você diz isso.
+
+08:25.610 --> 08:26.610
+Oh de.
+
+08:26.690 --> 08:31.670
+E então o valor que está entre parênteses agora quando fui ensinado sobre a notação Big-O.
+
+08:31.670 --> 08:41.540
+Por alguma razão a pessoa que está ensinando a informação disse Oh para o 1 0 ao N e então isso foi perfurado na minha cabeça e é um hábito
+
+08:41.540 --> 08:46.640
+difícil de quebrar a grande notação O é o tipo de coisa que você não tem
+
+08:46.640 --> 08:50.820
+a dizer a maior parte do tempo você está lendo ou está escrevendo.
+
+08:50.870 --> 08:58.040
+Então a maneira correta de dizer isso é tudo de um todo e todo log e etc. mas eu vou escorregar ocasionalmente e
+
+08:58.040 --> 09:00.520
+dizer oh para o.
+
+09:00.530 --> 09:04.340
+Porque isso é o que foi perfurado na minha cabeça quando aprendi este material.
+
+09:04.340 --> 09:09.430
+E assim, se você me ouvir dizer que se você me ouvir dizer O para o 1 0 ao final ao quadrado etc. Apenas converta isso para 0 em sua mente, as chances são de que você nunca vai ter
+
+09:09.440 --> 09:15.980
+que dizer isso nunca em toda a minha carreira Eu nunca, uma vez, nunca tive que dizer oh de qualquer coisa.
+
+09:16.070 --> 09:21.850
+Na verdade, em toda a minha carreira, nunca discutimos a notação Big O.
+
+09:21.860 --> 09:26.780
+Tenho certeza de que, dependendo do tipo de aplicativo em que você está trabalhando, pode ser diferente para você.
+
+09:26.780 --> 09:31.660
+Mas na minha carreira, a notação de Big-O era uma espécie de não-problema.
+
+09:31.670 --> 09:35.630
+Nunca foi algo com que precisamos nos preocupar.
+
+09:35.660 --> 09:38.750
+E então, se você está falando com alguém e eles perguntam sobre a notação Big-O ou valores grandes, diga Oh.
+
+09:38.840 --> 09:46.320
+E se você me ouvir dizer oh neste curso apenas converta isso para o.
+
+09:46.400 --> 09:51.720
+Então, agora vamos à Wikipédia para que possamos ver os grandes valores O
+
+09:51.800 --> 09:58.790
+plotados em um gráfico para que possamos ter uma ideia visual das diferenças entre os diferentes valores
+
+09:58.790 --> 10:04.500
+grandes, então estou aqui na Wikipedia e você encontrará essa imagem no artigo da
+
+10:08.510 --> 10:15.650
+Wikipedia sobre notação O grande e também incluí um link diretamente para esta imagem na seção de recursos.
+
+10:15.650 --> 10:20.800
+Esta imagem foi criada pelo usuário C. M. alegria.
+
+10:20.840 --> 10:25.190
+E assim, este é um gráfico de alguns dos grandes valores O.
+
+10:25.190 --> 10:30.630
+E isso representa como um algoritmo faria a nota D ao longo do eixo x,
+
+10:30.650 --> 10:39.050
+temos o tamanho da entrada de modo que o número de itens e ao longo do eixo y tenhamos o número de etapas.
+
+10:39.050 --> 10:43.930
+Então você pode ver por um algoritmo constante 0 de
+
+10:43.940 --> 10:52.610
+1, que é nesta cor violeta como o número de itens aumenta o número de etapas permanece o mesmo.
+
+10:52.700 --> 10:55.750
+Esta é apenas uma linha horizontal reta.
+
+10:55.760 --> 10:58.210
+Então aqui está o número de etapas e esta linha não está subindo quando o número de itens aumenta.
+
+10:58.220 --> 11:04.180
+Então, esse é o melhor caso, se você conseguir um algoritmo constante que é praticamente o melhor que você pode fazer.
+
+11:04.220 --> 11:10.290
+A próxima melhor coisa é logarítmica.
+
+11:10.340 --> 11:12.770
+E observe que é logar na base.
+
+11:12.800 --> 11:15.050
+Dois deles vão ver e alguns algoritmos têm essa complexidade de tempo.
+
+11:15.050 --> 11:20.500
+Isso está em um azul escuro.
+
+11:20.540 --> 11:22.750
+E como podemos ver, começa a subir, assim
+
+11:22.820 --> 11:28.970
+como o número de itens aumenta, o número de etapas aumenta, mas depois se estabiliza e é praticamente um tempo quase constante.
+
+11:28.970 --> 11:34.090
+Se você consegue logar na base para acabar com a complexidade do tempo, isso é ótimo.
+
+11:34.160 --> 11:39.380
+Nós não vamos ver nenhum gênio.
+
+11:39.410 --> 11:41.680
+Eu acho que a raiz quadrada da raiz
+
+11:41.720 --> 11:46.940
+quadrada de N, mas vamos ver alguns algoritmos lineares já discutimos o tempo linear e então aqui está o gráfico.
+
+11:47.150 --> 11:50.810
+Isso está em verde.
+
+11:50.810 --> 11:51.830
+Então, se você tem 10 itens, você vai levar 10 passos 20 itens 20 passos.
+
+11:51.830 --> 11:57.050
+Não precisa ser uma correspondência exata como essa.
+
+11:57.140 --> 11:59.690
+É mais um padrão de crescimento.
+
+11:59.690 --> 12:01.580
+Então, se o padrão de crescimento é
+
+12:01.580 --> 12:07.420
+linear, é uma sequência linear e o gráfico vai ficar assim e é assim que parece para a adição de açúcar ao algoritmo.
+
+12:07.430 --> 12:11.290
+Nós não começamos em zero passos.
+
+12:11.330 --> 12:13.430
+Se você não quer açúcares, obviamente, há zero passos.
+
+12:13.430 --> 12:16.600
+Mas nosso algoritmo é para adicionar açúcar ao seu chá, de modo que pressupõe que haverá adição de açúcar.
+
+12:16.670 --> 12:22.290
+E então o número mínimo de passos para um açúcar é quatro, então nós
+
+12:22.370 --> 12:28.310
+realmente começaríamos às quatro, mas então nós vamos seis e oito a dez extras.
+
+12:28.310 --> 12:30.590
+E então é uma progressão linear.
+
+12:30.590 --> 12:32.490
+Agora esta linha laranja é um log para a base 2.
+
+12:32.510 --> 12:36.030
+E então aqui estamos multiplicando a lei para a
+
+12:36.030 --> 12:42.650
+base para N pelo número de itens e vamos ver alguns algoritmos que têm essa complexidade de tempo.
+
+12:42.650 --> 12:44.730
+Portanto, isso é pior do que linear porque, como você pode ver, o número de etapas necessárias aumenta muito mais.
+
+12:44.730 --> 12:52.570
+E então, é claro, pior do que isso é quadrático e vamos começar a procurar por
+
+12:52.610 --> 12:58.280
+algoritmos de ordenação que realmente tenham uma complexidade temporal de tempo quadrático.
+
+12:58.280 --> 13:02.470
+E esta é uma subida ainda mais acentuada.
+
+13:02.690 --> 13:04.670
+Esta é a linha tracejada vermelha.
+
+13:04.670 --> 13:06.770
+E se você tiver 10 itens, serão necessários 100 passos, porque serão 10 ao quadrado.
+
+13:06.800 --> 13:12.480
+E assim, se você tiver um algoritmo quadrático, isso
+
+13:12.500 --> 13:18.260
+rapidamente degrada mil itens já é um milhão de passos.
+
+13:18.260 --> 13:19.090
+Portanto, mantenha este gráfico em mente quando olharmos para os diferentes algoritmos, o melhor absoluto é o tempo constante.
+
+13:19.100 --> 13:26.010
+Se você não conseguir que você queira um registro de tempo logarítmico para a base 2 e o tempo
+
+13:26.030 --> 13:32.570
+linear ainda é muito bom quando você começar a se levantar em um registro e um final ao
+
+13:32.660 --> 13:39.290
+quadrado, você pode ver que o número de etapas requerido aumenta como o número de itens aumenta.
+
+13:39.470 --> 13:46.480
+Para concluir, é importante lembrar que uma notação grande O nos oferece uma maneira de
+
+13:46.490 --> 13:51.530
+comparar a complexidade temporal de diferentes algoritmos de maneira objetiva.
+
+13:51.530 --> 13:55.550
+De maneira independente de hardware.
+
+13:55.580 --> 13:57.820
+OK, então é isso por enquanto para a notação Big-O.
+
+13:57.920 --> 14:01.120
+Vamos revisitar isso enquanto passamos pelo curso.
+
+14:01.130 --> 14:04.880
+Então, eu vou te ver no próximo vídeo.
+
+14:05.060 --> 14:06.500
+&nbsp;

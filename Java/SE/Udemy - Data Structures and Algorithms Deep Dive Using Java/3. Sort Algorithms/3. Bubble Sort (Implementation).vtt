@@ -1,0 +1,454 @@
+WEBVTT
+
+00:05.300 --> 00:11.240
+Neste vídeo, vamos implementar o algoritmo de classificação de bolhas que acabamos de usar usando slides
+
+00:11.240 --> 00:12.370
+no último vídeo.
+
+00:12.410 --> 00:18.110
+Então, eu vou começar criando um novo projeto agora, eu vou passar por isso mais uma vez
+
+00:18.110 --> 00:23.390
+e, a partir deste ponto, vou assumir que você entende como criar um projeto, então quando
+
+00:23.390 --> 00:26.570
+nós começarmos um vídeo Eu já terei o projeto criado.
+
+00:26.900 --> 00:36.740
+Mas, pela última vez, saímos para arquivar um novo projeto e eu quero um projeto Java, então vou ter certeza de que Java
+
+00:36.740 --> 00:38.960
+está selecionado no lado esquerdo.
+
+00:38.990 --> 00:41.680
+E não precisamos verificar nenhuma dessas caixas.
+
+00:41.720 --> 00:45.010
+Eu tenho meu SDK de projeto definido como Java 9.
+
+00:45.230 --> 00:52.570
+Eu vou clicar em Avançar Eu quero a idéia de criar o método principal para mim a
+
+00:52.570 --> 01:01.950
+classe principal no método principal, então eu vou selecionar isso e clique em Avançar e eu vou chamar esse tipo de bolha
+
+01:01.950 --> 01:10.830
+de projeto e eu vou para mudar o pacote para academy aprender programação bolhas de ponto ou nada e clique em Concluir.
+
+01:10.830 --> 01:15.840
+E porque eu tenho um projeto aberto, ele está me perguntando se eu quero usar a
+
+01:15.840 --> 01:22.110
+mesma janela e eu faço isso, então vou clicar nessa janela e lá vamos nós, temos nosso novo projeto.
+
+01:22.250 --> 01:27.970
+Então, para mover isso um pouco para dar mais espaço, vou deletar esse comentário e
+
+01:27.970 --> 01:33.400
+este é um algoritmo bastante simples e vamos fazer a implementação dentro do método principal.
+
+01:33.400 --> 01:41.050
+Agora, antes de fazermos isso, vou escrever um método de troca, já que você verá vários algoritmos de ordenação observando os elementos de
+
+01:41.050 --> 01:46.280
+troca em algum ponto, e isso é uma espécie de bolha que troca o elemento.
+
+01:46.280 --> 01:52.990
+Então, eu vou escrever um método swap, então vou dizer public static ele tem que ser estático porque
+
+01:52.990 --> 01:55.190
+nós vamos chamá-lo do método main.
+
+01:55.510 --> 01:57.220
+Troca de Void.
+
+01:57.430 --> 02:03.400
+E esse método vai pegar três parâmetros que vai levar o array que estamos classificando
+
+02:03.400 --> 02:05.560
+e vai levar dois índices e
+
+02:08.110 --> 02:12.310
+esses dois índices são os índices dos elementos que queremos trocar.
+
+02:12.310 --> 02:19.600
+Então, se quiséssemos trocar os elementos três em quatro, nós passamos a matriz e passamos 3 para II
+
+02:19.600 --> 02:21.370
+e 4 para J.
+
+02:21.400 --> 02:26.560
+Então, a primeira coisa que vamos fazer neste método é verificar se o ID é igual a J, porque se ii é igual
+
+02:26.560 --> 02:28.250
+a J, não há nada para nós fazermos.
+
+02:28.450 --> 02:32.390
+Então eu vou dizer se eu for igual a J.
+
+02:32.980 --> 02:34.430
+Bem, apenas retorne.
+
+02:35.050 --> 02:40.780
+Porque, essencialmente, se eu for igual a J, estamos dizendo que queremos trocar você conhece o elemento 2 com o elemento 2 ou
+
+02:40.840 --> 02:42.950
+o elemento de troca 3 com os elementos 3.
+
+02:42.940 --> 02:44.350
+Então não há nada para nós fazermos.
+
+02:44.350 --> 02:46.240
+Não há realmente nenhum elemento para trocar.
+
+02:46.300 --> 02:50.690
+Mas se não é igual T. J. então nós temos elementos para trocar.
+
+02:50.740 --> 02:55.930
+E então o que vamos fazer é criar um temporário e muito
+
+02:56.700 --> 03:05.980
+ousado. Vamos salvar o array nessa variável, assim o temp irá agora conter o valor no array II e então vamos atribuir
+
+03:06.010 --> 03:08.840
+o valor matriz J a matriz é
+
+03:12.070 --> 03:13.570
+igual a matriz.
+
+03:15.220 --> 03:16.920
+Agora está tudo bem para nós fazermos isso.
+
+03:16.930 --> 03:19.940
+Substituímos o valor que estava na matriz.
+
+03:19.970 --> 03:22.480
+Mas tudo bem porque nós salvamos em temp.
+
+03:22.750 --> 03:28.000
+E então a última coisa que temos que fazer é atribuir temp a um Ray-J.
+
+03:28.000 --> 03:31.530
+Então, vamos dizer que um Ray-J é igual a 10.
+
+03:31.750 --> 03:36.110
+Então, nós atribuímos o conjunto a temp, atribuímos o conjunto J a I.
+
+03:36.250 --> 03:42.700
+E então atribuímos o que está em temp a J Então, quando sairmos desse método, o que costumava estar na posição
+
+03:42.700 --> 03:45.860
+J agora estará na posição em que costumava ser a posição.
+
+03:45.880 --> 03:47.660
+Eu agora estarei na posição J.
+
+03:47.770 --> 03:48.130
+Tudo bem.
+
+03:48.130 --> 03:54.880
+Então, agora que temos um método de swap, vamos criar nossa interface e dizer que int e array são iguais e usaremos
+
+03:54.880 --> 03:57.190
+os mesmos valores que usamos no slide.
+
+03:57.280 --> 04:01.340
+Vinte e cinco e menos 15.
+
+04:01.630 --> 04:06.760
+Sete e cinquenta e cinco um e menos 22.
+
+04:08.200 --> 04:13.000
+E agora queremos usar o algoritmo de classificação de bolhas para classificar essa matriz.
+
+04:13.000 --> 04:18.850
+Agora a implementação que vou mostrar é uma implementação, existem outras implementações
+
+04:18.850 --> 04:19.930
+desse algoritmo.
+
+04:19.980 --> 04:23.880
+Nold seja uma implementação diferente para classificar em ordem decrescente.
+
+04:23.880 --> 04:30.250
+Algumas das implementações expandem a partição classificada da esquerda para a direita, e não da direita para a
+
+04:30.250 --> 04:30.720
+esquerda.
+
+04:30.730 --> 04:33.700
+Vou implementar o que mostrei nos slides.
+
+04:33.820 --> 04:45.630
+E então vamos dizer por último e ordenar e X é igual ao tamanho da matriz menos um deve
+
+04:45.720 --> 04:47.460
+estar na verdade.
+
+04:47.590 --> 04:53.390
+Portanto, lembre-se de que, no início do algoritmo, toda a matriz não está classificada.
+
+04:53.410 --> 04:59.770
+E assim, o último índice não classificado será o último índice válido na matriz e isso é em radar
+
+04:59.800 --> 05:00.670
+lenth menos 1.
+
+05:00.670 --> 05:03.370
+Então é para isso que estamos inicializando.
+
+05:03.460 --> 05:12.310
+E então faremos isso contanto que o último índice não-ordenado seja maior que zero e após
+
+05:12.310 --> 05:16.900
+cada iteração vamos decrementar o último índice não-ordenado.
+
+05:16.900 --> 05:23.860
+Agora lembre-se que porque estamos borbulhando grandes valores até o final da matriz, a partição ordenada está crescendo
+
+05:23.860 --> 05:32.410
+da direita para a esquerda e então o último índice não ordenado começa em 6 e após a primeira iteração não será
+
+05:32.410 --> 05:37.870
+cinco porque o que estiver aqui será esteja na partição ordenada e depois da
+
+05:37.870 --> 05:39.790
+segunda iteração serão quatro.
+
+05:39.820 --> 05:45.940
+Porque então esses dois elementos serão classificados e, em seguida, três 2 etc. e assim o índice vai
+
+05:45.940 --> 05:48.580
+de 6 a zero.
+
+05:48.580 --> 05:54.060
+E quando atingimos 0, podemos parar porque, nesse ponto, toda a matriz é classificada.
+
+05:54.070 --> 05:58.140
+Então esse é o loop externo para cada iteração do loop externo.
+
+05:58.150 --> 06:06.400
+Queremos atravessar o array e queremos colocar o maior valor que não está classificado na partição
+
+06:06.400 --> 06:06.970
+classificada.
+
+06:06.970 --> 06:12.280
+Então, queremos que uma bolha tenha o maior valor no final da matriz, e é isso que o loop interno
+
+06:12.280 --> 06:12.640
+fará.
+
+06:12.640 --> 06:18.360
+Então, vamos dizer por isso que eu completo zero, porque sempre começamos no início da matriz.
+
+06:19.010 --> 06:26.120
+Eu menos que o último índice não classificado porque não precisamos ir para a partição sórdida porque sabemos que
+
+06:26.120 --> 06:29.170
+esses valores na partição ordenada já estão classificados.
+
+06:29.180 --> 06:36.560
+Então, no loop interno, começamos em zero e continuamos até chegarmos ao último e classificado índice e vamos incrementar
+
+06:36.560 --> 06:43.400
+por e, em seguida, o que queremos fazer é usar nos slides é que queremos comparar o valor
+
+06:43.400 --> 06:49.360
+que Eu com o valor que E-plus divertido e se desvalorizar é maior que o valor.
+
+06:49.490 --> 06:54.140
+Além disso, por que queremos trocar os dois valores porque queremos que os valores maiores de uma bolha sejam atingidos até
+
+06:54.140 --> 06:55.010
+o final da matriz.
+
+06:55.250 --> 07:05.610
+E então vamos dizer se o array int é maior que na bandeja I mais 1.
+
+07:05.960 --> 07:07.900
+Bem, o que queremos fazer, queremos trocá-los.
+
+07:07.980 --> 07:12.910
+Então podemos usar nosso método de swap para fazer isso ainda uma passagem na interface.
+
+07:13.210 --> 07:17.030
+Eu e II mais 1 e é isso.
+
+07:17.060 --> 07:22.560
+Essa é a nossa implementação do algoritmo de classificação de bolhas, já que eu disse que essa não é a única implementação.
+
+07:22.580 --> 07:26.870
+É uma implementação ou deveria ser uma implementação.
+
+07:26.870 --> 07:33.770
+Então, estamos classificando em ordem crescente e estamos borbulhando grandes valores para o final da matriz e estamos
+
+07:33.830 --> 07:37.470
+crescendo a partição ordenada da direita para a esquerda rebrilhando.
+
+07:37.490 --> 07:39.460
+Estamos começando no final do array.
+
+07:39.560 --> 07:44.900
+E após cada iteração do loop externo, a partição classificada aumenta em 1.
+
+07:44.960 --> 07:50.810
+E assim começa sendo basicamente nada na partição ordenada e depois da primeira
+
+07:50.840 --> 07:54.230
+iteração o elemento da posição 6 é ordenado.
+
+07:54.230 --> 07:56.420
+Então essa é a partição ordenada.
+
+07:56.420 --> 08:00.680
+Após duas iterações, os elementos nas posições 5 e 6 são classificados.
+
+08:00.680 --> 08:04.840
+Então esse é o tipo de partição, etc. até chegarmos ao começo da matriz.
+
+08:04.910 --> 08:08.150
+Então, vamos imprimir esse array depois de termos classificado.
+
+08:08.180 --> 08:16.210
+Então, para intertie igual a zero, eu durmo então em comprimentos de array mais plus.
+
+08:16.220 --> 08:23.750
+E vamos apenas imprimir o valor nas matrizes de modo a matriz int.
+
+08:24.800 --> 08:27.920
+Então, isso deve funcionar quando executamos esses valores devem ser classificados.
+
+08:27.920 --> 08:28.910
+Vamos dar uma chance.
+
+08:33.820 --> 08:38.100
+E com certeza nossos valores são classificados menos 20 a menos 15.
+
+08:38.140 --> 08:42.190
+1 7 2035 e 55.
+
+08:42.280 --> 08:46.100
+Vou fechar o console aqui e isso é tipo de bolha.
+
+08:46.150 --> 08:53.750
+Agora eu disse no último vídeo que a complexidade do tempo de bubble sort é 0 até o final ao quadrado, é quadrático.
+
+08:53.770 --> 09:01.050
+Assim, o pior caso absoluto é que vai tomar passos de ant e quadrados onde n é o número de itens
+
+09:01.050 --> 09:01.780
+foram classificados.
+
+09:01.810 --> 09:06.790
+Agora você pode olhar para o código e dizer que não é e ao
+
+09:06.880 --> 09:14.710
+quadrado é realmente menor do que isso porque a partição ordenada está crescendo após cada iteração do loop externo e o loop interno
+
+09:14.710 --> 09:16.450
+não cruza a partição ordenada.
+
+09:16.630 --> 09:23.620
+Portanto, o loop interno está, na verdade, fazendo menos trabalho à medida que o algoritmo avança ou, pelo menos, à medida que essa implementação
+
+09:23.620 --> 09:24.950
+avança e você está certo.
+
+09:24.960 --> 09:31.810
+Mas lembre-se de que quando se trata de determinar a complexidade do tempo de um algoritmo, não estamos fazendo um trabalho de
+
+09:32.200 --> 09:32.640
+matemática.
+
+09:32.680 --> 09:36.080
+Nós não queremos a expressão precisa absoluta.
+
+09:36.190 --> 09:43.510
+O que estamos tentando fazer é ter uma ideia de como o número de etapas aumenta à medida que o número de itens
+
+09:43.510 --> 09:45.130
+que temos que classificar cresce.
+
+09:45.130 --> 09:51.700
+Então, nós meio que queremos uma idéia geral que queremos ser capazes de dizer que este é um algoritmo linear ou este
+
+09:51.700 --> 09:56.720
+é um algoritmo quadrático ou este é um algoritmo logarítmico ou este é um algoritmo constante.
+
+09:56.740 --> 10:00.170
+Não cresce como um número de itens que você está lidando com bruto.
+
+10:00.250 --> 10:03.220
+Então, estamos procurando por aproximações.
+
+10:03.220 --> 10:08.650
+O algoritmo cresce de maneira quadrática conforme o número de itens aumenta.
+
+10:08.650 --> 10:10.000
+O padrão não é linear.
+
+10:10.000 --> 10:13.110
+Não é logarítmico e certamente não é constante.
+
+10:13.180 --> 10:17.250
+E assim nós ainda consideramos o tipo de bolha como um algoritmo 0 ao final do quadrado.
+
+10:17.260 --> 10:21.530
+E, de fato, essa implementação tem um pouco de otimização.
+
+10:21.580 --> 10:28.230
+Estritamente falando, o bubble sort nos quer atravessar todo o array a cada momento.
+
+10:28.240 --> 10:31.720
+Realmente não presta atenção a onde está a partição ordenada.
+
+10:31.720 --> 10:36.910
+Essa implementação presta atenção para onde a partição classificada é e não cruza
+
+10:36.910 --> 10:39.460
+a partição classificada porque não é necessário.
+
+10:39.460 --> 10:41.430
+Esses elementos já estão classificados.
+
+10:41.440 --> 10:46.990
+Uma dica quando se trata de determinar a complexidade do tempo é observar quantos loops existem,
+
+10:46.990 --> 10:54.010
+porque normalmente cada loop corresponde a N e, portanto, se você tem apenas um loop, é a complexidade do tempo linear
+
+10:54.010 --> 10:55.690
+se você tiver dois loops.
+
+10:55.690 --> 10:59.890
+Então, o fim dos tempos termina e a complexidade do tempo é quadrática.
+
+10:59.890 --> 11:05.670
+E aqui temos dois loops e assim, de relance, podemos supor que isso é 0 para o quadrado.
+
+11:05.680 --> 11:06.950
+Complexidade do tempo.
+
+11:07.000 --> 11:08.520
+Tudo bem, então é tipo bolha.
+
+11:08.520 --> 11:10.170
+Não é muito complexo.
+
+11:10.180 --> 11:17.370
+Como eu disse no vídeo da teoria, esse algoritmo é um dos algoritmos menos eficientes. Na verdade, existem alguns
+
+11:17.380 --> 11:21.790
+cientistas da computação que acham que não devemos mais ensiná-lo, mas é
+
+11:21.790 --> 11:28.180
+um algoritmo clássico que geralmente é ensinado e obtido. nos aqueceu para alguns dos algoritmos mais rápidos,
+
+11:28.180 --> 11:30.050
+então vamos olhar mais tarde.
+
+11:30.070 --> 11:31.500
+Então, eu vou te ver no próximo vídeo.

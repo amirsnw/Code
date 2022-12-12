@@ -1,0 +1,202 @@
+<tamin-modal #theModal title="تصویر متقاضی">
+  <img src="" alt="" #userPicture>
+</tamin-modal>
+<tamin-modal #helpModal title="راهنمای سریال کارت ملی" width=30% hieght=30%>
+  <img src="assets/images/HelpNationalSerialCode.jpg" alt="" #serialPicture>
+</tamin-modal>
+<div class="panel">
+  <div class="panel-title">ثبت درخواست جدید</div>
+  <div class="panel-body">
+    <form [formGroup]="newForm" autocomplete="off" novalidate (ngSubmit)="saveForm(newForm.value, newForm.valid)">
+      <div class="row">
+<!--        <div class="col-4">-->
+<!--          <tamin-field-label formControlName="bookletReciever">دریافت کننده دفترچه بیمه</tamin-field-label>-->
+<!--          <tamin-field-validator formControlName="bookletReciever"></tamin-field-validator>-->
+<!--          <tamin-field-combo-box-static formControlName="bookletReciever" placeHolder="انتخاب کنید ..."-->
+<!--                                        [dataItems]="insuredAndSubdominants"-->
+<!--                                        displayField="name"-->
+<!--                                        valueField="value"></tamin-field-combo-box-static>-->
+<!--        </div>-->
+
+        <div class="row">
+          <div class="col-12">
+        <div class="col-4">
+          <tamin-field-label formControlName="nationalCode">کد ملی</tamin-field-label>
+          <tamin-field-validator formControlName="nationalCode"></tamin-field-validator>
+          <tamin-field-text formControlName="nationalCode"></tamin-field-text>
+          <!--          <tamin-field-static-text formControlName="nationalCode"></tamin-field-static-text>-->
+        </div>
+
+          </div>
+        </div>
+        <div class="row">
+<!--            <div class="button-container">-->
+              <button type="button" class="button normal" (click)="sendUserTicket()" >دریافت کد اعتباری</button>
+<!--            </div>-->
+        </div>
+
+
+
+        <div class="col-4">
+          <tamin-field-label formControlName="ticketCode">کد اعتباری:</tamin-field-label>
+          <tamin-field-validator formControlName="ticketCode"></tamin-field-validator>
+          <tamin-field-text formControlName="ticketCode" placeholder="کد اعتباری"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="reciever">دریافت کننده دفترچه بیمه</tamin-field-label>
+          <tamin-field-validator formControlName="reciever"></tamin-field-validator>
+          <tamin-field-static-text formControlName="reciever"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="nationalCardSerial">سریال کارت ملی</tamin-field-label>
+          <tamin-field-validator formControlName="nationalCardSerial"></tamin-field-validator>
+          <tamin-field-text formControlName="nationalCardSerial" (blur)="onGetUserPicture()" ></tamin-field-text>
+          <div class="hint"><i class="icon-lightbulb"></i><span>لطفا جهت استعلام عکس از ثبت احوال شماره سریال کارت ملی جدید یا قدیم را طبق گزینه "راهنمای سریال کارت ملی" وارد نمایید</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="mobileNumber">شماره موبایل</tamin-field-label>
+          <tamin-field-validator formControlName="mobileNumber"></tamin-field-validator>
+          <tamin-field-text formControlName="mobileNumber"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="requestType">نوع درخواست</tamin-field-label>
+          <tamin-field-validator formControlName="requestType"></tamin-field-validator>
+          <tamin-field-combo-box-static
+            formControlName="requestType"
+            [dataItems]="requestTypes" displayField="name"
+            placeHolder="انتخاب کنید ..."
+            valueField="value"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="recieveType">نحوه دریافت</tamin-field-label>
+          <tamin-field-validator formControlName="recieveType"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="recieveType" [dataItems]="recieveTypes" displayField="name"
+                                        placeHolder="انتخاب کنید ..."
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="province">استان</tamin-field-label>
+          <tamin-field-validator formControlName="province"></tamin-field-validator>
+          <tamin-field-auto-complete-data-grid formControlName="province" placeholder="استان"
+                                               #province></tamin-field-auto-complete-data-grid>
+          <div class="hint"><i class="icon-lightbulb"></i><span>قسمتی از نام استان را تایپ نمایید</span></div>
+          <!-- <tamin-field-combo-box-static formControlName="province" #province [dataItems]="provinces"
+          displayField="name"
+          valueField="value"></tamin-field-combo-box-static> -->
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="city">شهر</tamin-field-label>
+          <tamin-field-validator formControlName="city"></tamin-field-validator>
+          <!-- <tamin-field-auto-complete-data-grid formControlName="city" placeholder="شهر" #city></tamin-field-auto-complete-data-grid> -->
+          <tamin-field-combo-box-static formControlName="city" #city [dataItems]="cities"
+                                        displayField="name"
+                                        valueField="value"></tamin-field-combo-box-static>
+
+          <div class="hint"><i class="icon-lightbulb"></i><span>شهر مورد نظر خود را انتخاب نمایید</span></div>
+        </div>
+
+        <div class="col-4" [ngStyle]="{'display' : showAddress ? (pilotType3?(showTimeDate?'none':'block'):'none') : 'block'}">
+          <tamin-field-label formControlName="branchCode">کارگزاری/شعبه محل صدور دفترچه</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="branchCode" #city [dataItems]="branchCodes"
+                                        displayField="name"
+                                        valueField="value"></tamin-field-combo-box-static>
+          <div class="hint"><i class="icon-lightbulb"></i><span>محل دریافت دفترچه را مشخص نمایید،توجه کنید اولویت با کارگزاریها می باشد</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="col-4" [ngStyle]="{'display' : showBranch ? 'block' : 'none'}">
+            <tamin-field-label formControlName="branch">شعبه/کارگزاری محل دریافت دفترچه</tamin-field-label>
+            <tamin-field-validator formControlName="branch"></tamin-field-validator>
+            <tamin-field-auto-complete-data-grid
+              formControlName="branch"
+              placeholder="واحد صادر کننده"
+              #organizationDataGrid></tamin-field-auto-complete-data-grid>
+            <div class="hint"><i class="icon-lightbulb"></i><span>قسمتی از نام یا آدرس شعبه را تایپ کنید</span></div>
+          </div> -->
+
+        <div class="col-4" [ngStyle]="{'display' : showAddress ? (pilotType3?(showTimeDate?'none':'block'):'block') : 'block'}">
+          <tamin-field-label formControlName="recieveDate">انتخاب زمان تحویل دفترچه</tamin-field-label>
+          <tamin-field-validator formControlName="recieveDate"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="recieveDate" #recieveDate [dataItems]="branchQuatos"
+                                        displayField="name" placeHolder="لطفا ابتدا شعبه را مشخص نمایید"
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+
+        <!-- <div class="col-4">
+          <tamin-field-label formControlName="recieveType">نحوه دریافت</tamin-field-label>
+          <tamin-field-validator formControlName="recieveType"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="recieveType" [dataItems]="recieveTypes" displayField="name"
+                                        placeHolder="انتخاب کنید ..."
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div> -->
+        <!-- <div class="col-4" [ngStyle]="{'display' : showRecieveTime ? 'block' : 'none'}"> -->
+        <div class="col-4" [ngStyle]="{'display' : showAddress ? (pilotType3?(showTimeDate?'none':'block'):'block') : 'block'}">
+          <tamin-field-label formControlName="recieveTime">بازه زمانی دریافت</tamin-field-label>
+          <tamin-field-validator formControlName="recieveTime"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="recieveTime" [dataItems]="recieveTimes" displayField="name"
+                                        placeHolder="انتخاب کنید ..."
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="col-4" [ngStyle]="{'display' : showAddress ? 'block' : 'none'}">
+            <tamin-field-label formControlName="zipCode">کد پستی(اختیاری)</tamin-field-label>
+            <tamin-field-validator formControlName="zipCode"></tamin-field-validator>
+            <tamin-field-text formControlName="zipCode"></tamin-field-text>
+            <div [ngStyle]="{'display' : showAddress ? 'block' : 'none'}">
+              <button type="button" class="button normal dark" (click)="onGetAddress()">دریافت آدرس</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-8" [ngStyle]="{'display' : showAddress ? 'block' : 'none'}">
+          <tamin-field-label formControlName="address">آدرس(حدود موقعیت مکانی شما از طریق  نقشه مشخص شده است،لطفا مشخصات کوچه،پلاک و طبقه را جهت کمک به مامور تحویل مشخص نمایید.)</tamin-field-label>
+          <tamin-field-validator formControlName="address"></tamin-field-validator>
+          <tamin-field-text formControlName="address"></tamin-field-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="button-container">
+            <button type="submit" class="button normal">
+              تایید و ثبت درخواست
+            </button>
+            <button type="button" class="button normal dark" (click)="resetForm()">پاک کردن فرم</button>
+            <button type="button" class="button normal gray" (click)="onReturn()">بازگشت</button>
+            <button type="button" class="button normal orange" (click)="onShowUserPicture()">نمایش تصویر متقاضی</button>
+            <button type="button" class="button normal orange" (click)="showSerialHelp()">راهنمای سریال کارت ملی</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <div class="panel-body" *ngIf="showUploader">
+  <form [formGroup]="documenteditForm" autocomplete="off">
+    <div class="form-control-container">
+      <div class="row">
+        <div class="col-6 col-s-6">
+          <h4 style="margin-top: 10px;">تصویر :</h4>
+          <tamin-field-image-upload #pbl1 controlName="DesignGuid1" [imageGuid]="documentModelUi?.DesignGuid1" [restUrl]="restUrlImages"
+            (change)="pbl1.uploadBase64($event)" (onImageDeleted)="onImageGuidDeleted1($event)" (onImageUploaded)="onImageGuidUploaded1($event)">
+          </tamin-field-image-upload>
+          <input type="text" formControlName="DesignGuid1" value="" style="background-color: #eee;display:none;" />
+        </div>
+        <div class="col-6 col-s-6">
+        </div>
+      </div>
+    </div>
+  </form>
+</div> -->
+<!--<div *ngIf="showUploader" class="panel-body" >-->
+<!--  <button class="button normal blue" (click)="onAddUniversityImage()"  >بارگذاری گواهی تحصیلی</button>-->
+<!--  <tamin-image-gallery-managed  [maxImageSize]="500" #imageGallery  ></tamin-image-gallery-managed>-->
+<!--</div>-->
+<app-sso-medical-booklet-map #bookletMap (confirmed) = 'mapConfirmed($event)' ></app-sso-medical-booklet-map>

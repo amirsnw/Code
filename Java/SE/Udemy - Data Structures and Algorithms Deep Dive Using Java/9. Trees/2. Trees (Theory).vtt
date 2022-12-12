@@ -1,0 +1,406 @@
+WEBVTT
+
+00:05.330 --> 00:09.590
+What is a tree well a tree is a hierarchical data structure.
+
+00:09.710 --> 00:12.520
+So here is a visual representation of a tree.
+
+00:12.620 --> 00:16.610
+And we're going to go over some basic terminology in this video.
+
+00:16.730 --> 00:20.140
+Every circle in this tree is called a node.
+
+00:20.300 --> 00:22.540
+And so this is a node.
+
+00:22.670 --> 00:23.810
+This is a node.
+
+00:23.900 --> 00:27.410
+This is a node nodes can have children.
+
+00:27.410 --> 00:35.280
+And so we'll see here that the node with the value 15 has three children 22 4 and 17.
+
+00:35.330 --> 00:41.510
+Now each node can have one and only one parent.
+
+00:41.630 --> 00:47.090
+And so 22:8 parent has 15 18 parent is four.
+
+00:47.210 --> 00:50.660
+You'll notice that no nodes have two incoming arrows.
+
+00:50.660 --> 00:57.680
+We can have four pointing to nine and 22 pointing to nine because that would mean that 9 has more than
+
+00:57.680 --> 01:00.000
+one parent and that's not allowed.
+
+01:00.020 --> 01:04.450
+So when a tree every node has one and only one parent.
+
+01:04.640 --> 01:10.670
+Now there's a special note in every tree called the root and the root of this tree is the note that
+
+01:10.670 --> 01:20.850
+has value 15 the root no does not have a parent and every tree can have one and only one root node.
+
+01:20.990 --> 01:24.430
+And so when this tree as I said the root node is 15.
+
+01:24.560 --> 01:28.340
+And this is how trees are usually visually represented.
+
+01:28.340 --> 01:32.410
+Now you might be looking at this and wondering about the practical applications.
+
+01:32.450 --> 01:39.920
+Well trees are ideal when things can contain other things or when things can descend from other things.
+
+01:39.920 --> 01:48.110
+So for example here 22 is a descendent of 15 right because 15 is a parent of 20 to 19 descends from
+
+01:48.130 --> 01:51.200
+22 because 22 is the parent of 19.
+
+01:51.200 --> 01:58.970
+So when you have a situation where items can contain other items or there's a hierarchical relationship
+
+01:59.270 --> 02:02.030
+such that items can descend from other items.
+
+02:02.030 --> 02:08.750
+Trees are a good data structure to use in a couple of examples would be the Java class hierarchy that's
+
+02:08.750 --> 02:16.130
+a tree because a class can extend only one other class meaning that each class can have only one parent
+
+02:16.460 --> 02:23.180
+but you can have multiple classes extending the same class so a class can have many children because
+
+02:23.180 --> 02:28.610
+when it comes to trees that you can have as many children as you want you can only have one parent but
+
+02:28.610 --> 02:35.210
+you can have as many children as you want so if you wanted the node four to have 50 children that's
+
+02:35.210 --> 02:35.960
+allowed.
+
+02:36.140 --> 02:39.710
+And getting back to the Java class hierarchy it only has one root.
+
+02:39.740 --> 02:42.290
+And can you guess what the root is.
+
+02:42.290 --> 02:43.580
+While it's the Object class.
+
+02:43.580 --> 02:48.340
+Right because every class in the JDK ultimately descends from object.
+
+02:48.350 --> 02:52.980
+Now another application of trees would be the file system on your hard drive.
+
+02:53.090 --> 03:00.710
+Every folder can have children and those children would be folders or files a folder or a file can only
+
+03:00.710 --> 03:06.260
+belong to one folder so it can only have one parent and if you're wondering about the route while a
+
+03:06.260 --> 03:12.410
+file system could have multiple routes in the sense then it can have multiple drives but each drive
+
+03:12.410 --> 03:13.350
+is a tree.
+
+03:13.490 --> 03:19.610
+And so the root of the C-Drive drive would be the C directory the top most directory.
+
+03:19.610 --> 03:26.240
+So as I just said in a tree every item in the tree is a node the node at the top of the tree is the
+
+03:26.240 --> 03:34.220
+root and every tree has one and only one root every non-root node has one and only one parent a leaf
+
+03:34.220 --> 03:35.990
+node has no children.
+
+03:35.990 --> 03:46.160
+So if we go back out to our tree here 19 9 18 3 11 and 0 are all leaf nodes because they don't have
+
+03:46.160 --> 03:47.030
+any children.
+
+03:47.240 --> 03:53.420
+And if you have a tree with only one node in it it's called a singleton tree and of course in that case
+
+03:53.420 --> 03:57.770
+the the only node would be the route because every tree has to have a root.
+
+03:57.890 --> 04:00.780
+And so here is our root node in this tree.
+
+04:00.790 --> 04:03.140
+0 is a leaf that has no children.
+
+04:03.140 --> 04:09.650
+The same is true of 11 14 18 7 25 and 19.
+
+04:09.920 --> 04:12.340
+And each of these arrows is called an edge.
+
+04:12.410 --> 04:20.270
+And so there's an edge going from 15 to 22 there's an edge going from 15 to 4 and the arrow always points
+
+04:20.270 --> 04:22.190
+from the parent to the child.
+
+04:22.190 --> 04:27.800
+Now a few more terms every tree consists of one or more subtrees.
+
+04:27.950 --> 04:30.920
+And for centuries you can start at any given node.
+
+04:30.920 --> 04:41.480
+So let's say we start at node 17 node 17th century consists of 17 11 and 0 so a subtree is if you start
+
+04:41.480 --> 04:45.650
+at any given node it's the node and all of its descendants.
+
+04:45.770 --> 04:52.970
+And so if we want it to start at node 4 the subtree for node 4 would be this entire thing it would be
+
+04:52.970 --> 05:03.650
+4 9 18 and 3 25 7 and 14 because if you follow the edges from 4 you can get to all of those nodes.
+
+05:03.770 --> 05:09.910
+And so I said tree consists of a note you can start at any node in the tree and all of its descendants
+
+05:10.450 --> 05:17.320
+and the descendants or all the nodes you can get to by following the edges downward cause we're talking
+
+05:17.320 --> 05:23.050
+about descendants and so if we start at four we can't get to 22 because we have to go up to our parent
+
+05:23.590 --> 05:29.860
+and when it comes to subtrees when you start at a given node you're only interested in all of the Descendants.
+
+05:29.920 --> 05:36.400
+And so to figure out a subtree of a node is started the node and you include all of the nodes that you
+
+05:36.400 --> 05:44.140
+can get to through the ages for 17 that would be 17 11 and 0 and of course for 15 it would be the entire
+
+05:44.140 --> 05:45.280
+tree.
+
+05:45.280 --> 05:50.620
+Now the tree for nine if we want to start there is nine twenty five and seven.
+
+05:50.650 --> 05:52.540
+So it's it's the subtree here.
+
+05:52.570 --> 05:57.610
+A path is a sequence of notes required to go from one note to another.
+
+05:57.640 --> 06:04.450
+For example the path between nodes 4 and 25 are 4 9 and 25.
+
+06:04.450 --> 06:12.310
+So the path from the root to node 14 is 15 for 3 and 14.
+
+06:12.310 --> 06:17.870
+Now one important characteristic of trees is that you can't have cyclic paths.
+
+06:18.040 --> 06:23.050
+And so we can have a path that crosses a node more than once.
+
+06:23.050 --> 06:30.240
+And so we couldn't have a path that would go 15 for 9 18:4 and off somewhere else.
+
+06:30.250 --> 06:33.490
+So you're not allowed to have cycles in your paths.
+
+06:33.520 --> 06:39.520
+That's the defining characteristic of a tree a root path is the path and going in the other direction
+
+06:39.520 --> 06:45.840
+is how to get from a node to the root so the root path for three would be three four and 15.
+
+06:45.850 --> 06:51.710
+Now the depth of a node is the number of edges from the node to the root.
+
+06:51.710 --> 06:57.520
+And so the root will always have a depth of 0 because there are no edges on the path from the root to
+
+06:57.520 --> 06:58.030
+the root.
+
+06:58.030 --> 07:06.400
+Obviously if we look at 14 that would have a depth of 3 because as we just said The path is 14 3 4 and
+
+07:06.400 --> 07:07.570
+15.
+
+07:07.570 --> 07:14.120
+And so there are three edges in the path from 14 to the root and so 14 has a depth of 3.
+
+07:14.170 --> 07:16.840
+18 would have a depth of 2.
+
+07:16.900 --> 07:22.140
+So the depth for 18 would be two we have to go through two edges to get to 18.
+
+07:22.240 --> 07:29.590
+The height of a node is the number of edges on the longest path from the node to a leaf.
+
+07:29.710 --> 07:34.930
+And so if we look at for here will see that the height of four is two.
+
+07:34.990 --> 07:37.900
+It can get to 18 in one edge.
+
+07:37.960 --> 07:46.210
+Thats not the longest path because it takes two edges to get to 25 and 7 and 14 and so the height of
+
+07:46.210 --> 07:53.240
+4 is 2 because the number of edges on the longest path from the note to Alif is 2.
+
+07:53.290 --> 07:55.640
+So the height of 4 is 2.
+
+07:55.660 --> 08:02.020
+Now leaf nodes will have a height of zero right because if the height of a node is the number of edges
+
+08:02.110 --> 08:08.560
+on the longest path from the note to a leaf well leaf nodes were already there the number of edges on
+
+08:08.560 --> 08:15.630
+the path to get from a leaf node to a leaf node is 0 and so leaf nodes always have a height of 0.
+
+08:15.640 --> 08:22.330
+Now the height of a tree is the height of its root node in this tree the longest path from the root
+
+08:22.330 --> 08:28.530
+to a leaf is three because its these leaves down here that take three edges.
+
+08:28.660 --> 08:35.020
+And so the height of the root is three and that means the height of the tree is three because in this
+
+08:35.020 --> 08:40.850
+tree the largest height will be the longest path from the root to eight lymph node.
+
+08:40.930 --> 08:47.160
+So once again the depth of a node is the number of edges from the node to the trees root node.
+
+08:47.170 --> 08:53.230
+So when we're figuring out depths we start at the node and we work up to the root and we say how many
+
+08:53.230 --> 08:55.200
+edges does it take me to get up to the root.
+
+08:55.210 --> 08:56.120
+That's a deps.
+
+08:56.140 --> 09:01.660
+But when we're talking about height we're going the other way we're looking at what's the longest path
+
+09:01.660 --> 09:06.070
+from the node and it doesn't have to be the route down to a leaf.
+
+09:06.070 --> 09:10.660
+And so when we're talking about depth we calculate that by moving up the tree and counting the number
+
+09:10.660 --> 09:12.070
+of edges to the root.
+
+09:12.070 --> 09:15.180
+And when we're talking about height we start at the No.
+
+09:15.180 --> 09:19.700
+So if we're trying to figure out the height for note 22 we start there and say What's the longest path
+
+09:19.720 --> 09:20.360
+to a leaf.
+
+09:20.370 --> 09:26.500
+Well there's only one leaf and we figured that out by counting the number of edges is 1 and so 22 has
+
+09:26.500 --> 09:27.550
+a height of 1.
+
+09:27.550 --> 09:34.780
+Now you'll notice it's sibling 4 has a height of 2 and so nodes that are on the same level don't necessarily
+
+09:34.780 --> 09:40.450
+have the same height and the height of the root is the height of the entire tree because obviously the
+
+09:40.450 --> 09:45.970
+longest path from the root to a leaf node is going to be the height of the root and that's going to
+
+09:45.970 --> 09:47.100
+be the height of the tree.
+
+09:47.110 --> 09:53.650
+Now a level of a tree contains all the notes that are out the same depth so the root is at level 0 because
+
+09:53.650 --> 10:01.160
+it has a depth of 0 22 4 and 17 are at level 1 because they have a depth of 1.
+
+10:01.240 --> 10:03.900
+All the nodes along here are at level 2.
+
+10:03.970 --> 10:11.780
+So 99 18:3 11 and 0 are all at level 2 because they have a depth of two.
+
+10:11.780 --> 10:14.520
+We have to travel along to edges to get to them.
+
+10:14.570 --> 10:20.060
+And these three leaf nodes at the bottom are at a depth of three because we have to travel along three
+
+10:20.150 --> 10:22.600
+just to get to them and so they're at level three.
+
+10:22.640 --> 10:26.970
+So the roots at level 0 it's immediate children are at level 1.
+
+10:27.020 --> 10:32.090
+The grandchildren of the route are at level 2 and the great grandchildren of the route are at level
+
+10:32.090 --> 10:32.840
+three.
+
+10:32.840 --> 10:39.440
+So we've talked about how the children are descendants of course notes also have ancestors.
+
+10:39.440 --> 10:47.330
+So one of the ancestors of four while the only ancestor for is 15 we say that a node is an ancestor
+
+10:47.330 --> 10:48.270
+of another node.
+
+10:48.290 --> 10:50.540
+If it's in the nodes path which makes sense.
+
+10:50.540 --> 10:58.070
+So three has two ancestors four and 15 because we have to pass through 15 and four to get to three.
+
+10:58.070 --> 11:04.700
+So a node can have multiple ancestors and basically its ancestors are all the notes on the path from
+
+11:04.700 --> 11:06.590
+the root to that node.
+
+11:06.620 --> 11:12.790
+And so now that we've looked at General trees we're going to move on and look at binary search trees.
+
+11:12.830 --> 11:14.770
+And so let's move on to the next video.
+
+11:14.780 --> 11:15.840
+I'll see you there.

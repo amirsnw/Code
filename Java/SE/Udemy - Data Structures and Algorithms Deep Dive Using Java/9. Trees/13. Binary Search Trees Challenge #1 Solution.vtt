@@ -1,0 +1,97 @@
+WEBVTT
+
+00:05.330 --> 00:11.180
+Tudo bem, então vamos escrever o código para percorrer esta árvore usando pre.
+
+00:11.210 --> 00:17.210
+Então, vamos começar em uma classe de nó de árvore e aqui está nosso método de ordem transversal e
+
+00:17.210 --> 00:23.810
+tudo o que temos que fazer de forma diferente é que queremos visitar a rota primeiro para visitarmos a subárvore esquerda
+
+00:23.810 --> 00:29.020
+e depois visitarmos o próprio nó e depois visitamos a riqueza da subárvore direita para pré-encomenda.
+
+00:29.060 --> 00:33.560
+Queremos visitar o nó em si e, em seguida, a subárvore esquerda e, em seguida, a subárvore direita.
+
+00:33.560 --> 00:44.880
+E então eu vou copiar este código aqui e colá-lo e vamos chamar este de um pré-pedido.
+
+00:44.960 --> 00:51.110
+Queremos chamar a pré-ordem de travessia neste método que não queremos fazer e, a fim de percorrer aqui
+
+00:51.110 --> 00:58.790
+e, em seguida, tudo o que precisamos fazer é mover essa linha acima das linhas que manipulam as subárvores esquerda e direita.
+
+00:59.030 --> 01:05.750
+E fazendo isso bem agora, se chamarmos de pré-ordem de travessia, visitaremos o nó primeiro neste nó e, em seguida, visitaremos
+
+01:05.750 --> 01:08.720
+sua subárvore esquerda e, em seguida, sua subárvore direita.
+
+01:08.750 --> 01:13.880
+E então estamos fazendo a rota da subárvore primeiro e depois a esquerda e depois a direita e isso é tudo
+
+01:13.880 --> 01:14.960
+o que existe para ela.
+
+01:14.960 --> 01:20.480
+Agora, se quiséssemos fazer uma travessia pós-ordem, é claro que apenas movemos essa linha para o final do
+
+01:20.480 --> 01:20.920
+método.
+
+01:20.930 --> 01:24.700
+E, claro, nós mudamos as chamadas de método para chamar a ordem pós-busca.
+
+01:24.740 --> 01:30.830
+Então é só uma questão de onde nós realmente visitamos esse nó nós o visitamos antes
+
+01:30.830 --> 01:36.470
+das crianças depois das crianças ou no caso da ordem entre a esquerda e a
+
+01:36.530 --> 01:46.130
+direita e então vamos para a classe de árvore e eu vou copiar a travessia no código de pedido e apenas mudar isso para percorrer
+
+01:46.130 --> 01:49.570
+a pré-encomenda e faremos a pré-encomenda de travessia aqui.
+
+01:49.580 --> 01:59.690
+E vamos ao nosso método principal e eu vou copiar essas duas linhas e apenas mudar isso para atravessar a pré-ordem e
+
+01:59.700 --> 02:00.990
+deve ser isso.
+
+02:01.190 --> 02:04.480
+Então aqui está a pré-ordem através da classe de nós da árvore.
+
+02:04.480 --> 02:08.720
+É apenas uma questão de visitar este nó primeiro na classe de árvore.
+
+02:08.720 --> 02:12.380
+Estamos apenas chamando a ordem antecipada ao invés de Traverse em ordem.
+
+02:12.380 --> 02:20.320
+E então no main Vamos apenas chamar nosso método na classe tree então vamos rodar e aqui está a ordem cruzada solitária Você
+
+02:20.330 --> 02:25.410
+se lembrará que quando nós atravessamos na ordem nós obtemos os valores na ordem ordenada
+
+02:25.460 --> 02:27.650
+e então aqui nossa pré-ordem transversal.
+
+02:27.680 --> 02:38.500
+Então nós temos 25 20 15 17 22 27 26 30 29 e 32 e é isso que esperávamos.
+
+02:38.510 --> 02:41.240
+Isso é o que nós passamos no último vídeo.
+
+02:41.360 --> 02:43.990
+E isso é bem direto.
+
+02:44.030 --> 02:45.650
+Vamos para o próximo desafio.
+
+02:45.650 --> 02:46.610
+Eu te vejo lá.

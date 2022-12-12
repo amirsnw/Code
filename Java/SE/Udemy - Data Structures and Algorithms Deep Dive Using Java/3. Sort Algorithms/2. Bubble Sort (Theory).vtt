@@ -1,0 +1,367 @@
+WEBVTT
+
+00:05.210 --> 00:10.010
+Así que vamos a comenzar nuestra búsqueda de algoritmos de clasificación comenzando con sorting de burbuja.
+
+00:10.010 --> 00:15.890
+Quiero decir desde el principio que el rendimiento de estos algoritmos se degrada rápidamente a medida que crece la
+
+00:15.890 --> 00:17.660
+cantidad de elementos que necesita clasificar.
+
+00:17.840 --> 00:20.190
+Pero es un algoritmo comúnmente enseñado.
+
+00:20.360 --> 00:21.650
+Y puede que lo escuchen.
+
+00:21.650 --> 00:25.730
+Así que vamos a echarle un vistazo y nos calentará para el resto de esta sección.
+
+00:25.880 --> 00:29.570
+Así que voy a comenzar explicando cómo funciona el algoritmo.
+
+00:29.600 --> 00:31.570
+Entonces tengo una matriz en la pantalla.
+
+00:31.580 --> 00:33.920
+Es una matriz de lentes 7.
+
+00:34.160 --> 00:43.010
+De modo que puede almacenar siete enteros en el índice 0, tenemos 28 índices 135 e índices de menos 15 y puede ver el resto
+
+00:43.010 --> 00:44.570
+de la matriz allí.
+
+00:44.630 --> 00:47.810
+Y queremos usar sort de burbuja para ordenar esta matriz.
+
+00:47.810 --> 00:53.150
+Ahora, la forma en que funciona la burbuja funciona y verá que esto es
+
+00:53.480 --> 01:03.050
+bastante común con los algoritmos de ordenamiento, ya que a medida que avanza el algoritmo, divide la matriz en una partición ordenada y una partición ordenada.
+
+01:03.200 --> 01:10.490
+Y esta es una partición lógica, por lo que no creamos instancias de matriz completamente separadas y tenemos una instancia de matriz
+
+01:10.490 --> 01:15.770
+que contiene lo que hemos ordenado hasta ahora en otra instancia de matriz que contiene números
+
+01:15.800 --> 01:16.370
+sin ordenar.
+
+01:16.440 --> 01:23.630
+Ahora todo está hecho cuando se trata de clasificar burbujas usando la matriz que estamos ordenando y particionamos la matriz de
+
+01:23.630 --> 01:27.880
+forma lógica y lo veremos cuando examinemos el algoritmo en solo un minuto.
+
+01:27.890 --> 01:35.960
+Entonces, cuando comencemos el algoritmo para este conjunto, tendremos la sensación de que vamos a llamar el índice de
+
+01:35.960 --> 01:37.370
+partición sin clasificar.
+
+01:37.370 --> 01:46.940
+Y cuando comencemos esto será seis porque toda la matriz es la partición sin clasificar cuando comenzamos porque todavía
+
+01:46.940 --> 01:49.100
+no hemos ordenado nada.
+
+01:49.130 --> 01:53.690
+Entonces 6 será el último índice de la partición sin clasificar.
+
+01:53.690 --> 01:58.550
+Está bien, entonces la implementación que voy a mostrarte comienza a la izquierda de la matriz o
+
+01:58.650 --> 02:06.170
+índice 0, así que eso es lo que yo soy y lo que hacemos es comparar el elemento en el índice 0 con el elemento en
+
+02:06.170 --> 02:07.330
+el índice 1.
+
+02:07.340 --> 02:14.290
+Y si el elemento en el índice 0 es mayor que en el elemento en el índice cuando intercambiamos los elementos.
+
+02:14.540 --> 02:20.390
+Si es menor, no hacemos nada porque, por supuesto, queremos mover elementos más grandes hacia el final de
+
+02:20.390 --> 02:24.560
+la matriz o hacia la derecha porque estamos ordenando en orden ascendente.
+
+02:24.560 --> 02:29.090
+Entonces, en este caso, 20 es menos de 35.
+
+02:29.090 --> 02:31.460
+Entonces no hacemos ningún intercambio.
+
+02:31.460 --> 02:34.640
+Y luego, lo que vamos a hacer es incrementar de II a 1.
+
+02:34.640 --> 02:40.820
+Entonces ahora vamos a ver el elemento de la posición 1 y compararlo con el elemento a
+
+02:40.820 --> 02:41.710
+la posición 2.
+
+02:42.050 --> 02:46.440
+Y en este caso, 35 es mayor que menos 15.
+
+02:46.520 --> 02:48.530
+Así que los intercambiamos.
+
+02:48.750 --> 02:55.790
+Entonces ahora menos 15 estará en la posición 1 y 35 estará en la posición 2 y aumentaremos i a 2.
+
+02:55.800 --> 03:02.730
+Así que ahora vamos a comparar el elemento agregar índice 2 con el elemento índice tres treinta y cinco es
+
+03:02.730 --> 03:03.850
+mayor que 7.
+
+03:03.900 --> 03:08.340
+Entonces los intercambiamos y aumentamos a tres.
+
+03:08.370 --> 03:14.820
+Así que ahora vamos a comparar el índice de elementis tres con el elemento que el índice para 35 es menor
+
+03:14.820 --> 03:15.500
+que 55.
+
+03:15.500 --> 03:18.930
+Entonces, no hacemos nada, simplemente aumentamos a cuatro.
+
+03:19.320 --> 03:22.010
+Y luego comparamos 55 a uno.
+
+03:22.020 --> 03:27.710
+Esa es la posición del elemento para con la posición del elemento 5 fifty five es mayor que 1.
+
+03:27.710 --> 03:32.330
+Así que los intercambiamos y cuando aumentamos tenía un cinco.
+
+03:32.430 --> 03:36.310
+Y finalmente comparamos 55 a menos 22.
+
+03:36.360 --> 03:41.790
+Y, por supuesto, 55 es mayor que menos 22, así que los intercambiamos.
+
+03:42.090 --> 03:43.320
+Y en este punto.
+
+03:43.360 --> 03:49.140
+Aw por qué es igual al último índice de partición sin clasificar, así que nos detenemos.
+
+03:49.140 --> 03:53.280
+Hemos completado el primer recorrido de la matriz.
+
+03:53.610 --> 04:00.780
+Y al final de esa poligonal, el último elemento de la matriz se encuentra en su posición correcta.
+
+04:00.810 --> 04:08.040
+Entonces, en este punto, el elemento más importante de la matriz será la longitud de la matriz de índice menos 1,
+
+04:08.040 --> 04:09.970
+que para nuestra matriz es.
+
+04:10.110 --> 04:13.020
+Y para nuestra longitud de matriz menos 1 es 6.
+
+04:13.020 --> 04:21.870
+Entonces, en este punto, lo que vamos a hacer es establecer el índice de partición sin clasificar en 5 porque ahora consideramos
+
+04:21.900 --> 04:24.830
+que la posición 6 debe ser ordenada.
+
+04:24.960 --> 04:31.830
+Y entonces la partición lógica va a estar entre el elemento en el índice 5 y el elemento en el
+
+04:31.830 --> 04:32.350
+índice 6.
+
+04:32.370 --> 04:39.570
+Todo, desde el índice 5 hasta el frente de la matriz, está en la partición sin clasificar y todo en el
+
+04:39.570 --> 04:42.170
+índice de matriz 6 y hacia la derecha.
+
+04:42.180 --> 04:44.100
+Y en este caso, no hay nada a la derecha.
+
+04:44.130 --> 04:46.850
+Todo lo que hay en la partición ordenada.
+
+04:46.860 --> 04:55.710
+Entonces, en la siguiente poligonal, podemos ver que 55 está ahora en la partición ordenada y volvemos a cero porque queremos
+
+04:56.100 --> 04:58.910
+repetir el proceso que acabamos de hacer.
+
+04:59.310 --> 05:02.360
+Y el índice de partición sin clasificar ahora es cinco.
+
+05:02.400 --> 05:11.070
+Entonces comenzamos todo de nuevo, vamos bien, el elemento en el índice 0 de la matriz es mayor que el elemento en el índice 1
+
+05:11.070 --> 05:13.230
+de la matriz y lo es.
+
+05:13.230 --> 05:16.740
+Y entonces los intercambiamos y aumentamos. Yo tenía uno.
+
+05:16.830 --> 05:22.930
+Y luego decimos que es el elemento de matriz en el índice 1 mayor que el índice de elemento de matriz 2.
+
+05:22.950 --> 05:30.060
+Sí, así es que los intercambiamos y aumentamos a dos. Decimos que es el elemento en el índice más grande que el elemento
+
+05:30.060 --> 05:31.200
+en el índice 3.
+
+05:31.200 --> 05:32.220
+No, no lo es.
+
+05:32.400 --> 05:35.010
+Entonces, simplemente incrementamos a tres.
+
+05:35.100 --> 05:41.460
+Luego, comparamos el índice de elementis tres con el elemento e índice para 35 es mayor que 1.
+
+05:41.460 --> 05:48.870
+Así que los intercambiamos, me incrementó a cuatro treinta y cinco es mayor que el mío, es 22, así que los intercambiamos.
+
+05:48.870 --> 05:55.110
+Me incremento a 5 y ahora igualo al índice de partición sin clasificar, así que nos detenemos.
+
+05:55.230 --> 06:03.720
+Y en este punto, 35 y 55 están en sus posiciones correctas y configuramos el índice de partición sin clasificar
+
+06:03.720 --> 06:04.620
+en 4.
+
+06:04.620 --> 06:11.460
+Así que ahora todo en el índice de matriz 0 al índice de matriz cuatro está en la partición sin clasificar.
+
+06:11.460 --> 06:18.660
+Y todo, desde el índice de matriz 5 hasta el final de la matriz, está en la partición ordenada y lo hemos puesto
+
+06:18.980 --> 06:21.640
+a cero porque ahora vamos a repetir el proceso.
+
+06:21.670 --> 06:26.600
+No voy a pasar por los otros recorridos que operarán de la misma manera.
+
+06:26.670 --> 06:32.490
+Vamos a seguir incrementando Voy a seguir comparando los elementos que I con su vecino y swat
+
+06:32.490 --> 06:39.630
+los elementos si si su vecino es menor que el elemento y yo hasta que la partición ordenada es toda la
+
+06:39.630 --> 06:41.990
+matriz y entonces hemos terminado .
+
+06:42.000 --> 06:46.060
+Ahora esto se llama clasificación de burbuja porque depende de qué dirección esté ordenando.
+
+06:46.080 --> 06:51.510
+En nuestro caso, los valores más grandes de la matriz burbujearán hasta el final de la matriz y otra forma de
+
+06:51.510 --> 06:57.660
+verlos es voltear la matriz verticalmente para que tomemos la matriz y la voltemos en sentido antihorario para que el elemento 0 de
+
+06:57.660 --> 07:02.670
+la matriz esté en la parte inferior el elemento 6 de la matriz final está en la parte superior.
+
+07:02.670 --> 07:06.660
+Y otra forma de verlo es decir que los valores más grandes están burbujeando hasta la parte superior
+
+07:06.660 --> 07:07.200
+de la matriz.
+
+07:07.200 --> 07:11.850
+Ahora, como dije, hay algunas variaciones donde la matriz se ordena de derecha a izquierda.
+
+07:11.850 --> 07:17.070
+Por lo tanto, el recorrido transversal va de derecha a izquierda y, a veces, los elementos más pequeños se burbujean en la parte frontal de
+
+07:17.070 --> 07:20.860
+la matriz en lugar de los elementos más grandes que se burbujean en la parte posterior de la matriz.
+
+07:20.880 --> 07:22.810
+Pero los mismos pasos son usados.
+
+07:22.800 --> 07:24.390
+Es el mismo algoritmo.
+
+07:24.390 --> 07:25.510
+Entonces eso es tipo burbuja.
+
+07:25.510 --> 07:29.300
+Y ahora veamos cómo funciona este algoritmo.
+
+07:29.310 --> 07:32.130
+En primer lugar, es un algoritmo in situ.
+
+07:32.130 --> 07:33.480
+Ahora, ¿qué quiero decir con eso?
+
+07:33.480 --> 07:37.010
+Bueno, como he dicho, lógicamente estamos particionando la matriz, no.
+
+07:37.020 --> 07:41.520
+No tenemos que crear otra matriz para realizar el ordenamiento.
+
+07:41.580 --> 07:45.420
+Entonces, cuando se trata de memoria, este es un algoritmo in situ.
+
+07:45.420 --> 07:47.800
+Ahora hacemos lo que ves
+
+07:47.880 --> 07:52.190
+Cuando miramos la implementación, creamos algunas variables locales, pero eso está bien.
+
+07:52.350 --> 07:54.000
+Es un algoritmo in situ.
+
+07:54.000 --> 07:58.840
+Si la memoria extra que necesita no depende de la cantidad de elementos que está ordenando.
+
+07:59.130 --> 08:05.490
+Así que vamos a crear algunas variables locales, por ejemplo, para almacenar la última partición ordenada en
+
+08:05.550 --> 08:06.890
+la tienda, por ejemplo.
+
+08:06.900 --> 08:09.900
+Pero eso no significa que no sea un algoritmo in situ.
+
+08:09.900 --> 08:16.530
+Si la memoria extra que está utilizando no aumenta a medida que aumenta el número de elementos en la matriz,
+
+08:16.530 --> 08:18.660
+sigue siendo un algoritmo in situ.
+
+08:18.660 --> 08:21.060
+Está bien usar algunas variables adicionales.
+
+08:21.060 --> 08:26.680
+Ahora bien, este algoritmo tiene oda a la complejidad del tiempo cuadrático final, es un algoritmo cuadrático.
+
+08:26.700 --> 08:35.670
+Eso significa que se necesitarán 100 pasos para ordenar 10 elementos, 10000 pasos, para ordenar 100 elementos, un millón de
+
+08:35.670 --> 08:37.710
+pasos, para clasificar mil elementos.
+
+08:37.710 --> 08:41.010
+Entonces, como pueden ver, este algoritmo realmente se degrada rápidamente.
+
+08:41.040 --> 08:43.500
+Ahora cómo llegamos al final al cuadrado.
+
+08:43.500 --> 08:48.410
+Bueno, hablaremos de esto un poco más en el próximo video cuando veamos la implementación.
+
+08:48.480 --> 08:49.630
+Así que te veré allí.

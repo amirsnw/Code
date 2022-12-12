@@ -1,0 +1,25 @@
+<tamin-modal #theModal title="تایید اطلاعات درخواست بازنشستگی" width="80%">
+  <div style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+    <p style="font-weight: bold">
+ <span>ریاست محترم شعبه</span> <br>
+      <span>    خواهشمند است دستور فرمائید با توجه به اطلاعات ثبت شده، نسبت به جمع آوری سوابق و</span>
+      <span> برقراری مستمری بازنشستگی اینجانب بر اساس قانون تأمین اجتماعی،اقدام نمایند.</span><br>
+
+    </p>
+    <p style="font-weight: bold">
+     <span>  بدیهی است در صورت عدم احراز شرایط مقرر در قوانین جاری، هیچگونه ادعایی در این خصوص نداشته</span>
+      <span> و مسئولیت و عواقب ناشی از ترک کار بدون اعلام آن شعبه را می پذیرم.  </span><br>
+
+    </p>
+    <p style="font-weight: bold">
+      <span>ضمناً آگاهی کامل دارم که در صورت برقراری مستمری بازنشستگی و استفاده از مستمری ماهانه، چنانچه </span>
+      <span>مجدداً اشتغال به کار یابم، مراتب را کتباً به شعبه مربوطه اعلام نمایم.بدیهی است پرداخت مستمری مادامیکه </span>
+      <span> مشغول به کار هستم متوقف خواهد شد و پس از خاتمه اشتغال نیز مبلغ مستمری ماهانه‌ام، </span>
+      <span>مجموع مستمری ماهانه به نسبت ایام اشتغال به کار مجدد با مستمری قبلی و رعایت افزایش های سالانه ماده 96 قانون تأمین اجتماعی می باشد. </span><br>
+    </p>
+  </div>
+  <div class="button-container">
+    <button class="button normal" (click)="onAgreeSave()">موافقم</button>
+    <button class="button normal red" (click)="onDisagreeSave()">موافق نیستم</button>
+  </div>
+</tamin-modal>

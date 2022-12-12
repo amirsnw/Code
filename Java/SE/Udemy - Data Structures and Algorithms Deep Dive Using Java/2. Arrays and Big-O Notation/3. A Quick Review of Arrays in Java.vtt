@@ -1,0 +1,283 @@
+WEBVTT
+
+00:05.280 --> 00:05.720
+Tudo bem.
+
+00:05.730 --> 00:08.490
+Então, sabemos um pouco sobre a notação Big-O agora.
+
+00:08.490 --> 00:15.930
+E agora vamos olhar rapidamente para as matrizes, porque quando chegarmos aos algoritmos da sorda, estaremos classificando
+
+00:15.930 --> 00:20.770
+as matrizes para que você precise, pelo menos, revisar as matrizes.
+
+00:20.760 --> 00:27.270
+Não, isso não é um curso de programação para principiantes, então vou assumir que você sabe o que é um array
+
+00:27.270 --> 00:29.330
+e provavelmente já trabalhou com um array.
+
+00:29.460 --> 00:35.610
+Mas, para ter certeza de que estamos todos na mesma página, vamos criar rapidamente uma matriz e nos
+
+00:35.700 --> 00:38.770
+lembrar de como podemos acessar elementos em uma matriz.
+
+00:38.850 --> 00:45.150
+Então, no ID aqui, isso é apenas um projeto de teste. Eu vou criar um novo projeto e vou fazer isso
+
+00:45.150 --> 00:49.560
+com você. Eu farei isso no primeiro par de vezes e então eu irei Vamos
+
+00:49.560 --> 00:55.370
+supor que você saiba como criar um projeto e criar projetos fora da tela antes de começarmos um vídeo.
+
+00:55.380 --> 01:04.730
+Mas por enquanto vamos para um novo projeto de arquivo que você quer ter certeza de que o Jaba esteja selecionado no lado esquerdo.
+
+01:05.010 --> 01:08.070
+E aqui você pode definir o SDK do projeto agora.
+
+01:08.100 --> 01:16.260
+Agora eu tenho o meu definido para o Java 9 1. 9 como eu estou gravando este vídeo Javid 9 ainda está no acesso antecipado,
+
+01:16.590 --> 01:19.580
+então eu realmente vou mudar o meu para o Java 8.
+
+01:19.710 --> 01:24.960
+Mas se você quiser usar o Javid 9, tudo bem para este curso, isso realmente não importa.
+
+01:24.960 --> 01:31.260
+Eu recomendaria pelo menos o Java 8 porque mais adiante no curso estaremos escrevendo algum código que
+
+01:31.260 --> 01:35.290
+usa recursos de linguagem que só foram disponibilizados no Java 8.
+
+01:35.490 --> 01:42.650
+Portanto, verifique se você está usando o Java 8 ou o Java nine e um switch my para o Java 8.
+
+01:42.660 --> 01:44.630
+Pegue a última versão 102.
+
+01:44.640 --> 01:48.160
+Você não precisa verificar nada do lado direito.
+
+01:48.180 --> 01:49.440
+Nós vamos clicar em seguida.
+
+01:49.440 --> 01:55.290
+Vou verificar o projeto Criar a partir do modelo, porque isso fará com que o ID gere um método principal
+
+01:55.290 --> 01:56.030
+para nós.
+
+01:56.100 --> 01:57.520
+Então clique em próximo.
+
+01:57.570 --> 02:03.900
+Vou chamar meus arrays de projetos e estava brincando com isso antes, então o pacote já
+
+02:03.900 --> 02:04.490
+está definido.
+
+02:04.500 --> 02:08.340
+Meu pacote está definido para Academie aprender programação obter matrizes.
+
+02:08.490 --> 02:12.850
+Você pode definir o seu para o que quiser e, em seguida, clique em Concluir.
+
+02:14.040 --> 02:19.830
+Agora, porque eu tenho um projeto aberto, a idéia está me perguntando se eu quero substituir o projeto nesta janela
+
+02:19.830 --> 02:21.320
+ou abrir uma segunda janela.
+
+02:21.330 --> 02:26.550
+Nós não precisamos que esses projetos de teste vão substituí-lo e lá vamos nós.
+
+02:26.550 --> 02:32.880
+Nós temos o nosso novo projeto, eu vou puxar isso um pouco para nos dar um pouco de
+
+02:32.880 --> 02:36.320
+espaço, então vamos criar um array int apenas para começarmos.
+
+02:36.780 --> 02:45.270
+Então, vai dizer int e array é igual a new int e eu vou fazer um tamanho 7.
+
+02:45.360 --> 02:51.870
+Agora, se olharmos para isso, criamos um array de inteiros, então esses dois colchetes estão dizendo
+
+02:51.870 --> 02:59.130
+ao compilador que queremos um array e quando você cria um array, você tem que especificar o tamanho
+
+02:59.130 --> 02:59.990
+que você quer.
+
+03:00.000 --> 03:07.470
+Arrays não são uma estrutura de dados dinâmica, vamos ver algumas estruturas de dados dinâmicas mais tarde por não serem dinâmicas.
+
+03:07.470 --> 03:12.990
+Quero dizer que, depois de criar uma instância de matriz, você não poderá alterar seu tamanho.
+
+03:13.320 --> 03:19.680
+Portanto, esse array terá espaço suficiente para conter sete inteiros e é tudo o que ele
+
+03:19.680 --> 03:20.460
+conseguirá manter.
+
+03:20.460 --> 03:25.020
+Não podemos aumentar seu tamanho e não podemos diminuir esse tamanho.
+
+03:25.020 --> 03:31.470
+E, como você verá mais adiante, isso leva a algumas desvantagens de um aumento quando as comparamos com
+
+03:31.470 --> 03:32.890
+outras estruturas de dados.
+
+03:33.120 --> 03:37.320
+Portanto, temos espaço suficiente nessa matriz por sete inteiros.
+
+03:37.530 --> 03:46.880
+Então, vamos adicionar alguns números inteiros, então vou definir em matrizes de 0 a 20.
+
+03:46.890 --> 03:50.470
+Agora, apenas um lembrete rápido de que os índices são baseados em zero.
+
+03:50.490 --> 03:59.010
+Portanto, se você tiver uma interface que possa conter sete inteiros, os índices válidos serão de 0 a 6 7 e obterão um índice de
+
+03:59.010 --> 04:03.930
+array fora dos limites e verão em um minuto o motivo da base zero.
+
+04:03.930 --> 04:09.730
+Se você já se perguntou por que há base zero em vez de um baseado você vai descobrir em breve.
+
+04:09.750 --> 04:17.580
+Então, isso está dizendo que no primeiro slot, se podemos imaginar uma matriz com 7 slots ou 7 baldes ou no entanto você
+
+04:17.580 --> 04:21.920
+quer olhar para 7 caixas sete recipientes que podem conter números inteiros.
+
+04:22.110 --> 04:30.450
+Estamos dizendo na primeira posição que queremos atribuir o número inteiro 20 na segunda posição, que seria
+
+04:30.450 --> 04:32.880
+um índice de array um.
+
+04:33.000 --> 04:41.480
+Nós vamos dar aos valores 35 em índice de array que darão
+
+04:45.330 --> 04:51.070
+menos 15 em três, nós daremos aquele sete.
+
+04:54.150 --> 05:02.990
+A quinta posição que estaria em um índice de taxa quatro vai receber 55 e eles têm mais dois para ir.
+
+05:03.090 --> 05:15.280
+Assim, o Interrail cinco receberá um e o Interbase seis receberá menos 20 a menos 20 a menos 11.
+
+05:15.330 --> 05:17.940
+Então, agora nós preenchemos toda a matriz.
+
+05:17.940 --> 05:21.070
+Você não tem que preencher toda a matriz, mas nós temos.
+
+05:21.270 --> 05:24.540
+E como você pode ver, os índices válidos vão de zero a seis.
+
+05:24.570 --> 05:28.790
+E que sete posições sete slots, o que você quiser chamá-los.
+
+05:28.860 --> 05:30.390
+Então, vamos imprimir esse array.
+
+05:30.390 --> 05:34.530
+Agora vou usar um loop clássico para podermos ver claramente o que acontece.
+
+05:34.560 --> 05:35.310
+O que está acontecendo.
+
+05:35.350 --> 05:43.630
+Eu vou dizer que eu igual a zero eu menos uma lente de ponto de matriz int eu mais mais.
+
+05:44.070 --> 05:48.910
+E nós vamos imprimir em array.
+
+05:49.120 --> 05:55.870
+Quero dizer, vamos em frente e corra.
+
+05:56.380 --> 05:58.850
+Se você por acaso receber esse erro.
+
+05:58.870 --> 06:05.650
+Eu notei que às vezes eu recebo isso quando eu mudo o SDK que você precisa para executar
+
+06:05.650 --> 06:11.170
+o build e dizer para reconstruir o projeto e acho que agora ele deve rodar.
+
+06:11.170 --> 06:11.950
+Aqui vamos nós.
+
+06:11.950 --> 06:16.900
+Então, se você já se deparou com esse erro, porque você mudou o SDK como eu acabei de
+
+06:16.900 --> 06:18.460
+chegar para construir e apenas reconstruir.
+
+06:18.670 --> 06:24.100
+OK, então nós imprimimos 20 35 menos 15 7 etc. Vamos dar uma olhada na declaração de impressão por um minuto.
+
+06:24.100 --> 06:26.290
+Mais uma vez, apenas como uma breve revisão,
+
+06:26.290 --> 06:31.960
+você verá que estamos começando no primeiro índice da matriz e iteramos até que tudo seja igual ao comprimento.
+
+06:31.960 --> 06:36.010
+Agora lembre-se que o comprimento da matriz é
+
+06:36.010 --> 06:41.650
+o número de inteiros que podem conter e especificamos que seja 7.
+
+06:41.650 --> 06:42.570
+Mas o índice válido o último maior o maior índice válido é 6.
+
+06:42.820 --> 06:48.560
+E então eu quero dar a volta e eu tenho 0 1 2 3 4 5 6 quando ele atinge 7.
+
+06:48.760 --> 06:57.130
+Então, quando é igual ao comprimento da matriz, queremos sair do
+
+06:57.130 --> 07:03.460
+loop porque 7 é na verdade um índice inválido.
+
+07:03.460 --> 07:04.560
+Então é por
+
+07:04.600 --> 07:12.490
+isso que quando fazemos um loop em torno de uma matriz, começamos em zero e sempre queremos parar quando qualquer variável variável que estivermos usando
+
+07:12.580 --> 07:18.370
+para fazer o loop que queremos continuar enquanto é menor que o comprimento quando é igual ao comprimento .
+
+07:18.370 --> 07:20.640
+Então nós paramos porque nesse ponto nós
+
+07:20.680 --> 07:25.990
+sabemos que estamos interagindo com o cérebro, é claro que estamos adicionando um à variável.
+
+07:26.290 --> 07:27.400
+Cada vez que fazemos loop.
+
+07:27.400 --> 07:28.890
+OK, então foi uma revisão muito rápida dos arrays, como eu disse que você provavelmente já trabalhou com eles antes.
+
+07:28.930 --> 07:34.120
+No próximo vídeo, vamos começar a considerar o array como uma estrutura de dados.
+
+07:34.180 --> 07:38.630
+E então eu vou te ver no próximo vídeo.
+
+07:38.770 --> 07:40.220
+&nbsp;

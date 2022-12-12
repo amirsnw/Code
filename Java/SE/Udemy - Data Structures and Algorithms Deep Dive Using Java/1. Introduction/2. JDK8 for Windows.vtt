@@ -1,0 +1,217 @@
+WEBVTT
+
+00:05.340 --> 00:11.430
+Neste vídeo, vamos baixar e instalar o JDK, que é o kit de desenvolvimento Java
+
+00:11.670 --> 00:15.430
+que contém o software para poder executar programas neste curso.
+
+00:15.490 --> 00:21.690
+Agora, se você estiver executando em uma máquina Mac ou Linux, verifique um vídeo específico que criamos
+
+00:21.770 --> 00:23.040
+nesta seção do curso.
+
+00:23.040 --> 00:27.780
+Para esses sistemas operacionais, a razão é que as etapas são ligeiramente diferentes para cada plataforma.
+
+00:27.780 --> 00:29.490
+Então este é o vídeo do Windows.
+
+00:29.550 --> 00:31.280
+Então, se você é um Windows irá ocorrer.
+
+00:31.370 --> 00:33.300
+Comece indo para Java.
+
+00:33.610 --> 00:41.950
+Nosso código chamado looping você para uma página da Oracle que tinha agora os odores do trabalho do produto
+
+00:41.950 --> 00:47.100
+para sair à frente das tecnologias e clique em Java SC.
+
+00:47.240 --> 00:54.150
+E uma vez que a página grande vem aqui e clique em downloads e segui-lo uma vez chegamos a essa
+
+00:54.150 --> 01:00.470
+página há este pequeno ícone aqui esta pequena imagem e ele dirá JDK plataforma Java e um número aqui.
+
+01:00.780 --> 01:05.670
+Agora não é uma sorte que esse número mude no futuro porque nosso lançamento de registro
+
+01:05.670 --> 01:08.880
+em intervalos regulares é atualizado para o kit de desenvolvimento Java.
+
+01:08.880 --> 01:10.280
+Então você tem que iluminar isso.
+
+01:10.280 --> 01:11.450
+Isso é bom.
+
+01:11.460 --> 01:17.460
+Basta clicar no gráfico e vai levá-lo para a página de download, quando podemos realmente
+
+01:17.460 --> 01:18.460
+baixar o software.
+
+01:18.900 --> 01:26.100
+Agora, o que precisamos fazer é determinar se o seu computador é um 32 ou está executando uma versão de 32 ou 64
+
+01:26.100 --> 01:27.010
+bits do Windows.
+
+01:27.330 --> 01:32.880
+A razão para isso é que há duas versões do JDK disponíveis que você pode ver que
+
+01:33.240 --> 01:35.000
+ele excita seis janelas 64.
+
+01:35.340 --> 01:41.550
+Então, o que isso significa é que o Windows XP 6 é para computadores que executam uma versão de 32 bits do Windows
+
+01:41.850 --> 01:45.240
+e o Windows 64 é a versão de 64 bits do Windows.
+
+01:45.240 --> 01:49.290
+Então, para descobrir qual versão você está rodando no seu computador, você basicamente quer entrar
+
+01:49.290 --> 01:51.980
+no pedal de controle ou nas configurações do Windows 10.
+
+01:51.990 --> 01:57.900
+Então, quando eu vir para cá, clique no arco de início nas configurações, uma vez que você entrar no controle Peverell
+
+01:57.900 --> 02:03.170
+ou no meu caso Configurações do Windows, clique no sistema e, em seguida, ele cai aqui por cerca de.
+
+02:03.210 --> 02:05.450
+Isso é certamente o que é para o Windows 10.
+
+02:05.520 --> 02:08.160
+Pode ser ligeiramente diferente para versões mais antigas do Windows.
+
+02:08.160 --> 02:12.120
+Mas há uma opção em todas as versões do Windows para dizer qual versão do Windows que você
+
+02:12.810 --> 02:17.400
+está executando e o herói no topo do sistema que você pode ver que um sistema operacional de 64 bits.
+
+02:17.400 --> 02:23.790
+Então, ignore esta parte para a direita, onde diz xx 4 bytes para processa porque é possível ter um
+
+02:24.120 --> 02:31.640
+processador de 64 bits confusamente, mas para mim rodando uma versão de 32 bits da porta 15 do sistema operacional Windows aqui
+
+02:31.650 --> 02:35.220
+é à esquerda que diz Sistema operacional de 64 bits.
+
+02:35.340 --> 02:41.580
+Isso me diz que estou executando uma versão de 64 bits do sistema operacional e agora posso escolher o meu download.
+
+02:41.640 --> 02:45.120
+A única outra opção que surgiria seria uma versão de 32 bits.
+
+02:45.300 --> 02:51.060
+E quando você souber que pode fechar a tela, volte para a página que carregamos
+
+02:51.430 --> 02:53.620
+anteriormente e escolha a versão relevante.
+
+02:53.640 --> 02:57.630
+Agora, antes de permitir o download, você precisa clicar em aceitar o acordo da Lawsons.
+
+02:57.740 --> 03:02.230
+Este pequeno botão de rádio que você clica e dia para escolher a versão.
+
+03:02.320 --> 03:05.860
+Então, uma versão de 32 bits que seria a versão do Windows XP.
+
+03:05.980 --> 03:10.940
+No caso 64 sendo versão de 64 bits com edição de 64 bits do Windows.
+
+03:10.980 --> 03:13.040
+Então, quando eu clico nessa opção para mim.
+
+03:13.200 --> 03:15.220
+Então você escolhe o que for apropriado.
+
+03:15.440 --> 03:17.700
+E eu vou clicar em correr também.
+
+03:17.720 --> 03:21.250
+Bem, ele roda isso para que possamos ir em frente e instalar.
+
+03:21.800 --> 03:25.620
+Então, apenas avanço isso enquanto continua e conclui o download.
+
+03:29.970 --> 03:34.630
+Eu acho que eu fui em frente e a luz do dia terminou e começou porque eu a selecionei para correr.
+
+03:34.640 --> 03:40.160
+Agora, se você não selecionou Executar, pode ser necessário clicar duas vezes no programa de download para iniciar.
+
+03:40.170 --> 03:45.170
+Mas em qualquer caso, ele deve começar a fechar o navegador porque não precisamos mais dele
+
+03:45.170 --> 03:49.520
+e você chega a um processo como esse, um processo de instalação que podemos
+
+03:49.730 --> 03:55.940
+realizar pode aparecer aqui e clicar na próxima porta que você pode realmente precisar aprender carta no curso apenas para
+
+03:55.940 --> 04:01.640
+manter a parte traseira de sua mente ou talvez anote a área o caminho que este material foi instalado dentro
+
+04:01.660 --> 04:07.490
+Você pode dizer que no meu caso está tudo bem para ser instalado em dizer código e programas de barra invertida pausar menos Java
+
+04:07.940 --> 04:10.990
+do que esse número se relacionará com a versão que você baixou.
+
+04:11.210 --> 04:16.310
+Então a parte importante é que o programa segue o Sless Java para que você possa e ele pode ou não precisar
+
+04:16.310 --> 04:21.940
+disso mais tarde no curso, mas eu tenho muitos dos meus comentários quando eu faço isso que você vai escrever dizendo que você sabe
+
+04:21.940 --> 04:23.700
+cônicas, mas eu preciso mudar qualquer opções lá.
+
+04:23.990 --> 04:29.170
+Bem, deixe-o fazer a sua coisa e instalar.
+
+04:29.360 --> 04:34.650
+A próxima coisa que faz é instalar o JDK, mas também quer instalar o JRA.
+
+04:34.700 --> 04:37.120
+Atari significa Java Runtime EDITION.
+
+04:37.430 --> 04:41.880
+E você precisa ter coisas no seu computador para poder usar o Java.
+
+04:42.170 --> 04:48.320
+Então, vamos para apenas clicar em próxima notando que esse diretório o programa de barra de códigos
+
+04:48.380 --> 04:49.760
+C envolve Sless Java.
+
+04:49.760 --> 04:51.530
+Então, é realmente colocá-lo em uma subpasta diferente.
+
+04:51.530 --> 04:55.760
+E mais uma vez você pode precisar disso mais tarde no contexto do curso e deixá-lo fazer sua parte novamente.
+
+04:59.360 --> 05:04.730
+Tudo bem então, neste ponto, você pode dizer que ele surgiu e disse que a atualização do kit de desenvolvimento Javaris
+
+05:04.760 --> 05:07.280
+8 e, em seguida, o número foi instalado com sucesso.
+
+05:07.280 --> 05:09.880
+Então, na verdade, terminamos clicando em claires.
+
+05:09.880 --> 05:11.410
+Eu vou terminar a ponta aqui.
+
+05:11.420 --> 05:12.750
+Vamos para o próximo.

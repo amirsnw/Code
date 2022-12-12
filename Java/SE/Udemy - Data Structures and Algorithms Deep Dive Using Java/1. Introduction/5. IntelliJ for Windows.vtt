@@ -1,0 +1,421 @@
+WEBVTT
+
+00:05.350 --> 00:11.540
+Neste vídeo, vamos baixar e instalar o Adia inteligente, que é o editor
+
+00:11.540 --> 00:16.130
+ou a ideia que usaremos neste curso para nossos programas.
+
+00:16.130 --> 00:20.060
+Agora este vídeo em particular é para a plataforma Windows.
+
+00:20.060 --> 00:25.100
+Agora, se você estiver executando um Mac no Linux, há vídeos separados para esses
+
+00:25.100 --> 00:27.050
+sistemas operacionais nesta seção do curso.
+
+00:27.140 --> 00:31.430
+Então eu me refiro a esses vídeos como reparo adequado no Windows você está no lugar certo.
+
+00:31.730 --> 00:35.930
+Então, a primeira coisa a fazer é ir ao site web brines
+
+00:39.280 --> 00:44.390
+dot com que é o site onde os criadores deste produto Intelli JRD vão usar.
+
+00:44.620 --> 00:49.050
+Uma vez que você chegar lá e voltar aqui e clicar em inteligência, ele estará mostrando
+
+00:49.060 --> 00:54.430
+se, por acaso, não tentar por alguma razão, eu sempre acho que podemos fazer idéia da inteligência de qualquer forma.
+
+00:54.430 --> 01:02.160
+Clique no link para ir para a próxima página e clicar em baixá-lo e apresentá-lo com duas
+
+01:02.160 --> 01:06.540
+opções para baixar a edição final ou o Community Edition.
+
+01:06.550 --> 01:09.520
+Agora vá em frente e baixe o Community Edition.
+
+01:09.570 --> 01:13.260
+Nós vamos falar um pouco sobre isso, uma vez que está baixando apenas para economizar um pouco de tempo.
+
+01:14.380 --> 01:18.520
+Então eu cliquei em download que você viu que deveria aparecer você pode vê-lo
+
+01:18.520 --> 01:24.520
+no fundo Eu vou clicar lado a lado que eu só vou voltar só para mostrar a página com a
+
+01:24.520 --> 01:26.210
+Ultimate Edition no Edição da comunidade.
+
+01:26.410 --> 01:30.020
+E falar sobre os dois são as duas versões dele agora.
+
+01:30.050 --> 01:32.770
+A Ultimate Edition é o produto comercial.
+
+01:32.770 --> 01:37.160
+Então, se você quiser usar esse período de teste, precisará pagar por isso
+
+01:37.260 --> 01:38.830
+e poderá pagar por isso.
+
+01:38.890 --> 01:43.900
+A edição da comunidade, por outro lado, é totalmente gratuita e você nunca terá que pagar nada por isso para que eu
+
+01:43.900 --> 01:45.150
+possa fazer uma boa escolha.
+
+01:45.160 --> 01:48.240
+Em muitos casos, para levar a versão gratuita e de código aberto.
+
+01:48.510 --> 01:54.460
+Mas se você quiser ter acesso a outros recursos comerciais, por exemplo, trabalho ou Enterprise Edition e usar outras
+
+01:54.490 --> 02:00.040
+estruturas que não são compatíveis ou não estão disponíveis quando a versão gratuita da edição da comunidade você
+
+02:00.040 --> 02:06.670
+pode tirar essa opção aqui e com a Ultimate Edition há uma opção de troll de 30 dias para que você
+
+02:06.670 --> 02:09.460
+possa experimentá-la gratuitamente por 30 dias e depois disso.
+
+02:09.520 --> 02:14.810
+Normalmente, você teria que pagar para que eu pudesse estender esse teste por mais 90 dias.
+
+02:15.010 --> 02:19.870
+Então, em outras palavras, um total de 120 dias, então, se você estiver interessado em
+
+02:19.870 --> 02:25.900
+saber que há uma palestra na seção que mostra como obter o Special K, você precisará basicamente colar
+
+02:25.900 --> 02:28.890
+na Ultimate Edition para obter o teste extra. Exchequer.
+
+02:28.900 --> 02:29.850
+Sem dados.
+
+02:30.010 --> 02:33.390
+Então eu me refiro a isso se você decidir fazer o download da Ultimate Edition.
+
+02:33.400 --> 02:37.990
+Caso contrário, como muitos fazem neste vídeo, eu baixei a edição da comunidade e certamente
+
+02:37.990 --> 02:43.060
+vou trabalhar novamente, é claro, tudo bem, então agora que é dia eu vou clicar e correr.
+
+02:43.060 --> 02:47.980
+Então, dependendo do seu navegador, você pode querer navegar para a frente ou você já a iluminou.
+
+02:48.000 --> 02:53.100
+Em qualquer caso, inicie o instalador neste caso de execução clicada e isso nos dará
+
+02:53.100 --> 02:58.340
+a opção de parar a instalação e vamos encerrar o presidente no e seguiremos o processo
+
+02:58.340 --> 02:59.090
+de configuração.
+
+02:59.090 --> 03:00.760
+Eu vou procurar em seguida.
+
+03:00.960 --> 03:07.700
+Eu vou apenas para envergonhar ou selecionar ou usar a destilação de localização padrão para o que eu
+
+03:07.700 --> 03:09.160
+preciso mudar isso agora.
+
+03:09.200 --> 03:15.180
+A outra opção que você precisa saber é se você está executando uma versão de 32 ou 64 bits do Windows.
+
+03:15.360 --> 03:21.470
+Agora, no vídeo anterior, mostrei como fazer isso no JDK, o vídeo do kit de desenvolvimento Java, mostrei
+
+03:21.470 --> 03:25.170
+como determinar se você está executando um 32 ou 64 bits.
+
+03:25.280 --> 03:30.240
+Então, dependendo do que você encontrou quando está baixando, o seletor de vídeo terá uma opção.
+
+03:30.380 --> 03:35.490
+No meu caso eu estava rodando uma edição de 64 bits, então vou selecionar isso obviamente para selecionar 32 bits.
+
+03:35.540 --> 03:40.420
+Se é isso que você está executando em seu RA ou o seu Windows está executando a versão de
+
+03:40.430 --> 03:46.670
+32 bits e eu sugiro que você clique nessas três associações as caixas de seleção e que apenas marca este idioma específico é a
+
+03:46.670 --> 03:47.100
+seguinte.
+
+03:47.100 --> 03:51.450
+Eu tenho essa extensão de arquivo para ser aberto em inteligência e isso é
+
+03:52.070 --> 04:00.080
+geralmente o que você quer fazer e clique na próxima instalação de registro e que agora está indo e instalando e dizendo JRD eu só vou
+
+04:00.080 --> 04:04.000
+avançar este vídeo fora um pouco de tempo e nós voltamos depois que
+
+04:08.800 --> 04:14.590
+terminar de instalar a podridão Eu posso dizer que está quase acabado agora, nós vamos ter aquela prateleira do Sooni.
+
+04:14.660 --> 04:14.910
+Tudo bem.
+
+04:14.910 --> 04:19.270
+Então agora está realmente terminado a próxima opção é apenas clicar na caixa de seleção para que ele possa rodar e
+
+04:19.270 --> 04:19.790
+me dizer J.
+
+04:19.940 --> 04:25.270
+E isso independentemente de você ter baixado o último ou, neste caso, a edição da comunidade.
+
+04:25.310 --> 04:29.710
+Clique sobre isso e clique em terminar e vai começar inteligente para nós.
+
+04:29.940 --> 04:34.970
+Agora, normalmente, você verá essa opção e ela estará nos dizendo que temos uma opção para
+
+04:35.000 --> 04:39.190
+tentar importar algumas configurações, e isso seria útil se você estivesse usando inteligência.
+
+04:39.330 --> 04:43.260
+Você instalou uma versão anterior e deseja manter as configurações que você configurou.
+
+04:43.370 --> 04:47.720
+Neste caso, eu não tenho realmente instalado inteligência neste computador e este é o meu
+
+04:47.720 --> 04:51.320
+bloqueio que a opção que você verá clique em não importar configurações.
+
+04:51.320 --> 04:55.450
+Caso contrário, há um local geralmente selecionado ou encontrado pela inteligência.
+
+04:55.670 --> 05:00.860
+E você poderia selecionar isso e ficar inteligente para importar configurações e usado quero dizer sua instalação
+
+05:00.860 --> 05:01.620
+de inteligência.
+
+05:01.880 --> 05:08.680
+Mas no meu caso eu vou deixar o padrão não importo configurações e clico em I. K. no minuto seguinte para passar
+
+05:08.680 --> 05:14.000
+por uma seção de configuração para configurar algumas configurações e informar ao Intelli
+
+05:14.000 --> 05:15.490
+Jai quais opções desejamos.
+
+05:15.510 --> 05:19.910
+Isso é o mesmo e você pode ver que o da esquerda tem um fundo branco, o da direita é
+
+05:19.910 --> 05:21.100
+um tipo de fundo escuro.
+
+05:21.100 --> 05:25.530
+Ele pode escolher entre qual deles você prefere trabalhar.
+
+05:25.550 --> 05:27.400
+Sabendo que você sempre pode mudar depois.
+
+05:27.590 --> 05:29.730
+Eu vou selecionar aquele com o fundo branco.
+
+05:29.760 --> 05:31.880
+Clique no próximo.
+
+05:31.880 --> 05:36.990
+Agora há uma série de plugins na tela e você pode escolher todo tipo de coisa.
+
+05:37.160 --> 05:42.080
+E o que eu sugiro que você faça geralmente é deixar como está agora e voltar mais
+
+05:42.080 --> 05:47.600
+tarde se você decidir instalar plugins e apenas outra coisa a notar é se você está rodando a versão
+
+05:47.600 --> 05:53.910
+Ultimate de inteligência você realmente terá mais opções para uma vez disse plugins sobre eu estava indo para clicar em seguida.
+
+05:53.910 --> 06:00.330
+Mesma coisa aqui, se quisermos mudar ou instalar essas duas coisas que vamos usar neste curso em
+
+06:00.330 --> 06:00.660
+particular.
+
+06:00.660 --> 06:07.250
+Você pode fazer isso agora, mas eu vou pular os ventiladores e clique em começar a usar a Intel cada eu Adia
+
+06:07.300 --> 06:10.030
+e ele pode dizer que agora é carregado inteligente.
+
+06:10.110 --> 06:15.890
+Agora, o próximo passo que precisamos fazer é configurar o kit de desenvolvimento Java e precisamos fazer isso
+
+06:15.890 --> 06:18.640
+para que possamos realmente programar no site deste curso.
+
+06:18.740 --> 06:25.100
+Preciso fazer isso é clicar em configurar e clicar em Padrões do projeto e, em seguida, selecionar estrutura
+
+06:25.100 --> 06:25.760
+do projeto.
+
+06:27.220 --> 06:29.110
+E isso nos levará para a exibição.
+
+06:29.310 --> 06:34.870
+E se você não canta o projeto STK mostrando o seu clicado em outras áreas do espectro que você clicou projeto e que
+
+06:34.890 --> 06:39.930
+nós mostramos que o anúncio é expulso das terras agrícolas e só para dizer se ele foi configurado pela democracia pode
+
+06:39.930 --> 06:45.440
+dizer que não diz STK é T. K. significa kit de desenvolvimento de software.
+
+06:45.530 --> 06:51.290
+Então, o que precisamos fazer é criar um para que possamos realmente programar dentro da inteligência.
+
+06:51.330 --> 06:56.730
+Então, o que vamos fazer é basicamente associar o kit de desenvolvimento Java que foi instalado
+
+06:57.030 --> 06:58.040
+anteriormente com inteligência.
+
+06:58.470 --> 07:05.570
+Então, para fazer isso, vou clicar em você, vamos selecionar o Trittico, então o que precisamos fazer é navegar até
+
+07:05.570 --> 07:08.650
+a pasta onde instalamos o kit de desenvolvimento Java.
+
+07:08.810 --> 07:13.180
+E eu falei sobre isso no vídeo de instalação do kit de desenvolvimento Java.
+
+07:13.230 --> 07:15.260
+Eles precisam saber onde isso foi instalado.
+
+07:15.420 --> 07:19.980
+E se você lembrar que minha máquina nesse vídeo foi instalada na pasta de arquivos do programa.
+
+07:20.070 --> 07:26.530
+Então eu nunca chego a essa pasta e vou para a subpasta Java e você diz que é uma alocação
+
+07:26.570 --> 07:32.940
+dupla para o JDK e o Giry e esse número pode mudar dependendo de quando você está assistindo este vídeo.
+
+07:33.200 --> 07:38.950
+Mas quando você quiser selecionar o JDK, vá em frente e clique em JDK e clique em OK.
+
+07:39.270 --> 07:44.270
+Pouco antes de clicar em OK, é importante dar uma olhada e verificar se você selecionou os arquivos de programa e
+
+07:44.720 --> 07:45.810
+não os arquivos de programa.
+
+07:45.810 --> 07:50.810
+Imposto 6 porque os dois diretórios lá que são muito semelhantes e você pode ver isso é o site
+
+07:50.840 --> 07:52.070
+da política do programa 6.
+
+07:52.080 --> 07:56.700
+Agora, se eu abrir isso e der uma olhada, você diz que não há pasta Java lá.
+
+07:56.860 --> 08:02.120
+É uma questão bastante comum que vai surgir longe de estudantes olhando para onde encontrar a pasta Java e
+
+08:02.130 --> 08:05.250
+isso é porque eles estão olhando para o projeto envolve excite buscas.
+
+08:05.340 --> 08:07.770
+Case fechou de novo.
+
+08:07.880 --> 08:13.620
+Estamos no lugar certo aqui, onde o programa evoluiu Java e eu cliquei no JDK e certifique-se de
+
+08:13.620 --> 08:19.830
+clicar no JRA porque precisamos do JDK, porque esse é o kit de desenvolvimento que inclui as ferramentas extras
+
+08:19.860 --> 08:21.960
+que precisamos ter capaz de programar.
+
+08:21.960 --> 08:27.450
+Então, vou clicar em OK com o selecionado e você pode ver que o outro projeto STK foi alterado
+
+08:28.050 --> 08:28.560
+no passado.
+
+08:28.560 --> 08:30.730
+Não foi STK nunca teve uma opção lá.
+
+08:30.840 --> 08:33.640
+Então, isso não é selecionado automaticamente para garantir que esteja selecionado.
+
+08:33.990 --> 08:39.180
+E a próxima coisa que você quer fazer é garantir que o nível de linguagem do projeto possa realmente dizer
+
+08:39.180 --> 08:41.170
+que isso diz que Takeda lutou contra isso.
+
+08:41.550 --> 08:45.330
+Portanto, é possível escolher outras versões, mas você não precisará fazer isso no momento.
+
+08:45.360 --> 08:47.290
+Então, deixe essa versão específica selecionada.
+
+08:47.550 --> 08:49.590
+Portanto, não precisamos alterar mais nada nesse canal.
+
+08:49.590 --> 08:56.160
+Então, quando clico em OK, obtenho algumas outras configurações que precisamos configurar e, em seguida, podemos prosseguir para
+
+08:56.160 --> 09:02.250
+parar de trabalhar com o código de destino quando voltarmos aqui e clicarmos em configurar e
+
+09:02.250 --> 09:03.730
+depois clicar em configurações.
+
+09:04.770 --> 09:07.380
+Uma vez feito isso, o que vejo sai daqui.
+
+09:07.710 --> 09:13.550
+Danny para entrar Bem expandir isso e clique e expanda geral.
+
+09:13.920 --> 09:14.880
+E quais são as duas coisas.
+
+09:14.880 --> 09:20.490
+Primeiro, eles querem clicar na importação automática para garantir que ambas as importações ambíguas em
+
+09:20.490 --> 09:26.640
+tempo real sejam coletadas e otimizem as importações durante o processo, facilitando o processo de leitura ao
+
+09:26.640 --> 09:27.760
+longo do curso.
+
+09:27.960 --> 09:34.020
+Então eu tenho que aplicar essa mudança no próximo clique em sua aparência e certifique-se de que
+
+09:34.020 --> 09:35.670
+o número baixo seja selecionado.
+
+09:35.670 --> 09:39.970
+Agora está realmente mostrando como padrão para mim, mas por algum motivo não foi verificado.
+
+09:39.990 --> 09:42.090
+Certifique-se de verificar essa criança nos negócios.
+
+09:42.480 --> 09:47.290
+E uma vez feito isso, você pode clicar em r. k e estamos realmente feito neste momento.
+
+09:47.370 --> 09:52.260
+Então eu peguei o vídeo aqui agora e podemos passar para o próximo vídeo e começar a usar a
+
+09:52.320 --> 09:52.970
+ideia inteligente.

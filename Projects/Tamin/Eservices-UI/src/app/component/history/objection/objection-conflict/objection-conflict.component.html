@@ -1,0 +1,428 @@
+<div class="alert alert-info">
+  <span>اعتراض به سابقه دارای کسری کارکرد یا اشکال</span>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <div style="overflow-x: auto" *ngIf="renderMode == 'desktop'">
+      <table class="desktop-table">
+        <thead>
+        <tr>
+          <th>ردیف</th>
+          <th>سال</th>
+          <th>نوع سابقه</th>
+          <th>نام شعبه</th>
+          <th>شماره کارگاه</th>
+          <th>نام کارگاه</th>
+          <th colspan="2">فروردین</th>
+          <th colspan="2">اردیبهشت</th>
+          <th colspan="2">خرداد</th>
+          <th colspan="2">تیر</th>
+          <th colspan="2">مرداد</th>
+          <th colspan="2">شهریور</th>
+          <th colspan="2">مهر</th>
+          <th colspan="2">آبان</th>
+          <th colspan="2">آذر</th>
+          <th colspan="2">دی</th>
+          <th colspan="2">بهمن</th>
+          <th colspan="2">اسفند</th>
+          <th>ویرایش</th>
+          <th>حذف</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of data, let i = index">
+          <td style="text-align: center">{{(i + 1) | persianNumber}}</td>
+          <td>{{row.data.year | persianNumber}}</td>
+          <td>{{row.data.historyTypeName}}</td>
+          <td>{{row.data.branchname}}</td>
+          <td>{{row.data.rwshid | persianNumber}}</td>
+          <td>{{row.data.workShopName}}</td>
+          <td class="cell-default">{{number(row.data.om1) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm1)">{{isNullOrEmpty(row.data.mm1) ? '?' : row.data.mm1 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om2) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm2)">{{isNullOrEmpty(row.data.mm2) ? '?' : row.data.mm2 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om3) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm3)">{{isNullOrEmpty(row.data.mm3) ? '?' : row.data.mm3 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om4) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm4)">{{isNullOrEmpty(row.data.mm4) ? '?' : row.data.mm4 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om5) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm5)">{{isNullOrEmpty(row.data.mm5) ? '?' : row.data.mm5 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om6) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm6)">{{isNullOrEmpty(row.data.mm6) ? '?' : row.data.mm6 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om7) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm7)">{{isNullOrEmpty(row.data.mm7) ? '?' : row.data.mm7 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om8) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm8)">{{isNullOrEmpty(row.data.mm8) ? '?' : row.data.mm8 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om9) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm9)">{{isNullOrEmpty(row.data.mm9) ? '?' : row.data.mm9 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om10) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm10)">{{isNullOrEmpty(row.data.mm10) ? '?' : row.data.mm10 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om11) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm11)">{{isNullOrEmpty(row.data.mm11) ? '?' : row.data.mm11 | persianNumber}}
+          </td>
+          <td class="cell-default">{{number(row.data.om12) | persianNumber}}</td>
+          <td class="cell-empty"
+              [class.cell-edited]="!isNullOrEmpty(row.data.mm12)">{{isNullOrEmpty(row.data.mm12) ? '?' : row.data.mm12 | persianNumber}}
+          </td>
+          <td class="action-cell-disabled" *ngIf="row.data.deleted">ویرایش</td>
+          <td class="action-cell" *ngIf="!row.data.deleted" (click)="showModal(row, i)">ویرایش</td>
+          <td class="action-cell" *ngIf="!row.data.deleted" (click)="deleteRow(row, i)">حذف</td>
+          <td class="action-cell" *ngIf="row.data.deleted" (click)="undeleteRow(row, i)">انصراف از حذف</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="overflow-x: auto" *ngIf="renderMode == 'mobile'">
+      <table class="mobile-table">
+        <tbody>
+        <ng-container *ngFor="let item of data; let i = index">
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold">ردیف</td>
+            <td>{{(i + 1) | persianNumber}}</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold">سال</td>
+            <td>{{item.data.year | persianNumber}}</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold">نوع سابقه</td>
+            <td>{{item.data.historyTypeName}}</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold">نام شعبه</td>
+            <td>{{item.data.branchname}}</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold">شماره کارگاه</td>
+            <td>{{item.data.rwshid | persianNumber}}</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold">نام کارگاه</td>
+            <td>{{item.data.workShopName}}</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">فروردین</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om1 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm1)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm1) ? '??' : item.data.mm1) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm1 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">اردیبهشت</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om2 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm2)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm2) ? '??' : item.data.mm2) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm2 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">خرداد</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om3 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm3)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span class="mobile-day-cell">
+                  {{(isNullOrEmpty(item.data.mm3) ? '??' : item.data.mm3) | persianNumber:'cs'}}
+                </span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm3 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">تیر</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om4 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm4)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm4) ? '??' : item.data.mm4) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm4 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">مرداد</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om5 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm5)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm5) ? '??' : item.data.mm5) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm5 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">شهریور</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om6 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm6)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm6) ? '??' : item.data.mm6) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm6 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">مهر</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om7 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm7)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm7) ? '??' : item.data.mm7) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm7 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">آبان</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om8 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm8)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm8) ? '??' : item.data.mm8) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm8 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">آذر</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om9 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm9)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm9) ? '??' : item.data.mm9) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm9 !== ''">روز</span>
+            </td>
+          </tr>
+
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">دی</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om10 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm10)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm10) ? '??' : item.data.mm10) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm10 !== ''">روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">بهمن</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om11 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm11)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm11) ? '??' : item.data.mm11) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm11 !== ''">روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">اسفند</td>
+            <td>
+              <span class="bold">سابقه موجود:</span> {{item.data.om12 | persianNumber}}
+              <span>روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td [ngClass]="{'mobile-edited' : !isNullOrEmpty(item.data.mm12)}">
+              <span class="bold">سابقه اصلاحی:</span>
+              <span
+                class="mobile-day-cell">{{(isNullOrEmpty(item.data.mm12) ? '??' : item.data.mm12) | persianNumber:'cs'}}</span>
+              <span style="margin-right: 3px" *ngIf="item.data.mm12 !== ''">روز</span>
+            </td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="bold" rowspan="2">عملیات</td>
+            <td class="action-cell-mobile" *ngIf="!item.data.deleted" (click)="showModal(item, i)">ویرایش</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+            <td class="action-cell-mobile" *ngIf="!item.data.deleted" (click)="deleteRow(item, i)">حذف</td>
+            <td class="action-cell-mobile" *ngIf="item.data.deleted" (click)="undeleteRow(item, i)">انصراف از حذف</td>
+          </tr>
+          <tr [ngClass]="{'even':i % 2 == 0, 'odd':i % 2 != 0}">
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <form [formGroup]="noteForm" autocomplete="off" novalidate>
+        <tamin-field-label formControlName="note">توضیحات</tamin-field-label>
+        <tamin-field-text-area formControlName="note"></tamin-field-text-area>
+      </form>
+    </div>
+    <button type="submit" class="button normal" (click)="historyObjectionAgreement.show()" style="margin-top: 10px">
+      <i class="icon-ok"></i>
+      <span>تایید و ارسال</span>
+    </button>
+  </div>
+</div>
+<tamin-modal #theModal title="اصلاح سابقه">
+  <form [formGroup]="conflictEditForm" autocomplete="off" novalidate>
+    <div class="row" style="margin-bottom: 10px">
+      <div class="col-3 col-s-12">
+        <tamin-field-label formControlName="year">سال</tamin-field-label>
+        <tamin-field-static-text formControlName="year" placeholder="سال"></tamin-field-static-text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-s-12">
+        <div class="row">
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om1">فروردین</tamin-field-label>
+            <tamin-field-static-text formControlName="om1" placeholder="فروردین"></tamin-field-static-text>
+            <tamin-field-number [max]=31 [min]="0" formControlName="mm1" placeholder="فروردین "></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om2">اردیبهشت</tamin-field-label>
+            <tamin-field-static-text formControlName="om2" placeholder="اردیبهشت"></tamin-field-static-text>
+            <tamin-field-number [max]=31 [min]="0" formControlName="mm2" placeholder="اردیبهشت"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om3">خرداد</tamin-field-label>
+            <tamin-field-static-text formControlName="om3" placeholder="خرداد"></tamin-field-static-text>
+            <tamin-field-number [max]=31 [min]="0" formControlName="mm3" placeholder="خرداد"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om4">تیر</tamin-field-label>
+            <tamin-field-static-text formControlName="om4" placeholder="تیر"></tamin-field-static-text>
+            <tamin-field-number [max]=31 [min]="0" formControlName="mm4" placeholder="تیر"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om5">مرداد</tamin-field-label>
+            <tamin-field-static-text formControlName="om5" placeholder="مرداد"></tamin-field-static-text>
+            <tamin-field-number [max]=31 [min]="0" formControlName="mm5" placeholder="مرداد"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om6">شهریور</tamin-field-label>
+            <tamin-field-static-text formControlName="om6" placeholder="شهریور"></tamin-field-static-text>
+            <tamin-field-number [max]=31 [min]="0" formControlName="mm6" placeholder="شهریور"></tamin-field-number>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-s-12">
+        <div class="row">
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om7">مهر</tamin-field-label>
+            <tamin-field-static-text formControlName="om7" placeholder="مهر"></tamin-field-static-text>
+            <tamin-field-number [max]=30 [min]="0" formControlName="mm7" placeholder="مهر"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om8">آبان</tamin-field-label>
+            <tamin-field-static-text formControlName="om8" placeholder="آبان"></tamin-field-static-text>
+            <tamin-field-number [max]=30 [min]="0" formControlName="mm8" placeholder="آبان"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om9">آذر</tamin-field-label>
+            <tamin-field-static-text formControlName="om9" placeholder="آذر"></tamin-field-static-text>
+            <tamin-field-number [max]=30 [min]="0" formControlName="mm9" placeholder="آذر"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om10">دی</tamin-field-label>
+            <tamin-field-static-text formControlName="om10" placeholder="دی"></tamin-field-static-text>
+            <tamin-field-number [max]=30 [min]="0" formControlName="mm10" placeholder="دی"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om11">بهمن</tamin-field-label>
+            <tamin-field-static-text formControlName="om11" placeholder="بهمن"></tamin-field-static-text>
+            <tamin-field-number [max]=30 [min]="0" formControlName="mm11" placeholder="بهمن"></tamin-field-number>
+          </div>
+          <div class="col-2 col-s-2">
+            <tamin-field-label formControlName="om12">اسفند</tamin-field-label>
+            <tamin-field-static-text formControlName="om12" placeholder="اسفند"></tamin-field-static-text>
+            <tamin-field-number [max]=30 [min]="0" formControlName="mm12" placeholder="اسفند"></tamin-field-number>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-s-12">
+        <div style="margin-top: 10px">
+          <button type="submit" class="button normal" (click)="onConfirmChanges()">تایید</button>
+          <button type="button" class="button normal orange" (click)="clearChanges()">حذف تغییرات</button>
+          <button type="button" class="button normal dark" (click)="exitconflictEditForm()">انصراف</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</tamin-modal>
+<app-history-onjection-agreement #historyObjectionAgreement (agree)="confirmAndSend()"></app-history-onjection-agreement>

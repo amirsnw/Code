@@ -1,0 +1,250 @@
+WEBVTT
+
+00:05.310 --> 00:05.720
+Todo bien.
+
+00:05.730 --> 00:11.760
+Entonces, ahora que sabemos acerca de las tablas hash y, lo que es más importante, comprendemos qué hash es que podemos
+
+00:11.760 --> 00:11.960
+ver.
+
+00:12.000 --> 00:18.750
+Usted sabe que hay un algoritmo de ordenamiento llamado clasificación de cubo Buckets que utiliza hashing y que hace suposiciones
+
+00:18.750 --> 00:21.990
+sobre los datos como Relix y el conteo de ordenar.
+
+00:21.990 --> 00:28.080
+Y debido a eso, puede lograr un tiempo lineal que se comporta mejor cuando los valores hash de los
+
+00:28.080 --> 00:30.350
+elementos que se ordenan se distribuyen uniformemente.
+
+00:30.360 --> 00:35.640
+Por lo tanto, no hay muchas colisiones, por lo que cuando se trata de cubos, estamos pasando los valores que
+
+00:35.640 --> 00:36.260
+estamos ordenando.
+
+00:36.330 --> 00:40.010
+Entonces no hay concepto de claves y valores.
+
+00:40.020 --> 00:46.320
+Lo importante en lo que respecta a la ordenación de los depósitos es que los valores que estamos ordenando son
+
+00:46.320 --> 00:47.760
+hash. ¿Y cómo funciona eso?
+
+00:47.760 --> 00:54.390
+Comienza distribuyendo los elementos que desea elevar en cubos en función de sus valores hash y esto
+
+00:54.390 --> 00:58.410
+se denomina dispersión después de que se realiza la dispersión.
+
+00:58.410 --> 01:05.010
+Clasifica los elementos en cada cubeta y luego, después de clasificar cada cubeta, combina los cubos.
+
+01:05.010 --> 01:06.950
+Esto se llama la fase de recolección.
+
+01:07.050 --> 01:14.070
+Y como todos los elementos de cada segmento se han ordenado, básicamente se pueden concatenar todos
+
+01:14.070 --> 01:16.300
+los segmentos uno tras otro.
+
+01:16.320 --> 01:21.900
+Y así, en la tercera fase, vas a copiar los elementos en los cubos nuevamente en la
+
+01:21.960 --> 01:22.710
+matriz original.
+
+01:22.740 --> 01:28.020
+Y esto es en realidad una generalización del tipo de conteo porque si recuerdas el tipo de conteo,
+
+01:28.020 --> 01:33.120
+pasamos por los valores y luego distribuimos los valores en el conjunto de conteo y luego en
+
+01:33.120 --> 01:35.820
+la fase final solo atravesamos el conjunto de conteo.
+
+01:35.850 --> 01:42.000
+Y para cada valor copiamos cuántos teníamos en el conjunto original y, por lo tanto, el tipo de depósito hace
+
+01:42.000 --> 01:47.040
+algo similar, excepto que se trata de distribuir los artículos en función de sus valores hash.
+
+01:47.100 --> 01:50.020
+Y luego tiene que ordenar los artículos en cada cubo.
+
+01:50.070 --> 01:55.770
+Pero luego pasa por los cubos y los copia de nuevo en el conjunto original.
+
+01:55.770 --> 01:58.140
+Ahora hay una cosa importante aquí.
+
+01:58.170 --> 02:06.150
+Para que este tercer paso funcione, los valores del cubo X deben ser todos mayores que los valores del cubo
+
+02:06.150 --> 02:11.410
+X menos uno y menos que los valores del cubo X más 1.
+
+02:11.420 --> 02:18.030
+Y entonces, ¿qué significa esto mientras estamos en la fase de fusión vamos a escribir los valores en el cubo cero de nuevo
+
+02:18.030 --> 02:23.160
+en la matriz y luego los seguiremos por los valores en la cuchara 1 y los valores en
+
+02:23.160 --> 02:24.570
+la cuchara 2, etc.
+
+02:24.570 --> 02:29.590
+Eso significa que los valores en el contenedor 0 tienen que ser menores que los valores en el contenedor 1.
+
+02:29.610 --> 02:35.130
+De lo contrario, cuando escribamos los valores en cubos, volvemos a cero en la matriz y los seguimos en la cubeta 1,
+
+02:35.130 --> 02:40.270
+no se ordenarán si los valores en la cubeta uno pueden ser menores que los valores en la cubeta 0.
+
+02:40.290 --> 02:43.650
+No vamos a tener una matriz ordenada y veremos esto en un minuto.
+
+02:43.650 --> 02:50.040
+Entonces, ¿qué significa esto? Cualquiera que sea la función de hash que use, tiene que asegurarse de que
+
+02:50.040 --> 02:52.760
+los valores hash que produce satisfacen ese requisito.
+
+02:52.800 --> 02:59.700
+Y si tiene una función de hashing si está ordenando los valores 1 2 y 3, no puede tener una función de
+
+02:59.700 --> 03:03.650
+hash que coloque 3 en una categoría inferior a una que no funcionaría.
+
+03:03.660 --> 03:08.600
+Porque cuando copias los valores de nuevo en la matriz, tres serían copias atrás antes de que 1 sea.
+
+03:08.610 --> 03:15.240
+Y entonces, la función hash tiene que ajustar los valores para que se cumpla este requisito, de modo
+
+03:15.240 --> 03:20.470
+que si pone un valor en el depósito 5, ese valor debe ser menor.
+
+03:20.490 --> 03:25.560
+Y cuando digo el valor en este caso, me refiero al valor real no al valor hash que
+
+03:25.560 --> 03:29.730
+ese valor tiene que ser menor que los valores que pondría en los segmentos 7.
+
+03:29.770 --> 03:34.200
+Echemos un vistazo a un ejemplo aquí, así que veamos si vamos a ordenar la matriz
+
+03:34.380 --> 03:40.890
+en la parte superior, así que vamos a ordenar 54 46, etc. lo que vamos a hacer es que verás en el video
+
+03:40.890 --> 03:45.580
+de implementación que vamos a ordenar en categorías en función de su posición de 10.
+
+03:45.640 --> 03:51.950
+Y entonces la función hash de la forma en que va a hacer hash con estos valores es que va al hash 54 a 5.
+
+03:51.960 --> 03:54.610
+Va a hacer hash 46 a 4.
+
+03:54.630 --> 03:57.010
+Va a hacer hash 83 a 8.
+
+03:57.120 --> 04:04.320
+Y así en los cubos y esto sería nuestro cubo de matriz 46 y 43 van a terminar en el
+
+04:04.320 --> 04:12.140
+mismo cubo 54 terminará en el cubo de los años 50 66 terminará en el cubo de los años 60, etc.
+
+04:12.210 --> 04:18.540
+De modo que cumple con el requisito de que todos los valores en un cubo inferior tengan que ser menores que todos los
+
+04:18.540 --> 04:20.340
+valores en un cubo más alto.
+
+04:20.340 --> 04:26.520
+Entonces esta es una fase de dispersión, luego hicimos la fase de clasificación y por lo tanto, vamos
+
+04:26.520 --> 04:34.010
+a ordenar todos nuestros cubos y, por lo tanto, aquí podemos ver 46 antes de 43, pero ordenamos eso y lo mismo
+
+04:34.010 --> 04:40.160
+con 95 aquí en 95 viene antes de 92 después de haber ordenado 9 necesidades antes del 95.
+
+04:40.260 --> 04:45.630
+Y luego, la fase final de la fase de recolección es atravesar todos nuestros cubos y copiarlos nuevamente
+
+04:45.630 --> 04:47.010
+en el conjunto original.
+
+04:47.040 --> 04:54.220
+Y entonces vamos a copiar 43 y 46 54 66 83 90 a 95.
+
+04:54.300 --> 05:00.870
+Ahora bien, si no tuviéramos ese requerimiento de que los valores en cubos inferiores sean menores que los valores en cubos
+
+05:00.870 --> 05:02.460
+más altos simplemente no funcionarían.
+
+05:02.460 --> 05:08.350
+Quiero decir, si 90 a 95 están en esta casilla, no se copiarán los valores a la matriz.
+
+05:08.370 --> 05:13.430
+Hacemos eso simplemente atravesando la matriz para ordenar la matriz de cubetas en orden.
+
+05:13.430 --> 05:20.690
+Si no tuviéramos ese requisito y tuviéramos valores mayores a 43 en frente aquí cuando copiéramos, tendríamos valores mayores a
+
+05:20.690 --> 05:27.410
+43 que aparecen antes que 43 y obviamente nuestro ordenamiento no se ordenaría, por lo que el ordenamiento de
+
+05:27.410 --> 05:30.440
+los intervalos no es un algoritmo en el lugar.
+
+05:30.470 --> 05:37.310
+Utiliza memoria extra que depende de la cantidad de elementos del conjunto ordenado y la estabilidad dependerá
+
+05:37.310 --> 05:41.090
+del algoritmo de clasificación que utilice para ordenar los segmentos.
+
+05:41.090 --> 05:44.520
+Así que de vuelta aquí vamos a ordenar, obviamente, cada cubo.
+
+05:44.540 --> 05:47.650
+Y puede usar cualquier algoritmo que quiera hacer eso.
+
+05:47.660 --> 05:55.160
+Por lo tanto, si el algoritmo que usa es inestable, el ordenamiento de los depósitos terminará siendo inestable si es estable
+
+05:55.160 --> 05:57.090
+y los intervalos serán estables.
+
+05:57.140 --> 06:02.180
+Ahora, para lograr el tiempo lineal, tendría un valor por cubo.
+
+06:02.180 --> 06:07.890
+Ahora el ordenamiento por inserción se usa a menudo para ordenar los depósitos porque el ordenamiento por inserción es un algoritmo realmente rápido
+
+06:07.890 --> 06:09.570
+cuando el número de elementos es pequeño.
+
+06:09.590 --> 06:17.000
+No vamos a utilizar la ordenación por inserción, vamos a usar el método de ordenamiento en la clase de
+
+06:17.000 --> 06:24.740
+colecciones en el JDK y usa 8 algoritmos de ordenación combinada adaptativa, pero quiero que sepa que el ordenamiento de
+
+06:24.740 --> 06:28.920
+inserción es un algoritmo popular para usar para el tipo Buckett.
+
+06:28.970 --> 06:32.270
+Muy bien, ahora que sabemos cómo funciona, impleméntelo.
+
+06:32.270 --> 06:33.470
+Te veré en el próximo video.

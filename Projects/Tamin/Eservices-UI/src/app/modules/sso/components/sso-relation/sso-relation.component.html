@@ -1,0 +1,16 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>استعلام ارتباط فعال با سازمان تامین اجتماعی</span>
+</div>
+<div class="row">
+  <div class="panel">
+    <div class="col-12">
+      <div class="panel-title">جستجو</div>
+      <div class="panel-body">
+        <app-sso-relation-search (submit)="onSearch($event)" ></app-sso-relation-search>
+      </div>
+    </div>
+  </div>
+</div>
+<app-sso-relation-list #relationlist></app-sso-relation-list>
+

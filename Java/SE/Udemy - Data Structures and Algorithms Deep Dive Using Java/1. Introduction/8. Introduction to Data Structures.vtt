@@ -1,0 +1,121 @@
+WEBVTT
+
+00:05.660 --> 00:08.570
+Muy bien, entonces, ¿qué es una estructura de datos?
+
+00:08.730 --> 00:15.640
+Bueno, la estructura de datos organiza y almacena datos, por ejemplo, una matriz es una estructura de datos la matriz
+
+00:15.680 --> 00:20.660
+detestable y vamos a ver las matrices como una estructura de datos muy pronto.
+
+00:20.700 --> 00:25.620
+Ahora hay muchas estructuras de datos diferentes y difieren entre sí en la forma en
+
+00:25.620 --> 00:32.370
+que organizan y almacenan las matrices de datos, ordenan los datos secuencialmente y colocan cada valor en su propio espacio.
+
+00:32.370 --> 00:39.090
+Podemos llegar a una ranura usando un índice que es diferente de un árbol que es una estructura de datos jerárquica o algunos
+
+00:39.090 --> 00:41.480
+dirían que es un tipo de datos abstracto.
+
+00:41.490 --> 00:44.160
+Es un poco un área gris cuando se trata de árboles.
+
+00:44.160 --> 00:46.950
+Los árboles tienen la noción de padres e hijos.
+
+00:46.980 --> 00:50.050
+Ahora cada estructura de datos tiene fortalezas y debilidades.
+
+00:50.070 --> 00:55.680
+Todos hacen bien algunas cosas y otras no muy bien, porque si hubiera una estructura de
+
+00:55.680 --> 01:01.140
+superdatos que hiciera todo fantásticamente bien, entonces solo necesitaríamos la estructura de datos única y
+
+01:01.140 --> 01:02.140
+todos la usarían.
+
+01:02.310 --> 01:06.080
+Hay una razón por la que hay muchas estructuras de datos, por ejemplo.
+
+01:06.090 --> 01:11.460
+Las matrices son excelentes para el acceso aleatorio cuando conoces el índice del artículo al que deseas acceder.
+
+01:11.490 --> 01:15.600
+No son tan buenos cuando no conoces el índice porque luego tienes que buscar en el conjunto de datos para
+
+01:15.600 --> 01:16.740
+encontrar lo que estás buscando.
+
+01:16.740 --> 01:19.710
+Ahora aquí hay una cita de Linus Torvalds.
+
+01:19.800 --> 01:23.870
+Dice que el hecho es que no hay solo dos lados para ningún problema.
+
+01:24.000 --> 01:30.210
+Casi siempre hay una variedad de respuestas y depende casi siempre de la respuesta correcta en cualquier
+
+01:30.210 --> 01:30.960
+gran pregunta.
+
+01:31.050 --> 01:37.400
+Y si no sabes que Linus Torvalds es el tipo que inventó Linux, un ingeniero de software bastante conocido, ¿por
+
+01:37.410 --> 01:39.440
+qué te estoy mostrando esta cita?
+
+01:39.450 --> 01:45.960
+Bueno, porque la respuesta a ¿Cuál es la mejor estructura de datos para usar depende?
+
+01:45.960 --> 01:50.700
+La mejor estructura de datos dependerá de los datos que desee almacenar para que su
+
+01:50.700 --> 01:56.230
+aplicación tenga acceso a los datos que las operaciones o la aplicación realizarán más en los datos.
+
+01:56.310 --> 01:59.200
+Y entonces no hay una respuesta de un tamaño para todos.
+
+01:59.220 --> 02:04.650
+Como desarrollador, tendrá que decidir qué estructura de datos usar en función de las necesidades específicas de
+
+02:04.650 --> 02:05.350
+su aplicación.
+
+02:05.430 --> 02:06.930
+Y es por eso que estás en este curso.
+
+02:06.930 --> 02:12.090
+Quiero decir que es por eso que es importante conocer y entender los diferentes tipos de estructuras de
+
+02:12.420 --> 02:18.300
+datos, lo que hace bien a cada uno y lo que cada uno no hace tan bien armado con ese
+
+02:18.300 --> 02:24.090
+conocimiento que podrá elegir la mejor estructura de datos para su específica escenario porque dependerá de lo que quiera hacer
+
+02:24.090 --> 02:26.310
+con los datos y con qué frecuencia.
+
+02:26.430 --> 02:31.860
+Y así, una vez más, felicidades por la inscripción en este curso. Podrás elegir la mejor estructura de
+
+02:31.860 --> 02:36.760
+datos para tu trabajo específico y el código que escribes tendrá un mejor rendimiento por eso.
+
+02:36.780 --> 02:42.540
+Y eso es lo que una estructura de datos no es nada terriblemente complicada, una estructura de datos organiza y
+
+02:42.540 --> 02:43.220
+almacena datos.
+
+02:43.290 --> 02:50.550
+Y entonces sigamos y hablemos sobre el otro tema que trataremos en este curso y los algoritmos se muestran en
+
+02:50.840 --> 02:51.810
+el siguiente video.

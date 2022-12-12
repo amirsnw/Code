@@ -1,0 +1,118 @@
+<div class="alert alert-info">
+  درخواست کمک هزینه ازدواج
+</div>
+<app-marriage-conditions></app-marriage-conditions>
+<app-stp-header-new requestTyp="کمک هزینه ازدواج" #header></app-stp-header-new>
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <div class="panel" #dataPanel1>
+    <div class="panel-title">مشخصات ازدواج</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-6">
+          <tamin-field-label formControlName="branchCode">آخرین شعبه بیمه پردازی</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="branchCode" placeholder="" [dataItems]="header.branchWorkshop" displayField="name" valueField="value"></tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="weddingDateTimeStamp">تاریخ عقد</tamin-field-label>
+          <tamin-field-validator formControlName="weddingDateTimeStamp"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="weddingDateTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="mariageCerDateTimeStamp">تاریخ عقدنامه</tamin-field-label>
+          <tamin-field-validator formControlName="mariageCerDateTimeStamp"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="mariageCerDateTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="mariageNum">شماره عقدنامه</tamin-field-label>
+          <tamin-field-validator formControlName="mariageNum"></tamin-field-validator>
+          <tamin-field-mask formControlName="mariageNum" placeholder="" regex="^[0-9]*$"></tamin-field-mask>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="sabtNumber">شماره دفترخانه</tamin-field-label>
+          <tamin-field-validator formControlName="sabtNumber"></tamin-field-validator>
+          <tamin-field-mask formControlName="sabtNumber" placeholder="" mregex="^[0-9]*$"></tamin-field-mask>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button class="button normal" (click)="onValidateRequest()">
+            <span>بررسی احراز شرایط لازم جهت دریافت کمک هزینه ازدواج (با توجه به تاریخ عقد)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel" #dataPanel2>
+    <div class="panel-title">مشخصات همسر</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="partnerRisuId">شماره بیمه</tamin-field-label>
+          <tamin-field-validator formControlName="partnerRisuId"></tamin-field-validator>
+          <tamin-field-mask formControlName="partnerRisuId" placeholder="" mask="0000000000"></tamin-field-mask>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="partnerName">نام</tamin-field-label>
+          <tamin-field-validator formControlName="partnerName"></tamin-field-validator>
+          <tamin-field-persian-text formControlName="partnerName" placeholder=""></tamin-field-persian-text>
+          <div class="hint"><i class="icon-lightbulb"></i><span>صفحه کلید را در حالت فارسی قرار دهید</span></div>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="partnerLname">نام خانوادگی</tamin-field-label>
+          <tamin-field-validator formControlName="partnerLname"></tamin-field-validator>
+          <tamin-field-persian-text formControlName="partnerLname" placeholder=""></tamin-field-persian-text>
+          <div class="hint"><i class="icon-lightbulb"></i><span>صفحه کلید را در حالت فارسی قرار دهید</span></div>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="partnerIdNumber">شماره شناسنامه</tamin-field-label>
+          <tamin-field-validator formControlName="partnerIdNumber"></tamin-field-validator>
+          <tamin-field-mask formControlName="partnerIdNumber" placeholder="" regex="^[0-9]*$"></tamin-field-mask>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="panel">
+  <div class="panel-title">مدارک مورد نیاز</div>
+  <div class="panel-body">
+    <button class="button normal blue" (click)="addImage('تصویر صفحه اول شناسنامه بیمه شده اصلی', 'image1')"
+            *ngIf="!hasImage1">
+      <span style="font-size: 0.9em">افزودن تصویر صفحه اول شناسنامه بیمه شده اصلی</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه مشخصات همسر در شناسنامه بیمه شده اصلی', 'image2')"
+            *ngIf="!hasImage2">
+      <span style="font-size: 0.9em">افزودن تصویر صفحه مشخصات همسر در شناسنامه بیمه شده اصلی</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه اول شناسنامه همسر', 'image3')" *ngIf="!hasImage3">
+      <span style="font-size: 0.9em">افزودن تصویر صفحه اول شناسنامه همسر</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه مشخصات بیمه شده اصلی در شناسنامه همسر', 'image4')"
+            *ngIf="!hasImage4">
+      <span style="font-size: 0.9em">افزودن تصویر صفحه مشخصات بیمه شده اصلی در شناسنامه همسر</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه مشخصات زوج در عقدنامه', 'image5')" *ngIf="!hasImage5">
+      <span style="font-size: 0.9em">افزودن تصویر مشخصات زوج در عقدنامه</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه مشخصات زوجه در عقدنامه', 'image6')" *ngIf="!hasImage6">
+      <span style="font-size: 0.9em">افزودن تصویر مشخصات زوجه در عقدنامه در عقدنامه</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه نوع عقد در عقدنامه', 'image7')" *ngIf="!hasImage7">
+      <span style="font-size: 0.9em">افزودن تصویر صفحه نوع عقد در عقدنامه</span>
+    </button>
+
+    <tamin-image-gallery-managed [maxImageSize]="500" #imageGallery (afterRemove)="onRemoveImage($event)"
+                         (afterInsert)="onInsertImage($event)"></tamin-image-gallery-managed>
+    <div class="alert alert-info">
+      توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+    </div>
+  </div>
+</div>
+<div class="button-container" style="margin: 3px">
+  <button class="button normal" (click)="onSendRequest()">
+    <i class="icon-ok"></i>
+    <span>ثبت درخواست</span>
+  </button>
+</div>

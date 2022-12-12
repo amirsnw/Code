@@ -1,0 +1,66 @@
+<div class="panel">
+  <div class="page-title">نمایش درخواست کسر اقساط</div>
+  <div class="panel-body">
+
+    <form [formGroup]="viewForm"  autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="pensionerNationalId">کد ملی:</tamin-field-label>
+          <tamin-field-static-text formControlName="pensionerNationalId"  placeholder="کد ملی"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="userFirstName">نام:</tamin-field-label>
+          <tamin-field-static-text formControlName="userFirstName"  placeholder="نام"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="userLastName">نام خانوادگی:</tamin-field-label>
+          <tamin-field-static-text formControlName="userLastName"  placeholder="نام خانوادگی"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="pensionerId">شماره مستمری:</tamin-field-label>
+          <tamin-field-static-text formControlName="pensionerId"  placeholder="شماره مستمری "></tamin-field-static-text>
+        </div>
+      </div>
+      <!--<div class="row" *ngIf="viewForm.get('garanteeType').value">
+        <div class="col-3">
+&lt;!&ndash;          <tamin-field-checkbox formControlName="garanteeType" disabled="true">ضمانت وام برای اعضای خانواده</tamin-field-checkbox>&ndash;&gt;
+          <span>ضمانت وام برای اعضای خانواده</span><span ><i class="icon-ok"></i></span>
+        </div>
+      </div>
+-->
+      <app-subdominant-info #subdominantComponent [hidden]="!viewForm.get('garanteeType').value"></app-subdominant-info>
+      <div class="panel">
+        <div class="panel-title">مشخصات وام</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-6">
+              <tamin-field-label formControlName="bank"> بانک/موسسه/نهاد:</tamin-field-label>
+              <tamin-field-static-text formControlName="bank" placeholder="بانک " ></tamin-field-static-text>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="bankBranch"> نام شعبه/بانک/موسسه:</tamin-field-label>
+              <tamin-field-static-text formControlName="bankBranch" placeholder="نام شعبه/بانک/موسسه"></tamin-field-static-text>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="installmentAmount">مبلغ هر قسط:</tamin-field-label>
+              <tamin-field-static-text formControlName="installmentAmount" placeholder="مبلغ هر قسط"></tamin-field-static-text>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="installmentCount">تعداد اقساط:</tamin-field-label>
+              <tamin-field-static-text formControlName="installmentCount" placeholder="تعداد اقساط"></tamin-field-static-text>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="loanAmount">مبلغ بازپرداخت:</tamin-field-label>
+              <tamin-field-static-text formControlName="loanAmount"  placeholder="مبلغ بازپرداخت"></tamin-field-static-text>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="guaranteeAmount"> مبلغ ضمانت:</tamin-field-label>
+              <tamin-field-static-text formControlName="guaranteeAmount"></tamin-field-static-text>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="page" *ngIf="data">
+  <div class="row">
+    <h2 style="text-align: center">
+      <span>حکم افزایش مستمری بازماندگان</span>
+    </h2>
+    <h4 style="text-align: center">
+      <span>{{data.branchName}}</span>
+    </h4>
+  </div>
+  <div class="row">
+    <p>
+      <span>در اجرای بخشنامه مستمری ها و به موجب این حکم مجموع مستمری بازماندگان مرحوم</span>
+      <span style="margin-right: 5px;margin-left: 5px">{{data.hokmValue.fatherName}}</span>
+      <span>به شماره مستمری</span>
+      <span style="margin-right: 5px;margin-left: 5px">{{getPersianNumber(data.hokmValue.pensionerId)}}</span>
+      <span>از مبلغ</span>
+      <strong style="margin-right: 5px;margin-left: 5px">{{data.hokmValue.amt20l | persianNumber:'cs'}}</strong>
+      <span style="margin-left: 5px">ریال</span>
+      <span>به مبلغ</span>
+      <strong style="margin-right: 5px;margin-left: 5px">{{data.hokmValue.amt20 | persianNumber:'cs'}}</strong>
+      <span style="margin-left: 5px">ریال</span>
+      <span>افزایش یافته است و سایر کمک هزینه های جانبی قابل پرداخت از تاریخ</span>
+      <span style="margin-right: 5px;margin-left: 5px">***************</span>
+      <span>طبق جدول ذیل می باشد.</span>
+    </p>
+  </div>
+  <div class="row" style="margin-top: 10px">
+    <div class="col-12">
+      <table>
+        <thead>
+        <tr>
+          <th>ردیف</th>
+          <th>نام نام خانوادگی</th>
+          <th>تاریخ تولد</th>
+          <th>درصد سهام</th>
+          <th>مستمری قبلی</th>
+          <th>مستمری پس از افزایش</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let item of data.bazmandeValues; let i = index">
+          <tr>
+            <td>{{ (i + 1) | persianNumber }}</td>
+            <td>{{item.firstName}} {{item.lastName}}</td>
+            <td>{{ getBirthDate(item.birthDate)}}</td>
+            <td>{{item.quota  | persianNumber}}%</td>
+            <td>{{item.amt20l  | persianNumber:'cs'}}</td>
+            <td>{{item.amt20  | persianNumber:'cs'}}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 10px">
+    <div class="col-12">
+      <table>
+        <tbody>
+        <ng-container *ngFor="let item of data.detail">
+          <tr>
+            <td>{{item.fieldDesc | persianNumber}}</td>
+            <td>{{item.fieldValue | persianNumber:'cs'}}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p>خالص پرداختی با اعمال کسورات قانونی صورت می پذیرد</p>
+      <p>در صورت مشاهده هرگونه مغایرت و یا نياز به تکميل و تصحيح اطلاعات ،با همراه داشتن مدارک هویتی به شعبه مربوطه
+        مراجعه نمایيد</p>
+    </div>
+  </div>
+</div>
+<div style="padding: 5px;margin: 5px" *ngIf="data">
+  <button type="button" class="button normal" (click)="print()">دریافت فایل حکم مستمری</button>
+  <button type="button" class="button normal" (click)="sendToAnnoncment()">صدور و ارسال به صندوق شخصی</button>
+</div>
+

@@ -1,0 +1,60 @@
+<div class="alert alert-info">
+  گزارش آماری درخواست ها
+</div>
+<div class="panel">
+  <div class="panel-title">جستجو</div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off" novalidate>
+      <div class="form-control-container row">
+        <div class="col-8">
+          <tamin-field-label formControlName="requestType">نوع درخواست</tamin-field-label>
+          <!--<tamin-field-combo-box formControlName="requestType" #requestType></tamin-field-combo-box>-->
+          <tamin-field-combo-box-static formControlName="requestType" [dataItems]="requestServices" valueField="value"
+                                        displayField="name" #requestType></tamin-field-combo-box-static>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="requestStatus">وضعیت درخواست</tamin-field-label>
+          <tamin-field-combo-box-static formControlName="requestStatus" valueField="value"
+                                        displayField="name" #requestStatus></tamin-field-combo-box-static>
+          <!--<tamin-field-combo-box formControlName="requestStatus" #requestStatus></tamin-field-combo-box>-->
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="province">استان</tamin-field-label>
+          <tamin-field-auto-complete-data-grid formControlName="province"
+                                               #province></tamin-field-auto-complete-data-grid>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="city">شهر</tamin-field-label>
+          <tamin-field-combo-box formControlName="city" #city></tamin-field-combo-box>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="branch">شعبه</tamin-field-label>
+          <tamin-field-combo-box formControlName="branch" #branch></tamin-field-combo-box>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="fromDate">از تاریخ</tamin-field-label>
+          <tamin-field-persian-date formControlName="fromDate"></tamin-field-persian-date>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="toDate">تا تاریخ</tamin-field-label>
+          <tamin-field-persian-date formControlName="toDate"></tamin-field-persian-date>
+        </div>
+      </div>
+      <p style="margin-top:5px;">
+        <button type="submit" class="button normal" (click)="onSearch()">جستجو</button>
+        <button type="button" class="button normal dark" (click)="resetForm()">نمایش همه</button>
+      </p>
+    </form>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-title">آمار درخواست ها</div>
+  <div class="panel-body">
+    <tamin-data-grid #dataGrid></tamin-data-grid>
+  </div>
+</div>
+<div style="padding: 5px;margin: 5px" >
+  <button type="button" class="button normal" (click)="printExcel()">صدور به اکسل</button>
+  <button type="button" class="button normal" (click)="printCsv()">فایل CSV</button>
+</div>
+

@@ -1,0 +1,307 @@
+WEBVTT
+
+00:05.290 --> 00:09.030
+Are right now that we know how it works let's implement it.
+
+00:09.040 --> 00:14.770
+I've created a new project and I've added some code in and I've added the imports so I won't have to
+
+00:14.800 --> 00:17.890
+tell intelligibly what I want for this implementation.
+
+00:17.890 --> 00:23.920
+Each bucket will be an array list and so will start out by creating our buckets so we're going to create
+
+00:23.950 --> 00:30.340
+the array that's going to hold the array lists and then we'll create the array lists that will say list
+
+00:32.710 --> 00:41.170
+integer and we want an array bucket's equals new list and ologists we just need 10 buckets for the way
+
+00:41.170 --> 00:48.040
+that we're going to do the scattering and then will we need to now create the array list at each bucket
+
+00:48.050 --> 01:01.120
+so we'll say four in two equals zero I less in bucket Stotland I plus plus buckets equals new array
+
+01:01.140 --> 01:04.430
+list and it'll be an integer.
+
+01:05.740 --> 01:13.260
+And so we're using array lists as are buckets you could have a linked list here that would be fine.
+
+01:13.270 --> 01:18.400
+Now we need to scatter the values in so we're going to traverse the entire Ray and we're going to hash
+
+01:18.400 --> 01:23.130
+each value and put it into the appropriate bucket.
+
+01:23.150 --> 01:29.860
+So we're in a say four inch equals zero less an input length because we're going to traverse the input
+
+01:29.890 --> 01:32.730
+array plus plus.
+
+01:33.400 --> 01:35.860
+And we now need a hashing function.
+
+01:35.860 --> 01:37.930
+So let's add that.
+
+01:37.930 --> 01:45.910
+And this is going to be a more specific version of the of the method that we used in the raid X sort
+
+01:46.300 --> 01:50.690
+to return the digit that corresponded to a specific position.
+
+01:50.950 --> 01:53.280
+And so we always want the tens digit.
+
+01:53.290 --> 01:55.240
+And so you'll recognize this.
+
+01:55.240 --> 02:01.180
+And if you don't understand what's happening in here go back and review the video on the rate x sort
+
+02:01.180 --> 02:03.540
+implementation because I explain it there.
+
+02:03.640 --> 02:12.040
+So I'm going to say private static int hash and we want the sort values so that's going to be an int
+
+02:12.160 --> 02:22.230
+and we'll say return value over in 10 modded by 10.
+
+02:22.400 --> 02:24.060
+And so what is this doing.
+
+02:24.160 --> 02:29.080
+Well the division operator takes precedence over the maade operator.
+
+02:29.080 --> 02:32.620
+And so the division will be done first and the result will be modify 10.
+
+02:32.630 --> 02:37.300
+So for 54 we'll say 54 over 10 is 5.
+
+02:37.300 --> 02:43.450
+And when we mod it by 10 we get 5 because this is probably actually redundant in this case because we
+
+02:43.450 --> 02:48.450
+always have 10 and 10 and we were returning an integer so we could probably do that.
+
+02:48.580 --> 02:52.760
+And so in the case of 54 54 over 10 is 5.
+
+02:52.780 --> 02:56.470
+And so we're going to return five forty six over tennis four.
+
+02:56.470 --> 02:58.710
+We're going to return for Extra.
+
+02:58.720 --> 03:06.190
+So now that we have a hashing function we can do the scattering phase so we'll say bucket's
+
+03:08.890 --> 03:10.530
+hash input.
+
+03:10.560 --> 03:15.640
+I don't want input by.
+
+03:16.420 --> 03:22.120
+And so what are we doing here while the the index that we want of the bucket that we're going to put
+
+03:22.120 --> 03:25.280
+the value into will be at the hashed value.
+
+03:25.360 --> 03:28.810
+And so for 54 the hashed value is 5.
+
+03:28.810 --> 03:34.350
+And so we want to add it into buckets 5 and buckets 5 is an array list.
+
+03:34.390 --> 03:39.300
+And so we have to use the Add method and we want to add 54.
+
+03:39.420 --> 03:45.000
+And when we come to 46 Well the have value of 46 is for.
+
+03:45.220 --> 03:50.950
+So buckets for in the array list buckets for we're going to add 46.
+
+03:51.040 --> 03:53.510
+And so that's what this is doing.
+
+03:53.530 --> 03:58.780
+So once we've traversed the entire input array we've scatted our values into the buckets and now we
+
+03:58.780 --> 04:00.430
+need to sort each bucket.
+
+04:00.430 --> 04:10.870
+And so we're going to say for list bucket buckets and we're just going to use the collections sort method
+
+04:10.930 --> 04:16.870
+and sort the bucket now collection starts sort uses an adaptive merge sort.
+
+04:16.870 --> 04:19.730
+And so we're going to use a merge sort to sort each bucket.
+
+04:19.930 --> 04:25.750
+And so at this point all of our buckets are sorted and the final step is the merge or gathering step
+
+04:25.750 --> 04:34.480
+and all we have to do is traverse our buckets array and copy the values from each list because the values
+
+04:34.480 --> 04:36.670
+in each of those lists are now sorted.
+
+04:36.830 --> 04:40.130
+And so we're going to say and J equals zero.
+
+04:40.660 --> 04:44.310
+And we'll say four it equals zero.
+
+04:44.380 --> 04:59.240
+I left some buckets start lenth E-plus plus and we'll say for int value buckets J We want a set.
+
+04:59.260 --> 05:05.360
+Input J plus plus to the value.
+
+05:05.370 --> 05:09.220
+OK so why are we saying here this should actually be bucket's.
+
+05:09.240 --> 05:12.540
+I just noticed that typo there.
+
+05:12.630 --> 05:13.860
+So what are we doing here.
+
+05:13.860 --> 05:21.200
+We're traversing this array the buckets array and so the outer loop is traversing the buckets array
+
+05:21.200 --> 05:25.550
+and the inner loop is traversing the array list.
+
+05:25.550 --> 05:28.080
+That's at bucket's.
+
+05:28.220 --> 05:36.860
+And so we're saying that for each bucket traverse that bucket and copy the values into the input array.
+
+05:36.860 --> 05:40.120
+So Jay is tracking where we are in the input array.
+
+05:40.370 --> 05:42.960
+And I was tracking where we are in the buckets array.
+
+05:43.070 --> 05:48.590
+And so when we come to the bucket that contains 43 and 46.
+
+05:48.650 --> 05:56.270
+This loop will first assign 43 to the value and then copy 43 into the input array and increment J and
+
+05:56.270 --> 06:01.860
+then it'll assign 46 to the value and then copy 46 into the input array and input J.
+
+06:02.120 --> 06:04.880
+And that's it that's bucket sort.
+
+06:05.150 --> 06:06.560
+So it's pretty simple.
+
+06:06.560 --> 06:12.390
+We create our buckets we scatter the values into the buckets by hashing them.
+
+06:12.410 --> 06:19.700
+We then sort every bucket and then we then copy the values in the buckets back into the original array.
+
+06:19.700 --> 06:26.780
+Now remember for this to work values in buckets that are in lower positions in the array have to be
+
+06:27.080 --> 06:31.160
+smaller than values that are in buckets and higher positions in the array.
+
+06:31.160 --> 06:45.500
+So let's run this and we have 43 46 54 66 83 92 and 95 now because we have this is a list it should
+
+06:45.500 --> 06:51.890
+be fairly simple to change this to a linked list by just changing this here to a linked list.
+
+06:51.890 --> 06:54.820
+Let's let's live dangerously and let's try it.
+
+06:55.310 --> 07:02.020
+And so you'll see that that's all we have to do because we we have buckets that are lists.
+
+07:02.060 --> 07:06.670
+And so I'm willing to bet that this will just go ahead and work let's run it.
+
+07:08.920 --> 07:20.740
+And of course it does so 43 46 54 66 83 92 a 95 and so when you use the parent interface for the type
+
+07:20.770 --> 07:22.960
+rather than the specific concrete type.
+
+07:22.990 --> 07:28.820
+That's how easy it is to change from one class that implements the interface to the other class.
+
+07:28.840 --> 07:35.820
+And so here we're using a linked list for the bucket so using linked list for the buckets.
+
+07:35.830 --> 07:39.390
+And if I copy this line here
+
+07:42.320 --> 07:50.690
+and I can say here using array lists as the buckets now obviously we can only use one so I'll comment
+
+07:50.690 --> 07:55.270
+this out and switch this back to an array list.
+
+07:56.820 --> 08:00.310
+So let's run again just to make sure that we're fine and we are.
+
+08:00.330 --> 08:06.630
+And so you know that's how easy it is when you're using a parent interface as the type of the buckets
+
+08:06.630 --> 08:11.520
+to say well you know what rather than an array less Let's use a linked list and if he wanted to I think
+
+08:11.520 --> 08:15.630
+vector implements lists so you could just say you know what let's use vector instead.
+
+08:16.910 --> 08:20.200
+So you could go like this.
+
+08:20.420 --> 08:21.400
+And there you go.
+
+08:22.760 --> 08:27.160
+Then if we run we get the same thing.
+
+08:27.210 --> 08:30.960
+So I'll put this back to array list but that's the beauty of
+
+08:34.060 --> 08:40.030
+assigning when you create your buckets and whenever you're creating an array or even just a simple variable
+
+08:40.030 --> 08:44.930
+of using the parent interface it makes it really easy to switch between implementations.
+
+08:45.220 --> 08:51.760
+And so in this video you've seen a an implementation that uses the linked lists for the buckets and
+
+08:51.760 --> 08:55.850
+you've seen an implementation that uses an array lists for the buckets which essentially means it's
+
+08:55.860 --> 09:00.290
+using an array because we saw that array lists are backed by an array.
+
+09:00.450 --> 09:00.890
+All right.
+
+09:00.910 --> 09:02.210
+That's it for bucket's sort.
+
+09:02.230 --> 09:03.580
+I'll see you in the next video.

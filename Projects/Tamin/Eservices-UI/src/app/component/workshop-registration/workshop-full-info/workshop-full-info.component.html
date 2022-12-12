@@ -1,0 +1,20 @@
+
+
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>امکان مشاهده کارگاه های تعریف شده، ذینفعان و بیمه شدگان برای کارفرما</span>
+  </div>
+  <div class="panel">
+    <app-workshop-full-info-search (submitt)="onSearchSubmit($event)"></app-workshop-full-info-search>
+    <app-workshop-full-info-list #workshopList (sendRecord)="onFilterList($event)"></app-workshop-full-info-list>
+    <!-- <app-workshop-full-info-employer-list *ngIf="show1" #employerList (sendRecord)="onFilterList($event)"></app-workshop-full-info-employer-list> -->
+    <!-- <app-workshop-full-info-members-list *ngIf="show2" #membersList (sendRecord)="onFilterList($event)"></app-workshop-full-info-members-list> -->
+  </div>
+  <div class="panel">
+    <app-workshop-full-info-employer-list #employerList (sendRecord)="onFilterList($event)"></app-workshop-full-info-employer-list>
+  </div>
+  <div class="panel">
+      <app-workshop-full-info-member-search (submitt)="onSearchMemberSubmit($event)"></app-workshop-full-info-member-search>
+    <app-workshop-full-info-members-list #membersList (sendRecord)="onFilterList($event)"></app-workshop-full-info-members-list>
+  </div>
+

@@ -1,0 +1,82 @@
+WEBVTT
+
+00:05.300 --> 00:05.740
+Todo bien.
+
+00:05.750 --> 00:08.510
+Así que juguemos un poco con las acciones.
+
+00:08.510 --> 00:13.920
+Entonces en este desafío quiero que determinen si una cuerda es un palíndromo.
+
+00:13.970 --> 00:16.820
+Y tu solución debería usar una pila.
+
+00:16.820 --> 00:23.650
+Entonces, ¿qué es un palíndromo realmente palíndromo? Es una cuerda que se lee de la misma manera hacia atrás que hacia delante.
+
+00:23.690 --> 00:30.380
+Y así, por ejemplo, el auto de carrera es un palíndromo porque si lo leemos de izquierda a derecha dice
+
+00:30.380 --> 00:36.630
+auto de carrera y si lo leemos de derecha a izquierda dice auto de carrera o CAIB de CA.
+
+00:36.680 --> 00:41.710
+Ahora, para este desafío, estas cadenas pueden contener signos de puntuación.
+
+00:41.840 --> 00:45.990
+Quiero que ignores la puntuación, así que hice una coma.
+
+00:46.010 --> 00:46.840
+Hice.
+
+00:46.850 --> 00:55.310
+Es un palíndromo porque si quita la coma y el signo de interrogación y también ignora los espacios,
+
+00:55.310 --> 00:56.500
+elimine los espacios.
+
+00:56.510 --> 01:00.170
+Esto dice lo mismo de izquierda a derecha que de derecha a izquierda.
+
+01:00.170 --> 01:03.860
+Hemos hecho lo hice y lo hice yo.
+
+01:03.860 --> 01:05.060
+Yendo para el otro lado
+
+01:05.060 --> 01:07.230
+También quiero que ignores el caso.
+
+01:07.250 --> 01:12.660
+Entonces, si tuviéramos un año capitalizado y un pequeño, oiría que todavía sería un palíndromo.
+
+01:12.770 --> 01:15.830
+Entonces, las cadenas pueden contener signos de puntuación y espacios.
+
+01:15.830 --> 01:19.160
+Deben ser ignorados y el caso debe ser ignorado.
+
+01:19.310 --> 01:24.260
+Ahora hay un proyecto inicial en la sección de recursos que contiene las cadenas que
+
+01:24.260 --> 01:29.050
+me gustaría que pruebes y también hay un apéndice para verificar un método de palíndromo.
+
+01:29.210 --> 01:34.820
+Y entonces puedes codificarlo como quieras siempre que tu solución use una pila.
+
+01:34.820 --> 01:42.380
+Ahora cuando digo stack no quiero decir que tengas que usar nuestra implementación de stack aunque podrías.
+
+01:42.380 --> 01:48.470
+Me refiero a que puedes usar cualquier clase que desees incluyendo las clases que miramos en el JDK y
+
+01:48.470 --> 01:56.060
+te diré que mi solución usa un JDK siempre y cuando estés usando el comportamiento de las pilas de Life y así de
+
+01:56.060 --> 01:59.280
+alguna manera debes usar el último en salir primero comportamiento.
+
+01:59.420 --> 02:03.200
+Y tan buena suerte y te veré en el video de la solución.

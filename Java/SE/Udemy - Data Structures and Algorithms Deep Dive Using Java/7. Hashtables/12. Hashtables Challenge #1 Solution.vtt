@@ -1,0 +1,103 @@
+WEBVTT
+
+00:05.500 --> 00:08.200
+Tudo bem, então vamos escrever ou uma função hash.
+
+00:08.200 --> 00:14.230
+Agora, a chave aqui é que a função hash deve retornar índices de matriz válidos.
+
+00:14.260 --> 00:16.600
+E nós conhecemos nossas matrizes de comprimento 10.
+
+00:16.600 --> 00:21.060
+E assim os índices que retornam devem ser de zero a 9 inclusive.
+
+00:21.130 --> 00:26.560
+A função hash vou escrever apenas o valor do mod por 10 e, em seguida, assume o valor
+
+00:26.560 --> 00:27.120
+absoluto disso.
+
+00:27.220 --> 00:31.360
+Como eu apontei algumas vezes quando passamos por esta seção.
+
+00:31.360 --> 00:38.080
+Normalmente, quando você está escrevendo uma função de hash e está querendo alterar os valores para os índices
+
+00:38.140 --> 00:44.710
+da matriz que deseja mod pelo comprimento da matriz, porque isso garante que o valor obtido será entre
+
+00:44.710 --> 00:49.720
+0 e qualquer que seja o último valor válido índice de matriz é.
+
+00:49.720 --> 00:55.150
+Então você pode fazer qualquer coisa que você quiser para hash o valor que você pode ter esta função de
+
+00:55.150 --> 01:01.030
+hash realmente complicada se você quiser, mas em algum lugar lá você vai querer mod pelo comprimento da matriz para que
+
+01:01.030 --> 01:06.190
+você saiba que você vai ser retornando um índice que não estará fora dos limites e, portanto, essa será
+
+01:06.190 --> 01:08.080
+uma função de hash bastante simples.
+
+01:08.080 --> 01:17.100
+Eu só vou dizer matemática de retorno tem valor de abs mod 10 e é isso.
+
+01:17.110 --> 01:24.170
+E assim, para 59 3:08 2, vamos acabar com dois, essencialmente, vai nos dar o último valor aqui, o valor de uns
+
+01:24.190 --> 01:29.290
+e, em seguida, temos um número negativo aqui e é por isso que precisamos tomar o
+
+01:29.290 --> 01:30.080
+valor absoluto .
+
+01:30.100 --> 01:33.320
+E então, se eu correr agora, vamos ver o que temos.
+
+01:36.530 --> 01:41.820
+E eu vou trazer isso um pouco agora para você ver os valores sendo jogados com base na posição de
+
+01:41.820 --> 01:42.340
+cada um.
+
+01:42.340 --> 01:51.000
+Então, 500 é um slot de matriz 0 cinquenta e nove mil trezentos e oitenta e dois está em posição de 43
+
+01:51.060 --> 01:53.080
+está na posição 3 etc. Então, se quiséssemos obter um desses
+
+01:53.220 --> 01:58.680
+valores, digamos que isso fosse parte de um aplicativo maior e tivéssemos um método get e passaríamos
+
+01:58.680 --> 02:04.050
+esses valores que realmente não fazem sentido para números inteiros, mas se fossem chaves, faria sentido .
+
+02:04.050 --> 02:07.010
+Então, nós estávamos armazenando algo mais na matriz.
+
+02:07.020 --> 02:09.560
+E essas eram as chaves, então precisamos codificar as chaves para os índices da matriz.
+
+02:09.600 --> 02:14.350
+Nós executaríamos a mesma função hash nos valores e isso nos daria o índice.
+
+02:14.400 --> 02:18.530
+Então, se nós tivéssemos passado de quinhentos, nós chamaríamos a mesma função de hash ou eu suponho que
+
+02:18.540 --> 02:24.060
+deveríamos dizer o método em Java e nós retornaremos zero e então nós iremos para o NEMS nós iremos para a posição zero.
+
+02:24.060 --> 02:29.330
+E isso é apenas um pequeno desafio para entender o
+
+02:29.340 --> 02:33.870
+que a função de hash deveria estar fazendo.
+
+02:33.870 --> 02:34.760
+Então, vamos ao segundo desafio.
+
+02:34.830 --> 02:37.030
+&nbsp;

@@ -1,0 +1,394 @@
+WEBVTT
+
+00:05.350 --> 00:10.000
+De acuerdo, en los últimos dos videos vimos listas individuales y ahora vamos a ver
+
+00:10.000 --> 00:14.500
+una lista de doble enlace o una lista doblemente enlazada con una lista doblemente vinculada.
+
+00:14.500 --> 00:15.910
+Tenemos notas.
+
+00:15.910 --> 00:16.780
+Tenemos una cabeza
+
+00:16.780 --> 00:25.240
+Tenemos una cola y cada nota de la lista apunta al siguiente elemento de la lista y al elemento anterior
+
+00:25.240 --> 00:26.330
+de la lista.
+
+00:26.350 --> 00:32.230
+Y esta vez tenemos que hacer referencia a los campos; este sería el siguiente campo y este sería el campo
+
+00:32.230 --> 00:32.590
+anterior.
+
+00:32.590 --> 00:38.230
+Y como puede ver en el primer elemento del último, el campo anterior apuntará a Knol y el último elemento
+
+00:38.230 --> 00:43.750
+de la lista el siguiente campo apuntará al conocimiento tal como lo hace con las listas vinculadas individualmente, y
+
+00:43.750 --> 00:49.750
+como dije esta vez, tenemos referencias a la cabeza y la cola por lo que en esta lista Jane sería el
+
+00:49.750 --> 00:52.250
+nodo principal y Mike sería el nodo de cola.
+
+00:52.300 --> 00:58.700
+Y así podemos atravesar la lista de adelante hacia atrás de adelante hacia atrás o de cola a cabeza.
+
+00:58.840 --> 01:05.380
+Y esta vez, si quisiéramos insertar o eliminar un nodo del final de la lista, podemos hacerlo en
+
+01:05.380 --> 01:10.750
+tiempo constante porque tenemos un puntero o una referencia al final de la lista.
+
+01:10.780 --> 01:16.480
+Por lo tanto, la ventaja de utilizar una lista doblemente vinculada es que puede trabajar con el nodo al principio de
+
+01:16.480 --> 01:20.120
+la lista o el nodo al final de la lista en tiempo constante.
+
+01:20.170 --> 01:24.670
+Pero si quiere trabajar con nodos en el medio de la lista, tendrá el mismo problema que
+
+01:24.730 --> 01:26.050
+una lista vinculada por separado.
+
+01:26.050 --> 01:31.130
+Tendrás que atravesar desde la cabeza o desde la cola hasta encontrar el nodo con el que quieras trabajar.
+
+01:31.270 --> 01:34.540
+Y en el peor de los casos, podría tratarse de una operación lineal.
+
+01:34.540 --> 01:39.520
+Así que veamos cómo insertar y eliminar nodos en una lista doblemente vinculada.
+
+01:39.520 --> 01:44.510
+Así que tenemos un poco más de trabajo que hacer ahora porque tenemos dos referencias que tenemos que gestionar el
+
+01:44.590 --> 01:45.690
+siguiente y el anterior.
+
+01:45.700 --> 01:52.300
+Entonces, si quisiéramos insertar un proyecto de ley en la cabecera, comenzaríamos de la misma manera que lo hicimos para insertar un
+
+01:52.300 --> 01:54.190
+nodo en una lista vinculada individualmente.
+
+01:54.190 --> 02:02.560
+Vamos a crear un nuevo nodo para la nueva información y ahora tenemos que configurar el campo siguiente y el
+
+02:02.560 --> 02:03.000
+anterior.
+
+02:03.000 --> 02:07.720
+Entonces, su siguiente campo será lo que sea que esté apuntando actualmente la cabeza.
+
+02:07.720 --> 02:14.860
+Así que esto es lo mismo que cuando hicimos listas enlazadas por separado y su campo anterior va a apuntar a cualquier campo anterior de Jane
+
+02:14.860 --> 02:21.070
+porque si, si estamos insertando una cuenta delante de Jane, que es lo que estamos haciendo, entonces el campo anterior de Jane
+
+02:21.250 --> 02:26.750
+es ahora se va a convertir en el campo anterior de Bill y Bill se convertirá en lo que sea
+
+02:26.770 --> 02:27.750
+que Jane señale.
+
+02:27.760 --> 02:32.140
+Ahora para siempre insertar en la cabecera eso significaría que el campo previo de Bill
+
+02:32.140 --> 02:38.690
+va a apuntar a knowl Y ahora tenemos que arreglar el campo anterior de Jane porque Bill está siendo insertado frente a ella.
+
+02:38.920 --> 02:44.770
+Y entonces queremos que su campo anterior señale a Bill y luego le asignaremos el campo principal a
+
+02:44.770 --> 02:49.930
+Bill porque Bill se convierte en el nuevo nodo que está al frente de la lista.
+
+02:49.930 --> 02:55.810
+Y, esencialmente, cuando insertamos una nota, todo se trata de establecer las referencias del nodo que
+
+02:55.810 --> 03:00.430
+estamos insertando y también actualizar el campo anterior del nodo principal actual.
+
+03:00.490 --> 03:03.920
+Y luego de que hayamos hecho todo eso, así es como se verán las listas.
+
+03:03.940 --> 03:09.220
+Así que no tuvimos que cambiar el siguiente campo de Jane porque estamos insertando delante de la lista lo que
+
+03:09.220 --> 03:11.450
+viene después de que Jane no va a cambiar.
+
+03:11.470 --> 03:17.170
+Tuvimos que actualizar el campo anterior porque el campo anterior habría estado apuntando al conocimiento pero ahora
+
+03:17.170 --> 03:22.840
+va a apuntar al nuevo nodo porque este campo anterior solía apuntar aquí. Estamos dejando caer un
+
+03:22.840 --> 03:26.760
+nodo en frente de él y necesitamos actualizar el campo anterior.
+
+03:26.800 --> 03:31.540
+Entonces tenemos que actualizar el campo anterior de Bill para apuntar a lo que apuntaba el campo
+
+03:31.540 --> 03:37.150
+anterior de Jane y luego, en el último paso, simplemente establecer el encabezado para Bill, pasamos por los mismos pasos
+
+03:37.150 --> 03:43.150
+si insertáramos la factura en otro lugar en ese caso, Tendríamos más referencias para actualizar, pero pasaríamos por un montón de
+
+03:43.150 --> 03:43.960
+pasos similares.
+
+03:43.960 --> 03:47.160
+Básicamente tendríamos que configurar el anterior y el siguiente de Bill.
+
+03:47.160 --> 03:51.870
+Y luego tendríamos que actualizar el siguiente campo del nodo al frente y el campo anterior
+
+03:52.150 --> 03:54.300
+del nodo que viene después del que insertamos.
+
+03:54.340 --> 04:00.280
+Pero como dije cuando trabajas con listas enlazadas, principalmente quieres enfocarte en trabajar con elementos que están en la parte delantera de
+
+04:00.280 --> 04:04.810
+la lista o en el caso de la lista doblemente enlazada al final de la lista.
+
+04:04.840 --> 04:09.160
+Si comienzas a jugar con objetos en el medio, perderás la ventaja de una lista vinculada
+
+04:09.160 --> 04:14.680
+que consiste en insertar y eliminar elementos desde el frente y en el caso de una lista doblemente vinculada desde
+
+04:14.680 --> 04:17.020
+el final, puedes hacer eso en constante hora.
+
+04:17.050 --> 04:21.080
+Una vez que empiezas a jugar con otros nodos, estás entrando en un tiempo potencialmente lineal.
+
+04:21.160 --> 04:23.610
+OK, entonces eso es insertar un nodo en la cabeza.
+
+04:23.680 --> 04:27.640
+Volvamos a nuestra lista original solo para recordarnos cómo era.
+
+04:27.640 --> 04:33.370
+Así que volvemos a antes de insertar la factura, ahora vamos a insertar la cola.
+
+04:33.370 --> 04:38.320
+Entonces, una vez más, si queremos insertar una factura en la mesa crearemos un nuevo nodo llamado Bill
+
+04:38.320 --> 04:43.480
+y queremos asignar el siguiente campo del cuento al siguiente campo de Bill porque si volvemos a la diapositiva
+
+04:43.480 --> 04:48.790
+anterior si vamos a soltar Bill aquí, lo que sea que este tipo esté señalando ahora es lo próximo que
+
+04:48.790 --> 04:51.220
+vamos a querer que Bill apunte a su próximo.
+
+04:51.250 --> 04:55.920
+Así que vamos a asignar el campo siguiente de las colas actuales al siguiente campo de Bill.
+
+04:55.930 --> 05:01.750
+Vamos a asignar lo que sea actual al campo anterior de Bill porque Mike es actualmente
+
+05:01.750 --> 05:02.410
+el último.
+
+05:02.410 --> 05:07.220
+Entonces, si ponemos a Bill aquí, queremos que el campo anterior de Beale apunte a Mike, por lo
+
+05:07.390 --> 05:12.710
+que queremos apuntar a la sensación previa al cuento actual y luego vamos a asignar uno para asignar el siguiente
+
+05:12.710 --> 05:14.420
+campo de colas a Bill .
+
+05:14.480 --> 05:19.980
+Y entonces Mike tiene la tabla actual y después de la inserción de su próximo campo queremos que señale a Bill.
+
+05:20.030 --> 05:25.870
+Y finalmente vamos a asignarle el cuento a Bill y podemos hacerlo en complejidad de tiempo
+
+05:25.870 --> 05:29.030
+constante, no importa cuántos elementos haya en la lista.
+
+05:29.030 --> 05:33.400
+Pasará por la misma cantidad de pasos para insertar un nuevo elemento en la cola.
+
+05:33.410 --> 05:36.410
+Entonces, después de la inserción, esta es una situación que tendremos.
+
+05:36.410 --> 05:42.230
+Así que el siguiente campo de Mike se ha actualizado al campo anterior de Bill Bill, que se ha configurado a Mike, y su siguiente
+
+05:42.230 --> 05:45.890
+campo ha sido absorbido para saber qué es lo que hace que el próximo sentimiento sea.
+
+05:45.950 --> 05:48.380
+Y la cola ahora se ha configurado a Bill.
+
+05:48.380 --> 05:51.430
+Entonces, digamos que queremos eliminar del encabezado de la lista.
+
+05:51.440 --> 05:52.430
+Entonces queremos eliminar
+
+05:52.430 --> 05:53.050
+Jane.
+
+05:53.090 --> 05:55.670
+Bueno, veamos primero lo que tendríamos que hacer.
+
+05:55.680 --> 06:02.450
+Bueno, vamos a asignarle a Jane un nodo de eliminación y luego queremos asignar la sensación previa de John a lo que
+
+06:02.450 --> 06:05.750
+apunta el campo anterior de Jane porque la estamos eliminando.
+
+06:05.750 --> 06:12.170
+Entonces queremos tomar esa referencia e ir aquí y luego solo tenemos que mover la referencia principal a John.
+
+06:12.200 --> 06:15.470
+Y eso efectivamente mueve a Jane de la lista.
+
+06:15.500 --> 06:19.040
+Así que vamos a asignarle a Jane que elimine el nodo.
+
+06:19.070 --> 06:22.550
+Vamos a asignar el campo anterior de John al campo anterior de Jane.
+
+06:22.550 --> 06:27.920
+Asignaremos cabeza a lo que esté en el próximo campo de Jane porque el siguiente campo de Jane apunta a Juan,
+
+06:27.920 --> 06:33.400
+por lo que vamos a asignar a John a la cabeza y luego vamos a devolver eliminar el nodo del método.
+
+06:33.410 --> 06:39.080
+Y si quisiéramos, podríamos limpiar el siguiente campo de Jane configurándolo en no, no tenemos que
+
+06:39.080 --> 06:39.950
+hacerlo, pero podríamos.
+
+06:39.950 --> 06:43.130
+Y una vez más, eso será una complejidad de tiempo constante.
+
+06:43.130 --> 06:48.250
+Y así que una vez que pasaron, Jane se habrá ido y John será el nuevo jefe de la lista.
+
+06:48.350 --> 06:52.720
+Así que vamos a poner a Jane de nuevo y veamos cómo quitar la cola.
+
+06:52.720 --> 06:54.550
+Así que esta vez vamos a eliminar a Bill.
+
+06:54.590 --> 07:00.070
+Y entonces, ¿cómo lo haríamos mientras vamos a querer tomar el siguiente campo de Mike y señalar que no va
+
+07:00.140 --> 07:05.930
+a terminar, vamos a querer mover la cola a Mike para que la cola se mueva al nodo anterior de las
+
+07:06.170 --> 07:06.790
+colas actuales.
+
+07:06.920 --> 07:12.850
+Así que asignaremos la factura para eliminar el nodo. Asignaremos el próximo campo de Mike al siguiente campo de Bill.
+
+07:12.860 --> 07:19.520
+Asignaremos la cola al campo anterior de Bill, que es Mike, y luego devolveremos el nodo eliminado del método
+
+07:19.520 --> 07:25.040
+y, una vez más, podemos hacer esto en tiempo constante; no importa cuántos elementos haya en
+
+07:25.040 --> 07:28.600
+la lista si queremos eliminar un elemento de la cola.
+
+07:28.610 --> 07:31.110
+Podemos hacerlo usando la misma cantidad de pasos.
+
+07:31.190 --> 07:37.070
+Y entonces, después de la eliminación, tendremos esta situación en la que Mike ahora es la cola y Bill se ha ido.
+
+07:37.070 --> 07:45.710
+Entonces, en general, para insertar un nodo A entre los nodos B y C, queremos desplazar a A entre B y C, vamos a asignar el siguiente campo de
+
+07:45.710 --> 07:51.680
+A al siguiente campo de B porque el siguiente campo de B estará apuntando para ver si vamos a poner
+
+07:51.680 --> 07:52.790
+un entre ellos.
+
+07:52.790 --> 07:55.150
+Entonces queremos que el próximo campo de A apunte para ver.
+
+07:55.220 --> 08:01.700
+Vamos a asignar el campo previo de A al campo anterior de C porque el campo anterior de C será B y queremos
+
+08:01.880 --> 08:07.130
+que vayamos a colocar un objetivo entre ellos, así que vamos a querer que un campo previo sea B
+
+08:07.130 --> 08:11.820
+y luego asignamos El próximo campo de B al campo anterior de A y C a.
+
+08:11.930 --> 08:17.870
+Ahora hacer esos cuatro pasos es un tiempo constante, pero a menos que hagamos esto al principio o al final de la lista
+
+08:17.870 --> 08:23.150
+primero tenemos que buscar los nodos B y C y vamos a tener que atravesar la lista para hacer eso.
+
+08:23.150 --> 08:27.560
+Y entonces, el peor caso para esto es en realidad el tiempo lineal 0 hasta el final.
+
+08:27.560 --> 08:34.010
+Ahora, para eliminar un nodo A de entre B y C, esta vez tenemos nodos seguidos de a seguidos de
+
+08:34.010 --> 08:41.570
+c asignamos a para eliminar la nota de nodo queremos que el campo anterior de C apunte ahora a B porque estamos moviendo
+
+08:41.600 --> 08:42.010
+a.
+
+08:42.020 --> 08:48.030
+Asignaremos el campo previo de C al campo anterior de A porque el campo anterior de A apunta a B.
+
+08:48.080 --> 08:50.740
+Queremos que el próximo campo de B señale para ver.
+
+08:50.780 --> 08:56.450
+Así que asignaremos el próximo campo de B con cualquier campo A en el que esté apuntado el siguiente campo, porque el
+
+08:56.450 --> 09:01.290
+siguiente campo de A señala actualmente porque está entre ellos y luego simplemente devolvemos a desde el método.
+
+09:01.310 --> 09:07.180
+Una vez más, estos pasos son a tiempo constante, pero tenemos que encontrar uno primero en la lista.
+
+09:07.190 --> 09:11.830
+Entonces, a menos que a esté a la cabeza o la cola, vamos a tener que encontrarlo.
+
+09:11.840 --> 09:17.810
+Y este es el peor caso con ESC realmente será el tiempo lineal y eso es todo para ver
+
+09:17.810 --> 09:19.520
+cómo funcionan las listas doblemente vinculadas.
+
+09:19.520 --> 09:23.840
+Una vez más vamos a hacer una implementación simple de una lista doblemente vinculada.
+
+09:23.840 --> 09:29.820
+Vamos a actualizar nuestra implementación de la lista enlazada para convertirla en una lista doblemente vinculada.
+
+09:29.870 --> 09:31.370
+Entonces sigamos y hagamos eso.
+
+09:31.370 --> 09:32.720
+Te veré en el próximo video.

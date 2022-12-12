@@ -1,0 +1,430 @@
+WEBVTT
+
+00:05.340 --> 00:12.630
+Então eu estou aqui no Javid doc para a pilha de utilitários Javid e nosso primeiro pensamento será oh bem, isso é um
+
+00:12.630 --> 00:13.720
+trabalho muito legal.
+
+00:13.740 --> 00:16.860
+Tem o JDK tem uma classe de estatística, vamos apenas ir em frente e usá-lo.
+
+00:16.890 --> 00:23.280
+Mas há um, mas se lermos a documentação, veremos que a equipe de Java recomenda que nós não
+
+00:23.280 --> 00:25.230
+usamos essa classe, diz aqui.
+
+00:25.230 --> 00:31.830
+Um conjunto mais completo e consistente de operações de lifeso stack é fornecido pela interface do desenfileiramento, lembre-se, porque
+
+00:32.010 --> 00:34.650
+stack é um tipo de dado abstrato.
+
+00:34.650 --> 00:38.420
+O comportamento provavelmente será ditado por uma interface.
+
+00:38.460 --> 00:43.950
+E está dizendo que a documentação está dizendo que, em vez de usar a classe stack, devemos
+
+00:43.950 --> 00:47.720
+usar uma classe que implemente a interface de desenfileiramento na seção Q.
+
+00:47.720 --> 00:54.420
+Aprenderemos mais sobre o que é essa interface de desenfileiramento, mas podemos ver nos documentos que há uma classe de desenfileiramento
+
+00:54.480 --> 00:59.940
+de matriz aqui ou ali sugerindo que uma das classes que podemos usar que implementa a classe
+
+00:59.940 --> 01:01.670
+de desenfileiramento é uma matriz.
+
+01:01.680 --> 01:06.860
+Q E se você acha que isso significa que dequeue apoiado por uma matriz você recebe uma estrela de ouro.
+
+01:06.900 --> 01:13.740
+Portanto, se quisermos uma implementação de array de uma pilha, essa é uma das classes que poderíamos considerar usar.
+
+01:13.740 --> 01:19.890
+Essa é uma opção, mas já vimos outra classe que implementa a interface de desenfileiramento e essa é
+
+01:19.890 --> 01:26.910
+a classe de lista vinculada a classe de lista vinculada no JDK implementa essa interface e a implementação de uma
+
+01:26.910 --> 01:32.820
+pilha usando uma lista vinculada é uma ótima escolha porque não temos se preocupar em redimensionar a
+
+01:33.030 --> 01:34.580
+pilha quando estivermos empurrando itens.
+
+01:34.590 --> 01:39.960
+Então, o que isto significa é que se você quer uma pilha em seu aplicativo de trabalho, você pode ir em frente e apenas
+
+01:39.960 --> 01:41.330
+usar a classe de lista vinculada.
+
+01:41.340 --> 01:47.300
+Um problema potencial com isso é que uma classe nos permite fazer mais do que empurrar o pop nos itens.
+
+01:47.310 --> 01:52.650
+Quer dizer, olhamos para a classe da lista ligada e você pode adicionar itens que você pode remover os itens que você pode
+
+01:52.650 --> 01:54.150
+obter o índice de itens nele.
+
+01:54.180 --> 02:01.140
+Você sabe que você pode acessar aleatoriamente as coisas na lista para que você possa entrar no seu código e usar a classe
+
+02:01.140 --> 02:02.070
+da lista vinculada.
+
+02:02.070 --> 02:06.060
+Apenas limite-se a chamar os métodos push pop e peak.
+
+02:06.150 --> 02:09.060
+Vamos para a classe de lista vinculada, eu acho.
+
+02:09.060 --> 02:09.690
+Deixe-me ver.
+
+02:09.690 --> 02:14.250
+Bem, na verdade vamos para a classe de desenfileiramento e a partir daí podemos chegar à classe de
+
+02:14.250 --> 02:20.040
+lista vinculada, então eu vou para a classe de desenfileiramento e então podemos chegar à classe de lista vinculada daqui porque ela é
+
+02:20.040 --> 02:20.490
+implementada.
+
+02:20.760 --> 02:26.730
+Então você verá isso nos métodos, porque essa classe implementa o desenfileiramento.
+
+02:26.790 --> 02:36.110
+E se olharmos para o desenfileiramento brevemente, veremos que ele tem pico de pop e push, por causa disso, a classe
+
+02:36.110 --> 02:41.150
+de lista vinculada tem o pico e o push do PAUP.
+
+02:41.190 --> 02:46.560
+E se quisermos que esta lista encadeada se comporte como uma pilha, deveríamos estar apenas
+
+02:46.560 --> 02:47.930
+chamando esses três métodos.
+
+02:48.030 --> 02:56.400
+Então você tem duas escolhas que você poderia impor que você mesmo em seu código ou você poderia criar uma classe que tem
+
+02:56.400 --> 02:58.440
+essa lista vinculada como um campo.
+
+02:58.440 --> 03:04.040
+Então, essencialmente, criamos uma classe de pilha e ela teria um campo para a lista vinculada.
+
+03:04.050 --> 03:09.960
+E assim, os únicos métodos que você exporia dessa classe seriam push pop e peek, e é por isso que
+
+03:09.960 --> 03:11.220
+vamos passar por aqui.
+
+03:11.220 --> 03:17.850
+Então, ao invés de usar nossa própria implementação de uma lista encadeada e usar isso para fazer backup de uma pilha, usaremos
+
+03:17.850 --> 03:23.910
+a classe de lista vinculada do link JDK e vamos escrever uma implementação que use essa classe para fazer o
+
+03:23.910 --> 03:25.240
+backup de uma pilha.
+
+03:25.380 --> 03:27.240
+E então vamos para a
+
+03:31.510 --> 03:34.160
+I-T Então aqui estamos de volta à inteligência.
+
+03:34.180 --> 03:39.620
+Eu criei um novo projeto e coloquei o código na academia de pacotes para aprender a programação da
+
+03:39.630 --> 03:40.530
+pilha de Gatling.
+
+03:40.660 --> 03:46.510
+Copiei um código para o método principal Eu copiei o código para criar os funcionários comuns e
+
+03:46.540 --> 03:52.650
+copiei as chamadas de pilha que fizemos no último vídeo apenas para me dar uma vantagem inicial.
+
+03:52.780 --> 03:58.570
+E então, como de costume, adicionei a classe Employee e é exatamente a mesma que normalmente é.
+
+03:58.570 --> 04:02.800
+Então deixe-me adicionar uma classe agora chamada de pilha vinculada
+
+04:07.270 --> 04:11.490
+e aqui tudo o que precisamos é de um campo.
+
+04:11.500 --> 04:18.760
+Então, eu vou dizer private linked list e esta lista vai conter instâncias de funcionários e
+
+04:18.760 --> 04:20.360
+essa será nossa stack.
+
+04:20.410 --> 04:23.950
+E então este é um trabalho de classe JDK sem você sair da lista vinculada.
+
+04:23.950 --> 04:25.890
+E é isso que vai sustentar nossa pilha.
+
+04:25.900 --> 04:30.280
+E assim, no construtor de uma pilha vinculada, vamos criar nossa
+
+04:32.920 --> 04:39.940
+lista vinculada, assim, dizeremos que pilha é igual à nova lista vinculada e, para evitar a necessidade de
+
+04:39.940 --> 04:43.510
+alterar o nível da linguagem, especificarei que queremos funcionário.
+
+04:43.510 --> 04:49.510
+Agora, uma coisa a lembrar é que essa lista vinculada é, na verdade, uma lista duplicada e, para uma pilha, você não
+
+04:49.510 --> 04:54.620
+precisa de uma lista duplamente vinculada porque está sempre trabalhando com o item que está na frente da lista.
+
+04:54.700 --> 04:59.680
+Mas, normalmente, a memória não será um problema e, assim, você pode simplesmente usar essa classe
+
+04:59.680 --> 05:06.400
+de lista vinculada se a memória for um problema, então você teria que escrever sua própria classe de lista vinculada e
+
+05:06.400 --> 05:07.330
+usar uma matriz.
+
+05:07.360 --> 05:12.190
+Você poderia olhar para as outras classes que implementam a interface do dequeue e ver se
+
+05:12.190 --> 05:13.670
+uma delas seria mais apropriada.
+
+05:13.780 --> 05:16.480
+OK, então vamos adicionar nosso método push pop and peek.
+
+05:16.480 --> 05:24.940
+Então, vamos dizer impulso público vazio e vamos empurrar um funcionário e tudo o que vamos fazer aqui
+
+05:24.940 --> 05:33.430
+é adiar para a lista ligada para empilhados empurrar funcionário porque sabemos que nossa classe de lista vinculada
+
+05:33.430 --> 05:39.730
+a classe de lista vinculada no O JDK implementa a interface tiddy Q,
+
+05:39.730 --> 05:51.520
+por isso, tem métodos push pop e peek e, por isso, vamos apenas chamá-los e depois diremos que o funcionário público PAUP salvará os retornos estocados.
+
+05:53.500 --> 06:05.840
+E finalmente nós teremos o pico de funcionário público e retornará o pico de panela e isso é isto.
+
+06:05.930 --> 06:07.740
+Essa é a nossa pilha de imitação.
+
+06:07.780 --> 06:15.610
+Agora nós podemos implementar é uma mensagem vazia como nós tivemos em nossa outra pilha, então vamos fazer
+
+06:16.030 --> 06:18.970
+com que o booleano público esteja vazio.
+
+06:19.660 --> 06:24.850
+Podemos apenas voltar a pilha Daut está vazia e acabamos.
+
+06:24.850 --> 06:33.070
+Agora, passamos por este exercício porque queremos que os usuários de nossa pilha apoiados por uma lista vinculada só
+
+06:33.070 --> 06:35.830
+possam chamar push pop e peek.
+
+06:35.830 --> 06:42.160
+Se usarmos a lista encadeada diretamente como pilha, alguém pode aparecer talvez com um novo desenvolvedor na equipe ou algo
+
+06:42.160 --> 06:46.810
+assim que não esteja familiarizado com o que estamos fazendo e comece a chamar outros
+
+06:46.810 --> 06:49.760
+métodos, como adicionar um índice Zaw e coisas assim.
+
+06:49.810 --> 06:51.130
+E nós não queremos que isso aconteça.
+
+06:51.130 --> 06:59.250
+Então, nós queremos uma classe que se comporte como uma pilha, então você só pode trabalhar com o último item que foi adicionado.
+
+06:59.260 --> 07:03.790
+Você só pode chamar push pop e peek e é por isso que passamos por este exercício.
+
+07:03.790 --> 07:08.980
+Então, quando nós empurramos um item, estamos adicionando-o ao topo da lista quando exibimos um item. Estamos removendo-o
+
+07:08.980 --> 07:13.510
+do topo da lista e quando espiamos o item, estamos basicamente retornando a cabeça do item.
+
+07:13.510 --> 07:13.790
+Lista.
+
+07:13.810 --> 07:16.050
+Mas não estamos removendo da lista vinculada.
+
+07:16.150 --> 07:21.340
+Então, a última coisa que vou fazer é adicionar um método de pilha de impressão, então eu adicionarei isso aqui e direi.
+
+07:21.640 --> 07:23.090
+Vazio público.
+
+07:24.490 --> 07:29.950
+Pilha de impressão e eu vou usar um iterador de lista todos
+
+07:34.390 --> 07:42.210
+usam iterador igual e ele quer saber qual classe qual iterador lícito eu quero me perguntar novamente.
+
+07:42.260 --> 07:44.280
+Oh lá vamos nós.
+
+07:44.360 --> 07:54.320
+Então fui Java pegou o rabo e vamos chamar um iterador de lista de pontos de pilha e, em seguida,
+
+07:54.320 --> 08:06.550
+vamos apenas dizer que o ponto do iterador de parede tem o próximo sistema não fora do ponto de iterador da linha de impressão seguinte.
+
+08:06.590 --> 08:12.290
+Agora, esse iterador percorre a lista da cabeça à cauda e, em uma implementação de uma lista vinculada de uma pilha, o
+
+08:12.320 --> 08:14.240
+item de cima está sempre na cabeça.
+
+08:14.240 --> 08:19.970
+Então, assim como quando implementamos uma pilha apoiada por um array quando imprimimos a pilha, o
+
+08:19.970 --> 08:24.780
+primeiro item será impresso primeiro, seguido pelo item que está abaixo do topo.
+
+08:24.910 --> 08:27.370
+Sim, será impresso de cima para baixo.
+
+08:27.470 --> 08:33.530
+Então, agora vamos voltar ao nosso método principal e tudo.
+
+08:33.530 --> 08:42.770
+Primeiro, remova a pilha de impressão e ainda não criamos nossa pilha, então eu diria pilha de pilha vinculada igual a
+
+08:42.800 --> 08:50.110
+pilha vinculada nova e vamos empurrar todos os nossos funcionários e vamos dizer empurrão de estoque.
+
+08:50.150 --> 08:57.270
+Jane Jones Scott empurra John Doe.
+
+08:57.940 --> 09:08.960
+Scott empurra Mary Smith para empurrar Mike Wilson e empilhar a conta de Bush e, em seguida, a
+
+09:12.040 --> 09:13.530
+pilha de impressoras.
+
+09:13.630 --> 09:14.530
+Então vamos correr,
+
+09:21.330 --> 09:23.650
+vamos ver que Bill está no topo da pilha.
+
+09:23.650 --> 09:26.290
+Siga por Mike Mary Jane e John.
+
+09:26.640 --> 09:32.340
+Então, vamos dar uma espiada na pilha e ver o que recebemos e, em seguida, imprimiremos
+
+09:32.340 --> 09:35.320
+nossa pilha novamente para mostrar que não removemos nada.
+
+09:35.340 --> 09:36.180
+Então, vamos correr
+
+09:40.000 --> 09:45.160
+e vamos ver Bill duas vezes, porque esta linha de impressão aqui é de espreitar a pilha
+
+09:45.160 --> 09:50.230
+e, em seguida, quando imprimir a pilha nossa conta ainda está na pilha, ele não foi removido.
+
+09:50.380 --> 09:58.390
+E então, finalmente, vamos colocar o item no topo da pilha e, em seguida, vamos ver o
+
+09:58.390 --> 09:59.370
+item principal.
+
+09:59.950 --> 10:08.000
+Então, vamos correr e vamos ver que nós estouramos a conta e o próximo empregado ou o empregado que está no topo
+
+10:08.000 --> 10:08.560
+da pilha.
+
+10:08.570 --> 10:10.220
+Depois que o Bill é lançado é meu.
+
+10:10.280 --> 10:14.990
+E foi exatamente isso que vimos quando implementamos uma pilha usando uma matriz.
+
+10:14.990 --> 10:20.930
+E mais uma vez, com uma implementação de lista vinculada, a complexidade de tempo para Push Pop e pico é 0 de 1.
+
+10:20.930 --> 10:25.340
+É hora constante porque estamos sempre trabalhando com o item no topo da lista.
+
+10:25.370 --> 10:30.140
+E assim as etapas envolvidas não dependem do número de itens na lista.
+
+10:30.140 --> 10:37.700
+Agora, se tentarmos fazer algo como empilhado ou adicionar com um funcionário, você verá que não podemos fazer isso porque
+
+10:38.090 --> 10:42.040
+não é realmente uma operação de pilha ou ponto de pilha.
+
+10:42.230 --> 10:44.920
+Consiga um certo funcionário.
+
+10:44.930 --> 10:53.360
+Então, mesmo que a classe da lista vinculada tenha esses métodos, se chegarmos aqui e eu vou entrar aqui, eu vou apenas dizer stat
+
+10:53.360 --> 10:59.360
+Daut e você verá que há o método de matemática add ou stockpot, você verá que há
+
+10:59.360 --> 11:06.710
+um Obtém o método em que podemos especificar a posição na lista, mesmo que a classe da lista vinculada tenha esses métodos.
+
+11:06.800 --> 11:11.870
+Não queremos que as pessoas possam chamar esses métodos porque em nossa pilha não se comportaria como
+
+11:11.870 --> 11:12.460
+uma pilha.
+
+11:12.470 --> 11:20.180
+E é por isso que, se quiséssemos uma pilha e queríamos que todos os desenvolvedores da equipe usassem a classe apenas como uma
+
+11:20.180 --> 11:27.800
+pilha, para que eles pudessem apenas empurrar itens pop itens e espiar os itens, então nós apenas envolvemos a lista encadeada em outra
+
+11:27.800 --> 11:33.470
+classe e nós só expomos os métodos push pop e peek e você sabe que pode expor
+
+11:33.470 --> 11:34.700
+coisas como está vazio.
+
+11:34.700 --> 11:39.020
+Isso não lhes permite fazer algo na pilha que eles não deveriam fazer.
+
+11:39.170 --> 11:40.590
+E é isso para pilhas.
+
+11:40.590 --> 11:48.040
+Elas não são tão complexas quanto a estrutura de dados, uma vez que você entende listas e matrizes vinculadas
+
+11:48.050 --> 11:56.150
+porque tudo que uma ação faz é limitar as operações que você pode fazer em qualquer estrutura de dados usada
+
+11:56.150 --> 11:57.600
+para implementar a pilha.
+
+11:57.690 --> 11:59.250
+Todos nos vemos no próximo vídeo.

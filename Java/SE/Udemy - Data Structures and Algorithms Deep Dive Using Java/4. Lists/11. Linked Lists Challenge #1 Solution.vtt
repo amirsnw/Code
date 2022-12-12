@@ -1,0 +1,349 @@
+WEBVTT
+
+00:05.470 --> 00:07.450
+Bem, isso não deveria ter sido muito difícil.
+
+00:07.460 --> 00:15.080
+Eu incluí esse desafio porque queria que você escrevesse o código para ligar os campos seguinte e anterior
+
+00:15.080 --> 00:17.370
+ao adicionar um nó à lista.
+
+00:17.390 --> 00:23.120
+Então, eu estou na classe de lista duplamente vinculada do funcionário e vou até o anúncio antes do Massett.
+
+00:23.120 --> 00:28.220
+Agora, houve um comentário aqui dizendo return true se você conseguir adicionar o funcionário à
+
+00:28.220 --> 00:34.070
+lista com sucesso antes do empregado existente e retornar false se o empregado existente não existir na
+
+00:34.070 --> 00:34.630
+lista.
+
+00:34.700 --> 00:39.800
+Porque, obviamente, se o empregado existente não existe, então você não sabe onde adicionar o novo empregado.
+
+00:39.800 --> 00:41.270
+Então você não pode fazer nada.
+
+00:41.420 --> 00:45.240
+Ok, então eu vou remover este comentário aqui e vamos implementar o método.
+
+00:45.240 --> 00:48.000
+Então, a primeira coisa que vamos fazer é verificar se a lista está vazia.
+
+00:48.070 --> 00:54.080
+Porque se está vazio, então só precisamos retornar false porque obviamente o funcionário que queríamos adicionar
+
+00:54.080 --> 00:59.190
+ao novo funcionário na frente não existe na lista, então não podemos fazer nada.
+
+00:59.240 --> 01:05.680
+Então, só vou dizer se a cabeça é igual a nenhum retorno falso.
+
+01:05.810 --> 01:08.440
+Eu também poderia usar se está vazio aqui.
+
+01:08.450 --> 01:10.000
+Eu só vou dizer que eu tenho igual a agora.
+
+01:10.010 --> 01:12.830
+Mas você também pode ter dito se está vazio.
+
+01:12.830 --> 01:17.990
+OK, se não estiver vazio, temos pelo menos um funcionário na lista.
+
+01:17.990 --> 01:22.450
+Então, a primeira coisa que precisamos fazer é encontrar o empregado existente.
+
+01:22.610 --> 01:33.620
+Então, todos dizem encontrar o empregado existente para que todos digam empregado sem corrente igual à cabeça, porque nós vamos começar a olhar
+
+01:33.620 --> 01:43.220
+para o chefe da lista e, em seguida, corrente de parede não é igual a toda a corrente final não
+
+01:43.250 --> 01:50.270
+é o nó que estamos procurando para o empregado que estamos procurando tão atual não
+
+01:50.330 --> 01:54.190
+é um empregado que é igual ao empregado existente.
+
+01:54.860 --> 02:01.500
+Portanto, embora a corrente não seja normal, a corrente na parede não é igual ao empregado existente.
+
+02:01.820 --> 02:07.790
+Nós vamos passar para o próximo nó atual igual a ponto atual próximo.
+
+02:07.850 --> 02:13.010
+Agora, quando abandonamos uma coisa dissoluta, duas coisas são possíveis ou a corrente não tem sentido de que
+
+02:13.010 --> 02:15.170
+o empregado existente não esteja na lista.
+
+02:15.200 --> 02:22.370
+Portanto, o funcionário não existe na lista ou encontramos o empregado que foi passado
+
+02:22.400 --> 02:24.180
+como empregado existente.
+
+02:24.260 --> 02:31.040
+Então, vamos lidar com a if atual igual a todos os casos primeiro, porque se a corrente for igual a todos,
+
+02:31.040 --> 02:32.220
+só queremos retornar false.
+
+02:32.540 --> 02:39.170
+Porque, obviamente, se o funcionário existente, o que queremos inserir na frente não está na
+
+02:39.200 --> 02:41.530
+lista, não podemos fazer nada.
+
+02:41.680 --> 02:48.110
+Tudo bem, então, se chegarmos a este ponto, sabemos que encontramos o empregado existente na lista.
+
+02:48.110 --> 02:54.350
+Portanto, o empregado existe na lista e, por isso, queremos inserir o novo empregado na frente
+
+02:54.350 --> 02:55.300
+do empregado existente.
+
+02:55.310 --> 03:02.090
+Então, o que nós teremos que fazer se colocarmos esse novo funcionário na frente de um funcionário existente.
+
+03:02.090 --> 03:05.020
+Nós vamos ter que mudar para os campos.
+
+03:05.060 --> 03:10.150
+Teremos que definir, obviamente, o campo anterior e seguinte do novo funcionário.
+
+03:10.250 --> 03:15.080
+Teremos que alterar o campo anterior do nó atual porque estamos inserindo o novo
+
+03:15.080 --> 03:17.060
+funcionário na frente do nó atual.
+
+03:17.060 --> 03:21.440
+Então, vamos querer que o campo anterior dos nós atuais aponte para o novo funcionário.
+
+03:21.530 --> 03:28.030
+E então o funcionário que está atualmente na frente da corrente agora estará na frente do novo funcionário
+
+03:28.040 --> 03:30.780
+para que seu próximo campo precise ser alterado.
+
+03:30.800 --> 03:32.080
+Então vamos começar a fazer isso.
+
+03:32.080 --> 03:36.450
+Então, começaremos definindo os novos nós a seguir nos campos anteriores.
+
+03:36.470 --> 03:42.180
+Então, a primeira coisa que vamos fazer é criar um nó para os funcionários, então vamos fazer o mesmo.
+
+03:42.600 --> 03:46.980
+Não você nó igual a novo funcionário Não.
+
+03:47.060 --> 03:50.890
+E isso é para o novo funcionário.
+
+03:51.560 --> 03:59.270
+E, em seguida, definiremos os novos nós próximos e os campos anteriores, para que possamos ver o deslocamento anterior e isso quer
+
+03:59.270 --> 04:04.210
+apontar para qualquer que seja o campo atual que nenhum campo anterior está apontando.
+
+04:04.220 --> 04:08.000
+Vamos dizer que temos Mary Smith e John Doe.
+
+04:08.060 --> 04:14.750
+Então, Mary Smith, Mary, está na frente de John Doe e, em seguida, nós vamos junto, queremos inserir uma nota e
+
+04:14.750 --> 04:16.480
+entre Mary Smith e John Doe.
+
+04:16.520 --> 04:20.370
+Então, agora John Doe seu campo anterior está apontando para Mary Smith.
+
+04:20.420 --> 04:21.480
+É o que nós queremos.
+
+04:21.470 --> 04:28.700
+O campo anterior de Bill Ann para apontar para uma vez que ele esteja inserido e, por isso, queremos dizer que não há
+
+04:29.300 --> 04:33.900
+um novo conjunto anterior ao que o nó atual está apontando no seu campo anterior.
+
+04:34.070 --> 04:39.680
+E então, como estamos inserindo o novo funcionário na frente do funcionário existente, queremos que
+
+04:39.680 --> 04:43.550
+o próximo campo de novos funcionários aponte para esses funcionários existentes.
+
+04:43.550 --> 04:51.890
+Então, vamos dizer que nova data não é definida na próxima corrente e que está cuidando de definir os novos nós nos próximos
+
+04:51.890 --> 04:52.980
+e próximos campos.
+
+04:53.090 --> 04:59.510
+Agora também precisamos definir o campo anterior da nota atual, porque no exemplo que dei, John
+
+04:59.510 --> 05:03.620
+Doe não vai mais apontar para Mary Smith como anterior.
+
+05:03.620 --> 05:05.590
+Ele quer apontar para o fim.
+
+05:05.590 --> 05:09.430
+Então, estamos novamente a dizer o conjunto atual anterior.
+
+05:09.460 --> 05:11.930
+E ele quer apontar para o novo nó.
+
+05:12.940 --> 05:19.600
+E então, finalmente, precisamos cuidar do próximo campo de Mary Smith, mas precisamos ter cuidado aqui,
+
+05:19.600 --> 05:26.860
+porque é possível que John Doe, se usá-lo como um exemplo do empregado existente, vamos supor que
+
+05:26.860 --> 05:32.500
+o funcionário que queremos inserir antes disso funcionário pode estar no topo da lista.
+
+05:32.560 --> 05:34.820
+E então temos que lidar com esse caso especial.
+
+05:34.840 --> 05:41.020
+Digamos que nós dissermos que queremos inserir projeto de lei e antes que Mike Wilson e Mike estejam na frente
+
+05:41.020 --> 05:46.360
+da lista, não precisamos definir o próximo campo do nó na frente de Mike, porque não há próximo
+
+05:46.360 --> 05:53.050
+campo, mas o que teríamos fazer é mudar a sensação de cabeça para o novo funcionário, porque se Mike está na liderança
+
+05:53.050 --> 05:58.180
+da lista e estamos inserindo um novo funcionário antes de Mike, então o novo funcionário se torna
+
+05:58.180 --> 05:59.340
+o líder da lista.
+
+05:59.410 --> 06:08.220
+Então, vamos dizer se a cabeça é igual a corrente, então o que queremos fazer é definir a cabeça para o novo nó.
+
+06:08.560 --> 06:12.820
+Nós não temos que lidar com o próximo campo do que quer que fosse na frente de Mike, porque
+
+06:12.820 --> 06:18.140
+nada estava na frente de Mike, mas se Mike não é a cabeça, então nós temos que lidar com o próximo campo do Não.
+
+06:18.130 --> 06:19.910
+Isso foi na frente do nó atual.
+
+06:19.930 --> 06:29.440
+E assim dirão que você sabe Daut ter o próximo conjunto de Draut e queremos defini-lo para o novo nó, então apareça nós já definimos o novo
+
+06:29.530 --> 06:36.040
+campo de nós anteriores para o que quer que estivesse na frente do funcionário que estamos inserindo na
+
+06:36.040 --> 06:36.880
+frente .
+
+06:36.880 --> 06:43.810
+Portanto, no caso de inserir fatura e entre Mary Smith e John Doe, já definimos o campo anterior de novos
+
+06:43.810 --> 06:45.190
+nós como Mary Smith.
+
+06:45.190 --> 06:51.130
+Tão novo, não, não seja anterior, seremos Mary Smith e queremos definir seu próximo campo para o novo
+
+06:51.130 --> 06:57.060
+nó, porque, em vez de apontar para John Doe, ela não vai querer apontar para Bill e.
+
+06:57.150 --> 07:03.670
+E é isso que temos que fazer para ligar o novo nó adequadamente e mudar o próximo campo da
+
+07:03.670 --> 07:09.040
+nota que está agora na frente do novo nó e o campo anterior do empregado existente.
+
+07:09.310 --> 07:10.690
+Mas ainda não terminamos.
+
+07:10.690 --> 07:14.400
+Temos que incrementar o tamanho.
+
+07:15.100 --> 07:21.160
+E também queremos alterar esse retorno falso para retornar verdadeiro, porque, se chegarmos até
+
+07:21.160 --> 07:27.720
+aqui, poderemos inserir com sucesso o novo funcionário na lista em frente ao funcionário existente.
+
+07:27.730 --> 07:34.570
+Então vamos ao método principal e aqui está o código que estava no projeto inicial, então estamos adicionando cinco
+
+07:34.570 --> 07:41.800
+funcionários, criamos nossa lista, adicionamos Jane John Mary e Mike à lista e, em seguida, queremos adicionar a conta antes
+
+07:41.800 --> 07:46.210
+de Jondo Então vamos rodar isso para ter certeza que funciona.
+
+07:47.990 --> 07:58.630
+Aqui está a lista antes de adicionar Bill e podemos dizer que contém Mike se casar com John e Jane e, em seguida, aqui está a lista depois que
+
+07:58.630 --> 08:04.570
+nós adicionamos projeto de lei e então nós chamamos o método ADD before então queremos adicionar
+
+08:04.570 --> 08:06.510
+ele antes de John Doe.
+
+08:06.510 --> 08:07.760
+Nós veremos o Mike.
+
+08:07.840 --> 08:12.670
+Conta de Maria e depois João.
+
+08:12.880 --> 08:15.830
+E finalmente Jane Jones, então isso funciona.
+
+08:16.300 --> 08:24.760
+Vamos adicionar um funcionário antes de Mike Wilson para ter certeza de que estamos lidando com o caso especial do funcionário existente sendo o
+
+08:24.760 --> 08:30.610
+líder da lista, então vamos dizer a lista que não tinha antes e eu vou apenas fazer
+
+08:30.610 --> 08:32.590
+um novo funcionário na hora .
+
+08:33.430 --> 08:42.220
+Então eu vou dizer que alguém vai dar uma idéia de 1 1 1 1 e nós queremos adicioná-los na frente de Mike Wilson, porque
+
+08:42.220 --> 08:46.220
+ele está na frente da lista e, em seguida, vai dizer lista.
+
+08:46.300 --> 08:47.480
+Lista de impressão.
+
+08:47.680 --> 08:56.690
+Então, vamos fazer isso e veremos que outra pessoa foi adicionada à lista e ainda temos
+
+08:56.690 --> 09:00.040
+todas as outras entradas na lista.
+
+09:02.860 --> 09:08.980
+Então é isso para este desafio, eu acho que talvez este caso especial possa ter tropeçado em alguns
+
+09:08.980 --> 09:13.180
+de vocês no começo, mas de outra forma é uma coisa bem normal.
+
+09:14.440 --> 09:20.920
+E como eu disse, incluí esse desafio apenas para ter a oportunidade de passar por
+
+09:20.920 --> 09:23.760
+um nó em uma lista vinculada.
+
+09:23.830 --> 09:25.420
+Então é isso para o desafio número um.
+
+09:25.420 --> 09:27.480
+Vamos em frente para desafiar o número dois.

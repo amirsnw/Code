@@ -1,0 +1,81 @@
+<div class="page-title">پرداخت حق بیمه</div>
+<p>
+  متقاضی محترم:
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  1- در این فرم حق بیمه قرارداد بیمه صاحبان حرف و مشاغل آزاد شما محاسبه شده است.
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  2-مهلت پرداخت حق بیمه محاسبه شده  برای قرارداد اول حداکثر 30 روز از تاریخ قرارداد و در پرداخت های بعدی  حداکثر 3 ماه و یک روز از تاریخ آخرین پرداخت می باشد.
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  3- مقدار ماه انتخابی برای پرداخت حداکثر تا پایان سال جاری خواهد بود.
+</p>
+<div class="panel">
+  <div class="panel-title">اطلاعات هویتی</div>
+  <div class="panel-body">
+    <app-special-insured-info></app-special-insured-info>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-title">پرداخت حق بیمه</div>
+  <div class="panel-body">
+    <div *ngIf="hasPaymentHistory">
+      <span>
+        حق بیمه شما تا تاریخ  {{ convertTimeStampToPersianDate(lastPaymentDate) }} پرداخت شده است.
+      </span>
+      <button class="button normal green" [disabled]="allDesabled" (click)="onShowPaymentHistory()">مشاهده سوابق پرداخت</button>
+    </div>
+    <div class="row">
+      <form [formGroup]="theForm" autocomplete="off" novalidate>
+        <div class="col-1 col-s-1">
+          <p class="marg-top">
+            می خواهم حق بیمه
+          </p>
+        </div>
+        <div class="col-1 col-s-1">
+          <tamin-field-number formControlName="month"></tamin-field-number>
+        </div>
+        <div class="col-1 col-s-1">
+          <p class="marg-top">
+            ماه را پرداخت کنم
+          </p>
+        </div>
+        <div class="col-2 col-s-2">
+          <button class="button normal green" [disabled]="allDesabled" (click)="onCalcPremium()">محاسبه حق بیمه</button>
+        </div>
+      </form>
+    </div>
+    <hr>
+    <div class="row">
+      <fieldset>
+        <div class="col-12 col-s-12">
+          <div class="col-6 col-s-6">
+            <div class="confirmation">
+              <h3 style="margin-top: 10px;">شروع دوره پرداخت : {{ convertTimeStampToPersianDate(startDate)}}</h3>
+              <h3 style="margin-top: 10px;">حق بیمه دوره : {{ getPersianCurrency(insurancePremiums)}}</h3>
+              <h3 style="margin-top: 10px;">بدهی گذشته : {{ getPersianCurrency(previousDebit)}}</h3>
+              <h3 style="margin-top: 10px;">قابل پرداخت : {{ getPersianCurrency(total)}}</h3>
+            </div>
+          </div>
+          <div class="col-6 col-s-6">
+            <div class="confirmation">
+              <h3 style="margin-top: 10px;">پایان دوره پرداخت: {{ convertTimeStampToPersianDate(endDate)}}</h3>
+              <h3 style="margin-top: 10px;color:red">مهلت پرداخت: {{ PayPremiumDate}}</h3>
+
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="row">
+    <button class="button normal green" (click)="onDisplayCalcDetail()" [disabled]="!checkCalcPremium || allDesabled">مشاهده جزئیات
+      محاسبه
+    </button>
+    <button class="button normal green" (click)="onPayPremium()" [disabled]="!checkCalcPremium || allDesabled">پرداخت حق بیمه
+    </button>
+
+  </div>
+</div>
+<app-freelance-display-detail-pay-premium #freelanceDisplayDetailPayPremiumComponent></app-freelance-display-detail-pay-premium>

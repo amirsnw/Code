@@ -1,0 +1,17 @@
+.site-header {
+    background: url('images/Logo.png') no-repeat right, url('images/header-body.jpg') repeat-x;
+    height: 70px;
+}
+
+.panel-background {
+    background: url("images/tile2.png") !important;
+}
+
+.welcome {
+    background-image: url('images/welcome.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*width: 350px;*/
+    /*height: 360px;*/
+
+}

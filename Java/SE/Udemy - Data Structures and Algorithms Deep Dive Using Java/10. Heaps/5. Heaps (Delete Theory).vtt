@@ -1,0 +1,301 @@
+WEBVTT
+
+00:05.450 --> 00:05.840
+Todo bien.
+
+00:05.840 --> 00:10.000
+Así que hablemos de eliminar elementos de un montón ahora.
+
+00:10.010 --> 00:16.320
+Al igual que con un árbol de búsqueda binario cuando eliminamos un elemento, necesitamos encontrar un valor de reemplazo para él.
+
+00:16.340 --> 00:22.610
+Pero esto es mucho más fácil que cuando eliminamos un nodo con dos hijos de un árbol
+
+00:22.610 --> 00:30.340
+de búsqueda binario porque siempre usamos el mismo nodo de reemplazo y ese nodo es el valor más correcto en el montón.
+
+00:30.440 --> 00:34.010
+Y entonces es la hoja más a la derecha en el árbol.
+
+00:34.100 --> 00:38.450
+Y la razón por la que lo hacemos es porque queremos que el árbol permanezca completo.
+
+00:38.450 --> 00:43.100
+Recuerde que un requisito para un montón es que sea un árbol completo.
+
+00:43.160 --> 00:48.500
+Y si vamos a eliminar un nodo de algún lugar del árbol y queremos reemplazar ese
+
+00:48.500 --> 00:54.620
+nodo si tomamos la creencia correcta desde el último nivel del árbol, tomamos ese nodo y lo eliminamos
+
+00:54.620 --> 00:56.800
+y usamos como el nodo de reemplazo.
+
+00:56.960 --> 00:59.850
+Después de que hayamos hecho eso, el árbol aún estará completo.
+
+00:59.870 --> 01:01.670
+Y es por eso que lo hacemos de esa manera.
+
+01:01.670 --> 01:07.870
+Ahora, por supuesto, después de que hayamos reemplazado el valor eliminado con el nuevo valor, es posible que ya no tengamos un
+
+01:07.880 --> 01:10.290
+montón porque la propiedad del montón podría ser violada.
+
+01:10.400 --> 01:13.520
+Y luego de que hayamos hecho eso, necesitamos acumular todo el montón.
+
+01:13.520 --> 01:18.580
+Ahora, cuando estábamos haciendo insert, dije que para Delete miramos el montón, pero olvidé que hay momentos
+
+01:18.580 --> 01:21.280
+en los que también tenemos que buscar el montón.
+
+01:21.320 --> 01:27.800
+Es más común mirar hacia abajo porque cuando tomas la última hoja y la mueves hacia la izquierda
+
+01:27.800 --> 01:32.570
+en el arreglo, es más probable que termines colocándola en un lugar donde
+
+01:32.570 --> 01:34.970
+resulta ser menos que su niños.
+
+01:35.030 --> 01:41.930
+Pero es muy posible que lo ubiques en algún lado y en realidad es más grande que su padre.
+
+01:41.930 --> 01:46.090
+Y en ese caso, necesitamos arreglar el montón hacia arriba, no hacia abajo.
+
+01:46.190 --> 01:53.210
+Entonces, la forma en que decidimos qué dirección buscar es después de haber movido la hoja más a la derecha a su nueva posición
+
+01:53.210 --> 01:56.310
+y esa posición sería la posición del nodo que eliminamos.
+
+01:56.330 --> 02:03.410
+Tenemos que buscar el montón y arreglar el montón si ese valor es mayor que su padre.
+
+02:03.470 --> 02:07.230
+Si es menor que su padre, entonces lo comparamos con sus hijos.
+
+02:07.270 --> 02:11.420
+Y si es menos de uno de sus hijos, entonces tenemos que mirar hacia abajo.
+
+02:11.570 --> 02:15.270
+Si vamos a buscar el odio hacemos exactamente lo mismo que hicimos para insertar.
+
+02:15.320 --> 02:20.930
+Vamos a cambiar el valor de reemplazo con su padre hasta que esté en su posición correcta si
+
+02:20.930 --> 02:22.550
+vamos a mirar hacia abajo.
+
+02:22.550 --> 02:27.920
+Así que tenemos que arreglar el asunto, vamos a cambiar el valor de reemplazo por el mayor de sus
+
+02:27.920 --> 02:28.630
+dos hijos.
+
+02:28.640 --> 02:34.430
+Y la razón por la que hacemos eso es si lo intercambiamos con el mayor de sus dos hijos para
+
+02:34.490 --> 02:40.640
+que el hijo mayor se convierta en el padre del valor de reemplazo en su hermano mayor de lo que sabemos
+
+02:40.700 --> 02:47.000
+con certeza en ese momento que ese hijo mayor es más grande que ambos el valor de reposición y su hermano mayor.
+
+02:47.000 --> 02:52.700
+Y así la propiedad de calor se conserva si tuviéramos que intercambiar el valor de reemplazo con el valor más pequeño
+
+02:52.700 --> 02:56.940
+de sus dos hijos y, obviamente, uno de menor valor se convirtió en la nueva ruta.
+
+02:56.960 --> 03:01.850
+Sería más pequeño que el valor de reemplazo en su antiguo hermano, por lo que todavía tendríamos un problema.
+
+03:01.880 --> 03:06.980
+Y luego, en ambos casos, si estamos subiendo o bajando, enjuagamos y repetimos hasta que el valor de reemplazo
+
+03:06.980 --> 03:08.380
+esté en su posición correcta.
+
+03:08.390 --> 03:12.240
+Y como dije, solo tendremos que arreglar el montón hacia arriba o hacia abajo.
+
+03:12.260 --> 03:15.220
+Nunca tenemos que ir en ambas direcciones.
+
+03:15.230 --> 03:16.680
+Así que aquí está nuestro montón.
+
+03:16.760 --> 03:20.470
+Solo quería recordarte cómo se ve ahora.
+
+03:20.660 --> 03:24.480
+Y entonces digamos que decidimos que queremos que elimine 75.
+
+03:24.650 --> 03:27.260
+Y entonces el valor de reemplazo va a ser 67.
+
+03:27.260 --> 03:32.690
+Siempre va a estar el derecho en el nivel inferior, porque si tomamos el valor de reemplazo
+
+03:32.690 --> 03:35.600
+de otro lugar ya no tendremos un árbol completo.
+
+03:35.600 --> 03:39.920
+Quiero decir que si dijéramos bien, lo vamos a reemplazar por 40, así que vamos a golpear 40
+
+03:39.920 --> 03:41.000
+y pondremos 40 aquí.
+
+03:41.180 --> 03:43.150
+Ya no tenemos un árbol completo.
+
+03:43.220 --> 03:49.790
+Entonces, si quitamos la hoja que está más a la derecha y la usamos para reemplazar el valor eliminado, después de que
+
+03:49.790 --> 03:52.260
+hayamos hecho eso, el árbol aún está completo.
+
+03:52.370 --> 03:57.100
+Si tuviéramos un hijo aquí sería este niño el que reemplazaría a 75.
+
+03:57.290 --> 03:59.480
+Y entonces nuestro árbol aún estaría completo.
+
+03:59.480 --> 04:05.030
+Entonces, cuando estamos lidiando con montones y estamos eliminando, el valor de reemplazo es siempre el que
+
+04:05.030 --> 04:11.720
+está más a la derecha y eso asegura que, después de que hayamos eliminado el nodo con el valor de reemplazo,
+
+04:11.720 --> 04:13.130
+aún tengamos un árbol completo.
+
+04:13.130 --> 04:17.750
+Entonces, lo que vamos a hacer es mover 67 a 75.
+
+04:17.750 --> 04:19.850
+Y, por supuesto, se eliminará de aquí.
+
+04:19.880 --> 04:21.730
+Y ahora tenemos esto.
+
+04:22.010 --> 04:24.490
+Pero esto ya no es un montón.
+
+04:24.680 --> 04:27.850
+Y entonces vamos a tener que amontonar este montón.
+
+04:27.860 --> 04:30.580
+Vamos a comparar 67 en contra de este padre.
+
+04:30.590 --> 04:35.210
+Es menos que los padres, así que sabemos que no tenemos que arreglar el montón de arriba.
+
+04:35.330 --> 04:41.660
+Y entonces vamos a comparar 67 en contra de sus dos hijos y vamos a cambiarlo con el mayor
+
+04:41.660 --> 04:42.810
+de sus dos hijos.
+
+04:42.830 --> 04:45.140
+Y entonces vamos a cambiarlo por 68.
+
+04:45.140 --> 04:51.770
+Queremos cambiarlo por el mayor Porque si lo cambiamos por 55 y ponemos 55 aquí, entonces todavía no
+
+04:51.770 --> 04:55.980
+tenemos un montón porque 55 es más pequeño que sus dos hijos.
+
+04:56.000 --> 05:03.350
+Entonces, si el valor de reemplazo es menor que uno o ambos de sus hijos, queremos cambiarlo por el hijo más
+
+05:03.350 --> 05:08.860
+grande porque, una vez hecho esto, sabemos que ese hijo mayor será mayor que el valor
+
+05:08.860 --> 05:14.120
+de reemplazo y mayor que el otro hermano porque tomamos el mayor valor de los dos.
+
+05:14.260 --> 05:17.850
+Y luego de que hayamos hecho el cambio, esto es lo que tendremos.
+
+05:17.860 --> 05:19.760
+Y tenemos un montón de nuevo.
+
+05:19.810 --> 05:22.090
+Así que así es como hacemos una eliminación en un montón.
+
+05:22.090 --> 05:23.620
+Así que ahora borremos 40.
+
+05:23.620 --> 05:24.710
+Hagamos otro.
+
+05:24.730 --> 05:27.970
+Y una vez más, el valor de reemplazo será 67.
+
+05:27.970 --> 05:34.080
+Siempre es el mismo valor de reposición, siempre es la derecha Roseleaf en el último nivel.
+
+05:34.200 --> 05:36.580
+Y entonces moveremos 67 a 40.
+
+05:36.820 --> 05:41.140
+Y ahora vamos a comparar el valor de reemplazo con su padre mientras es mayor que
+
+05:41.140 --> 05:41.620
+su padre.
+
+05:41.620 --> 05:47.050
+Y esta vez tenemos que buscar el montón y vamos a hacerlo exactamente de la misma manera
+
+05:47.050 --> 05:50.940
+que lo hicimos con Insert. Comparamos el valor de reemplazo con su padre.
+
+05:51.070 --> 05:55.990
+Si es mayor que su padre, lo intercambiamos con su padre y luego ejecutamos alguna repetición.
+
+05:55.990 --> 06:00.580
+Y entonces vamos a comparar el valor de reemplazo con su padre y es menor que el padre.
+
+06:00.580 --> 06:01.600
+Y entonces terminamos.
+
+06:01.690 --> 06:09.390
+Ahora también corremos algunas repeticiones con el intercambio de niños Entonces, aquí si volvemos a subir cuando reemplazamos 75 por
+
+06:09.390 --> 06:11.790
+67 y luego hicimos el intercambio.
+
+06:11.800 --> 06:17.770
+Si hubiera niños aquí, compararíamos 67 con estos niños y, si es necesario, cambiaríamos
+
+06:17.770 --> 06:21.700
+y seguiremos hasta que 67 sea el lugar apropiado.
+
+06:21.700 --> 06:25.150
+Y eso es todo lo que hay que hacer para eliminar un nodo de un montón.
+
+06:25.150 --> 06:31.230
+Es un poco más fácil que los árboles de búsqueda binarios porque el valor de reemplazo siempre es el mismo.
+
+06:31.230 --> 06:37.120
+Y como normalmente respaldamos un calor con una matriz, básicamente el valor de reemplazo siempre está en el
+
+06:37.120 --> 06:44.590
+tamaño de posición menos 1 si el tamaño es la siguiente posición disponible en la matriz, entonces el último índice para el
+
+06:44.590 --> 06:47.310
+montón es el tamaño de índice menos 1.
+
+06:47.500 --> 06:53.740
+Y entonces podemos ir directamente a ese lugar y verán que en acción en el siguiente video lo
+
+06:53.740 --> 06:54.390
+veré allí.

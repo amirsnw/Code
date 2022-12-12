@@ -1,0 +1,331 @@
+WEBVTT
+
+00:05.190 --> 00:05.610
+Tudo bem.
+
+00:05.610 --> 00:12.300
+Então vamos implementar a contagem de tipos mais uma vez Eu criei um projeto Eu tenho o código no pacote
+
+00:12.540 --> 00:14.730
+Academia aprendo programação sem contar o tipo.
+
+00:14.730 --> 00:18.100
+E vou escrever um método chamado contagem de classificação.
+
+00:18.120 --> 00:23.720
+Então eu vou dizer public static void counting sort.
+
+00:23.730 --> 00:33.330
+E vamos aceitar a matriz de entrada e o valor mínimo na faixa e o valor máximo na faixa lembre-se que
+
+00:33.330 --> 00:40.510
+a ordenação por contagem pressupõe que todos os valores caiam dentro da faixa mínima para Máx.
+
+00:40.590 --> 00:44.580
+Então, a primeira coisa que vamos fazer é criar o array de contagem.
+
+00:44.580 --> 00:52.260
+O array que vai acompanhar a contagem, então vamos dizer array int count e este array tem que ser
+
+00:52.290 --> 00:56.190
+grande o suficiente para poder contar cada valor possível.
+
+00:56.370 --> 01:05.650
+E então vamos dizer algo novo e queremos que seja Max menos homens e mais um em lente.
+
+01:05.730 --> 01:13.380
+Se nosso mínimo é 1 e nosso máximo é 10, o que é o que vamos passar, então vamos criar um array
+
+01:13.460 --> 01:18.090
+de Quaresma 10 menos 1, que é 9 mais 1, que é 10.
+
+01:18.120 --> 01:19.050
+E é isso que queremos.
+
+01:19.050 --> 01:24.310
+Porque temos 10 valores possíveis de um a 10 inclusive.
+
+01:24.330 --> 01:29.430
+Então, uma vez que criamos nossa matriz de contagem O que queremos fazer enquanto queremos percorrer nossa matriz
+
+01:29.430 --> 01:34.590
+de entrada e aqui está nossa matriz de entrada aqui não é nossa matriz usual é a matriz
+
+01:34.590 --> 01:35.650
+que passamos nos slides.
+
+01:35.970 --> 01:41.560
+Então, vamos percorrer esse array e contar quantos de cada valor temos.
+
+01:41.580 --> 01:51.280
+Então, vamos dizer que na minha tristeza eu menos do que ingerência II plus plus.
+
+01:52.110 --> 02:00.720
+E nós vamos dizer contra Ray e a maneira que nós descobrimos onde
+
+02:00.720 --> 02:07.030
+cada valor é contado como dizemos introduzir o menos min.
+
+02:08.640 --> 02:12.510
+Esse será o índice de onde contar cada valor.
+
+02:12.510 --> 02:16.920
+Por exemplo, digamos que a entrada seja igual a 5.
+
+02:16.920 --> 02:23.610
+Então, digamos que estamos no ponto em que estamos contando este bem para descobrir qual elemento devemos incrementar
+
+02:23.610 --> 02:25.280
+na matriz de contagem.
+
+02:25.320 --> 02:29.870
+Nós diríamos 5 menos 1 porque esse é o nosso mínimo.
+
+02:29.880 --> 02:37.020
+E assim nós incrementamos um contra-quatro porque lembre-se que poderíamos ter valores digamos de 10
+
+02:37.020 --> 02:38.010
+a 20.
+
+02:38.010 --> 02:41.670
+E, nesse caso, a matriz do contador teria 11 elementos de comprimento.
+
+02:41.670 --> 02:48.030
+E então precisamos traduzir os valores de 10 a 20 para os índices de zero a 10.
+
+02:48.090 --> 02:49.670
+E é isso que estamos fazendo aqui.
+
+02:49.740 --> 02:55.280
+E podemos fazer isso subtraindo o mínimo de qualquer valor que estamos contando.
+
+02:55.410 --> 03:00.420
+E assim, para contar os que tivessem um 1, subtraímos 1 menos 1.
+
+03:00.450 --> 03:06.210
+Então nós incrementamos o elemento 0 se tivermos um 2 a menos min é 1.
+
+03:06.210 --> 03:10.220
+Então incrementamos o elemento 1 se tivermos 10.
+
+03:10.230 --> 03:14.400
+Dez menos um é nove e nós incrementamos o elemento 9 no contador à direita.
+
+03:14.430 --> 03:15.010
+E entao.
+
+03:15.090 --> 03:21.890
+Então tudo o que isso está fazendo é traduzir o valor que queremos contar em seu índice na direita do contador.
+
+03:21.960 --> 03:26.790
+E o que queremos fazer enquanto queremos incrementar essa posição e é tudo o que fazemos aqui.
+
+03:26.790 --> 03:30.350
+Então esta é a fase de contagem.
+
+03:30.360 --> 03:32.130
+Isso é tudo que envolve.
+
+03:32.130 --> 03:34.310
+Nós passamos por cada elemento na matriz.
+
+03:34.320 --> 03:40.800
+Nós olhamos para o valor que descobrimos onde estamos contando esse valor na matriz do contador
+
+03:40.800 --> 03:43.110
+e incrementamos esse valor em 1.
+
+03:43.110 --> 03:48.230
+Então, quando terminarmos a contagem, queremos agora escrever os valores de volta na matriz de entrada.
+
+03:48.270 --> 03:51.430
+Então, vamos dizer que intj é igual a zero.
+
+03:52.080 --> 03:58.260
+E então quatro polegadas é igual ou menor que
+
+04:01.330 --> 04:04.210
+Max I mais mais.
+
+04:05.450 --> 04:07.030
+Então o que estamos fazendo aqui.
+
+04:07.130 --> 04:11.390
+Bem J é o índice que vamos usar para escrever na matriz de entrada.
+
+04:11.570 --> 04:17.060
+E por que o índice que usaremos para percorrer a matriz de contagem.
+
+04:17.060 --> 04:22.820
+Agora estamos definindo I para homens em menor ou igual a Max porque, como você verá, porque estamos
+
+04:22.850 --> 04:29.120
+fazendo dessa forma, podemos simplesmente escrever o valor de pi de volta na matriz de entrada em cada iteração.
+
+04:29.120 --> 04:42.140
+Então, dentro do loop, vamos dizer que a contagem de parede menos min é maior que zero e você verá por que em um
+
+04:42.140 --> 04:42.860
+minuto.
+
+04:42.860 --> 04:53.510
+Deixe-me escrever o resto do código, então digamos a entrada J mais mais é igual a uma matriz de
+
+04:56.360 --> 04:59.010
+conta menos min menos menos.
+
+04:59.150 --> 05:01.140
+OK, então o que está acontecendo aqui.
+
+05:01.190 --> 05:07.190
+O que estamos fazendo aqui é lembrar que cada elemento na matriz do contador tem uma contagem e que a contagem
+
+05:07.190 --> 05:08.610
+pode ser maior que 1.
+
+05:08.750 --> 05:14.750
+Então, vamos passar por isso para o número de dois porque sabemos que temos dois pares em nossa matriz
+
+05:14.750 --> 05:18.500
+e a contagem de dois é mantida na matriz de contagem 1.
+
+05:18.500 --> 05:25.490
+Então, quando eu estava a dizer que bem contra-peso para menos 1, que é contra-rally 1 é maior que zero.
+
+05:25.490 --> 05:30.110
+Queremos continuar escrevendo para a matriz de entrada, porque neste momento estamos escrevendo o número
+
+05:30.110 --> 05:30.820
+de dois.
+
+05:30.890 --> 05:38.420
+E então a primeira coisa que fazemos é escrever um dois para o array de entrada e, em seguida, precisamos diminuir
+
+05:38.420 --> 05:39.060
+a contagem.
+
+05:39.080 --> 05:40.960
+Nós já escrevemos um também.
+
+05:40.970 --> 05:43.820
+E então nós só temos mais dois da esquerda para a direita.
+
+05:43.850 --> 05:46.390
+E então começamos com o contra-array.
+
+05:46.400 --> 05:52.820
+Um é igual a dois porque temos dois pares que escrevemos um dos dois para o array de entrada
+
+05:52.820 --> 05:57.380
+e depois diminuímos para contar para 1 porque só temos 1 2 restantes.
+
+05:57.500 --> 05:59.880
+Nós circulamos em torno da matriz de contagem.
+
+05:59.930 --> 06:01.730
+Um ainda é maior que zero.
+
+06:01.730 --> 06:05.960
+Então, vamos escrever outros dois e, em seguida, vamos decrementar a contagem novamente.
+
+06:05.960 --> 06:10.850
+E nesse ponto a contagem será zero porque escrevemos os dois de volta ao array de entrada.
+
+06:10.940 --> 06:16.190
+E assim, quando olhamos para trás, neste ponto, contra-rally, um será igual a zero e desistiremos
+
+06:16.190 --> 06:16.830
+do loop.
+
+06:16.880 --> 06:22.410
+E então eu vou ser incrementado para três e nós entramos neste loop para corrigir o número de três.
+
+06:22.490 --> 06:25.580
+E mais uma vez, cada vez que escrevemos um três.
+
+06:25.580 --> 06:30.770
+Eu não acredito que tenhamos qualquer um ou queremos no final, então cada vez que escrevemos um três, a contagem será documentada
+
+06:30.770 --> 06:35.570
+por um até que tenhamos escrito todos os três e então vamos dar a volta e estamos certos para força.
+
+06:35.690 --> 06:40.940
+Então nós escrevemos o loop desta maneira começando com os homens, porque então podemos apenas quando estamos
+
+06:40.940 --> 06:46.310
+escrevendo o número dos que eu serei um quando estamos escrevendo o número de dois que eu
+
+06:46.470 --> 06:51.650
+vou ser 2 para que possamos ficar dentro e subtrair aqui, poderíamos ter começado no zero.
+
+06:51.650 --> 06:54.770
+Mas então precisaríamos fazer um tipo diferente de cálculo aqui.
+
+06:54.770 --> 06:57.560
+Precisamos descobrir qual valor estamos escrevendo.
+
+06:57.620 --> 07:04.580
+Então, eu acho que é mais fácil definir isso para os homens, porque então sabemos que na primeira iteração estamos escrevendo
+
+07:04.580 --> 07:09.640
+uma segunda iteração, estamos escrevendo os dois a terceira iteração, estamos escrevendo os três etc. E, claro, J está acompanhando de onde estamos na matriz de entrada.
+
+07:09.800 --> 07:13.750
+Portanto, este é um algoritmo bastante direto, eu diria que,
+
+07:13.760 --> 07:19.370
+se você está tendo problemas para entendê-lo, você pode ir e verificar os slides.
+
+07:19.370 --> 07:21.230
+Mas é claro que queremos ver se funciona.
+
+07:21.320 --> 07:23.150
+Então, vamos chamar
+
+07:23.150 --> 07:33.260
+a contagem e vamos chamá-lo com Turei, nosso valor mínimo é 1 e nosso valor máximo é 10.
+
+07:33.260 --> 07:34.080
+Então vamos em frente e corra.
+
+07:34.160 --> 07:40.820
+E aqui estamos.
+
+07:40.930 --> 07:41.740
+Aqui vamos nós 2 2 3 4 5 7 8 8 9 e 10.
+
+07:41.780 --> 07:48.250
+Exatamente o que esperamos.
+
+07:48.250 --> 07:50.670
+E isso está contando tipo.
+
+07:50.740 --> 07:52.680
+E mais uma vez este
+
+07:52.750 --> 07:59.530
+algoritmo só é bom para usar em circunstâncias específicas, você só quer usá-lo quando o intervalo de
+
+07:59.530 --> 08:06.790
+valores é razoável, ou seja, não é muito grande e o conjunto de dados é um tamanho razoável também.
+
+08:06.790 --> 08:08.120
+Então, idealmente, o número
+
+08:08.350 --> 08:14.830
+de valores exclusivos ou o intervalo não será significativamente maior que o número de itens que você deseja classificar.
+
+08:14.830 --> 08:15.970
+Então, como eu disse anteriormente,
+
+08:15.970 --> 08:22.330
+se você tem uma matriz de comprimento 10 e pode conter valores de 1 a um milhão que não é um bom candidato para contar Sarraf, porque você vai ter
+
+08:22.330 --> 08:26.860
+que criar uma matriz de contagem de comprimento de milhões para classificar 10 itens e, obviamente, isso não seria uma boa ideia.
+
+08:26.860 --> 08:32.140
+Eu vou te ver no próximo vídeo.
+
+08:32.140 --> 08:33.720
+&nbsp;

@@ -1,0 +1,17 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>امکان مشاهده کارگاه های تعریف شده و برگ پرداخت های مربوط به هر کارگاه</span>
+</div>
+<div class="panel">
+  <app-sso-workshop-full-info-search (submitt)="onSearchSubmit($event)"></app-sso-workshop-full-info-search>
+  <app-sso-workshop-full-info-list #workshopList (sendRecord)="onFilterList($event)"></app-sso-workshop-full-info-list>
+  <!-- <workshop-payment-sheet-list *ngIf="show2" #paymentSheetList (sendRecord)="onFilterList($event)"></workshop-payment-sheet-list> -->
+</div>
+<div class="panel">
+  <app-sso-workshop-payment-sheet-search
+    (output)="onSearchPaymentSheetSubmit($event)"></app-sso-workshop-payment-sheet-search>
+<!--  <workshop-payment-sheet-list #paymentSheetList
+                                   (filterParams)="onFilterList($event)"></workshop-payment-sheet-list>-->
+  <app-sso-workshop-payment-sheet-list #paymentSheetList ></app-sso-workshop-payment-sheet-list>
+</div>
+

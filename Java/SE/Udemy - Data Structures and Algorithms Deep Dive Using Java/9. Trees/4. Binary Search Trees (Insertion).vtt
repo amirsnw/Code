@@ -1,0 +1,406 @@
+WEBVTT
+
+00:05.340 --> 00:05.790
+Tudo bem.
+
+00:05.790 --> 00:11.400
+Então, vamos começar a implementar uma árvore simples de busca binária agora para nossa implementação e vamos apenas
+
+00:11.400 --> 00:17.540
+armazenar valores inteiros nos nós, mas você pode armazenar qualquer tipo de dado em uma árvore de busca binária.
+
+00:17.580 --> 00:24.120
+Manteremos as coisas simples para nossa implementação, para que possamos nos concentrar no código e nos conceitos
+
+00:24.120 --> 00:25.310
+relacionados às árvores.
+
+00:25.350 --> 00:26.800
+E nós vamos apenas armazenar inteiros.
+
+00:26.800 --> 00:36.860
+Então, a primeira coisa que vou fazer é criar uma classe para o nó e vou chamá-la de nó de árvore e
+
+00:36.860 --> 00:38.930
+vamos ter três campos.
+
+00:38.930 --> 00:44.960
+Teremos um campo para os dados para que eu seja um inteiro e, em seguida, precisamos de campos para o
+
+00:44.960 --> 00:49.890
+filho esquerdo e o filho certo, pois cada nó poderia ter um filho esquerdo em um filho.
+
+00:49.980 --> 00:57.580
+Eu direi nó de árvore privada à esquerda de filho e nó de árvore privada.
+
+00:57.850 --> 00:58.960
+Criança.
+
+00:59.310 --> 01:03.100
+Então eu vou ter a ideia gerada Então essa cena é para esses caras.
+
+01:03.150 --> 01:10.100
+Tudo certo clique em dizer eu quero getters e setters e vou selecionar tudo, clique em OK.
+
+01:10.100 --> 01:19.070
+Então agora nós temos o nosso pôr-do-sol e eu vou adicionar um nó de árvore pública de construtor e ele aceitará o valor que queremos armazenar
+
+01:20.240 --> 01:25.750
+neste nó e ele apenas fará o usual Este dado de ponto é igual a dados.
+
+01:25.910 --> 01:29.630
+Quando nós construímos o nó, será um nó de folha no início.
+
+01:29.630 --> 01:33.850
+E então não temos nada para atribuir aos Childs esquerdo e direito.
+
+01:34.010 --> 01:36.620
+Tudo bem então agora precisamos de uma aula para a própria árvore.
+
+01:36.620 --> 01:41.010
+Então, vou criar uma nova classe chamada Java.
+
+01:41.540 --> 01:48.170
+E nós só precisamos de um campo na árvore e esse é o nó raiz, porque se tivermos a rota, podemos chegar a
+
+01:48.170 --> 01:53.110
+tudo o que é semelhante à lista ligada, tudo o que precisávamos era o chefe da lista.
+
+01:53.120 --> 01:56.810
+E se temos que podemos chegar a tudo através dos próximos campos.
+
+01:57.020 --> 02:02.150
+Bem, se tivermos o nó raiz, podemos chegar a todo o resto, percorrendo seu filho esquerdo e
+
+02:02.150 --> 02:02.920
+seu filho certo.
+
+02:02.960 --> 02:08.000
+Então eu vou dizer raiz de nó de árvore privada e é isso.
+
+02:08.030 --> 02:10.510
+Isso é tudo que precisamos para nossa árvore.
+
+02:10.520 --> 02:14.780
+Precisamos de uma classe para a árvore e uma classe para os nós que irão para a árvore.
+
+02:14.780 --> 02:20.000
+Tudo bem, então, para construir uma árvore binária, precisaremos inserir nós da maneira como vamos
+
+02:20.000 --> 02:20.420
+fazer.
+
+02:20.420 --> 02:27.110
+E nós passamos por isso nos slides se formos inserir um nó se a árvore estiver vazia, então o
+
+02:27.110 --> 02:29.630
+nó se tornará a raiz e pronto.
+
+02:29.660 --> 02:34.820
+Se uma árvore não estiver vazia, vamos comparar o valor que estamos inserindo no nó raiz.
+
+02:34.970 --> 02:37.810
+Se for menor que o nó raiz, vamos para a esquerda.
+
+02:37.820 --> 02:41.420
+E se for maior que o nó raiz, vamos para a direita e depois vamos enxaguar
+
+02:41.420 --> 02:41.960
+e repetir.
+
+02:41.960 --> 02:48.530
+Então, nós olhamos para a criança esquerda no caso de ir para a esquerda e se o valor da cédula for menor
+
+02:48.530 --> 02:53.010
+que a esquerda, vamos para a esquerda se os valores maiores forem para a direita.
+
+02:53.180 --> 02:58.940
+A cada passo, vamos comparar com a nota atual que estamos observando e vamos nos mover para a
+
+02:58.940 --> 03:03.590
+esquerda ou para a direita, e continuaremos fazendo isso até chegarmos a um ponto vazio.
+
+03:03.590 --> 03:04.860
+vai inserir a nota.
+
+03:04.910 --> 03:10.110
+Agora, nesta implementação, não vamos nos preocupar com valores duplicados.
+
+03:10.250 --> 03:12.170
+Na verdade, não vamos permitir isso.
+
+03:12.170 --> 03:18.980
+Então, se nós tentarmos inserir um nó e nós encontrarmos um valor duplicado, então, eventualmente, nos depararemos com um nó e quando
+
+03:18.980 --> 03:24.450
+compararmos o valor igual então não, então vamos apenas chutar para fora, não vamos inserir o nó.
+
+03:24.500 --> 03:31.010
+Então, você pode pensar que temos um método de inserção na árvore e também teremos um método de inserção em
+
+03:31.010 --> 03:33.000
+nossa classe de nó de árvore.
+
+03:33.140 --> 03:37.520
+E é aí que vamos começar, na verdade, vou colocá-lo acima de todos os conjuntos e obter.
+
+03:37.520 --> 03:47.000
+Então, vamos dizer public void in search e precisamos do valor que queremos inserir na árvore e vamos começar verificando
+
+03:47.510 --> 03:51.890
+se o valor é igual aos dados nesse nó.
+
+03:51.890 --> 03:58.250
+Então, quando esse método de inserção é chamado, vamos comparar o valor que queremos inserir com o
+
+03:58.340 --> 04:02.530
+valor do nó com o qual estamos chamando o método de inserção.
+
+04:02.660 --> 04:08.110
+Então, a primeira coisa que vamos fazer é dizer que o valor é igual ao valor desse nó.
+
+04:08.120 --> 04:14.660
+Porque se é um valor duplicado e não queremos fazer nada, digamos se valor for igual
+
+04:15.830 --> 04:16.780
+a data.
+
+04:17.330 --> 04:21.710
+Nós só vamos retornar porque nossa árvore não suporta valores duplicados.
+
+04:21.710 --> 04:26.780
+Agora poderíamos retornar algo para o chamador e tudo mais, mas vamos apenas ignorar isso e dizer: ei, se
+
+04:26.780 --> 04:29.080
+você tem um valor duplicado, não é um op.
+
+04:29.210 --> 04:36.740
+OK, portanto, se não retornarmos, o valor no nó que estamos rastreando será menor ou maior que o valor
+
+04:36.770 --> 04:38.090
+que queremos inserir.
+
+04:38.090 --> 04:45.470
+Então, vamos dizer se o valor que queremos inserir é menor que os dados desse nó. O que
+
+04:45.470 --> 04:46.280
+queremos fazer?
+
+04:46.460 --> 04:52.010
+Bem, nós queremos ir para a esquerda e então verificamos se há uma criança à esquerda que poderíamos
+
+04:52.010 --> 04:57.410
+estar olhando para um nó da folha aqui ou poderíamos estar olhando para uma nota que não tem
+
+04:57.410 --> 05:05.930
+uma criança à esquerda, então diremos Se o filho da esquerda estiver em todo enquanto se o filho da esquerda desta nota é tudo o que encontramos no
+
+05:05.930 --> 05:10.380
+nosso ponto de inserção, queremos inserir este valor como o filho da esquerda deste nó.
+
+05:10.520 --> 05:16.960
+E então vamos dizer que o filho da esquerda é igual ao novo nó da árvore o valor ou a inserção.
+
+05:17.240 --> 05:18.830
+E terminamos
+
+05:19.030 --> 05:25.390
+Agora, se essa neve tiver um filho à esquerda, o que significa que ainda não encontramos nosso ponto de
+
+05:25.390 --> 05:29.290
+inserção, então vamos chamar o método de inserção no filho à esquerda.
+
+05:29.380 --> 05:39.070
+Então, vamos dizer mais o valor da inserção de pontos da criança à esquerda e, em seguida, o que acontecerá é esta criança
+
+05:39.420 --> 05:40.360
+abandonada aqui.
+
+05:40.840 --> 05:45.360
+É a matemática de inserção que será chamada e então compararemos o valor com os dados, etc. Então, o que estamos fazendo aqui é que entramos, nós verificamos o valor que
+
+05:45.370 --> 05:52.540
+queremos inserir em relação ao valor para esse nó, se o valor for menor que o valor para essa nota que desejamos.
+
+05:52.540 --> 05:56.320
+Sabemos que vamos querer inserir o valor em algum lugar nesta subárvore à esquerda
+
+05:56.320 --> 06:01.990
+da nota, se essa nota ainda não tiver uma subárvore à esquerda, porque ela não tem um filho à esquerda.
+
+06:01.990 --> 06:05.800
+Ei, encontramos nosso ponto de inserção.
+
+06:05.860 --> 06:07.790
+Se ele tiver um filho à esquerda, queremos
+
+06:07.900 --> 06:13.390
+comparar esse valor com o filho da esquerda e, assim, chamaremos o método de inserção para o filho da esquerda para fazer isso.
+
+06:13.390 --> 06:17.330
+E, claro, se chegássemos na criança esquerda e
+
+06:17.440 --> 06:24.730
+o valor fosse menor do que chamaríamos de método de inserção para a criança esquerda etc. Agora, se o valor não for igual aos dados e não for menor que os dados, isso significa que
+
+06:24.730 --> 06:27.070
+ele é maior que os dados.
+
+06:27.190 --> 06:31.840
+Então temos que lidar com esse caso.
+
+06:31.840 --> 06:32.310
+E nesse caso, vamos querer fazer a mesma coisa, mas na criança certa.
+
+06:32.320 --> 06:33.930
+Então, vamos dizer mais se o filho certo é igual a não, então encontramos nosso ponto de inserção.
+
+06:33.940 --> 06:38.890
+Então diga filho certo é igual ao novo valor do nó da árvore.
+
+06:38.890 --> 06:47.650
+Caso contrário, queremos examinar o filho correto deste nó.
+
+06:47.650 --> 06:52.160
+E assim dirá o valor da inserção do ponto da criança direita.
+
+06:52.990 --> 06:58.860
+E são os nós da árvore.
+
+06:59.110 --> 07:04.120
+Insira o método e, assim, essencialmente, se os valores forem iguais, retornamos porque não estamos permitindo valores duplicados, se o valor que queremos inserir
+
+07:04.120 --> 07:06.180
+for menor que esse nó, e explorarmos a subárvore esquerda.
+
+07:06.190 --> 07:11.950
+E se o valor for maior, vamos explorar a subárvore direita.
+
+07:11.950 --> 07:18.370
+Agora, se não tiver uma subárvore esquerda, encontraremos o ponto de inserção.
+
+07:18.460 --> 07:22.840
+Se não tiver uma subárvore direita e queremos ir para a direita, encontramos o ponto de inserção.
+
+07:22.840 --> 07:26.470
+Caso contrário, vamos em frente e olhamos a subárvore esquerda ou a subárvore direita.
+
+07:26.560 --> 07:31.050
+Então, agora vamos adicionar um método de inserção à classe de árvore.
+
+07:31.090 --> 07:37.300
+Então vamos dizer public void Insearch e precisamos do valor que queremos inserir.
+
+07:37.300 --> 07:41.150
+E é assim que um chamador ligaria para inserir um valor na árvore.
+
+07:41.150 --> 07:47.170
+E é a classe de árvore que vai chamar o método de inserção com esse valor.
+
+07:47.170 --> 07:51.880
+Agora, a primeira coisa que vamos verificar é se a rota é nula,
+
+07:52.090 --> 07:57.430
+porque se a rota é nula, então qualquer inserção só se torna o nó raiz.
+
+07:57.430 --> 08:02.170
+Então, vamos dizer se root é igual a não, então root é igual a um novo valor de nó de árvore e terminamos.
+
+08:02.170 --> 08:04.060
+Nós não temos que fazer
+
+08:04.180 --> 08:13.360
+mais nada, então você sabe, como eu disse antes, quando você está inserindo, você sempre insere no primeiro lugar vazio que você encontra.
+
+08:13.360 --> 08:18.130
+E se você tiver uma árvore vazia que será a raiz.
+
+08:18.130 --> 08:20.710
+Agora, se a raiz não é tudo o que queríamos, praticamente fazemos o
+
+08:20.710 --> 08:23.560
+que fizemos e aqui queremos comparar o valor com a raiz e, dependendo do
+
+08:23.560 --> 08:29.530
+resultado da comparação, queremos ir para a esquerda ou para a direita e, assim, fazer tudo isso nós temos que fazer é chamar o valor de inserção brute dot.
+
+08:29.530 --> 08:34.910
+Portanto, se tivermos uma árvore vazia, o valor que estamos inserindo se tornará o nó raiz.
+
+08:35.080 --> 08:39.790
+Se não tivermos uma árvore vazia, vamos chamar o método de inserção na rota.
+
+08:40.390 --> 08:44.920
+E então aqui o valor seria comparado com o valor na raiz.
+
+08:44.950 --> 08:48.110
+Se for um valor duplicado, de outra forma, dependendo se o valor
+
+08:48.130 --> 08:52.410
+for menor ou maior que o valor na rota, exploraremos a subárvore esquerda ou a subárvore direita.
+
+08:52.420 --> 08:58.570
+Então, se eu chegar ao método principal aqui e vamos criar uma instância de árvore, então diremos
+
+08:58.570 --> 09:02.830
+que a árvore vamos chamá-lo na árvore é igual a nova árvore.
+
+09:02.830 --> 09:09.840
+E então vamos inserir o valor 25.
+
+09:09.840 --> 09:12.390
+Então, diríamos na árvore de
+
+09:12.730 --> 09:15.960
+inserção 25 e, em seguida, podemos dizer
+
+09:15.970 --> 09:26.950
+a árvore de ponto de inserção de árvore, se estamos construindo a árvore que fizemos nos slides podemos inserir 20 e, em
+
+09:26.950 --> 09:39.870
+seguida, vamos inserir árvores de 15 polegadas na pesquisa 27 30 29 26 22 e o valor final foi 32 vamos apenas executar, não veremos nada,
+
+09:43.680 --> 09:44.280
+porque
+
+09:47.900 --> 09:48.820
+ainda não
+
+09:53.510 --> 09:54.530
+escrevemos uma
+
+09:59.720 --> 10:08.090
+árvore de impressão, mas vamos rodar e só queremos ter certeza de que não tivemos nenhum erro.
+
+10:08.090 --> 10:09.910
+E vou apenas dizer em dívida com quatro espaços.
+
+10:14.930 --> 10:18.840
+Eu não sei porque se queixa disso às vezes, mas acontece.
+
+10:18.860 --> 10:21.520
+Então, como eu disse, sabemos que não recebemos nenhum erro, mas
+
+10:21.620 --> 10:24.650
+não sabemos se a nossa árvore está sendo construída corretamente para isso.
+
+10:24.650 --> 10:30.740
+Teríamos que executar o depurador ou precisamos escrever um método que atravessa a árvore e assim começa na raiz e, em seguida, acessos ou visitas que dizemos visitar quando estamos lidando
+
+10:30.740 --> 10:31.150
+com árvores.
+
+10:31.160 --> 10:36.590
+Ele irá visitar cada nó na árvore.
+
+10:36.590 --> 10:41.940
+Então faremos isso no próximo vídeo.
+
+10:41.970 --> 10:45.200
+Eu te vejo lá.
+
+10:45.290 --> 10:47.740
+&nbsp;
+
+10:47.840 --> 10:48.750
+&nbsp;

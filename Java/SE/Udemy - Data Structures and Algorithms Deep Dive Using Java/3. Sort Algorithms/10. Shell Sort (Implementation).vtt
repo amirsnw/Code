@@ -1,0 +1,406 @@
+WEBVTT
+
+00:05.310 --> 00:11.010
+OK, então vamos implementar ordenar Eu criei um projeto Estou usando a academia de pacotes para aprender
+
+00:11.040 --> 00:12.250
+programação no tipo Shell.
+
+00:12.280 --> 00:18.930
+Eu adicionei o usual no código para imprimir o array e nós não precisamos do método de swap
+
+00:18.930 --> 00:26.010
+para isso, porque a ordenação por inserção não usa swap e isso é essencialmente uma variação na ordenação por inserção.
+
+00:26.010 --> 00:32.040
+Então, vamos lá, então o primeiro loop que vamos ter é o que vai inicializar o valor de gap
+
+00:32.040 --> 00:35.030
+que estamos usando e então reduzi-lo em cada iteração.
+
+00:35.070 --> 00:43.980
+Então, digamos que para Gap é igual a T-Ray que o comprimento sobre, porque lembre-se que vamos começar com integrar uma lacuna
+
+00:44.100 --> 00:50.630
+de comprimento intermediário sobre a qual para esta matriz será 7 sobre 2, que é 3.
+
+00:51.060 --> 00:55.370
+E então vamos continuar enquanto o intervalo for maior que zero, porque
+
+00:55.380 --> 01:02.100
+se a lacuna é zero, então isso significa que vamos comparar elementos contra si mesmos, então precisamos de uma
+
+01:02.190 --> 01:08.940
+lacuna de um para a iteração final. para o shell, classificar a iteração final sempre tem que ter uma
+
+01:08.940 --> 01:13.230
+lacuna de 1, porque queremos que a iteração final seja essencialmente de inserção.
+
+01:13.530 --> 01:21.050
+E em cada iteração vamos dividir o valor de gap por 2 e assim na primeira iteração, nosso valor de gap
+
+01:21.150 --> 01:27.290
+será 7 em 2, que é 3 na segunda iteração, será 3 em 2, que é 1.
+
+01:27.330 --> 01:32.430
+Então a segunda iteração será essencialmente uma ordenação de inserção.
+
+01:32.790 --> 01:39.900
+Então, agora vamos codificar a comparação e mudança real e Else você verá e eu mostrarei a você depois
+
+01:40.050 --> 01:44.320
+que o que vamos codificar aqui é essencialmente o tipo de inserção.
+
+01:44.430 --> 01:50.000
+Vai parecer um pouco diferente porque está usando gap, mas é essencialmente de inserção.
+
+01:50.000 --> 01:55.800
+E vamos comparar as duas implementações dos dois conjuntos de código em um minuto.
+
+01:55.800 --> 02:03.450
+Então, eu vou dizer na minha diferença igual por menos do que nos comprimentos de pontos da
+
+02:03.450 --> 02:09.490
+matriz, porque vamos querer olhar para todos os elementos da matriz mais plus.
+
+02:09.750 --> 02:13.260
+E vamos começar como fizemos com a inserção de inserção.
+
+02:13.260 --> 02:22.650
+Vamos atribuir um novo campo de elemento com o RE para re o valor que
+
+02:22.650 --> 02:23.850
+vamos ver.
+
+02:23.940 --> 02:31.370
+Então, isso é essencialmente a diferença e vamos usar J para fazer a travessia.
+
+02:31.860 --> 02:39.180
+Então, vamos dizer que o Wall J é maior que o gap porque se J se tornar
+
+02:39.240 --> 02:50.550
+menor que o gap significa que atingimos a frente do array e inserimos o Ray J menos o gap é maior que o new element.
+
+02:51.130 --> 02:52.170
+Bem, o que queremos fazer?
+
+02:52.170 --> 02:58.510
+Queremos deslocar o elemento para dentro de Ray-J menos gap até as posições Gap.
+
+02:58.500 --> 03:08.340
+Então, vamos dizer que Ray J é igual a Ray J menos scamp.
+
+03:08.490 --> 03:13.950
+E então o que estamos dizendo aqui, se estamos fazendo o que estamos começando com uma lacuna de três, então
+
+03:13.950 --> 03:14.970
+estamos começando às 7.
+
+03:14.970 --> 03:20.730
+Assim como fizemos com os slides e na primeira iteração, vamos comparar a diferença de 7 a menos J.
+
+03:20.880 --> 03:21.290
+Certo.
+
+03:21.300 --> 03:28.940
+Porque nós vamos atribuir 7 ao novo elemento J vai começar em 3 e nós vamos salvar na diferença de
+
+03:28.950 --> 03:33.270
+menos de Ray-J enquanto nossa diferença para a primeira iteração é três.
+
+03:33.270 --> 03:41.100
+Então, se Interrail 0, que é 20, for maior que 7, então queremos mudar sete para cima de três
+
+03:41.100 --> 03:44.700
+posições, então vamos atribuir a Ray-J, que é três.
+
+03:44.700 --> 03:49.470
+Então Interbase três com Inter re três menos três que é Interrail 0.
+
+03:49.470 --> 03:54.330
+Então, vamos essencialmente pegar a posição zero e atribuí-la à posição 3
+
+03:54.330 --> 04:04.050
+e, depois disso, queremos subtrair a diferença de J, porque estamos dizendo que agora vamos querer comparar novas elemento com o que vier depois de
+
+04:04.050 --> 04:10.770
+três posições, enquanto atingimos a frente da matriz neste ponto B vamos dar a volta e diremos
+
+04:10.770 --> 04:15.870
+que Bem J tem que ser maior ou igual a lacuna e não
+
+04:15.870 --> 04:16.440
+é.
+
+04:16.440 --> 04:17.870
+Porque neste momento é zero.
+
+04:17.910 --> 04:21.060
+E isso é porque nós não temos elementos aqui.
+
+04:21.060 --> 04:23.660
+Então, primeiro queremos comparar sete contra 20.
+
+04:23.700 --> 04:28.380
+Se pudéssemos então comparar 7 contra o que ocorre em três lugares na frente de 20.
+
+04:28.380 --> 04:29.330
+Mas não há nada.
+
+04:29.340 --> 04:31.170
+E então vamos sair daqui.
+
+04:31.230 --> 04:33.060
+E o que queremos fazer neste momento.
+
+04:33.060 --> 04:39.240
+Assim como com o tipo de inserção, estamos basicamente dizendo que encontramos o ponto de inserção para
+
+04:39.250 --> 04:40.220
+sete quando desistimos.
+
+04:40.230 --> 04:46.290
+E então vamos atribuir ao Ray-J um novo elemento.
+
+04:46.470 --> 04:51.090
+E isso deve parecer um pouco familiar, porque isso é essencialmente o que estamos fazendo com o tipo
+
+04:51.090 --> 04:51.570
+de inserção.
+
+04:51.570 --> 04:59.010
+E assim, depois de termos feito isso, nós voltaríamos para esse loop e eu me tornaria quatro, então, tornar-se 55
+
+04:59.040 --> 05:05.140
+J se tornaria quatro e então o que aconteceria seria comparar 55 contra 35 e não
+
+05:05.140 --> 05:08.380
+faria nada porque 50 fives maior que 35.
+
+05:08.560 --> 05:13.030
+E nesse ponto, mais uma vez, vai querer avançar três lugares e não há nada.
+
+05:13.030 --> 05:14.800
+Então, vamos dar uma volta.
+
+05:14.800 --> 05:19.840
+Eu vou me tornar cinco então vai comparar um contra menos 15.
+
+05:19.870 --> 05:25.060
+E porque um é maior que menos 15 ele não vai fazer nada, vai dar uma volta
+
+05:25.060 --> 05:29.650
+e, mais uma vez, vai querer comparar com os três espaços e não há nada,
+
+05:29.650 --> 05:30.600
+então vamos voltar.
+
+05:30.640 --> 05:33.610
+Eu ficarei doente tão menos 22.
+
+05:33.610 --> 05:36.800
+Nós vamos comparar um menos 22 contra o que quer que esteja aqui.
+
+05:36.820 --> 05:44.710
+Agora não é mais 7 é 20 porque nós mudamos 20 aqui menos 22 é menos que 20 então vamos
+
+05:44.710 --> 05:51.700
+mudar 20 aqui e então nós vamos comparar menos 22 para quaisquer três espaços ao longo neste tempo
+
+05:51.700 --> 05:53.880
+nós temos algo três posições acima.
+
+05:54.010 --> 06:00.250
+Na verdade, temos sete aqui porque, na primeira iteração, movemos sete para a frente, menos 22 é
+
+06:00.250 --> 06:01.420
+menor que sete.
+
+06:01.420 --> 06:04.490
+Então, vamos voltar sete para onde era originalmente.
+
+06:04.540 --> 06:09.230
+E então, neste momento, vai querer comparar três espaços e não há nada.
+
+06:09.220 --> 06:14.700
+Nós atingimos a frente da matriz e, assim, vamos atribuir menos 22 aqui e, nesse ponto, daremos uma volta.
+
+06:14.710 --> 06:21.280
+Eu vou me tornar sete e ele irá falhar nessa condição e então irá puxar o loop de volta para o loop
+
+06:21.340 --> 06:23.760
+da Gap para reduzir o gap para 1.
+
+06:23.770 --> 06:29.230
+E neste ponto, quando entramos nesse código, estamos essencialmente fazendo uma classificação de inserção.
+
+06:29.230 --> 06:33.730
+E é assim que a classificação do Shell otimiza a classificação por inserção.
+
+06:33.730 --> 06:45.560
+Então, vamos executar isso para ter certeza de que está funcionando e temos o usual menos de 20 a menos 15 1 7 20
+
+06:45.560 --> 06:46.900
+35 e 55.
+
+06:46.910 --> 06:52.850
+Então, vamos ao par de slides por um minuto para comparar o código
+
+06:52.850 --> 06:57.950
+para ordenação de inserção com o código para o tipo Shell.
+
+06:58.010 --> 07:01.800
+OK, então aqui está o código que escrevemos para classificação de inserção.
+
+07:01.810 --> 07:07.030
+E podemos ver que aqui estamos começando com o primeiro índice ordenado e atribuímos novo
+
+07:07.060 --> 07:10.590
+elemento ao que quer que seja nesse valor que temos.
+
+07:10.660 --> 07:16.450
+E então, é claro, percorremos todos os elementos até o final da matriz e, se possível, deslocamos
+
+07:16.480 --> 07:22.390
+os elementos para a direita e, se abandonarmos esse loop, encontraremos a posição de inserção de novos elementos,
+
+07:22.390 --> 07:25.150
+para que possamos atribuir um novo elemento para.
+
+07:25.150 --> 07:26.990
+Eu ouço tipo de concha.
+
+07:27.130 --> 07:31.750
+E se você ignorar essa parte por um minuto, verá que esse código é praticamente o mesmo.
+
+07:31.750 --> 07:36.320
+A única diferença é que, em vez de usar um, estamos usando qualquer valor de intervalo.
+
+07:36.320 --> 07:43.590
+Então, na primeira iteração, vamos usar três e mais uma vez, se voltarmos ao tipo de inserção.
+
+07:43.590 --> 07:50.190
+Vamos atribuir o primeiro índice inserido a Ray ao novo elemento, enquanto no tipo Shell atribuímos o que quer
+
+07:50.240 --> 07:53.230
+que esteja no valor do intervalo ao novo elemento.
+
+07:53.230 --> 07:55.150
+Nós atribuímos a J.
+
+07:55.150 --> 08:00.080
+Isso é bem parecido com o que estamos fazendo aqui, exceto que o loop está cuidando da atribuição.
+
+08:00.130 --> 08:04.880
+Aqui precisamos de um índice diferente porque não queremos mudar.
+
+08:04.990 --> 08:11.940
+À medida que percorremos o nó, a partição classificada, mas a parte da matriz que estamos procurando em uma
+
+08:11.940 --> 08:13.420
+posição de inserção para.
+
+08:13.450 --> 08:19.120
+E então dizemos que devemos ordenar enquanto J é maior igual a Gaffin que você conhece em Ray-J menos Scaff
+
+08:19.120 --> 08:21.770
+é maior que novo elemento contanto que isso seja verdade.
+
+08:21.790 --> 08:26.050
+Vamos mudar o elemento que estamos comparando.
+
+08:26.050 --> 08:34.330
+Vamos mudá-lo para a matriz pelas posições da lacuna e, em seguida, precisamos diminuir a posição do próximo elemento que
+
+08:34.330 --> 08:39.790
+observamos na lacuna, porque sempre queremos estar olhando para o elemento que está
+
+08:39.790 --> 08:40.840
+afastado das posições.
+
+08:40.900 --> 08:43.330
+E isso é muito parecido com o que estamos fazendo aqui.
+
+08:43.330 --> 08:48.130
+Estamos dizendo a mesma coisa, desde que não tenhamos atingido a frente e isso está dizendo, desde que não
+
+08:48.130 --> 08:54.370
+tenhamos atingido a frente e contanto que o elemento que estamos olhando no For deve classificar, não é não é realmente a partição ordenada, mas
+
+08:54.370 --> 08:59.230
+o elemento que estamos observando é que as posições das lacunas são maiores do que o novo elemento na
+
+08:59.230 --> 09:04.480
+parte de trás e a classificação de inserção, desde que o elemento que estamos observando seja maior que o novo elemento.
+
+09:04.660 --> 09:06.410
+Nós queremos fazer o deslocamento.
+
+09:06.700 --> 09:11.740
+E aqui queremos fazer a mudança aqui porque estamos usando uma lacuna que temos para calcular o
+
+09:11.740 --> 09:14.230
+próximo índice que queremos analisar de forma diferente.
+
+09:14.230 --> 09:20.710
+Nós não podemos simplesmente decrementar por um, como estamos com o tipo de inserção, porque estamos assumindo uma lacuna de um aqui
+
+09:20.920 --> 09:25.090
+e, em seguida, quando abandonamos esse loop, atribuímos um novo elemento ao re II.
+
+09:25.180 --> 09:29.590
+E aqui, quando abandonamos o loop, atribuímos um novo elemento ao Ray-J.
+
+09:29.590 --> 09:36.450
+Então eu acho que se você der uma olhada nesses dois conjuntos de código, aqui está a ordenação de novo
+
+09:36.450 --> 09:42.550
+e aqui as prateleiras ou você pode ver que estamos fazendo a mesma coisa aqui como estamos fazendo
+
+09:42.550 --> 09:49.000
+com inserção, é só que estamos examinando elementos que estão mais distantes, exceto na iteração final na iteração final,
+
+09:49.000 --> 09:50.400
+quando a lacuna é uma.
+
+09:50.410 --> 09:54.760
+O que estamos fazendo aqui é exatamente a mesma coisa que estamos fazendo aqui.
+
+09:54.790 --> 09:59.620
+E assim, a iteração final quando a lacuna é uma, estamos essencialmente fazendo uma classificação de inserção.
+
+09:59.710 --> 10:01.530
+E é isso que o tipo Shell faz.
+
+10:01.540 --> 10:08.560
+Mas é claro que vamos classificar na iteração final que já movemos vários dos elementos para mais perto de suas
+
+10:08.650 --> 10:13.630
+posições classificadas e, portanto, haverá muito menos mudanças que devem ocorrer e é assim
+
+10:13.630 --> 10:17.440
+que o tipo Shell melhora o algoritmo de ordenação por inserção. .
+
+10:17.440 --> 10:21.960
+E como mencionei, você também pode usar a mesma ideia para melhorar o tipo de bolha.
+
+10:21.970 --> 10:24.520
+Você faz algum trabalho preliminar.
+
+10:24.520 --> 10:29.860
+Então, em vez de examinar vizinhos e trocá-los, você examinará os elementos que estão mais distantes
+
+10:29.860 --> 10:31.600
+e os trocará, se necessário.
+
+10:31.600 --> 10:36.490
+E assim, quando você chegar ao tipo de bolha onde você está usando uma lacuna de um,
+
+10:36.490 --> 10:43.910
+haverá muito menos troca para fazer isso, o tipo de shell é o que o algoritmo de ordenação de shell faz para ordenação de inserção.
+
+10:43.930 --> 10:46.390
+E também pode fazer isso por um tipo de bolha.
+
+10:46.390 --> 10:47.770
+Eu vou te ver no próximo vídeo.

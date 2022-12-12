@@ -1,0 +1,1102 @@
+WEBVTT
+
+00:05.270 --> 00:08.450
+Tudo bem, então agora vamos implementar o merge sort.
+
+00:08.480 --> 00:13.160
+E como eu disse nos slides, há uma recursão envolvida, então, se você está
+
+00:13.160 --> 00:19.970
+tendo um problema para entender o que está acontecendo, volte e revise os slides sobre o merge sort quando percorremos a
+
+00:19.970 --> 00:20.760
+classificação à mão.
+
+00:20.810 --> 00:24.290
+E você também pode voltar e rever o vídeo em recursão.
+
+00:24.290 --> 00:29.090
+Tudo bem, então eu vou escrever dois métodos, um chamado merge sort.
+
+00:29.210 --> 00:35.930
+E esta é a implementação do merge sort e é o método que vai se chamar recursivamente e então eu
+
+00:36.020 --> 00:41.080
+vou escrever um segundo método chamado merge e que estará fazendo o passo de mesclagem.
+
+00:41.090 --> 00:42.960
+Então vamos direto ao assunto.
+
+00:42.970 --> 00:49.430
+Então, eu vou dizer public static void merge sort e nós vamos passar a
+
+00:49.430 --> 00:55.950
+matriz que queremos classificar e vamos passar um começo e X e um índice final.
+
+00:56.850 --> 01:02.230
+OK, então a primeira coisa que vamos fazer aqui é para recursão e como eu disse que precisamos de
+
+01:02.360 --> 01:07.100
+uma condição de quebra e isso vai ser método recursivo por isso precisamos saber quando sair da
+
+01:07.100 --> 01:13.460
+recursão e vamos sair da recursão quando este método é chamado com uma matriz de um elemento porque quando temos uma matriz
+
+01:13.460 --> 01:16.110
+de um elemento não há nada a ser feito.
+
+01:16.130 --> 01:19.340
+Por definição, uma matriz de um elemento é classificada.
+
+01:19.370 --> 01:28.700
+Então, vamos dizer se e meu começo é menor que 2 nós apenas retornamos e isso vai quebrar a recursão.
+
+01:28.700 --> 01:34.400
+Então, se estivermos chamando esse método recursivamente, o momento e mynahs start for menor que 2, o que significa
+
+01:34.400 --> 01:39.290
+que teremos uma matriz de um elemento retornará e, em seguida, a chamada para mesclar a classificação.
+
+01:39.310 --> 01:44.450
+Ele está esperando que esta chamada retorne, poderemos continuar a execução e, em seguida, a chamada
+
+01:44.450 --> 01:47.940
+está aguardando que a chamada seja retornada, poderemos continuar executando etc. Como eu disse, você pode voltar e rever o
+
+01:47.990 --> 01:52.820
+vídeo em recursão se você não entende o que eu estou falando.
+
+01:52.820 --> 01:53.620
+OK, então vamos
+
+01:53.720 --> 01:58.940
+supor que não temos uma matriz de um elemento, temos dois ou mais elementos enquanto temos trabalho a fazer.
+
+01:58.940 --> 01:59.980
+E então a primeira coisa que vamos fazer é particionar o array que foi passado.
+
+02:00.140 --> 02:04.580
+Agora, o array pode ser uma subconsulta, por exemplo, na primeira chamada.
+
+02:04.580 --> 02:09.520
+Nós vamos pegar o array inteiro.
+
+02:09.590 --> 02:11.370
+Mas, na segunda invocação disso, vamos obter essa parte do array esquerdo.
+
+02:11.390 --> 02:17.060
+E, nesse caso, quando particionamos, vamos particionar
+
+02:17.150 --> 02:22.190
+esse array como vimos nos slides.
+
+02:22.190 --> 02:22.960
+Então, o que queremos dizer com partição?
+
+02:23.030 --> 02:24.820
+Bem, basicamente, apenas um para descobrir quais são os índices inicial e final.
+
+02:24.820 --> 02:29.340
+Isso é tudo o que precisamos fazer na fase de partição porque é
+
+02:29.390 --> 02:33.560
+uma partição lógica que não estamos criando nenhuma nova instância de array.
+
+02:33.560 --> 02:35.270
+E então vamos fazer o particionamento.
+
+02:35.300 --> 02:37.130
+Então, vamos dizer mid equals e como vimos no começo do slide Selby mais e mais de 2.
+
+02:37.130 --> 02:45.170
+E assim, para o primeiro início de invocação será 0 e será 7 porque eles mencionaram nos slides e
+
+02:45.470 --> 02:51.860
+é sempre um maior que o último índice válido da partição que você deseja classificar.
+
+02:51.860 --> 02:58.340
+E assim terá 0 mais 7 sobre 2, que é 3.
+
+02:58.340 --> 03:01.880
+E então, neste ponto, difícil de acreditar, mas nós dividimos o
+
+03:01.910 --> 03:07.220
+array, nós basicamente dissemos que o ponto médio é três e então vamos lançar a posição 0
+
+03:07.220 --> 03:12.410
+1 no array esquerdo e vamos lançar posições 3 4 5 e 6 na matriz correta.
+
+03:12.410 --> 03:15.530
+E agora o que queremos fazer?
+
+03:15.590 --> 03:17.140
+Queremos fazer um tipo de mesclagem.
+
+03:17.150 --> 03:18.560
+Na partição esquerda.
+
+03:18.560 --> 03:19.930
+Vamos em frente e faça isso.
+
+03:20.130 --> 03:21.380
+Então, vamos dizer tipo de mesclagem.
+
+03:21.470 --> 03:23.120
+A entrada sempre será a
+
+03:23.780 --> 03:28.990
+mesma matriz de entrada, porque estamos fazendo o particionamento lógico e, em seguida, a matriz esquerda começa
+
+03:29.480 --> 03:35.420
+na posição zero, por isso, será o mesmo índice inicial e o índice final da matriz esquerda será Midd.
+
+03:35.420 --> 03:37.360
+Lembre-se de que nesta
+
+03:37.400 --> 03:44.690
+implementação o índice final é sempre maior que o último índice válido no array.
+
+03:44.690 --> 03:45.230
+Eu
+
+03:45.230 --> 03:53.780
+vou copiar isso e fazer um loop aqui como um comentário para que possamos ver como estamos trabalhando nesse método.
+
+03:53.870 --> 03:54.790
+E assim como
+
+03:55.130 --> 04:00.920
+eu disse na primeira invocação, nós vamos entrar e a mina começa sete menos zero é sete.
+
+04:00.920 --> 04:01.340
+Então, nós
+
+04:01.340 --> 04:07.130
+definitivamente temos mais de um elemento na partição com a qual estamos trabalhando, o meio será zero mais 7 sobre 2, que é 3.
+
+04:07.130 --> 04:09.190
+E nessa implementação nós colocamos quaisquer elementos extras na partição correta.
+
+04:09.290 --> 04:14.330
+Então, vamos dizer OK, então a partição esquerda consistirá
+
+04:14.330 --> 04:21.660
+dos índices de 0 a 2 para a posição final, sempre passamos 1 maior.
+
+04:21.680 --> 04:24.820
+E assim será o meio que é 3.
+
+04:24.860 --> 04:26.900
+Então passando por 0 e
+
+04:26.930 --> 04:33.110
+Endace 3 estamos dizendo que queremos a posição zero a 2 para entrar na partição esquerda.
+
+04:33.110 --> 04:33.750
+E então nós lidamos com a partição esquerda agora porque isso é recursivo.
+
+04:33.800 --> 04:37.840
+Quando esta chamada retornar como vimos nos
+
+04:37.880 --> 04:46.100
+slides, todo o array esquerdo do lado esquerdo do metrô terá sido tratado.
+
+04:46.100 --> 04:46.920
+E então essa ligação quando chegarmos resultará em outra chamada para mesclar o tipo.
+
+04:46.970 --> 04:51.740
+Outra chamada para mesclar tipo.
+
+04:51.740 --> 04:52.990
+Até que esse cara
+
+04:53.000 --> 04:59.120
+tenha sido particionado em uma matriz de elementos e depois fundido, e chegaremos a isso em um minuto.
+
+04:59.120 --> 04:59.620
+Então, quando voltarmos, estes três elementos serão classificados.
+
+04:59.660 --> 05:04.330
+Então essa é a partição que foi feita, a fusão foi feita e eles estão ordenados.
+
+05:04.330 --> 05:08.560
+Então, neste ponto, a parte esquerda da matriz é classificada
+
+05:08.560 --> 05:14.470
+e, portanto, ainda precisamos manipular a parte direita da matriz que chamaremos merge sort
+
+05:14.470 --> 05:21.520
+novamente com a entrada desta vez nosso índice inicial será mid e nosso índice final será final .
+
+05:21.520 --> 05:23.180
+E assim, para o array esquerdo, temos um índice inicial de 0 e um índice final de três.
+
+05:23.260 --> 05:29.190
+Queremos lidar com a posição de 0 a 2 e pela parte direita da matriz, enquanto queremos que esses
+
+05:29.200 --> 05:35.290
+caras fiquem na parte direita da matriz, de modo que, começando na posição três, a posição central e depois passemos.
+
+05:35.290 --> 05:40.840
+E novamente 7 porque sempre passamos um maior que o último índice válido na partição.
+
+05:40.840 --> 05:45.970
+Então isso significa que os índices de três a seis estão na partição da direita.
+
+05:45.970 --> 05:49.450
+E no momento em que esse cara
+
+05:49.450 --> 05:55.600
+retornar, toda a matriz terá sido manipulada e terá sido particionada e classificada.
+
+05:55.600 --> 05:56.940
+E assim, quando chegamos a
+
+05:57.010 --> 06:02.830
+este ponto quando essas duas chamadas de mesclagem concluem, os elementos nas três primeiras posições estão ordenados e os elementos nas últimas
+
+06:02.830 --> 06:08.110
+quatro posições estão ordenados e nossa etapa final, é claro, é mesclar a esquerda e a esquerda. partições certas.
+
+06:08.110 --> 06:12.730
+E ambas as partições agora estão classificadas.
+
+06:12.760 --> 06:14.860
+Lembre-se de que sempre mesclamos partições sórdidas.
+
+06:14.860 --> 06:18.220
+E assim é para onde vamos chamar nosso método de
+
+06:18.220 --> 06:23.830
+mesclagem e ele vai pegar o array de entrada para iniciar o índice mid e o índice final.
+
+06:23.830 --> 06:27.640
+E assim, porque se recursão quando chegamos com a matriz completa e,
+
+06:27.670 --> 06:33.430
+em seguida, vamos chamar merge sort com esta partição quando chamamos merge sort com esta partição e entra novamente.
+
+06:33.430 --> 06:38.450
+Ele vai chamar merge sort com esse cara.
+
+06:38.500 --> 06:41.340
+Lembre-se que a partir dos slides que esse cara
+
+06:41.350 --> 06:46.630
+a matriz esquerda para esse cara será 20 e então ele vai chamar merge sort com 35
+
+06:46.630 --> 06:52.820
+e menos 15 e que vai voltar e que vai dividir esses caras em dois arrays de um elemento.
+
+06:52.820 --> 06:54.400
+E depois disso, se estivermos trabalhando
+
+06:54.460 --> 07:01.240
+com o desordem novamente, depois de 20 terem sido manipulados aqui e 35 e menos 15 terem sido manipulados aqui, então mesclaremos esses dois arrays.
+
+07:01.240 --> 07:05.760
+E então essa chamada retornará e, nesse ponto,
+
+07:05.920 --> 07:11.890
+a classificação de mesclagem de toda a matriz poderá ser retomada.
+
+07:11.890 --> 07:12.530
+E então vamos lidar com o lado direito.
+
+07:12.580 --> 07:14.760
+Então, como eu disse, se você
+
+07:14.770 --> 07:20.110
+está tendo um problema em entender que estamos indo para o buraco da recursão a
+
+07:20.110 --> 07:27.130
+cada vez que chamamos isso, vamos processá-lo completamente ou o lado esquerdo para a primeira indicação processará completamente isso.
+
+07:27.130 --> 07:28.830
+Quando chamamos isso, processamos completamente o lado direito.
+
+07:29.050 --> 07:32.150
+E assim, no momento em que atingimos essa mesclagem, a
+
+07:32.170 --> 07:37.930
+partição esquerda foi totalmente manipulada, foi particionada e então ela foi classificada e o lado direito foi manipulado.
+
+07:37.930 --> 07:41.070
+Então, ele foi particionado e mesclado, então é classificado.
+
+07:41.080 --> 07:43.820
+E assim, uma vez que fundimos
+
+07:43.870 --> 07:50.650
+a esquerda e a direita, lidamos completamente com qualquer partição com a qual chamássemos o método.
+
+07:50.650 --> 07:51.470
+E assim, quando o
+
+07:51.580 --> 07:56.500
+chamamos com toda a matriz no momento em que isso é retornado e isso é retornado, estamos em posição de apenas mesclar a esquerda e a direita.
+
+07:56.500 --> 07:58.670
+E nossa matriz será classificada.
+
+07:58.690 --> 08:00.660
+Então, vamos escrever o método de mesclagem.
+
+08:00.670 --> 08:03.380
+Então, public static merid merge e é necessária uma entrada arang start index e índice final.
+
+08:03.940 --> 08:18.110
+E deixe-me puxar isso.
+
+08:18.510 --> 08:21.240
+OK, então vou copiar isso novamente para poder me referir a ele sem ter que rolar para cima e para baixo.
+
+08:22.190 --> 08:28.830
+Tudo bem, então eu disse nos slides da implementação que eu vou mostrar que você
+
+08:28.840 --> 08:33.250
+tem algumas entradas de otimizações e aqui está a primeira.
+
+08:33.400 --> 08:36.350
+Então, vamos dizer se a
+
+08:36.490 --> 08:44.020
+entrada de mid menos um é menor ou igual a input myd terminamos.
+
+08:48.400 --> 08:49.090
+Na verdade, não precisamos fazer nenhuma fusão.
+
+08:49.090 --> 08:51.660
+Agora o que diabos isso significa.
+
+08:51.850 --> 08:53.710
+O que isso está fazendo.
+
+08:53.770 --> 08:54.790
+Bem, como dissemos, estamos sempre mesclando matrizes ordenadas.
+
+08:54.790 --> 08:59.550
+Então, quando chamamos de mesclar a partição à esquerda, a remineração é ordenada e
+
+08:59.590 --> 09:06.040
+a partição da direita é ordenada e sabemos que o myd é o primeiro elemento no lado direito.
+
+09:06.160 --> 09:11.870
+E é um maior que o último elemento no lado esquerdo e, portanto, a entrada
+
+09:12.040 --> 09:20.050
+mid menos um é o último elemento na partição esquerda e a entrada mid é o primeiro elemento na partição à direita.
+
+09:20.140 --> 09:25.570
+Agora, se o último elemento na partição esquerda for menor ou igual ao
+
+09:25.570 --> 09:32.620
+primeiro elemento na partição à direita, todos os elementos da partição à esquerda serão menores ou iguais
+
+09:32.620 --> 09:38.800
+que o menor elemento da partição à direita, porque os dois são classificados .
+
+09:38.800 --> 09:41.920
+E assim, se o último elemento na
+
+09:42.040 --> 09:48.880
+partição esquerda for digamos 20 e o primeiro elemento na partição da direita for 25.
+
+09:48.880 --> 09:51.040
+Então, sabemos que todos os elementos na
+
+09:51.070 --> 09:56.080
+partição direita serão maiores ou iguais a todos os elementos da partição à esquerda, porque são classificados.
+
+09:56.080 --> 09:58.800
+Então, se o último cara for 20, todo o resto
+
+09:58.800 --> 10:06.840
+dessa matriz é igual a 20 ou menos, o primeiro cara da matriz certa é 25, então todo o resto na matriz correta é maior que ou igual a 25.
+
+10:06.840 --> 10:12.950
+E então, essencialmente, temos a situação aqui que, se fôssemos passar pelo processo de mesclagem para
+
+10:12.980 --> 10:18.530
+esses caras, acabaríamos copiando toda a matriz da esquerda para a matriz temporária e então
+
+10:18.530 --> 10:25.370
+copiamos a matriz inteira inteira para a matriz temporária porque, essencialmente, porque Todos os elementos no array à
+
+10:25.370 --> 10:30.680
+esquerda são menores que todos os elementos no array direito para mesclá-los. Precisamos apenas juntá-los.
+
+10:30.770 --> 10:35.230
+Nós só precisamos copiar o array esquerdo e depois o array correto.
+
+10:35.240 --> 10:38.080
+Mas lembre-se que depois disso nós copiaríamos o array mesclado de
+
+10:38.120 --> 10:44.300
+volta para o array original nas posições que já estão ocupadas por esses caras e o que isso significa é que nós não vamos
+
+10:44.300 --> 10:49.610
+mudar o array original de nenhuma maneira, porque nós estamos indo para acabar copiando os elementos de volta na mesma ordem.
+
+10:49.610 --> 10:54.990
+Eles já estão dentro
+
+10:55.000 --> 10:56.050
+E assim, por exemplo,
+
+10:56.060 --> 11:02.960
+para a matriz, uma das partições, como vimos nos slides, é 7 e 55 e 7 e 55 serão divididas em duas matrizes, sete e 55.
+
+11:02.960 --> 11:08.680
+E assim, quando entramos nessa mesclagem com a matriz esquerda sendo 7 e a matriz correta
+
+11:08.780 --> 11:16.130
+sendo 55, vamos comparar a entrada média menos a minha, o que nos dará 7 com a entrada média, o
+
+11:16.130 --> 11:23.780
+que nos dará 55 agora, porque 55 é maior que 7 o que faríamos é copiar 7 para o array temporário.
+
+11:23.780 --> 11:29.340
+E então copiamos 55 para o array temporário, então acabamos com 7
+
+11:29.390 --> 11:35.060
+e 55, acabamos com eles na mesma ordem em que já estão.
+
+11:35.060 --> 11:36.680
+E então nós vamos copiá-los de volta para as duas posições que estão ocupadas atualmente.
+
+11:36.680 --> 11:41.710
+E basicamente estamos fazendo trabalho desnecessário.
+
+11:41.720 --> 11:44.170
+E então o que isto está dizendo é
+
+11:44.240 --> 11:50.300
+se tudo na matriz da esquerda é menor do que tudo na matriz certa do que a matriz imersa será
+
+11:50.300 --> 11:56.390
+apenas a matriz da esquerda seguida da matriz da direita e assim não as posições dos elementos vão mudança.
+
+11:56.390 --> 11:59.390
+E assim, quando copiamos o array temporário, vamos copiar os mesmos
+
+11:59.480 --> 12:04.490
+elementos de volta para a mesma posição, para que não tenhamos que fazer nada quando chegarmos ao 7.
+
+12:04.490 --> 12:08.240
+Mesclando 7 e 55 não precisamos fazer nada.
+
+12:08.240 --> 12:11.100
+Eles já estão em seus tipos corretos de posições em relação uns aos outros.
+
+12:11.090 --> 12:15.310
+E é isso que a maciez está fazendo, está
+
+12:15.350 --> 12:22.430
+dizendo que está nos impedindo de ir em frente e mesclando a matriz esquerda e direita.
+
+12:22.520 --> 12:24.000
+Bem, não precisamos fazer
+
+12:24.050 --> 12:29.750
+isso porque o resultado da mesclagem será igual ao que já temos no array de entrada.
+
+12:29.810 --> 12:30.950
+Tudo bem, e isso funciona
+
+12:31.080 --> 12:36.590
+porque sabemos que as partições da esquerda e da direita estão classificadas se não foram classificadas, mas não pudemos fazer essa verificação.
+
+12:36.680 --> 12:39.290
+Tudo bem, então se esse não é o
+
+12:39.310 --> 12:45.200
+caso, significa que temos alguns elementos no array à esquerda que são maiores que alguns dos elementos no escritor.
+
+12:45.350 --> 12:46.980
+Então, nós temos a mesclagem para fazer algumas das posições dos elementos que vão mudar quando fazemos a mesclagem.
+
+12:47.000 --> 12:52.480
+E então vamos inicializar para começar como fizemos nos sleights.
+
+12:52.520 --> 12:58.280
+Vamos inicializar Jayde nele e vamos ter este novo índice temporário que
+
+12:58.670 --> 13:04.430
+vamos inicializar para zero e isso vai acompanhar onde estamos no array temporário.
+
+13:04.430 --> 13:09.350
+Quando estamos fazendo a cópia.
+
+13:09.440 --> 13:10.880
+Então, agora vamos
+
+13:11.330 --> 13:20.360
+criar nosso array temporário, então vamos ver em temp em temp igual a new int e os comprimentos que seremos e começaremos.
+
+13:20.360 --> 13:23.750
+Precisamos que isso seja grande o suficiente para manter o número de elementos nas partições esquerda e direita.
+
+13:24.230 --> 13:29.260
+E assim, se estamos fazendo toda a matriz e vamos ser 7
+
+13:29.270 --> 13:35.120
+e começar será 0, então vamos acabar com uma matriz de inteiros de 7.
+
+13:35.120 --> 13:35.870
+E é isso que queremos.
+
+13:35.870 --> 13:37.310
+E então o que vamos fazer é
+
+13:37.640 --> 13:43.610
+percorrer os arrays esquerdo e direito e vamos comparar o que estiver no índice I no array esquerdo com o que estiver no índice j no array direito.
+
+13:43.610 --> 13:49.740
+E nós vamos escrever o menor dos dois na posição atual em temp, que estamos acompanhando com 10
+
+13:49.880 --> 13:55.310
+index, então vamos dizer que Wall é mais alto que Mitt e J é menor que.
+
+13:55.310 --> 14:02.930
+E nós vamos dizer 10 10 mais mais índice igual a Well se input
+
+14:03.010 --> 14:06.170
+for menor ou igual a input
+
+14:08.850 --> 14:19.610
+J então nós queremos escrever o que quer que seja no array temporário porque é o menor dos dois.
+
+14:19.620 --> 14:24.590
+E então nós vamos dizer.
+
+14:24.620 --> 14:26.770
+E então vamos atribuir a entrada I mais o índice temp temp.
+
+14:27.410 --> 14:32.350
+Caso contrário, vamos atribuir o valor J plus plus ao temp.
+
+14:32.360 --> 14:38.710
+E assim, para rever o que está acontecendo aqui quando eu for igual a myd, teremos terminado de percorrer a esquerda ou a direita.
+
+14:38.810 --> 14:45.210
+Então, assim que terminarmos de percorrer o array esquerdo, queremos sair
+
+14:45.350 --> 14:51.200
+ou, assim que terminarmos de percorrer o array correto, queremos abandoná-lo.
+
+14:51.200 --> 14:53.120
+Assim, uma vez que tenhamos terminado de percorrer completamente
+
+14:53.120 --> 14:57.980
+o array da esquerda ou da direita, vamos abandonar o loop e não se preocupe, vamos lidar com os elementos restantes em um minuto.
+
+14:57.980 --> 15:01.580
+Então, supondo que isso não tenha acontecido.
+
+15:01.580 --> 15:03.490
+Nós vamos comparar o elemento atual
+
+15:03.580 --> 15:09.910
+na partição à esquerda, que estamos mantendo o controle do elemento que está com o que vamos comparar com
+
+15:09.910 --> 15:15.340
+o elemento atual na partição direita que estamos acompanhando com J e vamos escrever o menor
+
+15:15.340 --> 15:20.980
+dos dois para o array temporário agora porque o merge sort é stable, temos os iguais aqui.
+
+15:20.980 --> 15:24.760
+E assim, se o elemento na matriz esquerda for igual a esse
+
+15:24.940 --> 15:31.000
+elemento na matriz correta, ele será gravado primeiro e é assim que preservamos a ordem relativa de itens duplicados.
+
+15:31.000 --> 15:35.910
+Se não tivéssemos isso, isso se tornaria instável.
+
+15:35.950 --> 15:38.790
+E assim, se a entrada for menor ou
+
+15:38.800 --> 15:46.780
+igual a entrada J, vamos atribuir entrada para a posição atual em temp e, em seguida, vamos incrementar o índice temporário e vamos
+
+15:46.810 --> 15:51.100
+incrementá-lo, porque agora queremos mover para o próximo elemento na partição esquerda.
+
+15:51.100 --> 15:54.070
+Mas se a entrada J é a menor das duas, então
+
+15:54.160 --> 16:02.380
+isso significa que a entrada Jay Z o elemento na partição da direita é menor que o elemento na partição à esquerda, então nós vamos escrever o elemento na partição da direita.
+
+16:02.500 --> 16:07.860
+E então, é claro, vamos incrementar Jane para incrementar o índice temporário.
+
+16:07.930 --> 16:11.140
+Então, estamos fazendo o que você viu nos slides em
+
+16:11.140 --> 16:16.270
+que estamos passando pelas partições esquerda e direita e em cada teste reescrevemos o elemento
+
+16:16.270 --> 16:22.300
+menor entre a esquerda e a direita na têmpera e sempre escrevemos o elemento menor no final. temporário
+
+16:22.300 --> 16:27.400
+conterá elementos das partições esquerda e direita na ordem de classificação e nós teremos ordenado.
+
+16:27.400 --> 16:29.810
+Então teremos mesclado as duas partições e a partição resultante será classificada.
+
+16:29.830 --> 16:34.930
+Agora, porque estamos saindo do loop quando percorremos completamente um dos
+
+16:34.930 --> 16:40.390
+arrays, o outro subarray de matriz ou partição. Se, no entanto, você
+
+16:40.390 --> 16:46.900
+quiser chamá-lo, o outro terá alguns elementos restantes que não foram copiados para temp.
+
+16:46.900 --> 16:49.060
+E então temos que lidar com isso agora.
+
+16:49.090 --> 16:51.580
+E esta será a segunda otimização.
+
+16:51.790 --> 16:55.370
+Isso vai lidar com os elementos restantes na matriz que não percorremos.
+
+16:55.390 --> 17:00.850
+Agora, a otimização é que, se tivermos elementos
+
+17:00.850 --> 17:07.840
+remanescentes na partição esquerda, temos que copiá-los para a matriz temporária.
+
+17:07.840 --> 17:09.040
+Mas se tivermos elementos restantes na partição correta, não precisamos fazer nada.
+
+17:09.070 --> 17:14.810
+E você pode estar pensando bem porque não.
+
+17:14.860 --> 17:16.890
+Bem, é a mesma situação
+
+17:16.930 --> 17:22.960
+que tivemos com a primeira otimização, quando estamos copiando os elementos de volta, estamos
+
+17:22.960 --> 17:28.480
+copiando-os de volta para as posições cobertas pelas partições esquerda e direita.
+
+17:28.480 --> 17:29.120
+OK, então deixe-me
+
+17:29.140 --> 17:36.400
+fazer um exemplo em tempo real, então digamos que estamos fundindo esses dois arrays, então estamos mesclando 32 e 34 no lado direito, temos 33 e 36, digamos.
+
+17:36.400 --> 17:46.000
+Então este é o lado esquerdo.
+
+17:46.000 --> 17:47.590
+Este é o lado certo lá na ordem classificada.
+
+17:47.590 --> 17:50.500
+Cada matriz porque estamos sempre mesclando partições ordenadas.
+
+17:50.500 --> 17:54.770
+Então, quando fazemos a mesclagem, comparamos 32 a 33, enquanto 32 é o menor dos dois, então escrevemos 32.
+
+17:54.850 --> 18:04.740
+E então vamos comparar 34 a 33, enquanto 33 é o menor dos dois direitos civis 33.
+
+18:04.840 --> 18:11.090
+Nós vamos compará-lo 34 a 36 34 é a menor taxa mais lenta 34.
+
+18:11.110 --> 18:16.350
+E neste momento nós desistiríamos do loop porque nós terminamos completamente de percorrer o
+
+18:16.360 --> 18:21.010
+array esquerdo que não manipulamos 36 36 está aqui mas nós não
+
+18:21.010 --> 18:28.810
+precisamos porque lembre-se de que vamos copiar o array temporário de volta nas quatro posições que esses caras ocupam atualmente.
+
+18:28.870 --> 18:35.290
+E se você perceber que, se adicionarmos 36 aqui, quando copiarmos a
+
+18:35.350 --> 18:42.550
+matriz temporária de volta para a matriz de entrada, estaremos sobrescrevendo 36 com 36.
+
+18:42.550 --> 18:46.550
+Então, mais uma vez, estaríamos fazendo trabalho desnecessário se tivéssemos elementos remanescentes na matriz correta.
+
+18:46.600 --> 18:52.670
+Isso significa que todos os elementos remanescentes na matriz correta
+
+18:52.720 --> 18:58.420
+serão maiores do que tudo que já foi copiado.
+
+18:58.420 --> 19:00.050
+Porque lembre-se de que estamos sempre copiando o
+
+19:00.310 --> 19:05.200
+menor dos elementos, então, se tivermos elementos à esquerda, sabemos que são maiores do que todo o resto, por isso ainda não foram copiados.
+
+19:05.200 --> 19:09.720
+E assim, se vimos completamente o array esquerdo, qualquer coisa
+
+19:09.730 --> 19:15.460
+que sobrar no array certo é maior do que tudo que já copiamos.
+
+19:15.460 --> 19:17.170
+E assim, o que
+
+19:17.170 --> 19:23.650
+sobrou de sua posição na matriz de entrada não será alterado como resultado da mesclagem.
+
+19:23.650 --> 19:24.470
+E assim,
+
+19:24.760 --> 19:30.520
+se fôssemos pegar quaisquer elementos restantes na matriz correta, copiá-los para temp e, em seguida, copiá-los de volta.
+
+19:30.520 --> 19:31.530
+Estamos fazendo o trabalho
+
+19:31.600 --> 19:36.670
+desnecessário novamente, porque você sabe que estamos copiando elementos de volta para as mesmas posições que eles ocupavam antes.
+
+19:36.670 --> 19:38.400
+Portanto, não precisamos nos preocupar em lidar com elementos restantes na matriz correta.
+
+19:38.470 --> 19:45.030
+Existem posições na matriz de entrada não serão alteradas como resultado da mesclagem.
+
+19:45.040 --> 19:49.080
+Mas isso não é verdade no array esquerdo.
+
+19:49.090 --> 19:51.520
+Se tivermos elementos restantes no
+
+19:51.550 --> 19:57.580
+array esquerdo, esses elementos serão maiores do que tudo que já escrevemos.
+
+19:57.580 --> 19:58.270
+E, obviamente, precisamos escrevê-los porque suas posições vão mudar.
+
+19:58.270 --> 20:02.020
+Deixe-me ver se posso chegar a uma amostra disso que vou colocar 2:36 aqui e vou colocar 34 aqui eu acho.
+
+20:02.020 --> 20:10.890
+E então vamos fazer de novo.
+
+20:10.920 --> 20:13.290
+Então, vamos escrever 32 e depois escreveremos 33 e depois escreveremos 34.
+
+20:14.010 --> 20:19.980
+E neste ponto nós terminamos de percorrer o array certo e você verá que
+
+20:20.010 --> 20:25.590
+temos 36 sobras, nós teremos que lidar com isso porque sua posição irá mudar.
+
+20:25.590 --> 20:29.720
+Vai partir do segundo lugar.
+
+20:29.760 --> 20:32.230
+Quando estamos olhando para esses quatro números vindo para nós.
+
+20:32.280 --> 20:35.460
+E assim, quando copiamos o array de temperamento
+
+20:35.610 --> 20:41.940
+de volta para o array original, o array de entrada terá que mudar a posição de 36.
+
+20:41.940 --> 20:43.020
+E assim, mais uma vez,
+
+20:43.020 --> 20:47.970
+se seus elementos no array esquerdo que sobraram, sabemos que esses elementos são maiores do que tudo que já foi escrito.
+
+20:47.970 --> 20:50.120
+E basicamente todos esses elementos precisam pular sobre o que estava na matriz correta.
+
+20:50.120 --> 20:54.000
+Então suas posições vão mudar.
+
+20:54.000 --> 20:55.870
+Portanto, se houver elementos remanescentes no
+
+20:55.890 --> 21:00.870
+array à esquerda, nós temos que lidar com eles, temos que copiá-los para o array temporário.
+
+21:00.870 --> 21:01.900
+Mas se
+
+21:02.100 --> 21:06.810
+houver elementos que sobram no array certo, não precisamos porque existem
+
+21:06.900 --> 21:12.690
+posições no array original que não vão mudar e, por isso, faríamos o
+
+21:12.690 --> 21:22.340
+trabalho desnecessário se as copiássemos para temp e copiá-las volta agora quando fazemos a cópia copiamos os elementos restantes restantes no array esquerdo.
+
+21:22.340 --> 21:23.540
+Na verdade, não vamos copiá-los em
+
+21:23.540 --> 21:29.420
+temp porque, como acabei de explicar, basicamente eles vão pular todos os elementos que copiamos até agora e, portanto, podemos fazer essa cópia dentro da matriz de entrada.
+
+21:29.480 --> 21:35.220
+Conhecemos as posições para as quais precisamos copiar.
+
+21:35.240 --> 21:37.780
+E assim, vamos usar a cópia de
+
+21:37.850 --> 21:46.430
+matriz de pontos do sistema. O primeiro parâmetro é a matriz de origem que será nossa matriz de entrada e, em seguida,
+
+21:46.430 --> 21:51.890
+iniciaremos a cópia na posição II, porque isso ocorrerá se houver elementos restantes à
+
+21:51.890 --> 21:57.470
+esquerda array Este é o primeiro índice do primeiro elemento que ainda não manipulamos.
+
+21:57.470 --> 21:58.170
+E então a matriz de destino será a matriz de entrada e vamos copiar para iniciar mais o índice 10.
+
+21:58.220 --> 22:05.190
+Este é o nosso índice de destino e índices temporários contaram basicamente quantos elementos nós manipulamos
+
+22:05.240 --> 22:11.330
+e então a posição de destino para quaisquer elementos no array esquerdo que irão
+
+22:11.450 --> 22:17.660
+basicamente saltar sobre todos os elementos no array temporário é start plus 10 index .
+
+22:17.660 --> 22:22.710
+Então, para mesclar dois arrays de elementos, copiamos três elementos para
+
+22:22.730 --> 22:28.880
+o array temporário e temos aquele elemento restante no array esquerdo. A partição
+
+22:28.880 --> 22:35.130
+esquerda que não manipulamos bem adicionará três ao índice inicial e, portanto, Serão
+
+22:35.150 --> 22:42.380
+copiados para a matriz de entrada original depois dos elementos que vamos copiar da matriz temporária.
+
+22:42.380 --> 22:44.580
+Então, na verdade, não copiamos quaisquer
+
+22:44.630 --> 22:51.290
+elementos restantes na partição esquerda para a matriz temporária, apenas os copiamos diretamente para o local onde
+
+22:51.290 --> 22:56.960
+eles terminariam na matriz de entrada e o comprimento que vamos escrever é meio menos.
+
+22:56.960 --> 22:59.540
+Isso nos diz o número de elementos que não copiamos para a matriz temporária da partição esquerda.
+
+23:00.260 --> 23:06.770
+Agora, se percorremos completamente o array esquerdo, isso vai acabar sendo 0.
+
+23:06.770 --> 23:12.600
+E assim não faremos uma cópia aqui.
+
+23:12.650 --> 23:14.800
+OK, e se não percorremos completamente a matriz
+
+23:14.830 --> 23:21.860
+certa, mais uma vez, essa cópia da matriz não fará nada, porque isso não está prestando atenção a J está apenas manipulando a matriz da esquerda.
+
+23:21.860 --> 23:26.730
+Então, se não houver elementos restantes na matriz esquerda Isso não fará nada.
+
+23:26.810 --> 23:32.200
+Se houver elementos restantes no array esquerdo, isso os copia diretamente de
+
+23:32.210 --> 23:38.210
+um local no array de entrada para outro local no array de entrada.
+
+23:38.210 --> 23:41.000
+Ele basicamente irá pular os elementos
+
+23:41.000 --> 23:47.420
+que vamos copiar da matriz temporária e escrever quaisquer elementos restantes na matriz da esquerda.
+
+23:47.420 --> 23:49.100
+E assim, nosso último passo é copiar o array temporário.
+
+23:49.220 --> 23:52.310
+Então, vamos dizer System Doughtery.
+
+23:52.310 --> 23:54.170
+Copie nossa matriz de origem será
+
+23:54.170 --> 24:00.720
+a maneira temporária como começaremos no zero, porque queremos copiar desde o início que o destino será a matriz de entrada.
+
+24:01.430 --> 24:04.930
+Vamos copiar desde o início porque lembre-se de que vamos substituir quando
+
+24:05.150 --> 24:11.710
+fizermos a mesclagem de que estamos lidando com as posições de início a fim na matriz de entrada e, portanto, começaremos no início.
+
+24:11.720 --> 24:17.420
+E o tamanho que vamos copiar é 10 index.
+
+24:17.450 --> 24:22.340
+Então, vamos copiar apenas o número de elementos que copiamos na matriz temporária.
+
+24:22.460 --> 24:27.830
+Nós não vamos copiar o temperamento inteiro.
+
+24:28.080 --> 24:30.640
+E assim, nesta primeira cópia do array, aqui estamos copiando até 10 index.
+
+24:30.800 --> 24:36.650
+E, em seguida, aqui, se houver algum elemento sobrando na matriz esquerda,
+
+24:36.650 --> 24:42.290
+estamos iniciando o início e o índice temporário e é isso.
+
+24:42.290 --> 24:43.710
+Esse é o nosso tipo de mesclagem.
+
+24:44.000 --> 24:46.250
+Então vamos chamar isso depois de tudo isso.
+
+24:46.730 --> 24:48.620
+Vamos esperar que isso funcione, então vamos chamar merge sort.
+
+24:48.620 --> 24:51.650
+Nós vamos chamá-lo com nossa Internet, nosso início será zero e nosso fim será em Ray Glynis.
+
+24:51.650 --> 24:58.910
+Vamos dar um giro e lá vamos nós menos 20 a menos 15 1 7 2035
+
+24:59.660 --> 25:00.810
+e 55.
+
+25:03.660 --> 25:11.820
+Agora eu acho que provavelmente a parte mais difícil de entender aqui, além de como a recursão está funcionando, mas você
+
+25:11.820 --> 25:16.680
+pode rever os slides de recursão é, talvez, o que está acontecendo aqui.
+
+25:16.710 --> 25:21.440
+Eu acho que a chave para entender aqui é quando
+
+25:21.450 --> 25:28.740
+estamos mesclando uma partição que vamos copiar os valores mesclados de volta para as mesmas posições.
+
+25:28.740 --> 25:31.510
+E assim, a otimização aqui é se quanto
+
+25:31.710 --> 25:40.050
+maior os valores maiores já estão voltados para a direita, então eles já estão no final da partição correta que eles não estão indo.
+
+25:40.050 --> 25:43.650
+Suas posições não vão mudar, então não há necessidade de fazer
+
+25:43.680 --> 25:47.970
+o trabalho extra de copiá-las para a matriz temporária e copiá-las de volta
+
+25:47.970 --> 25:54.420
+e, em seguida, se tivermos sobras de elementos na matriz esquerda em vez de copiar as sobras digamos que
+
+25:54.420 --> 26:02.340
+55 ficariam aqui, se fôssemos mesclar esses dois arrays 755 e um em menos 22 55 vai ficar aqui porque é maior.
+
+26:02.460 --> 26:07.970
+Então, vamos terminar escrevendo 20 a 1 em 7 para o temporário e
+
+26:07.980 --> 26:14.190
+depois 55 para sobrar, em vez de copiar 55 para o final do array
+
+26:14.190 --> 26:21.420
+temporário que pegamos e copiá-lo diretamente aqui porque sabemos que é onde ele está vai acabar.
+
+26:21.420 --> 26:22.760
+E é isso que esta linha está fazendo aqui.
+
+26:22.770 --> 26:25.630
+Está dizendo começar com a matriz de entrada começar em aw.
+
+26:25.710 --> 26:28.520
+E eu seria igual a isso para a posição de
+
+26:28.590 --> 26:36.220
+55 e, em seguida, adicionar o índice de início e de temperatura, de modo que ficamos em 3 para o índice de início, porque lidamos com três elementos.
+
+26:36.220 --> 26:38.870
+Então nosso índice inicial estaria aqui.
+
+26:38.940 --> 26:40.650
+Então, vamos de um a três e é para lá que vamos copiar cinquenta e cinco.
+
+26:40.650 --> 26:44.920
+E nesse ponto meio menos eu nos daria 1.
+
+26:45.030 --> 26:48.340
+Então, copiamos o elemento one e então, em
+
+26:48.630 --> 26:54.690
+vez de copiar 55 para o array temp e depois copiá-lo de volta, copiamos
+
+26:54.840 --> 27:00.750
+o array temp nesta etapa, pegamos apenas 55 e simplesmente o colocamos lá.
+
+27:00.750 --> 27:01.180
+E
+
+27:01.320 --> 27:09.510
+então, na segunda cópia da matriz, copiamos a matriz temporária, de modo que copiamos menos 22 1 e 7 e 55 já estaríamos aqui.
+
+27:09.510 --> 27:10.620
+Então, você me viu
+
+27:10.620 --> 27:18.390
+passando por algoritmos ou implementações em slides que passam pelo código manualmente é uma maneira fantástica de aprender o que o código está fazendo.
+
+27:18.390 --> 27:20.930
+E se você ficar confuso com isso, passe por algumas iterações usando caneta e papel.
+
+27:20.930 --> 27:26.610
+Normalmente você não precisa passar por toda a ordenação da matriz fazendo apenas uma ou duas chamadas.
+
+27:26.700 --> 27:33.050
+Vai lhe dar uma idéia do que a implementação está fazendo.
+
+27:33.090 --> 27:36.600
+E tenha em mente que isso é recursivo.
+
+27:36.690 --> 27:39.350
+E assim, se você está tendo dificuldade em
+
+27:39.360 --> 27:45.240
+entender o que está fazendo, analise os slides sobre recursão, mas isso é merge merge, está dando muito trabalho.
+
+27:45.240 --> 27:47.700
+Parece enganosamente simples, mas como
+
+27:47.700 --> 27:54.270
+eu disse no vídeo de recursão, três linhas de código são duas linhas de código.
+
+27:54.270 --> 27:55.040
+Quando você está
+
+27:55.200 --> 28:01.110
+lidando com a recursão pode lidar com duas centenas de chamadas para que possa haver muita coisa acontecendo debaixo das cobertas.
+
+28:01.110 --> 28:01.910
+Tudo bem.
+
+28:02.010 --> 28:02.480
+Então, vamos seguir em frente para o segundo algoritmo que usa dividir e conquistar.
+
+28:02.490 --> 28:07.110
+Eu vou te ver no próximo vídeo.
+
+28:07.110 --> 28:08.340
+&nbsp;

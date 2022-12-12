@@ -1,0 +1,37 @@
+WEBVTT
+
+00:05.260 --> 00:13.390
+Nesta seção vamos cobrir algoritmos de ordenação populares como bubble sort merge sort de quicksort counting sort insertion sort e
+
+00:13.480 --> 00:19.410
+alguns outros não cobriremos todos os algoritmos de busca que vamos cobrir no curso porque
+
+00:19.410 --> 00:26.110
+alguns deles exigem uma estrutura de dados específica, para que possamos abordar essas informações depois que soubermos
+
+00:26.110 --> 00:28.130
+sobre essas estruturas de dados.
+
+00:28.150 --> 00:34.210
+Mas os algoritmos de classificação que serão abordados nesta seção podem ser usados ​​para classificar um aumento. Agora que
+
+00:34.220 --> 00:40.390
+sabemos sobre array, podemos começar a aprender sobre alguns desses algoritmos de classificação populares ou pelo menos bem conhecidos.
+
+00:40.390 --> 00:43.880
+Há um casal que você não quer usar porque é muito lento.
+
+00:43.900 --> 00:49.240
+Agora apenas um lembrete de que um algoritmo pode ter várias implementações.
+
+00:49.240 --> 00:55.780
+Vou mostrar uma implementação para cada algoritmo, mas isso não significa que não haja outras.
+
+00:55.780 --> 00:58.000
+Então, com isso dito, vamos começar.
+
+00:58.000 --> 00:59.540
+Nós vamos começar com o bubble sort.
+
+00:59.560 --> 01:00.990
+Eu vou te ver no próximo vídeo.

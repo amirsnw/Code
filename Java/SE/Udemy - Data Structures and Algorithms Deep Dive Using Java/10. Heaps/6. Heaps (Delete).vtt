@@ -1,0 +1,763 @@
+WEBVTT
+
+00:05.790 --> 00:08.860
+All right so let's implement delete for heaps.
+
+00:08.860 --> 00:12.590
+We're going to need a delete method and a fix.
+
+00:12.650 --> 00:18.340
+Bhalo method for when we look down the tree when we're doing our heape ify process.
+
+00:18.340 --> 00:26.890
+We're also going to need methods for is empty and for getting the child indices for an element in the
+
+00:26.890 --> 00:31.420
+array so let's add the is empty and get child methods first.
+
+00:31.420 --> 00:40.150
+So I'm going to say public boolean is empty in basically the heap is empty if the size equals zero.
+
+00:40.150 --> 00:41.780
+So we're just going to return size.
+
+00:41.800 --> 00:42.910
+Equals zero.
+
+00:43.210 --> 00:44.010
+And that's our.
+
+00:44.010 --> 00:44.960
+Is empty math.
+
+00:44.960 --> 00:53.830
+It and now we want a method for getting the children of an element in the array or a child any way we
+
+00:53.830 --> 00:56.080
+can only get the index for one child at a time.
+
+00:56.080 --> 01:04.510
+So we're going to say public can't get trialed and we want the index of the parent so the element that
+
+01:04.510 --> 01:09.670
+we want to get a child for and we also need to know whether we want to get the left or right child saw
+
+01:09.710 --> 01:15.130
+say boolean left and if left is true we want the left child if it's false.
+
+01:15.130 --> 01:16.600
+We want the right child.
+
+01:16.870 --> 01:22.630
+So all we're going to do is return the result of the expressions we looked at in the slide.
+
+01:22.630 --> 01:25.780
+So we're going to say return to Times Index.
+
+01:25.780 --> 01:27.930
+Remember it's two times.
+
+01:28.200 --> 01:30.500
+And then if we want the left child we add one.
+
+01:30.520 --> 01:32.540
+And if we want the right child we add two.
+
+01:32.680 --> 01:38.750
+So we're going to say plus left if it's the left child we want one.
+
+01:38.830 --> 01:40.630
+Otherwise we want to.
+
+01:41.170 --> 01:47.830
+And so that's our Get child so we want to Times index plus one for the left child or two times index
+
+01:47.830 --> 01:49.890
+plus two for the right child.
+
+01:49.900 --> 01:54.130
+So now that we have those Let's write our delete method.
+
+01:54.760 --> 01:59.080
+I'll put it right here so I'll say public it delete.
+
+01:59.080 --> 02:05.350
+We're going to return the value that we deleted and we're going to want an integer and we're going to
+
+02:05.350 --> 02:08.040
+take the index not the value.
+
+02:08.040 --> 02:09.880
+Now why are we taking the index.
+
+02:09.880 --> 02:15.820
+Well if we take the value then we're going to have to search the heap for the index of the value and
+
+02:15.820 --> 02:18.550
+we can do that of course but we'd have to use a linear search.
+
+02:18.550 --> 02:23.890
+We can't use a binary search because you can only do a binary search on a sorted array and we can't
+
+02:23.890 --> 02:27.430
+sort the array because that would obviously blow away our heape structure.
+
+02:27.490 --> 02:32.930
+I could accept the value here and then the first thing we do in the method is a linear search.
+
+02:32.950 --> 02:35.410
+But instead I'm just going to take the index.
+
+02:35.410 --> 02:41.680
+One thing to keep in mind is when you're working with heaps you you pretty much never are going to one
+
+02:41.680 --> 02:44.670
+to just take some random value off the heap.
+
+02:44.710 --> 02:49.570
+You always want to take the route off the heap and so you just have a delete method that doesn't take
+
+02:49.570 --> 02:52.850
+anything because it's understood that you want the root.
+
+02:53.020 --> 02:59.470
+But some implementations will support deleting or removing any element in the heap.
+
+02:59.470 --> 03:01.390
+And so that's what we're going to do here.
+
+03:01.480 --> 03:06.160
+But when we're writing the main method code we'll have to keep in mind that we have to pass the index
+
+03:06.190 --> 03:07.010
+not the value.
+
+03:07.090 --> 03:10.270
+OK so the first thing we're going to do is check whether the heap is empty.
+
+03:10.270 --> 03:12.890
+So we'll say gif is empty.
+
+03:13.540 --> 03:17.540
+And if that's the case we're going to do the same thing we did an insert and just thrown exceptions
+
+03:17.580 --> 03:24.700
+will throw a new index out of bounds exception and we'll say heap is empty and that's it.
+
+03:24.700 --> 03:27.450
+So we're not going to worry about doing anything else.
+
+03:27.580 --> 03:32.010
+If that's not the case the first thing we want to do is get the parent.
+
+03:32.130 --> 03:36.970
+So any parent equals get parent index.
+
+03:36.970 --> 03:42.400
+And so this will be the parent of the deleted item and then we want to save the deleted value off because
+
+03:42.430 --> 03:48.880
+we're going to return that at the end of the method so it deleted value equals heat index.
+
+03:49.630 --> 03:52.090
+And so we've got the parent of the value we want to delete.
+
+03:52.090 --> 04:01.110
+We've saved off the deleted value and now we're going to replace heape index with the value that set
+
+04:01.120 --> 04:07.030
+the rightmost position in the array and the index for that will be size minus 1 because remember that
+
+04:07.030 --> 04:11.050
+size always contains the next available position.
+
+04:11.140 --> 04:20.830
+And so we're going to say heat index equals heap size minus 1.
+
+04:21.220 --> 04:24.010
+And so that's doing the replacement steps in the slides.
+
+04:24.010 --> 04:28.310
+We took 67 and uses a replacement value that's what we're doing here.
+
+04:28.420 --> 04:35.860
+So the rightmost node in the heap right most value in the heap will now replace whatever was at the
+
+04:35.860 --> 04:36.880
+index.
+
+04:36.880 --> 04:37.280
+OK.
+
+04:37.300 --> 04:42.880
+So at this point we've done the replacement value and now we're going to want to look up or down the
+
+04:42.880 --> 04:45.560
+heap depending on what the situation is.
+
+04:45.580 --> 04:52.890
+If the valuate heap index is now greater than its parent we need to fix the heap above.
+
+04:52.990 --> 05:00.370
+If devaluate heap index is less than its parent then we need to look at the heap below because it's
+
+05:00.370 --> 05:03.710
+possible that it's also less than one of its children.
+
+05:03.730 --> 05:08.670
+And so let's write the fix below method before we continue here.
+
+05:08.750 --> 05:16.190
+And I'll put it below here and I'll say private Voyt fix heap below.
+
+05:16.240 --> 05:22.690
+And we're going to take the index of the start position and that will be the index of the item that
+
+05:22.690 --> 05:23.410
+we deleted.
+
+05:23.410 --> 05:25.420
+So where we put the replacement value.
+
+05:25.750 --> 05:29.860
+And then we're going to except this last heat index parameter.
+
+05:29.860 --> 05:36.900
+Now we don't need this for delete but when we implement the heapsort algorithm we're going to need this.
+
+05:36.970 --> 05:41.500
+And this basically says this is the last index of the heap.
+
+05:41.500 --> 05:48.310
+So in our array right now the heat goes from position zero to position size minus 1.
+
+05:48.380 --> 05:55.820
+And so we're going to pass size minus one as last heat index So this essentially tells us the last position
+
+05:55.850 --> 05:58.960
+of the heap in the array for delete.
+
+05:58.970 --> 06:02.090
+We don't really need it but we're going to use this method for heapsort.
+
+06:02.090 --> 06:03.890
+All right so I'm going to declare it.
+
+06:03.950 --> 06:07.160
+I field called child to swap.
+
+06:07.580 --> 06:14.390
+And now what we're going to do is a swapping phase so we're going to compare the node index with its
+
+06:14.390 --> 06:18.740
+two children and we're going to swap it if necessary.
+
+06:18.770 --> 06:26.240
+If the valuate heat index is less than either of its children we're going to swap it with the child
+
+06:26.240 --> 06:29.610
+that has the greatest value as we saw in the slides.
+
+06:29.630 --> 06:30.920
+So we're going to say wall
+
+06:33.550 --> 06:39.060
+is less than or equal to last index.
+
+06:39.850 --> 06:43.060
+And so we're going to we're fixing below and so we're starting it.
+
+06:43.060 --> 06:45.700
+Index them or going to the end of the heap.
+
+06:45.710 --> 06:51.770
+We're not looking at indices that are lower than index because those are notes that are sitting above
+
+06:51.770 --> 06:54.120
+index and this is fixed below.
+
+06:54.120 --> 06:59.690
+And so we're going to say in left child equals get child index.
+
+06:59.690 --> 07:06.440
+True we've passed through and we want the index of the left child and into right child equals get child
+
+07:07.370 --> 07:09.140
+index falls.
+
+07:09.440 --> 07:16.790
+And so this gets us the left child of the node at heat index and the right child of the node at heat
+
+07:16.820 --> 07:17.840
+index.
+
+07:17.840 --> 07:23.990
+And now we're going to make sure that these indices are valid because remember if the no doesn't have
+
+07:24.020 --> 07:29.810
+a right child or doesn't have a left child then these calculations will actually give us indices that
+
+07:29.810 --> 07:31.360
+are size and beyond.
+
+07:31.370 --> 07:37.520
+So the return indices that aren't part of the heap and we know the last valid indexes last heape index
+
+07:37.610 --> 07:44.510
+for this we could just see you size minus whine as I said but you'll see when we do the heapsort that
+
+07:44.510 --> 07:46.200
+we actually need this parameter.
+
+07:46.250 --> 07:54.530
+So we're going to say if left child is less than or equal to last heap index that means that this node
+
+07:54.770 --> 07:56.120
+has a left child.
+
+07:56.120 --> 07:59.200
+And so now we're going to test whether it has a right child.
+
+07:59.240 --> 08:07.610
+So we're going to say if right child is greater than the last heat index then it does not have a right
+
+08:07.610 --> 08:08.340
+child.
+
+08:08.400 --> 08:12.460
+That's essentially saying that we calculated an index for the right child.
+
+08:12.560 --> 08:14.610
+That's outside the bounds of the heap.
+
+08:14.610 --> 08:20.090
+And so in that case the child that we want to swap is a left child because this if this condition passes
+
+08:20.450 --> 08:25.670
+it has a left child if this condition fails it doesn't have a right child.
+
+08:25.670 --> 08:31.190
+And so in this case we have a left child but no right child so the child to swap will equal the love
+
+08:31.190 --> 08:32.950
+child because that's all there is.
+
+08:32.960 --> 08:37.070
+Now if this condition fails it means that we also have a right child.
+
+08:37.070 --> 08:42.740
+And so in that case we need to swap it with the child that has the largest value.
+
+08:42.770 --> 08:52.490
+So we're going to say child swap equals and we're going to say he left child is greater than he.
+
+08:52.640 --> 08:59.060
+Right child then we want to swap it with the left child.
+
+08:59.150 --> 09:02.120
+Otherwise we want to swap but the right child.
+
+09:02.410 --> 09:09.860
+And so here we're assigning child to swap with the index of the child that has the greatest value.
+
+09:09.860 --> 09:15.110
+So if he left child is greater than he right child we're going to assign the index of the left child
+
+09:15.110 --> 09:16.260
+to the child to swap.
+
+09:16.310 --> 09:18.610
+Otherwise it's going to get the right child.
+
+09:19.250 --> 09:24.290
+So we've assigned child to swap but that doesn't mean we actually want to swap the child because we
+
+09:24.290 --> 09:30.060
+now need to compare the value it heap index with the child to swap value.
+
+09:30.080 --> 09:35.660
+If devaluate heat index is greater than the child to swap value then we're done.
+
+09:35.690 --> 09:37.780
+I mean the parent has greater than the child.
+
+09:37.820 --> 09:43.520
+We only need to swap if the value at index is less then the child.
+
+09:43.520 --> 09:46.490
+So we're going to say give heat index
+
+09:49.010 --> 09:56.540
+is less than heap of the child that we're going to potentially swap with than we do a swap.
+
+09:56.540 --> 09:58.970
+So we say temp equals.
+
+09:58.970 --> 10:03.050
+And I see the compiler is complaining here that child to swap might not have been initialized and that's
+
+10:03.050 --> 10:05.450
+because I shouldn't have put this brace here.
+
+10:05.450 --> 10:10.400
+This is still supposed to be taking place within here because if the left child is greater than last
+
+10:10.400 --> 10:15.170
+heape index we're dealing with a value that doesn't have any children meaning there's nothing to swap.
+
+10:15.170 --> 10:20.010
+So let me reformat the code to get that in.
+
+10:20.960 --> 10:22.370
+OK so let's continue.
+
+10:22.370 --> 10:30.620
+So compilers not complaining anymore so if the value the replacement value is less than its largest
+
+10:30.620 --> 10:37.250
+child we want to swap it with the largest child so when we're going to say temp equals heat index
+
+10:40.640 --> 10:52.140
+and then we're going to say heat index equals child to swap and the final step of course is heap child
+
+10:52.140 --> 10:55.390
+to swap equals ten.
+
+10:55.820 --> 11:00.360
+And so we've now swapped the replacement value with its largest child.
+
+11:00.360 --> 11:04.830
+Now if the replacement value is greater than or equal to the largest child our heap is good.
+
+11:04.830 --> 11:06.990
+So we finished defining the heap.
+
+11:06.990 --> 11:14.220
+And so in that case you want to break out of the loop because we're done and then we're going to want
+
+11:14.220 --> 11:15.080
+to rinse and repeat.
+
+11:15.090 --> 11:20.550
+So now we want to compare the replacement value with its new children and the replacement value is now
+
+11:20.550 --> 11:25.890
+sitting at index child to swap because we just swapped it and we know we just walked it because if we
+
+11:25.890 --> 11:28.460
+haven't done any swapping we're going to break out of the loop.
+
+11:28.590 --> 11:33.750
+And so the last thing we're going to do in the loop is say Index equals child to swap.
+
+11:34.260 --> 11:36.060
+And now we want to end the loop.
+
+11:36.420 --> 11:42.900
+And so in the loop what we're doing we're getting the two children of the element at position index
+
+11:42.900 --> 11:48.300
+them when we first enter the loop that will be the index of where we've put the replacement value so
+
+11:48.300 --> 11:56.340
+the index of where the value we deleted was and then if we just do that and then if the element in that
+
+11:56.340 --> 11:59.050
+position doesn't have any children.
+
+11:59.400 --> 12:10.880
+In fact down here on this if we're going to say else break and that is actually the entire method and
+
+12:10.880 --> 12:17.270
+so if the position that we're examining has children we may have some heap of fine to do if it doesn't
+
+12:17.270 --> 12:18.460
+have children we're done.
+
+12:18.470 --> 12:19.780
+I mean there's nothing underneath it.
+
+12:19.790 --> 12:24.910
+So it's not possible for it to be less than it's children it doesn't have any children.
+
+12:25.020 --> 12:30.830
+And so as long as the index we're looking at is part of the heat we get the two children indices and
+
+12:30.830 --> 12:35.230
+then we checked to see if those indices are actually part of the heap if they're not then we're done
+
+12:35.270 --> 12:40.700
+because we're actually dealing with a leaf if they are or if at least if the left child is we check
+
+12:40.700 --> 12:46.640
+for a right child if we have a left child but no right child then obviously by default we're going to
+
+12:46.640 --> 12:53.510
+swat with the left child if this test passes and if we have two children then we're going to want to
+
+12:53.510 --> 12:59.300
+swap with the larger of the two and then after we've decided which child we'd want to swap with We then
+
+12:59.300 --> 13:05.420
+compare the value at index with the child we'd swap with and if the value is less than that child we
+
+13:05.420 --> 13:08.560
+do have to swap them if there's no swapping to be done.
+
+13:08.570 --> 13:13.120
+If the value at heat index is greater equal to its child we're done.
+
+13:13.130 --> 13:19.490
+The heap is once again satisfying the heap property and so we can break otherwise once we've done the
+
+13:19.490 --> 13:23.900
+swapping we now have to compare the replacement value with its new children.
+
+13:23.930 --> 13:27.230
+We've put the replacement value into child to swap at this point.
+
+13:27.290 --> 13:32.270
+That's new index and so we're going to update index to that and loop back around and we're going to
+
+13:32.270 --> 13:34.610
+keep doing that until we break out of the loop.
+
+13:34.610 --> 13:39.710
+Now if you're wondering here why we're checking for a left child.
+
+13:39.860 --> 13:44.690
+And then for a right child and you might be thinking well wait wait a minute what if the node has a
+
+13:44.690 --> 13:50.000
+right child but not a left child Well that's not possible because a heap has to be a complete tree.
+
+13:50.000 --> 13:56.210
+And so the only possibilities are the node has two children or the node has a left child in a heap.
+
+13:56.210 --> 14:02.840
+We can't have a node that has no left child but a right child because that would mean that we don't
+
+14:02.840 --> 14:07.500
+have a complete tree and that would mean we don't have a heap and so we only have to worry about.
+
+14:07.640 --> 14:14.420
+We have a left child and a right child which is this case here or we have a left child but no right
+
+14:14.420 --> 14:18.410
+child in which case by default we're going to swap with the left child.
+
+14:18.530 --> 14:20.930
+OK and that's it for fix heape below.
+
+14:20.930 --> 14:25.080
+So now that we have our fix here fellow Masset Let's finish our delete method.
+
+14:25.210 --> 14:34.850
+And so here we're going to say if index equals zero meaning we're dealing with the root or keep index
+
+14:35.800 --> 14:46.550
+is less than keep parent then we want to fix the heat below the low and we're going to pass in there
+
+14:46.670 --> 14:49.130
+and we're going to pass size minus one.
+
+14:49.640 --> 14:52.480
+So what we're saying here is if we're dealing with the root.
+
+14:52.550 --> 14:58.430
+So if we if the node we deleted was the root and so the replacement value has gone into the root then
+
+14:58.460 --> 15:05.900
+obviously we can only look down the tree and if the value the replacement value is less than its parent
+
+15:05.900 --> 15:10.990
+that means we don't have to look up the tree because we know this guy is then going to be less than
+
+15:11.000 --> 15:12.430
+everything above the tree.
+
+15:12.440 --> 15:18.560
+And so in this case we need to look at the tree below heat index and potentially fix that.
+
+15:18.570 --> 15:21.200
+And so if it's the root we can only look below.
+
+15:21.290 --> 15:27.260
+And if the replacement value is less than its parent then we know above the replacement value is sound
+
+15:27.380 --> 15:29.990
+it meets the heap property and so we're going to go below.
+
+15:29.990 --> 15:32.930
+Otherwise we're going to look above.
+
+15:32.930 --> 15:39.410
+So we're going to fix Hape above and in this case we just need the index.
+
+15:39.410 --> 15:41.900
+Once we've done that so we've fixed our he.
+
+15:41.910 --> 15:48.350
+We need to decrement the size and then of course we're going to return our deleted value and that's
+
+15:48.350 --> 15:48.920
+it.
+
+15:48.920 --> 15:52.440
+So we come in if the heap is empty we throw an exception.
+
+15:52.490 --> 15:59.600
+Otherwise we get the parent and we store off the deleted value we get the replacement value and put
+
+15:59.600 --> 16:02.060
+it where the deleted value used to be.
+
+16:02.060 --> 16:07.760
+We then fix our heap we decrement the size because we've deleted one node and then we return the deleted
+
+16:07.760 --> 16:08.750
+value.
+
+16:08.780 --> 16:14.090
+OK so while I'm in here I'm going to add a print method so we can actually look at what's going on after
+
+16:14.090 --> 16:16.980
+we've performed some operations on it here.
+
+16:17.060 --> 16:19.440
+So I'll say public boy.
+
+16:19.480 --> 16:20.200
+Print the
+
+16:24.050 --> 16:32.900
+and this will be straightforward because we have an array all savor equals zero I less than size plus
+
+16:32.920 --> 16:37.870
+plus and will say a system that outcrop print line here.
+
+16:37.930 --> 16:45.530
+I actually am going to make this print so it will all come out on one line and then I'll say system
+
+16:45.540 --> 16:52.620
+got out of print put a comma in there and then when we finished printing our heap all systems that are
+
+16:52.680 --> 16:58.000
+out of print line to print a new line and that's it for our print method.
+
+16:58.110 --> 17:01.940
+So now let's go to our main method and let's start working with our heap.
+
+17:01.970 --> 17:07.950
+I'm going to say here he equals a new key and I'll give it a capacity of 10.
+
+17:08.130 --> 17:12.150
+And now we're going to build the heap that we went over in the delete slides.
+
+17:12.200 --> 17:16.320
+So to say he got in search and we're going to insert 80.
+
+17:16.440 --> 17:19.790
+That's going to be the route he thought.
+
+17:19.870 --> 17:23.620
+Insert 75.
+
+17:24.050 --> 17:39.720
+Insert 60 dot insert 68 insert 55 dot insert 40.
+
+17:39.780 --> 17:40.980
+Only 2 more to go.
+
+17:41.000 --> 17:50.940
+A dot insert 52 and he insert 67 so remember when we're inserting we're were we start at the root and
+
+17:50.940 --> 17:55.920
+then we do the Dunton to the next level and to the left and right child and then go down to the next
+
+17:55.920 --> 17:58.510
+level and fill in each level from left to right.
+
+17:58.530 --> 18:01.340
+And so this will build the heap that we saw in the slides.
+
+18:01.500 --> 18:06.720
+All right so let's printer he heaped up print here and before we start deleting notes let's run and
+
+18:06.720 --> 18:10.280
+make sure we're building are he properly.
+
+18:10.440 --> 18:10.830
+All right.
+
+18:10.830 --> 18:19.340
+So we have 80 75 60 68 55 40 52 in 67 so that's just the array printed out in order.
+
+18:19.350 --> 18:21.880
+And that's the order that we expect.
+
+18:22.530 --> 18:24.730
+So now let's delete some notes.
+
+18:25.140 --> 18:29.580
+So let's say he Daut delete and remember we want to give that index.
+
+18:29.590 --> 18:32.940
+And so let's give the index the seventy five because we went through that on the slide.
+
+18:32.940 --> 18:37.880
+So that's the index 1 and then we'll print the he again
+
+18:41.530 --> 18:49.630
+and we see that 75 is gone and now 68 is the left child of 80 and 60 is the right child and 67 has been
+
+18:49.630 --> 18:55.440
+moved below 68 because 67 would have been with the replacement value and brought up here.
+
+18:55.440 --> 18:57.200
+And so that's working fine.
+
+18:57.220 --> 19:03.370
+So let's replace 40 so I'll change this to five and let's run now.
+
+19:04.450 --> 19:13.840
+And we'll see that 40 is gone and we've got 80 75 and 67 so 67 is the right child of 80 and then 68
+
+19:13.840 --> 19:21.700
+and 55 are the children of 75 and 60 and 52 are the children of 67 and so everything seems to be working
+
+19:21.700 --> 19:22.090
+fine.
+
+19:22.090 --> 19:25.310
+We could try deleting the route just for fun.
+
+19:25.360 --> 19:26.490
+Let's do that.
+
+19:29.750 --> 19:32.520
+And the roots are gone and so 75.
+
+19:32.540 --> 19:42.230
+Now at the root it's got children 68 and 60 68 has children 67 and 55 and 60 has children 40 and 52
+
+19:42.230 --> 19:43.750
+and so that's working fine.
+
+19:43.850 --> 19:45.480
+And so that's it for delete.
+
+19:45.560 --> 19:50.810
+It's a matter of replacing the deleted value with the rightmost value and then fixing the heap either
+
+19:50.810 --> 19:52.870
+by looking up the heap or down the heap.
+
+19:52.910 --> 19:57.710
+All right we haven't written one last method and we'll do that in the next video it's going to be a
+
+19:57.710 --> 20:04.120
+very quick video because this will be getting the root node and it's a very simple operation.
+
+20:04.160 --> 20:05.030
+So see you there.

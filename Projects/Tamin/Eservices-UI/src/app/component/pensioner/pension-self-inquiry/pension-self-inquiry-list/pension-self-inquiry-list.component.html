@@ -1,0 +1,42 @@
+<div class="panel">
+  <div class="page-title">
+   نتیجه استعلام وضعیت
+  </div>
+  <div class="panel-body">
+    <!-- <tamin-data-grid #dataGrid> -->
+    <tamin-data-grid #dataGrid [showLoadOverlay]="false">
+    </tamin-data-grid>
+  </div>
+  <div class="panel">
+    <!--<div class="panel-title">ثبت درخواست جدید</div>-->
+    <div class="panel-body">
+      <form [formGroup]="newForm" autocomplete="off" novalidate >
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="orgType"> بانک/موسسه/نهاد:</tamin-field-label>
+            <tamin-field-validator  formControlName="orgType"></tamin-field-validator>
+            <tamin-field-auto-complete-data-grid formControlName="orgType" placeholder="موسسه " #orgTypes></tamin-field-auto-complete-data-grid>
+            <div>
+              <span class="hint">{{'قسمتی از نام نهاد یا موسسه را تایپ و از لیست انتخاب نمایید.'}} </span>
+            </div>
+          </div>
+          <!--<div class="col-4">-->
+            <!--<tamin-field-label formControlName="orgType">نام موسسه</tamin-field-label>-->
+            <!--<tamin-field-validator formControlName="orgType"></tamin-field-validator>-->
+            <!--<tamin-field-combo-box-static formControlName="orgType" placeHolder="انتخاب کنید ..."-->
+                                          <!--[dataItems]="orgTypes"-->
+                                          <!--displayField="name"-->
+                                          <!--valueField="value"></tamin-field-combo-box-static>-->
+          <!--</div>-->
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="button-container">
+              <button type="button" class="button normal" (click)="sendToAnnouncement()">صدور و ارسال به صندوق شخصی</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

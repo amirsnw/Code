@@ -1,0 +1,931 @@
+WEBVTT
+
+00:05.240 --> 00:09.870
+Se você estiver trabalhando com Java por qualquer período, estará familiarizado com a lista de matrizes.
+
+00:09.890 --> 00:15.710
+É muito comum ir para a aula quando se trata de armazenar uma coleção de objetos
+
+00:15.800 --> 00:17.460
+que você deseja iterar sequencialmente.
+
+00:17.600 --> 00:21.650
+Então, vamos dar uma olhada mais de perto, indo até o documento Java.
+
+00:21.740 --> 00:29.300
+Se rolarmos para baixo e lermos a documentação escrita pelos desenvolvedores desta classe, perceberemos que se trata de
+
+00:29.300 --> 00:36.560
+uma implementação de matriz redimensionável da interface de lista, o que significa que os dados da lista estão
+
+00:36.560 --> 00:42.290
+sendo armazenados em uma matriz e essa matriz é chamada de matriz de apoio.
+
+00:42.290 --> 00:47.180
+Agora isso nos diz algumas coisas com base no que aprendemos sobre arrays se soubermos que a posição
+
+00:47.240 --> 00:50.090
+de um item na lista que está acessando será eficiente.
+
+00:50.090 --> 00:58.130
+Na verdade, será tudo um ou tempo constante, porque sabemos que, se tivermos o índice do item
+
+00:58.130 --> 01:03.040
+que queremos, o acesso ao elemento da matriz será um todo.
+
+01:03.080 --> 01:08.600
+Portanto, as listas de matrizes são ótimas se tudo o que você vai fazer é iterar sobre elas, porque nesse
+
+01:08.600 --> 01:14.360
+caso você está sempre indo do índice zero até o final da lista para conhecer os índices dos itens que você
+
+01:14.360 --> 01:15.120
+deseja recuperar.
+
+01:15.230 --> 01:19.970
+Mas se você quiser adicionar muitos itens a uma lista existente, isso será lento.
+
+01:19.970 --> 01:24.860
+Se o tamanho da lista não for grande o suficiente para acomodar os novos itens em
+
+01:24.860 --> 01:30.680
+outras palavras, se a matriz de backup já estiver cheia e você quiser adicionar mais itens à lista, precisará redimensionar
+
+01:30.680 --> 01:31.850
+essa matriz de apoio.
+
+01:31.850 --> 01:37.610
+Enquanto você não vai, mas a implementação da matriz lista bem a classe e também a remoção
+
+01:37.610 --> 01:43.250
+de itens será lenta porque vamos ter que deslocar os itens restantes para remover qualquer espaço vazio.
+
+01:43.250 --> 01:48.710
+Então, se você estiver adicionando muitos itens em uma lista de matriz, você quer ter
+
+01:48.710 --> 01:51.410
+uma idéia de quantos itens estarão na lista.
+
+01:51.440 --> 01:58.000
+Assim, você pode criar uma instância de lista de arrays com capacidade para acomodar todos os itens.
+
+01:58.100 --> 02:03.590
+Caso contrário, a matriz que está fazendo o backup da lista que está realmente armazenando os itens precisará ser
+
+02:03.590 --> 02:07.130
+redimensionada quando você estiver cheia e você quiser adicionar mais itens à lista.
+
+02:07.130 --> 02:12.320
+Agora, como eu disse, você pode garantir que a matriz será grande o suficiente,
+
+02:12.320 --> 02:19.850
+especificando a capacidade e se descermos para os construtores, você verá que há um que permite especificar a capacidade inicial e
+
+02:19.850 --> 02:25.940
+diz que constrói uma lista vazia com o capacidade especificada estava realmente fazendo é a matriz de
+
+02:25.940 --> 02:29.080
+apoio que cria será de comprimento de capacidade inicial.
+
+02:29.080 --> 02:34.460
+Agora, quando se trata de listas de matrizes, é importante entender que a diferença entre
+
+02:34.520 --> 02:41.510
+tamanho em capacidade é o número máximo de itens que a lista pode conter antes de ter que ser
+
+02:41.540 --> 02:46.430
+redimensionado. O tamanho é o número de itens que são realmente na lista.
+
+02:46.430 --> 02:53.360
+Portanto, se você criar uma lista de matriz com capacidade para 20 e adicionar três itens a ela, a capacidade
+
+02:53.360 --> 02:56.010
+é 20 e o tamanho é três.
+
+02:56.060 --> 03:00.530
+E você perceberá aqui que, se você não ultrapassar uma capacidade, terá uma capacidade inicial
+
+03:00.530 --> 03:02.480
+de 10, o que não é muito.
+
+03:02.480 --> 03:08.190
+Então, se você tiver mais de 10 itens na lista, é melhor especificar a capacidade.
+
+03:08.360 --> 03:17.230
+OK, então vamos até o ID e brincar com os trapezistas.
+
+03:17.430 --> 03:23.410
+Então eu criei um projeto e coloquei ou coloquei o código na academia para aprender listas de matriz
+
+03:23.420 --> 03:23.920
+de programação.
+
+03:23.970 --> 03:32.160
+E eu vou criar um empregado da classe para que tenhamos algo interessante para adicionar à nossa lista
+
+03:32.160 --> 03:34.260
+que não seja apenas inteiros.
+
+03:34.290 --> 03:40.890
+Então, sob o mesmo pacote ou crie uma nova classe Java e eu
+
+03:43.530 --> 03:55.370
+a chamarei de employee e adicionaremos um campo de primeiro nome a um campo de sobrenome, também lançaremos um campo de ID.
+
+03:55.920 --> 04:00.240
+E agora podemos ter a ideia de nos ajudar a gerar todo o código clichê.
+
+04:00.240 --> 04:06.530
+Então, se eu clicar com o botão direito em qualquer lugar ou onde eu quero que o código vá e clico em gerar, você verá que
+
+04:06.540 --> 04:07.500
+há muitas opções aqui.
+
+04:07.500 --> 04:13.260
+Então, primeiro preencha um construtor e eu quero que todos os três campos sejam manipulados pelo construtor para
+
+04:13.260 --> 04:15.720
+que todos os selecionem e clique em OK.
+
+04:15.810 --> 04:21.030
+E agora temos nosso construtor padrão que apenas recebe os parâmetros pelos quais passou e
+
+04:21.030 --> 04:23.160
+os atribui aos campos dos membros.
+
+04:23.250 --> 04:26.400
+E, claro, queremos conjuntos e obtemos para estes porque são privados.
+
+04:26.400 --> 04:29.620
+Então, mais uma vez, todos nós vamos clicar em gerar.
+
+04:29.640 --> 04:31.710
+E nós queremos setter getter.
+
+04:32.040 --> 04:36.510
+E mais uma vez eu fui getters e setters gerados para todos os campos, então vou selecionar todos
+
+04:36.510 --> 04:37.900
+eles e clique em OK.
+
+04:38.400 --> 04:40.870
+E agora temos os conjuntos padrão e entramos.
+
+04:40.890 --> 04:47.400
+Por fim, gostaria que um método de duas strings gerado eu quisesse substituir o padrão, porque, quando imprimimos uma instância de funcionário,
+
+04:47.700 --> 04:51.390
+eu gostaria de ver o sobrenome e o ID do primeiro nome.
+
+04:51.390 --> 04:57.840
+Eu não quero apenas ver a referência do objeto, então clique com o botão direito para gerar e eu quero um
+
+04:57.840 --> 05:00.850
+método de duas cadeias e quando todos os campos em.
+
+05:00.860 --> 05:01.710
+Aqui vamos nós.
+
+05:01.860 --> 05:04.300
+Nós temos um bom método de duas cordas.
+
+05:04.650 --> 05:09.780
+E assim, a idéia que você nos deu um pouco de ajuda lá apenas clicando com o botão direito e
+
+05:09.780 --> 05:12.290
+vamos gerar, podemos obter todo o código clichê que precisamos.
+
+05:12.300 --> 05:16.160
+Então agora que temos essa classe, vamos voltar ao nosso método principal.
+
+05:16.290 --> 05:17.280
+Então, nós queremos listar.
+
+05:17.290 --> 05:19.240
+Então, eu vou dizer funcionário da lista.
+
+05:19.290 --> 05:25.800
+Agora a razão que eu estou dizendo lista, em vez de lista de matriz é usando a lista.
+
+05:25.860 --> 05:32.520
+Se eu decidir mais tarde que quero usar um tipo diferente de lista, é fácil alterar a implementação específica das
+
+05:32.520 --> 05:33.720
+listas que estou usando.
+
+05:33.810 --> 05:41.010
+Então, eu vou chamar essa lista de funcionários e vou criar uma nova lista de matriz e não vou
+
+05:41.010 --> 05:46.620
+especificar a capacidade porque só vou adicionar quatro funcionários e, como vimos, a capacidade padrão
+
+05:46.620 --> 05:47.260
+é 10.
+
+05:47.340 --> 05:51.640
+Então, não vou me preocupar com o array ter que ser redimensionado.
+
+05:51.960 --> 05:57.680
+Então, eu tenho algumas áreas aqui, em primeiro lugar, existem várias possibilidades para a lista, porque há
+
+05:57.680 --> 05:59.680
+mais de uma classe de lista.
+
+05:59.720 --> 06:05.310
+Tão inteligente que você quer que eu diga qual deles eu quero e quero Javadi você até.
+
+06:05.370 --> 06:11.340
+E então aqui está me dizendo que os tipos de diamantes não são suportados no nível de linguagem 1. 6
+
+06:11.400 --> 06:17.400
+E se você conseguir algo assim, significa que agora, por algum motivo, não sei por que isso
+
+06:17.400 --> 06:21.210
+acontece, porque eu especifiquei que o JDK é o Java 9.
+
+06:21.210 --> 06:29.010
+Acho que estou usando o Java 1. 6 para se livrar disso clique aqui e diga que o meu nível de linguagem
+
+06:29.010 --> 06:30.750
+para 7, porque isso suporta o diamante.
+
+06:30.750 --> 06:32.410
+E agora todos os erros se foram.
+
+06:32.400 --> 06:36.330
+Então, se você pegar algo assim, apenas espere que a lâmpada apareça e, em seguida, defina o
+
+06:36.330 --> 06:38.540
+nível de idioma para um nível de linguagem mais alto.
+
+06:38.700 --> 06:43.980
+OK, então voltando para o porque eu uso lista aqui se eu decidi que queria usar um tipo
+
+06:43.980 --> 06:50.130
+diferente de lista eu poderia apenas substituir a classe específica que estou usando quando eu criar a instância e isso ainda
+
+06:50.130 --> 06:50.510
+funcionará.
+
+06:50.520 --> 06:56.520
+Porque enquanto a classe e eu estou usando implements de-list interface os compiladores felizes.
+
+06:57.210 --> 07:01.760
+OK então agora que temos a nossa lista vamos adicionar alguns funcionários para que todos digam funcionário.
+
+07:01.810 --> 07:09.960
+E é assim que adicionamos um item à nossa lista e também um novo funcionário ou empregado do primeiro
+
+07:09.960 --> 07:14.040
+funcionário será Jane Jones e ela terá uma ideia.
+
+07:14.100 --> 07:16.220
+Um dois três.
+
+07:17.520 --> 07:18.770
+Vamos começar outro
+
+07:21.550 --> 07:28.460
+e vamos dizer que John Doe e sua identidade é quatro cinco seis sete vai
+
+07:31.840 --> 07:33.000
+adicionar Mary Smith
+
+07:37.390 --> 07:38.350
+e ela
+
+07:42.460 --> 07:44.670
+I. D. serão vinte e dois.
+
+07:44.680 --> 07:46.750
+E finalmente adicionaremos Mike Wilson
+
+07:51.880 --> 07:52.870
+e ele
+
+07:56.440 --> 08:00.000
+terá um ID de três para quatro ou cinco.
+
+08:00.370 --> 08:02.270
+E acho que estou perdendo aprendizes aqui.
+
+08:02.270 --> 08:03.380
+Vou apenas acrescentar isso.
+
+08:03.550 --> 08:07.840
+Então, como eu disse, o que está acontecendo embaixo das capas quando chamamos o construtor sem
+
+08:07.840 --> 08:14.480
+cérebro é que está criando uma matriz de apoio de lenth 10 porque vimos que a capacidade padrão, se não especificarmos um, é 10.
+
+08:14.500 --> 08:17.200
+Então, nós só temos quatro funcionários, então tudo bem.
+
+08:17.290 --> 08:23.280
+Isso significa que, quando adicionamos nossos funcionários, a matriz de apoio não precisou ser redimensionada.
+
+08:23.500 --> 08:25.960
+E vamos dar uma olhada no método Add.
+
+08:25.980 --> 08:32.530
+Então, vou selecioná-lo com o botão direito e dizer ir para a declaração e, em seguida, isso é realmente na interface
+
+08:32.530 --> 08:34.600
+que eu quero ir para a implementação.
+
+08:34.600 --> 08:41.710
+Então eu vou vir aqui e clicar no olho e vou selecionar a lista de arrays start add implementation porque é isso
+
+08:41.710 --> 08:42.790
+que estamos usando.
+
+08:42.800 --> 08:45.260
+E então aqui estamos no código real.
+
+08:45.350 --> 08:52.120
+E agora vamos para essa implementação e então é aí que o trabalho realmente é feito e vamos ver que
+
+08:52.120 --> 08:56.700
+a primeira coisa que faz é verificar se a matriz de backing está cheia.
+
+08:56.740 --> 09:02.770
+E assim verifica se o número de itens que estão no array ou é igual às arrays lens
+
+09:02.770 --> 09:08.230
+porque se isso for verdade, o array está cheio e por isso tem que aumentar o
+
+09:08.230 --> 09:09.230
+array para redimensioná-lo.
+
+09:09.310 --> 09:14.380
+E então, depois de feito isso, ele atribuirá o item e, é claro, aumentará
+
+09:14.380 --> 09:20.620
+o tamanho, porque, como discuti anteriormente, a capacidade é o número máximo de itens que podem ser armazenados
+
+09:20.620 --> 09:21.400
+na matriz.
+
+09:21.490 --> 09:26.730
+Basicamente, os comprimentos dos arrays e o tamanho são o número real de itens que adicionamos a ele.
+
+09:26.830 --> 09:32.830
+OK, então uma lista de matriz é apoiada por uma matriz, então por que não usamos apenas uma matriz? Por que estamos usando a lista de matrizes?
+
+09:32.950 --> 09:37.870
+Bem, porque lista de matriz tem um monte de métodos que permitem trabalhar com os itens da lista e assim
+
+09:37.870 --> 09:39.990
+o código para fazer isso foi escrito para você.
+
+09:40.060 --> 09:42.690
+Você não precisa trabalhar diretamente na matriz.
+
+09:42.880 --> 09:45.520
+Também lista de matriz implementa a interface da lista.
+
+09:45.520 --> 09:50.950
+E como mencionei anteriormente, você pode alternar para outro tipo de lista que usa
+
+09:50.950 --> 09:54.880
+a interface de lista sem interromper muito o código existente.
+
+09:54.910 --> 10:00.390
+Então vamos voltar ao nosso método principal e ver alguns dos métodos que a lista de arrays oferece.
+
+10:00.400 --> 10:05.560
+Bem, nós vimos como podemos adicionar itens, vamos imprimir os itens na lista para
+
+10:05.830 --> 10:10.810
+que possamos dizer listas de funcionários do empregador para cada um e, em
+
+10:13.300 --> 10:18.180
+seguida, vamos dizer funcionário do sistema fora do empregado da linha de impressão.
+
+10:18.450 --> 10:23.070
+E agora, de uma só vez, tenho que passar para o nível de linguagem 8 porque uma vez lambdas é necessário.
+
+10:23.220 --> 10:24.500
+Precisamos do Java 8 para o lambda.
+
+10:24.490 --> 10:26.540
+Então esta é uma expressão lambda.
+
+10:26.730 --> 10:33.890
+E para cada funcionário da lista, vamos imprimir esse empregado.
+
+10:33.910 --> 10:37.340
+Não, eu poderia ter usado apenas um loop e percorrer a lista.
+
+10:37.350 --> 10:39.690
+Mas isso é mais conciso.
+
+10:39.810 --> 10:40.830
+Então, se corrermos
+
+10:45.500 --> 10:51.530
+agora, aqui estão os funcionários e estamos obtendo a boa impressão, porque lembre-se de que usamos o ID para substituir
+
+10:51.530 --> 10:52.450
+as duas sequências.
+
+10:52.640 --> 10:59.030
+Então, aqui estão os nossos funcionários e foi fácil para nós ir em frente chamar um método e percorrer
+
+10:59.030 --> 10:59.750
+a lista.
+
+10:59.750 --> 11:04.800
+Então, vamos agora pegar o segundo funcionário na lista.
+
+11:05.180 --> 11:08.790
+E assim como com um aumento, o índice é baseado em zero.
+
+11:08.780 --> 11:13.430
+Estamos trabalhando com o array Lewis e isso não é surpreendente, porque agora sabemos que a lista de arrays é
+
+11:13.430 --> 11:14.360
+apoiada por um array.
+
+11:14.660 --> 11:22.760
+Então, se quisermos imprimir o segundo empregado, dizemos que o empregado menos Daut conseguirá um, porque o
+
+11:22.760 --> 11:25.700
+segundo empregado estará no índice 1.
+
+11:25.700 --> 11:30.660
+Então corremos e devemos ver John Doe chegando e Jondo faz isso.
+
+11:30.710 --> 11:35.780
+Estes quatro são da para cada chamada e então temos Jondo sendo impresso daqui.
+
+11:35.870 --> 11:41.630
+E, como sabemos, porque uma matriz está fazendo o backing da lista de matriz, isso é chamado quando realmente
+
+11:41.630 --> 11:47.560
+acessamos o funcionário, e isso é feito em tempo constante, porque uma matriz está fazendo o backup da lista.
+
+11:47.630 --> 11:53.900
+Acesso aleatório como este, onde apenas fornecemos um índice é feito em tempo constante.
+
+11:53.900 --> 11:58.760
+A complexidade do tempo não depende do tamanho da lista, então as listas de arrays são ótimas quando você
+
+11:58.760 --> 12:01.610
+deseja carregar um monte de dados e depois acessá-los dessa maneira.
+
+12:01.610 --> 12:11.510
+Agora também podemos verificar se uma lista está vazia, então podemos dizer que o sistema que saiu da lista de funcionários da linha de impressão está vazio
+
+12:11.530 --> 12:15.740
+agora esperamos que seja falso porque a lista não está vazia.
+
+12:15.740 --> 12:19.950
+Então, vamos correr e com certeza ficamos falsos.
+
+12:20.110 --> 12:20.400
+ESTÁ BEM.
+
+12:20.400 --> 12:25.960
+Agora, outra coisa que podemos fazer é substituir o funcionário em uma posição específica com
+
+12:25.960 --> 12:26.770
+outro funcionário.
+
+12:26.860 --> 12:35.050
+Então, vamos substituir John Doe por John Adams, para fazer isso, basta dizer que a lista de funcionários Daut foi definida.
+
+12:35.050 --> 12:37.460
+Então não vamos usar add aqui.
+
+12:37.750 --> 12:42.970
+E o primeiro parâmetro é o índice do funcionário que queremos substituir.
+
+12:42.970 --> 12:54.290
+E vamos substituir John Doe por um novo funcionário John Adams e John Adams tem um ID de 4 5
+
+12:54.320 --> 12:55.380
+6 8.
+
+12:56.170 --> 13:03.940
+E agora, se eu comentar, vou comentar todas as impressões que fizemos até agora e vou
+
+13:03.940 --> 13:07.450
+copiar a impressão que imprime a lista
+
+13:10.150 --> 13:16.980
+inteira e vamos correr e veremos para o segundo funcionário é agora John Adams.
+
+13:16.980 --> 13:18.330
+Não é mais John Doe.
+
+13:18.340 --> 13:23.230
+Portanto, se você quiser adicionar um funcionário à lista ou adicionar um item à lista e ele for sempre
+
+13:23.230 --> 13:25.520
+adicionado ao final da lista, use o método Adicionar.
+
+13:25.540 --> 13:30.330
+Se você quiser substituir um item na lista, use o método set.
+
+13:30.610 --> 13:35.130
+Agora, porque o acesso aleatório é tudo de uma configuração.
+
+13:35.380 --> 13:41.470
+Um funcionário irá acontecer em tempo constante, desde que você esteja fornecendo o índice, qualquer que
+
+13:41.470 --> 13:48.010
+seja a operação que você esteja realizando, com a complexidade de tempo constante de 0 a 1.
+
+13:48.010 --> 13:54.050
+Agora, se você quiser obter o número de itens na lista que seria o tamanho, podemos fazer isso.
+
+13:55.210 --> 13:58.190
+Então, vamos dizer apenas o tamanho dos pontos das listas de funcionários.
+
+13:58.230 --> 14:04.000
+E lembre-se de que isso não nos dará a capacidade de a capacidade ser o número total de itens que
+
+14:04.000 --> 14:05.420
+essa lista pode conter atualmente.
+
+14:05.440 --> 14:07.540
+Esse é o comprimento da matriz de apoio.
+
+14:07.540 --> 14:14.480
+Isso nos informará quantos funcionários adicionamos à lista, então vamos ver quatro, que é o que
+
+14:14.480 --> 14:17.540
+esperamos, porque temos quatro funcionários na lista.
+
+14:17.540 --> 14:21.630
+Agora, como acabei de dizer, o método add adiciona itens ao final da lista.
+
+14:21.640 --> 14:26.360
+Por que se você não quer isso, e se você quer adicionar um empregado em uma posição específica?
+
+14:26.390 --> 14:31.920
+Se você quiser fazer isso, você também pode usar o método Add, mas você precisa fornecer mais parâmetros.
+
+14:32.240 --> 14:38.470
+Então, se quiséssemos adicionar Jondo de volta, mas queríamos adicioná-lo no índice 3.
+
+14:38.630 --> 14:44.090
+Então, nós queremos que ele seja o quarto funcionário que verá a lista de funcionários na mão.
+
+14:44.540 --> 14:50.190
+E desta vez precisamos fornecer um índice, bem como a instância que queremos adicionar.
+
+14:50.630 --> 14:58.240
+Então eu vou dizer John Doe e 4 5 6 7.
+
+14:58.680 --> 15:00.400
+E se agora imprimirmos nossa lista novamente.
+
+15:00.420 --> 15:05.550
+Então pegue isso e copie-o aqui.
+
+15:05.650 --> 15:12.350
+É executado e vamos ver que o Jondo foi adicionado no índice 3.
+
+15:12.360 --> 15:19.920
+Agora você forneceu um índice, mas porque neste caso você está colocando-o no meio dos valores,
+
+15:19.920 --> 15:22.670
+alguns valores terão que ser alterados.
+
+15:22.680 --> 15:27.720
+Então o pior caso para isso seria 0 então porque o pior caso seria você querer colocá-lo logo
+
+15:27.720 --> 15:32.340
+no começo da matriz e então todos os outros elementos têm que ser mudados e vamos para
+
+15:32.340 --> 15:34.150
+o código-fonte para ver isso .
+
+15:34.290 --> 15:43.230
+Então eu vou dizer ir para a declaração e eu quero a implementação para lista de matriz e você verá aqui esta é a
+
+15:43.320 --> 15:44.570
+cópia da matriz.
+
+15:44.700 --> 15:45.980
+Este é o deslocamento.
+
+15:45.990 --> 15:51.340
+Então, dependendo de onde você quer colocá-lo, os elementos terão que ser deslocados na matriz.
+
+15:51.480 --> 15:57.540
+E é isso que faz com que essa operação específica seja uma operação de tempo linear.
+
+15:57.540 --> 15:57.990
+Tudo bem.
+
+15:57.990 --> 16:04.680
+De volta ao nosso código, se queremos a matriz, digamos que temos uma lista e estamos dizendo que tudo bem, bem, nos dar
+
+16:04.680 --> 16:05.750
+essa matriz de apoio.
+
+16:05.790 --> 16:11.460
+Dê-nos a matriz que está mantendo os funcionários que podemos conseguir chamando o método de matriz 2,
+
+16:11.460 --> 16:14.030
+mas não vamos obter uma matriz de funcionários.
+
+16:14.160 --> 16:15.890
+Nós vamos pegar uma matriz de objetos.
+
+16:16.010 --> 16:17.700
+E assim dirá a
+
+16:19.950 --> 16:24.350
+matriz do funcionário do objeto é igual ao funcionário Liskov para matriz.
+
+16:24.360 --> 16:30.060
+Agora, se quisermos um array de funcionários, podemos obtê-lo, mas então temos que dizer ao compilador que é
+
+16:30.060 --> 16:34.200
+isso que queremos e para isso passamos uma matriz do tipo que queremos.
+
+16:34.200 --> 16:39.930
+Então, em vez de apenas chamar o método de duas matrizes e não passar
+
+16:39.930 --> 16:49.230
+nada, alteramos essa chamada para dizer "novo funcionário" e o tamanho que desejamos é o tamanho da lista de funcionários porque o método
+
+16:49.230 --> 16:51.640
+de tamanho retornará quantos funcionários adicionamos.
+
+16:51.640 --> 16:54.970
+E assim, precisamos apenas de uma disposição dessa lente.
+
+16:55.050 --> 17:04.170
+E então, quando pegarmos o array de volta, vamos imprimir os elementos, então, vamos dizer,
+
+17:04.170 --> 17:13.520
+para funcionário empregado e para os funcionários, armar a matriz de funcionários, e vou mudar
+
+17:13.520 --> 17:20.500
+isso para empregado agora, porque podemos fazer isso e imprimir o funcionário.
+
+17:20.930 --> 17:26.490
+Então deixe-me comentar a outra impressão para não ficarmos confusos com o que estamos vendo.
+
+17:26.730 --> 17:30.630
+E vamos rodar isso.
+
+17:30.730 --> 17:32.500
+E eu acho que deve ser impressão de mummer.
+
+17:32.540 --> 17:33.800
+Sim, aqui está.
+
+17:33.840 --> 17:34.920
+Deixe-me comentar isso.
+
+17:34.920 --> 17:36.800
+Corra novamente.
+
+17:36.810 --> 17:40.220
+E agora aqui está a impressão vinda do array de funcionários.
+
+17:40.350 --> 17:46.560
+E assim conseguimos os cinco funcionários que tínhamos na lista, mas agora os temos em uma matriz de funcionários.
+
+17:46.560 --> 17:52.260
+Agora, se você quiser saber se a lista contém uma instância, você pode chamar o método contains para verificar
+
+17:52.260 --> 17:54.160
+se a lista contém um funcionário.
+
+17:54.480 --> 17:56.570
+Então vamos em frente e fazer isso.
+
+17:57.070 --> 18:05.370
+Então esse sistema ficou fora da linha de impressão e queremos verificar a lista de funcionários e temos que passar o objeto
+
+18:07.020 --> 18:08.280
+que estamos procurando.
+
+18:08.280 --> 18:16.060
+Agora não temos esse exemplo porque não salvamos Mary em nenhum lugar, então teremos que
+
+18:18.630 --> 18:25.440
+pedir Mary novamente e ela. D. foi 22 e vamos correr e você
+
+18:28.150 --> 18:30.020
+verá que nós ficamos falsos.
+
+18:30.010 --> 18:32.650
+Agora talvez você estivesse esperando verdade, talvez você não estivesse.
+
+18:32.650 --> 18:38.650
+E a razão pela qual ficamos falsos é porque não implementamos o método equals na classe
+
+18:38.650 --> 18:41.260
+Employee, porque não há nenhum método equals.
+
+18:41.320 --> 18:44.580
+O que este método está fazendo é realmente verificar se eles são exatos.
+
+18:44.580 --> 18:49.810
+Eles são exatamente a mesma instância porque é isso que o método equals padrão faz.
+
+18:49.900 --> 18:54.630
+Aquele que é todo o caminho de volta até um objeto e eles não são exatamente o mesmo exemplo.
+
+18:54.640 --> 18:58.450
+Criamos uma instância aqui e criamos uma instância aqui.
+
+18:58.450 --> 19:00.830
+Portanto, existem dois casos distintos.
+
+19:00.840 --> 19:01.980
+Agora eles estão lá.
+
+19:02.050 --> 19:07.330
+Estruturalmente o mesmo significado que todos os seus campos contêm os mesmos valores.
+
+19:07.350 --> 19:12.970
+E assim, achamos que eles devem ser iguais: se estamos procurando por um funcionário com o
+
+19:13.270 --> 19:19.750
+primeiro nome Mary, o sobrenome Smith e o ID 22, sabemos que temos um funcionário assim na lista,
+
+19:19.750 --> 19:25.960
+mas temos que implementar o método equals em a classe do empregado para comparar os campos individuais
+
+19:25.960 --> 19:26.800
+entre si.
+
+19:27.040 --> 19:32.440
+Então vamos para a nossa classe Employee e eu vou colocar o código aqui e mais uma vez nós podemos ter
+
+19:32.440 --> 19:37.840
+a idéia de fazer isso para nós, então eu vou dizer generate agora ele vai criar o método hash code para
+
+19:37.840 --> 19:42.310
+nós também porque sempre que você Sobreponha o método equals você deve realmente sobrescrever código hash também.
+
+19:42.310 --> 19:43.330
+Então tudo bem.
+
+19:44.680 --> 19:47.370
+Nós podemos apenas aceitar todos os padrões aqui.
+
+19:47.530 --> 19:53.180
+Eu vou selecionar estes dois e dizer o primeiro nome e sobrenome NUNCA deve ser não
+
+19:53.180 --> 19:59.770
+e agora temos um método igual então se voltarmos para o nosso método principal e executarmos novamente devemos
+
+19:59.770 --> 20:06.490
+ver a verdade e o fazemos porque agora o método equals na classe Employee está realmente olhando para os
+
+20:06.490 --> 20:14.200
+valores nos campos agora que temos o método equals podemos fazer uso do índice de Massad e isso irá procurar um
+
+20:14.200 --> 20:18.760
+funcionário na lista e nos informar qual índice esse funcionário está ocupando.
+
+20:18.760 --> 20:21.460
+Então, vamos procurar por John Doe.
+
+20:22.330 --> 20:28.520
+Então, digamos que você sistema fora da lista de funcionários da linha o índice de pontos.
+
+20:28.570 --> 20:35.710
+E mais uma vez, porque não salvamos uma referência a John Doe, vamos apenas criar uma instância com os
+
+20:35.710 --> 20:39.250
+valores e suas ideias para cinco seis e sete.
+
+20:40.360 --> 20:45.760
+E como implementamos o método equals isso deve encontrar o Jondo,
+
+20:45.760 --> 20:50.910
+ele encontrará o funcionário que possui os mesmos valores e campos.
+
+20:51.140 --> 20:57.380
+E isso diz que ele está no índice 3 e sabemos que isso é verdade porque nós o adicionamos especificamente no
+
+20:57.380 --> 20:58.060
+índice 3.
+
+20:58.070 --> 21:04.610
+Agora, o conteúdo e o índice dos métodos são tão bons quanto o algoritmo de pesquisa
+
+21:04.610 --> 21:09.580
+usado para pesquisar o array em outras palavras, quando procuramos algo na lista.
+
+21:09.680 --> 21:15.230
+O método que estamos usando tem que pesquisar a lista e a maneira como ele está
+
+21:15.230 --> 21:20.220
+pesquisando na lista determinará se o índice de qualquer método contém é rápido ou lento.
+
+21:20.480 --> 21:23.780
+E estaremos analisando algoritmos de busca mais adiante no curso.
+
+21:23.780 --> 21:28.350
+Tudo bem então a última coisa que eu quero mostrar é como remover itens da lista.
+
+21:28.400 --> 21:30.080
+Vamos remover o terceiro empregado.
+
+21:30.080 --> 21:31.890
+Isso é que vai ser Mary.
+
+21:32.030 --> 21:35.980
+Então, dirá que o empregado bliss dot remove.
+
+21:35.990 --> 21:39.850
+E nós vamos passar dois porque queremos mover o terceiro empregado.
+
+21:39.890 --> 21:45.620
+Nós também poderíamos passar um exemplo dela, se quiséssemos, mas isso agiria é realmente mais rápido,
+
+21:45.620 --> 21:47.300
+porque estamos fornecendo o índice.
+
+21:47.360 --> 21:50.020
+E uma vez feito isso, vamos imprimir a lista.
+
+21:50.060 --> 21:57.650
+Eu vou comentar isso, então não estamos imprimindo um monte de coisas da matriz e eu vou
+
+21:57.650 --> 22:07.190
+copiar esta linha que imprime sua lista e vamos correr e vamos ver que Mary não está mais na nossa lista .
+
+22:07.200 --> 22:09.360
+Nós só temos quatro funcionários agora.
+
+22:09.480 --> 22:15.030
+Agora, como estamos lidando com uma matriz no plano de fundo, remover pode ser caro, porque os elementos após
+
+22:15.030 --> 22:18.170
+o que removemos precisam ser deslocados uma posição para baixo.
+
+22:18.180 --> 22:21.090
+Então, se dermos uma olhada nisso, se formos para
+
+22:25.320 --> 22:32.400
+o código-fonte e quisermos que o código-fonte da lista de matrizes verá que esta é uma cópia da matriz e é isso
+
+22:32.400 --> 22:33.880
+que está fazendo essa mudança.
+
+22:34.110 --> 22:41.740
+Se tiver que deslocar os elementos para ocupar o espaço vazio deixado pelo que removemos.
+
+22:41.890 --> 22:46.440
+OK, então há mais alguns métodos na matriz menos classe, mas vou deixar você explorá-los
+
+22:46.440 --> 22:47.260
+por conta própria.
+
+22:47.280 --> 22:53.130
+Para muitos de vocês, isso pode ter sido apenas uma revisão, mas eu só queria mostrar alguns dos métodos e
+
+22:53.160 --> 22:55.920
+operações que você pode fazer em listas de matrizes.
+
+22:56.010 --> 22:58.770
+Então, a lista de matrizes é boa para acesso aleatório.
+
+22:58.770 --> 23:05.580
+Se você tem o índice e é bom para iterar sobre os itens na lista, mas não
+
+23:05.700 --> 23:11.910
+é tão bom para inserir itens na lista em qualquer posição que não seja o final.
+
+23:12.030 --> 23:18.210
+Não é tão bom para remoções de exclusões e não é tão bom para acessar um item na lista quando você
+
+23:18.210 --> 23:19.530
+não tem seu índice.
+
+23:19.530 --> 23:21.960
+Então lembre-se que é apoiado por um array.
+
+23:22.080 --> 23:28.080
+E assim, se você tiver o índice, a operação poderá ser executada em tempo constante.
+
+23:28.080 --> 23:34.740
+Mas se você não tiver o índice ou se a inserção de elementos de remoção de algum lugar no
+
+23:34.740 --> 23:39.430
+meio da matriz ou no início dos elementos da matriz tiver que ser deslocada.
+
+23:39.660 --> 23:46.830
+E assim, como uma lista de matriz é apoiada por um array, ela tem os mesmos problemas e vantagens que os arrays
+
+23:46.830 --> 23:47.320
+têm.
+
+23:47.430 --> 23:54.120
+OK, é isso para as listas de Array e no próximo vídeo vamos dar uma olhada rápida em Vector.
+
+23:54.170 --> 23:55.970
+A aula de vetor eu vou te ver lá.

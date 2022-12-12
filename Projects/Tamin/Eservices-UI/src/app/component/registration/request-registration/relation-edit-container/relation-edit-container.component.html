@@ -1,0 +1,29 @@
+
+
+  <div class="alert alert-person">
+    <!--<p style="border-bottom: dotted 1px #424242; margin-bottom: 5px ;"  >مشخصات فردی</p>-->
+    <p><span>نام و نام خانوادگی</span> : <strong>{{currentUser?.firstName}}  {{currentUser?.lastName}}</strong></p>
+  </div>
+  <tamin-process-indicator #processIndicator></tamin-process-indicator>
+  <div class="reg-container">
+    <div class="reg-header">{{currentHeader}}</div>
+    <div class="reg-content" #stepsContainer></div>
+    <div class="reg-footer">
+      <button style="float: right; margin-bottom: 5px" class="button button-default normal" *ngIf="hasNextStep"
+              (click)="createStep(currentStepNumber + 1, 'forward')">{{nextStepButtonTitle}}</button>
+      <button style="float: left; margin-bottom: 5px" class="button button-default normal" *ngIf="hasPrevStep"
+              (click)="createStep(currentStepNumber - 1, 'backward')">
+        {{prevStepButtonTitle}}
+      </button>
+    </div>
+  </div>
+
+<!--
+<tamin-wizard (stepChanging)="onStepChanging($event)" #theWizard>
+  <tamin-wizard-item stepTitle="ثبت اطلاعات بیمه ای" buttonTitle="ارتباط بیمه ای" >
+    <app-request-relation-tamin #stepTwo></app-request-relation-tamin>
+  </tamin-wizard-item>
+  <tamin-wizard-item stepTitle="بازبینی و تایید اطلاعات" buttonTitle="بازبینی و تایید اطلاعات">
+    <app-approve #stepSix></app-approve>
+  </tamin-wizard-item>
+</tamin-wizard>-->

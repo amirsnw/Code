@@ -1,0 +1,334 @@
+WEBVTT
+
+00:05.440 --> 00:05.980
+Tudo bem.
+
+00:06.000 --> 00:12.270
+Então, vamos implementar um calor máximo, significando que os valores dos pais são sempre maiores ou
+
+00:12.300 --> 00:13.990
+iguais aos seus filhos.
+
+00:14.160 --> 00:19.290
+Se você quisesse implementar um heap min, seria bastante trivial converter o código para fazer
+
+00:19.290 --> 00:23.280
+isso, basta alterar as comparações que estão sendo feitas no código.
+
+00:23.280 --> 00:27.410
+Agora, os heaps são geralmente implementados como matrizes e é assim que vamos fazer isso.
+
+00:27.420 --> 00:34.560
+Como nós passamos no último slide, então eu criei um projeto e vou precisar de uma classe para
+
+00:34.590 --> 00:37.240
+o heap, então vamos criar isso.
+
+00:37.300 --> 00:40.540
+Então diga nova classe Java e eu só vou chamar aqui.
+
+00:42.220 --> 00:48.820
+E vamos precisar de dois campos em nossa classe heape, a matriz e a próxima posição disponível,
+
+00:48.820 --> 00:55.270
+para que, quando inserirmos um item, possamos ir diretamente para esse índice e inserir o novo valor.
+
+00:55.420 --> 01:07.060
+Então, vamos dizer private int ele e private em tamanho e, em seguida, em nosso construtor, precisamos apenas criar e inicializar o array e deixar que o chamador
+
+01:07.060 --> 01:10.970
+nos diga o tamanho que deseja que o calor seja.
+
+01:10.990 --> 01:18.760
+Então vamos deixá-los passar como essa capacidade e vamos dizer que ele é igual a nova capacidade int.
+
+01:18.760 --> 01:24.070
+Então, uma das coisas que precisamos fazer e inserir um nó é verificada para ver se o
+
+01:24.070 --> 01:29.520
+heap está cheio e o heap está cheio quando o tamanho é igual ao comprimento do array.
+
+01:29.530 --> 01:31.510
+Então, vamos criar um método completo.
+
+01:31.510 --> 01:41.270
+Então, vamos dizer que o booleano público está cheio e vamos retornar o tamanho igual à lente de ponto de calor.
+
+01:41.310 --> 01:47.140
+E assim, se o número de itens que temos no heap for igual ao tamanho do array, o heap
+
+01:47.140 --> 01:47.900
+estará cheio.
+
+01:47.920 --> 01:52.270
+Agora, se o heap estiver cheio, há duas abordagens em que podemos lançar uma exceção e pedir
+
+01:52.270 --> 01:54.670
+desculpas pelo heap estar cheio ou podermos redimensionar o array.
+
+01:54.670 --> 02:00.970
+Então, vamos adicionar um método utilitário para obter o pai para um elemento na matriz.
+
+02:00.970 --> 02:08.860
+Então, vamos dizer public para obter pai e vamos precisar do índice do elemento na matriz para a qual
+
+02:08.860 --> 02:10.750
+queremos obter o pai.
+
+02:10.900 --> 02:15.370
+E nós vamos apenas retornar aquela expressão que nós olhamos.
+
+02:15.370 --> 02:22.790
+Então, vamos dizer índice de retorno menos 1 sobre 2.
+
+02:22.900 --> 02:27.710
+Agora não precisamos usar o chão porque estamos usando números inteiros.
+
+02:27.850 --> 02:33.730
+E quando você faz a divisão com números inteiros, ele será arredondado automaticamente.
+
+02:33.740 --> 02:37.210
+Será arredondado para o menor número inteiro.
+
+02:37.210 --> 02:43.630
+E assim, se o resultado de uma divisão for 7. 5 apenas cai o ponto cinco e retorna sete.
+
+02:43.630 --> 02:48.750
+Então, em Java fazendo a divisão inteira de inteiros, você já está pavimentando o resultado.
+
+02:48.760 --> 02:51.920
+E assim, não precisamos chamar explicitamente o chão.
+
+02:52.090 --> 02:54.910
+Então, vamos começar a escrever nosso método de inserção.
+
+02:55.450 --> 02:59.650
+E lembre-se que quando inserimos um nó sempre o colocamos no final do array.
+
+02:59.650 --> 03:05.500
+É por isso que estamos acompanhando o tamanho para sabermos onde será a próxima posição disponível.
+
+03:05.500 --> 03:11.670
+E então, vamos dizer, provavelmente, evitar inseri-lo, queremos o valor que queremos inserir.
+
+03:11.770 --> 03:15.610
+Agora vamos apenas lançar uma exceção se o heap estiver cheio.
+
+03:15.610 --> 03:23.950
+Não vamos nos incomodar em redimensionar o array, então vamos dizer se o full throw é novo e vamos lançar
+
+03:23.950 --> 03:31.150
+uma exceção de índice fora dos limites com este outono, porque basicamente o que o chamador está nos
+
+03:31.150 --> 03:37.240
+pedindo é para adicionar um nó em uma matriz e não temos espaço para isso.
+
+03:37.240 --> 03:44.080
+Então, vamos dizer que o índice está fora dos limites, não podemos adicionar mais itens ao heap.
+
+03:44.200 --> 03:49.530
+Se esse não for o caso, a primeira coisa que faremos é colocar o novo item no primeiro local disponível.
+
+03:49.540 --> 03:54.420
+Então, vamos dizer tamanho de heap mais mais é igual a valor.
+
+03:54.790 --> 04:00.250
+Então, estamos usando o operador pós-incremento para que o tamanho atual do valor seja usado.
+
+04:00.280 --> 04:06.610
+E depois que o valor tiver sido atribuído, o tamanho será incremental para a próxima posição disponível.
+
+04:08.340 --> 04:15.810
+Então, agora temos que potencialmente heap de fi ou corrigir o heap porque o valor que inserimos pode ser maior
+
+04:15.810 --> 04:16.810
+que seu pai.
+
+04:16.920 --> 04:22.830
+Agora, este é um heap máximo, então vamos verificar se ele é maior que seus pais e, se for, vamos
+
+04:22.830 --> 04:28.200
+trocá-lo por seu pai e, em seguida, vamos enxaguar e repetir até que o valor não seja maior
+
+04:28.200 --> 04:30.770
+do que seu pai ou atingimos a raiz.
+
+04:30.780 --> 04:35.320
+E assim o valor se tornou a raiz e nesse ponto o calor será corrigido.
+
+04:35.370 --> 04:39.460
+Todos os nós no calor serão menores que seus pais.
+
+04:39.480 --> 04:45.000
+Eu vou escrever um método chamado Fix heap acima porque você verá mais tarde quando deletarmos
+
+04:45.060 --> 04:47.580
+que temos que olhar o heap para consertá-lo.
+
+04:47.610 --> 04:51.210
+E então eu vou escrever um método chamado Fix heap acima.
+
+04:51.210 --> 04:56.640
+É claro que quando estamos voando depois de uma inserção, estamos olhando para cima da árvore, porque estamos começando
+
+04:56.640 --> 05:00.930
+com o valor e, em seguida, vamos compará-lo com seus pais e, portanto, para onde
+
+05:00.930 --> 05:02.480
+estamos viajando. árvore para manter isso.
+
+05:02.480 --> 05:05.280
+E é por isso que vou chamar o heap de correção acima.
+
+05:05.280 --> 05:09.740
+Então, eu direi voit privado, corrija o acima.
+
+05:10.320 --> 05:16.120
+E queremos o índice do valor que acabamos de inserir, e é aí que queremos
+
+05:16.130 --> 05:21.090
+começar algo a dizer em Novo valor é igual ao índice de calor.
+
+05:21.930 --> 05:28.340
+Então, esse é o valor que acabamos de inserir e, em seguida, vamos dizer que os índices de parede são maiores que
+
+05:28.350 --> 05:31.550
+zero porque, se o índice chegar a zero, atingiremos a raiz.
+
+05:31.550 --> 05:33.510
+Isso significa que o novo valor é a raiz.
+
+05:33.510 --> 05:40.400
+Então, se não tivermos feito isso e o novo valor for maior que ele.
+
+05:40.620 --> 05:46.690
+E nós vamos chamar o pai get aqui para obter o índice pai.
+
+05:46.980 --> 05:49.730
+E então o que estamos fazendo aqui é se não atingimos a raiz.
+
+05:49.770 --> 05:55.680
+E então vamos comparar o novo valor com o valor de seu pai e chamamos o método
+
+05:56.000 --> 05:58.980
+get parent para obter o índice do pai.
+
+05:59.040 --> 06:03.290
+E assim, apenas fazemos o cálculo que cobrimos nos slides para obter o índice do pai.
+
+06:03.300 --> 06:08.970
+E nós verificamos o valor lá e se o novo valor tiver um valor maior que seu pai,
+
+06:08.970 --> 06:10.980
+então queremos trocar os dois valores.
+
+06:10.980 --> 06:20.610
+E assim, vamos dizer que o índice de calor é igual a ele, o índice pai.
+
+06:20.610 --> 06:25.230
+E isso está atribuindo o pai para onde o novo valor atualmente mora.
+
+06:25.650 --> 06:31.260
+E então vamos dizer que Index é igual a índice pai.
+
+06:31.260 --> 06:37.260
+Agora você pode estar dizendo bem, espere um minuto, não temos que assinar o novo valor para onde o
+
+06:37.260 --> 06:40.130
+pai mora atualmente, mas faremos isso na etapa final.
+
+06:40.140 --> 06:47.340
+Então, basicamente, nos slides eu mostrei a eles trocando a cada passo e isso é conceitualmente o que estamos fazendo.
+
+06:47.340 --> 06:52.800
+Mas na implementação Estamos comparando o valor contra seu pai.
+
+06:52.830 --> 06:56.980
+E se for maior que seu pai, nós designamos o pai para baixo.
+
+06:57.000 --> 07:01.950
+Na verdade, não atribuímos o novo valor a esse nó porque vamos compará-lo
+
+07:01.950 --> 07:09.690
+com o pai desse nó e ele pode ter que ser desativado, de modo que apenas atribuímos um novo valor quando
+
+07:09.690 --> 07:12.060
+descobrimos que ele está na posição correta.
+
+07:12.060 --> 07:17.100
+Então, o que estamos fazendo é que estamos borbulhando e estamos mudando os pais.
+
+07:17.100 --> 07:24.300
+Quaisquer pais que são menores do que o novo valor estão mudando e no final eles serão o espaço onde o novo
+
+07:24.300 --> 07:27.090
+valor deve ir e é quando vamos atribuí-lo.
+
+07:27.090 --> 07:30.030
+Então, vamos atribuí-lo quando abandonarmos o loop.
+
+07:30.030 --> 07:36.600
+Então, vamos dizer que o índice de calor é igual a novo valor e acabamos.
+
+07:36.630 --> 07:42.510
+Portanto, se a condição while for verdadeira, atribuímos o valor pai ao local em que adicionamos o novo valor e,
+
+07:42.510 --> 07:45.370
+em seguida, atualizamos o índice para a posição dos pais.
+
+07:45.390 --> 07:50.730
+Não atribuímos o novo valor à posição dos pais, porque talvez não tenhamos encontrado a
+
+07:50.730 --> 07:53.100
+posição correta nos slides que mostrei.
+
+07:53.100 --> 07:58.470
+Conceitualmente o que está acontecendo em termos de borbulhando o novo valor.
+
+07:58.470 --> 08:04.410
+Na verdade, não temos que atribuir o novo valor toda vez que formos empurrar o pai para baixo.
+
+08:04.440 --> 08:09.990
+Nós podemos apenas empurrar os pais para baixo e quando abandonarmos o ciclo em que estamos apontando
+
+08:09.990 --> 08:13.670
+o índice será o local onde devemos atribuir um novo valor.
+
+08:13.800 --> 08:21.290
+Então, como eu disse, não é realmente tão complicado em uma inserção para empilhar o heap.
+
+08:21.300 --> 08:26.610
+OK, então agora que temos nosso heap de correção acima do método, a última coisa que precisamos fazer em nosso método
+
+08:26.610 --> 08:27.250
+insert é chamá-lo.
+
+08:27.270 --> 08:33.150
+Então, vamos dizer que corrigir o acima e vamos passar o tamanho e porque vamos fazer isso.
+
+08:33.150 --> 08:38.220
+Na verdade, não vou incrementar aqui, vamos apenas passar o tamanho e, em seguida,
+
+08:38.220 --> 08:40.880
+incrementar o tamanho depois de corrigir o.
+
+08:41.520 --> 08:44.100
+Caso contrário, teríamos que subtrair um do tamanho.
+
+08:44.110 --> 08:45.590
+E por que isso.
+
+08:45.600 --> 08:50.100
+Então, o que vamos fazer aqui é que estamos passando o índice de onde colocamos o novo valor e você pode
+
+08:50.100 --> 08:55.460
+ver que quando entramos para consertar o heap acima da primeira coisa que fazemos é obter o novo valor que nós Acabou de adicionar.
+
+08:55.560 --> 08:57.360
+E é isso para inserir.
+
+08:57.360 --> 08:58.860
+Não é muito complicado.
+
+08:58.860 --> 09:00.370
+Então, eu vou te ver no próximo vídeo.

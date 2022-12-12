@@ -1,0 +1,101 @@
+<div class="panel">
+  <div class="page-title">نمایش درخواست بازنشستگی</div>
+      <div class="panel-body">
+
+        <form [formGroup]="viewForm"  autocomplete="off" novalidate >
+          <div class="row">
+            <div class="col-3">
+              <tamin-field-label formControlName="firstName"> نام:</tamin-field-label>
+              <tamin-field-static-text formControlName="firstName"  placeholder="نام"></tamin-field-static-text>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="lastName"> نام خانوادگی:</tamin-field-label>
+              <tamin-field-static-text formControlName="lastName"  placeholder="نام خانوادگی"></tamin-field-static-text>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="fatherName"> نام پدر:</tamin-field-label>
+              <tamin-field-static-text formControlName="fatherName"  placeholder="نام پدر"></tamin-field-static-text>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="nationalCode"> کد ملی:</tamin-field-label>
+              <tamin-field-static-text formControlName="nationalCode"  placeholder="کد ملی"></tamin-field-static-text>
+            </div>
+
+            <div class="col-3">
+              <tamin-field-label formControlName="insuranceNumber">شماره بیمه:</tamin-field-label>
+              <tamin-field-static-text formControlName="insuranceNumber"  placeholder="شماره بیمه"></tamin-field-static-text>
+            </div>
+
+            <div class="col-3">
+              <tamin-field-label formControlName="idNumber">شماره شناسنامه:</tamin-field-label>
+              <tamin-field-static-text formControlName="idNumber"  placeholder="شماره شناسنامه"></tamin-field-static-text>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="gender">جنسیت</tamin-field-label>
+              <tamin-field-static-text formControlName="gender"  placeholder="جنسیت"></tamin-field-static-text>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="birthDate">تاریخ تولد</tamin-field-label>
+              <tamin-field-static-persian-date formControlName="birthDate"  placeholder="تاریخ تولد"></tamin-field-static-persian-date>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="age">سن:</tamin-field-label>
+              <tamin-field-static-text formControlName="age"  placeholder="سن"></tamin-field-static-text>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="issuePlace">محل صدور:</tamin-field-label>
+              <tamin-field-static-text formControlName="issuePlace"  placeholder="محل صدور"></tamin-field-static-text>
+            </div>
+
+
+            <div class="col-3">
+              <tamin-field-label formControlName="phoneNumber">شماره تلفن:</tamin-field-label>
+              <tamin-field-static-text formControlName="phoneNumber"  placeholder="شماره تلفن"></tamin-field-static-text>
+            </div>
+            <div class="col-3">
+              <tamin-field-label formControlName="mobileNumber">شماره موبایل:</tamin-field-label>
+              <tamin-field-static-text formControlName="mobileNumber"  placeholder="شماره موبایل"></tamin-field-static-text>
+            </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="address">نشانی:</tamin-field-label>
+          <tamin-field-static-text formControlName="address"  placeholder="نشانی"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="workshopName">نام کارگاه</tamin-field-label>
+          <tamin-field-static-text formControlName="workshopName"  placeholder="نام کارگاه"></tamin-field-static-text>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="workshopCode">شماره کارگاه</tamin-field-label>
+          <tamin-field-static-text formControlName="workshopCode"  placeholder="شماره کارگاه"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="managerName">نام کارفرما</tamin-field-label>
+          <tamin-field-static-text formControlName="managerName"  placeholder="نام کارفرما"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="activityType">فعالیت</tamin-field-label>
+          <tamin-field-static-text formControlName="activityType"  placeholder="فعالیت"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="workshopAddress">آدرس کارگاه</tamin-field-label>
+          <tamin-field-static-text formControlName="workshopAddress"  placeholder="آدرس کارگاه"></tamin-field-static-text>
+        </div>
+
+      </div>
+
+      <div class="col-12">
+        <tamin-field-label formControlName="branchComment">توضیحات تایید/رد درخواست</tamin-field-label>
+        <tamin-field-validator formControlName="branchComment"></tamin-field-validator>
+        <tamin-field-text formControlName="branchComment" placeholder="توضیحات تایید/رد درخواست" minlength="10" maxlength="150"></tamin-field-text>
+      </div>
+
+
+    </form>
+  </div>
+  <button #submitButton type="submit" class="button normal" (click)="confirm()" [disabled]="!viewForm.valid">پذیرش درخواست</button>
+  <button #submitButton type="submit" class="normal blue button" (click)="reject()" [disabled]="!viewForm.valid">رد درخواست</button>
+  <button type="button" class="button normal blue" (click)="onReportForm()"> نمایش فرم درخواست</button>
+  <button class="button normal orange" (click)="redirectTo('/sso/request')">انصراف</button>
+</div>

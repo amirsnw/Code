@@ -1,0 +1,445 @@
+WEBVTT
+
+00:05.260 --> 00:10.890
+OK, aprendemos que os arrays são muito eficientes quando se trata de recuperar elementos.
+
+00:10.990 --> 00:16.210
+Eles são tão eficientes em termos de memória, porque não precisamos armazenar nenhuma informação extra com
+
+00:16.210 --> 00:17.490
+cada elemento da matriz.
+
+00:17.500 --> 00:23.290
+Você verá mais tarde que, com muitas outras estruturas de dados, não podemos simplesmente armazenar o valor que temos
+
+00:23.290 --> 00:25.350
+para armazenar informações extras com o valor.
+
+00:25.360 --> 00:27.220
+Mas isso não é verdade para matrizes.
+
+00:27.310 --> 00:32.980
+Portanto, as matrizes são eficientes quando você conhece o índice ou o valor que deseja recuperar.
+
+00:32.970 --> 00:35.130
+E eles também são eficientes em termos de memória.
+
+00:35.290 --> 00:40.360
+Então, vamos rever rapidamente aqui para recuperar um elemento de uma matriz quando temos seu índice.
+
+00:40.360 --> 00:46.810
+Nós multiplicamos o tamanho do elemento pelo seu índice e lembramos que cada elemento no array terá
+
+00:46.810 --> 00:53.350
+o mesmo tamanho e a multiplicação do tamanho do elemento pelo seu índice nos dá o offset
+
+00:53.350 --> 00:54.790
+do início do array.
+
+00:55.090 --> 01:00.220
+E, claro, precisamos iniciar o endereço do array e adicionar o endereço inicial ao
+
+01:00.220 --> 01:04.500
+deslocamento do elemento e boom temos o endereço de memória do elemento.
+
+01:04.660 --> 01:13.150
+Então, mais uma vez para obter o Interrail 0, se estivermos começando no endereço 12, assumindo que é o nosso endereço de início,
+
+01:13.150 --> 01:21.010
+que seria 12 mais 0 vezes, para 12, que a mãe teria 12 mais 1 vez, 4 para obter 16 extras.
+
+01:21.040 --> 01:27.130
+Portanto, não importa quantos elementos tenhamos na matriz, se tivermos um elemento na matriz, nos
+
+01:27.130 --> 01:30.340
+levarão três etapas para recuperar o elemento correto.
+
+01:30.370 --> 01:36.390
+Estas três etapas aqui qualquer elemento na matriz, se temos um milhar de elementos na matriz e
+
+01:36.540 --> 01:43.480
+temos um índice de um elemento de 3 etapas, se tivermos 100000 elementos na matriz e queremos recuperar um
+
+01:43.600 --> 01:49.360
+elemento 3 etapas de um milhão de elementos três etapas um bilhão de elementos três etapas.
+
+01:49.360 --> 01:58.720
+E assim como você pode ver, diferentemente da adição de açúcar ao seu exemplo, o número de etapas não muda conforme o número
+
+01:58.720 --> 02:00.320
+de itens é alterado.
+
+02:00.340 --> 02:06.550
+Então, se o número de elementos é igual a N, as etapas para recuperar nunca mudam e,
+
+02:06.550 --> 02:14.910
+quando temos essa situação, temos o que é conhecido como complexidade de tempo constante e isso é designado por 0 de 1.
+
+02:15.280 --> 02:22.510
+E assim, o açúcar que adiciona açúcar ao algoritmo tinha uma complexidade de tempo linear, o
+
+02:22.690 --> 02:27.880
+que era tudo porque influenciou quantos passos são necessários de maneira linear.
+
+02:27.940 --> 02:35.050
+Mas aqui, quando se trata de recuperar um elemento de uma matriz quando você tem um índice de matriz, o número de
+
+02:35.050 --> 02:40.630
+itens na matriz não tem absolutamente nenhum efeito sobre o número de etapas que o número de
+
+02:40.630 --> 02:42.110
+etapas sempre será constante.
+
+02:42.340 --> 02:46.230
+E isso tem uma complexidade de tempo constante que é tudo de um.
+
+02:46.240 --> 02:52.670
+Isso significa que, à medida que o número de itens aumenta, o algoritmo não se degrada.
+
+02:52.780 --> 02:59.830
+Então, quando se trata de recuperar uma das vantagens das matrizes é que recuperar um elemento quando você tem seu
+
+02:59.830 --> 03:06.130
+índice pode ser feito em 0 de 1 vez, que é o melhor que você pode obter.
+
+03:06.250 --> 03:08.950
+E essa é uma das vantagens dos arrays.
+
+03:08.950 --> 03:14.590
+Então, vamos dar uma olhada em algumas das desvantagens das matrizes, então vamos voltar para a ID, então temos
+
+03:18.080 --> 03:24.080
+nossa matriz aqui e vamos dizer que nós lemos esses números em um arquivo ou de um banco de dados
+
+03:24.080 --> 03:25.700
+ou algo assim, não vemos isso.
+
+03:25.700 --> 03:27.410
+Quero dizer, isso pode ser qualquer coisa.
+
+03:27.590 --> 03:34.160
+E então, talvez tenhamos uma interface em que permitimos que um usuário digite valores de pesquisa e digamos que o
+
+03:34.160 --> 03:35.360
+usuário digitou alguma coisa.
+
+03:35.360 --> 03:41.390
+E por causa do que eles digitaram, queremos recuperar o número 7 da matriz.
+
+03:41.390 --> 03:43.740
+Agora lembre-se que você não tem essa informação.
+
+03:43.740 --> 03:50.840
+Estamos fingindo que lemos valores de um arquivo, não sabemos onde os inteiros foram adicionados ao array.
+
+03:50.870 --> 03:55.110
+Então alguém vem agora e diz: "Me consiga o número 7 da matriz".
+
+03:55.220 --> 03:57.320
+Mas eu não sei o que é o índice.
+
+03:57.410 --> 04:03.500
+Então, de repente, não podemos ir direto para a posição na matriz porque não sabemos o índice do
+
+04:03.500 --> 04:04.340
+número 7.
+
+04:04.340 --> 04:05.690
+Então, o que temos que fazer?
+
+04:05.690 --> 04:07.560
+Bem, vamos ter que fazer algo assim.
+
+04:07.670 --> 04:09.630
+Tudo muda o nosso código aqui.
+
+04:09.740 --> 04:19.510
+E, em vez de imprimir, vamos dizer se int array II é igual a 7, então terminamos.
+
+04:19.640 --> 04:27.630
+Então eu vou dizer break, mas o que eu vou fazer aqui é apenas dizer e índice é igual a menos um.
+
+04:28.040 --> 04:34.990
+E então, se nós encontrarmos os sete que mais dizem, o Índice é igual a II porque é onde o índice é 7.
+
+04:36.230 --> 04:38.790
+E depois do loop vamos imprimir o índice.
+
+04:39.050 --> 04:40.750
+Faça algum espaço aqui.
+
+04:49.120 --> 04:52.240
+Então, esperamos que o 3 seja devolvido.
+
+04:52.240 --> 04:53.070
+Então, vamos executar
+
+04:56.150 --> 05:03.470
+e, de fato, o índice que retornou é três, mas não poderíamos simplesmente pular para sete porque não tínhamos ideia de onde
+
+05:03.470 --> 05:04.820
+7 estava na matriz.
+
+05:04.820 --> 05:09.740
+Então, quando estamos falando sobre recuperações, estamos falando sobre recuperações quando sabemos o
+
+05:09.740 --> 05:11.810
+que o índice é nesse caso.
+
+05:11.810 --> 05:17.830
+Nós não sabíamos o que o índice diz que alguém veio, eles não disseram, me deram o elementis index
+
+05:17.840 --> 05:22.020
+3, em vez disso, eles me deram 7 e foi só o que disseram.
+
+05:22.040 --> 05:24.110
+Me dê o valor 7.
+
+05:24.110 --> 05:27.530
+Tire isso do array e ficamos bem, não sabemos onde está.
+
+05:27.530 --> 05:29.250
+Então tivemos que procurá-lo.
+
+05:29.330 --> 05:36.530
+E então lembre-se de uma grande notação que sempre consideramos o pior caso, então qual seria o pior caso para
+
+05:36.530 --> 05:36.890
+isso?
+
+05:36.890 --> 05:41.510
+Bem, o pior caso seria que 7 estava na última posição na matriz.
+
+05:41.660 --> 05:47.360
+E assim, o pior caso é que tivemos que pesquisar o array inteiro antes de encontrarmos sete.
+
+05:47.360 --> 05:53.460
+Agora, há sete itens na matriz, então end equivale a sete para este exemplo.
+
+05:53.480 --> 05:56.840
+E isso significa que teríamos que ter os tempos finais do Loopt.
+
+05:56.960 --> 06:03.500
+E assim, nesta situação, o número de elementos influencia quantas etapas teremos que realizar porque, se tivermos
+
+06:03.500 --> 06:09.290
+100 itens na matriz, no pior dos casos teremos que fazer um loop cem vezes
+
+06:09.340 --> 06:15.200
+se tivermos 1000 itens na matriz no pior dos casos, teremos que fazer um loop
+
+06:15.200 --> 06:18.590
+mil vezes se tivermos um milhão de itens na matriz.
+
+06:18.590 --> 06:24.330
+No pior dos casos, um milhão de vezes, isso parece uma complexidade linear de tempo.
+
+06:24.380 --> 06:31.750
+Porque quando n é um nós temos que dar um loop uma vez quando é 10 nós temos que dar um loop 10 10 vezes um e
+
+06:31.760 --> 06:36.350
+é mil nós temos que dar um loop 1000 vezes então está progredindo de uma maneira linear.
+
+06:36.410 --> 06:44.450
+E assim recuperação quando nós sabemos o índice nós podemos fazer isso em 0 de 1 vez mas recuperando quando nós não sabemos
+
+06:44.450 --> 06:50.650
+o índice o valor para aquele está acabado então porque nós temos que achar o artigo primeiro.
+
+06:50.660 --> 06:54.380
+E no pior dos casos, teríamos que percorrer todo o array.
+
+06:54.380 --> 07:01.490
+Então, vamos voltar agora para os slides, para que possamos falar sobre a complexidade de tempo para algumas das
+
+07:01.490 --> 07:02.870
+outras operações de matriz.
+
+07:06.670 --> 07:07.450
+ESTÁ BEM.
+
+07:07.610 --> 07:11.940
+Sabemos que recuperar com um índice que passamos é tempo constante.
+
+07:11.960 --> 07:16.760
+Agora nós apenas conversamos sobre como recuperar um elemento quando não sabemos o que é o Sendak que significa que
+
+07:16.760 --> 07:17.990
+temos que procurar o array.
+
+07:17.990 --> 07:22.140
+E, no pior dos casos, temos que pesquisar toda a matriz.
+
+07:22.340 --> 07:28.070
+Assim, a complexidade do tempo é o tempo linear que é semelhante à situação que tínhamos com a
+
+07:28.070 --> 07:34.470
+colocação de açúcares no ponto em que o número de etapas aumenta de maneira linear à medida que n aumenta.
+
+07:34.550 --> 07:38.110
+Então, vamos pensar em adicionar um elemento a um array completo.
+
+07:38.120 --> 07:45.200
+Então, com o nosso estagiário já estava cheio, então se nós aparecemos e por alguma razão nós quisemos adicionar
+
+07:45.260 --> 07:50.040
+um oitavo inteiro não podemos adicioná-lo ao array porque o array está cheio.
+
+07:50.150 --> 07:53.450
+Nós aprendemos matrizes não são estrutura de dados dinâmica.
+
+07:53.480 --> 07:54.950
+Seu comprimento é fixo.
+
+07:55.010 --> 08:02.720
+Então, a única maneira que poderíamos adicionar um inteiro e outro inteiro em uma matriz é se nós criamos uma
+
+08:02.720 --> 08:09.630
+nova matriz que tinha um tamanho grande o suficiente para receber os inteiros existentes e o novo inteiro.
+
+08:09.650 --> 08:14.900
+Então, o que temos que fazer é criar um novo array e depois copiar os números inteiros.
+
+08:14.900 --> 08:23.240
+E isso também levaria tempo linear porque criar o array não depende do número de elementos e
+
+08:23.600 --> 08:28.300
+adicionar o novo inteiro não depende do número de elementos.
+
+08:28.310 --> 08:33.260
+Nós apenas temos que saber onde na matriz para adicioná-lo assim nós teríamos o índice para isso.
+
+08:33.530 --> 08:38.210
+Mas temos que copiar todos os elementos existentes para o novo array, o que
+
+08:38.210 --> 08:44.300
+significa que teremos que percorrer todo o array, então, mais uma vez, tudo isso é novamente tempo linear.
+
+08:44.300 --> 08:50.780
+Agora, se quisermos adicionar um elemento ao final de um array que tenha espaço nele e supondo que sabemos o
+
+08:50.780 --> 08:56.810
+índice de palavra para adicionar o elemento Bem, isso vai ser 0 para o 1 porque é semelhante a
+
+08:57.020 --> 09:02.840
+recuperar um elemento quando temos o índice nós podemos descobrir o endereço de memória de onde o novo
+
+09:02.840 --> 09:05.540
+elemento está indo apenas usando nosso cálculo simples.
+
+09:05.540 --> 09:11.810
+E também é hora constante e a mesma coisa se quisermos inserir ou atualizar um
+
+09:11.810 --> 09:13.700
+elemento para esse índice específico.
+
+09:13.700 --> 09:20.120
+Podemos fazer isso em tempo constante, porque se tivermos o índice, podemos ir direto para a localização da memória.
+
+09:20.120 --> 09:24.740
+Agora, se quisermos excluir um elemento, vamos excluí-lo apenas definindo-o para normal ou no
+
+09:24.740 --> 09:28.260
+caso de inteiros 0 ou menos 1 ou algo assim.
+
+09:28.280 --> 09:35.030
+Também podemos fazer isso em tempo constante, porque tudo o que temos a fazer, se tivermos o índice, é pular direto para
+
+09:35.420 --> 09:36.680
+a localização da memória.
+
+09:36.680 --> 09:41.900
+Agora, se não tivéssemos o índice, eu não tenho isso no gráfico, então levaria tempo
+
+09:41.900 --> 09:44.870
+linear, porque teríamos que procurar o elemento primeiro.
+
+09:44.870 --> 09:50.990
+Então, se alguém aparecesse e excluísse o número 7 definindo-o para menos um, teríamos que procurar primeiro
+
+09:51.380 --> 09:54.110
+pelo array para encontrar o número 7.
+
+09:54.110 --> 10:01.130
+Agora, se quisermos excluir um elemento e não queremos ter nulos em nossa matriz ou espaços reservados como menos
+
+10:01.130 --> 10:03.700
+uma causa que é basicamente espaço morto.
+
+10:03.710 --> 10:08.780
+Então, o que queremos fazer é quando nós deletamos um item no meio de um array, nós queremos mudar todos
+
+10:08.780 --> 10:09.920
+os outros elementos para baixo.
+
+10:09.920 --> 10:14.900
+Isso é no pior caso que será todo o evento, porque no pior dos casos, vamos querer
+
+10:14.960 --> 10:17.380
+apagar o elemento logo na frente da matriz.
+
+10:17.450 --> 10:21.590
+E se quisermos mudar todos os outros elementos para baixo, vamos ter que percorrer
+
+10:21.590 --> 10:23.860
+todos os elementos restantes e empurrá-los para baixo.
+
+10:23.870 --> 10:27.190
+Então, isso seria uma complexidade de tempo linear.
+
+10:27.230 --> 10:34.340
+Então, essencialmente, se nós tivermos que fazer um loop sobre o array de alguma forma para executar uma operação que
+
+10:34.340 --> 10:40.670
+terá uma complexidade de tempo linear se não tivermos que percorrer o array porque temos um índice e
+
+10:40.880 --> 10:46.100
+então podemos simplesmente calcular o endereço de memória do elemento em que queremos trabalhar, que
+
+10:46.100 --> 10:48.020
+terá uma complexidade de tempo constante.
+
+10:48.020 --> 10:54.680
+Portanto, uma maneira fácil de os arrays lembrarem-se da complexidade do tempo é se, se o código exigir um loop,
+
+10:54.680 --> 10:55.940
+será um tempo linear.
+
+10:55.940 --> 10:59.450
+Se o código não requer um loop, então é hora constante.
+
+10:59.450 --> 11:05.030
+Agora eu passei por isso rapidamente porque estamos falando de matrizes e este não é um curso iniciante, então
+
+11:05.030 --> 11:10.910
+eu suponho que você saiba o que é uma matriz e você teria alguma idéia de como codificar, por exemplo,
+
+11:11.030 --> 11:16.610
+recuperar um elemento de matriz. quando você não tem o índice ou exclui um elemento quando não tem o
+
+11:16.610 --> 11:22.730
+índice, você sabe configurá-lo para o Knol ou adicionar um elemento ao final de uma matriz que tenha espaço que
+
+11:22.730 --> 11:23.620
+você saiba.
+
+11:23.690 --> 11:28.440
+Você sabe que para escrever o código que acompanha a última posição vazia etc. Então eu não vou codificar esses.
+
+11:28.460 --> 11:30.170
+E isso é tudo o que
+
+11:30.230 --> 11:35.030
+vou abordar para matrizes, porque isso realmente foi feito para ser uma revisão e eu quero entrar
+
+11:35.030 --> 11:41.570
+nos algoritmos de classificação agora que nós olhamos para matrizes e temos uma idéia da complexidade de tempo para esses diferentes operações de
+
+11:41.570 --> 11:48.560
+array agora podemos entrar em algoritmos de ordenação e temos uma maneira de comparar o desempenho de um algoritmo de ordenação comparado a outro.
+
+11:48.560 --> 11:52.940
+Então, eu vou te ver no próximo vídeo.
+
+11:52.940 --> 11:54.510
+&nbsp;

@@ -1,0 +1,28 @@
+
+
+  <div class="panel">
+    <div class="page-title">
+      نتیجه استعلام استحقاق درمان
+    </div>
+    <div class="row">
+      <div class="col-2 col-s-2">
+        &nbsp;
+      </div>
+      <div class="col-8 col-s-8">
+        <div class="deserved-display">
+          <h3 style="margin-top: 10px;">نام : {{ deservedModel.firstName }}</h3>
+          <h3 style="margin-top: 10px;">نام خانوادگی : {{ deservedModel.lastName }}</h3>
+          <h3 style="margin-top: 10px;">کد ملی : {{ deservedModel.natCode | persianNumber }}</h3>
+          <h3 style="margin-top: 10px;">شماره بیمه : {{ deservedModel.risuid | persianNumber}}</h3>
+          <h3 style="margin-top: 10px;">شعبه بیمه پردازی : {{ deservedModel.brhName }}</h3>
+          <h3 style="margin-top: 10px;background-color:khaki">وضعیت اعتبار
+            <!-- : {{ deservedModel.healthBookletDate !== undefined &&  !deservedModel.healthBookletDate.startsWith("00") &&  !deservedModel.healthBookletDate.startsWith("11") ? "بیمه شده محترم شما در حال حاضر مجوز برخورداری از حمایت های درمانی سازمان تامین اجتماعی را دارا می باشید." : "عدم برخورداری از مجوز استفاده از حمایت های درمانی"}}</h3> -->
+            : {{ getPersianNumber( deservedModel.message) }}</h3>
+        </div>
+      </div>
+      <div class="col-2 col-s-2">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+

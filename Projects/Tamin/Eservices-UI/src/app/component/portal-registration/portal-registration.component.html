@@ -1,0 +1,422 @@
+<!--<div [hidden]="currentState !== 'step1'">-->
+<div [hidden]="currentState !== 'step1'">
+  <div class="alert alert-info">
+    <p>بیمه شده گرامی توجه داشته باشید</p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>اطلاعات وارد شده در این فرم از این پس جهت شناسایی شما در سامانه یکپارچه سازمان تامین اجتماعی مورد استفاده قرار خواهد
+        گرفت.</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>مالکیت شماره تلفن همراه وارد شده صرفاً می بایست متعلق به شخص شما باشد.</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>در صورتیکه شماره تلفن همراه وارد شده متعلق به شما نباشد نیاز است پس از طی کلیه مراحل ثبت نام شخصاً با در دست داشتن
+        اصل کارت ملی و شناسنامه به یکی از شعب سازمان تامین اجتماعی جهت فعال سازی حساب کاربری خود مراجعه نمائید.</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>بدلیل اینکه اطلاعات وارد شده در زمان ثبت نام از این پس بصورت رسمی جهت ارائه خدمات الکترونیک سازمان تامین اجتماعی به
+        شما مورد استفاده قرار خواهد گرفت، مسئولیت وارد نمودن هرگونه اطلاعات خلاف واقعیت بعهده شخص شما خواهد بود.</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>پس از تکمیل مراحل ثبت نام شما مجاز به استفاده از خدمات غیر حضوری پایه ای سازمان تامین اجتماعی مانند درخواست دفترچه
+        بیمه، بازرسی، مشاهده سوابق، فیش حقوقی، انواع استعلامات و ...، خواهید بود. جهت استفاده از خدمات حقوقی این سامانه مانند
+        ارسال لیست بیمه نیاز به مراجعه به شعبه و تکمیل فرم های تعهد نامه است.</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>در حفظ و نگهداری رمز (گذر واژه) خود دقت نمایید، مسئولیت تبعات ناشی از افشای رمز و هرگونه سوء استفاده از آن بعهده شما
+        خواهد بود.</span>
+    </p>
+  </div>
+  <div class="panel">
+    <div class="panel-body">
+      <div class="alert alert-danger" *ngIf="stepOneHasError">
+        <ng-template *ngFor="let message of stepOneErrorMessages">
+          <p>{{message}}</p>
+        </ng-template>
+      </div>
+      <form [formGroup]="formStepOne" autocomplete="off" novalidate>
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <tamin-field-label formControlName="NationalCode">کد ملی</tamin-field-label>
+            <tamin-field-validator formControlName="NationalCode"></tamin-field-validator>
+            <tamin-field-natioanl-id formControlName="NationalCode" [maxlength]="10"></tamin-field-natioanl-id>
+            <div class="hint">
+              <i class="icon-lightbulb"></i>
+              <span>10 حرف</span>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <tamin-field-label formControlName="mobile">شماره تلفن همراه</tamin-field-label>
+            <tamin-field-validator formControlName="mobile"></tamin-field-validator>
+            <tamin-field-mask formControlName="mobile" mask="0000 000 0000"></tamin-field-mask>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </form>
+      <p style="text-align: center; margin-top: 5px">
+        <button type="button" class="button normal blue" (click)="onSumitStepOne()">
+          <i class="icon-ok"></i>
+          <span>بررسی اطلاعات وارد شده و ادامه ثبت نام</span>
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+<div [hidden]="currentState !== 'step2'">
+  <div class="alert alert-info">
+    <p>
+      <span>بیمه شده گرامی توجه داشته باشید</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>اطلاعات وارد شده در این فرم از این پس جهت شناسایی شما در سامانه متمرکز بیمه ای مورد استفاده قرار خواهد گرفت.
+      </span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>شماره تلفن همراه وارد شده صرفاً می بایست متعلق به شخص شما باشد.</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>در صورتیکه شماره تلفن همراه وارد شده متعلق به شخص شما نباشد نیاز است پس از طی کلیه مراحل ثبت نام شخصاً با در دست داشتن
+        اصل کارت ملی و شناسنامه به یکی از شعب سازمان تامین اجتماعی مراجعه نمائید.</span>
+    </p>
+    <p style="margin-right: 15px">
+      <i class="icon-ok"></i>
+      <span>دلیل اینکه اطلاعات وارد شده توسط شما در زمان ثبت نام از این پس جهت ارائه خدمات الکترونیک سازمان تامین اجتماعی به شما
+        مورد استفاده قرار خواهد گرفت، مسئولیت وارد نمودن هرگونه اطلاعات خلاف واقعیت بعهده شخص شما خواهد بود.</span>
+    </p>
+  </div>
+  <form [formGroup]="formStepTwo" autocomplete="off" novalidate>
+    <div class="panel">
+      <div class="panel-title">کد ملی و موبایل</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="nationalCode">کد ملی</tamin-field-label>
+            <tamin-field-static-text formControlName="nationalCode" maxlength="13" #organizationDataGrid></tamin-field-static-text>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="mobile">موبایل</tamin-field-label>
+            <tamin-field-static-text formControlName="mobile"></tamin-field-static-text>
+          </div>
+        </div>
+        <div class="info">کد ملی و موبایل در مرحله قبل تعیین شده و در این مرحله قابل تغییر نمی باشند
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">اطلاعات سجلی</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="firstName">نام</tamin-field-label>
+            <tamin-field-validator formControlName="firstName"></tamin-field-validator>
+            <tamin-field-persian-text formControlName="firstName" maxlength="30"></tamin-field-persian-text>
+            <div class="hint">
+              <i class="icon-lightbulb"></i>
+              <span>حداکثر 30 حرف</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="lastName">نام خانوادگی</tamin-field-label>
+            <tamin-field-validator formControlName="lastName"></tamin-field-validator>
+            <tamin-field-persian-text formControlName="lastName" [maxlength]="30"></tamin-field-persian-text>
+            <div class="hint">
+              <i class="icon-lightbulb"></i>
+              <span>حداکثر 30 حرف</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="gender">جنسیت</tamin-field-label>
+            <tamin-field-validator formControlName="gender"></tamin-field-validator>
+            <tamin-field-combo-box-static formControlName="gender" [dataItems]="genders" valueField="value" displayField="name" placeHolder="انتخاب کنید ..."
+              #organizationDataGrid></tamin-field-combo-box-static>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="birthCertificateNumber">شماره شناسنامه</tamin-field-label>
+            <tamin-field-validator formControlName="birthCertificateNumber"></tamin-field-validator>
+            <tamin-field-text formControlName="birthCertificateNumber" maxlength="15"></tamin-field-text>
+            <div class="hint">
+              <i class="icon-lightbulb"></i>
+              <span>حداکثر 15 حرف</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="birthDate">تاریخ تولد</tamin-field-label>
+            <tamin-field-validator formControlName="birthDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="birthDate"></tamin-field-persian-date>
+          </div>
+        </div>
+        <div class="info">اطلاعات سجلی می بایست منطبق با شناسنامه متقاضی باشد. این اطلاعات با اداره ثبت احوال کنترل خواهد شد
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">ایمیل</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="email">ایمیل</tamin-field-label>
+            <tamin-field-validator formControlName="email"></tamin-field-validator>
+            <tamin-field-text formControlName="email" #organizationDataGrid></tamin-field-text>
+          </div>
+        </div>
+        <div class="info">توجه : ایمیل انتخابی از این پس به منظور مکاتبات رسمی سازمان تامین اجتماعی با شما استفاده خواهد شد.
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">اطلاعات محل سکونت</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="nationality">ملیت</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="nationality" [dataItems]="nationalities" valueField="value" displayField="name"
+              placeHolder="انتخاب کنید ..."></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4" [hidden]="formStepTwo.get('nationality').value !== '1'">
+            <tamin-field-label formControlName="country">کشور</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="country" [dataItems]="countries" displayField="name" valueField="value"></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4" [hidden]="provinces.length === 0">
+            <tamin-field-label formControlName="provinceCity">استان/شهر</tamin-field-label>
+            <tamin-field-validator formControlName="provinceCity"></tamin-field-validator>
+            <tamin-field-combo-box-static formControlName="provinceCity" [dataItems]="provinces" displayField="name" valueField="value"></tamin-field-combo-box-static>
+
+            <!--<tamin-field-auto-complete-data-grid formControlName="provinceCity"-->
+            <!--#provincesDataGrid></tamin-field-auto-complete-data-grid>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">گذرواژه</div>
+      <div class="panel-body">
+        <div class="alert alert-info">
+          <p style="border-bottom: dotted 1px white; margin-bottom: 5px">شرایط گذرواژه</p>
+          <p>فقط شامل حروف بزرگ و کوچک لاتین باشد</p>
+          <p>حداقل شامل یک حرف بزرگ باشد</p>
+          <p>حداقل شامل یک حرف کوچک باشد</p>
+          <p>شامل عدد باشد</p>
+          <p>با یک حرف آغاز شود</p>
+          <p>حداقل هشت حرف باشد</p>
+          <p>شامل نام، نام خانوادگی و شماره ملی نباشد</p>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="password">گذرواژه</tamin-field-label>
+            <tamin-field-password formControlName="password"></tamin-field-password>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="passwordRepeated">تکرار گذرواژه</tamin-field-label>
+            <tamin-field-password formControlName="passwordRepeated" #organizationDataGrid></tamin-field-password>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="passwordComplexity">وضعیت شرایط گذرواژه</tamin-field-label>
+            <app-password-meter #passwordMeter></app-password-meter>
+          </div>
+        </div>
+        <div class="info">گذرواژه و تکرار آن می بایست کاملا منطبق باشند</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">پرسش های امنیتی</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-6">
+            <tamin-field-label formControlName="questionOne">پرسش اول</tamin-field-label>
+            <tamin-field-validator formControlName="questionOne"></tamin-field-validator>
+            <tamin-field-combo-box-static formControlName="questionOne" [dataItems]="questionsData" valueField="questionId" displayField="questionDesc"></tamin-field-combo-box-static>
+          </div>
+          <div class="col-6">
+            <tamin-field-label formControlName="answerOne">پاسخ اول</tamin-field-label>
+            <tamin-field-validator formControlName="answerOne"></tamin-field-validator>
+            <tamin-field-text formControlName="answerOne"></tamin-field-text>
+            <div class="hint">
+              <i class="icon-lightbulb"></i>
+              <span>حداقل 3 حرف</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <tamin-field-label formControlName="questionTwo">پرسش دوم</tamin-field-label>
+            <tamin-field-validator formControlName="questionTwo"></tamin-field-validator>
+            <tamin-field-combo-box-static formControlName="questionTwo" [dataItems]="questionsData" valueField="questionId" displayField="questionDesc"></tamin-field-combo-box-static>
+          </div>
+          <div class="col-6">
+            <tamin-field-label formControlName="answerTwo">پاسخ دوم</tamin-field-label>
+            <tamin-field-validator formControlName="answerTwo"></tamin-field-validator>
+            <tamin-field-text formControlName="answerTwo"></tamin-field-text>
+            <div class="hint">
+              <i class="icon-lightbulb"></i>
+              <span>حداقل 3 حرف</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <tamin-field-label formControlName="questionThree">پرسش سوم</tamin-field-label>
+            <tamin-field-validator formControlName="questionThree"></tamin-field-validator>
+            <tamin-field-combo-box-static formControlName="questionThree" [dataItems]="questionsData" valueField="questionId" displayField="questionDesc"></tamin-field-combo-box-static>
+          </div>
+          <div class="col-6">
+            <tamin-field-label formControlName="answerThree">پاسخ سوم</tamin-field-label>
+            <tamin-field-validator formControlName="answerThree"></tamin-field-validator>
+            <tamin-field-text formControlName="answerThree"></tamin-field-text>
+            <div class="hint">
+              <i class="icon-lightbulb"></i>
+              <span>حداقل 3 حرف</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info">در صورت فراموشی گذرواژه، جهت ابجاد گذرواژه جدید، سوالات امنیتی مورد استفاده قرار خواهند گرفت
+        </div>
+        <div class="info">نیازی نیست که پاسخ به پرسش های امنیتی حتما مطابق واقعیت باشد، فقط کافیست پاسخی را که داده اید بعدا به یاد بیاورید.
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="panel">
+    <div class="panel-body">
+      <div class="alert alert-danger" *ngIf="stepTwoHasError" id="stepTwoError">
+        <ng-container *ngFor="let message of stepTwoErrorMessages">
+          <p>{{message}}</p>
+        </ng-container>
+      </div>
+      <p style="margin-top: 5px">
+        <button type="button" class="button normal blue" (click)="onShowPreview()">
+          <i class="icon-ok"></i>
+          <span>بازبینی و ذخیره اطلاعات</span>
+        </button>
+        <button type="button" class="button normal red" (click)="onCancelStepTwo()">
+          <i class=" icon-left-big"></i>
+          <span>بازگشت به مرحله قبل</span>
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+<div [hidden]="currentState !== 'step3'">
+  <div class="panel">
+    <div class="panel-title">بازبینی و تایید نهایی</div>
+    <div class="panel-body">
+      <div class="alert alert-danger" *ngIf="stepThreeHasError">
+        <ng-container *ngFor="let message of stepThreeErrorMessages">
+          <p>{{message}}</p>
+        </ng-container>
+      </div>
+
+      <table class="summary">
+        <tr>
+          <td>کد ملی</td>
+          <td>{{preview.nationalCode | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>موبایل</td>
+          <td>{{preview.mobile | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>نام خانوادگی</td>
+          <td>{{preview.lastName}}</td>
+        </tr>
+        <tr>
+          <td>نام</td>
+          <td>{{preview.firstName}}</td>
+        </tr>
+        <tr>
+          <td>شماره شناسنامه</td>
+          <td>{{preview.birthCertificateNumber | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ تولد</td>
+          <td>{{preview.birthDate | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>جنسیت</td>
+          <td>{{preview.gender}}</td>
+        </tr>
+        <tr>
+          <td>کشور محل تولد</td>
+          <td>{{preview.country}}</td>
+        </tr>
+        <!--<tr>-->
+        <!--<td>شهر/استان محل تولد</td>-->
+        <!--<td>{{preview.provinceCity}}</td>-->
+        <!--</tr>-->
+        <tr>
+          <td>ایمیل</td>
+          <td>{{preview.email}}</td>
+        </tr>
+        <tr>
+          <td>
+            <span>سوال امنیتی اول</span>
+            <span>(</span>
+            <strong>{{getQuestionText(formStepTwo.get('questionOne').value)}}</strong>
+            <span>)</span>
+          </td>
+          <td>{{preview.answerOne}}</td>
+        </tr>
+        <tr>
+          <td>
+            <span>سوال امنیتی دوم</span>
+            <span>(</span>
+            <strong>{{getQuestionText(formStepTwo.get('questionTwo').value)}}</strong>
+            <span>)</span>
+          </td>
+          <td>{{preview.answerTwo}}</td>
+        </tr>
+        <tr>
+          <td>
+            <span>سوال امنیتی سوم</span>
+            <span>(</span>
+            <strong>{{getQuestionText(formStepTwo.get('questionThree').value)}}</strong>
+            <span>)</span>
+            <td>{{preview.answerThree}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-body">
+      <p style="margin-top: 5px">
+        <button type="button" class="button normal blue" (click)="onSubmit()">
+          <i class="icon-ok"></i>
+          <span>تایید نهایی و ارسال درخواست</span>
+        </button>
+        <button type="button" class="button normal red" (click)="onCancelStepThree()">
+          <i class=" icon-left-big"></i>
+          <span>بازگشت به مرحله قبل</span>
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="alert alert-success" style="margin: 10px" [hidden]="currentState !== 'step4'">
+  <h3 style="color: white;margin-bottom: 5px">کاربر گرامی</h3>
+  <p>درخواست شما با موفقیت ثبت گردید. اطلاعات ثبت شده توسط شما، با پایگاه های مرجع سازمان تامین اجتماعی صحت سنجی شده و نتیجه
+    حداکثر تا 48 ساعت آینده از طریق پیامک به اطلاع شما خواهد رسید.</p>
+  <p>بدیهی است ظرف مدت مذکور کاربر شما جهت استفاده از خدمات الکترونیک سازمان تامین اجتماعی فعال نخواهد بود.</p>
+  <p>در صورت دریافت پیامک مبتنی بر عدم تطابق اطلاعات با پایگاه مرجع، درخواست شما حذف شده و امکان ثبت مجدد درخواست فراهم خواهد
+    بود.</p>
+  <p>ممکن است مراحل ثبت نام شما با موفقیت طی شود لکن به دلیل اشکالات مخابراتی پیامک ارسالی به دست شما نرسد. لذا پس از مدت مذکور،
+    در صورت عدم دریافت پیامک، یکبار با کد ملی و زمر انتخابی خود ورود به سامانه را امتحان نمایید.</p>
+  <p style="margin-top: 15px">با تشکر</p>
+  <p>سازمان تامین اجتماعی</p>
+</div>

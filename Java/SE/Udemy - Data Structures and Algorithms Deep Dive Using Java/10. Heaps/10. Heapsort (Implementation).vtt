@@ -1,0 +1,286 @@
+WEBVTT
+
+00:05.610 --> 00:05.990
+Tudo bem.
+
+00:06.000 --> 00:07.440
+Então vamos implementar o heapsort.
+
+00:07.440 --> 00:14.640
+O que eu vou fazer é adicionar um método de classificação para a classe, então eu vou fazer isso depois que eu fizer isso depois
+
+00:15.300 --> 00:18.650
+da exclusão do Massad e alguns dirão o tipo voyde pública.
+
+00:19.350 --> 00:27.700
+E o último índice o último índice de calor no último índice de calor será igual ao tamanho menos 1.
+
+00:27.750 --> 00:36.130
+Quando começamos toda vez que trocamos a rota com o último item no heap, seremos reduzidos em 1.
+
+00:36.240 --> 00:44.450
+Então, vamos dizer que quatro polegadas é igual a zero i. e. menor que o último índice de calor por mais.
+
+00:44.700 --> 00:49.880
+E a primeira coisa que vamos fazer é trocar a rota com o último item.
+
+00:49.960 --> 00:54.870
+Você pode ver que há um erro de digitação aqui, então deixe-me mudar não para indexar e mudar para não indexar aqui.
+
+00:54.870 --> 01:03.560
+Tudo bem, se vamos dizer que 10 é igual a zero, porque esse é o maior
+
+01:03.570 --> 01:12.140
+valor na pilha e então diremos que zero é igual ao último índice de calor menos.
+
+01:12.190 --> 01:13.840
+Por quê.
+
+01:13.890 --> 01:18.870
+Porque essa é a localização do último item no calor.
+
+01:18.870 --> 01:25.010
+Lembre-se de que vamos reduzir o calor uma vez a cada vez que trocamos a rota.
+
+01:25.020 --> 01:32.960
+E assim, quando começamos por 0, então estaremos trocando com o último índice de calor da posição do item
+
+01:32.980 --> 01:35.150
+quando eu me tornar um.
+
+01:35.190 --> 01:41.970
+Bem, então, estar trocando-o com o último índice de calor menos um, porque a rota original estará agora no último índice
+
+01:41.970 --> 01:45.090
+de calor, então não faz mais parte do heap.
+
+01:45.120 --> 01:52.670
+E então, é claro, temos que atribuir o índice de calor de explosão de calor menos 10.
+
+01:52.980 --> 01:58.560
+E então aqui estamos trocando a raiz que é o último item no heap.
+
+01:58.560 --> 02:02.220
+E lembre-se de que o heap está sendo reduzido em um em cada iteração.
+
+02:02.280 --> 02:05.690
+Agora, uma vez que fizemos a troca, temos que consertar o calor.
+
+02:05.700 --> 02:09.080
+E então a última coisa que vamos fazer é chamada de Fixar calor abaixo.
+
+02:09.240 --> 02:15.660
+E porque nós trocamos a rota nós sempre queremos começar na raiz e nosso calor consiste nos
+
+02:15.660 --> 02:17.790
+índices do zero ao último.
+
+02:17.790 --> 02:23.050
+Índice de calor menos cinco menos um.
+
+02:23.250 --> 02:29.520
+E assim, a primeira vez que chamamos este último índice de calor será o tamanho menos vinho e,
+
+02:29.520 --> 02:31.030
+em seguida, queremos subtrair.
+
+02:31.200 --> 02:36.560
+E então precisamos subtrair o um porque queremos excluir onde colocamos a raiz.
+
+02:36.720 --> 02:40.900
+E assim, na primeira iteração, se olharmos para o método principal.
+
+02:40.920 --> 02:44.910
+Então nós temos 1 0 1 2 3 4 5 6 7.
+
+02:44.910 --> 02:52.590
+Portanto, o último índice do nosso heat quando começamos é 7 e então o último índice será definido para 2 7
+
+02:52.590 --> 02:54.380
+porque o tamanho seria 8.
+
+02:54.390 --> 02:57.240
+Você sabe que está sempre apontando para o próximo índice disponível.
+
+02:57.240 --> 03:04.170
+E então vamos trocar a raiz que é 7 menos 0 na primeira iteração que é 7.
+
+03:04.170 --> 03:07.190
+Então, vamos trocar a rota com o que estiver em 7.
+
+03:07.200 --> 03:13.020
+E então, nesse ponto, nosso calor só vai para a posição 6, porque uma vez que trocamos a rota,
+
+03:13.020 --> 03:14.980
+queremos excluir a rota da pilha agora.
+
+03:15.120 --> 03:21.120
+E assim, quando estamos consertando o calor, queremos passar do zero para o último índice de calor menos II,
+
+03:21.120 --> 03:22.980
+o que seria 7 menos 1.
+
+03:22.980 --> 03:28.890
+Então, sempre queremos subtrair um porque, quando chegamos a esse ponto, queremos excluir o valor
+
+03:28.890 --> 03:31.920
+que acabamos de trocar e é isso.
+
+03:31.980 --> 03:33.460
+Isso é heapsort.
+
+03:33.540 --> 03:35.970
+Quero dizer, o loop for é apenas a parte de enxágue e repetição.
+
+03:35.970 --> 03:38.100
+Então, uma vez feito isso, vamos voltar.
+
+03:38.100 --> 03:39.110
+Eu serei um.
+
+03:39.120 --> 03:41.020
+Nós ainda vamos estar trocando a rota.
+
+03:41.070 --> 03:46.380
+E neste ponto, como vimos nos slides, a nova rota seria 75 e, desta vez,
+
+03:46.380 --> 03:53.700
+em vez de trocá-la pela posição 7, porque ela foi incremental para uma, subtrairemos 7 menos 1, que é 6, então
+
+03:53.700 --> 03:57.330
+estaremos trocando-a com o que quer que seja essa posição 6.
+
+03:57.330 --> 04:03.900
+E quando chegarmos aqui teremos menos 7 iOS 7 menos 1 será 6 menos 1 será 5.
+
+04:03.900 --> 04:08.680
+Então agora vamos reduzir na segunda iteração o tamanho do nosso calor em 2.
+
+04:08.790 --> 04:14.910
+E assim continuamos fazendo isso até que analisamos todos os itens da pilha e, quando terminamos,
+
+04:14.910 --> 04:16.560
+o calor será classificado.
+
+04:16.560 --> 04:23.640
+Então, eu vou comentar o P e as coisas deletadas e nós vamos imprimir o calor antes de classificá-lo
+
+04:23.640 --> 04:29.660
+e então vamos ordenar que todos dizem que ele ordenou e então imprimiu ele depois do tipo.
+
+04:29.770 --> 04:32.140
+Vamos em frente e corra.
+
+04:33.870 --> 04:37.430
+E aqui está nosso calor antes do tipo e depois do tipo.
+
+04:37.430 --> 04:43.670
+Nós temos 40 50 a 55 60 67 68 75 e 80.
+
+04:43.670 --> 04:50.550
+Agora eu não imprimi os zeros porque na nossa impressão estávamos apenas imprimindo, eles estavam apenas aumentando
+
+04:50.550 --> 04:51.400
+de tamanho.
+
+04:51.450 --> 04:56.580
+Mas é claro, porque há apenas oito elementos na matriz, haveria dois zeros seguindo isso.
+
+04:56.580 --> 05:01.740
+Mas você saberia que quando você do hape você sabe que seu calor só vai para um certo ponto
+
+05:01.740 --> 05:02.310
+na matriz.
+
+05:02.460 --> 05:05.930
+Assim, a complexidade do tempo, o pior caso para isso.
+
+05:05.980 --> 05:14.830
+Voltamos ao código para este tipo, o pior caso para isso é todo um log n. E a razão para isso é que trocamos os elementos corretamente porque passamos
+
+05:14.930 --> 05:23.330
+pelos tempos finais do loop e depois em cada iteração do loop.
+
+05:23.390 --> 05:25.180
+Nós também temos que consertar o calor.
+
+05:25.190 --> 05:26.980
+E como vimos antes,
+
+05:27.050 --> 05:34.370
+isso pode levar log e tempo, e assim, o pior caso será todo o log do Times n.
+
+05:34.370 --> 05:35.290
+E se você tiver um heap e quiser classificá-lo, o heapsort pode ser um algoritmo decente.
+
+05:35.350 --> 05:41.360
+Também é um algoritmo no local que não usamos
+
+05:41.360 --> 05:47.450
+memória extra que depende do número de itens no heap.
+
+05:47.450 --> 05:48.050
+Estamos fazendo isso no lugar.
+
+05:48.050 --> 05:49.220
+Estamos trocando na matriz original.
+
+05:49.220 --> 05:51.640
+Agora lembre-se de que, uma vez que você tenha classificado o heap, ele não será mais um heap.
+
+05:51.650 --> 05:56.190
+E assim você não desejaria classificar um heap que deseja continuar usando como um heap.
+
+05:56.300 --> 06:01.040
+E assim, se você quiser continuar usando um heap como um heap, você não vai querer classificá-lo
+
+06:01.100 --> 06:06.230
+porque no momento em que você o classifica como quando estávamos fazendo o delete e eu disse que
+
+06:06.230 --> 06:11.870
+se você tem que achar o valor que você está indo Para fazer uma pesquisa linear, você não pode usar
+
+06:11.870 --> 06:15.860
+uma pesquisa binária, porque isso exigiria a classificação da matriz e uma vez que
+
+06:15.860 --> 06:20.810
+você classifica a matriz, você não terá mais uma pilha toda a estrutura da sua pilha foi surpreendida.
+
+06:20.810 --> 06:22.340
+E assim você não desejaria classificar um heap que deseja continuar usando.
+
+06:22.400 --> 06:26.160
+Então, se você quiser usar heapsort, sua motivação para construir um ódio seria porque você vai
+
+06:26.240 --> 06:30.740
+usar heapsort nos dados, não porque você vai usar o heap como um heap, se você fizer dessa maneira.
+
+06:30.740 --> 06:36.270
+Então a complexidade do tempo obviamente não será toda analógica e porque você
+
+06:36.260 --> 06:42.620
+vai ter que construir o heap primeiro e isso envolverá desafiar a cada passo, mesmo
+
+06:42.620 --> 06:49.370
+assim o pior caso para fazer isso pode ser melhor do que alguns do tipo quadrático. algoritmos.
+
+06:49.370 --> 06:53.040
+Então é algo que você pode querer considerar, mas dependendo dos dados, é claro,
+
+06:53.120 --> 06:58.520
+existem todos os outros tipos de algoritmos que nós olhamos para construir um monte apenas para classificá-lo pode não ser
+
+06:58.520 --> 07:04.070
+o melhor caminho a percorrer e isso nos dá um ciclo completo para o começo do curso onde dizemos que depende.
+
+07:04.490 --> 07:09.900
+Depende do que você vai fazer.
+
+07:09.950 --> 07:12.150
+Tudo bem, então é isso para heapsort.
+
+07:12.160 --> 07:14.260
+Eu vou te ver no próximo vídeo.
+
+07:14.270 --> 07:15.620
+&nbsp;

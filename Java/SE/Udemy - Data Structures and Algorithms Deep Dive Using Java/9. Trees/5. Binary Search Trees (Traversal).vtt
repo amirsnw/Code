@@ -1,0 +1,421 @@
+WEBVTT
+
+00:05.220 --> 00:05.640
+All right.
+
+00:05.640 --> 00:08.730
+So let's talk about traversing trees.
+
+00:08.850 --> 00:14.760
+Now there are four ways you can traverse the tree one isn't used very often and the other three are.
+
+00:14.880 --> 00:19.880
+So the first way which isn't used very often is called a level traversal.
+
+00:19.960 --> 00:25.040
+And what we do is we visit nodes on each level in order starting from the top.
+
+00:25.110 --> 00:31.440
+So we'd visit the root cause that's at level 0 and then we visit the notes at level 1 going from left
+
+00:31.440 --> 00:36.960
+to right and then we'd visit the nodes that level to from left to right etc. until we visited all the
+
+00:36.960 --> 00:38.100
+nodes in the tree.
+
+00:38.100 --> 00:44.780
+The second way is called pre order and with PRE ORDER we always visit the root of every sub tree first.
+
+00:44.790 --> 00:49.410
+And so we're going to visit the root and then we're going to visit the root of the left subtree and
+
+00:49.410 --> 00:57.510
+the root of it's left subtree etc. and until we get down to the first leaf and then we visit the leaves
+
+00:57.690 --> 01:00.110
+of each tree working back up the tree.
+
+01:00.150 --> 01:04.740
+Don't worry I'm going to show you an example of this in a minute with post order Trover So we do the
+
+01:04.740 --> 01:05.600
+opposite.
+
+01:05.610 --> 01:07.500
+We visit the root last.
+
+01:07.560 --> 01:12.600
+And so instead of starting at the root we travel all the way down to the tree to the first leaf and
+
+01:12.600 --> 01:14.520
+that's where we'd start our traversal.
+
+01:14.580 --> 01:19.560
+And then there is in order traversal and that means that we visit the left child first and then we visit
+
+01:19.590 --> 01:21.870
+the root and then we visit the right child.
+
+01:21.870 --> 01:27.870
+So this is one case where pictures will hopefully make this clear so let's go to the next slide and
+
+01:27.870 --> 01:30.070
+we're going to look at the level traversal here.
+
+01:30.090 --> 01:36.480
+And for the level traversal we start at level 0 and then we moved to level 1 and we moved from left
+
+01:36.480 --> 01:41.020
+to right and then we go to level two and we moved from left to right and we go to three and we went
+
+01:41.020 --> 01:41.730
+from left to right.
+
+01:41.730 --> 01:51.260
+So we'd visit 25 then 20 and 27 then 15 20 to 26 and 30 and then 29 and 32.
+
+01:51.270 --> 01:54.810
+So that's a level order traversal it's not used very often.
+
+01:54.810 --> 02:01.080
+So now we have preordain with the preorder we always visit the root of a subtree first and so we're
+
+02:01.080 --> 02:09.120
+going to start at 25 and then we're going to go to 20 and then we go to 15 15 doesn't have any children.
+
+02:09.180 --> 02:13.760
+And so we go back up to the root which we've already visited and we visit 22.
+
+02:13.860 --> 02:24.630
+So the order so far is 25 20 15 22 and then we go back up we visit 27 and then 26 we go back to the
+
+02:24.630 --> 02:29.010
+route and visit 30 and then 29 and then 32.
+
+02:29.010 --> 02:34.710
+So each time we look at a node we visit the node before we look at its children.
+
+02:34.800 --> 02:38.190
+So we visited 25 before we looked at 20.
+
+02:38.310 --> 02:44.070
+We visited 20 before we looked at 15 and 22 and then we visited 27.
+
+02:44.070 --> 02:53.050
+Before we looked at 26 and 30 and we visited 30 before 29 and 32 so that's pre order pre meaning the
+
+02:53.050 --> 02:54.770
+route is done first.
+
+02:54.960 --> 03:01.440
+OK so then in order traverse so we completely visit the left side and then we visit the root and then
+
+03:01.440 --> 03:03.290
+we completely visit the right side.
+
+03:03.390 --> 03:05.240
+And so we don't start with 25.
+
+03:05.250 --> 03:06.840
+We don't start with 20.
+
+03:06.840 --> 03:13.020
+We start with 15 because that's the left side 15 doesn't have any children so at that point we move
+
+03:13.020 --> 03:14.930
+up to the root and visit 20.
+
+03:14.970 --> 03:20.160
+Then we visit the right side which is just 22 and then we have finished with the complete left side
+
+03:20.160 --> 03:20.940
+for the root.
+
+03:20.940 --> 03:22.690
+And so now we visit the root.
+
+03:22.740 --> 03:24.620
+And now we do the same thing on the right side.
+
+03:24.630 --> 03:31.310
+We want to visit the left side first then the roots and then the right side and so we don't visit 27
+
+03:31.330 --> 03:33.710
+yet because it has 26 on the left.
+
+03:33.750 --> 03:35.400
+So we visit 26.
+
+03:35.490 --> 03:40.590
+Then we move up to the 27 because now we can visit the root for this subtree.
+
+03:40.680 --> 03:46.170
+And now we wanted to do the same thing with the right and so we don't visit 30 yet because 30 has a
+
+03:46.170 --> 03:47.640
+left child.
+
+03:47.640 --> 03:51.890
+And so we visit 29 then we visit the route and then we visit 32.
+
+03:51.900 --> 04:00.060
+So within order it's always do the entire left side then the route then the entire right side for every
+
+04:00.060 --> 04:00.640
+node.
+
+04:00.750 --> 04:12.270
+And so it's 15 20 22 25 26 because we need to do the left side first 27 29 because we did the left side
+
+04:12.300 --> 04:15.440
+first 30 and 32.
+
+04:15.450 --> 04:17.740
+Now it if noticed something here.
+
+04:17.760 --> 04:27.570
+The data is sorted 15 20 22 25 26 27 29 30 and 32 and that's why it's called in order.
+
+04:27.570 --> 04:33.490
+And so because of the characteristics of a binary search tree if we do and in order to traverse all
+
+04:33.840 --> 04:39.100
+the data is sorted and so it's really easy to get the sorted data.
+
+04:39.210 --> 04:43.590
+Once you've inserted them into a binary search tree you just have to do an in order traversal of the
+
+04:43.590 --> 04:49.260
+tree if you want to sort an array for example you could insert the values into a binary search tree
+
+04:49.260 --> 04:50.580
+and then traverse the tree.
+
+04:50.610 --> 04:54.310
+And that would actually be faster than some of the sort algorithms we looked at.
+
+04:54.330 --> 05:01.320
+And so that's in order for every node you visit the entire left subtree first then you visit the node
+
+05:01.350 --> 05:03.830
+and then you visit the entire right subtree.
+
+05:03.830 --> 05:05.860
+And finally we have post order.
+
+05:05.930 --> 05:12.740
+We had preorder back here where we visited the route first or the node and then they left and then the
+
+05:12.740 --> 05:15.700
+right in post order the route goes last.
+
+05:15.710 --> 05:21.750
+And so you visit the entire left subtree for a node and then the entire right subtree for the node.
+
+05:21.770 --> 05:23.260
+And finally you hit the node.
+
+05:23.390 --> 05:30.770
+And so we're going to start here at 15 because we have to visit the entire left subtree and right subtree
+
+05:30.770 --> 05:36.560
+for the route first and then we have to visit the left or right subtree for twenty three yet 15 and
+
+05:36.560 --> 05:42.560
+then 22 because we do the subtrees before the node and then 20 and then we have to do the entire right
+
+05:42.560 --> 05:48.170
+subtree before we do the route so we're going to go 26 and then we've got to do the entire right subtree
+
+05:48.170 --> 05:55.740
+for 27 first and then the the entire left and right for 30 so we're going to go to 29 32.
+
+05:55.790 --> 06:01.090
+Now we can do the routes 30 27 and 25.
+
+06:01.100 --> 06:05.490
+So in pre order you visit the route first or the node.
+
+06:05.630 --> 06:10.580
+So if we have the concept of a current node you're going to visit the current node first and then it's
+
+06:10.580 --> 06:14.930
+entire left subtree and then it's entire right subtree.
+
+06:14.930 --> 06:20.760
+And so we visit 25 and then we're going to do it's entire left subtree and right subtree so we've has
+
+06:20.770 --> 06:21.500
+at 20.
+
+06:21.530 --> 06:25.720
+And then we're going to do it's entire left subtree its entire right subtree.
+
+06:25.720 --> 06:31.180
+And so we get 25 20 15 and 22 and then we did the same thing on the right side.
+
+06:31.190 --> 06:38.720
+We do 27 and then we do it's left subtree 26 and then it's right subtrees So beginning to 30 it's left
+
+06:38.720 --> 06:47.790
+subtree and then it's right subtree that's preorder the route goes first in order it's left route right.
+
+06:47.930 --> 06:52.820
+And so when we're talking about routes we're talking about the root of every subtree and in post order
+
+06:53.230 --> 06:56.130
+it's left right route.
+
+06:56.150 --> 07:04.730
+And so in this case we do 15 go to the right 22 and then we do 20 and then we don't do the route yet
+
+07:04.760 --> 07:11.090
+because the route goes last so we've come here 27 is going to go last so 26 and then we go to the right
+
+07:11.110 --> 07:18.050
+30 is going to go last 29 32 and then we can start going back up 30 27 25.
+
+07:18.110 --> 07:25.140
+And so those are the four ways that we can traverse trees level preorder in order and post order.
+
+07:25.170 --> 07:27.680
+And so let's go back to inteligente now.
+
+07:27.680 --> 07:36.030
+We're going to write a method to do the in order traversal of our tree.
+
+07:36.230 --> 07:38.160
+And so here I am back in intelligence.
+
+07:38.210 --> 07:44.960
+And I'm going to go to the tree node class because as we saw in the slides each node can be a root of
+
+07:44.960 --> 07:45.760
+a subtree.
+
+07:45.770 --> 07:48.200
+And we're going to add the traversal method in here.
+
+07:48.200 --> 07:56.870
+So right here when I say public voyde traverse in order and I don't need to pass anything because we're
+
+07:56.870 --> 08:02.420
+just going to start at this node and remember in order we visit the left child and then we visit the
+
+08:02.430 --> 08:04.310
+root and then we visit the right child.
+
+08:04.310 --> 08:10.130
+And so we're going to say if the left child is not equal to normal well we need to traverse the left
+
+08:10.130 --> 08:13.280
+child before we want we want to traverse this node.
+
+08:13.390 --> 08:19.490
+And so we're going to say left child dot traverse in order then we want to visit this node and so will
+
+08:19.490 --> 08:25.930
+say system got our drop print line and we'll say data equals plus data.
+
+08:26.090 --> 08:33.650
+And in fact I'll make this print and I'll add that to a semi-colon first.
+
+08:33.650 --> 08:39.790
+Keep hitting L instead and I'll add a comma here so plus comma equals.
+
+08:40.250 --> 08:44.480
+And then finally because we're doing in order traversal we want to visit the right child so we'll say
+
+08:44.480 --> 08:54.620
+if right child is not equal to now visit the right child and that's it that's our traverse in order
+
+08:54.620 --> 08:55.910
+for the node.
+
+08:55.940 --> 08:59.420
+And so when we're doing this node we want to do.
+
+08:59.420 --> 09:06.470
+We're examining this node and it's subtree and four in order we want to do the left child visit this
+
+09:06.470 --> 09:11.150
+node and then do the right child and by left child the right child of course they can have children.
+
+09:11.150 --> 09:16.670
+So this is saying we're going to visit the left subtree of this node first then we're going to visit
+
+09:16.700 --> 09:21.960
+this node and that's when we print out its data and then we're going to visit the right subtree.
+
+09:22.010 --> 09:26.030
+And so back in our tree class we need a method for this.
+
+09:26.090 --> 09:32.000
+So a save public Voyt traverse in order
+
+09:35.810 --> 09:38.320
+and all we want to do here is traverse the route.
+
+09:38.330 --> 09:42.080
+So if the route isn't Knol is equal to no
+
+09:44.720 --> 09:48.680
+then we'll traverse the route and that's it.
+
+09:48.680 --> 09:54.110
+And so when we call this with the route we'll check whether the route has a left child and if it does
+
+09:54.110 --> 09:59.340
+we're going to handle it's left subtree first and then we'll visit the route and then we'll handle it
+
+09:59.390 --> 10:00.290
+right subtree.
+
+10:00.350 --> 10:07.640
+And so keep in mind that for in order as we saw in the slides every nodes left subtree will be printed
+
+10:07.640 --> 10:11.200
+out before we actually print out the data for the node.
+
+10:11.390 --> 10:13.440
+And then every node right subtree.
+
+10:13.440 --> 10:15.710
+So let's go back to our main method and call this out.
+
+10:15.710 --> 10:22.310
+Some will say in-tree dot traverse in order and we should see these values printed out in sorted order
+
+10:22.310 --> 10:28.220
+because remember when we traverse a tree in order we actually end up with the values coming out in sorted
+
+10:28.220 --> 10:28.610
+order.
+
+10:28.610 --> 10:29.420
+So let's run
+
+10:33.430 --> 10:35.910
+it would probably be easier actually looking at that.
+
+10:35.920 --> 10:41.630
+If I didn't do this if I just had the data and a Comesa Let's run that again.
+
+10:43.180 --> 10:58.900
+And there we go so 15 20 22 25 26 27 29 30 and 32 and so our nodes were inserted 1 2 3 4 5 6 7 8 9 and
+
+10:58.900 --> 11:07.300
+we have 1 2 3 4 5 6 7 8 9 values and they were inserted where we expected them to be inserted and are
+
+11:07.390 --> 11:13.120
+in order traversal is working because when we traverse in order we'll get the values in the tree in
+
+11:13.120 --> 11:14.340
+sorted order.
+
+11:14.350 --> 11:20.530
+OK so now that we can build a tree and we can look at what's in it we should write a method for finding
+
+11:20.560 --> 11:23.920
+a value in the tree and we'll do that in the next video.

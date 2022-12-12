@@ -1,0 +1,85 @@
+<div class="panel">
+  <div class="page-title">ثبت اطلاعات وام</div>
+  <div class="panel-body">
+
+    <form [formGroup]="viewForm" (ngSubmit)="confirmClick(viewForm.value)" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-3"[hidden]="isWrite">
+
+          <tamin-field-label formControlName="pensionerId">شماره مستمری:</tamin-field-label>
+          <tamin-field-validator formControlName="pensionerId"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="pensionerId" [dataItems]="pensionerList" valueField="value"
+                                        displayField="name" #pensioner
+                                        placeholder="شماره مستمری "></tamin-field-combo-box-static>
+          <button type="button" class="button normal orange" style="padding: 3px"(click)="wirteClick()">نوشتن شماره مستمری</button>
+        </div>
+        <div class="col-3" [hidden]="!isWrite">
+
+          <tamin-field-label formControlName="pensionerId">شماره مستمری</tamin-field-label>
+          <tamin-field-validator formControlName="pensionerId"></tamin-field-validator>
+          <tamin-field-mask mask="0000000000" formControlName="pensionerId"></tamin-field-mask>
+          <button type="button" class="button normal orange" style="padding: 3px" (click)="selectClick()">انتخاب شماره مستمری از لیست</button>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <span class="hint">{{'در صورتی که درخواست گواهی کسر اقساط برای ضمانت دیگران می باشد گزینه "ضمانت وام برای سایرین"  را انتخاب نمایید.'}} </span>
+          </div>
+          <tamin-field-checkbox  formControlName="garanteeType" style="font-weight: bold ">ضمانت وام برای سایرین</tamin-field-checkbox>
+        </div>
+      </div>
+
+      <app-subdominant-info #subdominantComponent [hidden]="!viewForm.get('garanteeType').value"></app-subdominant-info>
+      <div class="panel">
+        <div class="panel-title">مشخصات وام</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-6">
+              <tamin-field-label formControlName="bank"> بانک/موسسه/نهاد:</tamin-field-label>
+              <tamin-field-validator  formControlName="bank"></tamin-field-validator>
+              <tamin-field-auto-complete-data-grid formControlName="bank" placeholder="بانک " #bank></tamin-field-auto-complete-data-grid>
+            <div>
+              <span class="hint">{{'قسمتی از نام بانک یا موسسه را تایپ و از لیست انتخاب نمایید.'}} </span>
+            </div>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="bankBranch"> نام شعبه بانک/موسسه/نهاد:</tamin-field-label>
+              <tamin-field-validator  formControlName="bankBranch"></tamin-field-validator>
+              <tamin-field-persian-text formControlName="bankBranch" placeholder="نام شعبه/بانک/موسسه"></tamin-field-persian-text>
+              <div>
+                <span class="hint">{{'نام شعبه بانک/موسسه/نهاد را به صورت صحیح وارد و از به کاربردن کلمه "شعبه" خود داری نمایید.'}} </span>
+              </div>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="installmentAmount">مبلغ هر قسط:</tamin-field-label>
+              <tamin-field-validator  formControlName="installmentAmount" #installmentAmountValidator></tamin-field-validator>
+              <tamin-field-number formControlName="installmentAmount" placeholder="مبلغ هر قسط"></tamin-field-number>
+              <span class="hint">{{'حداقل 500,000 ریال و حداکثر 60,000,000 ریال' | persianNumber}}</span>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="installmentCount">تعداد اقساط:</tamin-field-label>
+              <tamin-field-validator  formControlName="installmentCount"></tamin-field-validator>
+              <tamin-field-number formControlName="installmentCount" placeholder="تعداد اقساط"></tamin-field-number>
+              <span class="hint">{{'حداقل 12 و حداکثر 240' | persianNumber}}</span>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="loanAmount">مبلغ بازپرداخت:</tamin-field-label>
+              <tamin-field-static-text formControlName="loanAmount"  placeholder="مبلغ بازپرداخت"></tamin-field-static-text>
+
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="guaranteeAmount"> مبلغ ضمانت:</tamin-field-label>
+              <tamin-field-validator  formControlName="guaranteeAmount"></tamin-field-validator>
+              <tamin-field-number formControlName="guaranteeAmount"></tamin-field-number>
+              <span class="hint">{{'مبلغ ضمانت از مبلغ بازپرداخت نباید کمتر باشد' | persianNumber}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button #submitButton type="submit" class="button normal">تایید نهایی و ثبت درخواست</button>
+      <app-wage-assignment-agreement #agreement (agree)="onAgree()"></app-wage-assignment-agreement>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+
+<tamin-process-indicator #processIndicator></tamin-process-indicator>
+
+<div class="reg-container" >
+
+  <div class="reg-header">{{currentHeader}}</div>
+  <div class="reg-content" #stepsContainer></div>
+  <div class="reg-footer">
+    <button style="float: right; margin-bottom: 5px" class="button button-default normal blue" *ngIf="hasNextStep" (click)="createStep(currentStepNumber + 1, 'forward')">{{nextStepButtonTitle}}</button>
+    <button style="float: left; margin-bottom: 5px" class="button button-default normal blue" *ngIf="hasPrevStep" (click)="createStep(currentStepNumber - 1, 'backward')">
+      {{prevStepButtonTitle}}
+    </button>
+  </div>
+
+
+</div>
+<!--<p style="margin:5px;">
+  <button type="button" class="button normal gray" (click)="redirectTo('/employer-registration/personal-list')"><i class=" icon-right-big"></i><span>بازگشت به لیست درخواست</span>
+  </button>
+</p>-->
+

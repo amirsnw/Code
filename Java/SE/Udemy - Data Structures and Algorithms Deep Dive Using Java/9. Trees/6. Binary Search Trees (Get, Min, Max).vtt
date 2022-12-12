@@ -1,0 +1,400 @@
+WEBVTT
+
+00:05.370 --> 00:13.130
+Tudo bem então no último vídeo nós escrevemos um método para adicionar valores à árvore.
+
+00:13.330 --> 00:17.710
+Então agora vamos escrever um método get para que possamos obter valores da árvore.
+
+00:17.710 --> 00:19.390
+Isso não será muito complicado.
+
+00:19.390 --> 00:22.120
+Será semelhante ao que fizemos para inserir.
+
+00:22.270 --> 00:24.550
+Então, vamos começar na classe do nó da árvore.
+
+00:24.730 --> 00:32.500
+E noto no último vídeo que eu realmente coloquei o método insert e o método Traverse acima do construtor.
+
+00:32.500 --> 00:37.450
+Nada de errado com isso, mas eu gostaria de ter o construtor no topo, então eu mudei
+
+00:37.450 --> 00:39.080
+o construtor acima dos métodos.
+
+00:39.280 --> 00:42.650
+Ok, então vou inserir o método get aqui.
+
+00:42.730 --> 00:51.340
+Então, vamos dizer que o nó da árvore pública retornará o nó da árvore para o valor get.
+
+00:51.400 --> 00:53.960
+E é claro que precisamos do valor que estamos procurando.
+
+00:54.220 --> 00:57.190
+E vamos fazer algo muito parecido com o que fizemos uma inserção.
+
+00:57.190 --> 01:03.760
+Vamos verificar o valor em relação ao valor do nó e, se forem iguais, encontramos a observação
+
+01:03.850 --> 01:05.190
+que estamos procurando.
+
+01:05.260 --> 01:11.170
+Se eles não são iguais, vamos procurar a subárvore esquerda ou a subárvore direita, dependendo se o
+
+01:11.170 --> 01:15.890
+valor que estamos procurando é menor ou maior que o valor deste triodo.
+
+01:15.970 --> 01:20.300
+Então, eu vou dizer se valor é igual a dados que terminamos.
+
+01:20.320 --> 01:21.910
+Então, vamos retornar isso.
+
+01:21.940 --> 01:26.380
+Nós vamos retornar este nó da árvore se não for esse o caso.
+
+01:26.380 --> 01:36.190
+Vamos dizer que se o valor for menor que os dados, queremos procurar na subárvore esquerda, desde que o nó
+
+01:36.190 --> 01:38.350
+tenha uma subárvore esquerda.
+
+01:38.410 --> 01:41.620
+Então vamos fazer as verificações semelhantes que fizemos aqui.
+
+01:41.650 --> 01:52.180
+Então, vamos dizer se a criança esquerda não é igual ao conhecimento, então vamos dizer que a criança da
+
+01:52.180 --> 01:54.910
+esquerda retornou Daut obter valor.
+
+01:55.150 --> 02:01.060
+E então vamos descer o buraco do coelho, vamos chamar esse método de
+
+02:01.060 --> 02:05.890
+forma recursiva e vamos procurar o valor na subárvore esquerda.
+
+02:05.890 --> 02:11.080
+Agora, se o valor não for igual aos dados e não for menor que os dados, ele deverá ser maior que
+
+02:11.080 --> 02:11.530
+os dados.
+
+02:11.530 --> 02:19.090
+Alguns dirão mais e poderíamos ir mais se a criança certa, mas para manter o tipo de simétrica eu vou colocar
+
+02:19.090 --> 02:21.340
+o if aqui se estiver certo.
+
+02:21.340 --> 02:29.100
+Criança não é igual ao Knol do que nós queremos retornar à direita.
+
+02:29.100 --> 02:31.310
+Criança não tem valor.
+
+02:31.540 --> 02:35.880
+E assim, neste caso, vamos descer a toca do coelho e olhar para a subárvore direita.
+
+02:35.890 --> 02:42.520
+Agora, se o valor não for igual aos dados, ele nunca será igual a nenhum dos dados, na verdade, virá até
+
+02:42.520 --> 02:48.340
+esta linha de código, e nós vamos retornar NULL, se chegarmos aqui, significa que não conseguimos encontrar o
+
+02:48.340 --> 02:50.750
+valor que nós estavam procurando na árvore.
+
+02:50.800 --> 02:53.320
+Então, vamos retornar um nó de árvore nula.
+
+02:53.440 --> 02:59.140
+Então, agora que temos um método get na classe Trinite, vamos adicionar um à classe tree.
+
+02:59.560 --> 03:09.280
+E assim vai dizer nó árvore pública obter e precisamos do valor e vamos dizer se a raiz não é igual a não, então vamos apenas
+
+03:10.390 --> 03:12.790
+chamar o método get na rota.
+
+03:12.790 --> 03:16.700
+Então, uma rota de retorno segura tem valor gafiado.
+
+03:16.700 --> 03:22.660
+Agora, se a rota for toda a estrada, ela retornará NULL porque isso obviamente significa que a árvore está
+
+03:22.690 --> 03:26.840
+vazia e, portanto, o valor que o chamador está procurando não está na árvore.
+
+03:27.040 --> 03:31.150
+OK, então vamos voltar ao nosso método principal e vamos procurar alguns nós aqui.
+
+03:31.150 --> 03:34.490
+Então, vamos dizer em sorteio para chegar.
+
+03:34.510 --> 03:42.820
+E vamos procurar por 27 e, na verdade, imprimi-los para que saibamos que realmente encontramos algo que um sistema que
+
+03:42.820 --> 03:47.000
+sai na linha de frente na árvore não obtém 27.
+
+03:47.320 --> 03:50.890
+E o sistema saiu da entrada da linha de impressão.
+
+03:50.980 --> 03:59.240
+Get Vamos pegar 17 e vamos pegar um valor que não existe na árvore.
+
+03:59.710 --> 04:02.060
+Vamos pegar 8 8 8 8.
+
+04:03.250 --> 04:08.360
+OK, então vamos correr.
+
+04:08.510 --> 04:10.580
+Este é o resultado da nossa travessia.
+
+04:10.580 --> 04:13.440
+Vou colocar um sistema fora da linha de impressão logo após aqui
+
+04:16.430 --> 04:20.960
+na nossa travessia, se você se lembrar que estamos apenas usando impressão e por isso não está começando uma
+
+04:20.960 --> 04:24.090
+nova linha, então vamos executar isso novamente apenas para limpar um pouco a saída.
+
+04:24.290 --> 04:31.280
+OK, então, quando procuramos 27, estamos obtendo um nó com o valor de 27, quando procuramos 17 para
+
+04:31.330 --> 04:32.030
+refazer 17.
+
+04:32.020 --> 04:35.580
+E, claro, quando procuramos por 8 8 8, recebemos n.
+
+04:35.870 --> 04:42.370
+E esse é o método que a maior parte do trabalho fez na versão do nó em árvore do método.
+
+04:42.380 --> 04:46.310
+E como de costume, nós o chamamos na raiz da classe tree.
+
+04:46.310 --> 04:50.600
+Então, mais uma vez, se chegarmos aqui, significa que o valor não está na árvore e nós
+
+04:50.600 --> 04:54.920
+vamos derrubá-lo aqui quando atingimos um nó de folha e o valor não é igual aos dados.
+
+04:54.950 --> 04:59.640
+Porque nesse caso, se o valor é menor que os dados, enquanto o filho da esquerda vai ser nulo.
+
+04:59.780 --> 05:01.270
+Então acabamos de sair.
+
+05:01.520 --> 05:05.540
+Ou se for maior que os dados, o filho certo será nulo porque estamos lidando com
+
+05:05.540 --> 05:06.550
+uma folha e desistiremos.
+
+05:06.590 --> 05:12.980
+Ou é possível que não estamos lidando com uma folha e o valor é menor que o nó, mas não há
+
+05:12.980 --> 05:16.300
+nenhuma criança à esquerda, há apenas uma criança certa ou vice-versa.
+
+05:16.310 --> 05:21.110
+Quando o valor é maior que o valor no nó, pode haver um filho à esquerda, mas nenhum filho da direita.
+
+05:21.110 --> 05:27.620
+Então, basicamente, uma vez que atingimos um nó e a direção que queremos entrar não tem um filho nessa posição, não fazemos
+
+05:27.710 --> 05:32.800
+nada e aqui apenas retornamos o Knol e isso basicamente diz que o valor não está na árvore.
+
+05:32.930 --> 05:38.150
+OK, então falamos sobre o fato de que é realmente fácil obter os valores mínimo e máximo de uma árvore
+
+05:38.150 --> 05:39.010
+de pesquisa binária.
+
+05:39.020 --> 05:45.350
+Então, vamos codificar min max métodos para fazer isso, então vamos começar na classe de nós da árvore e eu vou colocá-los
+
+05:45.350 --> 05:46.410
+sob o método get.
+
+05:46.580 --> 05:51.760
+Então, vamos codificá-los primeiro no método e, em seguida, o método max será basicamente uma imagem espelhada disso.
+
+05:51.770 --> 05:53.600
+Então, vamos dizer public em homens.
+
+05:53.600 --> 06:02.270
+Agora eu poderia retornar um nó da árvore aqui, mas quando implementamos a exclusão, na verdade, vamos chamar o método Não me lembro
+
+06:02.270 --> 06:04.330
+se é o min ou max.
+
+06:04.340 --> 06:09.450
+Eu acho que pode ser esse método principal e onde queremos que um inteiro retorne não um nó de árvore.
+
+06:09.530 --> 06:14.120
+Poderíamos retornar uma árvore que você conhece, mas temos que chamar os dados e evitar isso.
+
+06:14.240 --> 06:15.690
+Eu só vou retornar um int.
+
+06:15.830 --> 06:21.250
+OK, para colocá-los novamente, começamos na raiz e percorremos as bordas esquerdas.
+
+06:21.320 --> 06:28.130
+E assim, se esse nó não tiver um filho esquerdo, encontraremos o valor mínimo, porque isso significa que estamos viajando pelas
+
+06:28.430 --> 06:32.990
+bordas esquerdas e atingimos uma nota que não tem um filho esquerdo, o que
+
+06:32.990 --> 06:35.270
+significa que esse nó é o valor mínimo.
+
+06:35.300 --> 06:42.410
+Então, vamos dizer se o filho da esquerda for igual a não, então vamos retornar os dados.
+
+06:42.410 --> 06:45.730
+Lembre-se de que estamos apenas retornando o final e não o nó da árvore.
+
+06:45.770 --> 06:48.760
+E assim, se acabar, se a criança esquerda não for, este é o Não.
+
+06:48.760 --> 06:51.590
+Aquele que contém o valor mínimo.
+
+06:52.130 --> 06:57.660
+Caso contrário, queremos continuar percorrendo as bordas esquerdas, de modo que retornaremos a criança da esquerda,
+
+06:58.880 --> 07:00.770
+Dodman, e isso é bastante simples.
+
+07:00.920 --> 07:04.860
+Então, nós viajamos pelas bordas esquerdas até chegarmos a uma nota que não tem uma criança à esquerda.
+
+07:04.880 --> 07:07.300
+E uma vez que atingimos essa nota, é o mínimo.
+
+07:07.310 --> 07:11.650
+E assim, se esse cara aqui não tiver um filho esquerdo, esse é o valor mínimo.
+
+07:11.670 --> 07:16.110
+Se tiver uma criança esquerda, precisamos continuar viajando pelas bordas esquerdas.
+
+07:16.220 --> 07:20.180
+E agora vamos adicionar o max e tenho certeza que você provavelmente poderia escrever esse mesmo.
+
+07:20.180 --> 07:27.810
+Agora, com o máximo, começamos na raiz e percorremos as margens certas, então direi público e Max e vamos
+
+07:27.860 --> 07:33.690
+dizer se o filho certo é igual a todos, então encontramos o valor máximo.
+
+07:34.040 --> 07:41.450
+Caso contrário, queremos apenas ir para a direita, exceto que queremos chamar Max e não homens.
+
+07:41.480 --> 07:44.800
+Se você copiar e colar, certifique-se de alterar este aqui também.
+
+07:44.830 --> 07:46.320
+E é isso para a árvore não.
+
+07:46.340 --> 07:51.170
+Vamos para a nossa classe de árvore e para os métodos minimax que vão chamar isso e claro
+
+07:51.170 --> 07:56.550
+que agora você provavelmente já percebeu que vamos chamar min ou max na rota se a rota não for normal.
+
+07:56.600 --> 07:59.040
+Então, digamos que público.
+
+07:59.090 --> 08:06.560
+Quero dizer, se a regra é igual a não o que queremos retornar aqui.
+
+08:06.560 --> 08:13.580
+Eu vou retornar um valor inteiro de Daut min que é o menor valor que você pode colocar em um inteiro.
+
+08:13.580 --> 08:19.700
+Agora, é claro, isso pressupõe que a árvore não contém ou não pode conter esse valor, mas isso é
+
+08:19.700 --> 08:24.860
+apenas uma implementação para mostrar como as árvores são implementadas nos bastidores ou para lhe dar
+
+08:24.860 --> 08:25.670
+uma amostra disso.
+
+08:25.670 --> 08:30.260
+Então, para isso, apenas retornamos o valor médio inteiro.
+
+08:30.380 --> 08:36.020
+E assim, se esta é uma árvore vazia, vamos sinalizar isso ao chamador, retornando o menor valor absoluto
+
+08:36.020 --> 08:38.350
+que você pode armazenar em um inteiro.
+
+08:38.390 --> 08:47.060
+Caso contrário, vamos retornar a rota min e, em seguida, a mesma coisa, é claro, para o Max, exceto que a única coisa que alteraremos
+
+08:47.060 --> 08:53.740
+será retornar o valor máximo de inteiro para o maior número inteiro que você pode armazenar em um inteiro.
+
+08:53.750 --> 08:58.940
+Se a árvore estiver vazia, caso contrário, retornaremos a queda máxima da rota.
+
+08:58.940 --> 09:10.130
+Tão público no max se a raiz for igual a todos, então vamos retornar o valor máximo inteiro.
+
+09:10.310 --> 09:15.580
+Caso contrário, vamos retornar a queda de rota Max e é isso.
+
+09:15.590 --> 09:18.230
+É isso para encontrar os valores mínimo e máximo.
+
+09:18.230 --> 09:19.950
+Nada complicado aqui.
+
+09:19.970 --> 09:25.500
+Então vamos ao nosso método principal e vamos imprimir nosso valor mínimo e máximo.
+
+09:25.500 --> 09:37.300
+Então eu direi que o sistema sairá da linha no Sri daat e o sistema saiu da linha de impressão em cada ponto.
+
+09:37.340 --> 09:47.230
+Max e todos comentam todos esses caras, então estamos apenas vendo os homens e os Maxxis agora para o valor
+
+09:47.230 --> 09:47.950
+máximo.
+
+09:47.950 --> 09:53.740
+Eu acredito que é 32 e o valor mínimo é 15.
+
+09:53.740 --> 09:59.030
+Então, esperamos 15 para homens e 32 para max, então vamos dar um giro.
+
+10:01.160 --> 10:02.120
+E ai você vai.
+
+10:02.120 --> 10:09.020
+Recebemos 15 para um valor mínimo e 32 para nosso valor máximo, e isso é tudo para
+
+10:09.110 --> 10:15.200
+encontrar nós e encontrar o valor mínimo e máximo em uma árvore de pesquisa binária.
+
+10:15.410 --> 10:21.020
+Portanto, precisamos de uma maneira de excluir as anotações agora e excluir pode ser um pouco mais complicado, porque temos crianças com
+
+10:21.020 --> 10:21.970
+as quais se preocupar.
+
+10:22.010 --> 10:25.490
+Então, começaremos a analisar a exclusão no próximo vídeo.
+
+10:25.490 --> 10:26.390
+Eu te vejo lá.

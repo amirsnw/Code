@@ -1,0 +1,64 @@
+WEBVTT
+
+00:05.220 --> 00:12.070
+Muy bien, así que para el Desafío número dos quiero que trabajes con listas enlazadas que manejen enteros
+
+00:12.190 --> 00:18.490
+para que almacene objetos enteros, así que lo que hice fue actualizar rápidamente la clase de lista
+
+00:18.490 --> 00:23.700
+enlazada a empleados que implementamos para que almacene enteros en lugar de enteros. empleados.
+
+00:23.710 --> 00:28.750
+Iba a hacer que lo hicieras, pero luego pensé, oh, eso es solo un trabajo trivial, así que lo haré por ti.
+
+00:28.750 --> 00:33.430
+Entonces, hay un proyecto inicial en la sección de recursos que contiene todo el código que necesitará.
+
+00:33.520 --> 00:38.380
+Y lo que quiero que hagas es que quiero que implementes un método en la clase de lista enlazada
+
+00:38.380 --> 00:40.560
+con enteros que inserte un valor en orden ordenado.
+
+00:40.570 --> 00:46.780
+Si miras la clase, creo que llamé al método Inserted Sorted y en lugar de llamar al método
+
+00:46.780 --> 00:53.150
+ADD to front, seguiremos llamando a insert inserted para que los valores siempre se inserten en orden ordenado.
+
+00:53.200 --> 00:58.300
+Y lo que quiero decir por orden ordenado es que el valor más bajo debería aparecer primero en la lista, por lo que
+
+00:58.300 --> 00:59.750
+deberían estar más cerca de la cabeza.
+
+00:59.770 --> 01:06.970
+Y si tuviéramos que insertar el valor 4 y luego dos y luego uno y luego cinco, las listas se verían como las siguientes tendrían
+
+01:06.970 --> 01:12.340
+el código para uno y luego el nodo para dos y luego cuatro y luego cinco y cinco serían
+
+01:12.430 --> 01:16.160
+las último nodo en la lista y su próximo campo apuntaría a no.
+
+01:16.270 --> 01:18.810
+Y, por lo tanto, la lista de enlaces enteros es una lista individualmente vinculada.
+
+01:18.820 --> 01:21.480
+Y yo quería seguir siendo una lista individualmente vinculada.
+
+01:21.490 --> 01:24.640
+Este sería un desafío más fácil si se tratara de una lista doblemente vinculada.
+
+01:24.640 --> 01:30.850
+Entonces, como dije, el proyecto contiene todo el código que necesitará y el método principal tiene que codificar, que
+
+01:30.850 --> 01:36.610
+debería funcionar cuando haya terminado, así que cuando termine de implementar el método ordenado por inserciones, puede ejecutar
+
+01:36.610 --> 01:41.530
+el método principal y las listas que impriman debe tener los nodos en orden ordenado.
+
+01:41.530 --> 01:44.650
+Así que buena suerte con eso y te veré cuando el video de la solución.

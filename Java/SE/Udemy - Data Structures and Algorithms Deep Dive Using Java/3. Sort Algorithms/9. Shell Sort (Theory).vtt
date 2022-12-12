@@ -1,0 +1,514 @@
+WEBVTT
+
+00:05.300 --> 00:11.270
+Tudo bem então quando o último vídeo nós aprendemos o algoritmo de ordenação de inserção e vimos
+
+00:11.270 --> 00:18.330
+a implementação ou pelo menos uma implementação e eu disse que o tipo de inserção é um algoritmo quadrático e é.
+
+00:18.380 --> 00:27.500
+Mas se a sequência de valores que estamos classificando estiver quase classificada, então o tipo de inserção executará um
+
+00:27.530 --> 00:33.190
+tempo quase linear e fará isso porque não precisa fazer muita mudança.
+
+00:33.200 --> 00:34.030
+Pense nisso.
+
+00:34.070 --> 00:40.190
+Se a maioria dos valores já estiver classificada, somente alguns valores terão que ser inseridos na
+
+00:40.190 --> 00:43.940
+partição classificada e a quantidade de deslocamento será reduzida.
+
+00:43.970 --> 00:50.420
+Agora, um cientista da computação chamado Donnel perceberá que, se pudéssemos reduzir a quantidade de mudanças que um tipo
+
+00:50.420 --> 00:56.210
+de inserção executaria muito mais rápido, ele criaria algo que é conhecido como o algoritmo de ordenação
+
+00:56.210 --> 00:59.860
+de shell e é isso que vamos fazer Olhe neste vídeo.
+
+00:59.870 --> 01:04.800
+Então, shells hadis ou funcionam bem, é uma variação do tipo de inserção.
+
+01:04.940 --> 01:12.600
+E o que ele faz é inserção de ordenação escolhe qual elemento inserir usando um valor de intervalo de um.
+
+01:12.650 --> 01:19.730
+Assim, toda vez que o tipo de inserção é executado, ele compara o primeiro valor não classificado e compara esse
+
+01:19.730 --> 01:25.010
+valor ao seu vizinho e continua deslocando os vizinhos para a direita até encontrar o
+
+01:25.010 --> 01:28.720
+ponto de inserção correto para o elemento que está inserido.
+
+01:28.820 --> 01:32.740
+O tipo de shell começa usando um valor maior.
+
+01:32.780 --> 01:38.420
+Então, em vez de comparar elementos com seus vizinhos, compara elementos que estão mais afastados uns
+
+01:38.420 --> 01:39.900
+dos outros na matriz.
+
+01:40.040 --> 01:45.360
+E então, à medida que o algoritmo é executado, reduz o espaço que ele está usando.
+
+01:45.380 --> 01:49.090
+E o objetivo é reduzir a quantidade de mudanças necessárias.
+
+01:49.100 --> 01:53.330
+Então, como eu disse, enquanto o algoritmo progride, o valor do gap é reduzido.
+
+01:53.440 --> 01:59.600
+Assim, shells sort atravessam o array com um certo valor e, depois de feito o primeiro,
+
+01:59.600 --> 02:02.650
+o valor inicial do gap diminui o gap.
+
+02:02.720 --> 02:07.100
+E faz isso de novo e faz isso e isso é muito importante.
+
+02:07.100 --> 02:11.480
+Ele continua reduzindo o valor do intervalo até que o valor do intervalo seja 1.
+
+02:11.480 --> 02:16.350
+Agora, quando o valor do intervalo é 1, estamos essencialmente fazendo uma classificação de inserção.
+
+02:16.370 --> 02:24.200
+Portanto, a última iteração do valor de intervalo realizará realmente uma classificação de inserção, mas, nesse ponto, a matriz
+
+02:24.200 --> 02:27.580
+será mais ordenada do que era no início.
+
+02:27.620 --> 02:34.160
+E assim, essencialmente, o que o tipo Shell faz é que ele faz algum trabalho preliminar usando valores de lacunas maiores
+
+02:34.160 --> 02:34.900
+que 1.
+
+02:34.970 --> 02:41.290
+E esse trabalho preliminar coloca os elementos na matriz e talvez mais perto de suas posições ordenadas.
+
+02:41.330 --> 02:46.910
+E então, na última iteração, quando o valor obtido se torna vinho, ele faz um tipo de inserção.
+
+02:46.940 --> 02:52.280
+Mas esse tipo de inserção de inserção final estará funcionando com valores que tiveram alguma
+
+02:52.280 --> 02:56.360
+classificação preliminar feita neles e, por causa disso, será necessário menos deslocamento.
+
+02:56.360 --> 03:00.080
+Então, uma pergunta é: Bem, o que usamos para o valor do intervalo.
+
+03:00.080 --> 03:03.220
+Como podemos descobrir com o que começar e como reduzi-lo.
+
+03:03.260 --> 03:07.960
+E você vai ver que há uma tonelada de teorias sobre isso.
+
+03:07.970 --> 03:11.930
+Nós vamos sair agora para o artigo da Wikipedia sobre o tipo
+
+03:16.810 --> 03:21.270
+Shell, então aqui estamos no artigo da Wikipedia que eu usei nos recursos.
+
+03:21.280 --> 03:27.510
+E aqui está uma tabela com diferentes valores iniciais de gap e como reduzir o gap.
+
+03:27.520 --> 03:33.250
+O que como a seqüência de valores de intervalo para usar e como você pode ver, há um grande número deles.
+
+03:33.250 --> 03:39.760
+O importante é notar que a maneira como você calcula a lacuna pode influenciar a complexidade do tempo.
+
+03:39.760 --> 03:45.070
+E aqui temos uma coluna de complexidade de tempo e dependendo de qual lacuna estamos usando, a complexidade do tempo
+
+03:45.070 --> 03:45.610
+é diferente.
+
+03:45.610 --> 03:47.950
+Nós temos uma complexidade de tempo logarítmica aqui.
+
+03:47.940 --> 03:50.650
+Aqui está uma complexidade de tempo quadrática.
+
+03:50.650 --> 03:57.880
+E assim, o valor de intervalo escolhido pode influenciar quantas etapas o algoritmo requer. Portanto, tenha isso
+
+03:57.880 --> 03:58.520
+em mente.
+
+03:58.630 --> 04:05.710
+Vamos voltar aos sleights.
+
+04:05.740 --> 04:09.160
+OK, então existem várias maneiras de calcular o valor do intervalo.
+
+04:09.170 --> 04:15.820
+Uma sequência realmente comum usada para o valor de gap e o gap é toda a seita, também chamada de
+
+04:15.910 --> 04:17.860
+intervalo, é a sequência de Knuth.
+
+04:17.860 --> 04:19.270
+Eu acho que é assim que é pronunciado.
+
+04:19.270 --> 04:24.040
+Eu nunca pronunciei antes, disse em voz alta, então eu não sei se o K está em silêncio
+
+04:24.040 --> 04:26.350
+ou não, mas é a sequência da canoa.
+
+04:26.410 --> 04:36.460
+E isso diz que calculamos o intervalo usando três K menos um ao longo de dois e o valor inicial que queremos
+
+04:36.460 --> 04:40.890
+usar é baseado no comprimento do array que desejamos.
+
+04:40.900 --> 04:48.010
+Queríamos usar o valor de k que é calculado para um valor o mais próximo
+
+04:48.010 --> 04:51.360
+possível do comprimento da matriz sem ultrapassar.
+
+04:51.370 --> 04:59.680
+Então, se tivéssemos uma disposição de 20 elementos, gostaríamos de começar com K igual a 3, se começarmos
+
+04:59.680 --> 05:02.120
+com K igual a 4.
+
+05:02.230 --> 05:05.770
+O intervalo seria 40 e isso é maior que o comprimento do array.
+
+05:05.770 --> 05:07.170
+Então isso não vai funcionar.
+
+05:07.180 --> 05:14.350
+E assim, quando você quiser usar essa sequência, você começa com o valor de k, o que resultará
+
+05:14.410 --> 05:21.920
+em um valor de gap que é o mais próximo possível do tamanho da matriz, sem passar por cima.
+
+05:21.940 --> 05:27.610
+Agora, na implementação, vou mostrar que não vamos usar essa sequência, mas é uma
+
+05:27.880 --> 05:31.300
+forma comum de calcular o intervalo ou a lacuna.
+
+05:31.450 --> 05:33.330
+Então eu pensei em mostrar para você.
+
+05:33.340 --> 05:35.680
+Nós vamos fazer algo mais simples que isso.
+
+05:35.680 --> 05:41.380
+Então, o que vamos fazer é basear nossa lacuna na lente das matrizes e vamos inicializar
+
+05:41.380 --> 05:48.280
+a lacuna para um comprimento de radar até e, em seguida, em cada iteração, vamos dividir o valor da lacuna
+
+05:48.280 --> 05:50.320
+por dois até chegarmos a 1.
+
+05:50.320 --> 05:53.670
+Agora nosso array tem apenas 7 elementos.
+
+05:53.740 --> 05:59.770
+E então o primeiro valor de gap será 7 sobre 2, que é 3, e então o segundo valor de gap
+
+05:59.770 --> 06:01.690
+será 3, sobre 2, que é 1.
+
+06:01.690 --> 06:05.830
+Então, na verdade, só teremos duas iterações para esse array.
+
+06:05.830 --> 06:09.290
+Então, na primeira iteração, usaremos um valor get de 3.
+
+06:09.400 --> 06:14.920
+E então, na iteração final, e isso é sempre verdade para o shell. O valor de get será
+
+06:14.920 --> 06:17.770
+1 em que, nesse ponto, faremos um tipo de inserção.
+
+06:17.980 --> 06:24.220
+Mas como fizemos uma iteração anterior e movemos alguns dos elementos em torno de alguns dos
+
+06:24.220 --> 06:27.130
+elementos, estaremos mais próximos de suas posições classificadas.
+
+06:27.130 --> 06:31.800
+Então, vamos passar por isso, então vamos começar com um valor de três, porque vamos usar
+
+06:31.820 --> 06:33.430
+um radar de lenth para.
+
+06:33.490 --> 06:37.750
+Vamos inicializar para essa lacuna ej para Aw.
+
+06:37.780 --> 06:44.770
+E como fizemos antes com o tipo de inserção, vamos salvar o valor com o qual queremos trabalhar
+
+06:44.780 --> 06:46.120
+em um novo elemento.
+
+06:46.120 --> 06:51.340
+E então o que fazemos é comparar o elemento no índice j menos o gap.
+
+06:51.370 --> 06:55.230
+Então, isso será três menos três é 0 com novo elemento.
+
+06:55.240 --> 07:00.670
+Então nossa lacuna é 3 e estamos começando com os elementos 3, então basicamente queremos compará-lo porque a
+
+07:00.670 --> 07:01.470
+lacuna é três.
+
+07:01.480 --> 07:04.810
+Queremos compará-lo com o elemento que está a três posições de distância.
+
+07:04.830 --> 07:10.010
+E então nós comparamos sete com vinte e sete é menor que 20.
+
+07:10.040 --> 07:15.490
+Então, o que vamos fazer é atribuir 20 a 7.
+
+07:15.490 --> 07:19.330
+Então, ao invés de fazer o que estávamos fazendo com o tipo de inserção.
+
+07:19.330 --> 07:25.750
+O que é que estamos comparando com os vizinhos e mudando para um estamos comparando usando uma lacuna de
+
+07:25.750 --> 07:27.320
+três e mudamos por três.
+
+07:27.340 --> 07:32.500
+E assim, 20 foi mudado para três lugares e depois vamos definir J.
+
+07:32.490 --> 07:34.610
+Para J menos diferença que é zero.
+
+07:34.630 --> 07:41.440
+E nós atingimos a frente da matriz neste ponto e então o que vamos fazer é atribuir um
+
+07:41.530 --> 07:43.480
+novo elemento à posição 0.
+
+07:43.480 --> 07:48.570
+Então, o que basicamente fizemos é que estamos fazendo um tipo de inserção, mas estamos
+
+07:48.580 --> 07:56.590
+usando uma lacuna de três, então o que vamos querer fazer agora é movê-lo para quatro e J se torna II, que é
+
+07:56.650 --> 07:58.610
+para o novo elemento é 55.
+
+07:58.630 --> 08:04.240
+E vamos comparar 55 a 35 porque são três elementos de distância.
+
+08:04.280 --> 08:06.570
+Cinqüenta e cinco é maior que 35.
+
+08:06.580 --> 08:08.200
+Então não fazemos nada.
+
+08:08.200 --> 08:10.270
+Tudo continua como está.
+
+08:10.270 --> 08:13.100
+E agora eu vou chegar a quatro será cinco.
+
+08:13.150 --> 08:20.310
+Jay será cinco vão comparar um para menos de 15 porque menos 15 é de três elementos de distância.
+
+08:20.410 --> 08:24.480
+OK, então não há nada a fazer porque um é maior que menos 15.
+
+08:24.520 --> 08:32.260
+E agora vamos passar para menos 22 e vamos atribuir isso a um novo elemento e
+
+08:32.260 --> 08:39.820
+vamos compará-lo ao elemento que está em três posições e menos 22 é menor que 20.
+
+08:39.850 --> 08:43.390
+Então, vamos atribuir 22 posições 6.
+
+08:43.390 --> 08:47.300
+Agora, neste ponto, vamos subtrair a diferença de J.
+
+08:47.470 --> 08:55.830
+E então nós vamos comparar menos 22 contra o que definir a posição 0 porque queremos ir três elementos
+
+08:55.830 --> 08:59.500
+de distância novamente menos 22 é menor que sete.
+
+08:59.500 --> 09:03.330
+Então, vamos mudar 7 para a posição 3.
+
+09:03.430 --> 09:10.060
+E neste momento atingiu a frente da matriz não há mais elementos para comparar menos 22 contra.
+
+09:10.060 --> 09:13.480
+E então atribuímos menos 22 à posição zero.
+
+09:13.600 --> 09:17.320
+E neste momento chegamos ao final do array.
+
+09:17.740 --> 09:22.990
+E assim terminamos nossa primeira iteração com gap igual a 3.
+
+09:22.990 --> 09:30.610
+Agora observe que a matriz está mais ordenada agora do que era antes e nos movemos menos 22 até a
+
+09:30.610 --> 09:31.710
+frente da matriz.
+
+09:31.710 --> 09:33.750
+Nós fizemos isso com uma tarefa.
+
+09:33.910 --> 09:36.760
+E assim, no tipo de inserção.
+
+09:36.760 --> 09:43.480
+Classificação pura de inserção em algum momento nós teríamos que ter deslocado menos 22 para baixo ou melhor na implementação.
+
+09:43.480 --> 09:49.500
+Eu mostrei a você que cada elemento teria que ser mudado para dar lugar a menos 22.
+
+09:49.630 --> 09:56.500
+Mas neste tipo de fase de classificação do Preece, quando estamos usando uma lacuna de três menos 22 foi movido muito rapidamente
+
+09:56.500 --> 09:58.150
+para a frente da matriz.
+
+09:58.150 --> 10:03.940
+Nós também nos movemos 20 para mais perto de sua posição classificada 20 iniciada na frente da
+
+10:03.940 --> 10:09.360
+matriz e agora são apenas duas posições longe de onde normalmente terminam na matriz ordenada.
+
+10:09.400 --> 10:15.460
+Assim, você pode ver como fazer esse trabalho preliminar antes de começarmos a inserir a classificação reduzirá a quantidade de
+
+10:15.460 --> 10:17.060
+mudanças que temos que fazer.
+
+10:17.280 --> 10:23.070
+Então, neste ponto, vamos atualizar a lacuna que vamos dividir três por dois e obteremos um.
+
+10:23.080 --> 10:26.620
+Então, nesse ponto, faremos um tipo de inserção.
+
+10:26.620 --> 10:29.140
+Porque a lacuna será uma.
+
+10:29.140 --> 10:33.700
+Então, vamos comparar tudo com seus vizinhos e, quando mudarmos, estaremos mudando
+
+10:33.700 --> 10:34.490
+em um.
+
+10:34.510 --> 10:36.960
+Então, nesse ponto, faremos um tipo de inserção.
+
+10:36.970 --> 10:42.730
+Mas estamos fazendo uma classificação de inserção em uma matriz que teve algum trabalho preliminar feito nela.
+
+10:42.730 --> 10:46.860
+E então haverá muito menos mudanças e é isso que a Shell classifica.
+
+10:46.960 --> 10:52.980
+Portanto, o tipo Shell é um algoritmo no local, assim como na inserção que estamos trabalhando dentro do array original.
+
+10:53.020 --> 10:58.030
+Agora, como você viu, é realmente difícil determinar a complexidade do tempo, porque isso
+
+10:58.030 --> 11:04.900
+vai depender da diferença que vai depender do método que você está usando para escolher a lacuna, no pior caso,
+
+11:04.900 --> 11:05.890
+pode ser quadrática.
+
+11:05.890 --> 11:11.560
+Vimos isso quando saímos para a mesa na Wikipédia, mas também pode ser muito melhor do que isso.
+
+11:11.590 --> 11:14.530
+Não requer tanto deslocamento quanto o tipo de inserção.
+
+11:14.530 --> 11:18.070
+Então, como eu disse, geralmente funciona melhor do que o tipo de inserção.
+
+11:18.070 --> 11:27.130
+No entanto, é um tipo de inserção de algoritmo instável que é estável, mas a ordenação do shell é instável e você pode
+
+11:27.130 --> 11:32.500
+ver porque é porque na fase de ordenação de pré-inserção em que estamos
+
+11:32.500 --> 11:38.830
+comparando elementos distantes é muito possível que tenhamos um elemento duplicado o elemento mais à direita
+
+11:38.830 --> 11:42.420
+será deslocado na frente do elemento menos à esquerda.
+
+11:42.430 --> 11:47.950
+Portanto, o fato de estarmos examinando elementos que estão mais distantes um do outro pode
+
+11:47.950 --> 11:52.030
+levar as posições relativas de itens duplicados a não serem preservados.
+
+11:52.030 --> 11:55.260
+Agora, uma última nota antes de irmos para a implementação.
+
+11:55.300 --> 11:59.220
+Você também pode melhorar a classificação de bolhas usando o tipo shell.
+
+11:59.220 --> 12:03.250
+E seria o mesmo tipo de ideia que você usaria um intervalo de intervalo.
+
+12:03.340 --> 12:09.820
+Lembre-se, na bolha, estamos sempre comparando elementos com seus vizinhos e então estamos trocando
+
+12:09.940 --> 12:11.600
+e borbulhando elementos.
+
+12:11.610 --> 12:13.530
+Bem, é o mesmo tipo de ideia.
+
+12:13.630 --> 12:14.500
+Então, em um tipo de bolha.
+
+12:14.500 --> 12:21.130
+Se usarmos uma lacuna de um que significa que comparamos com os vizinhos e tudo é trocado por uma posição,
+
+12:21.160 --> 12:22.600
+as coisas ficam borbulhadas.
+
+12:22.600 --> 12:28.660
+Se fizermos algum trabalho preliminar e, neste caso, em vez de apenas mudarmos os elementos, nós realmente os
+
+12:28.660 --> 12:31.020
+trocaremos, podemos melhorar o tipo de bolha.
+
+12:31.090 --> 12:39.160
+Assim, você pode aplicar o shell sort a insertion sort e bubble sort e melhorar ambos os algoritmos dessa maneira com a
+
+12:39.160 --> 12:40.270
+ordenação por inserção.
+
+12:40.270 --> 12:45.520
+Você está reduzindo o número de mudanças e o tipo de bolha que você estaria reduzindo no número
+
+12:45.610 --> 12:47.650
+de trocas que você tem que fazer.
+
+12:47.840 --> 12:52.990
+OK, então vamos dar uma olhada em como o algoritmo funciona, vamos implementá-lo.
+
+12:52.990 --> 12:54.420
+Eu vou te ver no próximo vídeo.

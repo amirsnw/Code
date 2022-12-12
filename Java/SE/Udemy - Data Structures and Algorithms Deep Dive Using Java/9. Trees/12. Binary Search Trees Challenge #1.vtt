@@ -1,0 +1,64 @@
+WEBVTT
+
+00:05.360 --> 00:13.190
+Está bien para este primer desafío. Quiero que agregue métodos para hacer un recorrido de preorden de nuestra implementación de árbol para
+
+00:13.190 --> 00:19.880
+que el proyecto inicial en el área de recursos sea esencialmente la implementación en árbol de la implementación simple
+
+00:19.880 --> 00:26.540
+de un árbol que hicimos en esta sección y agregamos métodos al árbol y a la clase de
+
+00:26.540 --> 00:29.840
+nodo árbol para hacer cuando se cruzan por orden.
+
+00:30.020 --> 00:34.090
+Pero no agregamos métodos para el cruce preorden o post order.
+
+00:34.100 --> 00:38.990
+Ahora recuerde que un cruce de orden previa significa que visitamos primero la raíz.
+
+00:39.020 --> 00:46.760
+Y entonces este es nuestro árbol y un recorrido de orden previo sería 25 porque visitamos primero la ruta y luego
+
+00:46.760 --> 00:50.700
+bajamos a su subárbol izquierdo y visitamos su subárbol izquierdo.
+
+00:50.720 --> 00:56.030
+Y así en este subárbol también vamos a visitar la ruta primero, así que haremos 20 y luego queremos
+
+00:56.030 --> 01:01.550
+visitar su subárbol izquierdo, mientras que vamos a hacer la raíz del subárbol izquierdo primero, así que haremos 15 .
+
+01:01.550 --> 01:05.890
+No hay subárbol izquierdo, entonces haremos 17 y luego volvemos a subir.
+
+01:05.900 --> 01:12.080
+Hemos completado los 20s del subárbol izquierdo, así que ahora visitamos el subárbol correcto. Eso es 22 y ahora terminamos
+
+01:12.080 --> 01:17.000
+el subárbol de la raíz izquierda, así que ahora queremos visitar sus subárboles correctos. Vamos a
+
+01:17.000 --> 01:22.530
+visitar la ruta 27 y luego vamos a ir. para visitar su subárbol izquierdo hay solo 26 allí.
+
+01:22.580 --> 01:27.260
+Queremos ahora hacer los subárboles correctos Entonces haremos 30 29 y 32.
+
+01:27.260 --> 01:32.840
+Entonces, con un preorden siempre visita la ruta primero y luego visita su subárbol izquierdo y luego es
+
+01:32.840 --> 01:33.620
+el subárbol derecho.
+
+01:33.620 --> 01:39.050
+Pero, por supuesto, para cada subárbol también visita la ruta primero y luego la izquierda y luego la derecha.
+
+01:39.230 --> 01:43.030
+Entonces, este debería ser un desafío bastante fácil, diría yo.
+
+01:43.090 --> 01:50.750
+Pero continúe y agregue los métodos para el recorrido de preorden al árbol y la clase de nodo de árbol.
+
+01:50.780 --> 01:52.240
+Te veré en el video de la solución.

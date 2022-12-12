@@ -1,0 +1,69 @@
+<div class="row" #docList>
+  <div class="col-12">
+    <div class="alert alert-danger" *ngIf="hasError">
+      <p>
+        <i class="icon-error" style="margin-left: 5px"></i>
+        <span>سیستم قادر به دریافت اطلاعات از سرویس دهنده مرکزی نمی باشد</span>
+        <button class="button normal" style="float: left; margin-top: -10px" (click)="loadData()">تلاش مجدد</button>
+      </p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">تصاویر مدارک ثبت شده در سیستم</div>
+      <div class="panel-body">
+        <div class="flex-container">
+          <div *ngFor="let img of data" class="thumb" (click)="onItemClicked(img)">
+            <img [attr.src]="img.thumb | secureImage | async:'resourceUrl'" alt="">
+            <div><span style="margin-left: 5px;color: #4b4b4b;">نوع:</span><strong>{{img.categoryName}}</strong></div>
+            <div><span style="margin-left: 5px;color: #4b4b4b;">شرح:</span><strong>{{img.name}}</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<tamin-modal #theModal title="نمایش سند">
+  <div class="row">
+    <div class="col-8">
+      <tamin-document-viewer [width]="'100%'" [height]="'600px'" #docViewer></tamin-document-viewer>
+    </div>
+    <div class="col-4">
+      <form [formGroup]="theForm">
+        <div class="row">
+          <div class="col-12">
+            <tamin-field-label formControlName="docState">وضعیت مدرک</tamin-field-label>
+            <tamin-field-validator formControlName="docState"></tamin-field-validator>
+            <tamin-field-combo-box-static
+              formControlName="docState"
+              [dataItems]="docStates"
+              displayField="name"
+              valueField="value"></tamin-field-combo-box-static>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <tamin-field-label formControlName="docType">نوع مدرک</tamin-field-label>
+            <tamin-field-validator formControlName="docType"></tamin-field-validator>
+            <tamin-field-combo-box-static
+              formControlName="docType"
+              [dataItems]="docTypes"
+              displayField="name"
+              valueField="value"></tamin-field-combo-box-static>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <tamin-field-label formControlName="description">توضیحات</tamin-field-label>
+            <tamin-field-validator formControlName="description"></tamin-field-validator>
+            <tamin-field-text formControlName="description"></tamin-field-text>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="button normal" (click)="onSumbitReport()">ذخیره</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</tamin-modal>

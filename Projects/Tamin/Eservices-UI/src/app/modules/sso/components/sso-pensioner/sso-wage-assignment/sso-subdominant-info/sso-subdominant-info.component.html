@@ -1,0 +1,29 @@
+<div class="panel">
+  <div class="page-title">اطلاعات شخص وام گیرنده</div>
+  <div class="panel-body">
+    <form [formGroup]="subForm" autocomplete="off"
+          novalidate>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="nationalId">کد ملی</tamin-field-label>
+          <tamin-field-validator formControlName="nationalId"></tamin-field-validator>
+          <tamin-field-natioanl-id formControlName="nationalId"></tamin-field-natioanl-id>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="birthDate">تاریخ تولد</tamin-field-label>
+          <tamin-field-persian-date formControlName="birthDate"></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="firstName">نام</tamin-field-label>
+          <tamin-field-validator formControlName="firstName"></tamin-field-validator>
+          <tamin-field-persian-text formControlName="firstName"></tamin-field-persian-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="lastName">نام خانوادگی</tamin-field-label>
+          <tamin-field-validator formControlName="lastName"></tamin-field-validator>
+          <tamin-field-persian-text formControlName="lastName"></tamin-field-persian-text>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

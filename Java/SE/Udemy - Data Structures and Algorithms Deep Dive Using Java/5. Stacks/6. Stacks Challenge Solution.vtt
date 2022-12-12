@@ -1,0 +1,325 @@
+WEBVTT
+
+00:05.990 --> 00:11.330
+Tudo bem, então aqui está o projeto inicial que estava disponível no último vídeo.
+
+00:11.330 --> 00:16.850
+Então, o que precisamos fazer é escrever o cheque do método palíndromo.
+
+00:16.850 --> 00:23.400
+Agora, uma pilha é ideal para a verificação de palíndromos, porque o que basicamente queremos fazer é inverter a
+
+00:23.400 --> 00:28.730
+cadeia e, em seguida, compará-la com a cadeia original e, se forem iguais, será um palíndromo.
+
+00:28.730 --> 00:35.830
+Então a pilha é ideal para reverter a corda porque o que fazemos é empurrar cada caractere por sua vez e
+
+00:35.840 --> 00:43.820
+então porque quando nós estouramos ele é o último em primeiro lugar, podemos colocar os caracteres para fora e compará-los com a corda original
+
+00:43.820 --> 00:50.000
+um por vinho ou o que nós podemos fazer e esta é a abordagem que eu fiz é estourar
+
+00:50.090 --> 00:53.050
+os personagens e anexá-los a um construtor de string.
+
+00:53.060 --> 00:55.370
+E então podemos apenas comparar as duas seqüências.
+
+00:55.370 --> 00:58.670
+Agora a ruga aqui é a pontuação e os espaços.
+
+00:58.670 --> 01:05.840
+E assim, a abordagem que tomei foi usar a classe de lista vinculada para a pilha e eu tenho
+
+01:05.840 --> 01:12.860
+um construtor de string que eu uso para construir a string original com pontuação e espaços separados e, claro,
+
+01:12.860 --> 01:14.900
+as strings também mais baixas.
+
+01:14.900 --> 01:21.740
+E como estou fazendo isso, estou empurrando personagens que não são pontuação e não são espaços na pilha.
+
+01:21.740 --> 01:29.240
+E uma vez que eu fiz o que eu tenho é uma pilha com todos os caracteres de oito Izzet na string
+
+01:29.270 --> 01:35.510
+e eu tenho um construtor de string que contém a string original mas com pontuação e espaços removidos
+
+01:35.510 --> 01:42.640
+e então tudo que eu faço é pop all os valores da pilha e anexe-os a um construtor de string.
+
+01:42.650 --> 01:48.830
+E então, no final, apenas comparo os valores dos dois construtores de string e, se forem iguais, é um palíndromo.
+
+01:48.830 --> 01:50.360
+Então essa é a abordagem que eu tomei.
+
+01:50.360 --> 01:56.720
+Você pode ter adotado uma abordagem diferente, contanto que chamar os métodos retorne o que esperamos do que sua solução
+
+01:56.720 --> 01:59.370
+seja boa, ela não precisa corresponder à minha.
+
+01:59.450 --> 02:04.310
+Você pode ter escolhido uma classe diferente para a pilha que você pode ter tido uma abordagem diferente para
+
+02:04.310 --> 02:06.110
+lidar com a pontuação e tudo bem.
+
+02:06.230 --> 02:12.140
+Assim como com algoritmos com muitas implementações, os desafios podem ter muitas soluções
+
+02:12.140 --> 02:17.250
+e, portanto, mostrarei uma solução e você poderá ter algo diferente.
+
+02:17.390 --> 02:21.890
+OK, então a primeira coisa que vou fazer é criar minha pilha e como
+
+02:21.890 --> 02:29.480
+eu disse que vou usar a classe de lista vinculada eu vou dizer lista ligada e eu estou indo para armazenar caracteres nesta
+
+02:31.310 --> 02:33.290
+pilha pilha é igual nova lista.
+
+02:33.300 --> 02:36.350
+E então essa é a pilha que vou usar que está vazia no momento.
+
+02:36.560 --> 02:42.950
+E então eu vou criar um construtor de string enquanto eu faço o loop através da string
+
+02:43.040 --> 02:46.220
+que nós passamos e colocamos os caracteres na pilha.
+
+02:46.220 --> 02:53.350
+Também estarei anexando os caracteres não espaciais sem pontuação a um construtor de string.
+
+02:53.410 --> 02:59.210
+Então, eu vou dizer string de construtor de string sem pontuação
+
+03:01.370 --> 03:04.850
+igual a um novo construtor de string.
+
+03:04.880 --> 03:09.970
+E eu vou dar um comprimento de corda porque é o maior que vamos precisar.
+
+03:10.340 --> 03:19.190
+E agora eu vou dizer que a string de letras minúsculas equivale a Daut a minúsculas e é claro que a string é o valor
+
+03:19.340 --> 03:20.390
+que nós passamos.
+
+03:20.390 --> 03:23.840
+Então, basicamente, apenas em letras minúsculas é a string de uma só vez.
+
+03:23.870 --> 03:28.340
+Eu poderia fazer isso caractere por caractere, mas eu apenas minúsculas todos eles, então eu não
+
+03:28.340 --> 03:32.380
+tenho que me preocupar em fazê-lo quando estou em loop através dos caracteres na cadeia.
+
+03:32.870 --> 03:38.390
+Tudo bem, então a próxima coisa que eu vou fazer é percorrer essa string caractere
+
+03:38.390 --> 03:44.120
+por caractere e eu vou empurrar caracteres que tenham um valor de oito add na pilha.
+
+03:44.390 --> 03:49.430
+E eu também vou anexá-los a esta string sem construtor de string de pontuação,
+
+03:49.430 --> 03:58.490
+então no final do loop minha pilha será preenchida com todos os caracteres sem pontuação e sem espaço e todos terão um construtor de string
+
+03:58.640 --> 04:04.280
+com a string original com todos a pontuação e todos os espaços removidos e claro que
+
+04:04.280 --> 04:06.360
+também será em minúscula e vista.
+
+04:06.440 --> 04:09.680
+Então eu vou dizer quatro e eu igual a zero.
+
+04:09.680 --> 04:14.090
+Eu menos que abaixo o comprimento de caixa baixa.
+
+04:14.240 --> 04:23.620
+Além disso, o mesmo char c é igual a caracteres minúsculos em aw.
+
+04:24.110 --> 04:27.780
+Então isso nos leva o personagem em uma posição de string.
+
+04:27.830 --> 04:41.330
+E eu vou dizer se C for maior que ou igual a a e c for menor ou igual a Zad, então estou
+
+04:41.330 --> 04:43.240
+interessado neste personagem.
+
+04:43.250 --> 04:47.890
+Isso significa que é entre os personagens de A a Zed, inclusive.
+
+04:47.900 --> 04:54.050
+E por isso não é pontuação não é espaço em branco e por isso eu queria adicionar esse caractere à minha string sem
+
+04:54.050 --> 04:57.770
+construtor de string de bits de pontuação e também quero empurrá-lo para a pilha.
+
+04:57.770 --> 05:02.500
+Então, eu vou dizer string sem pontuação a filha pode ver.
+
+05:02.540 --> 05:05.200
+E isso é acrescentado ao meu construtor de string.
+
+05:05.600 --> 05:09.170
+E eu vou dizer push C. E assim, quando saímos como um saveiro, os
+
+05:09.830 --> 05:15.830
+meus caracteres de espaço não brancos não pontuação foram empurrados para a pilha.
+
+05:15.830 --> 05:16.750
+E esse construtor
+
+05:16.790 --> 05:23.600
+de string contém a string original em ordem da esquerda para a direita, com toda a pontuação e espaço em branco removidos.
+
+05:23.600 --> 05:24.800
+E também foi minúscula.
+
+05:24.800 --> 05:27.010
+Então agora eu preciso criar minha string reversa.
+
+05:27.500 --> 05:30.560
+Agora eu poderia ter tomado a
+
+05:30.560 --> 05:36.350
+abordagem aqui para percorrer essa string e destacar os caracteres e compará-los.
+
+05:36.350 --> 05:36.570
+Mas,
+
+05:36.590 --> 05:41.690
+em vez disso, vou apenas remover todos os caracteres da pilha e anexá-los a outro construtor de string.
+
+05:41.690 --> 05:42.140
+Então, eu
+
+05:42.140 --> 05:49.850
+vou dizer que string reversa do construtor de string é igual a um novo construtor de string e nós vamos torná-lo o tamanho da panela porque isso deveria ser.
+
+05:49.850 --> 05:53.750
+Construtor de string.
+
+05:54.140 --> 05:55.760
+Ok, vou terminar minha outra frase.
+
+05:56.000 --> 05:57.230
+Agora vamos empilhá-lo fora porque esse é o maior construtor de string que precisamos.
+
+05:57.230 --> 06:01.880
+E então eu vou dizer que a parede não está empilhada, está vazia.
+
+06:02.270 --> 06:09.620
+Seqüência reversa.
+
+06:10.670 --> 06:11.930
+Anexar pop empilhados.
+
+06:11.960 --> 06:15.560
+E então o que eu fiz aqui é
+
+06:15.890 --> 06:23.360
+que estou tirando os personagens que eu empurrei e todos os personagens que eu empurrei estão entre Zed.
+
+06:23.360 --> 06:25.450
+E então cada personagem que está sendo eliminado está entre anes inclusivo.
+
+06:25.730 --> 06:31.730
+E assim no final disto eu tenho a string original invertida mas sem a pontuação e o
+
+06:31.940 --> 06:38.920
+espaço em branco que é o que eu quero e então tudo que eu tenho que fazer agora é comparar
+
+06:39.020 --> 06:46.310
+esta string invertida com a string sem pontuação porque esta tem uma string que lê da esquerda para a direita sem pontuação.
+
+06:46.310 --> 06:51.400
+E isso tem a string que lê da direita para a esquerda.
+
+06:51.410 --> 06:54.310
+Então, se eles são iguais, é um palíndromo.
+
+06:54.320 --> 06:57.250
+Se eles não são iguais, não é um palíndromo.
+
+06:57.350 --> 07:01.040
+Então tudo o que tenho a fazer é dizer.
+
+07:01.070 --> 07:03.360
+E na verdade eu não
+
+07:03.860 --> 07:14.660
+preciso adicionar uma linha que eu possa apenas modificar essa string reversa de retorno para string que é igual a string sem pontuação para straight.
+
+07:15.530 --> 07:18.800
+E isso está dizendo que, se a string no construtor de string
+
+07:19.340 --> 07:24.320
+de string reversa for igual à string na string, nenhum construtor de string de pontuação terá um palíndromo.
+
+07:24.320 --> 07:28.340
+Se eles não são iguais, não temos um palíndromo.
+
+07:28.430 --> 07:30.910
+E essa é a minha solução.
+
+07:31.250 --> 07:32.770
+E como eu disse, o seu pode ser diferente.
+
+07:32.780 --> 07:34.670
+Você pode ter adotado uma
+
+07:34.670 --> 07:40.280
+abordagem completamente diferente, desde que eles retornem o que esperamos que seja bom, então vamos esperar.
+
+07:40.290 --> 07:41.420
+Verdadeiro Verdadeiro Verdadeiro Falso e Verdadeiro impresso quando eu corro.
+
+07:41.420 --> 07:45.740
+Então vamos em frente e fazer isso agora.
+
+07:45.740 --> 07:47.580
+E nós conseguimos.
+
+07:51.950 --> 07:52.760
+Verdadeiro Verdadeiro Verdadeiro Falso e Verdadeiro.
+
+07:52.760 --> 07:55.460
+E então essa é uma solução para o desafio.
+
+07:55.580 --> 07:57.830
+Espero que você tenha se saído bem se a sua solução diferir da
+
+07:57.830 --> 08:02.480
+minha e tenho certeza de que de alguma forma, porque há um grande número de abordagens diferentes que você poderia ter tomado para resolver esse problema.
+
+08:02.510 --> 08:06.920
+Contanto que você use para empilhar, contanto que você
+
+08:07.100 --> 08:13.910
+esteja chamando push e pop em algum lugar e contanto que você obtenha os resultados.
+
+08:14.120 --> 08:14.690
+Verdadeiro verdadeiro verdadeiro falso verdadeiro.
+
+08:14.690 --> 08:16.730
+Sua solução é boa.
+
+08:16.730 --> 08:18.240
+Tudo bem, então é isso para o Stax.
+
+08:18.260 --> 08:20.150
+Eu vejo você na próxima seção.
+
+08:20.150 --> 08:21.800
+&nbsp;

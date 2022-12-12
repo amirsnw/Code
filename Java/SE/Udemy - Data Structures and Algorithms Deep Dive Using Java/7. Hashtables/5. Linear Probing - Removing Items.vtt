@@ -1,0 +1,349 @@
+WEBVTT
+
+00:05.520 --> 00:08.010
+OK, então vamos implementar para remover o Methot.
+
+00:08.010 --> 00:10.660
+Agora nós não fizemos isso, então vamos remover.
+
+00:10.740 --> 00:18.140
+Então, vou colocá-lo depois do método get, então vamos dizer publicamente e vamos devolver o funcionário ou Norle se
+
+00:18.200 --> 00:21.640
+não houver ninguém sem tal funcionário na tabela removido.
+
+00:21.990 --> 00:29.520
+E, como de costume, precisamos que a chave seja removida, assim como o get terá que usar o teste linear porque
+
+00:29.520 --> 00:32.150
+precisamos encontrar o funcionário que queremos remover.
+
+00:32.190 --> 00:42.840
+E então vamos dizer na tecla Hashd que é igual a chave de busca e então vamos dizer se chave ashed é igual a menos um
+
+00:42.870 --> 00:49.380
+então vamos retornar Knol B porque não há nenhum funcionário na tabela com a chave de
+
+00:49.380 --> 00:51.950
+strings então não há nada para remover.
+
+00:52.200 --> 01:04.570
+E se esse não for o caso, diremos que empregado empregado é igual a hash table hashed key dot employee.
+
+01:04.590 --> 01:06.880
+Nós vamos derrubar a posição.
+
+01:06.900 --> 01:15.600
+Então, vamos dizer que a tabela hash para key equals é igual a null, então sabemos que há um ponto vazio lá agora e,
+
+01:15.600 --> 01:18.210
+em seguida, vamos apenas retornar o funcionário.
+
+01:18.210 --> 01:25.590
+Então, vamos tentar remover um par de funcionários Então, vamos voltar aqui e vamos dizer idade remover
+
+01:25.590 --> 01:26.240
+vamos remover
+
+01:26.250 --> 01:28.330
+Eu não conheço o Mike Wilson.
+
+01:29.130 --> 01:34.710
+E vamos remover Jane Jones para que possamos testar a sondagem linear ao remover e depois imprimiremos nossa
+
+01:34.710 --> 01:35.750
+tabela de hash.
+
+01:35.760 --> 01:36.630
+Então vamos correr
+
+01:39.960 --> 01:40.420
+OK.
+
+01:40.440 --> 01:43.320
+Deixe-me puxar isso para que possamos ver o que está acontecendo.
+
+01:43.320 --> 01:51.090
+Então, a primeira impressão aqui é depois dos nossos anúncios e você verá que temos John Jane Mike e
+
+01:51.090 --> 01:56.260
+Mary e depois fazemos nossas duas recuperações e depois removemos Mike e Jane.
+
+01:56.280 --> 02:00.870
+E aqui está a segunda impressão e apenas John e Mary são deixados.
+
+02:00.930 --> 02:07.410
+E assim, John está em posição de três em Mary's na posição 7, você pode ver
+
+02:07.590 --> 02:13.150
+que Jane se foi da posição 5 e Mike Wilson saiu da posição 6.
+
+02:13.170 --> 02:21.540
+Ok, então esta é a nossa implementação, há uma mudança que eu quero fazer para a chave bem que você pode ter
+
+02:21.540 --> 02:22.350
+pego isso.
+
+02:22.380 --> 02:28.230
+Então, precisamos fazer uma alteração aqui, porque se estamos saindo deste ciclo, porque a chave hash
+
+02:28.230 --> 02:38.430
+da tabela de hash é tudo, então se o índice de parada não é chave de hash Nós vamos soltar aqui chave de retorno de hash e remover ou
+
+02:38.430 --> 02:45.870
+obter Em seguida, tentarei usar essa chave porque não estamos retornando menos 1 para indexar na matriz e isso causará uma
+
+02:45.870 --> 02:49.620
+exceção de ponteiro nulo, portanto, eu realmente quero alterar essa condição
+
+02:49.620 --> 02:50.460
+inteira aqui.
+
+02:50.790 --> 03:03.300
+E nós vamos dizer se a chave hash da tabela hash não é igual a novela e nós encontramos a chave que estamos procurando, então a hash da tabela hash key dot dot
+
+03:03.300 --> 03:10.710
+key equals é a chave que estamos procurando, então queremos retornar chave hash e se esse não é o caso,
+
+03:10.710 --> 03:19.110
+se a posição da chave hash é Knol ou o que quer que esteja lá não contém o que estamos procurando e
+
+03:19.110 --> 03:23.910
+que seria o caso quando temos loop em torno e bater o índice
+
+03:23.910 --> 03:24.980
+de parada, então
+
+03:29.420 --> 03:31.280
+queremos retornar menos um.
+
+03:31.280 --> 03:36.470
+Não, eu descobri que quando eu estava experimentando diferentes adições, removendas e coisas, e estávamos
+
+03:36.530 --> 03:42.410
+recebendo exceções de ponteiro nulo, percebi que era porque estávamos assumindo que, se não tivéssemos encontrado a
+
+03:42.410 --> 03:47.240
+chave, estaríamos desistindo porque a chave hash tinha acertar o índice de parada.
+
+03:47.240 --> 03:51.510
+Mas é claro que não é verdade que tenhamos desistido porque tivemos uma posição nula.
+
+03:51.610 --> 03:57.780
+Então, vamos executar nosso método principal novamente apenas para garantir que essa alteração não tenha rebentado.
+
+03:58.430 --> 04:01.700
+E então deixe-me apenas puxar isso.
+
+04:01.850 --> 04:09.020
+Nós temos a tabela de hash depois de termos feito o nosso Por enquanto recuperamos nossos dois funcionários e depois
+
+04:09.020 --> 04:11.800
+fazemos nossas duas eliminações e lá vamos nós.
+
+04:11.970 --> 04:17.820
+Agora, a razão pela qual eu estava jogando com diferentes anúncios e exclusões é porque estamos
+
+04:17.820 --> 04:23.400
+desistindo quando, assim que atingimos uma posição nula, essa implementação realmente tem um pequeno bug
+
+04:23.400 --> 04:23.730
+nela.
+
+04:23.730 --> 04:32.670
+Se chegarmos ao método principal e tentarmos encontrar Mary novamente depois de deletarmos
+
+04:32.670 --> 04:37.070
+Jane Jones e Mike Wilson, vamos correr.
+
+04:37.180 --> 04:41.000
+Nós vamos ver que não a encontramos mais.
+
+04:41.040 --> 04:44.670
+E a razão para isso é que
+
+04:47.790 --> 04:51.640
+no método Remove, onde anular os funcionários removidos.
+
+04:51.720 --> 04:56.760
+E assim quando estamos fazendo nossa investigação Estamos parando na primeira vez que batemos em um romance e
+
+04:56.790 --> 05:01.890
+porque Mike não está mais lá o que estamos procurando Mary, nós checamos a posição cinco na verdade.
+
+05:01.920 --> 05:04.770
+Neste caso, seria porque Jane não está lá.
+
+05:04.770 --> 05:08.640
+Verificamos a posição 5 e a posição 5 não está ocupada.
+
+05:08.760 --> 05:13.980
+Então, quando estamos descobrindo que a posição-chave 5 não está ocupada e, por isso, vamos dar a volta procurando
+
+05:13.980 --> 05:20.430
+por Mary e a primeira vez que batemos e tudo o que vamos parar e porque as posições 5 e 6 ou não,
+
+05:20.430 --> 05:21.920
+nós não chegue a Maria.
+
+05:22.110 --> 05:23.660
+E esse é o erro.
+
+05:23.700 --> 05:27.100
+E vamos dar uma olhada em como lidar com isso.
+
+05:27.120 --> 05:35.700
+Em outro vídeo, eu pensei em gravar uma adição rápida a este vídeo porque, quando revi o vídeo, percebi que não expliquei
+
+05:35.700 --> 05:41.940
+por que abandonamos o loop assim que atingimos uma posição de prego, porque você pode estar
+
+05:42.360 --> 05:48.240
+se perguntando uau, se não podemos encontrar Mary porque, por que não estamos procurando toda
+
+05:48.240 --> 05:48.870
+a matriz.
+
+05:48.870 --> 05:51.470
+Por que estamos desistindo quando batemos em conhecimento?
+
+05:51.660 --> 05:57.150
+E a razão pela qual estamos fazendo isso é quando usamos sondagem linear, o que
+
+05:57.150 --> 06:05.970
+significa que estamos incrementando o índice que estamos verificando por um, e acabamos sempre colocando o item na primeira posição disponível após o valor
+
+06:06.060 --> 06:07.830
+da chave com hash.
+
+06:07.830 --> 06:12.750
+Então, vamos definir nosso valor de chave hash é 5 e descobrimos que 5 está cheio.
+
+06:12.750 --> 06:15.370
+Então nós aumentamos 5 para 1 e temos 6.
+
+06:15.480 --> 06:21.810
+E se descobrirmos 6 como completos foram incrementais 1 e obtemos 7, descobrimos que 7 é para queda, aumentamos para
+
+06:21.810 --> 06:24.210
+1, obtemos 8 e 0 está vazio.
+
+06:24.210 --> 06:32.310
+Se qualquer uma dessas posições anteriores estivesse vazia, então nós teríamos colocado o funcionário em uma dessas posições
+
+06:32.310 --> 06:35.240
+que não teríamos feito na posição 8.
+
+06:35.400 --> 06:40.950
+Então, quando usamos a sondagem linear, sempre acabamos colocando o item na primeira posição disponível, e isso é
+
+06:40.950 --> 06:43.650
+verdade se tivermos que nos virar para a frente.
+
+06:43.650 --> 06:48.680
+Quer dizer, se todas as posições, desde o maior valor da chave até o final
+
+06:48.670 --> 06:55.220
+da matriz, estão cheias e nós viramos para a frente, ainda estaremos colocando o item na primeira posição disponível.
+
+06:55.290 --> 06:58.510
+E assim, quando se trata de obter o item de volta.
+
+06:58.590 --> 07:02.370
+Então, fornecendo a chave e sempre usamos uma sonda linear.
+
+07:02.370 --> 07:11.190
+Novamente, se atingirmos um valor normal antes de encontrarmos o item que estamos procurando, podemos ter certeza de que o
+
+07:11.190 --> 07:13.270
+item não está na tabela.
+
+07:13.350 --> 07:17.580
+E quando eu digo o item, quero dizer que foi colocado com a chave que nos foi fornecida.
+
+07:17.610 --> 07:23.620
+Agora, agora, nossa implementação, como eu disse, não tem realmente um bug, mas não está completa.
+
+07:23.670 --> 07:29.520
+Não estamos lidando totalmente com as retiradas E é por isso que temos uma situação em que não podemos nos casar.
+
+07:29.590 --> 07:35.640
+Mas, como você verá no próximo vídeo, vamos discutir duas maneiras pelas quais podemos lidar com
+
+07:35.640 --> 07:37.030
+o problema que descrevi.
+
+07:37.200 --> 07:43.500
+E uma vez que lidamos com o problema usando uma dessas maneiras, nunca estaremos em uma posição
+
+07:43.500 --> 07:48.340
+quando estivermos procurando por uma chave que tenha sido adicionada anteriormente à tabela.
+
+07:48.390 --> 07:54.150
+Nós nunca estaremos na posição em que é possível que exista um ponto vazio entre o valor
+
+07:54.150 --> 07:59.130
+de hash da chave e onde acabamos colocando o item devido a sondagem linear.
+
+07:59.130 --> 08:06.660
+Então, uma vez que tenhamos corrigido essa implementação ou melhorado, esta implementação nunca estará em uma situação em
+
+08:06.660 --> 08:13.950
+que possamos ter um valor nulo entre o valor de hash da chave e o índice que
+
+08:13.950 --> 08:18.590
+localizamos usando sondagem linear e você aprenda porque no próximo vídeo.
+
+08:18.690 --> 08:23.890
+E é por isso que está tudo bem nesse loop desistir assim que chegarmos.
+
+08:23.890 --> 08:31.830
+Não, porque começamos na chave com hash aqui e, em seguida, o nosso primeiro valor será zero ou para
+
+08:31.830 --> 08:35.480
+envolver imediatamente ou um maior que a chave hash.
+
+08:35.550 --> 08:41.850
+E se essa posição é normal, então sabemos que não há um funcionário na tabela com
+
+08:41.850 --> 08:50.040
+a chave que estamos procurando, porque, se houvesse, não haveria valores nulos entre a posição original em hash e a posição
+
+08:50.520 --> 08:53.130
+em que inserimos a posição original. empregado.
+
+08:53.130 --> 08:57.730
+Agora eu sei que isso não é verdade agora com a nossa implementação e é por isso que não podemos
+
+08:57.750 --> 09:00.600
+encontrar o Marriotts porque temos que fazer mais no nosso método remove.
+
+09:00.630 --> 09:03.530
+E assim, no próximo vídeo, esperamos que isso se torne mais claro.
+
+09:03.750 --> 09:08.700
+E assim, no momento em que atingimos todo o valor, não temos que continuar pesquisando o
+
+09:08.700 --> 09:15.690
+array inteiro, não temos que dizer OK, bem Mary não está na posição 6, mas talvez ela esteja na posição 7 porque assim
+
+09:15.690 --> 09:17.680
+que consertarmos o método Remove, mais trabalho.
+
+09:17.700 --> 09:19.200
+Isso nunca vai acontecer.
+
+09:19.200 --> 09:26.010
+Nós nunca teremos um valor normal entre o valor original da chave de hash e a posição em
+
+09:26.100 --> 09:27.630
+que finalmente colocamos Mary.
+
+09:27.690 --> 09:29.720
+OK, isso é apenas um adendo rápido.
+
+09:29.730 --> 09:37.320
+Vamos passar para o próximo vídeo onde faremos mais trabalho no método Remove para que essa parte
+
+09:37.410 --> 09:39.670
+do loop seja realmente válida.

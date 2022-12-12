@@ -1,0 +1,14 @@
+The source code contains the following examples:
+
+* Charset example.
+
+* FileChannel example. This example reads from a classpath 
+resource file src/main/resources/file/input.txt and writes 
+a String literal to a classpath resource src/main/resources
+/file/output.txt. Be sure to check the folder target/classes
+/file when wanting to view the output of the write example.
+
+* Client Server example. Start the server first, then start 
+the client. The client will attempt 10 connections to the 
+server and write the same text 10 times to the server which 
+will simply write the contents to console.

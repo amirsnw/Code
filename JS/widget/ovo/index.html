@@ -1,0 +1,226 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <link rel="stylesheet" href="css/ovo-datepicker.css"/>
+  <script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
+  <script src="js/ovo-datepicker.js"></script>
+</head>
+<body class="form-traker" style="direction: rtl">-->
+<div class="ovo-form">
+    <form style="text-align: center !important;" method="post">
+        <div class="ovo-group" style="width: 100%;">
+            <label style="direction: rtl; text-align: center;" for="lastperiod">آخرین پریودتان چه زمانی بوده ؟‌ </label>
+			<input onclick="Mh1PersianDatePicker.Show(this, moment.from(new Date()).locale('fa').format('YYYY/MM/DD'),)" id="ovo-lastperiod" class="ovo-form-ctrl" autocomplete="off" name="lastperiod" type="text">
+        </div>
+        <div class="ovo-group" style="width: 45%;">
+            <label style="direction: rtl; text-align: center;" for="cycle">سیکل پریودتان چند روزه است ؟‌</label>
+            <select id="ovo-cycle" class="ovo-form-ctrl" name="cycle">
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+            </select>
+        </div>
+        <div class="ovo-group" style="width: 50%;">
+            <label style="direction: rtl; text-align: center;" for="duration">معمولاً پریودتان چند روز طول می‌کشد ؟‌</label>
+            <select id="ovo-duration" class="ovo-form-ctrl" name="duration">
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+        <!--<button id="btn-ovo-calc" class="btn btn-primary" type="button">مشاهده تقویم روز شمار</button>-->
+    </form>
+	<div id="myperiod" style="margin-top: 40px;">
+	</div>
+</div>	  
+<div class="row ovo-calc" style="display: none">
+    <table class="table ovo-table">
+        <thead>
+            <tr>
+                <th align="right">روز بارگیری</th>
+                <th align="right">تاریخ زایمان</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="right"></td>
+                <td align="right"></td>
+            </tr>
+														 
+            <tr>
+                <td align="right"></td>
+                <td align="right"></td>
+            </tr>
+																  
+			<tr>
+                <td align="right"></td>
+                <td align="right"></td>
+            </tr>
+        </tbody>
+    </table>
+	<!--<button id="btn-ovo-recalc" class="btn btn-primary" type="button">محاسبه مجدد</button>-->
+</div>
+<!--</body>
+</html>-->
+
+<script>
+    jQuery(function ($) {
+		
+        $('#btn-ovo-calc').click(showCals);
+        $('#btn-ovo-recalc').click(hideCals);
+
+        function showCals() {
+            var lastPeriodDate = $('#ovo-lastperiod').val();
+
+            var duration = $('#ovo-duration').val();
+            var interval = parseInt($('#ovo-duration').val()) - 1;
+
+            var cycle = $('#ovo-cycle').val();
+            var duration_org = parseInt($('#ovo-cycle').val());
+            duration = parseInt(parseInt(duration) + parseInt(cycle));
+
+            var momSDate = moment.from(lastPeriodDate, 'fa', 'YYYY/MM/DD').add(duration, 'days');
+            var momSDate2 = moment.from(lastPeriodDate, 'fa', 'YYYY/MM/DD').add(duration * 2, 'days');
+            var momSDate3 = moment.from(lastPeriodDate, 'fa', 'YYYY/MM/DD').add(duration * 3, 'days');
+
+            var momEDate = moment(momSDate.toDate()).add(interval, 'days');
+            var momEDate2 = moment(momSDate2.toDate()).add(interval, 'days');
+            var momEDate3 = moment(momSDate3.toDate()).add(interval, 'days');
+
+            var result_date = `${momSDate.locale('fa').format('jDD')} ${momSDate.locale('fa').format('jMMMM')}   <small>تا</small>   
+								${momEDate.locale('fa').format('jDD')} ${momEDate.locale('fa').format('jMMMM')}`;
+
+            var result_date2 = `${momSDate2.locale('fa').format('jDD')} ${momSDate2.locale('fa').format('jMMMM')}   <small>تا</small>   
+								${momEDate2.locale('fa').format('jDD')} ${momEDate2.locale('fa').format('jMMMM')}`;
+
+            var result_date3 = `${momSDate3.locale('fa').format('jDD')} ${momSDate3.locale('fa').format('jMMMM')}   <small>تا</small>   
+								${momEDate3.locale('fa').format('jDD')} ${momEDate3.locale('fa').format('jMMMM')}`;
+
+            var result_mounth = momSDate.locale('fa').format('jMMMM') + ' ' + momSDate.locale('fa').format('jYYYY');
+            var result_mounth2 = momSDate2.locale('fa').format('jMMMM') + ' ' + momSDate2.locale('fa').format('jYYYY');
+            var result_mounth3 = momSDate3.locale('fa').format('jMMMM') + ' ' + momSDate3.locale('fa').format('jYYYY');
+
+            var textContent = '';
+            var error = 0;
+            if (lastPeriodDate == '' || lastPeriodDate == 'undefined') {													
+                textContent = `<p class="periodate">لطفا آخرین باری که پریود شدید را در فرم بالا انتخاب کنید<p>`;
+		   
+                error = 1;
+            }
+            if (duration == '' || duration == 'undefined') {
+																  
+                textContent = textContent + `<p class="periodate">لطفا سیکل پریودتان را در فرم بالا انتخاب کنید<p>`;
+		  
+                error = 1;
+            }
+            if (cycle == '' || cycle == 'undefined') {
+																  
+                textContent = textContent + `<p class="periodate">لطفا مدت پریودتان را در فرم بالا انتخاب کنید</p>`;
+		  
+                error = 1;
+            }
+
+            if (error == 1) {
+                $('#myperiod').html(textContent);
+                $('.ovo-calc').css('display', 'none');
+                return;
+            }
+
+   
+            $('#myperiod').html('');
+            $('td:nth-child(1)').each(function (i, el) {
+                switch (i) {
+                    case 0:
+                        $(el).html(result_date);
+                        break;
+                    case 1:
+                        $(el).html(result_date2);
+                        break;
+                    case 2:
+                        $(el).html(result_date3);
+                        break;
+                }
+            });
+
+            $('td:nth-child(2)').each(function (i, el) {
+                switch (i) {
+                    case 0:
+                        $(el).html(result_mounth);
+                        break;
+                    case 1:
+                        $(el).html(result_mounth2);
+                        break;
+                    case 2:
+                        $(el).html(result_mounth3);
+                        break;
+                }
+            });
+
+            $('.ovo-form').css('display', 'none');
+            $('.ovo-calc').css('display', 'block');
+        }
+
+        function hideCals() {
+            $('.ovo-form').css('display', 'block');
+            $('.ovo-calc').css('display', 'none');
+        }
+    });
+ 
+</script>
+<style>
+    .ovo-form>form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.ovo-group {
+		margin: 2px
+	}
+	p.periodate {
+		text-align: center;
+		color: #bf653d;
+	}
+	#btn-ovo-calc {
+		border-radius: 15px;
+		cursor: pointer;
+	}
+	#btn-ovo-recalc {
+		cursor: pointer;
+	}
+	.ovo-calc {	
+		display: none;
+	}
+</style>

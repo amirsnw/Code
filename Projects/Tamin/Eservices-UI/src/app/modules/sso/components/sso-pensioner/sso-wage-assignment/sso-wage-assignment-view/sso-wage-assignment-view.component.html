@@ -1,0 +1,77 @@
+<div class="panel">
+  <div class="page-title">اصلاح سابقه کسر اقساط</div>
+  <div class="panel-body">
+
+    <form [formGroup]="viewForm" (ngSubmit)="confirmClick(viewForm.value)" autocomplete="off"
+          novalidate>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="pensionerId">شماره مستمری:</tamin-field-label>
+          <tamin-field-text formControlName="pensionerId" placeholder="شماره مستمری "></tamin-field-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="pensionerNationalId">کد ملی</tamin-field-label>
+          <tamin-field-validator formControlName="pensionerNationalId"></tamin-field-validator>
+          <tamin-field-natioanl-id formControlName="pensionerNationalId"></tamin-field-natioanl-id>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-checkbox formControlName="garanteeType">ضمانت وام برای اعضای خانواده</tamin-field-checkbox>
+        </div>
+      </div>
+      <app-sso-subdominant-info #subdominantComponent
+                                [hidden]="!viewForm.get('garanteeType').value"></app-sso-subdominant-info>
+      <div class="panel">
+        <div class="panel-title">مشخصات وام</div>
+        <div class="panel-body">
+          <div class="row">
+
+
+            <div class="col-6">
+              <tamin-field-label formControlName="bank"> بانک/موسسه/نهاد:</tamin-field-label>
+              <tamin-field-validator  formControlName="bank"></tamin-field-validator>
+              <tamin-field-combo-box formControlName="bank" placeholder="بانک " #bank></tamin-field-combo-box>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="bankBranch"> نام شعبه/بانک/موسسه:</tamin-field-label>
+              <tamin-field-validator  formControlName="bankBranch"></tamin-field-validator>
+              <tamin-field-text formControlName="bankBranch" placeholder="نام شعبه/بانک/موسسه"></tamin-field-text>
+            </div>
+
+            <div class="col-6">
+              <tamin-field-label formControlName="installmentAmount">مبلغ هر قسط:</tamin-field-label>
+              <tamin-field-validator  formControlName="installmentAmount"></tamin-field-validator>
+              <tamin-field-number formControlName="installmentAmount" placeholder="مبلغ هر قسط"></tamin-field-number>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="installmentCount">تعداد اقساط:</tamin-field-label>
+              <tamin-field-validator  formControlName="installmentCount"></tamin-field-validator>
+              <tamin-field-number formControlName="installmentCount" placeholder="تعداد اقساط"></tamin-field-number>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="loanAmount">مبلغ بازپرداخت:</tamin-field-label>
+              <tamin-field-static-text formControlName="loanAmount"  placeholder="مبلغ بازپرداخت"></tamin-field-static-text>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="guaranteeAmount"> مبلغ ضمانت:</tamin-field-label>
+              <tamin-field-validator  formControlName="guaranteeAmount"></tamin-field-validator>
+              <tamin-field-number formControlName="guaranteeAmount"></tamin-field-number>
+              <span class="hint">{{'مبلغ ضمانت از مبلغ بازپرداخت نباید کمتر باشد' | persianNumber}}</span>
+            </div>
+
+            <div class="col-6">
+              <tamin-field-label formControlName="requestDate">تاریخ نامه گواهی کسر اقساط</tamin-field-label>
+              <tamin-field-validator  formControlName="requestDate"></tamin-field-validator>
+              <tamin-field-persian-date formControlName="requestDate"></tamin-field-persian-date>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <button #submitButton type="submit" class="button normal">ثبت درخواست</button>
+      <button class="button normal orange" (click)="redirectTo('/sso/wage-assignment')">انصراف</button>
+
+    </form>
+  </div>
+</div>

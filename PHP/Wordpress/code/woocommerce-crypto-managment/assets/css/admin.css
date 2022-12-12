@@ -1,0 +1,115 @@
+.form-table th
+{
+    font-weight: 500 !important;
+}
+#gpu_calculate_schedule
+{
+    width: 179.9px;
+}
+#gpu_calculate_product_cat
+{
+    width: 360px;
+}
+.wrap form
+{
+    padding-right: 10px;
+    background: white;
+    padding-top: 1px;
+}
+.wrap form:after
+{
+    content: "";
+    display: block;
+    clear: both;
+}
+.gpu_manual_update_button
+{
+    margin-top: 20px;
+    padding-left: 10px;
+}
+.wrap form select.chosen
+{
+    width: 70%;
+}
+
+.wrap form .woo_crypto_manag_calculate_right_box
+{
+    width: 60%;
+    float: right;
+}
+
+.wrap form .woo_crypto_manag_calculate_left_box
+{
+    width: 38%;
+    float: left;
+}
+
+@media(max-width: 767px)
+{
+    .wrap form select.chosen
+    {
+        width: 92%;
+    }
+    .wrap form .woo_crypto_manag_calculate_right_box
+    {
+        width: 100%;
+        float: none;
+    }
+
+    .wrap form .woo_crypto_manag_calculate_left_box
+    {
+        width: 100%;
+        float: none;
+    }
+    .gpu_manual_update_button
+    {
+        padding-bottom: 20px;
+    }
+    #profile-page .form-table textarea, .form-table span.description, .form-table td input[type=email], .form-table td input[type=password], .form-table td input[type=text], .form-table td select, .form-table td textarea
+    {
+        width: 98% !important;
+    }
+}
+
+#Progress_Status {
+    width: 70%;
+    background-color: #ddd;
+    text-align: center;
+}
+
+#myprogressBar {
+    width: 0%;
+    height: 16px;
+    background-color: #a36597;
+    color: white;
+    line-height: 16px;
+}
+#number_product_updated_price
+{
+    padding: 18px 0px 10px 0px;
+    font-size: 15px;
+    color: green;
+    font-weight: 600;
+    display: none;
+}
+.gpu_progressbar
+{
+    display: none;
+    padding-top: 14px;
+}
+#number_product_updated_price strong
+{
+    font-size: 16px;
+    color: mediumvioletred;
+}
+.variation-gpu-fields
+{
+    border: solid 1px white;
+}
+.variation-gpu-fields h4
+{
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 88px;
+    color: #663398;
+}

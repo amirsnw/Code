@@ -1,0 +1,41 @@
+<div class="alert alert-info">
+  <p>- در این قسمت می توانید اطلاعات مربوط به نشانی و تماس خود را ثبت کنید. در صورت عدم تمایل می توانید مراحل بعدی را ادامه دهید.</p>
+  <p>- تاریخ اعلان یا تاریخ ثبت درخواست را به عنوان تاریخ شروع ثبت کنید.</p>
+</div>
+<div class="panel-body">
+  <form [formGroup]="formcontactdata" novalidate (ngSubmit)="confirmClick(formcontactdata.value, formcontactdata.valid)">
+    <div class="form-control-container row">
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="dateOfStart">تاریخ شروع</tamin-field-label>
+        <tamin-field-persian-date formControlName="dateOfStart"></tamin-field-persian-date>
+      </div>
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="cityId">شهر</tamin-field-label>
+        <tamin-field-auto-complete-data-grid formControlName="cityId" placeholder="شهر" #cityId></tamin-field-auto-complete-data-grid>
+      </div>
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="zipCode">کد پستی</tamin-field-label>
+        <tamin-field-validator formControlName="zipCode"></tamin-field-validator>
+        <tamin-field-mask formControlName="zipCode" regex="^\d+$"></tamin-field-mask>
+      </div>
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="phoneNumber">شماره تلفن</tamin-field-label>
+        <tamin-field-validator formControlName="phoneNumber"></tamin-field-validator>
+        <tamin-field-mask formControlName="phoneNumber" regex="^\d+$"></tamin-field-mask>
+      </div>
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="mobile">تلفن همراه</tamin-field-label>
+        <tamin-field-validator formControlName="mobile"></tamin-field-validator>
+        <tamin-field-mask formControlName="mobile" regex="^\d+$"></tamin-field-mask>
+      </div>
+      <div class="col-12 col-s-12" style="padding-right:5px;">
+        <tamin-field-label formControlName="address">نشانی</tamin-field-label>
+        <tamin-field-validator formControlName="address"></tamin-field-validator>
+        <tamin-field-text formControlName="address"></tamin-field-text>
+      </div>
+      <div class="col-12 col-s-12">
+        <button #submitButton type="submit" class="button normal">{{buttonTitle}}</button>
+      </div>
+    </div>
+  </form>
+</div>

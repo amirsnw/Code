@@ -1,0 +1,385 @@
+WEBVTT
+
+00:05.220 --> 00:08.570
+En este video vamos a echar un vistazo a las clasificaciones de clasificación.
+
+00:08.630 --> 00:13.490
+Y este es otro algoritmo de ordenamiento que hace suposiciones sobre los datos que ordena.
+
+00:13.520 --> 00:19.840
+Y en este caso, las suposiciones que hace es que los datos tienen las mismas calificaciones e ingenio.
+
+00:19.850 --> 00:22.160
+Ahora, ¿qué quiero decir con eso?
+
+00:22.280 --> 00:29.780
+La tasa x es el número de dígitos únicos o valores en el caso de caracteres que tiene un sistema de
+
+00:29.780 --> 00:35.280
+numeración o un alfabeto, por ejemplo, la tasa x para el sistema decimal es 10.
+
+00:35.300 --> 00:41.180
+Porque hay 10 dígitos posibles en el sistema decimal de 0 a 9 para números binarios.
+
+00:41.180 --> 00:48.860
+La tasa también existe porque usamos dos dígitos en el sistema binario 0 y 1 y para el alfabeto inglés
+
+00:48.920 --> 00:53.340
+la raíz es 26 porque hay 26 letras en el alfabeto.
+
+00:53.420 --> 00:56.030
+Así que eso es lo que queremos decir con tasa X ..
+
+00:56.270 --> 00:59.860
+Ahora por Witz me refiero a la cantidad de dígitos o letras.
+
+00:59.870 --> 01:04.180
+Por ejemplo, el número 1 2 3 5 tiene un látigo.
+
+01:04.190 --> 01:10.940
+Así que para la cadena de hola tiene un ancho de cinco, el número 10 tiene un ancho de dos.
+
+01:10.970 --> 01:19.820
+Así que 1235 son uno dos tres cinco tiene cuatro dígitos, por lo que tiene un testigo para la cadena ¿Cómo tiene cinco letras, por lo que
+
+01:19.820 --> 01:26.150
+tiene un ancho de cinco y el número 10 tiene dos dígitos, por lo que tiene un Witz de dos.
+
+01:26.240 --> 01:33.410
+Y entonces la tasa x sort supone que todos los valores tienen la misma tasa xy el mismo ancho y eso
+
+01:33.410 --> 01:41.330
+significa que podemos usar la tasa x sort para ordenar enteros y cadenas, el punto decimal no es un dígito y por lo
+
+01:41.330 --> 01:44.990
+tanto los números flotantes no se puede ordenar usando radix sort.
+
+01:45.110 --> 01:46.170
+Entonces, cómo funciona.
+
+01:46.190 --> 01:51.800
+Bueno, nos basamos en cada dígito individual o posición de letra y verás a qué
+
+01:51.800 --> 01:55.370
+me refiero cuando revisamos el algoritmo en las diapositivas.
+
+01:55.520 --> 02:02.840
+Así que comenzamos en la posición más a la derecha y ordenamos en función de esa posición el dígito o la letra
+
+02:02.840 --> 02:09.350
+en esa posición y luego cambiamos a la derecha menos un dígito o letra y ordenamos en función de eso
+
+02:09.350 --> 02:14.510
+y seguimos haciéndolo hasta que ' he hecho todos los dígitos o letras en los valores.
+
+02:14.510 --> 02:17.440
+Ahora el punto importante aquí y esto es la clave.
+
+02:17.480 --> 02:22.820
+Este es un punto absolutamente importante es que tenemos que usar un algoritmo de ordenación estable.
+
+02:22.820 --> 02:24.280
+En cada etapa.
+
+02:24.290 --> 02:31.130
+Entonces, cuando ordenamos los valores basados ​​en la posición más a la derecha, tenemos que usar un algoritmo de clasificación estable.
+
+02:31.130 --> 02:37.130
+Y luego, cuando ordenamos los valores basados ​​en la posición más a la derecha menos uno, tenemos que usar un
+
+02:37.130 --> 02:42.390
+algoritmo de clasificación estable y una vez más comprenderá por qué cuando echemos un vistazo al algoritmo.
+
+02:42.470 --> 02:43.850
+Así que hagámoslo ahora.
+
+02:43.880 --> 02:46.050
+Entonces tenemos una matriz diferente aquí.
+
+02:46.060 --> 02:50.060
+Ahora, en la parte superior de la pantalla, tiene seis enteros.
+
+02:50.060 --> 02:55.510
+Y notarás que son todos números decimales y todos tienen cuatro.
+
+02:55.550 --> 02:57.530
+Todos tienen cuatro dígitos.
+
+02:57.620 --> 03:01.760
+Y para que podamos, podemos ordenar esta matriz usando la ordenación de clasificación.
+
+03:01.880 --> 03:07.220
+Así que primero vamos a clasificar desordenado en función de la posición de las unidades y,
+
+03:07.220 --> 03:15.410
+por tanto, echemos un vistazo al primer valor cuatro mil setecientos veinticinco el número cinco está en la posición de uno y para el
+
+03:15.410 --> 03:21.440
+segundo valor cuatro mil quinientos ochenta y seis el número seis está en la posición de uno.
+
+03:21.470 --> 03:28.370
+Y lo que estamos haciendo aquí es que estamos ordenando por el dígito que tiene el menor peso porque la
+
+03:28.370 --> 03:32.110
+posición de uno tiene el menor peso en un número decimal.
+
+03:32.180 --> 03:39.200
+Y una vez que hayamos hecho eso, la matriz inferior será el resultado. 13:30 vendrá primero porque
+
+03:39.200 --> 03:47.300
+tiene cero en la posición que va seguida por 87 92 porque hay dos en la posición de uno.
+
+03:47.300 --> 03:58.100
+Luego tenemos 15 94 47 25 45 86 y 57 29 y si nos fijamos en su posición o en el dígito más a la derecha, verá que los
+
+03:58.490 --> 04:03.460
+valores se han ordenado de acuerdo con lo que está en esa posición.
+
+04:03.530 --> 04:10.960
+Y ahora pasamos a la segunda posición desde la derecha o la segunda cifra menos significativa.
+
+04:10.970 --> 04:13.110
+Y clasificamos basado en eso.
+
+04:13.190 --> 04:18.920
+Y así en la parte superior está la matriz que acabamos de tener en la otra diapositiva y ahora vamos a
+
+04:19.100 --> 04:22.240
+puntuar en función de la penúltima posición más a la derecha.
+
+04:22.250 --> 04:34.570
+Entonces para las 13:30 eso será tres para 87 92 será 9 para 15 94 será 9 para 47 25 será 2 etc.
+
+04:34.610 --> 04:39.110
+y así abajo en la parte inferior ahora hemos ordenado basado en ese dígito.
+
+04:39.110 --> 04:49.520
+Entonces tenemos 47 25 porque tiene un 2 57 29 que también tiene un 2 13:30 porque tiene un 3 45 86 porque tiene un
+
+04:49.520 --> 04:53.980
+8 y luego un 87 92 y un 50 94.
+
+04:53.980 --> 04:54.940
+Ambos tienen nueve.
+
+04:54.950 --> 05:00.760
+Ahora como lo mencioné críticamente importante, este es un tipo estable.
+
+05:00.800 --> 05:09.870
+Y entonces notarán que tenemos un par de pares de duplicados aquí 47 25 y 50 7:29 ambos tienen en el dígito
+
+05:10.020 --> 05:18.370
+más a la derecha menos una posición y notarán en la parte superior que 47 25 llegaron antes que 57 29.
+
+05:18.630 --> 05:26.290
+Y luego, en la parte inferior 47 25 sigue siendo anterior al SIFF 57 29 y eso es crítico.
+
+05:26.400 --> 05:33.600
+Y eso es porque tenemos que usar un algoritmo de clasificación estable y lo mismo vale para 87 92 y 50 94.
+
+05:33.600 --> 05:37.470
+Ambos tienen nueves en la segunda posición correcta.
+
+05:37.620 --> 05:44.610
+Y en la matriz superior 87 92 llegó antes que 50 94 y todavía lo hace.
+
+05:44.610 --> 05:46.230
+Y eso es crítico.
+
+05:46.350 --> 05:48.950
+Tenemos que usar un algoritmo de ordenamiento estable.
+
+05:48.960 --> 05:52.510
+Así que ahora vamos a puntuar según la posición de cientos.
+
+05:52.650 --> 05:55.680
+Entonces comenzamos aquí basándonos en la posición 10s.
+
+05:55.680 --> 06:02.280
+Ahora vamos a ordenar en función de la posición de cientos y cuando lo
+
+06:02.280 --> 06:14.040
+hacemos, 13:30 es lo primero porque tiene tres en esa posición, seguido de 40 586 50 noventa y cuatro 47 25 57 29 y 87 92.
+
+06:14.040 --> 06:18.200
+Y una vez más tenemos que usar un algoritmo de ordenación estable.
+
+06:18.450 --> 06:26.280
+Y entonces notará que tenemos dos cincos en la posición de corazonadas y 45 86 todavía viene
+
+06:26.460 --> 06:29.960
+antes de 1094 que en la matriz superior.
+
+06:30.180 --> 06:36.510
+Y tenemos tres valores con siete en la posición de bisagras y aquellos en los que se han conservado
+
+06:36.510 --> 06:38.890
+las posiciones relativas de esos tres valores.
+
+06:38.940 --> 06:48.510
+Entonces 47 25 sigue antes del 57 29 y eso todavía viene antes del 87 92 y luego el último paso es clasificar.
+
+06:48.510 --> 06:58.980
+Basado en la posición de miles y así 13:30 tiene un 1 1094 tiene un 1 40 86 y 47 25.
+
+06:58.980 --> 07:00.140
+Ambos tienen cuatro patas.
+
+07:00.150 --> 07:06.370
+Y luego está 57 29 y 87 92 y hemos ordenado nuestra matriz.
+
+07:06.420 --> 07:08.850
+Ahora, una vez más, esto tenía que ser un tipo estable.
+
+07:08.850 --> 07:16.650
+Y entonces 13:30 tenían que venir antes de 50 90 para 45 86 tenían que venir antes 47 25.
+
+07:16.650 --> 07:21.000
+Ahora quizás puedas entender en este punto por qué este tipo debe ser estable.
+
+07:21.090 --> 07:28.470
+Si no fuera estable, este tipo de radix no funcionaría porque en cada etapa, por ejemplo, en
+
+07:28.470 --> 07:37.760
+esta última etapa, si 15 noventa podrían cruzar 13:30, no obtendríamos el orden correcto si 47 25 pudiera terminar antes de
+
+07:37.770 --> 07:41.470
+que 45 86 no obtendría el orden correcto ordenado.
+
+07:41.550 --> 07:46.620
+Y es un poco interesante porque cuando comenzamos a hacer este tipo solo significa que sabes que comienzas
+
+07:46.620 --> 07:48.890
+a preguntarte bien cómo va a funcionar esto.
+
+07:48.900 --> 07:54.930
+Porque cuando comenzamos en la posición que tenemos, volvemos allí, tenemos una cierta matriz, pero luego, cuando comenzamos en
+
+07:54.930 --> 07:59.880
+la posición 10, todos los elementos están cambiando de posición nuevamente y se preguntan cómo
+
+07:59.880 --> 08:02.260
+va a terminar esto en ordenados. orden.
+
+08:02.310 --> 08:06.660
+Pero la clave es que estamos clasificando desde el dígito menos significativo.
+
+08:06.660 --> 08:11.050
+El que tiene menos peso cuando se trata del valor del dígito más significativo.
+
+08:11.070 --> 08:14.480
+Y en cada fase es un tipo estable.
+
+08:14.520 --> 08:22.620
+Por eso, a medida que nos movemos de derecha a izquierda, pasamos del dígito menos significativo al
+
+08:22.620 --> 08:24.300
+dígito más significativo.
+
+08:24.300 --> 08:27.970
+Verás que está comenzando a surgir un orden ordenado.
+
+08:27.990 --> 08:31.570
+Y luego en el último paso porque es un tipo estable.
+
+08:31.620 --> 08:33.720
+Todos los géneros previos que hemos hecho.
+
+08:33.780 --> 08:35.040
+Todavía cuenta.
+
+08:35.040 --> 08:37.880
+No se deshacen en cada etapa.
+
+08:37.890 --> 08:43.110
+Es amable, parece que no estamos clasificando en cada etapa, pero estamos donde los datos
+
+08:43.110 --> 08:44.930
+se ordenan cada vez más.
+
+08:45.240 --> 08:50.280
+Y el hecho de que estamos usando un algoritmo de clasificación estable significa que en
+
+08:50.280 --> 08:58.080
+ese tipo de clasificación final que estamos ordenando en los valores de dígitos más significativos que tienen el mismo dígito más significativo no cambiará
+
+08:58.080 --> 08:58.930
+las posiciones relativas.
+
+08:58.950 --> 09:05.820
+Y así los valores que tienen cientos más altos hicieron un dígito más alto en cientos permanecerán después de los valores que tienen
+
+09:05.820 --> 09:11.540
+un dígito más bajo en cientos y lo mismo se aplicará cuando hagamos un tipo de cambio con los 10s.
+
+09:11.610 --> 09:17.220
+Cuando hacemos la ordenación basada en los valores de 10s que tienen un valor duplicado de 10s, el valor con el dígito
+
+09:17.220 --> 09:22.270
+más alto en la posición de uno vendrá después del valor con el dígito más bajo en las posesiones.
+
+09:22.290 --> 09:28.110
+Y así pueden ver eso porque estamos usando un algoritmo de ordenamiento estable en cada fase y
+
+09:28.230 --> 09:33.390
+vamos del dígito menos significativo al dígito o letra más significativo dependiendo de lo que
+
+09:33.540 --> 09:37.780
+estamos ordenando, los resultados de las fases de clasificación previas se conservan .
+
+09:37.860 --> 09:40.390
+Y es por eso que ataca o funciona.
+
+09:40.390 --> 09:44.960
+De acuerdo, el tipo de recuento se usa a menudo como un algoritmo de clasificación para ordenación de radix.
+
+09:44.970 --> 09:49.490
+Ahora, cuando apareció el último video, dije que la implementación que te mostré no era estable.
+
+09:49.650 --> 09:55.610
+Por lo tanto, cuando implementemos la ordenación de radix, tendremos la oportunidad de ver la versión estable de clasificación de conteo.
+
+09:55.620 --> 10:01.170
+Ahora, una vez más, debido a que el ordenamiento de radix hace suposiciones sobre los datos, podemos lograr un tiempo lineal.
+
+10:01.230 --> 10:09.570
+Aun así, esto suele ser inferior a 0 en el final del registro de final debido a la sobrecarga involucrada y por sobrecarga quiero decir
+
+10:09.600 --> 10:18.570
+que debe aislar cada dígito y / o letra individual en cada fase y, por lo tanto, hay gastos generales solo para determinar qué valor Se supone
+
+10:18.570 --> 10:22.980
+que debe clasificar en cada fase y, a pesar de que puede lograr
+
+10:23.010 --> 10:27.030
+tiempo lineal, a menudo se ejecuta un poco más lento que eso.
+
+10:27.030 --> 10:32.280
+Ahora bien, el hecho de que esté o no en su lugar dependerá de qué tipo de algoritmo utilice, porque como hemos visto,
+
+10:32.280 --> 10:34.820
+algunos algoritmos de clasificación están en su lugar y otros no.
+
+10:35.130 --> 10:42.690
+Entonces, el ordenamiento de radix puede estar en su lugar o puede no estar en su lugar, dependerá del algoritmo de clasificación que
+
+10:42.690 --> 10:45.360
+elija para la clasificación y de cada fase.
+
+10:45.360 --> 10:51.450
+Es un algoritmo estable como hemos visto porque el algoritmo de ordenamiento que utilizamos en cada fase debe
+
+10:51.780 --> 10:58.770
+ser estable. El tipo de radix resulta ser estable y, de hecho, esa es la clave para hacerlo funcionar es
+
+10:58.770 --> 11:05.280
+que estos tipos en fases anteriores no se están deshaciendo como clasificamos en base a las posiciones más importantes.
+
+11:05.280 --> 11:07.200
+De acuerdo, así es para la teoría.
+
+11:07.200 --> 11:09.330
+Pasemos a la implementación.
+
+11:09.330 --> 11:10.630
+Te veré en el próximo video.

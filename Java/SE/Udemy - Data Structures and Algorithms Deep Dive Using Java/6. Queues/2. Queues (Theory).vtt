@@ -1,0 +1,160 @@
+WEBVTT
+
+00:05.270 --> 00:05.690
+Todo bien.
+
+00:05.690 --> 00:12.320
+Así que echemos un vistazo a Qs Como dije en la introducción, las claves son un tipo de datos abstractos, al igual
+
+00:12.320 --> 00:15.330
+que las pilas dictan cómo podemos acceder a los datos.
+
+00:15.560 --> 00:20.470
+Y al igual que las pilas, utilizamos otras estructuras de datos para implementarlas.
+
+00:20.500 --> 00:28.490
+Ahora, a diferencia de las pilas, Qs impone un comportamiento Firefall Firefall es el primero en entrar primero en salir.
+
+00:28.490 --> 00:32.860
+Recuerda que los stacks fueron lifeso Last In First Out.
+
+00:32.900 --> 00:39.530
+Así que las colas se llaman Huze porque son como alineaciones y las alineaciones se llaman señales en algunas
+
+00:39.530 --> 00:40.550
+partes del mundo.
+
+00:40.580 --> 00:46.160
+Entonces, si está en una tienda y se pone en línea, las personas que se encuentran frente a usted serán atendidas antes
+
+00:46.160 --> 00:46.740
+que usted.
+
+00:46.760 --> 00:55.100
+Así que te unirás a la cola al final y luego se atenderá a las personas en la fila en el orden en que se unan
+
+00:55.100 --> 00:56.150
+a la cola.
+
+00:56.150 --> 01:00.710
+Entonces la primera persona en la línea será atendida y luego la segunda persona en línea y luego
+
+01:00.710 --> 01:02.140
+la tercera persona en línea, etc.
+
+01:02.270 --> 01:05.280
+Esa es la teoría de todos modos en la vida real la gente puede morder.
+
+01:05.300 --> 01:09.320
+Pero cuando tratamos con las señales de estructura de datos, nadie llega a toparse.
+
+01:09.320 --> 01:14.440
+Por lo tanto, los elementos se eliminan de la cola en el mismo orden en que se agregan a la cola.
+
+01:14.600 --> 01:21.880
+Entonces, si agregamos el ítem un ítem a un ítem 3, entonces primero tenemos que eliminar el ítem 1 y luego el ítem 2 y
+
+01:21.890 --> 01:23.090
+luego el ítem 3.
+
+01:23.090 --> 01:28.410
+Por lo tanto, es el primero en entrar, primero en apilar, fue el último elemento eliminado.
+
+01:28.430 --> 01:33.400
+Entonces, si agregamos el ítem uno al ítem 3, sería el ítem 3 que se eliminó primero.
+
+01:33.470 --> 01:37.280
+Pero con las pistas que eliminaste en el orden en que te agregaron.
+
+01:37.280 --> 01:42.650
+Ahora, al igual que con las pilas, hay tres operaciones principales que podemos llevar a cabo en las que podemos agregar
+
+01:42.650 --> 01:44.550
+un elemento al final de la cola.
+
+01:44.720 --> 01:48.380
+Y eso también se llama en cola o.
+
+01:48.500 --> 01:53.470
+Podemos eliminar el primer elemento en la cola y eso también se llama dequeue.
+
+01:53.660 --> 01:58.850
+Y al igual que con las pilas, podemos echar un vistazo a la cola y eso hace que el artículo se coloque al
+
+01:58.910 --> 02:01.030
+principio de la fila sin quitarlo de la cola.
+
+02:01.040 --> 02:07.270
+Ahora, al igual que con las pilas, hay dos formas populares de implementar matrices de colas y listas vinculadas.
+
+02:07.270 --> 02:07.640
+Todo bien.
+
+02:07.640 --> 02:11.930
+Así que aquí están nuestras antenas de cola en la parte delantera y 22 en la parte posterior.
+
+02:11.930 --> 02:17.560
+Entonces, estos elementos se agregaron a la cola en el orden 10 15 4 y 22.
+
+02:17.750 --> 02:21.630
+Y luego si agregamos 20 Vamos a agregar 20 al final de la cola.
+
+02:21.650 --> 02:27.440
+Así que aquí está nuestra cola antes de que agreguemos 20 y cuando agreguemos un ítem, el frente de la
+
+02:27.470 --> 02:31.100
+cola no cambiará, pero la parte de atrás estará apuntando al nuevo ítem.
+
+02:31.100 --> 02:34.370
+Si eliminamos un artículo, vamos a eliminarlo del frente.
+
+02:34.400 --> 02:38.770
+Así que vamos a eliminar 10 y el frente ahora apunta a 15.
+
+02:38.840 --> 02:44.400
+Ahora, dependiendo de la implementación, puede limpiar el 10, pero básicamente así es como funciona.
+
+02:44.400 --> 02:49.430
+Por lo tanto, si agrega un elemento, el puntero retrocederá y si lo quita, el puntero
+
+02:49.430 --> 02:50.210
+anterior cambiará.
+
+02:50.330 --> 02:56.330
+Y, por supuesto, si ahora tuviéramos un pico, el valor máximo sería 15, pero no cambiará nada en la cola.
+
+02:56.330 --> 03:00.990
+Entonces, cuando alcanzamos el máximo, obtenemos el elemento al principio de la cola, pero no lo eliminamos de la cola.
+
+03:01.040 --> 03:02.210
+Entonces nada cambia.
+
+03:02.210 --> 03:04.800
+El puntero delantero no cambiará.
+
+03:04.820 --> 03:07.100
+Ahora no agregué una diapositiva por la complejidad del tiempo.
+
+03:07.130 --> 03:11.800
+Pero si te estás preguntando sobre eso, será una situación similar a la que tuvimos con las pilas.
+
+03:11.800 --> 03:14.880
+Va a depender de con qué estés respaldando a la q.
+
+03:14.960 --> 03:20.720
+Si está respaldando una q con una matriz, si una operación va a ser de tiempo constante o de tiempo
+
+03:20.720 --> 03:26.510
+lineal dependerá de si tiene que cambiar el tamaño de la matriz si la está respaldando con una lista en blanco.
+
+03:26.570 --> 03:29.700
+Estas operaciones 3Q siempre serán de tiempo constante.
+
+03:29.810 --> 03:35.660
+De acuerdo, entonces ahora que sabemos qué es una cola y qué operaciones podemos hacer con ella, sigamos adelante e
+
+03:35.660 --> 03:36.850
+implementemos una cola simple.
+
+03:36.860 --> 03:37.980
+Te veré en el próximo video.

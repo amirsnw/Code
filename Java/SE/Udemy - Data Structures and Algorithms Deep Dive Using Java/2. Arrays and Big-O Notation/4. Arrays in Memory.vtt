@@ -1,0 +1,343 @@
+WEBVTT
+
+00:05.220 --> 00:09.360
+So in this video we're going to look at array's as a data structure.
+
+00:09.390 --> 00:14.300
+So the most important thing to understand about arrays is how they're stored in memory.
+
+00:14.430 --> 00:19.330
+And essentially they're stored as one contiguous block in memory.
+
+00:19.350 --> 00:27.630
+And what I mean by that is you don't have the items or elements in an array scatter throughout memory
+
+00:27.900 --> 00:34.620
+all of the elements items whatever you want to call them in an array they're all stored as one contiguous
+
+00:34.620 --> 00:35.380
+block.
+
+00:35.460 --> 00:40.260
+So let's say an array starts at memory address 100.
+
+00:40.260 --> 00:42.630
+That's a bogus memory address.
+
+00:42.750 --> 00:47.070
+You wouldn't have a memory address like that but to keep things simple let's pretend that we have an
+
+00:47.070 --> 00:49.570
+array that starts at memory address 100.
+
+00:49.710 --> 00:53.630
+And let's say that array is 200 bytes long.
+
+00:53.730 --> 01:02.400
+Well then what happens is starting at memory address one hundred the following 200 bytes are the contents
+
+01:02.400 --> 01:03.250
+of the array.
+
+01:03.300 --> 01:10.650
+So the array is just one huge block and that's why we have to specify the length of the array when we
+
+01:10.650 --> 01:18.510
+create the array because that tells the JVM how much memory it has to allocate for that array.
+
+01:18.780 --> 01:24.930
+And it's one reason why arrays can't be resized because if they could be resized then there'd be no
+
+01:24.930 --> 01:27.260
+guarantee after that that whatever.
+
+01:27.360 --> 01:33.250
+When we added extra space on that that extra space would be in that same contiguous block of memory.
+
+01:33.270 --> 01:35.770
+So arrays have a static lens.
+
+01:35.790 --> 01:42.460
+And when you when you create an array there is one huge block of memory allocated for that array.
+
+01:42.510 --> 01:46.280
+So the elements of an array are not scattered all over the place in memory.
+
+01:46.290 --> 01:53.430
+Now the second important thing about arrays is every element in the array occupies the same amount of
+
+01:53.430 --> 01:54.770
+space and memory.
+
+01:54.780 --> 02:01.290
+For example when we created our int array every item that we put into that array will be an integer.
+
+02:01.440 --> 02:10.660
+And in Java an integer is 4 bytes so every value in our interracially was occupying 4 bytes and memory.
+
+02:10.680 --> 02:16.890
+You can't have an array element that occupies 4 bytes and then the second array element occupies 12
+
+02:16.890 --> 02:20.640
+bytes and the third array element occupies 300 bytes.
+
+02:20.640 --> 02:21.990
+That doesn't work.
+
+02:22.020 --> 02:27.030
+Now at this point you might be thinking about objects and thinking well wait a minute what if I create
+
+02:27.030 --> 02:28.510
+an array of strings.
+
+02:28.620 --> 02:33.300
+I mean the strings in the array could be a different lens so they're you know they're going to be taking
+
+02:33.300 --> 02:34.740
+up different amounts of memory.
+
+02:34.740 --> 02:39.160
+What's important to understand when you're working with objects not primitives.
+
+02:39.160 --> 02:45.270
+Like when you're working but it's but when you're working with objects what's stored in the variables
+
+02:45.270 --> 02:47.180
+is an object reference.
+
+02:47.190 --> 02:54.330
+So when you create an array of objects what's stored in the array elements is in a reference to those
+
+02:54.330 --> 03:01.110
+objects and object references are always the same size regardless of the type of object they're referring
+
+03:01.110 --> 03:01.680
+to.
+
+03:01.680 --> 03:07.890
+So if you create an array of string you what you're actually storing in the array is a bunch of object
+
+03:07.890 --> 03:13.830
+references to the String instances and those object references are all going to be the same size.
+
+03:13.890 --> 03:20.130
+And that's why you can have an object array and store any type of object in there it's because the object
+
+03:20.130 --> 03:24.840
+references to the different instances are always the same size.
+
+03:24.840 --> 03:32.940
+So arrays occupy one contiguous block in memory in every element in the array occupies the same amount
+
+03:32.940 --> 03:34.040
+of space in memory.
+
+03:34.110 --> 03:41.690
+So because of that we can easily calculate the memory address of an array element based on its index.
+
+03:41.760 --> 03:49.110
+So if an array starts at memory address X and the size of each element in the array is why then we can
+
+03:49.110 --> 03:54.610
+calculate the memory address of the bytes elements so array.
+
+03:54.660 --> 03:59.000
+By using the following expression X plus times Y.
+
+03:59.010 --> 04:04.020
+And we're going to look at an example of this in a couple of slides so you'll see an illustration of
+
+04:04.020 --> 04:04.700
+this.
+
+04:04.890 --> 04:12.570
+So basically what that means is if we know the index of an element in the in the array then the time
+
+04:12.570 --> 04:17.520
+or the number of steps we have to do to retrieve that element will be the same no matter where it is
+
+04:17.520 --> 04:24.950
+in the array because all we have to do to get the memory address of that element is X plus times Y.
+
+04:25.020 --> 04:31.440
+And that works whether we want the first element in the array or the 5000 element in the array or the
+
+04:31.440 --> 04:33.540
+one millionth element in the array.
+
+04:33.540 --> 04:39.960
+All we ever have to do to get really quickly to that element is to do that simple calculation to get
+
+04:39.960 --> 04:41.500
+the memory address.
+
+04:41.610 --> 04:48.240
+And this is made possible because of the first two points because arrays are one large contiguous block
+
+04:48.240 --> 04:54.340
+in memory and because every element in the array occupies the same amount of space in memory.
+
+04:54.360 --> 04:58.250
+So let's have a look at this for the array we just created.
+
+04:58.290 --> 05:00.760
+So we created an array of Lent 7.
+
+05:00.780 --> 05:10.690
+So the Vallet indices are 0 to 6 and the values are 20 35 minus 15 755 one in minus 22.
+
+05:10.700 --> 05:15.830
+Now for this example we're going to pretend the start address of the array is 12 as I said that's a
+
+05:15.830 --> 05:17.420
+bogus memory address.
+
+05:17.420 --> 05:19.570
+You know it doesn't matter what the number is.
+
+05:19.640 --> 05:23.960
+And because these are integers the element size is 4 bytes.
+
+05:23.990 --> 05:31.390
+So if we wanted to get the element at arrays 0 Well that's equal to the start address of the array right.
+
+05:31.430 --> 05:35.200
+Because the array starts here at 12.
+
+05:35.450 --> 05:41.240
+And so the first element of the array is actually going to have the same address as the beginning of
+
+05:41.240 --> 05:42.100
+the array.
+
+05:42.110 --> 05:49.430
+So if we want the address of our way of array 0 we just we get 12 if we want the thirty five we need
+
+05:49.430 --> 05:51.190
+to jump past the 20.
+
+05:51.290 --> 05:58.940
+And so if we want array 1 we're going to start at 12 and then we're going to add 4 bytes because we
+
+05:58.940 --> 06:03.230
+know that the size of each of these elements is 4 bytes.
+
+06:03.320 --> 06:09.080
+And so if we want the second element in the array we start at the memory address which is 12 and we
+
+06:09.080 --> 06:10.530
+add 4 bytes.
+
+06:10.700 --> 06:13.570
+And now we're at the start address for the thirty five.
+
+06:13.610 --> 06:22.490
+So that's 12 plus one times for equal 16 and if we go back to our calculation here that's the X plus
+
+06:22.580 --> 06:24.010
+i times Y.
+
+06:24.320 --> 06:26.250
+So X is the 12th.
+
+06:26.280 --> 06:31.910
+Why is the Index which in this case is one and why is the size of each element in the array which is
+
+06:31.910 --> 06:32.420
+4.
+
+06:32.420 --> 06:34.670
+So that's how we're doing this calculation.
+
+06:34.670 --> 06:39.360
+So if we want minus 15 we've got a jump over two elements.
+
+06:39.380 --> 06:41.530
+So we're going to start at 12.
+
+06:41.600 --> 06:45.670
+And this time we're going to add two times 4 to it to get 20.
+
+06:45.670 --> 06:47.530
+So the 15 must start at 20.
+
+06:47.550 --> 06:52.340
+We want to get to the seven we've got to jump over three elements to get to the 7 so that's going to
+
+06:52.340 --> 06:57.510
+be 12 plus three times four and that will give us 24 and so on.
+
+06:57.560 --> 07:05.630
+And this is possible because the array is one contiguous block in memory so all the elements are stored
+
+07:05.690 --> 07:08.020
+in one block in order.
+
+07:08.210 --> 07:13.910
+And also because every element occupies the same space in memory if that wasn't true of either of those
+
+07:13.910 --> 07:20.870
+two requirements weren't true we would not be able to use a simple formula to quickly go to an element
+
+07:20.870 --> 07:21.660
+in the array.
+
+07:21.740 --> 07:29.180
+So what this means is that if we know the index of an element in the array we can get to it really quickly
+
+07:29.180 --> 07:31.190
+and it doesn't matter where it is in the array.
+
+07:31.190 --> 07:38.060
+I mean if you look at array 1 versus array 6 we're doing the same calculation and we're actually doing
+
+07:38.060 --> 07:44.000
+the calculation here as well I didn't show it but this is actually 12 plus 0 times 4 which has 12 plus
+
+07:44.030 --> 07:51.620
+0 which is 12 and now maybe you can understand why array indices are zero based because if they were
+
+07:51.680 --> 07:59.900
+0 based IF they started at one we'd have to subtract 1 here because then we'd have 12 plus 1 times 4
+
+08:00.000 --> 08:05.270
+we that would be wrong because then we'd get 16 for the first one so we'd have to always subtract 1
+
+08:05.360 --> 08:10.990
+before we did the multiplication starting the indices at zero means we don't have to do that.
+
+08:11.090 --> 08:16.130
+So we can just substitute the array index in here because remember this is 0 times 4.
+
+08:16.130 --> 08:18.470
+I probably should have written that out but I didn't.
+
+08:18.500 --> 08:26.510
+So one of the things that arrays are really good at doing is really retrieving elements if you know
+
+08:26.510 --> 08:27.590
+the index.
+
+08:27.590 --> 08:34.940
+So if we know the index of the element we want we can get to that element very quickly regardless of
+
+08:34.940 --> 08:37.010
+where the element is in the array.
+
+08:37.010 --> 08:43.460
+OK so now we understand how arrays are stored under the covers and we understand why if when we have
+
+08:43.460 --> 08:49.220
+an index of an array we can get to the element really really quickly doesn't matter where the element
+
+08:49.220 --> 08:50.570
+is in the array.
+
+08:50.600 --> 08:52.510
+We do the same calculation.
+
+08:52.550 --> 09:00.170
+So with that in mind let's move on and look at the Big O values for array operations.
+
+09:00.170 --> 09:01.310
+I'll see you in the next video.

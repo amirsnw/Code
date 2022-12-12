@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IsargaranAmarRep" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e0a2ca0-7331-4c9b-a6a8-aa6309f07a2c">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="1.1000000000000227"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="99"/>
+	<parameter name="startDate" class="java.lang.String"/>
+	<parameter name="endDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="reqType" class="java.lang.String"/>
+	<field name="cnt" class="java.math.BigDecimal"/>
+	<field name="daySum" class="java.math.BigDecimal"/>
+	<field name="amountSum" class="java.math.BigDecimal"/>
+	<variable name="amountSum" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amountSum}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="cntSum" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{cnt}]]></variableExpression>
+	</variable>
+	<variable name="daySum" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{daySum}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="802">
+			<rectangle>
+				<reportElement uuid="2145ebd5-bb41-49fa-bcec-ad60c3711c72" x="1" y="0" width="554" height="802"/>
+			</rectangle>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="314b762d-7a60-4a9b-a91b-0547bc7a0876" x="0" y="10" width="554" height="39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="18" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[گـزارش آمـار ایثارگـران]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="5210fa63-8696-44fa-9226-bdb388727dfa" x="96" y="86" width="381" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="516ab302-d73c-4a4d-8a7f-cb3f51f7453b" x="369" y="48" width="32" height="26"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[از تاریخ :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cc3f191b-1e93-43a6-8938-28f31f0b5426" x="228" y="49" width="35" height="26"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[از تاریخ :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="bdad4727-b513-498d-adb4-71c986e95ffd" x="294" y="51" width="74" height="20"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{startDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f50f5935-4012-409c-9062-33132bd12669" x="124" y="51" width="103" height="20"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{endDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement uuid="0edfbc59-d57c-48b5-ab63-81fa9472cb6e" x="96" y="30" width="380" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="93f2d181-93d2-41be-8726-789fb367354a" x="336" y="3" width="128" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[نوع درخواست]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="755302d3-edd4-48c3-aa7c-5f919116d904" x="280" y="3" width="56" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[تعداد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="008aaf84-1428-4142-9fe8-dfd241aa2295" x="188" y="3" width="92" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[جمع روز سابقه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="955e6f53-2836-40cb-9db4-682f786ca4e8" x="96" y="3" width="92" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[جمع حق بیمه]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="d72fab88-8131-436b-84af-a254b3cd9709" x="476" y="-1" width="1" height="32"/>
+			</line>
+			<line>
+				<reportElement uuid="d72fab88-8131-436b-84af-a254b3cd9709" x="95" y="-1" width="1" height="32"/>
+			</line>
+			<line>
+				<reportElement uuid="d72fab88-8131-436b-84af-a254b3cd9709" x="336" y="0" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement uuid="d72fab88-8131-436b-84af-a254b3cd9709" x="280" y="0" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement uuid="d72fab88-8131-436b-84af-a254b3cd9709" x="187" y="0" width="1" height="30"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="95" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="476" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="187" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="280" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="336" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="0edfbc59-d57c-48b5-ab63-81fa9472cb6e" x="96" y="21" width="381" height="1"/>
+			</line>
+			<textField pattern="¤ #,##0">
+				<reportElement uuid="5b4eea72-7366-40dc-9154-c09178629fdd" x="295" y="2" width="33" height="20"/>
+				<textElement textAlignment="Right">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cnt}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement uuid="c2abc1b7-f9f3-4589-a872-ca3828190b1d" x="215" y="2" width="46" height="20"/>
+				<textElement textAlignment="Right">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{daySum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement uuid="916a6b24-77ca-47dd-b203-1e46091a7e3a" x="102" y="2" width="75" height="20"/>
+				<textElement textAlignment="Right">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountSum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="27fb0f71-96a4-4b32-9f07-875a1effe470" x="349" y="0" width="115" height="20"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{reqType}.equals("0")?"آزاده":($F{reqType}.equals("1")?"محکوم سیاسی":($F{reqType}.equals("2")?"آزاده فوت شده":"جبهه و دوران معالجه جانباز")))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="50">
+			<line>
+				<reportElement uuid="0edfbc59-d57c-48b5-ab63-81fa9472cb6e" x="96" y="22" width="381" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="336" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="280" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="187" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="476" y="0" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement uuid="d1f089b4-3d4f-4f29-9dfc-ec536bfd9355" x="95" y="0" width="1" height="22"/>
+			</line>
+			<staticText>
+				<reportElement uuid="95c2c904-8938-4b28-8dbd-74ec297b7180" x="358" y="3" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[جمع]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="¤ #,##0">
+				<reportElement uuid="b39a97c6-06d1-4cd7-8f78-62001cdcf36b" x="96" y="3" width="81" height="19"/>
+				<textElement textAlignment="Right">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{amountSum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement uuid="de005866-2867-4220-9c6c-091d046c9895" x="296" y="3" width="32" height="20"/>
+				<textElement textAlignment="Right">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{cntSum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement uuid="c382b72b-f510-4cd3-970c-dab1b444a226" x="215" y="3" width="46" height="20"/>
+				<textElement textAlignment="Right">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{daySum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

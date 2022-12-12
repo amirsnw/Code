@@ -1,0 +1,502 @@
+WEBVTT
+
+00:05.420 --> 00:10.670
+I said in the last video that we were going to move on to the implementation of read sort but when I
+
+00:10.670 --> 00:16.850
+was looking over the implementation I thought it would be helpful to go through the stable counting
+
+00:16.850 --> 00:21.230
+sort that we're going to use first before we actually get to the implementation.
+
+00:21.230 --> 00:22.990
+So that's what we're going to do in this video.
+
+00:23.000 --> 00:28.930
+So as I said in the video about counting sort of the implementation that I showed you was unstable.
+
+00:28.940 --> 00:32.870
+If you want it to be stable we have to do some extra work.
+
+00:32.900 --> 00:39.950
+Now the implementation I'm going to show you calculates where values should be written back to the original
+
+00:39.950 --> 00:47.020
+array and then by writing the values into the array in backwards order we get stability.
+
+00:47.060 --> 00:53.360
+And I think probably going through the slides will make this clear in the last video we went through
+
+00:53.360 --> 01:01.490
+sorting this array and I'm going to go through the stable counting sort for when we sort the array based
+
+01:01.490 --> 01:03.410
+on the tens position.
+
+01:03.410 --> 01:09.080
+And so if you look at the last video we've already sorted based on the ones position and we end up with
+
+01:09.080 --> 01:10.780
+the array on the screen.
+
+01:10.940 --> 01:15.270
+And now we're going to sort this array based on the tens position.
+
+01:15.470 --> 01:20.300
+And the reason we're looking at the TENS is because the tens actually have some duplicate values so
+
+01:20.420 --> 01:32.360
+1094 has to remain after 87 92 after the sort and 50 7:29 has to remain after 47 25 because this sort
+
+01:32.360 --> 01:33.380
+has to be stable.
+
+01:33.380 --> 01:37.570
+So how are we going to accomplish this using counting sort.
+
+01:37.610 --> 01:45.200
+So what we do is we do the count just as we did before and we're going to end up with the counting array
+
+01:45.200 --> 01:45.740
+below.
+
+01:45.740 --> 01:53.020
+So we have two values that have two in the tens position 47 25 and 57 29.
+
+01:53.020 --> 02:01.250
+13:30 has a three in the tens position and then we don't have any force five sixes or sevens in the
+
+02:01.250 --> 02:02.340
+tens position.
+
+02:02.380 --> 02:08.870
+Forty five eighty six has eight in the tens position and then we have two values with nine in the tens
+
+02:08.870 --> 02:09.570
+position.
+
+02:09.650 --> 02:20.270
+87 92 and 50 94 and so are counting array is what you see in the bottom is 0 0 2 1 0 0 0 0 1 2.
+
+02:20.270 --> 02:26.590
+And so that tells us we have two values with two in the tens position one value was three in the tens
+
+02:26.600 --> 02:33.140
+position one value was eight in the tenth position and two values with nine in the tens position and
+
+02:33.140 --> 02:36.860
+that's all fine and dandy but how are we going to write these values back because we don't actually
+
+02:36.860 --> 02:39.430
+have the values in the counting array.
+
+02:39.470 --> 02:42.030
+And on top of that we want the sort to be stable.
+
+02:42.050 --> 02:47.450
+And so what we're going to do is we're going to create a temporary array that matches the length of
+
+02:47.450 --> 02:53.000
+the array we're sorting and so we're going to create a temporary array of length 6 because we're sorting
+
+02:53.090 --> 03:00.260
+6 values and we can use the counts to figure out which range of indices in the temporary array will
+
+03:00.260 --> 03:07.720
+be occupied by each value for example because we don't have any zeros in the tens position and any ones
+
+03:07.730 --> 03:15.290
+we know that the two values that have a 2 in the tens position are going to occupy positions 0 and 1
+
+03:15.380 --> 03:16.970
+in the sorted array.
+
+03:17.090 --> 03:23.000
+And then we have one value with a three in the tens position so we know that will go into position 2
+
+03:23.120 --> 03:30.170
+and then we don't have any values with 4 5 6 and 7 but we have one value with an 8.
+
+03:30.170 --> 03:35.480
+So we know that's going to go into position 3 and then positions foreign 5 are going to hold the two
+
+03:35.480 --> 03:38.420
+values that have a 9 in the tens position.
+
+03:38.420 --> 03:45.050
+So because we know how many values we're sorting and because we know how many of each value have a specific
+
+03:45.050 --> 03:52.310
+digit in their tens position we can figure out what range of positions the values was a with a specific
+
+03:52.580 --> 03:55.080
+digit in the tens position again occupy.
+
+03:55.250 --> 04:00.590
+The way that we figure out these ranges is after we've done our first counting pass and we've ended
+
+04:00.590 --> 04:04.730
+up with our usual counting array we adjust the counts.
+
+04:04.760 --> 04:10.940
+So instead of just keeping the number of values that have a specific tens digit we want to store how
+
+04:10.940 --> 04:14.720
+many values have a specific tens digit or less.
+
+04:14.720 --> 04:20.360
+So for example that index three in the counting array which currently contains the number of values
+
+04:20.360 --> 04:26.540
+that have a three in the tens position instead of that we want to know how many values have three or
+
+04:26.540 --> 04:28.530
+less in the tens position.
+
+04:28.580 --> 04:34.340
+And in this case that's three values right because we have two values that have two in the tens position
+
+04:34.370 --> 04:42.110
+and one value that has three in the tens position and so we have three values that have a three or less
+
+04:42.200 --> 04:49.280
+in the tens position and we can calculate how many values have a specific digit or less by summing up
+
+04:49.370 --> 04:52.670
+all the counts that come before it.
+
+04:52.670 --> 05:00.920
+And so for example by summing up 0 0 2 and 1 we get three and that's how many values have a three or
+
+05:00.920 --> 05:02.930
+less in the tens position.
+
+05:02.930 --> 05:03.340
+Right.
+
+05:03.350 --> 05:07.830
+Because we don't know have any values with zero we don't have any values.
+
+05:07.990 --> 05:11.130
+We have two values but to invent one value with three.
+
+05:11.170 --> 05:14.890
+And so after we've adjusted our accounts this is what we get.
+
+05:14.950 --> 05:18.100
+So we don't have any values with zero.
+
+05:18.100 --> 05:20.260
+We don't have any values with one or last.
+
+05:20.260 --> 05:23.300
+We have two values with two or less.
+
+05:23.350 --> 05:28.870
+We have three values with three or last and then three values with four or last three values of five
+
+05:28.870 --> 05:34.390
+or last up to the value for 8 where we have four values that have 8 or last.
+
+05:34.390 --> 05:41.020
+And then finally we have six values with nine or less and that last position is always going to basically
+
+05:41.050 --> 05:43.770
+equal the number of values we have.
+
+05:43.870 --> 05:49.810
+Because everything in the array is going to have the highest possible digit or letter or less.
+
+05:49.810 --> 05:57.370
+And so this is our adjusted count array where each element instead of containing the exact count of
+
+05:57.370 --> 06:01.480
+how many values have a specific digit in their tens position.
+
+06:01.480 --> 06:06.310
+Instead it contains a count of how many values have that digit or less.
+
+06:06.310 --> 06:12.310
+And now we're going to use that to write back to our input array so the code at the top is what we're
+
+06:12.310 --> 06:13.510
+going to use.
+
+06:13.720 --> 06:20.290
+So we initialize our temp array and n is the number of elements we're sorting.
+
+06:20.290 --> 06:28.000
+So we'll have a temporary of Lent 6 and then we traverse the array backwards so weak diverse the array
+
+06:28.000 --> 06:29.240
+from right to left.
+
+06:29.260 --> 06:35.590
+Because this is going to make us write the rightmost values before the left most values and that's what's
+
+06:35.590 --> 06:37.320
+going to ensure stability.
+
+06:37.390 --> 06:38.630
+And so we start with.
+
+06:38.710 --> 06:47.170
+And if 6K is going to go from 5 to 0 so when k is 5 We're going to get the digit in the tens position.
+
+06:47.170 --> 06:49.590
+That's what that get digit method is doing.
+
+06:49.780 --> 06:54.250
+And we're going to get it for input K and K is starting at 5.
+
+06:54.250 --> 07:02.470
+So if we go back that's 50 7:29 we're going to look at count array 2 because we're going to figure out
+
+07:02.470 --> 07:07.090
+that the GET digit is going to the digit call is going to return to.
+
+07:07.150 --> 07:14.080
+And so we're going to index count array 2 and we're using the prefix operator so we're going to subtract
+
+07:14.080 --> 07:20.770
+one from counter-weight to that's going to give us 1 and then we're going to assign input k with which
+
+07:20.770 --> 07:23.480
+we just saw back here is 57 29.
+
+07:23.500 --> 07:26.370
+We're going to assign that into temp 1.
+
+07:26.380 --> 07:28.250
+So let's go through that one more time.
+
+07:28.270 --> 07:36.910
+We're going to get the digit of input 5 and not the tens digit and that digit is 2 because we're dealing
+
+07:36.910 --> 07:42.760
+with 57 29 and then we're going to decrement the value add counter-weight 2 which is going to give us
+
+07:42.760 --> 07:47.970
+one and then we're going to use that result as the index into our temp array.
+
+07:47.980 --> 07:55.710
+So we're going to assign input of K input 5 which is 50 7:29 into temp at position 1.
+
+07:55.900 --> 08:01.690
+And so we're going to end up with this situation where we have 50 7:29 in the temp array.
+
+08:01.690 --> 08:03.510
+So now we have the temporary at the top.
+
+08:03.510 --> 08:07.150
+In our count at the bottom now we've decremented count array.
+
+08:07.180 --> 08:14.530
+Two by one because we've written one value with two in the tens position and notice that it's gone into
+
+08:14.650 --> 08:16.300
+temp array 1.
+
+08:16.390 --> 08:20.670
+And so the second value that has to is going to go into temporary zero.
+
+08:20.680 --> 08:27.600
+And because we're going right to left in the input array we're writing rightmost values before less
+
+08:27.680 --> 08:28.690
+left most value.
+
+08:28.690 --> 08:34.130
+So that means if we have a duplicate the rightmost duplicate will be written to the right of the leftmost
+
+08:34.210 --> 08:34.740
+duplicate.
+
+08:34.750 --> 08:36.860
+And that's what's preserving the stability.
+
+08:37.000 --> 08:40.150
+And so now he's going to get decremented to four.
+
+08:40.180 --> 08:45.460
+We're going to be handling value 45 86 the tens digit is eight.
+
+08:45.610 --> 08:49.740
+So we're going to decrement counter rate by 1 which will give us 3.
+
+08:49.740 --> 08:57.760
+And so we're going to assign 45 86 into temp position 3 and we're going to end up with this situation.
+
+08:57.760 --> 09:07.270
+So 45 86 has gone into the temporary rate position three and count Auray 8 is now three because we documented
+
+09:07.270 --> 09:11.800
+it by one because we've written out one value with eight in the tens position.
+
+09:11.860 --> 09:16.000
+So now will be 3 so we're going to be handling 47 25.
+
+09:16.000 --> 09:20.440
+That has a 2 in the tens position we're going to decrement count array 2.
+
+09:20.440 --> 09:22.340
+So that's going to become zero.
+
+09:22.450 --> 09:26.170
+And so we're going to assign 47 25 to temp zero.
+
+09:26.290 --> 09:35.360
+And so this is our array and notice that we have preserved the relative positions of 47 25 and 50 7:29
+
+09:35.380 --> 09:37.310
+because we're going right to left.
+
+09:37.390 --> 09:44.260
+So when we write the right most duplicate value we write that value into the right most position of
+
+09:44.260 --> 09:47.990
+the set of positions for that Ten's value.
+
+09:48.100 --> 09:54.340
+And so we knew that the two values that have two in the tens position we're going to occupy position
+
+09:54.340 --> 09:55.490
+zero in one.
+
+09:55.720 --> 10:01.990
+And so we write the rightmost value in the original array and position 1 on the left most value into
+
+10:01.990 --> 10:02.860
+position zero.
+
+10:02.890 --> 10:05.520
+And by doing that we have preserved relative position.
+
+10:05.530 --> 10:07.710
+So this is a stable sort.
+
+10:07.750 --> 10:14.980
+And you'll notice now that count array 2 is 0 because we've now written out both values with two in
+
+10:14.980 --> 10:16.220
+the 10th position.
+
+10:16.240 --> 10:20.890
+So now one equals two we're going to be handling value fifteen ninety four.
+
+10:20.890 --> 10:23.030
+It has a 9 in the tens position.
+
+10:23.050 --> 10:25.390
+So we're going to decrement count array 9.
+
+10:25.450 --> 10:26.840
+It'll become five.
+
+10:27.130 --> 10:31.020
+And then we assign 1094 to temp 5.
+
+10:31.270 --> 10:37.930
+And so the rightmost value with 9 is being written in the rightmost position.
+
+10:37.960 --> 10:46.510
+For values that have 9 in the tens position k will be 1 will handle 87 92 we decrement count array 9
+
+10:46.510 --> 10:56.290
+to 4 and we assign 87 92 to attempt 4 and we have preserve the relative positions of 87 92 and 50 94.
+
+10:56.290 --> 10:58.640
+And then finally K will be 0.
+
+10:58.690 --> 11:07.000
+We'll handle 13:30 will subtract one from counter race 3 to get 2 and we'll write 13:30 to position
+
+11:07.000 --> 11:08.680
+2 in the temporary array.
+
+11:08.680 --> 11:09.450
+And there we go.
+
+11:09.460 --> 11:17.620
+We have completed our sort of the values based on the 10s position and the relative positioning of any
+
+11:17.620 --> 11:19.980
+duplicate have been preserved.
+
+11:19.990 --> 11:26.230
+And so this is a stable counting sort it works because we traverse the input array from right to left
+
+11:26.320 --> 11:30.620
+and we write duplicate values into the temp array from right to left.
+
+11:30.970 --> 11:37.270
+So if we know that duplicate values will go into let's say positions three and four we write the rightmost
+
+11:37.340 --> 11:42.950
+value in the input array into position 4 and the left most value into position 3.
+
+11:43.030 --> 11:46.600
+And this preserves the relative positioning of duplicate values.
+
+11:46.810 --> 11:53.020
+And so by adjusting the counting array after the initial pass so that we instead of storing just the
+
+11:53.020 --> 11:59.280
+raw counts instead we store how many values have that value for less.
+
+11:59.290 --> 12:05.110
+So for us it was how many values have a specific digit or less in the tens position.
+
+12:05.350 --> 12:12.100
+We can use those adjusted counts to map values back to indices in the temp array.
+
+12:12.100 --> 12:15.090
+Now another way of doing this is to use something called linked lists.
+
+12:15.100 --> 12:16.420
+We haven't covered those yet.
+
+12:16.420 --> 12:17.940
+We'll be covering those soon.
+
+12:17.950 --> 12:23.020
+But another way of doing this is instead of just using counts the way that we did you can actually store
+
+12:23.020 --> 12:29.430
+a list of the actual values at each position in the count array and then you write the list out backwards.
+
+12:29.800 --> 12:34.720
+So we're not going to cover that because we haven't covered link losea but that's another way that you
+
+12:34.720 --> 12:35.410
+could do it.
+
+12:35.410 --> 12:42.250
+Now obviously we've sorted into a temporary array so at this step here the top array is a temporary
+
+12:42.250 --> 12:47.980
+array so obviously there would be one more step and that would be copying the temporary array back into
+
+12:48.340 --> 12:49.440
+the input array.
+
+12:49.650 --> 12:52.100
+OK so that's it for the stable counting sort.
+
+12:52.120 --> 12:58.530
+The code up here is the code that we're actually going to use in in the implementation.
+
+12:58.540 --> 13:03.700
+So now that you've seen it when we code the implementation I won't have to spend time trying to explain
+
+13:03.700 --> 13:06.910
+to you what's going on and not having any slides to do it.
+
+13:06.910 --> 13:11.240
+So I thought that having slides and going through it would make it easier for you to understand.
+
+13:11.290 --> 13:15.480
+So now finally let's move on to the implementation of radix sort.
+
+13:15.490 --> 13:16.600
+I'll see you in the next video.

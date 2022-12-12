@@ -1,0 +1,316 @@
+WEBVTT
+
+00:05.330 --> 00:05.660
+Todo bien.
+
+00:05.660 --> 00:10.400
+Entonces, en este video vamos a ver cómo esta historia aquí, como en Irán, y de
+
+00:10.490 --> 00:13.310
+hecho, puedes almacenar cualquier árbol binario completo como una matriz.
+
+00:13.340 --> 00:17.650
+Y entonces, cuando se trata de montones binarios, podemos almacenarlos como matrices.
+
+00:17.720 --> 00:18.750
+Entonces, Cómo lo hacemos.
+
+00:18.770 --> 00:25.550
+Mientras que la ruta irá a la posición 0 de la matriz y luego atravesamos cada nivel en el árbol de izquierda
+
+00:25.550 --> 00:26.170
+a derecha.
+
+00:26.240 --> 00:31.940
+Y entonces el hijo izquierdo de la ruta entraría en el conjunto 1 y el hijo derecho de la ruta entraría
+
+00:31.940 --> 00:38.440
+en el conjunto 2 y luego el hijo izquierdo del hijo izquierdo de la raíz entraría en una carrera 3 y el hijo derecho
+
+00:38.450 --> 00:42.420
+de la izquierda El hijo de la raíz entraría en una carrera por Extra.
+
+00:42.440 --> 00:48.830
+Entonces, veamos un ejemplo de esto, así que si tenemos este montón y lo vimos en el último video vamos
+
+00:48.980 --> 00:51.950
+a poner 22 en el índice 0 de la matriz.
+
+00:51.950 --> 00:54.880
+Luego vamos a atravesar el siguiente nivel de izquierda a derecha.
+
+00:54.880 --> 00:59.310
+Así que 19 entrarán en el índice 1 y 18 entrarán en el índice 2.
+
+00:59.420 --> 01:07.220
+Y luego pasamos al siguiente nivel y 15 entrará en 3 3 irá a 4 14 irá a
+
+01:07.220 --> 01:10.100
+5 y 4 irá a seis.
+
+01:10.370 --> 01:14.550
+Y luego pasamos al siguiente nivel y finalmente 12 pasará a 7.
+
+01:14.660 --> 01:22.080
+Y así es como averiguamos el padre y los hijos para cualquier ranura en el conjunto.
+
+01:22.130 --> 01:24.890
+Y entonces si miramos el nodo en la matriz.
+
+01:24.920 --> 01:26.740
+Así que vamos con 15.
+
+01:26.740 --> 01:33.310
+Entonces, si regresamos aquí, 15 tiene 12, ya que su hijo en su padre es 19.
+
+01:33.320 --> 01:43.520
+Entonces para 15, que tiene ese índice tres, entonces yo tendría tres para encontrar a su hijo izquierdo, multiplicamos 2 por y agregamos
+
+01:43.520 --> 01:44.100
+1.
+
+01:44.100 --> 01:47.700
+Entonces vamos a decir que dos veces tres es seis más uno es siete.
+
+01:47.780 --> 01:51.690
+Y entonces, ¿qué matriz de índice 7 hay 12 que es 15.
+
+01:51.710 --> 01:54.040
+Niño No tiene un hijo correcto.
+
+01:54.290 --> 02:01.130
+Calcule el niño correcto multiplicando dos por dos y agregando dos y sabríamos que no tiene un hijo correcto
+
+02:01.130 --> 02:04.110
+porque sabríamos que eso estaba fuera de límites.
+
+02:04.160 --> 02:05.720
+Ahora si quieres obtener 15.
+
+02:05.750 --> 02:15.200
+Padre y si volvemos a 15 padres es 19 usamos la siguiente expresión restamos 1 de I dividimos el resultado entre 2 y
+
+02:15.200 --> 02:20.990
+tomamos la palabra de eso y eso solo significa que estamos bajando al número
+
+02:20.990 --> 02:22.850
+entero más cercano .
+
+02:22.940 --> 02:30.710
+Y entonces 15 es esa posición 3, entonces diríamos que tres menos uno son dos divididos por dos como uno en el piso de
+
+02:30.710 --> 02:31.640
+eso es uno.
+
+02:31.650 --> 02:35.720
+Y entonces su padre es un índice LUN y eso es 19.
+
+02:35.720 --> 02:42.130
+Y entonces veamos otro que tiene dos hijos echemos un vistazo a 18, así que 18 tiene 14 de cada cuatro.
+
+02:42.260 --> 02:50.210
+Entonces 14 es su hijo izquierdo cuatro es su hijo derecho y su padre es 22 y entonces 18 es esa posición también.
+
+02:50.210 --> 02:55.760
+Entonces, para encontrar que su hijo izquierdo se multiplicará de dos en dos, obtenga cuatro más uno es cinco.
+
+02:55.760 --> 03:02.600
+Y entonces su hijo izquierdo tiene 14 años y para obtener su hijo correcto será dos veces dos es cuatro más dos es seis
+
+03:02.630 --> 03:03.930
+y eso es cuatro.
+
+03:03.950 --> 03:08.540
+Y entonces nos dimos cuenta de sus hijos izquierdo y derecho ahora para obtener su padre
+
+03:08.540 --> 03:16.280
+Vamos a restar uno de dos, así que vamos a obtener uno a 0. 5 y el piso de eso es cero y eso es 22.
+
+03:16.400 --> 03:21.340
+Y así es como almacenamos árboles binarios completos en una matriz.
+
+03:21.370 --> 03:27.010
+Es muy importante entender y recordar que solo podemos hacer esto con árboles binarios completos.
+
+03:27.010 --> 03:32.290
+De lo contrario, esto no funcionaría porque digamos que volvemos a subir, digamos que 12 estuvo aquí en alguna parte.
+
+03:32.400 --> 03:38.510
+Bueno, entonces no vamos a poder usar esta ecuación si ponemos 12 en 7 y queremos hacer eso porque
+
+03:38.510 --> 03:40.820
+no queremos espacios vacíos en la matriz.
+
+03:40.820 --> 03:42.450
+Estas ecuaciones no funcionarían.
+
+03:42.470 --> 03:44.830
+No vamos a poder calcular 12.
+
+03:44.840 --> 03:46.860
+Los padres obtendrán el valor incorrecto.
+
+03:46.910 --> 03:51.470
+Y esto funciona porque no hay espacios vacíos en el árbol.
+
+03:51.470 --> 03:56.300
+Y entonces podemos atravesar cada nivel y girar y completar la matriz.
+
+03:56.300 --> 04:00.190
+Ahora hablemos de insertar en el montón hablando de esto un poco.
+
+04:00.200 --> 04:05.570
+Hace un par de videos así que siempre agregamos nuevos elementos al final de la matriz y
+
+04:05.570 --> 04:12.230
+luego tenemos que arreglar el montón porque si volvemos aquí digamos que tenemos más arreglo aquí y entramos y agregamos el
+
+04:12.400 --> 04:15.870
+valor de 95 en el montón y lo ponemos aquí.
+
+04:15.890 --> 04:19.190
+Esto ya no es un montón, porque este es un montón máximo.
+
+04:19.340 --> 04:25.390
+Y en un montón máximo, el valor en el padre debe ser mayor o igual que el valor de sus hijos.
+
+04:25.400 --> 04:29.790
+Y si nos acercamos y pegamos 95 al final de la matriz, eso obviamente no va a ser cierto.
+
+04:29.930 --> 04:31.780
+En primer lugar, es el valor máximo.
+
+04:31.790 --> 04:39.140
+Por lo tanto, debe estar en la posición 0, pero es el padre inmediato si estaba en el índice 8, su padre sería 8 menos
+
+04:39.140 --> 04:42.940
+1, es 7 sobre 2 es 3. 5.
+
+04:42.940 --> 04:44.680
+Entonces su padre tiene 15 años.
+
+04:45.020 --> 04:49.520
+El pozo 15 obviamente no es mayor o igual a 95.
+
+04:49.520 --> 04:54.770
+Y entonces tenemos un montón de ephi este calor, lo que significa que tenemos que arreglarlo.
+
+04:54.890 --> 04:58.020
+Tenemos que mover noventa y cinco en su posición correcta.
+
+04:58.130 --> 05:03.560
+Y así la forma en que hacemos esto no es tan complicado en absoluto. Lo que
+
+05:03.560 --> 05:10.050
+hacemos es comparar el nuevo elemento con el padre. Su padre usa ese cálculo para esa expresión y si
+
+05:10.050 --> 05:16.140
+el elemento es mayor que su padre, intercambiamos el elemento con su padre. y luego seguimos enjuagando y
+
+05:16.140 --> 05:20.430
+repitiendo hasta que termina siendo la raíz o es menos que su padre.
+
+05:20.430 --> 05:25.200
+Entonces, veamos un ejemplo en el que vamos a insertar un valor en este árbol.
+
+05:25.200 --> 05:30.510
+Y entonces comenzaremos poniéndolo aquí porque recuerde que cuando insertamos valores en un montón los colocamos
+
+05:30.510 --> 05:35.820
+en la siguiente posición disponible para mantener este árbol es un árbol completo y entonces la
+
+05:35.820 --> 05:37.150
+siguiente posición disponible está aquí.
+
+05:37.170 --> 05:39.900
+Y entonces en nuestro conjunto lo vamos a poner aquí.
+
+05:39.900 --> 05:45.000
+Así que pretenden que hay más matriz más allá y tenemos un espacio vacío en el índice 8.
+
+05:45.030 --> 05:49.460
+Vamos a verlo visualmente con el árbol para que puedas ver qué pasaría.
+
+05:49.470 --> 05:54.570
+Pero, por supuesto, cuando hacemos el intercambio, simplemente estamos intercambiando dos elementos en la matriz, tal como lo
+
+05:54.570 --> 05:56.670
+hicimos cuando revisamos los algoritmos de clasificación.
+
+05:56.670 --> 05:59.010
+Y entonces comenzaremos poniendo 20.
+
+05:59.010 --> 06:01.130
+Aquí vamos a insertar el valor 20.
+
+06:01.170 --> 06:07.190
+Ahora esto ya no es un montón porque 20 es mayor que 15.
+
+06:07.290 --> 06:11.950
+Y entonces esto ya no es un montón máximo y entonces lo primero que vamos a hacer
+
+06:11.970 --> 06:18.500
+es comparar 20 contra estos padres, entonces comparamos 20 contra 15 20 es mayor que 15 y entonces vamos a cambiarlo por su padre.
+
+06:18.690 --> 06:22.320
+Y entonces 15 termina aquí y ahora 20 está aquí.
+
+06:22.320 --> 06:23.820
+Entonces ahora enjuagamos y repetimos.
+
+06:23.820 --> 06:26.360
+Entonces vamos a comparar 20 contra su padre.
+
+06:26.500 --> 06:30.360
+Bueno, 20 es mayor que 19, así que vamos a golpear a estos tipos.
+
+06:30.360 --> 06:37.490
+Y entonces ahora 20 está aquí y ahora vamos a comparar 20 contra 20 a 20 es menos de 22.
+
+06:37.500 --> 06:41.700
+Y así terminamos el montón de cinco procesos y esto ahora es un montón.
+
+06:41.700 --> 06:46.800
+Cada nodo tiene un valor mayor o igual que sus hijos.
+
+06:46.830 --> 06:52.790
+Y esto es muy simple de hacer porque almacenaremos el montón como una matriz y, por lo tanto, cuando
+
+06:52.800 --> 06:57.530
+comparemos todo lo que tenemos que hacer es calcular dónde se comparan los nodos padre.
+
+06:57.540 --> 07:02.950
+Y si el nuevo valor en el nuevo nodo es menor que el valor principal, simplemente los intercambiamos.
+
+07:02.970 --> 07:11.100
+Y entonces este intercambio funciona porque la característica de en este caso el montón máximo se mantiene cuando intercambiamos
+
+07:11.100 --> 07:16.470
+porque cada vez que intercambiamos estamos intercambiando un mayor valor con su padre.
+
+07:16.470 --> 07:21.260
+Y entonces sabemos que después del intercambio, el padre tendrá un valor mayor que el hijo.
+
+07:21.420 --> 07:29.370
+Y eso es todo lo que hay que hacer para almacenar un árbol binario completo como una matriz y todo lo que hay que hacer para
+
+07:29.490 --> 07:32.380
+seguir refinando el montón después de insertar un valor.
+
+07:32.390 --> 07:37.710
+Ahora, obviamente, también tendríamos un montón de cosas después de eliminar un valor y en ese caso
+
+07:37.710 --> 07:42.990
+sería un poco más complicado porque depende de qué nodo eliminemos en el lugar donde se encuentra
+
+07:42.990 --> 07:43.650
+en el árbol.
+
+07:43.650 --> 07:48.120
+Entonces, echaremos un vistazo a lo que hacemos para eliminar en un video posterior.
+
+07:48.150 --> 07:52.500
+Pero, por ahora, sigamos adelante y empecemos a implementar un montón.
+
+07:52.500 --> 07:53.700
+Te veré en el próximo video.

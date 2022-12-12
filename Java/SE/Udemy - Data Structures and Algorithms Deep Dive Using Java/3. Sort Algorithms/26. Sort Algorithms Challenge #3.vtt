@@ -1,0 +1,49 @@
+WEBVTT
+
+00:05.280 --> 00:06.030
+Todas las tarifas
+
+00:06.050 --> 00:13.480
+Por lo tanto, para nuestro tercer y último desafío para esta sección, quiero que use calificaciones elevadas para ordenar las cadenas
+
+00:13.480 --> 00:15.210
+que ve en la diapositiva.
+
+00:15.310 --> 00:22.810
+Entonces las cadenas b c d e f d ser un Q C A B C D O M A D D.
+
+00:22.900 --> 00:25.260
+Y BBB.
+
+00:25.270 --> 00:31.750
+Ahora, de forma deliberada, he puesto todos los valores en minúsculas, así que no te preocupes por la carcasa
+
+00:31.750 --> 00:37.120
+superior y la carcasa inferior, por supuesto, normalmente, si estás ordenando cadenas, querrás encasillar todas las
+
+00:37.120 --> 00:38.710
+cadenas o minúsculas todas.
+
+00:38.770 --> 00:47.260
+Si está haciendo una clasificación que no distinga entre mayúsculas y minúsculas, pero quiero centrarme solo en la implementación de la ordenación de radix
+
+00:47.260 --> 00:52.680
+aquí, coloque todas las cadenas en minúsculas para que no tenga que preocuparse por hacerlo.
+
+00:52.690 --> 00:55.240
+Puede comenzar con el proyecto en la sección de recursos.
+
+00:55.240 --> 00:58.060
+Esta vez, lo único que hay ahí es la matriz.
+
+00:58.060 --> 01:00.910
+Quiero que ordene y el código para imprimir la matriz.
+
+01:00.910 --> 01:06.850
+Dejaré que descubras lo que tienes que copiar del tipo de raíz, ordena las cadenas usando el tipo
+
+01:06.850 --> 01:07.630
+de raíz.
+
+01:07.630 --> 01:10.380
+Buena suerte y te veré en el video de la solución.

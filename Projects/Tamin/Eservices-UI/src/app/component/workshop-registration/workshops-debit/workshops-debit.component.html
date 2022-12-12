@@ -1,0 +1,80 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>امکان مشاهده بدهی های مربوط به کارگاه</span>
+</div>
+<div class="panel">
+  <div class="page-title">جستجوی کارگاه</div>
+  <div class="panel-body">
+    <form [formGroup]="workshopDebitSearchForm" autocomplete="off" novalidate (ngSubmit)="onSearchSubmit()">
+      <div class="form-control-container row">
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="workshopId">شماره کارگاه:</tamin-field-label>
+          <tamin-field-validator formControlName="workshopId"></tamin-field-validator>
+          <tamin-field-text formControlName="workshopId" placeholder="شماره کارگاه"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="branchCode">کد شعبه:</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-text formControlName="branchCode" placeholder="کد شعبه"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <p style="margin-top:5px;">
+          <button type="submit" class="button normal">جستجو</button>
+          <button type="button" class="button normal orange" (click)="resetForm()">نمایش همه</button>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="page-title">لیست کارگاه ها</div>
+  <div class="panel-body">
+    <tamin-data-grid #workshopsDebitGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+  </div>
+</div>
+<tamin-modal #showDebitDetailModal title="جزئیات بدهی کارگاه">
+  <form [formGroup]="showDebitFrom" autocomplete="off" novalidate>
+    <div class="form-control-container">
+      <div class="row">
+        <div class="col-6 col-s-12">
+          <tamin-field-label formControlName="workshopName">نام کارگاه</tamin-field-label>
+          <tamin-field-static-text formControlName="workshopName"></tamin-field-static-text>
+        </div>
+        <div class="col-6 col-s-12">
+          <tamin-field-label formControlName="workshopId">کد کارگاه</tamin-field-label>
+          <tamin-field-static-text formControlName="workshopId"></tamin-field-static-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-s-12">
+          <tamin-field-label formControlName="result">وضعیت بدهی</tamin-field-label>
+          <tamin-field-static-text formControlName="result"></tamin-field-static-text>
+        </div>
+        <div class="col-6 col-s-12">
+          <tamin-field-label formControlName="sDate">تاریخ</tamin-field-label>
+          <tamin-field-static-text formControlName="sDate"></tamin-field-static-text>
+        </div>
+        <div class="col-4 col-s-12">
+          <tamin-field-label formControlName="amount1">بدهی قطعی</tamin-field-label>
+          <tamin-field-static-text formControlName="amount1"></tamin-field-static-text>
+        </div>
+        <div class="col-4 col-s-12">
+          <tamin-field-label formControlName="amount2">قابل تقسیط</tamin-field-label>
+          <tamin-field-static-text formControlName="amount2"></tamin-field-static-text>
+        </div>
+        <div class="col-4 col-s-12">
+          <tamin-field-label formControlName="amount2">غیر قابل تقسیط</tamin-field-label>
+          <tamin-field-static-text formControlName="amount3"></tamin-field-static-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="button-container">
+            <button type="button" class="button normal dark" (click)="exitconflictEditForm()">بستن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</tamin-modal>

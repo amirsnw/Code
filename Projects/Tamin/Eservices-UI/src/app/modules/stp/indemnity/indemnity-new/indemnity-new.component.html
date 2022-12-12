@@ -1,0 +1,77 @@
+<div class="alert alert-info">
+  درخواست غرامت دستمزد ایام بیماری
+</div>
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <app-stp-header-new requestTyp="غرامت دستمزد ایام بیماری" #header></app-stp-header-new>
+  <div class="panel" #dataPanel>
+    <div class="panel-title">مشخصات استراحت</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-6">
+          <tamin-field-label formControlName="branchCode">آخرین شعبه بیمه پردازی</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="branchCode" placeholder="" [dataItems]="header.branchWorkshop" displayField="name"
+            valueField="value"></tamin-field-combo-box-static>
+        </div>
+
+        <div class="col-6" *ngIf="covidOn">
+          <br/>
+          <tamin-field-checkbox formControlName="covid">مبتلا به بیماری کرونا </tamin-field-checkbox><br>
+        </div>
+        <div class="col-6" *ngIf="covidOff">
+          <br/>
+          <tamin-field-checkbox formControlName="covidOffCheck" onclick="return false;">مبتلا به بیماری کرونا </tamin-field-checkbox><br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4" *ngIf="sdate1">
+          <tamin-field-label formControlName="bimSdateTimeStamp">تاریخ شروع استراحت</tamin-field-label>
+          <!--<tamin-field-validator formControlName="bimSdateTimeStamp"></tamin-field-validator>-->
+          <tamin-field-persian-date formControlName="bimSdateTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-4" *ngIf="edate1">
+          <tamin-field-label formControlName="bimEdateTimeStamp">تاریخ خاتمه استراحت</tamin-field-label>
+          <!--<tamin-field-validator formControlName="bimEdateTimeStamp"></tamin-field-validator>-->
+          <tamin-field-persian-date formControlName="bimEdateTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-4" *ngIf="sdate">
+          <tamin-field-label formControlName="sdate">تاریخ شروع استراحت</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="sdate" placeholder=""></tamin-field-static-persian-date>
+        </div>
+        <div class="col-4" *ngIf="edate">
+          <tamin-field-label formControlName="edate">تاریخ خاتمه استراحت</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="edate" placeholder=""></tamin-field-static-persian-date>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="bimDrname">پزشک معالج</tamin-field-label>
+          <tamin-field-validator formControlName="bimDrname"></tamin-field-validator>
+          <tamin-field-persian-text formControlName="bimDrname" placeholder=""></tamin-field-persian-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bimDrid">کد نظام پزشکی</tamin-field-label>
+          <tamin-field-validator formControlName="bimDrid"></tamin-field-validator>
+          <tamin-field-mask formControlName="bimDrid" placeholder="" mask="0000000000"></tamin-field-mask>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="panel">
+  <div class="panel-title">تصاویر تجویز پزشک معالج (حداکثر پنج تصویر)</div>
+  <div class="panel-body">
+    <button class="button normal" (click)="addImage('تجویز پزشک معالج')" *ngIf="imageGallery.images.length < 5">
+      <span><i class="icon-plus"></i><span>افزودن تصویر جدید</span></span></button>
+    <tamin-image-gallery-managed #imageGallery [maxImageSize]="500"></tamin-image-gallery-managed>
+    <div class="alert alert-info">
+      توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+    </div>
+  </div>
+</div>
+<div class="button-container" style="margin: 3px">
+  <button class="button normal orange" (click)="onSendRequest()"><i class="icon-ok"></i><span>ثبت درخواست</span>
+  </button>
+</div>

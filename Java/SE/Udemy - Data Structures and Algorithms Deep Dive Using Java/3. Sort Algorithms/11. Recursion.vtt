@@ -1,0 +1,658 @@
+WEBVTT
+
+00:05.290 --> 00:11.480
+Os próximos algoritmos que analisaremos podem ser escritos de forma recursiva e geralmente são escritos recursivamente.
+
+00:11.480 --> 00:18.340
+Então, vamos dar uma breve pausa e falar sobre recursão para nos certificarmos de que estamos todos na mesma página.
+
+00:18.370 --> 00:22.050
+Um método é um método recursivo quando se chama.
+
+00:22.090 --> 00:26.380
+Então, vamos dar uma olhada no cálculo do fatorial para um número.
+
+00:26.410 --> 00:32.140
+Como lembrete para calcular o fatorial você começa com o número e então multiplica pelo
+
+00:32.290 --> 00:38.620
+número menos um e então multiplica o resultado pelo número menos dois e multiplica esse resultado pelo
+
+00:38.620 --> 00:43.140
+número menos três extra até chegar ao 0 e então você para.
+
+00:43.150 --> 00:49.320
+Então, três fatorial seria três vezes duas vezes 1, que é igual a seis.
+
+00:49.320 --> 00:58.630
+Cem factorial seria 100 vezes 99 vezes 98 vezes 1997 todo o caminho até o Times 1 e que o resultado disso
+
+00:58.750 --> 01:06.250
+é nove ponto três três a seis para dois para o poder de 157, que é um número
+
+01:06.250 --> 01:06.820
+bastante grande.
+
+01:06.820 --> 01:08.870
+Agora, como cerca de zero fatorial.
+
+01:08.890 --> 01:11.480
+Bem, por definição, é igual a 1.
+
+01:11.500 --> 01:13.750
+Então, 0 fatorial é 1.
+
+01:13.750 --> 01:18.900
+Agora, se você está se perguntando sobre números negativos, os fatoriais para números negativos são indefinidos.
+
+01:19.030 --> 01:25.800
+OK então eu tenho na tela o algoritmo fatorial os passos para calcular o fatorial.
+
+01:25.810 --> 01:28.840
+Nós começamos dizendo que se Núm. é igual a zero.
+
+01:28.840 --> 01:34.990
+Então, se estamos tomando algum doctorial se o número é igual a zero, então o fatorial é 1 e
+
+01:34.990 --> 01:38.780
+paramos de ter o resultado, caso contrário, definimos o multiplicador para 1.
+
+01:38.890 --> 01:44.350
+E nós definimos o fatorial para 1 e então chamamos o multiplicador não é igual a.
+
+01:44.440 --> 01:52.240
+Fazemos os passos 5 e 6 multiplicamos fatorial por multiplicador e atribuímos o resultado a fatorial e depois
+
+01:52.240 --> 01:54.130
+adicionamos 1 ao multiplicador.
+
+01:54.130 --> 01:57.030
+E então vamos dizer uma vez.
+
+01:57.070 --> 02:00.120
+Adicione 1 ao multiplicador para que o multiplicador se torne dois.
+
+02:00.130 --> 02:07.160
+Então, teremos 1 vez 1 vez 2 e depois atribuiremos dois fatorial e multiplicaremos isso por três.
+
+02:07.180 --> 02:09.330
+E então vamos atribuir 6 a fatorial.
+
+02:09.340 --> 02:16.300
+Multiplique isso por quatro ou atribua 24 a fatorial etc. e continuamos até que o multiplicador seja igual ao
+
+02:16.520 --> 02:18.030
+ponto em que paramos.
+
+02:18.040 --> 02:24.430
+Então, essa é outra maneira de olhar para ela em vez de contar e ir 3 vezes 2 vezes 1 para 6 fatorial.
+
+02:24.430 --> 02:28.810
+Também podemos dizer 1 vezes duas vezes três que nos dará o mesmo resultado.
+
+02:28.810 --> 02:34.240
+Portanto, nesse algoritmo, basicamente temos um passo de enxágue e repetição, que é o passo número quatro.
+
+02:34.270 --> 02:40.450
+O passo número quatro diz que enquanto o multiplicador não é igual ao Nam do passo 5 ao 6.
+
+02:40.450 --> 02:42.330
+Então, como podemos codificar isso?
+
+02:42.520 --> 02:48.760
+Bem, vamos ao Intel J e escreveremos a função que calcula o fatorial de
+
+02:49.090 --> 02:49.770
+maneira iterativa.
+
+02:49.840 --> 02:57.220
+Então, vamos usar um loop for.
+
+02:57.240 --> 03:02.970
+Então, aqui estou em inteligência e criei um projeto que a academia do pacote que aprende
+
+03:02.970 --> 03:10.020
+programação pobre tem recursão e eu vou escrever um método para calcular o fatorial de uma forma iterativa e isso
+
+03:10.020 --> 03:12.620
+significa que não vamos usar recursão .
+
+03:13.040 --> 03:17.750
+Então, eu vou dizer estática pública estática porque nós vamos chamá-la do método principal.
+
+03:17.940 --> 03:23.130
+Ele vai retornar um inteiro fatorial e eu chamarei de fatorial iterativo.
+
+03:23.190 --> 03:26.030
+E é claro que queremos passar e numerar.
+
+03:27.150 --> 03:29.970
+Então, a primeira coisa que vamos verificar é se Nahm é igual a zero.
+
+03:29.970 --> 03:35.040
+Porque se num é igual a zero, sabemos que o resultado é 1.
+
+03:35.340 --> 03:43.920
+E então nós apenas retornaremos 1 se num não for igual a 0 definiremos um campo chamado fatorial para 1 e
+
+03:43.920 --> 03:50.780
+então diremos que quatro em dois é igual a um por menor que ou igual a numb
+
+03:53.700 --> 03:57.420
+mais mais fatorial é atribuído fatorial vezes Eu e
+
+04:01.210 --> 04:05.420
+quando saímos do loop, temos os fatoriais. Então, vamos retornar isso.
+
+04:05.580 --> 04:10.380
+Então, o que está acontecendo aqui, digamos que queríamos calcular três fatorial porque sabemos que
+
+04:10.380 --> 04:17.250
+são seis, então nenhum é diferente de zero, então não retornamos. Vamos definir um fatorial para um olho. Ele deve ser
+
+04:17.250 --> 04:19.710
+menor ou igual a três para repassar três.
+
+04:19.710 --> 04:27.600
+Assim, na primeira iteração, o fatorial do loop será um fator fatorial senoidal 1 e começamos com o fatorial sendo 1, de
+
+04:27.600 --> 04:32.820
+modo que o fatorial obterá 1 vez o vinho, o qual também será um.
+
+04:32.820 --> 04:35.870
+Então fatorial recebe 1 vezes 2, que é 2.
+
+04:35.910 --> 04:40.760
+E então eu fico 3 assim fatorial obtém 2 vezes 3 que é 6.
+
+04:40.800 --> 04:43.050
+E então, neste momento, eu me torno quatro.
+
+04:43.050 --> 04:46.270
+Não é mais que menor ou igual a Nahm Então desistimos.
+
+04:46.320 --> 04:48.630
+E então retornamos seis.
+
+04:48.690 --> 04:51.180
+Então isso significa que três fatorial é seis.
+
+04:51.330 --> 04:54.480
+E isso é uma implementação iterativa.
+
+04:54.480 --> 04:57.870
+Não estamos usando recursão, o método não chama a si mesmo.
+
+04:57.870 --> 05:00.810
+Então, o que dizer de uma implementação recursiva?
+
+05:00.810 --> 05:04.160
+Bem, em vez de usar o loop, podemos ter o próprio método.
+
+05:04.170 --> 05:13.290
+Porque pensar nisso dois fatorial é um fatorial para três fatorial é dois tempos fatoriais três
+
+05:13.290 --> 05:17.700
+quatro fatorial é três vezes fatorial quatro.
+
+05:17.700 --> 05:22.050
+Vou escrevê-los em um comentário para que você possa entender o que quero dizer.
+
+05:22.050 --> 05:29.580
+Então, um fatorial e geralmente escrevemos fatorial usando pontos de exclamação assim quando fatorial igual a
+
+05:29.580 --> 05:40.610
+zero fatorial que sabemos que é uma vezes um que é igual a um direito dois fatorial é igual a duas vezes um.
+
+05:40.770 --> 05:54.000
+E isso é na verdade duas vezes um fatorial porque sabemos que um fatorial é 1 3 fatorial igual
+
+05:54.000 --> 05:58.060
+a 3 vezes 2 vezes 1.
+
+05:58.110 --> 06:04.220
+E isso é equivalente a três vezes dois fatorial.
+
+06:04.320 --> 06:07.830
+Certo porque dois fatorial é duas vezes um.
+
+06:07.980 --> 06:18.540
+Então, isso é três vezes dois fatorial quatro fatorial é igual a 4 vezes 3 vezes 2 vezes 1.
+
+06:18.630 --> 06:26.700
+E isso equivale a quatro vezes três fatorial porque três fatorial é igual a 3 vezes 2 vezes
+
+06:26.700 --> 06:27.170
+1.
+
+06:27.300 --> 06:29.060
+Então você pode ver o padrão agora.
+
+06:29.190 --> 06:37.200
+Então, um fatorial é eu acho que deveria reverter isso para consistência assim um vezes fatorial zero dois fatorial é
+
+06:37.200 --> 06:44.460
+duas vezes um que é duas vezes 1 fatorial três fatorial é três vezes duas vezes um que
+
+06:44.640 --> 06:51.270
+é equivalente a três vezes dois fatorial quatro fatorial é quatro vezes três vezes duas vezes
+
+06:51.270 --> 06:57.690
+um que é equivalente a quatro vezes três fatorial cinco seria cinco vezes quatro vezes três
+
+06:57.690 --> 07:02.330
+vezes duas vezes um que é equivalente a cinco vezes quatro fatorial.
+
+07:02.430 --> 07:08.000
+E assim, para calcular cada fatorial, podemos usar um fatorial.
+
+07:08.070 --> 07:15.060
+Basicamente, multiplicamos o número por e menos um fatorial.
+
+07:15.060 --> 07:23.430
+Então, basicamente, estamos fazendo o seguinte para obter e fatorial que equivale a menos 1
+
+07:23.430 --> 07:25.090
+fatorial n vezes.
+
+07:25.230 --> 07:28.880
+Eu vou fazer assim porque é assim que eu escrevi acima.
+
+07:29.580 --> 07:37.020
+Então, basicamente, essa é a fórmula que podemos usar para obter o fatorial de n é igual a fim dos tempos e
+
+07:37.020 --> 07:38.110
+menos 1 fatorial.
+
+07:38.130 --> 07:41.040
+Então, vamos escrever um método que use essa informação.
+
+07:41.130 --> 07:48.990
+Então, vamos dizer Puplick estático int e vamos chamar isso de um fatorial recursivo e vamos passar um enum
+
+07:48.990 --> 07:55.510
+como fizemos antes e vamos começar da mesma maneira se o namn for igual a zero.
+
+07:56.130 --> 07:57.320
+Então retornamos 1.
+
+07:57.340 --> 07:59.950
+E sabemos que o fatorial zero é 1.
+
+08:00.060 --> 08:02.010
+Caso contrário, o que vamos retornar?
+
+08:02.040 --> 08:11.820
+Não, algumas vezes fatorial recursivo de num 1, porque acabamos de dizer que podemos calcular o fatorial
+
+08:11.820 --> 08:16.950
+de N multiplicando n por e menos 1 fatorial.
+
+08:16.950 --> 08:23.910
+E assim, aqui estamos chamando o mesmo método que estamos chamando o método em si para obter o valor e aqui você pode
+
+08:23.910 --> 08:29.280
+notar na inteligência da calha que adicionou este ícone aqui para nos dizer que estamos fazendo uma
+
+08:29.280 --> 08:29.940
+chamada recursiva.
+
+08:29.940 --> 08:32.100
+Mas como isso realmente funciona?
+
+08:32.100 --> 08:33.240
+Deixe-me mudar isso.
+
+08:33.270 --> 08:37.560
+Então, digamos que chamamos fatorial recursivo com um valor de três.
+
+08:37.560 --> 08:40.140
+Bem, vamos dizer que não é igual a 0.
+
+08:40.140 --> 08:40.920
+Não, não.
+
+08:40.920 --> 08:47.250
+Então vamos descer e vamos dizer OK, queremos retornar três vezes fatorial recursivo de dois.
+
+08:47.250 --> 08:53.880
+Agora isso não retorna imediatamente porque o que vai acontecer é que temos que esperar até obtermos
+
+08:54.030 --> 08:57.770
+o valor de recursivo fatorial numb numb menos 1.
+
+08:57.780 --> 09:04.910
+E então o que acontecerá é que a chamada para fatorial recursivo com um valor de três será empurrada
+
+09:04.910 --> 09:11.760
+para o que é chamado de pilha de chamadas e, em seguida, o fatorial recursivo 2 será executado.
+
+09:11.780 --> 09:17.600
+Então, não retornamos do fatorial recursivo 3 porque temos que esperar por esse resultado e
+
+09:17.600 --> 09:21.300
+então entramos em um fatorial recursivo com dois nessa chamada.
+
+09:21.320 --> 09:22.520
+Agora não é zero.
+
+09:22.520 --> 09:29.660
+Então, desta vez, vamos querer voltar ao tempo fatorial recursivo de dois menos 1, que é 1.
+
+09:29.660 --> 09:34.220
+Então agora a chamada fatorial recursiva com o valor 2 tem que esperar.
+
+09:34.280 --> 09:41.080
+E assim ele será empurrado para a pilha de chamadas e um fatorial recursivo será chamado.
+
+09:41.090 --> 09:47.600
+Então, basicamente, neste ponto, temos duas chamadas para fatorial recursivo que estão aguardando um valor de retorno
+
+09:47.750 --> 09:50.160
+que chamamos de fatorial recursivo 1.
+
+09:50.270 --> 09:51.860
+Bem, um não é zero.
+
+09:51.850 --> 09:58.520
+Então, vamos descer aqui e retornar 1 vez fatorial recursivo de 1 menos 1, que é zero.
+
+09:58.520 --> 10:04.840
+Então agora a chamada fatorial recursiva com 1 será empurrada na pilha porque está aguardando.
+
+10:04.850 --> 10:07.550
+E chamamos fatorial recursivo 0.
+
+10:07.610 --> 10:11.130
+Então, vamos entrar aqui neste momento, nenhum é zero.
+
+10:11.150 --> 10:16.580
+Então, nós retornamos 1 e esta chamada está terminada e não é colocada na pilha.
+
+10:16.610 --> 10:20.680
+Mas agora a chamada fatorial recursiva com retornos nulos.
+
+10:20.720 --> 10:25.910
+E essa é a chamada que fatorial recursiva com o valor que se está esperando.
+
+10:25.910 --> 10:31.000
+Portanto, agora essa chamada pode ser retomada e obtém o valor de retorno de uma.
+
+10:31.010 --> 10:38.540
+E assim multiplica-se um por um e retorna 1 e agora a chamada para o fatorial recursivo 2 pode ser
+
+10:38.570 --> 10:42.870
+retomada porque estava aguardando o valor de retorno do fatorial recursivo 1.
+
+10:42.980 --> 10:47.750
+E assim multiplica-se para comprar vinho para voltar a ele.
+
+10:47.780 --> 10:54.110
+E agora a chamada para o fatorial recursivo 3 pode ser retomada porque estava aguardando o valor de
+
+10:54.110 --> 10:56.060
+retorno do fatorial recursivo para.
+
+10:56.240 --> 11:01.420
+E assim multiplica 3 por 2, obtém 6 retornos e nós terminamos.
+
+11:01.550 --> 11:05.820
+Não há mais chamadas para fatorial recursivo aguardando na pilha de chamadas.
+
+11:05.810 --> 11:07.890
+E assim 6 é retornado.
+
+11:07.940 --> 11:14.840
+Mas você notará que a ordem em que as chamadas recursivas são feitas retornam na ordem inversa.
+
+11:14.840 --> 11:18.340
+Então basicamente a situação que nós temos.
+
+11:19.040 --> 11:23.580
+Então, começamos chamando fatorial recursivo 3.
+
+11:23.660 --> 11:29.990
+E quando atinge essa linha, chama o fator fatorial 2 de Rickerson, de modo que
+
+11:30.020 --> 11:39.110
+não pode retornar até obter um fatorial recursivo de valor 2 e, assim, a chamada para fatorial recursivo 3 é empurrada
+
+11:39.140 --> 11:47.370
+para a pilha de chamadas e o fatorial recursivo 2 é chamado t retorna até obter o resultado do
+
+11:47.390 --> 11:52.180
+fatorial recursivo 1 e, assim, é empurrado para a pilha de chamadas.
+
+11:53.090 --> 12:02.180
+E então um fatorial recursivo será empurrado para a pilha de chamadas e o zero fatorial
+
+12:02.180 --> 12:03.890
+recursivo retornará imediatamente.
+
+12:04.130 --> 12:11.270
+Então, um ou dois quando o fatorial zero recursivo retorna, ele é retirado da pilha de chamadas e
+
+12:11.270 --> 12:18.290
+continua em execução, retornando 1 e, quando retorna, ele é retirado da pilha de chamadas e continua
+
+12:18.320 --> 12:20.780
+executando e retorna o valor para.
+
+12:20.780 --> 12:26.800
+E finalmente isso é retirado da pilha de chamadas e retorna o valor 6.
+
+12:26.840 --> 12:28.650
+É assim que funciona a recursão.
+
+12:28.730 --> 12:34.730
+E é importante ver que quando você entra em um Massett recursivo, pode demorar um pouco até que ele retorne.
+
+12:34.850 --> 12:37.780
+Você pode ir até o buraco do coelho e você pode ir fundo.
+
+12:37.790 --> 12:42.620
+Então, quando você vir uma recursão nos próximos algoritmos de classificação, vamos ver.
+
+12:42.620 --> 12:50.090
+Tenha em mente que a chamada para um método recursivo pode resultar em muito mais chamadas antes de retornar.
+
+12:50.120 --> 12:56.240
+Portanto, é importante entender que um método recursivo de três linhas pode resultar em centenas de
+
+12:56.240 --> 12:57.100
+chamadas recursivas.
+
+12:57.260 --> 13:03.380
+O código pode parecer simples, mas pode levar a uma tonelada de processamento e é
+
+13:03.380 --> 13:10.760
+realmente importante entender que nenhuma das chamadas recursivas retorna até que elas recebam o resultado da mensagem que
+
+13:10.760 --> 13:11.670
+invocaram recursivamente.
+
+13:11.720 --> 13:19.880
+Então, como vimos os fatoriais recursivos três invocaram fatoriais recursivos para que o fatorial recursivo 3 não
+
+13:19.880 --> 13:27.520
+retorne, ele não pode retornar até que o fatorial recursivo 2 tenha terminado a execução.
+
+13:27.520 --> 13:35.560
+Agora você notará aqui que as chamadas recursivas são terminadas quando nós passamos nummy igual a zero, porque quando passamos e
+
+13:35.560 --> 13:40.550
+nomeamos igual a zero nós não fazemos uma chamada recursiva, apenas retornamos uma.
+
+13:40.600 --> 13:44.050
+Se não tivéssemos essa condição, nós nunca acabaríamos.
+
+13:44.140 --> 13:48.580
+Nós continuamos a fazer chamadas recursivas após chamadas recursivas após chamadas recursivas.
+
+13:48.700 --> 13:54.820
+Portanto, para que a recursão funcione corretamente, você precisa de alguma condição que acabe com a recursão,
+
+13:55.300 --> 14:01.140
+e essa condição é conhecida como a condição de quebra e também é chamada de caso base.
+
+14:01.150 --> 14:09.100
+Assim, no método fatorial recursivo, essa condição num é igual a zero é o caso base ou a condição de quebra
+
+14:09.100 --> 14:12.540
+nesse ponto quando o número é igual a zero.
+
+14:12.550 --> 14:15.900
+Dizemos que a recursão começa a se desenrolar.
+
+14:16.150 --> 14:22.000
+Então, nesse ponto, ele retornará um valor e o método que o invocou recursivamente agora poderá
+
+14:22.000 --> 14:27.250
+continuar a execução e, em seguida, retornará um valor, e o método que o
+
+14:27.250 --> 14:30.460
+invocou recursivamente poderá prejudicar para continuar executando etc. Então, quando você usa recursão, você precisa de uma condição de quebra.
+
+14:30.580 --> 14:33.790
+Se você não tiver uma, o que acontecerá é
+
+14:33.790 --> 14:39.190
+que o método continuará chamando-se recursivamente e, eventualmente, você obterá uma exceção de estouro
+
+14:39.190 --> 14:45.580
+de pilha, porque a pilha de chamadas tem apenas uma certa quantidade de memória alocada para ela.
+
+14:45.580 --> 14:46.270
+E assim, eventualmente, você vai estragar essa memória.
+
+14:46.390 --> 14:48.510
+Então, vamos executar um código recursivo.
+
+14:48.520 --> 14:50.640
+Bem, nós vamos executar os dois na verdade.
+
+14:50.650 --> 14:52.060
+Então deixe o
+
+14:52.080 --> 14:52.620
+sistema
+
+14:57.080 --> 15:06.230
+sair da linha e nós imprimiremos um fatorial iterativo de três, então faremos a mesma coisa para os fatoriais recursivos 3.
+
+15:06.230 --> 15:09.240
+E devemos ver seis em ambos os
+
+15:09.240 --> 15:12.260
+casos, e é claro que temos dois
+
+15:15.320 --> 15:23.510
+sixes por diversão e risos. Vamos remover ou comentar essa condição de quebra e você vai ver o que
+
+15:23.510 --> 15:27.850
+acontece aqui, não vai ser bonito e Olhe para isso.
+
+15:31.120 --> 15:32.360
+Recebemos todas essas chamadas recursivas até que finalmente recebemos um erro de estouro de pilha.
+
+15:32.500 --> 15:38.850
+E assim nós apenas mantemos este método apenas chamando a si mesmo e chamando a si mesmo e chamando a si mesmo.
+
+15:39.250 --> 15:43.770
+E não há nada que impeça isso de fazer isso.
+
+15:43.780 --> 15:45.940
+E assim temos tudo isso, você está realmente olhando aqui para a pilha de chamadas aqui.
+
+15:46.000 --> 15:50.710
+Então você está olhando para todos os métodos que estão na pilha de chamadas e como você pode ver, ele
+
+15:50.710 --> 15:55.270
+apenas continua invocando a si mesmo até que nós explodimos a chamada, cara, e todos estão comentando isso agora.
+
+15:56.350 --> 16:02.500
+OK, então isso é recursão.
+
+16:03.130 --> 16:05.440
+Ora, aqui está uma coisa
+
+16:05.450 --> 16:12.820
+interessante: a implementação iterativa geralmente roda mais rápido e não usa tanta memória, porque há sobrecarga
+
+16:12.820 --> 16:21.130
+envolvida em empurrar chamadas de método para a pilha de chamadas e cada quadro de pilha usa alguma memória.
+
+16:21.130 --> 16:23.720
+Mas às vezes a maneira iterativa não é tão
+
+16:23.740 --> 16:30.190
+intuitiva ou se você escreve o algoritmo de uma maneira iterativa, será como um método de 500 linhas ou algo parecido.
+
+16:30.520 --> 16:34.230
+Por isso, os desenvolvedores ainda usam recursão
+
+16:34.240 --> 16:40.890
+porque geralmente é a solução mais elegante e mais fácil de entender.
+
+16:40.900 --> 16:41.750
+Agora, quando estamos lidando com
+
+16:41.770 --> 16:46.960
+um método recursivo, a pilha de chamadas também pode ser chamada de pilha de recursão e vimos que, quando não temos uma condição de quebra, obteremos uma exceção de estouro de pilha.
+
+16:46.960 --> 16:52.330
+É possível obter essa exceção mesmo quando você tem uma condição de quebra se
+
+16:52.330 --> 16:58.360
+você escrever um método recursivo e novamente ele invocar a si mesmo mil vezes você ainda
+
+16:58.360 --> 17:04.450
+poderá obter uma exceção de estouro de pilha porque você não está atingindo essa condição de quebra.
+
+17:04.450 --> 17:07.680
+Portanto, mesmo se você tiver uma condição de quebra, se você chamar o método recursivo
+
+17:07.690 --> 17:12.970
+com algo que fará com que o método invoque a si mesmo um milhão de vezes, você receberá um erro de estouro de pilha.
+
+17:12.970 --> 17:18.370
+Então apenas tenha isso em mente.
+
+17:18.460 --> 17:19.950
+Agora há uma maneira de
+
+17:20.080 --> 17:25.930
+contornar esse possível desfoque da pilha. É chamado recursão de cauda, ​​mas não vamos ver isso por dois motivos.
+
+17:25.930 --> 17:27.820
+Primeiro de tudo, não dos algoritmos
+
+17:27.820 --> 17:34.060
+que observamos, nenhuma das implementações usa recursão final, mas a segunda e talvez mais importante razão para Java é
+
+17:34.060 --> 17:40.300
+que o compilador Java não usa recursão final, então não podemos usar esse tipo de recursão em Java.
+
+17:40.720 --> 17:43.390
+Eu estou apenas mencionando isso para que
+
+17:43.390 --> 17:48.400
+você saiba que existe e se você quiser ler sobre isso você mesmo Artigo de Dobbs na seção de recursos.
+
+17:48.400 --> 17:52.120
+Então, se você estiver interessado em ler
+
+17:52.120 --> 17:56.980
+sobre a recursão de cauda em Java, você pode ir em frente e dar uma olhada nesse artigo.
+
+17:56.980 --> 17:57.870
+De qualquer forma, espero
+
+17:57.890 --> 18:03.370
+que atualize sua memória sobre recursão e, agora que estamos todos na mesma página, vamos seguir em frente e examinar um algoritmo de classificação recursivo chamado merge sort.
+
+18:03.370 --> 18:08.040
+Eu vou te ver no próximo vídeo.
+
+18:08.110 --> 18:09.510
+&nbsp;

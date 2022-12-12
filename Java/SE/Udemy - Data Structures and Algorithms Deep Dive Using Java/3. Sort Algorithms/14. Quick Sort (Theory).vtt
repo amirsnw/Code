@@ -1,0 +1,379 @@
+WEBVTT
+
+00:05.290 --> 00:11.680
+En este video vamos a ver quicksort en quicksort, es otro algoritmo de dividir y conquistar
+
+00:11.770 --> 00:15.130
+al igual que merge sort y simplemente merge sort.
+
+00:15.130 --> 00:18.210
+Podemos escribirlo recursivamente y a menudo lo hacemos.
+
+00:18.220 --> 00:19.950
+Entonces, ¿cómo funciona quicksort?
+
+00:20.050 --> 00:28.060
+Bien quicksort elige un elemento pivote y luego divide la matriz en dos mitades.
+
+00:28.090 --> 00:30.840
+Y esta división es una división lógica.
+
+00:31.000 --> 00:35.520
+Por lo tanto, elige un elemento pivote que divide la matriz en dos mitades.
+
+00:35.560 --> 00:40.720
+En la mitad izquierda pone elementos que son menos que el elemento pivote.
+
+00:40.720 --> 00:46.990
+Y en la mitad derecha o en la submatriz derecha pone elementos que son mayores que el elemento pivote.
+
+00:47.140 --> 00:52.300
+Y entonces el elemento pivote estará en el medio entre las dos matrices.
+
+00:52.390 --> 00:57.940
+Todo lo que no sea el elemento pivote estará a la izquierda y todo lo que sea mayor que el elemento
+
+00:58.210 --> 00:59.430
+pivote estará a la derecha.
+
+00:59.440 --> 01:02.310
+Y esto se llama el paso de partición.
+
+01:02.320 --> 01:04.220
+Así que piensa en esto por un minuto.
+
+01:04.240 --> 01:10.600
+Si todos los elementos que están por debajo del pivote se colocan a la izquierda y todos los
+
+01:10.600 --> 01:18.190
+elementos superiores al pivote se colocan a su derecha, significa que después de que hayamos terminado el paso de partición, el pivote
+
+01:18.280 --> 01:21.320
+estará en la posición ordenada correcta en la matriz.
+
+01:21.460 --> 01:28.030
+Pero y esto es importante tener en cuenta que las matrices Subba izquierda y derecha no están necesariamente ordenadas.
+
+01:28.270 --> 01:32.010
+Sabemos que todos los elementos del subarreglo izquierdo son más pequeños que el pivote.
+
+01:32.020 --> 01:38.770
+Y sabemos que todos los elementos del subconjunto correcto son más grandes que el pivote, pero los
+
+01:38.770 --> 01:41.440
+subcampos izquierdo y derecho no están ordenados.
+
+01:41.740 --> 01:48.580
+Y una vez que hemos hecho esta partición, hacemos lo mismo para la matriz izquierda y lo mismo para la matriz
+
+01:48.580 --> 01:51.990
+derecha en la matriz izquierda, vamos a elegir un pivote.
+
+01:52.030 --> 01:58.250
+Vamos a colocar todos los elementos en la matriz izquierda que son más pequeños que el pivote a la izquierda.
+
+01:58.270 --> 02:02.530
+Todos los elementos en la subrasante izquierda que son más grandes que el pivote a la derecha.
+
+02:02.650 --> 02:06.580
+Y luego haremos lo mismo con la matriz secundaria correcta y luego vamos a repetir
+
+02:06.580 --> 02:07.140
+el proceso.
+
+02:07.140 --> 02:13.000
+Así que, esencialmente, se divide y conquista, porque en cada etapa estamos haciendo lo que hicimos con
+
+02:13.000 --> 02:13.370
+Mirch.
+
+02:13.370 --> 02:20.680
+Estamos dividiendo el conjunto en dos en torno a este elemento pivote y solo dice que el tipo de fusión terminará
+
+02:20.680 --> 02:24.430
+dividiendo el conjunto en una serie de un elemento para generar.
+
+02:24.430 --> 02:28.420
+Ahora porque eventualmente cada elemento será elegido como pivote.
+
+02:28.450 --> 02:32.450
+Finalmente, cada elemento estará en su posición ordenada correcta.
+
+02:32.470 --> 02:33.910
+Ahora a diferencia del tipo de combinación.
+
+02:33.940 --> 02:38.730
+Todo esto se hace en su lugar para que no tengamos que crear ningún borrado temporal.
+
+02:38.890 --> 02:45.880
+Por lo tanto, una de las ventajas de quicksort es que no necesita mucha memoria para hacer este tipo si está
+
+02:45.880 --> 02:47.740
+ordenando una matriz realmente grande.
+
+02:47.740 --> 02:53.170
+Estarías haciendo la clasificación en el lugar con quicksort pero con el tipo de Mirch tendrías que crear
+
+02:53.170 --> 02:54.590
+un montón de arreglos temporales.
+
+02:54.610 --> 02:56.340
+Así que echemos un vistazo a esto.
+
+02:56.350 --> 03:00.070
+Repasemos con nuestra matriz habitual en la implementación.
+
+03:00.070 --> 03:01.280
+Voy a mostrarte.
+
+03:01.300 --> 03:07.670
+Siempre vamos a elegir el primer elemento de la matriz o la matriz secundaria como pivote.
+
+03:07.690 --> 03:10.930
+Así que vamos a establecer el pivote en 20.
+
+03:10.930 --> 03:15.720
+Vamos a establecer el índice de inicio en cero al final y el índice a 7.
+
+03:15.730 --> 03:19.890
+Y vamos a hacer que el comienzo sea igual a N. J. fin igual
+
+03:20.110 --> 03:27.370
+Así que comenzamos con menos menos J J iba a volver J va a ser igual a 7 porque es igual y entonces menos
+
+03:27.370 --> 03:29.900
+menos J va a ser igual a 6.
+
+03:29.920 --> 03:31.480
+Iremos de derecha a izquierda.
+
+03:31.480 --> 03:38.050
+Buscando el primer elemento que sea menor que el elemento pivote menos 22 es menor que el elemento pivote
+
+03:38.080 --> 03:39.810
+el elemento pivote tiene 20.
+
+03:39.820 --> 03:44.710
+Y entonces asignamos menos 22 a la posición 0.
+
+03:44.710 --> 03:52.060
+Ahora no te preocupes porque hemos sobrescrito 20 porque recuerda que tendremos que guardar 20 en un campo de pivote.
+
+03:52.060 --> 03:54.270
+Ahora en este punto cambiamos a asombro.
+
+03:54.430 --> 03:59.720
+Y agregamos uno para saber si volvemos un par de diapositivas que comencé en cero.
+
+04:00.070 --> 04:04.400
+Entonces, cuando agreguemos 1 a II, vamos a ser igual a 1.
+
+04:04.600 --> 04:08.890
+Y esta vez vamos a ir de izquierda a derecha y vamos a buscar el primer elemento que
+
+04:08.890 --> 04:10.410
+sea más grande que el pivote.
+
+04:10.410 --> 04:12.540
+Treinta y cinco es mayor que el pivote.
+
+04:12.550 --> 04:17.180
+Así que vamos a asignarlo a la posición J y actualmente a J.
+
+04:17.190 --> 04:18.110
+A-6.
+
+04:18.130 --> 04:19.900
+Y entonces esto va a suceder.
+
+04:19.930 --> 04:27.640
+Ahora note que no hemos perdido ningún dato porque ya movimos lo que era esa posición 6 a la
+
+04:27.640 --> 04:28.670
+posición 0.
+
+04:28.780 --> 04:34.690
+Y así al alternar entre ir de derecha a izquierda y de izquierda a derecha podemos estar seguros de que
+
+04:34.720 --> 04:36.050
+no perderemos ningún dato.
+
+04:36.130 --> 04:40.960
+No vamos a sobrescribir ninguna posición que no hayamos manejado anteriormente.
+
+04:40.960 --> 04:43.900
+Entonces esencialmente J se mueve de derecha a izquierda.
+
+04:43.900 --> 04:50.140
+Buscando valores que son más pequeños que el pivote y me muevo de izquierda a derecha buscando valores
+
+04:50.140 --> 04:52.490
+que son más grandes que el pivote.
+
+04:52.540 --> 04:59.230
+Y al hacer estas tareas alternativas, nunca vamos a sobreescribir una posición que no
+
+04:59.230 --> 04:59.930
+hayamos manejado.
+
+05:00.010 --> 05:07.950
+Entonces, en este punto, J es igual a 6 e I es igual a 1 y ahora vamos a verificar si los valores
+
+05:07.950 --> 05:10.170
+de i y j se han cruzado.
+
+05:10.170 --> 05:16.800
+Si fuera menos NJ, no se han cruzado, así que una vez más volvemos a Jay y buscamos el
+
+05:16.800 --> 05:19.350
+primer elemento que sea inferior al pivote.
+
+05:19.350 --> 05:21.330
+Así que vamos a restar uno de J.
+
+05:21.330 --> 05:25.420
+Y uno es menor que el valor de pivote que es 20.
+
+05:25.530 --> 05:28.340
+Y entonces vamos a asignarlo a la posición.
+
+05:28.490 --> 05:30.100
+Y recuerda que soy uno.
+
+05:30.120 --> 05:31.640
+Así que lo asignamos a la posición.
+
+05:31.660 --> 05:38.720
+Observé nuevamente que no hemos perdido ningún dato porque ya hemos movido 35 desde la posición 1.
+
+05:38.760 --> 05:43.970
+Ahora volvemos a II y vamos a buscar el primer elemento que sea más grande que el pivote.
+
+05:43.980 --> 05:50.600
+Y esto nos llevará hasta el 55 porque 15 menos es el pivote y 7 menos
+
+05:50.600 --> 05:51.610
+en el pivote.
+
+05:51.840 --> 05:55.860
+Y así llegamos a los 55 y eso es más que el pivote.
+
+05:55.950 --> 06:00.970
+Entonces, en este punto vamos a asignar 55 a la posición J J es 5.
+
+06:01.050 --> 06:09.480
+Asignamos 55 a la posición 5 y una vez más porque hacemos esto alternando entre I y J entre ir de derecha a
+
+06:09.480 --> 06:15.630
+izquierda y de izquierda a derecha no hemos perdido ningún dato porque ya hemos movido el valor
+
+06:15.630 --> 06:17.580
+de 1 desde la posición 5.
+
+06:17.670 --> 06:22.470
+Entonces ahora verificamos si I y J se han cruzado en este punto.
+
+06:22.470 --> 06:28.410
+Pedí y J tiene 5, así que no se cruzaron, así que volvimos a J.
+
+06:28.500 --> 06:31.890
+Y buscamos el primer elemento que sea menor que el pivote.
+
+06:31.890 --> 06:34.260
+Ahora vamos a encontrar eso en la posición 3.
+
+06:34.260 --> 06:37.030
+Pero en este punto J ha cruzado.
+
+06:37.350 --> 06:39.810
+Porque AI es igual a 4.
+
+06:39.900 --> 06:43.680
+Entonces, J saltó por encima de I y es menos que yo.
+
+06:43.680 --> 06:45.990
+Y entonces paramos, no hacemos nada.
+
+06:45.990 --> 06:52.860
+Ahora, si observa en este punto, el valor de pi será la posición ordenada del valor de pivote.
+
+06:52.860 --> 06:55.420
+Entonces el ahora es cuatro.
+
+06:55.440 --> 06:57.760
+Y entonces vamos a asignar 20 a cuatro.
+
+06:57.840 --> 07:04.290
+Y observe que todo a la izquierda de 20 es menor que 20 y todo a la derecha de 20
+
+07:04.290 --> 07:05.630
+es mayor que 20.
+
+07:05.640 --> 07:11.530
+Y no solo ese 20 está en la posición ordenada correcta en toda la matriz.
+
+07:11.560 --> 07:15.030
+¿Qué pasaría si clasificáramos esta encuesta? 20 terminaría en una posición para.
+
+07:15.150 --> 07:21.040
+Así que hemos completado nuestra primera partición y ahora vamos a repetir este proceso para la partición izquierda.
+
+07:21.090 --> 07:30.120
+Entonces, para los índices 0 a 3 y los índices de partición correctos 5 y 6, vamos a hacer esto hasta que todo el conjunto
+
+07:30.120 --> 07:30.980
+esté ordenado.
+
+07:30.990 --> 07:37.020
+Porque al hacerlo por la izquierda y la derecha y, por supuesto, una vez que terminamos vamos a
+
+07:37.110 --> 07:42.570
+dividir su izquierda y derecha, ya que eventualmente cada elemento llega a ser el elemento pivote.
+
+07:42.570 --> 07:47.430
+Y así eventualmente cada elemento terminará en su posición ordenada correcta.
+
+07:47.430 --> 07:50.530
+Así que como dije quicksort es un algoritmo in situ.
+
+07:50.550 --> 07:56.150
+Se lleva a cabo dentro de la matriz y eso es una ventaja sobre el tipo de fusión al igual que el tipo de fusión.
+
+07:56.160 --> 07:58.470
+Es todo para el registro final.
+
+07:58.520 --> 08:04.000
+Y eso también es fundamental porque repetidamente estamos dividiendo la matriz en dos mitades.
+
+08:04.140 --> 08:11.200
+Ahora bien, una cosa sobre quicksort es, en el peor de los casos, que en realidad es un algoritmo cuadrático.
+
+08:11.250 --> 08:17.820
+Pero en el caso promedio funciona con una complejidad de tiempo de 0 al extremo analógico y la mayoría de las veces
+
+08:17.820 --> 08:20.100
+se comporta mejor que el tipo de fusión.
+
+08:20.100 --> 08:26.760
+Ahora quicksort es un algoritmo inestable y creo que probablemente puedas adivinar por qué porque estábamos alternando entre I y
+
+08:26.760 --> 08:33.420
+J estábamos intercambiando cosas potencialmente de la izquierda a las cosas a la derecha y las cosas a la derecha
+
+08:33.420 --> 08:37.810
+a la izquierda para poder tener elementos saltando por encima El uno al otro.
+
+08:37.830 --> 08:43.260
+No hay garantía de que se preserve la ubicación relativa de los elementos duplicados.
+
+08:43.260 --> 08:49.410
+Ahora es importante tener en cuenta que la elección del pivote puede tener un efecto en la complejidad del tiempo
+
+08:49.410 --> 08:51.620
+según los datos que se están ordenando.
+
+08:51.660 --> 08:54.440
+De acuerdo, así es como funciona Quicksort.
+
+08:54.450 --> 08:57.900
+Pasemos a la implementación y nos vemos en el próximo video.

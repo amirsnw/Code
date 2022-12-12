@@ -1,0 +1,475 @@
+WEBVTT
+
+00:05.280 --> 00:11.360
+OK, então vamos implementar o algoritmo de quicksort usando a implementação que passamos nos slides.
+
+00:11.360 --> 00:16.850
+Vamos codificar dois métodos, um chamado quicksort e um chamado partition.
+
+00:16.850 --> 00:20.180
+Então, vamos começar com o método quicksort primeiro.
+
+00:20.420 --> 00:26.050
+Então, vamos dizer que o público estático void quicksort vai passar o array.
+
+00:26.050 --> 00:33.320
+Queremos classificar o índice inicial e o índice final.
+
+00:33.350 --> 00:40.610
+E como vimos nos slides, o índice final será um maior que o válido no último índice válido
+
+00:40.610 --> 00:41.470
+da matriz.
+
+00:41.540 --> 00:49.210
+Então, a primeira coisa que vamos fazer é verificar se a linha a ser iniciada é menor que 2, porque, no meu caso, uma partida
+
+00:49.210 --> 00:53.150
+é menor que 2 e estamos lidando com uma matriz de um elemento.
+
+00:53.150 --> 00:59.390
+Portanto, não precisamos fazer nada que apenas retornamos se estivermos lidando com mais de um
+
+00:59.390 --> 01:05.690
+elemento. Então, o que queremos fazer é descobrir onde o pivô pertencerá à matriz classificada.
+
+01:05.690 --> 01:11.280
+Em outras palavras, qual será o índice do pivô quando o array for classificado.
+
+01:11.360 --> 01:13.350
+Qual é a posição classificada?
+
+01:13.370 --> 01:21.290
+Então, vamos dizer que no índice de pivô, os equals irão desorganizar a partição e escreveremos o método da
+
+01:21.290 --> 01:22.750
+partição em um minuto.
+
+01:22.750 --> 01:30.290
+Então, o que isso vai derrubar é a posição do elemento na matriz ordenada para que seja a posição correta
+
+01:30.290 --> 01:30.850
+ordenada.
+
+01:30.850 --> 01:37.580
+Assim, nos slides, tivemos 20 como o pivô e, finalmente, o pivô acabou na posição 4.
+
+01:37.580 --> 01:39.950
+E então o que isso retornaria é para.
+
+01:39.950 --> 01:43.060
+Então, basicamente, está retornando a posição do pivô.
+
+01:43.100 --> 01:48.440
+E nessa posição, tudo à esquerda do pivô será menor que o pivô e
+
+01:48.440 --> 01:50.330
+tudo à direita será maior.
+
+01:50.330 --> 01:57.650
+E depois disso, queremos fazer a mesma coisa com a matriz esquerda e a matriz correta.
+
+01:57.650 --> 02:01.940
+Portanto, todos os elementos que são menores que o pivô e todos os elementos que são grandes no pivô.
+
+02:01.940 --> 02:10.860
+Então, vamos chamar quicksort com start como o índice inicial e o índice de pivô como o final.
+
+02:11.390 --> 02:19.790
+Em seguida, chamaremos quicksort com o mesmo índice de pivô ausente de entrada mais 1 como índice inicial e
+
+02:19.850 --> 02:21.770
+finalizaremos o índice final.
+
+02:21.770 --> 02:29.060
+O que estamos dizendo aqui é que nesta etapa colocamos o pivô em sua posição correta ordenada e reposicionamos os elementos,
+
+02:29.060 --> 02:34.190
+como tudo à esquerda do pivô é menor que o pivô e tudo à direita
+
+02:34.220 --> 02:37.340
+do pivô é maior do que o pivô.
+
+02:37.420 --> 02:41.120
+E então nós queremos fazer isso quicksort o array esquerdo.
+
+02:41.180 --> 02:47.000
+E nós queremos um tipo rápido do subarray certo e uma vez que tenhamos feito, o array inteiro será classificado.
+
+02:47.000 --> 02:53.210
+Agora, claro, estas são chamadas recursivas e então o que realmente acontece é quando nós chamamos este
+
+02:53.360 --> 02:58.880
+quicksort que ele irá lidar com a sub-rotina esquerda, mas então ele fará uma chamada
+
+02:58.880 --> 03:06.890
+recursiva para lidar com a matriz esquerda daquela sub-matriz, etc. até que seja completamente manipulado o sub array esquerdo e, em seguida,
+
+03:06.890 --> 03:09.870
+e somente então, começaremos a trabalhar no subarray correto.
+
+03:09.920 --> 03:17.060
+Portanto, lembre-se do que acontece com a recursão e se você precisa voltar e revisar o vídeo em
+
+03:17.060 --> 03:17.810
+métodos recursivos.
+
+03:17.900 --> 03:22.710
+OK, então vamos escrever o método de partição, então vamos dizer public static int.
+
+03:22.730 --> 03:29.390
+Isso retornará a posição correta do pivô na partição da matriz classificada.
+
+03:29.420 --> 03:37.550
+Nós vamos aceitar uma matriz de entrada, um índice inicial e um índice.
+
+03:37.610 --> 03:44.420
+Então, vou colocar uma nota aqui dizendo que isso está usando o primeiro elemento como o pivô que
+
+03:44.420 --> 03:45.430
+vimos nos slides.
+
+03:45.560 --> 03:51.190
+Então, vamos começar dizendo que o pivô é igual ao início da entrada.
+
+03:51.200 --> 03:57.730
+Agora é claro que este é o elemento inicial na matriz ou no subgrade que estamos passando.
+
+03:57.740 --> 04:00.330
+Então não é necessariamente o índice 0.
+
+04:00.380 --> 04:09.110
+Posteriormente, em nosso exemplo, colocamos 20 aqui como o primeiro índice de pivô e, assim, o subarray de taxa seria
+
+04:09.110 --> 04:14.480
+iniciado no índice 5 e, assim, esse seria, na verdade, o pivô.
+
+04:14.480 --> 04:18.740
+Quando chamamos partição com este subarray direito.
+
+04:18.740 --> 04:24.830
+E então, como fizemos nos slides, vamos começar e vamos definir J para terminar.
+
+04:24.980 --> 04:30.980
+E agora vamos fazer os percursos, lembre-se de que vai atravessar da esquerda para a direita e
+
+04:30.980 --> 04:34.060
+J vai ser da direita para a esquerda.
+
+04:34.160 --> 04:38.090
+E nós queremos parar quando eu ej nos cruzarmos.
+
+04:38.150 --> 04:44.450
+Então, vamos dizer que a parede saiu de Sanjay porque se eu for maior que J, significa que eles se cruzaram.
+
+04:44.600 --> 04:51.560
+OK, então o que vamos fazer aqui é primeiro usar o J para procurar por elementos que são menos
+
+04:51.560 --> 04:52.500
+no pivô.
+
+04:52.520 --> 04:58.400
+Então, vamos dizer que o chi do muro é menor que J porque queremos parar se eu mudar uma cruz.
+
+04:58.400 --> 05:09.680
+Então, se J cruzar, queremos parar e todas as entradas menos menos J são maiores que o pivô.
+
+05:09.680 --> 05:11.000
+É tudo o que queremos fazer.
+
+05:11.000 --> 05:12.510
+Este é um loop vazio.
+
+05:12.530 --> 05:17.650
+Vou colocar uma nota aqui para dizer que não há corpo de loop vazio.
+
+05:18.710 --> 05:22.060
+E então não estamos fazendo nada dentro do corpo do loop.
+
+05:22.070 --> 05:28.460
+Então, estamos basicamente usando o loop para continuar diminuindo J até encontrarmos um elemento que
+
+05:28.460 --> 05:31.890
+seja menor que o pivô ou J cruza.
+
+05:31.940 --> 05:34.750
+Então, o que fazemos quando caímos desse loop então?
+
+05:34.820 --> 05:40.570
+Bem, temos que ter certeza de que não caímos porque J cruzou certo.
+
+05:40.580 --> 05:49.700
+Então, se J não tiver cruzado, se eu ainda for menor que J, queremos mover o elemento J para a posição
+
+05:49.740 --> 05:50.210
+I.
+
+05:50.300 --> 05:54.370
+Porque basicamente encontramos o primeiro elemento que é menor que o pivô.
+
+05:54.380 --> 05:57.000
+E assim, queremos mover isso para a frente da matriz.
+
+05:57.050 --> 06:06.800
+Então, digamos que a entrada é igual a entrada J e, se você estiver confuso sobre isso, volte e analise o último
+
+06:06.800 --> 06:08.370
+vídeo com os slides.
+
+06:08.390 --> 06:14.220
+Mas essencialmente estamos dizendo que usamos o J para encontrar o primeiro elemento que é menor que o pivô.
+
+06:14.240 --> 06:18.280
+E queremos colocar todos os elementos que estão menos no pivô à esquerda do pivô.
+
+06:18.290 --> 06:21.020
+E então vamos mover esse elemento para J.
+
+06:21.020 --> 06:23.320
+Aquele que achamos menor que o pivô.
+
+06:23.360 --> 06:24.800
+Nós vamos movê-lo para a posição.
+
+06:24.800 --> 06:28.040
+Eu e na primeira iteração é realmente zero.
+
+06:28.040 --> 06:34.580
+Então, se você se lembrar dos slides, o primeiro valor de pivô é 20 e estamos nos movendo para trás
+
+06:34.580 --> 06:38.760
+e encontramos menos 22 e nos movemos menos 22 para a posição 0.
+
+06:39.140 --> 06:42.760
+OK, então agora queremos alternar e ir para 2.
+
+06:42.800 --> 06:47.960
+E queremos percorrer a matriz da esquerda para a direita procurando o primeiro elemento que é maior que
+
+06:47.960 --> 06:48.670
+o pivô.
+
+06:48.710 --> 06:52.880
+Então, vamos dizer enquanto o maior valor é menor que J, porque mais uma vez queremos parar.
+
+06:52.880 --> 07:03.690
+Se eu cruzar J e custo de entrada mais ele é menor ou igual ao pivô.
+
+07:04.310 --> 07:11.870
+E mais uma vez este é um loop vazio e eu vou colocar uma nota lá porque é fácil perder.
+
+07:12.200 --> 07:17.990
+E desta vez vamos nos mover da esquerda para a direita e estamos procurando um valor maior que o
+
+07:17.990 --> 07:22.160
+pivô, porque quando encontramos um valor maior que o pivô, queremos movê-lo para a
+
+07:22.160 --> 07:23.370
+direita do pivô .
+
+07:23.500 --> 07:28.340
+E assim, mais uma vez, vamos verificar quando abandonamos o loop, quer tenhamos desistido,
+
+07:28.460 --> 07:33.500
+porque eu cruzei J e, se esse não for o caso, desistimos porque encontramos um
+
+07:33.500 --> 07:40.340
+elemento maior que o pivot e por isso queremos movê-lo para a posição J entrada J é igual a ele colocar.
+
+07:41.490 --> 07:43.010
+E tudo bem fazer isso.
+
+07:43.010 --> 07:47.820
+Não perderemos nenhum dado porque no loop anterior já nos movemos.
+
+07:47.840 --> 07:49.280
+Qual foi a entrada J.
+
+07:49.280 --> 07:52.260
+E assim, neste momento, é seguro para uma entrada assinada.
+
+07:52.340 --> 07:56.350
+E na próxima iteração deste loop, é seguro sobrescrever a entrada.
+
+07:56.450 --> 07:57.940
+Porque nós já mudamos isso.
+
+07:57.980 --> 08:03.460
+Então, o fato de estarmos alternando entre o IMJ e a direção em que estamos passando é
+
+08:03.470 --> 08:06.800
+apenas fazer esses tipos de atribuições sem perder nenhum dado.
+
+08:06.800 --> 08:13.040
+Agora, uma coisa importante a notar aqui é que estamos usando o decréscimo de prefixo no operador de incremento de
+
+08:13.040 --> 08:17.570
+prefixo, então o que isso significa é quando executamos essa declaração bem. Decora J.
+
+08:17.570 --> 08:24.290
+E então usaremos o resultado como o índice e lembraremos disso e sempre seremos um maior que o
+
+08:24.350 --> 08:25.980
+último índice da matriz.
+
+08:26.030 --> 08:32.720
+E assim, se não tivéssemos o Decora, significava que obteríamos uma exceção de índice fora dos limites se passássemos a matriz
+
+08:32.720 --> 08:38.610
+inteira ou se estivéssemos realmente indexando um elemento após o final da subconsulta com a qual queremos trabalhar.
+
+08:38.660 --> 08:44.570
+E é a mesma coisa aqui quando nós entramos pela primeira vez eu começo é o pivô que queremos começar com
+
+08:44.600 --> 08:46.280
+o primeiro elemento após o pivô.
+
+08:46.310 --> 08:51.030
+E assim estaremos sempre prontos para incrementar primeiro e depois usar o índice.
+
+08:51.080 --> 08:55.960
+E nas iterações subsequentes, queremos incrementar primeiro porque já lidamos com o que é
+
+08:55.980 --> 08:56.510
+isso.
+
+08:56.630 --> 09:00.100
+Então, sempre que entramos nesse loop, já manipulamos o elemento.
+
+09:00.200 --> 09:02.740
+E assim, queremos incrementar e usar o índice.
+
+09:02.750 --> 09:06.740
+Nós não queremos usar eu ou vamos estar olhando para algo que já lidamos e que
+
+09:06.740 --> 09:07.410
+não vai funcionar.
+
+09:07.460 --> 09:13.820
+OK, então, quando abandonarmos esse loop, eu o atravessarei hoje e isso significa que terminamos de mover elementos menores do
+
+09:13.820 --> 09:18.770
+que o pivô à esquerda da matriz e os elementos maiores que o pivô para o
+
+09:18.770 --> 09:19.500
+subarray direito.
+
+09:19.550 --> 09:27.470
+Então, nesse ponto, o valor de j será o índice em que queremos inserir o pivô.
+
+09:27.470 --> 09:29.490
+E isso é tudo o que resta para fazer.
+
+09:29.510 --> 09:35.880
+Então digamos que a entrada J J não é igual ao pivô.
+
+09:35.900 --> 09:42.530
+E então nós temos que retornar J porque lembre-se que estamos retornando deste método é o índice onde
+
+09:42.530 --> 09:49.610
+nós inserimos o pivot, porque é assim que estamos dividindo o array e precisamos disso para chamar quicksort para
+
+09:49.700 --> 09:52.880
+o array esquerdo e quicksort para o array certo.
+
+09:53.030 --> 09:57.890
+E você notará que quando nós chamamos de quicksort para o array esquerdo
+
+09:57.890 --> 10:06.750
+nós passamos o índice de pivot porque como eu disse o índice final sempre será um maior que o último índice válido na
+
+10:06.750 --> 10:14.070
+partição no array o metrô que nós queremos partição próxima e então nós realmente para o subarray esquerdo vai
+
+10:14.070 --> 10:17.800
+do indice indice start para index pivot index minus 1.
+
+10:18.060 --> 10:22.720
+E assim passamos pelo índice de pivô porque queremos passar um maior que o último índice.
+
+10:22.720 --> 10:24.640
+Estamos interessados ​​e é isso.
+
+10:24.660 --> 10:26.460
+Esse é o nosso algoritmo de quicksort.
+
+10:26.490 --> 10:29.490
+Tenha em mente que isso é recursivo.
+
+10:29.490 --> 10:34.290
+Então, quando chegamos aqui, chamamos quicksort no primeiro array esquerdo da Subba.
+
+10:34.290 --> 10:39.390
+Isso não vai retornar até a primeira sub-matriz esquerda.
+
+10:39.420 --> 10:45.210
+Este sub-array aqui porque lembre-se que o primeiro elemento pivot é 20 e acabamos inserindo-o aqui.
+
+10:45.210 --> 10:51.320
+Então, o primeiro subarray esquerdo que vamos chamar isto é esta subconsulta aqui.
+
+10:51.330 --> 10:58.050
+Esta chamada de quicksort não irá retornar até que esta coisa inteira tenha sido ordenada rapidamente e então, no
+
+10:58.050 --> 11:04.110
+momento em que esta chamada retornar, tudo isso será ordenado e a mesma coisa acontecerá para este quicksort.
+
+11:04.110 --> 11:07.720
+Mas o tempo que retorna esta sub-matriz inteira terá sido ordenada.
+
+11:07.830 --> 11:10.740
+Então, vamos executar isso para ter certeza de que realmente funciona.
+
+11:13.680 --> 11:16.370
+E claro que eu não fiz.
+
+11:16.480 --> 11:19.780
+Não funciona porque eu não chamei quicksort.
+
+11:19.790 --> 11:22.830
+Então, estamos chegando aqui a matriz indiferenciada.
+
+11:23.100 --> 11:24.900
+Então vamos chamá-lo de quicksort.
+
+11:24.900 --> 11:31.710
+Nós vamos passar a arte Ray vamos passar 0 para começar e vamos passar deve
+
+11:32.580 --> 11:37.830
+estar inserindo 0 primeiro iniciar e integrar comprimentos como o índice final.
+
+11:37.830 --> 11:39.900
+Então vamos dar outra chance.
+
+11:41.660 --> 11:45.770
+E agora nós temos nossa matriz ordenada, isso sempre ajuda quando você realmente chama esse tipo de Masset.
+
+11:45.770 --> 11:56.200
+Então menos 20 para menos 15 1 7 2035 e 55 então se você está tendo dificuldade em entender o que está acontecendo aqui, volte para os
+
+11:56.200 --> 12:02.920
+sleights e o ponto chave para lembrar é que estamos alternando entre I e J que estavam
+
+12:02.950 --> 12:09.040
+alternando entre a direita para a esquerda procurando por elementos menores e indo da esquerda para
+
+12:09.040 --> 12:10.810
+a direita procurando elementos maiores.
+
+12:10.810 --> 12:16.850
+E como estamos alternando, podemos fazer tudo isso sem perder nenhum dado.
+
+12:16.990 --> 12:23.250
+E se você estiver com dificuldade para entender a natureza recursiva, volte e analise o vídeo
+
+12:23.350 --> 12:24.410
+e a recursão.
+
+12:24.520 --> 12:25.870
+Então é isso para quicksort.
+
+12:25.870 --> 12:31.420
+Esse é o segundo algoritmo de divisão e conquista que vimos, mas ainda não estamos fora dos algoritmos de classificação.
+
+12:31.420 --> 12:32.950
+Então, eu vou te ver no próximo vídeo.

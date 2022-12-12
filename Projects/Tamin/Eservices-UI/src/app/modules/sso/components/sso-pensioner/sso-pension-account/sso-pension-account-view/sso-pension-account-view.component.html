@@ -1,0 +1,34 @@
+<div class="panel">
+  <div class="page-title">نمایش درخواست اعلام شماره حساب بانکی</div>
+  <div class="panel-body">
+
+    <form [formGroup]="viewForm"  autocomplete="off" novalidate >
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="pensionerId"> شماره مستمری:</tamin-field-label>
+          <tamin-field-static-text formControlName="pensionerId"  placeholder="شماره مستمری"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="dateOfStart">تاریخ شروع</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="dateOfStart"  placeholder="تاریخ شروع"></tamin-field-static-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="bank"> بانک:</tamin-field-label>
+          <tamin-field-static-text formControlName="bank"  placeholder="بانک"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="accounttype"> نوع حساب:</tamin-field-label>
+          <tamin-field-static-text formControlName="accounttype"  placeholder="نوع حساب"></tamin-field-static-text>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="accountNumber">شماره حساب:</tamin-field-label>
+          <tamin-field-static-text formControlName="accountNumber"  placeholder="شماره حساب"></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+  </div>
+  <button #submitButton type="submit" class="button normal" (click)="confirm()" [disabled]="!viewForm.valid">پذیرش درخواست</button>
+  <button #submitButton type="submit" class="normal blue button" (click)="reject()" [disabled]="!viewForm.valid">رد درخواست</button>
+  <button class="button normal orange" (click)="redirectTo('/sso/request')">انصراف</button>
+</div>

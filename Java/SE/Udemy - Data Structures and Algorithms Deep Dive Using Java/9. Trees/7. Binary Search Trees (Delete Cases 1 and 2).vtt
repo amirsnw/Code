@@ -1,0 +1,136 @@
+WEBVTT
+
+00:05.290 --> 00:05.650
+Todo bien.
+
+00:05.650 --> 00:12.040
+Entonces en este video vamos a agregar el código para eliminar una nota o al menos comenzar a agregar el
+
+00:12.040 --> 00:14.440
+código porque eliminar puede ser bastante complejo.
+
+00:14.440 --> 00:19.030
+Ahora pensemos qué sucederá cuando eliminemos un nodo.
+
+00:19.030 --> 00:26.710
+Bueno, porque estamos tratando con un árbol de búsqueda binaria, lo que significa que los nodos pueden tener cero uno o dos hijos.
+
+00:26.740 --> 00:28.630
+Hay tres posibilidades.
+
+00:28.630 --> 00:32.050
+El primero es que el nodo que queremos eliminar es una hoja.
+
+00:32.050 --> 00:37.840
+El segundo es que el nodo que queremos eliminar tiene un hijo y el tercero es el nodo que
+
+00:37.840 --> 00:39.490
+queremos eliminar y tiene dos hijos.
+
+00:39.520 --> 00:44.230
+El primer caso será realmente fácil, quiero decir, si un nodo no tiene hijos y queríamos D'Elia,
+
+00:44.230 --> 00:45.750
+podemos simplemente eliminarlo del árbol.
+
+00:45.760 --> 00:51.040
+No tenemos hijos de quienes preocuparnos en el segundo caso cuando hay un niño que también
+
+00:51.040 --> 00:55.310
+es bastante fácil si un nodo solo tiene un hijo y lo eliminamos.
+
+00:55.330 --> 01:00.630
+El niño básicamente reemplaza el nodo donde eliminar el tercer caso es complejo.
+
+01:00.700 --> 01:06.640
+Y así en este video veremos los primeros dos casos y manejaremos el tercer caso en
+
+01:06.640 --> 01:07.390
+otro video.
+
+01:07.630 --> 01:14.920
+Así que aquí está el árbol binario habitual, excepto que he añadido nodos 17 aquí y cuando vayamos a la ID
+
+01:14.920 --> 01:15.790
+haremos lo mismo.
+
+01:15.850 --> 01:17.920
+Y entonces, no 17 es un nodo de hoja.
+
+01:17.920 --> 01:21.290
+Entonces digamos que queremos eliminar nodos de eliminación 17.
+
+01:21.430 --> 01:25.130
+Bueno, todo lo que tenemos que hacer es noquear al nodo 17.
+
+01:25.140 --> 01:26.530
+Correcto porque Salif.
+
+01:26.530 --> 01:33.940
+Así que no tenemos que preocuparnos por ningún niño, así que básicamente destruimos el nódulo 15 del niño derecho
+
+01:33.940 --> 01:34.850
+y terminamos.
+
+01:34.930 --> 01:36.840
+Y este es un árbol con el que terminaríamos.
+
+01:36.850 --> 01:39.610
+Así que aquí está el árbol con el nodo 17.
+
+01:39.720 --> 01:43.900
+Aquí está el árbol sin nodo 17 esencialmente el árbol que teníamos antes.
+
+01:43.960 --> 01:47.460
+Entonces ese es el caso 1, es muy fácil simplemente no permitido.
+
+01:47.480 --> 01:54.570
+Los padres dejaron al hijo o al hijo correcto según el lado que Salif sepa que está eliminando.
+
+01:54.760 --> 02:01.870
+Así que he puesto 17 ahora y en lugar de eliminar 17 digamos que queremos eliminar 15 y 15 tienen un hijo y no importaría
+
+02:01.870 --> 02:04.970
+si el niño estaba a la izquierda o a la derecha.
+
+02:05.110 --> 02:11.320
+Bueno, en este caso cuando solo hay un niño, todo lo que hacemos es reemplazar el nodo
+
+02:11.320 --> 02:21.160
+que estamos eliminando con el niño y es seguro hacerlo porque sabemos que cada refrán en el subárbol izquierdo de veinte es menor que 20 y por
+
+02:21.160 --> 02:28.250
+lo tanto es seguro decirlo Oh, podemos simplemente mover este valor de aquí, sabemos que todos los valores en
+
+02:28.290 --> 02:30.490
+este subárbol son menores que 20.
+
+02:30.640 --> 02:36.610
+Entonces, después de eliminar 15, así es como se vería nuestro árbol en lugar de tener 15.
+
+02:36.610 --> 02:38.570
+Aquí tenemos 17.
+
+02:38.710 --> 02:42.160
+Y las características de un árbol de búsqueda binaria se han conservado.
+
+02:42.160 --> 02:45.160
+Ahora imaginemos que estamos eliminando un nodo de aquí.
+
+02:45.400 --> 02:51.190
+Digamos que teníamos el valor 23, por lo que teníamos que saber 23 es menos de 25.
+
+02:51.190 --> 02:53.980
+Es mayor que 20 es mayor que 22.
+
+02:53.980 --> 02:57.550
+Entonces digamos que tenemos 23 aquí y queremos que sea 22.
+
+02:57.610 --> 03:04.050
+Sabemos que todo aquí es mayor que 20, por lo que es seguro para nosotros solo mover 23 a este nodo.
+
+03:04.090 --> 03:10.180
+Y así es como manejamos los dos primeros casos borrando una hoja y eliminando una nota que tiene
+
+03:10.180 --> 03:15.550
+solo un hijo, así que pasemos a la idea y implementemos los primeros dos casos.

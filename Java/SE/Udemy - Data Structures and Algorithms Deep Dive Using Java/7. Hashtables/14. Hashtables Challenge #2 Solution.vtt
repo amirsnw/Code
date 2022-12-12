@@ -1,0 +1,319 @@
+WEBVTT
+
+00:05.400 --> 00:08.720
+Tudo bem, então vamos começar com essa solução.
+
+00:08.820 --> 00:12.750
+Heres o código que preenche a lista vinculada e temos um par de duplicatas.
+
+00:12.750 --> 00:17.300
+Jane Jones já esteve nisso duas vezes e John Doe esteve nisso duas vezes.
+
+00:17.490 --> 00:19.500
+Então, se nós corrermos agora.
+
+00:21.860 --> 00:30.170
+Veremos que temos Jane Jones duas vezes e John Doe duas vezes e, por isso, queremos remover essas duas instâncias.
+
+00:30.170 --> 00:35.660
+E então a abordagem que eu vou tomar porque eu disse que nós precisamos usar um
+
+00:35.660 --> 00:43.700
+mapa hash é que eu vou atravessar a lista e para cada funcionário eu vou verificar para ver se está em um mapa
+
+00:43.700 --> 00:46.310
+de hash que consiste em pares de valores-chave.
+
+00:46.310 --> 00:49.590
+A chave é o ID e o valor é o empregado.
+
+00:49.590 --> 00:54.770
+E então eu vou verificar se o funcionário está no mapa de hash e eu vou fazer
+
+00:54.770 --> 01:01.640
+isso verificando se ele contém a chave porque lembre-se no último vídeo que eu disse que podemos assumir que se dois funcionários
+
+01:01.640 --> 01:04.390
+tiverem a mesma chave eles são o mesmo empregado.
+
+01:04.400 --> 01:09.400
+Não há necessidade de realmente comparar as instâncias entre si e olhar para todos os três campos
+
+01:09.420 --> 01:16.790
+de qualidade e, portanto, tudo o que tenho a fazer é verificar se a chave está no mapa de hash e, se estiver, posso
+
+01:16.790 --> 01:21.070
+assumir que o funcionário foi adicionado já e isso significa que é uma duplicata.
+
+01:21.140 --> 01:23.290
+E então eu vou querer removê-lo.
+
+01:23.320 --> 01:26.540
+Então vamos começar a escrever o código para isso.
+
+01:26.670 --> 01:31.470
+E então a primeira coisa que vou fazer é criar os mapas de
+
+01:31.490 --> 01:44.300
+hash e eu direi hash map e eu quero um hash map de inteiros e funcionários e eu vou chamar de Employee table igual a new hash map e então eu vou precisar percorrer a lista
+
+01:44.300 --> 01:49.310
+e vou usar um iterador de lista para fazer isso, então vou criar isso
+
+01:49.310 --> 01:49.670
+agora.
+
+01:49.670 --> 01:50.270
+Então eu vou dizer.
+
+01:50.270 --> 01:50.630
+Lista.
+
+01:50.630 --> 01:53.300
+Iterador empregado iterador
+
+01:55.790 --> 02:00.030
+igual a funcionários ponto.
+
+02:00.050 --> 02:00.350
+Lista.
+
+02:00.350 --> 02:02.000
+Iterador.
+
+02:02.690 --> 02:04.850
+E finalmente preciso de outra lista.
+
+02:04.850 --> 02:11.330
+E a razão pela qual eu preciso de outra lista é porque estou usando o iterador de lista para percorrer a lista. Não consigo
+
+02:11.330 --> 02:12.200
+remover uma duplicata.
+
+02:12.230 --> 02:13.700
+Quando eu encontrar um.
+
+02:13.700 --> 02:22.070
+Porque o tempo de execução lançará uma exceção porque, como estou usando o iterador para percorrer a lista, a lista não
+
+02:22.070 --> 02:28.280
+pode mudar, caso contrário, o iterador lançará uma exceção e dirá hey: Estou interagindo com essa
+
+02:28.280 --> 02:28.670
+lista.
+
+02:28.700 --> 02:30.520
+E agora você foi em frente e mudou.
+
+02:30.530 --> 02:33.390
+Obrigado, você acabou de me ferrar, então vou lançar uma exceção.
+
+02:33.440 --> 02:39.590
+Então, se eu clicar em uma duplicata, em vez de removê-la, vou adicioná-la a uma lista
+
+02:39.860 --> 02:47.090
+e, assim que terminar de percorrer a lista, a lista vinculada passará pela lista de funcionários que desejo
+
+02:47.090 --> 02:50.710
+remover e na verdade, remova e remova-os da lista.
+
+02:50.750 --> 02:57.680
+E então eu vou dizer list employee e eu vou trazer o Java Doc que
+
+02:57.680 --> 03:05.920
+você ainda importa aqui e vou chamar isso de remover os carvões em você para re listar.
+
+03:06.860 --> 03:09.080
+E agora que eu tenho em meus campos eu preciso.
+
+03:09.080 --> 03:10.100
+Eu direi parede.
+
+03:10.100 --> 03:11.380
+Iterador tem.
+
+03:11.380 --> 03:18.500
+Em seguida, vou fazer com que o funcionário do iterador seja igual e, em seguida,
+
+03:22.100 --> 03:28.460
+verificarei se o ID final desse funcionário já está na tabela de hash.
+
+03:28.490 --> 03:38.180
+Então, eu vou dizer se a tabela Employee Daut contém funcionário chave não obter ID.
+
+03:38.750 --> 03:45.200
+Se esse é o caso e eu sei que esse funcionário é uma duplicata porque eu já vi um funcionário
+
+03:45.200 --> 03:50.720
+com essa chave e eu adicionei à tabela de hash como estávamos interagindo com a lista de uma
+
+03:50.720 --> 03:52.930
+entrada anterior na lista tem esse ID.
+
+03:53.030 --> 03:58.610
+E nesse momento eu adicionei-o à mesa, então esta é a segunda vez que vejo esse ID porque
+
+03:58.610 --> 04:00.290
+ele já está na tabela.
+
+04:00.410 --> 04:04.700
+E o que quero fazer aqui é adicionar esse funcionário à minha coleção de remoção.
+
+04:04.730 --> 04:11.810
+Então, eu vou dizer removidos todos adicionar funcionário senão eu quero adicionar esse funcionário para o mapa de hash.
+
+04:12.140 --> 04:17.610
+Então, mais eu vou dizer Employee table dot put.
+
+04:17.630 --> 04:20.050
+E eu preciso da chave para que seja empregado.
+
+04:20.110 --> 04:25.340
+Obtenha o ID e, em seguida, a instância que desejo associar a essa chave na tabela.
+
+04:25.340 --> 04:30.650
+E é isso para descobrir se um funcionário é uma duplicata ou não na
+
+04:30.650 --> 04:36.530
+etapa final, é remover as duplicatas da lista, então a última coisa que vou fazer é
+
+04:36.530 --> 04:40.290
+iterar a minha coleção removida e realmente removê-las da lista.
+
+04:40.310 --> 04:45.480
+Então, eu vou dizer para o funcionário que eu vou mudar isso um pouco.
+
+04:45.480 --> 04:56.150
+Empregado na minha coleção remove vou dizer funcionários não removem um empregado.
+
+04:56.630 --> 04:59.450
+E esse é o código que está realmente removendo-os da lista.
+
+04:59.450 --> 05:05.750
+Agora eu não posso fazer isso aqui, porque se eu fizer o iterador vai lançar uma exceção
+
+05:05.780 --> 05:11.330
+e, em seguida, para um passo final vamos imprimir nossa lista novamente depois de remover
+
+05:11.330 --> 05:19.130
+os funcionários, então eu vou dizer sistema saiu da linha de impressão e eu Vou simplesmente imprimir isso para podermos distinguir
+
+05:19.130 --> 05:22.520
+essa lista quando imprimirmos a partir daqui e então
+
+05:25.040 --> 05:28.490
+eu vou copiar isso e movê-lo para baixo aqui.
+
+05:28.990 --> 05:29.360
+ESTÁ BEM.
+
+05:29.360 --> 05:30.260
+Então, isso deveria ser feito.
+
+05:30.260 --> 05:33.530
+Então vamos correr.
+
+05:33.530 --> 05:34.010
+Tudo bem.
+
+05:34.010 --> 05:37.600
+Deixe-me levantar isso antes de excluir duplicado.
+
+05:37.610 --> 05:44.990
+Temos um dois, três, quatro, cinco, seis, sete itens e dois deles são duplicados e depois temos cinco
+
+05:44.990 --> 05:50.910
+itens e podemos ver que Mike Mary John Bill e Jane estão na lista.
+
+05:50.930 --> 05:53.180
+E esses dois caras se foram.
+
+05:53.270 --> 05:58.310
+E assim, removemos as duplicatas da lista e acabamos fazendo isso.
+
+05:58.440 --> 06:05.540
+Então, vou mostrar o que acontece se realmente tentarmos remover os itens aqui, em vez de adicioná-los
+
+06:05.540 --> 06:11.290
+às coleções, para que todos digam que os funcionários parem de remover o funcionário.
+
+06:11.330 --> 06:18.430
+Se corrermos agora, você verá que obtemos uma exceção de modificação simultânea e estamos percebendo isso
+
+06:18.430 --> 06:24.700
+porque, quando estamos interagindo com a lista usando um iterador, não podemos alterar a
+
+06:24.700 --> 06:27.500
+lista subjacente até terminarmos. com o iterador.
+
+06:27.580 --> 06:29.800
+E então eu vou colocar isso de volta do jeito que é.
+
+06:29.800 --> 06:33.040
+Só queria explicar porque estou fazendo esse passo.
+
+06:33.040 --> 06:38.640
+Agora sua solução não tem que coincidir com a minha, você pode estar percorrendo a lista usando um método diferente.
+
+06:38.650 --> 06:43.070
+E assim você pode simplesmente ir em frente e remover os funcionários no local.
+
+06:43.180 --> 06:49.750
+Você pode ter uma pequena otimização aqui que em vez de adicionar os funcionários à lista, você pode estar
+
+06:49.750 --> 06:51.470
+rastreando sua posição na lista.
+
+06:51.470 --> 06:57.430
+Lembre-se de que falamos que, se você fornecer o índice que deseja excluir, remova aqui e remova um
+
+06:57.430 --> 07:02.470
+índice, em vez de um objeto que seria um pouco mais rápido; você ainda teria
+
+07:02.470 --> 07:04.860
+que percorrer a lista até essa posição.
+
+07:04.930 --> 07:11.380
+Mas então você não teria que fazer nenhuma comparação porque você forneceu ao índice apenas uma
+
+07:11.680 --> 07:13.060
+melhoria muito pequena.
+
+07:13.090 --> 07:15.150
+Você pode ter encontrado uma maneira completamente diferente de fazê-lo.
+
+07:15.190 --> 07:21.730
+Contanto que você esteja usando um mapa de hash e contanto que, ao imprimir sua lista após as exclusões, ela
+
+07:21.730 --> 07:24.190
+pareça boa e as duplicatas tenham sido removidas.
+
+07:24.190 --> 07:25.640
+Sua solução é boa.
+
+07:25.690 --> 07:29.100
+Agora nós usamos um mapa de hash aqui nós realmente não precisamos.
+
+07:29.350 --> 07:31.970
+Nós poderíamos usar algo chamado um hash sentado.
+
+07:31.990 --> 07:37.540
+Mas ainda não vimos os sets aqui porque realmente nos importamos com os IDs.
+
+07:37.540 --> 07:40.730
+Nós poderíamos escrever uma solução diferente usando um conjunto de hash.
+
+07:40.750 --> 07:44.430
+Nós realmente não sabemos os pares de valores-chave, mas esta é a seção da tabela de hash.
+
+07:44.430 --> 07:46.410
+Então eu queria que você usasse um mapa de hash.
+
+07:46.540 --> 07:48.510
+E como eu disse, ainda não cobrimos sets.
+
+07:48.580 --> 07:51.170
+Então é isso para tabelas de hash.
+
+07:51.190 --> 07:52.350
+Eu vejo você na próxima seção.

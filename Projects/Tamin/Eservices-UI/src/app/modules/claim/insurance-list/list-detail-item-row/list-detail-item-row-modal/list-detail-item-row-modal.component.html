@@ -1,0 +1,43 @@
+<tamin-modal #theModal title="ایجاد لیست بیمه جدید">
+  <div class="panel">
+    <div class="page-title">
+      جستجو لیست های ایجاد شده
+    </div>
+    <div>
+      <form [formGroup]="detailForm" autocomplete="off" novalidate>
+        <div class="form-control-container row" style="padding: 5px;">
+          <!-------------------------------------------------------------------------------->
+          <div class="col-4 col-s-4">
+            <div style="margin-top: 11px;" class="col-3 col-s-3">
+              <h3>کد ملی :</h3>
+            </div>
+            <div class="col-9 col-s-9" style="padding-left: 5px;">
+              <tamin-field-natioanl-id formControlName="nationalId"></tamin-field-natioanl-id>
+            </div>
+          </div>
+          <div class="col-4 col-s-4">
+            <div style="margin-top: 11px;" class="col-4 col-s-4">
+              <h3>شماره بیمه :</h3>
+            </div>
+            <div class="col-8 col-s-8" style="padding-left: 5px;">
+              <tamin-field-text formControlName="id"></tamin-field-text>
+            </div>
+          </div>
+          <button type="button" class="button normal" style="margin-top: 4px;" (click)="searchFormSubmit(detailForm.value)">جستجو</button>
+          <button type="button" class="button normal dark" style="margin-top: 4px;" (click)="resetForm()">نمایش همه</button>
+          <!-- <div style="margin-top: 11px;" class="col-3 col-s-3">
+            <h4>جستجو بر اساس کدملی انجام می شود</h4>
+          </div> -->
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="page-title">
+      لیست پیگیری وضعیت
+    </div>
+    <div class="panel-body">
+      <tamin-data-grid #taminDataGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+    </div>
+  </div>
+</tamin-modal>

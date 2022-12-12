@@ -1,0 +1,328 @@
+WEBVTT
+
+00:05.240 --> 00:10.640
+All right so in this video we're going to take a look at the binary search algorithm binary search is
+
+00:10.640 --> 00:15.700
+pretty much the standard search algorithm but and there's a huge bat.
+
+00:15.800 --> 00:17.570
+And this is really important.
+
+00:17.600 --> 00:22.230
+It requires that the data that it's searching be sorted.
+
+00:22.370 --> 00:28.460
+And so you can only use the binary search algorithm on data that has been sorted.
+
+00:28.520 --> 00:33.710
+And so if you want to use it to search an array and the array has not been sorted then you're going
+
+00:33.710 --> 00:38.810
+to have to sort the array first and you can use any of the sort of algorithms that we've looked at to
+
+00:38.810 --> 00:39.980
+sort the array.
+
+00:39.980 --> 00:43.530
+And then you run the binary search on the sorted array.
+
+00:43.640 --> 00:48.370
+And that goes for any data structure I'm in if you're want to use binary search on a linked list thing
+
+00:48.380 --> 00:51.020
+you have to sort the values in the linked list first.
+
+00:51.020 --> 00:56.690
+Now if you know your application is going to be using binary search to do a lot of searches then what
+
+00:56.690 --> 01:03.920
+you might consider doing is inserting items into whatever data structure you're using so that they're
+
+01:03.920 --> 01:05.730
+always in sorted order.
+
+01:05.780 --> 01:12.110
+So rather than sorting the array or whatever you're using every single time you want to run a binary
+
+01:12.110 --> 01:17.330
+search if you know you're going to be running a lot of searches and it might be better to just always
+
+01:17.390 --> 01:22.520
+make sure that the values in the data structure are always sorted and you can do that when you insert
+
+01:22.520 --> 01:23.510
+values.
+
+01:23.510 --> 01:25.520
+OK so what is binary search.
+
+01:25.520 --> 01:30.380
+Well the way it works and we'll use an array as an example is that it chooses the element in the middle
+
+01:30.380 --> 01:33.890
+of the array and it compares it against the search value.
+
+01:33.890 --> 01:38.630
+Now if the element in the middle of the array equals the search value we're done right because we found
+
+01:38.630 --> 01:40.090
+the value we're looking for.
+
+01:40.160 --> 01:45.010
+Now if it doesn't equal the search value then we have more work to do.
+
+01:45.020 --> 01:50.360
+So if the element is greater than the search value then we're going to search the left half of the array.
+
+01:50.480 --> 01:56.730
+And the reason for that is that the values are sorted and so let's say the middle of the array is an
+
+01:56.750 --> 01:57.750
+index 5.
+
+01:57.800 --> 02:01.980
+And so we compare the search value against the element at index 5.
+
+02:01.980 --> 02:09.140
+Well if that element is greater than the search value then we know that the value we're searching for
+
+02:09.140 --> 02:17.720
+has to be in indices 0 to 4 because the data is sorted and so if the value at index 5 is greater than
+
+02:17.720 --> 02:24.260
+the value we're searching for that means that the values from indexes 6 up to the end of the array are
+
+02:24.260 --> 02:26.310
+going to be greater than the one we're looking for.
+
+02:26.360 --> 02:31.880
+So we need to search the left half of the array that's where all the values that are less then the middle
+
+02:31.970 --> 02:38.210
+element are located on the other hand if the middle element is less than the value that we're looking
+
+02:38.210 --> 02:44.270
+for then we want to search the right half of the array because if if the element array index 5 is less
+
+02:44.270 --> 02:50.120
+than the value we're looking for that means all the elements from position 0 to 4 are also going to
+
+02:50.120 --> 02:55.190
+be less because the array is sorted and so we know that the value we're looking for has to be at an
+
+02:55.340 --> 02:58.570
+index 6 or later on in the array.
+
+02:58.850 --> 03:05.150
+And so what we do is we compare the aliment against the middle value and then depending what we find
+
+03:05.330 --> 03:11.240
+if the values are equal we're done if they're not we're then going to just focus on the left part of
+
+03:11.240 --> 03:16.220
+the array or the right part of the array and then we rinse and repeat we do the same thing.
+
+03:16.220 --> 03:21.470
+So if we're going to focus on the left part of the array we take the middle element in that left part
+
+03:21.470 --> 03:24.410
+of the array and we compare it against the search value.
+
+03:24.410 --> 03:30.050
+If the element in the middle of the left array is greater then we're going to look at the left part
+
+03:30.050 --> 03:34.340
+of the left array and if it's less then we're going to look at the right part of the left brain.
+
+03:34.340 --> 03:40.550
+We keep doing this dividing each partition up until we're going to end up ultimately either hitting
+
+03:40.550 --> 03:46.790
+our search value or we'll end up in the end with getting down to a one element partition and that partition
+
+03:46.790 --> 03:48.470
+is going to equal our search value.
+
+03:48.470 --> 03:52.190
+So at each step we're dividing the array in half.
+
+03:52.190 --> 03:54.690
+It's very similar to what we were doing with Mirch sort.
+
+03:54.830 --> 04:00.950
+So at each set repartitioning the array and half until the middle element of the partition we're searching
+
+04:00.950 --> 04:02.600
+equals the value we're looking for.
+
+04:02.600 --> 04:07.860
+And so because there's a rinse and repeat step we can write binary search recursively.
+
+04:07.880 --> 04:11.370
+So let's look at our familiar array and it's sorted.
+
+04:11.390 --> 04:15.860
+Because remember you can only use binary search on sorted data.
+
+04:16.040 --> 04:17.510
+So the array has been sorted.
+
+04:17.510 --> 04:19.420
+Maybe we used merge sort.
+
+04:19.430 --> 04:20.530
+Maybe we use quicksort.
+
+04:20.540 --> 04:22.370
+Maybe we used insertion sort.
+
+04:22.370 --> 04:23.110
+Doesn't matter.
+
+04:23.120 --> 04:24.570
+We've sorted the array.
+
+04:24.740 --> 04:27.430
+Now let's say we want to find the value 1.
+
+04:27.440 --> 04:34.160
+So our star index will be 0 in our end the index will be 7 for the entire array the end index will always
+
+04:34.160 --> 04:37.410
+be one greater than the last valid index.
+
+04:37.430 --> 04:41.500
+Now we get the midpoint by dividing start plus and by 2.
+
+04:41.570 --> 04:48.350
+And so our midpoint our middle element is going to be located at position 3 and then we compare 1 against
+
+04:48.350 --> 04:51.370
+7 and 7 is greater than 1.
+
+04:51.380 --> 04:58.190
+And so we know that our search value must be located in this area because the array is sorted right.
+
+04:58.190 --> 05:04.130
+So if our search value is less than the value here it's not going to be located up here.
+
+05:04.380 --> 05:09.550
+Because this array is sorted and so we know that all of the values from four to the end of the array
+
+05:09.550 --> 05:15.280
+are equal to or greater than this guy if we compare one against the value at three and the value is
+
+05:15.280 --> 05:22.600
+greater We know that one must be located in front of the middle element and so we're now going to look
+
+05:22.600 --> 05:24.350
+at the left half of the array.
+
+05:24.490 --> 05:30.020
+So our start will be zero and our end will equal the midpoint from here.
+
+05:30.160 --> 05:35.380
+And so our end will be three remember the end is always one greater than the partition we want to look
+
+05:35.380 --> 05:35.620
+at.
+
+05:35.620 --> 05:42.250
+So we're basically saying we're now going to search elements 0 to 2 and we get the new midpoint by adding
+
+05:42.250 --> 05:44.590
+start to end and dividing by two.
+
+05:44.620 --> 05:46.060
+And so that's three over two.
+
+05:46.060 --> 05:54.950
+So our new midpoint is one which is here minus 15 and so we're going to compare one against minus 15.
+
+05:55.030 --> 06:03.820
+Now minus 15 is less than 1 and so we know now that the value we're looking for must be in this partition
+
+06:03.910 --> 06:09.700
+not in the entire array but in this partition the value we're looking for must be in the right half
+
+06:09.700 --> 06:10.740
+of this partition.
+
+06:10.780 --> 06:14.830
+And so we're going to search the right half and so our start.
+
+06:14.830 --> 06:17.640
+In this case is going to be midpoint plus 1.
+
+06:17.680 --> 06:25.000
+So our midpoint before was 1 and so we're going to add 1 to that so our start will be indexed to our
+
+06:25.000 --> 06:34.510
+end remains at index 3 and our midpoint is 2 plus 3 which is 5 over 2 which has to basically because
+
+06:34.510 --> 06:38.710
+our start is to in our end 3 we haven't a partition of one element.
+
+06:38.710 --> 06:44.890
+So it's not surprising that array 2 equals the value we're looking for and we have found our value now
+
+06:44.890 --> 06:45.930
+in this example.
+
+06:45.940 --> 06:49.090
+We did as many steps as we would have done for linear search.
+
+06:49.090 --> 06:54.550
+But if we were looking for a value up here it would have been a lot quicker because we would have come
+
+06:54.550 --> 06:58.420
+in and we would have looked at here and said Oh we're looking for 35.
+
+06:58.450 --> 07:00.350
+Okay well we're just going to look here now.
+
+07:00.580 --> 07:04.050
+And so we skip all of this traversing of the front part of the array.
+
+07:04.180 --> 07:09.940
+And so that's binary search it basically starts out by dividing the array down the middle and then it
+
+07:09.940 --> 07:16.570
+always looks at the middle element and then depending on what the comparison result is less then greater
+
+07:16.570 --> 07:22.060
+than or equal to we've either finished or we're then only going to focus on the left side or the right
+
+07:22.060 --> 07:24.100
+side and then we rinse and repeat.
+
+07:24.100 --> 07:27.530
+So middle element and then only left side right side etc..
+
+07:27.580 --> 07:34.540
+So as I said at some point if you don't find the search value early on at some point eventually you're
+
+07:34.540 --> 07:38.800
+going to get down to just one element in the partition and in fact that's what happened in the example
+
+07:38.800 --> 07:39.880
+we just went through.
+
+07:39.940 --> 07:46.240
+We can implement this recursively and the time complexity is o of log n because we just keep dividing
+
+07:46.240 --> 07:47.190
+the array in half.
+
+07:47.200 --> 07:50.530
+And remember that will be 0 to the log base to N.
+
+07:50.650 --> 07:52.900
+OK so that's how binary search works.
+
+07:52.900 --> 07:54.550
+Let's go ahead and implement it.
+
+07:54.550 --> 07:55.950
+I'll see you in the next video.

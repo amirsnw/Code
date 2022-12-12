@@ -1,0 +1,16 @@
+<tamin-modal #theModal title="موافقتنامه بهره برداری از سرویس های غیر حضوری ثبت اعتراض سازمان تامین اجتماعی" width="80%">
+  <div style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+    <ol style="padding: 20px; text-align: justify;">
+      <li>
+        در صورت تایید و ثبت نهایی درخواست، تا زمان رسیدگی کامل به درخواست ثبت شده امکان ثبت درخواست مجدد نمی باشد.
+      </li>
+      <li>
+        لطفا دقت فرمایید، تکرار ثبت درخواست بی مورد بدلیل ایجاد ترافیک کاری و تضییع حقوق سایر بیمه شدگان موجب لغو امکان ثبت درخواست های آتی برای شما می باشد.
+      </li>
+    </ol>
+  </div>
+  <div class="button-container">
+    <button class="button normal" (click)="onAgree()">موافقم</button>
+    <button class="button normal red" (click)="onDisagree()">انصراف</button>
+  </div>
+</tamin-modal>

@@ -1,0 +1,859 @@
+WEBVTT
+
+00:05.780 --> 00:12.260
+Neste vídeo vamos implementar a lista duplamente ligada para nos iniciar. Eu criei um novo projeto. Vou
+
+00:12.260 --> 00:15.500
+colocar o código em uma academia que aprende programação.
+
+00:15.500 --> 00:21.710
+Listas duplamente ligadas e o que eu fiz é copiar as classes das implementações de listas ligadas individualmente.
+
+00:21.710 --> 00:29.480
+Portanto, no método principal que criei o usual para instâncias de funcionários, a classe Employee é exatamente a mesma
+
+00:29.480 --> 00:36.200
+que usamos nos vídeos anteriores. O nó employee é o que implementamos quando fizemos a implementação
+
+00:36.320 --> 00:38.410
+de uma lista unicamente vinculada.
+
+00:38.450 --> 00:41.810
+E o mesmo vale para a lista duplamente vinculada de funcionários.
+
+00:41.820 --> 00:43.230
+Eu renomeio a classe.
+
+00:43.280 --> 00:47.120
+Mas agora é a implementação da lista C ligada.
+
+00:47.120 --> 00:53.630
+Então, a primeira coisa que vamos fazer é adicionar um campo anterior à classe Node do nosso funcionário,
+
+00:53.630 --> 00:58.210
+porque agora que temos uma lista duplamente vinculada, cada nó terá duas referências.
+
+00:58.430 --> 01:09.650
+Então eu vou dizer nó funcionário privado anterior E eu vou adicionar Satzung recebe todo o ID ou isso para mim assim.
+
+01:09.800 --> 01:12.950
+Tudo certo clique em dizer, eu quero um getter de centralização.
+
+01:12.950 --> 01:17.290
+Isso só vai me oferecer antes Porque é inteligente o suficiente para
+
+01:17.300 --> 01:22.130
+saber que nós já preparamos singletes para todo o resto e lá vamos nós.
+
+01:22.130 --> 01:28.220
+E agora nossos nós vão conter duas referências que também podemos dizer dois links um para o próximo
+
+01:28.220 --> 01:30.430
+nó e um para o nó anterior.
+
+01:30.590 --> 01:34.480
+Então, agora precisamos atualizar nossa implementação da lista vinculada.
+
+01:34.490 --> 01:38.790
+Nós estamos indo para adicionar um campo para a cauda, ​​porque a lista duplamente vinculada.
+
+01:38.810 --> 01:42.950
+Temos um campo que aponta para o cabeçalho ou o primeiro nó da lista.
+
+01:42.960 --> 01:46.500
+Qualquer campo que aponte para o final ou o último nó da lista.
+
+01:46.760 --> 01:55.160
+Então, vamos dizer cauda de nó de funcionário privado e apenas como o chefe será inicializado e também não precisamos criar
+
+01:55.160 --> 01:57.300
+um construtor que faz isso.
+
+01:57.360 --> 02:02.510
+OK, então quando se trata do método ADD to front quando adicionamos uma nota à frente da lista, ela
+
+02:02.510 --> 02:04.370
+se tornará o primeiro nó na lista.
+
+02:04.370 --> 02:07.560
+E assim seu campo anterior sempre apontará para não.
+
+02:07.610 --> 02:14.000
+Portanto, não precisamos manipular o campo anterior porque o campo anterior na instância do nó do funcionário
+
+02:14.000 --> 02:16.060
+sempre será inicializado como nulo.
+
+02:16.160 --> 02:22.310
+Portanto, não há necessidade de definirmos o campo anterior aqui, mas teremos que alterar o campo anterior
+
+02:22.310 --> 02:29.270
+do No que está no topo da lista porque o campo anterior do nó atual terá que apontar para
+
+02:29.270 --> 02:34.370
+o nó que estamos adicionando porque o que está na frente da lista agora
+
+02:34.370 --> 02:40.280
+vai se tornar o segundo nó na lista e seu campo anterior vai apontar para a
+
+02:40.280 --> 02:41.740
+nota que estamos adicionando.
+
+02:41.750 --> 02:48.440
+A outra coisa que temos que lidar com uma frente ativa é o caso de quando estamos começando com uma lista vazia, porque
+
+02:48.590 --> 02:52.900
+quando começamos com uma lista vazia, tanto a cabeça quanto a cauda apontam para não.
+
+02:53.000 --> 02:58.700
+E quando adicionamos um nó a uma lista vazia quando terminamos, tanto a cabeça quanto a cauda devem estar apontando
+
+02:58.700 --> 02:59.580
+para o nó.
+
+02:59.690 --> 03:05.720
+Agora, normalmente, não precisaríamos nos preocupar com a cauda se já houver um ou mais nós na lista
+
+03:05.750 --> 03:07.520
+e não adicionarmos à frente.
+
+03:07.520 --> 03:12.630
+A cauda não vai mudar porque somos Guang regrowing a lista da cabeça e não da cauda.
+
+03:12.650 --> 03:19.460
+Então, a única vez que temos que nos preocupar em definir a cauda é se estamos adicionando um nó em uma lista vazia,
+
+03:19.460 --> 03:21.980
+se este for o primeiro nó que estamos adicionando.
+
+03:21.980 --> 03:26.930
+Então, precisamos fazer algumas alterações aqui, temos que verificar se estamos adicionando uma nota a uma lista
+
+03:26.930 --> 03:30.310
+vazia e se estamos, precisamos definir a tabela para o novo nó.
+
+03:30.350 --> 03:37.100
+E também, se não estivermos adicionando a uma lista vazia, precisamos alterar o campo anterior das cabeças atuais para o
+
+03:37.280 --> 03:38.600
+nó que estamos adicionando.
+
+03:38.750 --> 03:48.160
+Então, antes de colocarmos a cabeça, vamos dizer se não é igual a ninguém que poderíamos chamar de método vazio 2, mas vou dizer como
+
+03:48.260 --> 03:52.040
+você sabe para deixar claro o que estamos fazendo aqui.
+
+03:52.160 --> 03:56.200
+Se adicionarmos esse nó a uma lista vazia, precisamos definir a tabela.
+
+03:56.240 --> 04:00.790
+Então, digamos que tail é igual a nó, se não estamos adicionando o nó em uma lista vazia.
+
+04:00.800 --> 04:03.680
+Nós não precisamos nos preocupar com a cauda que a cauda não vai mudar.
+
+04:03.680 --> 04:10.250
+OK, portanto, se estivermos adicionando o nó a uma lista vazia, definimos o final para o nó se a lista
+
+04:10.250 --> 04:15.510
+não estiver vazia, então precisamos definir o campo anterior das headnotes atuais para o novo nó.
+
+04:15.770 --> 04:19.700
+Então, vou dizer mais antes da nota
+
+04:22.290 --> 04:24.360
+que estamos adicionando.
+
+04:24.480 --> 04:25.070
+E é isso.
+
+04:25.080 --> 04:27.060
+Essas são as únicas mudanças que temos que fazer.
+
+04:27.120 --> 04:32.390
+Agora, aqui em cima, estamos definindo o próximo campo do novo nó para o cabeçalho que estiver se a cabeça for nula.
+
+04:32.430 --> 04:38.040
+Isso é bom porque, se estamos adicionando em uma lista vazia, queremos que o próximo campo seja nulo, porque o
+
+04:38.040 --> 04:40.780
+nó que estamos adicionando será o único nó na lista.
+
+04:40.800 --> 04:42.380
+E então não há nada vindo depois disso.
+
+04:42.380 --> 04:44.070
+E então o próximo campo será não.
+
+04:44.130 --> 04:48.360
+E como mencionei anteriormente, não precisamos nos preocupar em configurar o campo anterior do nó
+
+04:48.360 --> 04:53.640
+que estamos adicionando, porque isso sempre será não porque está sendo adicionado como o primeiro item da lista, portanto,
+
+04:53.730 --> 04:54.910
+não há nada antes disso.
+
+04:55.020 --> 04:59.610
+OK assim na frente fez me deixar atualizar nossa lista de impressão.
+
+04:59.640 --> 05:05.550
+E quando vou fazer isso, alterarei essa seta para uma espécie de seta dupla, para que saibamos
+
+05:05.550 --> 05:09.510
+que há dois links apenas para tornar isso um pouco mais claro.
+
+05:09.510 --> 05:14.890
+E agora vamos ao nosso método principal e vamos adicionar alguns funcionários à nossa lista duplamente vinculada.
+
+05:14.910 --> 05:19.130
+Então, vamos dizer a lista duplamente vinculada do funcionário.
+
+05:19.140 --> 05:24.090
+Lista é igual a nova lista duplamente vinculada de funcionário.
+
+05:24.330 --> 05:26.000
+A mesma lista começa na frente.
+
+05:26.010 --> 05:33.890
+Não há nada de novo aqui, fizemos isso com a lista única de todas as
+
+05:37.310 --> 05:49.800
+memórias de Jane Jones John Doe Smiths e Mike Wilson e depois vamos imprimir nossa lista e vamos ao tamanho apenas para ter certeza
+
+05:49.800 --> 05:57.050
+de que estamos incrementando esse tamanho corretamente, então vamos imprimir listas de tamanho.
+
+05:57.110 --> 05:57.460
+Tudo bem.
+
+05:57.470 --> 05:58.130
+Vamos correr
+
+06:03.900 --> 06:06.130
+e vamos ver que temos quatro funcionários.
+
+06:06.240 --> 06:12.090
+E assim como antes, porque estamos sempre adicionando à frente, temos Mike na posição de frente,
+
+06:12.090 --> 06:20.730
+seguido por Mary, seguido por John, seguido por Jane, a flecha dupla, há uma única flecha que eu poderia fazer aqui para ver o
+
+06:20.730 --> 06:23.010
+que estamos procurando no último nó.
+
+06:23.020 --> 06:26.430
+Mas eu acho que você vai entender que o NULL não está apontando de volta.
+
+06:26.550 --> 06:29.360
+Joan Jane Jones está apenas apontando para não.
+
+06:30.150 --> 06:31.960
+OK, deixe-me fechar isso.
+
+06:33.030 --> 06:40.040
+Agora vamos adicionar um no final ou adicionar ao método final Eu vou chamá-lo no final.
+
+06:40.060 --> 06:45.790
+Agora, para este método, temos que definir o campo anterior para apontar para o nó que está atualmente no final
+
+06:45.790 --> 06:46.390
+da lista.
+
+06:46.390 --> 06:52.180
+Lembre-se que teremos um nó que é apontado por cauda e queremos inserir um nó no final, então
+
+06:52.180 --> 06:58.990
+fomos à cauda para apontar para o novo nó e queremos que o campo anterior dos novos nós aponte para qualquer
+
+06:58.990 --> 07:00.780
+que seja a cauda atual é.
+
+07:00.790 --> 07:06.580
+Agora, mais uma vez, também temos que nos preocupar se estamos tentando adicionar ao final de uma lista vazia, porque,
+
+07:06.580 --> 07:10.130
+se estivermos onde vamos querer definir a cabeça para o novo não.
+
+07:10.150 --> 07:14.890
+Assim como na frente ativa, se estivéssemos inserindo em uma lista vazia, queríamos definir a cauda para
+
+07:14.890 --> 07:15.590
+o novo nó.
+
+07:17.630 --> 07:20.000
+Então dirá garoto público.
+
+07:20.220 --> 07:21.600
+Adicione ao final.
+
+07:21.740 --> 07:25.320
+E mais uma vez queremos o empregado.
+
+07:26.360 --> 07:29.760
+Então, criaremos uma nova anotação como fizemos antes.
+
+07:35.950 --> 07:42.640
+E agora queremos testar se temos uma lista vazia ou não, por isso vamos dizer se e não importa realmente aqui,
+
+07:42.640 --> 07:47.350
+se testarmos de cara ou de cauda, ​​já que estamos no método final do anúncio.
+
+07:47.490 --> 07:55.990
+Então, se cauda é igual e tudo o que queremos definir a cabeça para o novo nó e não se preocupe, vamos cuidar do
+
+07:55.990 --> 07:58.040
+campo de cauda em um minuto.
+
+07:58.060 --> 08:06.390
+Caso contrário, queremos definir o próximo campo do conto atual para o nó que estamos adicionando.
+
+08:06.820 --> 08:14.030
+E queremos definir o campo anterior do nó que estamos adicionando ao que costumava ser a cauda.
+
+08:14.060 --> 08:19.700
+Então, se temos, vamos dizer apenas Jane na lista e estamos adicionando Xion e estamos adicionando John ao final.
+
+08:19.850 --> 08:24.770
+Nós vamos querer Jane a cauda atual Nós vamos querer que seu próximo campo aponte para John, que
+
+08:24.770 --> 08:30.290
+é o novo nó, e nós vamos querer que o campo anterior de John aponte para Jane e ela é
+
+08:30.280 --> 08:33.740
+atualmente a cauda porque nós mudou um rabo ainda, então vamos fazer agora.
+
+08:33.740 --> 08:37.640
+Então, nosso último passo é definir a tabela para o nó.
+
+08:37.640 --> 08:40.250
+E é claro que precisamos incrementar o tamanho.
+
+08:40.370 --> 08:43.750
+E isso adiciona um funcionário ao final.
+
+08:43.760 --> 08:48.710
+Então, vamos voltar ao método principal e vamos adicionar fatura ao final da nossa lista.
+
+08:50.080 --> 08:51.470
+Então vamos dizer.
+
+08:51.520 --> 09:00.700
+Então deixe-me adicionar deixe-me deixar-me criar a instância do empregado separadamente, então eu vou dizer a conta do empregado e mostrar que
+
+09:00.700 --> 09:11.380
+queremos que ele no final seja igual a nova conta do empregado e então daremos a ele uma ID de 70 e então digamos que
+
+09:11.380 --> 09:20.350
+a lista não adiciona ao final Bill final e todas as cópias dessas duas linhas imprimirão nossa lista e imprimiremos o
+
+09:20.350 --> 09:24.820
+tamanho apenas para garantir que estamos incrementando o tamanho corretamente.
+
+09:24.820 --> 09:25.240
+Tudo bem.
+
+09:25.240 --> 09:25.900
+Vamos correr
+
+09:30.370 --> 09:36.400
+e agora vamos ver que temos cinco funcionários e desta vez Bill não está na frente da lista porque
+
+09:36.400 --> 09:42.000
+não é onde nós os adicionamos, então temos Mike Myrie até agora, nossa lista é a mesma.
+
+09:42.100 --> 09:49.230
+Jondo Jane Jones e finalmente temos Bill final no final.
+
+09:49.270 --> 09:52.330
+Então ele é onde ele deveria estar.
+
+09:52.400 --> 09:53.570
+Apenas feche.
+
+09:53.570 --> 09:56.380
+Vamos voltar para nossa classe de lista vinculada agora.
+
+09:56.390 --> 10:01.790
+Assim como no método out to front, não precisávamos nos preocupar em configurar o campo anterior
+
+10:01.790 --> 10:07.400
+de novos nós porque ele seria inicializado como no no método To End, não precisamos nos preocupar
+
+10:07.400 --> 10:10.560
+em configurar os novos nós em seguida. inicializado para todos.
+
+10:10.670 --> 10:13.850
+OK, então agora vamos olhar para remover itens.
+
+10:13.850 --> 10:19.820
+Então, temos um método remove from front no momento e agora temos que fazer um pouco mais de trabalho porque temos que
+
+10:19.820 --> 10:21.110
+nos preocupar com a cauda.
+
+10:21.110 --> 10:27.650
+E nós temos que nos preocupar com o campo anterior em qualquer nó que venha depois da cabeça.
+
+10:27.650 --> 10:33.470
+Agora é possível remover o único nó da lista, então temos que lidar com esse
+
+10:33.470 --> 10:34.340
+caso especial.
+
+10:34.340 --> 10:35.960
+Então, basicamente, o que queremos fazer?
+
+10:35.960 --> 10:40.740
+Vamos supor que apenas tenhamos John e Jane na lista e John esteja na frente.
+
+10:40.760 --> 10:45.990
+Então, quando nós levarmos John embora, o próximo campo de Jane não vai mudar, então não precisamos nos preocupar com isso.
+
+10:46.040 --> 10:52.520
+Mas seu campo anterior tem que mudar e ela quer apontar para o que veio antes de John.
+
+10:52.640 --> 10:57.750
+E então ela vai querer apontar para o campo anterior de John porque nós vamos tirar John.
+
+10:57.740 --> 11:02.410
+Então, o que quer que tenha sido antes de John será agora antes de Jane.
+
+11:02.480 --> 11:04.930
+Agora, para mover a partir da frente que será agora.
+
+11:04.940 --> 11:10.940
+Assim, poderíamos definir explicitamente o campo dela para o Knol ou poderíamos defini-la para o campo anterior de
+
+11:10.940 --> 11:13.380
+John e, em seguida, queremos seguir em frente.
+
+11:13.430 --> 11:16.350
+E então vamos colocar a cabeça para Jane e é isso.
+
+11:16.400 --> 11:22.400
+Se quisermos, podemos limpar as referências nas notas de João, podemos definir a próxima referência para todos,
+
+11:22.400 --> 11:23.630
+como já estamos fazendo.
+
+11:23.690 --> 11:30.080
+Mas essencialmente o que realmente temos que lidar aqui em cima do que todos nós já estamos fazendo é o
+
+11:30.080 --> 11:31.330
+campo anterior de Jane.
+
+11:31.430 --> 11:37.580
+Agora, se John é o único nó na lista, então teremos que nos preocupar em atualizar a história, porque
+
+11:37.580 --> 11:39.350
+a cauda agora se tornará Não.
+
+11:39.500 --> 11:43.400
+Se John não é o único nó na lista, não precisamos mudar a cauda.
+
+11:43.430 --> 11:47.000
+A cauda continuará a mesma porque estamos tirando o nó da frente da lista.
+
+11:47.000 --> 11:51.040
+E se ele não for o único nó na lista, a cauda não vai mudar.
+
+11:51.080 --> 11:53.810
+Ainda vai estar apontando para o último nó da lista.
+
+11:53.930 --> 12:00.400
+OK, então depois de salvarmos o nó que estamos removendo no nó de remoção.
+
+12:00.500 --> 12:06.950
+Nós vamos testar para ver se estamos removendo o único nó na lista e vamos fazer isso dizendo se head get
+
+12:07.640 --> 12:10.550
+next é igual a não, porque se nós tivéssemos node
+
+12:13.070 --> 12:19.880
+se o próximo campo no head node agora é esse isso significa que nós temos apenas um nó na lista, então estamos
+
+12:19.880 --> 12:23.960
+removendo o único nó e, nesse caso, temos que nos preocupar em configurar
+
+12:23.960 --> 12:24.440
+as caudas.
+
+12:24.440 --> 12:34.120
+Agora, se não estamos removendo o único nó da lista, então vamos lidar com o campo anterior de Jane.
+
+12:34.220 --> 12:41.330
+E assim, vamos dizer que a cabeça se aproxima, porque se Jain é o segundo nó em inglês, o próximo campo de John
+
+12:41.330 --> 12:46.280
+está apontando para ela, então a cabeça não será a próxima, então isso retornará Jane e
+
+12:46.280 --> 12:53.300
+queremos que ela se sinta. poderia definir isso também tinha feito no passado, mas porque sabemos que estamos nos movendo da frente.
+
+12:53.300 --> 12:59.650
+Nós apenas vamos em frente e o colocamos em null e então fazemos o que fizemos antes de definirmos a cabeça para
+
+12:59.660 --> 13:02.630
+obter um x porque é Jane e nós diminuímos o tamanho.
+
+13:02.630 --> 13:05.220
+E aqui estamos apenas limpando uma referência.
+
+13:05.270 --> 13:07.210
+Nós não temos que fazer isso, mas estamos limpando.
+
+13:07.220 --> 13:08.570
+E então retornamos o nó.
+
+13:08.660 --> 13:14.160
+Então, vamos voltar ao nosso método principal e vamos remover da frente da lista, então vamos dizer vamos.
+
+13:14.270 --> 13:16.010
+Remova da frente.
+
+13:16.070 --> 13:21.830
+Você não precisa passar nada porque estamos tirando a primeira pessoa de uma lista e
+
+13:21.830 --> 13:24.770
+imprimiremos novamente a lista e o tamanho.
+
+13:26.090 --> 13:26.870
+Então vamos correr,
+
+13:30.080 --> 13:32.080
+então estamos de volta para quatro funcionários.
+
+13:32.090 --> 13:35.480
+E agora Mary é a primeira funcionária da lista.
+
+13:35.480 --> 13:37.090
+Mike foi embora.
+
+13:37.670 --> 13:43.490
+E assim, se você for até o fim, Bill ainda está no fim, não tocamos nele e temos menos
+
+13:43.490 --> 13:44.620
+empregados do que antes.
+
+13:44.750 --> 13:52.220
+OK, então temos métodos para adicionar à frente da lista, adicionando ao final da lista, removendo da
+
+13:52.220 --> 13:52.650
+frente.
+
+13:52.660 --> 13:55.220
+Então eu acho que precisamos remover de qualquer método.
+
+13:55.220 --> 13:57.110
+Então, vamos escrever isso agora.
+
+13:57.740 --> 14:05.210
+Nota do funcionário público de Lou e não precisamos passar nada porque estamos sempre movendo a
+
+14:05.210 --> 14:06.220
+última nota.
+
+14:06.290 --> 14:08.390
+O que queremos fazer quando removemos do final.
+
+14:08.380 --> 14:14.520
+Bem, agora temos Jane no final, digamos e, em seguida, Bill e queremos remover o projeto de lei.
+
+14:14.630 --> 14:20.210
+Então, vamos ter que mudar a cauda, ​​porque a cauda agora vai se tornar Jane.
+
+14:20.270 --> 14:27.320
+Então, neste caso, temos que nos preocupar em mudar a cauda e vamos querer definir o próximo campo de Jane
+
+14:27.350 --> 14:31.070
+para saber, porque agora ela será o fim da lista.
+
+14:31.100 --> 14:34.240
+E se quisermos, podemos limpar o campo anterior de Bill.
+
+14:34.250 --> 14:37.330
+Agora, se Bill é o único na lista.
+
+14:37.370 --> 14:42.350
+Nós também temos que nos preocupar em saber se o Bill é o único nó na lista, então nós o
+
+14:42.350 --> 14:46.280
+removemos e há uma lista vazia, então temos que voltar ao conhecimento. Então, vamos ter
+
+14:46.280 --> 14:47.560
+que checar esse caso. .
+
+14:47.570 --> 14:51.320
+Mas a primeira coisa que faremos é verificar uma lista vazia e vazia.
+
+14:51.320 --> 14:53.650
+Então, vamos todos copiar o código.
+
+14:53.960 --> 14:59.390
+Então, se você tem uma lista vazia, nós obviamente não precisamos fazer nada para remover, se
+
+14:59.390 --> 15:05.870
+não tivermos uma lista vazia, vamos dizer que a nota do funcionário remove o nó é igual à cauda.
+
+15:06.350 --> 15:12.570
+Então apareça o nó de remoção foi a cabeça, mas removido e o nó removido, obviamente, seremos a cauda e,
+
+15:12.580 --> 15:16.100
+em seguida, faremos a mesma coisa que fizemos aqui em cima.
+
+15:16.100 --> 15:22.550
+Mas desta vez eu vou usar se Teo get next for igual a Knol porque isso significaria que esse é o único
+
+15:22.580 --> 15:23.320
+nó na lista.
+
+15:23.310 --> 15:27.380
+Agora, quando temos apenas um nó na lista, a cabeça e a cauda estão apontando para o mesmo
+
+15:27.560 --> 15:29.960
+nó que usei aqui porque estamos nos movendo pela frente.
+
+15:29.960 --> 15:34.520
+Eu vou usar o Teyl aqui porque estamos nos movendo pela parte de trás, mas
+
+15:34.520 --> 15:42.190
+essencialmente estamos fazendo a mesma coisa, então se o ponto da cauda ficar próximo igual a normal, então nós só temos um nó na lista.
+
+15:42.200 --> 15:48.550
+E, nesse caso, temos que nos preocupar em definir a cabeça para saber.
+
+15:48.920 --> 15:53.100
+Então você pode ver que estamos fazendo a imagem espelhada aqui.
+
+15:53.180 --> 15:57.290
+Aqui temos que nos preocupar em definir a cauda para todos, porque colocamos a cabeça.
+
+15:57.290 --> 16:01.850
+Nós cuidamos da cabeça aqui e aqui temos que nos preocupar em colocar a cabeça para saber tudo.
+
+16:01.850 --> 16:09.110
+Então, se temos mais de um nó na lista, então o que queremos fazer aqui é o No que está se
+
+16:09.110 --> 16:16.940
+tornando o novo tail que queremos definir o próximo campo para saber e podemos fazer isso da mesma forma que fizemos aqui.
+
+16:16.940 --> 16:19.220
+Então, nós nos aproximamos antes.
+
+16:19.230 --> 16:24.160
+Não, porque isso vai se tornar a nova cauda e então definiremos seu próximo campo para saber.
+
+16:24.260 --> 16:31.350
+Então, vamos dizer que o cão da cauda tem um cão anterior ao lado de não.
+
+16:31.850 --> 16:37.010
+E então, se tivermos uma situação em que estamos removendo o Bill e a Jane, ela se tornará a nova cauda.
+
+16:37.010 --> 16:41.450
+Bem Bill é atualmente a cauda porque nós não mudamos isso ainda.
+
+16:41.510 --> 16:46.940
+Seu campo anterior está apontando para Jane e, assim, seu próximo campo se tornará nulo porque ela será
+
+16:46.940 --> 16:48.640
+o último nó da lista.
+
+16:48.680 --> 16:52.250
+E então, finalmente, nós vamos ser enviados a
+
+16:55.270 --> 17:02.080
+cauda para caudas não obter anterior Porque a nova cauda agora vai ser Jane.
+
+17:02.090 --> 17:06.950
+E agora, agora, o rabo está apontando para Bill, seu anterior está apontando para Jane.
+
+17:06.950 --> 17:12.130
+E assim a nova cauda torna-se basicamente a conta anterior.
+
+17:12.900 --> 17:18.450
+E agora faremos o que fizemos aqui, então vou copiar essas linhas de código.
+
+17:18.650 --> 17:20.420
+Queremos documentar o tamanho.
+
+17:20.420 --> 17:21.880
+Desta vez, queremos que eles sejam removidos.
+
+17:21.890 --> 17:28.430
+Nenhum campo anterior a ser definido para o conhecimento para limpar isso e, em seguida, retornamos o nó de remoção.
+
+17:28.430 --> 17:34.910
+Então, esses dois métodos são meio que imagens-espelho um do outro em um caso, estamos mais preocupados com o que está
+
+17:34.910 --> 17:39.380
+acontecendo na cabeça, obviamente, e no outro caso, estamos mais preocupados com o que está
+
+17:39.380 --> 17:40.400
+acontecendo na cauda.
+
+17:40.400 --> 17:45.410
+Neste caso, temos que nos preocupar com a cauda apenas quando estamos removendo o único nó da lista.
+
+17:45.410 --> 17:47.650
+E neste caso temos que nos preocupar com a cabeça.
+
+17:47.690 --> 17:49.880
+Se estamos removendo o único nó da lista.
+
+17:49.880 --> 17:54.680
+Caso contrário, estamos apenas nos preocupando com a cauda quando estamos nos movendo e você sabe que
+
+17:54.680 --> 17:58.170
+estamos apenas nos preocupando com a cabeça quando estamos nos movimentando pela frente.
+
+17:58.430 --> 18:02.750
+E se você observar esses dois métodos, é a mesma coisa.
+
+18:02.900 --> 18:07.490
+Eles são um pouco diferentes, mas poderíamos tê-los escrito de forma similar neste caso e na
+
+18:07.490 --> 18:12.980
+frente sempre definindo o próximo campo do conhecimento para o que quer que esteja na cabeça e no anúncio.
+
+18:13.000 --> 18:17.000
+E só estamos fazendo isso se estamos lidando com uma lista que não está vazia.
+
+18:17.000 --> 18:22.910
+Então, para adicionar o nó em uma lista que é um vazio, porque quando você pensa sobre isso, se
+
+18:23.330 --> 18:29.130
+a lista está vazia, esta declaração aqui vai definir o próximo campo para nulo e nós realmente não
+
+18:29.130 --> 18:33.810
+precisamos fazer isso porque os nós próximos campo é inicializado para que possamos fazer isso.
+
+18:33.990 --> 18:41.340
+Poderíamos tomar esta declaração aqui e fazer a mesma coisa que estamos fazendo aqui e apenas nos preocuparmos em configurar o próximo campo
+
+18:41.340 --> 18:46.550
+se estivermos lidando com uma lista que não esteja vazia, de modo que já haja nós nela.
+
+18:46.560 --> 18:53.370
+E então, quando adicionamos o novo nó à lista, vamos nos preocupar em configurar o próximo campo, caso contrário, o próximo
+
+18:53.370 --> 18:54.810
+campo já estará definido.
+
+18:54.820 --> 19:01.920
+Então, agora há imagens espelhadas uma da outra e vamos ver se tudo está funcionando
+
+19:01.920 --> 19:07.500
+bem antes de voltarmos para o Maine e removermos um item do
+
+19:07.500 --> 19:12.130
+final da lista, então vou copiar essas três linhas.
+
+19:13.530 --> 19:21.430
+Eu vou dizer remover e vamos correr.
+
+19:21.690 --> 19:22.050
+Tudo bem.
+
+19:22.050 --> 19:30.070
+Então, começamos com a adição de quatro funcionários e temos Mike Wilson Mary Smiths, John Doe e Jane Jones, e temos
+
+19:30.070 --> 19:31.810
+quatro funcionários na lista.
+
+19:31.810 --> 19:37.730
+Então nós somamos aqui nós adicionamos conta ao fim.
+
+19:37.780 --> 19:46.990
+Então agora temos cinco funcionários e temos Bill no final e depois removemos o primeiro funcionário da
+
+19:46.990 --> 19:47.620
+frente.
+
+19:47.620 --> 19:53.770
+Então, voltamos para quatro funcionários e Mike foi embora e agora finalmente removemos um funcionário
+
+19:53.770 --> 19:54.460
+do final.
+
+19:54.610 --> 19:58.320
+Então, temos três funcionários e, obviamente, algo deu errado aqui.
+
+19:58.360 --> 20:00.270
+Então vamos voltar ao nosso código.
+
+20:00.610 --> 20:02.260
+Deixe-me fechar isso.
+
+20:02.260 --> 20:04.620
+Você consegue identificar a taxa de erro aqui.
+
+20:04.720 --> 20:11.280
+Nós dissemos que, se o conto não for o próximo, igual a Paulo, o próximo campo de detalhes sempre será nulo.
+
+20:11.290 --> 20:16.750
+E então o que aconteceu é que nós definimos a cabeça para o conhecimento e é
+
+20:16.830 --> 20:25.330
+por isso que eu volto para essa coisa aqui, nossa cabeça, basicamente sopramos nossa lista aqui, então isso deve ser se casacos anteriores forem iguais, então
+
+20:25.330 --> 20:27.920
+sabemos que temos apenas um nó no Lista.
+
+20:27.940 --> 20:30.160
+Vamos correr isso de novo.
+
+20:31.670 --> 20:37.370
+Tudo bem, desta vez não estouramos a nossa lista, então passamos pelos primeiros
+
+20:37.550 --> 20:46.910
+resultados e, finalmente, voltamos para cá, queríamos remover a fatura do final, para que tivéssemos Mary Smiths, John Doe e Jane Jones,
+
+20:46.910 --> 20:51.200
+e removemos a fatura do final. nós temos três funcionários.
+
+20:51.320 --> 20:53.570
+E então nosso código está funcionando.
+
+20:53.570 --> 20:59.060
+Assim que consertarmos esse bug, se você tiver apenas um nó na lista, a cauda e a cabeça estarão apontando para o
+
+20:59.060 --> 20:59.560
+mesmo ditado.
+
+20:59.570 --> 21:05.900
+Mas, obviamente, se você não tiver apenas o meu nó na lista, queremos testar o campo anterior para
+
+21:05.900 --> 21:10.520
+detalhes, porque queremos saber se há algo antes da cauda, ​​porque nunca haverá
+
+21:10.520 --> 21:11.940
+nada depois da cauda.
+
+21:12.020 --> 21:16.350
+Então é por isso que nós sopramos nossa lista aqui.
+
+21:16.670 --> 21:21.470
+Aqui queremos usar o próximo porque nesse caso nunca há nada antes da cabeça.
+
+21:21.470 --> 21:23.570
+Então temos que checar o que vem depois.
+
+21:23.570 --> 21:28.340
+OK, é isso para uma simples implementação de uma lista duplamente vinculada.
+
+21:28.340 --> 21:31.880
+Eu só queria te dar uma ideia do que está acontecendo debaixo das cobertas.
+
+21:31.880 --> 21:39.320
+Agora, como eu mencionei alguns vídeos atrás DJT JDK tem uma classe de lista vinculada então se você quiser usar uma lista vinculada você provavelmente
+
+21:39.410 --> 21:44.870
+vai usar a classe e o JDK e assim por diante o próximo vídeo vai dar uma rápida olhada
+
+21:44.870 --> 21:45.780
+nessa classe .
+
+21:45.800 --> 21:47.090
+Eu te vejo lá.

@@ -1,0 +1,8 @@
+<div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>امکان مشاهده وضعیت استعلام بیمه شده </span>
+  </div>
+  <div class="panel">
+<app-insured-status-search #insuredStatusSearchComponent (Submitt)="onSearchSubmit($event)" (ClearForm)="onClearForm($event)"></app-insured-status-search>
+<app-insured-status-list #insuredStatusListComponent></app-insured-status-list>
+</div>

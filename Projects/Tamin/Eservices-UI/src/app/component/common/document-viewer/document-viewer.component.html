@@ -1,0 +1,18 @@
+<div class="component-container">
+  <div class="component-toolbar">
+    <ul>
+      <li><a (click)="increaseZoom()"><i class="icon-plus"></i></a></li>
+      <li><a (click)="decreaseZoom()"><i class="icon-minus"></i></a></li>
+      <li><a (click)="setFitToPage()"><i class="icon-resize-normal-outline"></i></a></li>
+      <li><a (click)="decreaseZoom()"><i class="icon-download"></i></a></li>
+      <li><a (click)="decreaseZoom()"><i class="icon-print"></i></a></li>
+    </ul>
+  </div>
+  <div
+    class="container"
+    #viewerElement
+    [style.width]="width"
+    [style.max-width]="width" [style.max-height]="height" [style.height]="height"></div>
+</div>
+
+<canvas ></canvas>

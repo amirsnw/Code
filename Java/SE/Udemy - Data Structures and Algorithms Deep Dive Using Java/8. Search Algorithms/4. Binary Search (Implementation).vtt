@@ -1,0 +1,475 @@
+WEBVTT
+
+00:05.260 --> 00:09.010
+Tudo bem, vamos implementar um algoritmo de busca binária e eu vou fazer isso.
+
+00:09.010 --> 00:12.320
+Primeiramente, é de leitura e depois fazemos isso de forma recursiva.
+
+00:12.400 --> 00:21.060
+Então, vou criar um int público estático do Massad e chamarei de pesquisa binária iterativa.
+
+00:21.070 --> 00:28.630
+E como de costume, precisamos da matriz que estamos procurando e do valor que queremos encontrar.
+
+00:28.630 --> 00:31.200
+Agora observe que nossa interface está classificada.
+
+00:31.270 --> 00:34.300
+Então, é bom para nós usar a pesquisa binária.
+
+00:34.360 --> 00:39.790
+Então, vamos começar definindo nossos valores inicial e final, civill, digamos, start é igual
+
+00:39.880 --> 00:47.890
+a zero e end e equals input. Lance lembra disso e sempre será um maior que a partição que estamos
+
+00:47.890 --> 00:48.190
+vendo.
+
+00:48.190 --> 00:53.100
+E só para lembrá-lo caso você não tenha percebido que os slides estavam fazendo o particionamento
+
+00:53.110 --> 00:57.570
+lógico Então, na verdade, não estamos criando uma nova matriz ou toda vez que particionamos.
+
+00:57.580 --> 01:05.620
+Tudo bem, então vamos dizer que o início do Wall é menos um fim porque um começo é igual e nós pesquisamos o
+
+01:05.620 --> 01:08.700
+array inteiro e não encontramos o que estamos procurando.
+
+01:08.740 --> 01:22.600
+Digamos que no ponto médio comece mais e mais de dois e então diremos se o ponto médio de entrada é igual ao
+
+01:22.600 --> 01:26.800
+valor que estamos procurando, então estamos certos.
+
+01:26.800 --> 01:30.460
+Encontramos o índice do item que estamos procurando.
+
+01:30.460 --> 01:32.840
+Então, vamos apenas retornar ao ponto médio.
+
+01:32.890 --> 01:39.820
+Agora esse não é o caso, então queremos ver se o valor no ponto médio da entrada é menor
+
+01:39.820 --> 01:46.480
+que o valor que estamos procurando, e se o valor médio da entrada for menor que o valor.
+
+01:47.170 --> 01:53.770
+Bem, se esse é o caso, então queremos procurar a parte certa da matriz porque, por exemplo, se estamos
+
+01:53.770 --> 02:01.690
+procurando o valor 20 e o ponto médio da entrada de valor é 10, então porque a matriz está ordenada, sabemos que o
+
+02:01.690 --> 02:05.870
+valor 20 tem que ser em um índice maior que o ponto médio.
+
+02:05.980 --> 02:09.160
+E assim, queremos agora procurar a parte certa da matriz.
+
+02:09.310 --> 02:17.070
+E então tudo o que vamos fazer aqui é alterar o valor inicial para o ponto médio mais 1.
+
+02:18.940 --> 02:26.920
+Então, se o nosso ponto médio fosse digamos o índice 5 e nós tivéssemos verificado o índice 5 e agora queremos procurar a parte
+
+02:26.920 --> 02:33.280
+direita da matriz enquanto o valor inicial vai ser cinco mais um que é 6 nosso fim ainda seria
+
+02:33.280 --> 02:35.020
+o fim de a matriz.
+
+02:35.050 --> 02:41.680
+Agora, se o elemento no ponto médio não for igual ao valor e não for menor que o valor, ele deverá
+
+02:41.680 --> 02:45.940
+ser maior que o valor. Nesse caso, queremos pesquisar a parte esquerda da matriz.
+
+02:45.970 --> 02:53.620
+Assim, nosso valor inicial permanecerá o mesmo e nosso valor final se tornará ponto médio, porque o ponto médio é
+
+02:53.620 --> 02:56.420
+sempre maior do que o final da partição.
+
+02:56.440 --> 02:58.170
+E nós já olhamos para o ponto médio.
+
+02:58.210 --> 03:03.110
+E assim, queremos que nossa petição seja executada do início ao ponto médio menos 1.
+
+03:03.120 --> 03:05.750
+E então o final será o ponto médio e é isso.
+
+03:05.830 --> 03:13.540
+Há apenas uma coisa que temos que fazer se sairmos daqui e não tivermos encontrado o valor, então
+
+03:13.540 --> 03:15.090
+vamos voltar menos um.
+
+03:15.160 --> 03:21.370
+E assim continuaremos em loop até que nosso início seja igual ao nosso fim, porque isso significaria que o que
+
+03:21.370 --> 03:27.130
+aconteceu foi que descemos para uma partição de um elemento e esse elemento não era igual ao valor.
+
+03:27.130 --> 03:31.720
+Então, vamos ajustar nosso início e fim e isso vai fazer o começo igual ao fim.
+
+03:31.750 --> 03:36.750
+E é aí que vamos desistir porque basicamente descemos para uma partição de zero elementos
+
+03:36.760 --> 03:40.320
+e sabemos que o valor que procuramos não está na matriz.
+
+03:40.390 --> 03:43.500
+E assim começamos obtendo o elemento do meio.
+
+03:43.510 --> 03:46.270
+E então comparamos com o valor que estamos procurando.
+
+03:46.300 --> 03:52.550
+E em algum momento, quando estamos fazendo todos os nossos políticos, o elemento do meio será igual ao valor.
+
+03:52.600 --> 03:56.740
+Se isso não acontecer, o valor não está no array e retornamos menos um.
+
+03:56.740 --> 04:03.060
+Então, vamos em frente e tentar isso também vamos dizer que o sistema saiu da linha de impressão.
+
+04:03.600 --> 04:10.180
+É uma pesquisa binária com entrada e vamos procurar por menos 15.
+
+04:10.400 --> 04:13.140
+Isso deveria ser para Ray.
+
+04:13.420 --> 04:16.090
+E deixe-me copiar isso mais algumas vezes.
+
+04:20.910 --> 04:25.730
+E vamos procurar 35.
+
+04:26.070 --> 04:28.600
+Procure por 8 8 8 8 novamente.
+
+04:28.620 --> 04:34.110
+E vamos olhar para o valor de um exemplo que fizemos nos slides, então vamos rodar e vamos
+
+04:38.870 --> 04:41.450
+ver que menos 15 é o índice 1.
+
+04:41.450 --> 04:44.210
+Isso é correto 35 é esse índice 5.
+
+04:44.210 --> 04:44.990
+Está correto.
+
+04:44.990 --> 04:47.020
+Nós não encontramos 8 8 8 8.
+
+04:47.090 --> 04:50.060
+E um é esse índice também.
+
+04:50.060 --> 04:51.160
+Então tudo bem.
+
+04:51.170 --> 04:56.350
+E vamos adicionar uma linha aqui para imprimir o ponto médio em cada iteração.
+
+04:56.360 --> 05:04.370
+Então, vou colocar uma linha aqui que diz systemd no ponto médio da linha de impressão ao ar livre igual ao ponto
+
+05:04.970 --> 05:06.320
+médio do ponto médio.
+
+05:06.860 --> 05:08.360
+Vamos em frente e
+
+05:13.300 --> 05:19.540
+executar isso e vamos ver que o primeiro ponto médio foi de três para menos de 15.
+
+05:19.540 --> 05:24.710
+Deixe-me trazer isso de volta e fechá-lo rápido demais, então a partir de menos 15 o primeiro ponto médio era três.
+
+05:25.000 --> 05:29.230
+E esse sempre será o primeiro ponto médio, porque começamos com os mesmos valores
+
+05:29.230 --> 05:35.250
+inicial e final, então 0 1 a 3 ou elemento intermediário com o qual comparamos primeiro é sempre 7.
+
+05:35.320 --> 05:45.130
+E então o que aconteceu foi que o ponto médio 7 era maior que menos 15 e assim mudamos e para o ponto médio
+
+05:45.250 --> 05:47.370
+que teria feito e três.
+
+05:47.380 --> 05:54.640
+E então, quando voltamos, recebíamos 0 mais 3 sobre 2, que é 1 e 1 é onde menos 15 está
+
+05:54.640 --> 05:55.150
+localizado.
+
+05:55.150 --> 05:58.200
+Então boom encontramos.
+
+05:58.280 --> 06:04.040
+Agora, para o caso, nós olhamos para os slides, que é o último que o nosso primeiro ponto médio
+
+06:04.040 --> 06:07.910
+foi três, como vimos nos slides, então nós comparamos um contra sete.
+
+06:07.910 --> 06:09.790
+Um é menos que sete.
+
+06:10.280 --> 06:16.790
+E então vamos ajustar novamente o final, porque agora queremos procurar a parte esquerda da matriz e o novo final seria
+
+06:16.790 --> 06:22.220
+3 0 mais 3 é três ao invés de escolher o nosso segundo ponto médio é 1.
+
+06:22.220 --> 06:27.860
+Estes são sempre de cada lado e os pontos médios sempre serão calculados da mesma forma porque obviamente o comprimento
+
+06:27.860 --> 06:29.480
+de nosso array não está mudando.
+
+06:29.480 --> 06:36.130
+Então, na segunda iteração, o ponto médio é um e nós comparamos um contra menos 15.
+
+06:36.140 --> 06:42.980
+Um é maior que menos 15 e desta vez vamos ajustar nosso início e nosso ponto de partida para
+
+06:42.980 --> 06:45.070
+o nosso ponto médio é 1.
+
+06:45.140 --> 06:52.280
+E assim nós adicionamos 1 para obter um valor inicial de para o nosso final permanece 3 então temos dois mais três é cinco
+
+06:52.280 --> 06:53.620
+sobre dois, que é dois.
+
+06:54.020 --> 06:56.090
+E esse é o nosso novo ponto médio aqui em baixo.
+
+06:56.090 --> 07:00.940
+E então nós verificamos em dois e boom encontramos o valor que estamos procurando.
+
+07:00.950 --> 07:03.110
+E isso é pesquisa binária iterativa.
+
+07:03.110 --> 07:05.040
+Não é muito complicado.
+
+07:05.150 --> 07:08.020
+Então, agora vamos corrigir a versão recursiva.
+
+07:08.110 --> 07:18.050
+Eu vou descer aqui e eu vou dizer public static na busca binária recursiva
+
+07:18.050 --> 07:25.570
+e vamos precisar do mesmo parâmetro inicial na entrada de valor.
+
+07:27.110 --> 07:29.890
+Mas para a versão recursiva, vamos precisar de dois métodos.
+
+07:29.890 --> 07:34.310
+Vamos precisar de um que aceite toda a matriz e, é claro, precisaremos de um
+
+07:34.310 --> 07:39.020
+método recursivo que tenha um ponto inicial e final, porque esses são o que está mudando.
+
+07:39.020 --> 07:47.720
+Então, vamos dizer retornar busca binária recursiva e vamos dizer entrada e nosso valor inicial será
+
+07:47.720 --> 07:55.660
+0 ou e valor será comprimento de entrada e o valor que estamos procurando.
+
+07:55.760 --> 08:01.850
+Então, vamos em frente e escrever esta versão da busca binária recursiva, então vamos dizer
+
+08:02.750 --> 08:11.840
+pesquisa binária estática e recursiva pública e isso levará uma matriz de entrada que levará para iniciar valor o valor final e
+
+08:11.840 --> 08:13.870
+o valor que estamos procurando.
+
+08:14.300 --> 08:17.650
+E então este é o método que realmente será recursivo.
+
+08:17.690 --> 08:20.720
+Eu não tive que dividi-lo em dois métodos aqui no método principal.
+
+08:20.720 --> 08:26.030
+Eu poderia simplesmente chamar este método diretamente, mas normalmente o que você tem é um método que pega o
+
+08:26.030 --> 08:28.670
+ditado inteiro e então você chamaria o método recursivo.
+
+08:28.670 --> 08:32.960
+Este é um método recursivo e, por isso, precisamos de uma
+
+08:32.960 --> 08:40.620
+condição de quebra em nossa condição de quebra se o início for maior ou igual a e retornaremos menos um.
+
+08:41.210 --> 08:45.950
+E isso é basicamente a mesma condição que esta aqui que estamos dizendo que você sabe que o início mais longo
+
+08:45.950 --> 08:47.660
+é menor do que o esperado e continuar.
+
+08:47.660 --> 08:52.940
+E aqui estamos dizendo que se começar não é para menos do que e, em seguida, parar, o que é
+
+08:52.940 --> 08:57.560
+essencialmente o que estamos dizendo aqui é um começo não é menos um fim, vamos sair do loop.
+
+08:57.590 --> 09:03.230
+E assim é a mesma condição, porque isso significa que estamos reduzidos a uma partição de 0 elementos
+
+09:03.230 --> 09:06.180
+e isso significa que não encontramos o que estávamos procurando.
+
+09:06.500 --> 09:11.150
+OK, supondo que isso não seja verdade, basicamente, a recursão fará o que esse loop está fazendo.
+
+09:11.180 --> 09:20.840
+Então, vamos começar da mesma maneira no ponto médio, é igual a mais e acima de 2 e eu
+
+09:20.840 --> 09:28.050
+vou imprimir o ponto médio é o ponto médio é igual ao ponto médio.
+
+09:28.790 --> 09:32.350
+E assim, como a recursão está substituindo isso, não temos a menor ideia.
+
+09:32.360 --> 09:35.190
+Nós basicamente temos que fazer o que estamos fazendo aqui.
+
+09:36.190 --> 09:43.690
+Como parte da recursão, porque cada chamada deste método recursivo é praticamente equivalente a uma
+
+09:43.720 --> 09:45.580
+iteração desse loop selvagem.
+
+09:45.700 --> 09:54.780
+E então vamos dizer se o ponto médio de entrada é igual ao valor deles, então estamos certos.
+
+09:54.810 --> 09:57.680
+Então, vamos retornar o ponto médio.
+
+09:58.750 --> 10:10.420
+Se isso não for verdade, então, se o ponto médio de entrada for menor que o valor que vamos retornar uma busca binária
+
+10:10.420 --> 10:11.790
+recursiva, passaremos o
+
+10:15.750 --> 10:17.720
+array de entrada.
+
+10:17.850 --> 10:25.150
+Para adicionar 1 ao ponto médio do ponto inicial mais 1, porque vamos querer olhar para a metade direita,
+
+10:25.150 --> 10:26.840
+o final permanecerá o mesmo.
+
+10:27.160 --> 10:30.680
+E estamos procurando pelo mesmo valor.
+
+10:31.000 --> 10:37.710
+Caso contrário, sabemos que o valor do ponto médio de entrada é maior que o valor que estamos procurando.
+
+10:37.720 --> 10:45.730
+E nós queremos olhar para a parte esquerda da corrida, então diremos que a busca recursiva recursiva é binária.
+
+10:45.730 --> 10:49.770
+Nós vamos passar a entrada desta vez nossa loja permanecerá a mesma.
+
+10:49.780 --> 10:53.520
+Nosso fim será o ponto médio e o valor e é isso.
+
+10:53.530 --> 11:00.220
+Agora, se você comparar essas duas coisas, verá que isso aqui é, na verdade, tudo isso aqui,
+
+11:00.220 --> 11:07.900
+mas em vez de apenas ajustar os pontos inicial e final e dar a volta, estamos vendo os pontos
+
+11:07.900 --> 11:10.900
+inicial e final e chamando o método.
+
+11:10.900 --> 11:16.450
+Então, como eu disse, cada chamada do método é basicamente uma iteração desse loop e, muitas vezes, é como funciona
+
+11:16.450 --> 11:17.080
+a recursão.
+
+11:17.200 --> 11:24.760
+Se você escreve o método recursivamente como um Lee interativo, você está basicamente fazendo um loop e
+
+11:24.760 --> 11:27.240
+está mudando para um método recursivo.
+
+11:27.400 --> 11:30.160
+Então, vamos fazer as mesmas pesquisas em todos os comentários.
+
+11:30.160 --> 11:32.380
+Estes eu vou copiar estes primeiro, na verdade.
+
+11:32.430 --> 11:32.980
+Então, eu
+
+11:36.320 --> 11:40.890
+comento a busca iterativa para que não possamos ver tudo duas vezes e
+
+11:40.890 --> 11:42.630
+eu apenas mudei estes dois
+
+11:45.390 --> 11:46.410
+recursivos recursivos e
+
+11:58.970 --> 12:00.000
+vamos rodar OK
+
+12:04.250 --> 12:08.200
+e vamos ver isso para o primeiro para menos de 15.
+
+12:08.200 --> 12:12.200
+Nós achamos que em um encontramos 35 posição 5.
+
+12:12.200 --> 12:21.800
+Nós não encontramos 1888 e encontramos um na posição 2 e você verá que temos os mesmos pontos
+
+12:21.800 --> 12:28.060
+médios que tivemos quando chamamos a versão iterativa e é isso.
+
+12:28.080 --> 12:30.970
+Essa pesquisa binária não é muito complexa.
+
+12:31.020 --> 12:36.720
+Nesse caso, acho que a versão iterativa iterativa é realmente clara, então eu usaria
+
+12:36.720 --> 12:43.530
+a versão iterativa porque, como discutimos quando analisamos a recursão, a forma recursiva geralmente é mais cara,
+
+12:43.710 --> 12:46.800
+porque há sobrecarga envolvida nas chamadas de método.
+
+12:46.890 --> 12:53.520
+E assim, este não usa nenhuma chamada de método que também no mesmo array de hardware, tudo o
+
+12:53.550 --> 12:58.980
+mais que esperamos que o método iterativo execute um pouco melhor que o método recursivo.
+
+12:59.060 --> 12:59.860
+ESTÁ BEM.
+
+12:59.890 --> 13:07.710
+Portanto, os algoritmos de busca não são tão complexos quanto os algoritmos de ordenação, embora não sejam tão complexos quanto alguns algoritmos
+
+13:07.730 --> 13:08.370
+de ordenação.
+
+13:08.430 --> 13:10.940
+E é isso para algoritmos de busca.
+
+13:10.950 --> 13:12.290
+Eu vou te ver no próximo vídeo.

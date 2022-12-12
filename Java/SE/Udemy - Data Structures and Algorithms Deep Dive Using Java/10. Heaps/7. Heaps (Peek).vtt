@@ -1,0 +1,223 @@
+WEBVTT
+
+00:05.840 --> 00:11.380
+Tudo bem, então temos mais uma mensagem para escrever e isso é um método de observação quando chamamos a matemática de pico.
+
+00:11.390 --> 00:14.570
+Estamos basicamente dizendo que queremos ver o que está na raiz.
+
+00:14.570 --> 00:19.630
+Agora, se quisermos remover o que está na raiz, basta chamar nosso método de exclusão com um índice
+
+00:19.640 --> 00:21.370
+zero, como fizemos no último vídeo.
+
+00:21.530 --> 00:28.340
+E assim, para um método de espiar tudo o que vamos fazer é retornar o heap 0 se o heap não estiver vazio se o heap
+
+00:28.340 --> 00:29.880
+estiver vazio. Vamos lançar uma exceção.
+
+00:29.870 --> 00:33.900
+Então, esse será um método realmente simples, então vamos ao assunto.
+
+00:33.920 --> 00:35.950
+E então vamos salvar o público e o P.
+
+00:35.990 --> 00:40.380
+Nós não precisamos de nenhum parâmetro porque estaremos sempre falando na raiz.
+
+00:40.490 --> 00:44.360
+Então, vamos dizer que o suficiente está vazio, então obviamente não há nada para espiar.
+
+00:44.360 --> 00:52.010
+Então, vamos dizer lançar uma nova exceção de índice fora dos limites e vamos apenas dizer que o heap está vazio.
+
+00:52.340 --> 00:56.640
+E se esse não é o caso, nós só queremos voltar a manter o zero.
+
+00:56.660 --> 01:00.870
+Queremos retornar o que está na raiz e a raiz sempre na posição zero.
+
+01:01.130 --> 01:01.910
+E é isso.
+
+01:01.910 --> 01:03.310
+Esse é o método de pico.
+
+01:03.320 --> 01:05.390
+Então nós não mudamos o calor de forma alguma.
+
+01:05.420 --> 01:08.060
+Acabamos de devolver o que quer que esteja na raiz.
+
+01:08.060 --> 01:15.170
+Então, eu vou comentar ou excluir a impressora aqui e depois vamos imprimir.
+
+01:15.230 --> 01:24.110
+Vamos definir as regras para que o sistema que sai da linha de impressão mantenha o pico do ponto e esperamos ver 80 para rodar e nós fazemos
+
+01:27.900 --> 01:29.970
+o C. UMA. T. Agora, se
+
+01:30.210 --> 01:38.790
+nós apagássemos a rota e realmente comentássemos a linha de impressão novamente e eu apenas copiaria isto, o valor máximo
+
+01:38.790 --> 01:47.130
+no calor se torna 75 e como sabemos que um calor IMAX o valor máximo está sempre na raiz.
+
+01:47.130 --> 01:47.720
+E assim,
+
+01:47.730 --> 01:54.810
+devemos pegar 75 e vimos no último vídeo que a nossa exclusão estava funcionando em 75 foi realmente transferida para o telhado.
+
+01:54.810 --> 01:55.370
+Então corre.
+
+01:55.410 --> 01:57.610
+E agora temos 75.
+
+01:58.020 --> 01:59.670
+Então este é o nosso monte de impressão aqui mesmo.
+
+01:59.670 --> 02:02.490
+Este é o pico antes de fazermos a exclusão e depois da exclusão. Temos 75 e isso é o pico.
+
+02:02.610 --> 02:08.670
+Nada terrem quebra lá.
+
+02:08.670 --> 02:10.720
+E isso é praticamente a nossa implementação simples de um heap.
+
+02:10.890 --> 02:14.580
+Então, vamos falar sobre a complexidade do tempo para as operações usuais, então,
+
+02:14.580 --> 02:21.450
+quando inserimos um item, ele usa um log e um tempo constantes para adicionar o item, se voltarmos ao nosso código de inserção.
+
+02:21.510 --> 02:27.720
+Este é o tempo constante.
+
+02:27.720 --> 02:29.610
+É uma operação de tempo constante que não depende de quantos valores você tem no heap.
+
+02:29.610 --> 02:35.500
+Mas então temos que potencialmente consertar o heap e fazer isso no pior
+
+02:35.520 --> 02:42.360
+dos casos, podemos ter que trocar o novo item todo o caminho até a raiz.
+
+02:42.360 --> 02:44.680
+E isso seria log e swaps e assim a complexidade de tempo para inserção é 0 0 de log in.
+
+02:44.760 --> 02:51.120
+Agora, para excluir a primeira coisa que precisamos fazer é encontrar o item que queremos remover.
+
+02:51.210 --> 02:56.550
+Eu não mostrei isso, mas expliquei que, se vamos permitir
+
+02:56.550 --> 03:03.210
+a exclusão de algum objeto aleatório do heap, temos que encontrá-lo primeiro.
+
+03:03.210 --> 03:05.330
+E isso vai ser no pior dos
+
+03:05.640 --> 03:09.750
+casos, vai ser linear, porque vamos usar uma pesquisa linear para fazer isso.
+
+03:09.750 --> 03:10.830
+E isso é tudo de N. E depois de encontrarmos o item que queríamos excluir.
+
+03:10.860 --> 03:12.450
+Mais uma vez, vamos ter que consertar o monte e, mais uma vez,
+
+03:12.540 --> 03:15.510
+o pior caso é que temos que pegar o valor de substituição, desde a raiz até o fundo da árvore ou o oposto.
+
+03:15.510 --> 03:21.270
+Temos que pegar o valor de reposição do
+
+03:21.270 --> 03:27.490
+fundo da árvore e ir até a raiz.
+
+03:27.540 --> 03:31.410
+E assim, mais uma vez, o pior caso que estamos será todo log n se você quiser excluir algum valor aleatório e você
+
+03:31.410 --> 03:31.680
+não tem
+
+03:31.680 --> 03:37.680
+o índice a complexidade do tempo é o de N vezes log n porque o fim é de ter que faça uma pesquisa linear e o final do log é de ter que corrigir o heap.
+
+03:37.680 --> 03:46.140
+No entanto, como eu já disse várias vezes agora, quando você está trabalhando com o
+
+03:46.140 --> 03:50.700
+calor, você geralmente só está interessado na raiz.
+
+03:50.700 --> 03:55.590
+Você só vai remover a raiz.
+
+03:55.590 --> 03:57.030
+Você não vai remover mais nada e remover a raiz, você pode fazer
+
+03:57.210 --> 03:58.950
+isso em 0 de log e hora, porque você não precisa fazer a pesquisa linear.
+
+03:58.950 --> 04:04.020
+Então, encontrar a rota é uma operação de tempo constante, é sempre no índice 0 e, em seguida, para
+
+04:04.050 --> 04:06.200
+corrigir o hape será tudo de lei novamente.
+
+04:06.240 --> 04:12.390
+Então, essencialmente, vai demorar muito mais tempo, em média, para remover qualquer item aleatório antigo do que para remover a raiz, porque
+
+04:12.390 --> 04:14.290
+a raiz você sabe exatamente onde está.
+
+04:14.460 --> 04:20.760
+Qualquer item antigo que você precisa fazer uma pesquisa linear primeiro e que vai
+
+04:20.760 --> 04:23.820
+custar-lhe e passos no pior dos casos.
+
+04:23.850 --> 04:29.640
+Então, quando usamos heaps, normalmente só queremos trabalhar com a raiz porque geralmente estamos usando um heap porque estamos sempre interessados ​​no valor mínimo ou máximo
+
+04:29.640 --> 04:30.420
+no conjunto de dados.
+
+04:30.420 --> 04:36.150
+Se você estiver interessado em fazer operações de acesso aleatório e estiver fazendo
+
+04:36.180 --> 04:40.900
+muitas delas, ele não será sua estrutura de dados preferida.
+
+04:40.920 --> 04:47.580
+E só para dirigir esta casa um pouco, claro, quando você está trabalhando com um monte, é possível encontrar o valor mínimo
+
+04:47.610 --> 04:50.830
+e máximo em tempo constante, porque é sempre na raiz.
+
+04:50.850 --> 04:54.900
+Isso é diferente de quando você está trabalhando com uma árvore de busca binária, porque em uma árvore de busca binária você
+
+04:54.900 --> 04:58.760
+pode ter que percorrer todo o caminho para baixo a esquerda ou direita para encontrar o valor mínimo ou máximo.
+
+04:58.800 --> 05:03.030
+Tudo bem, então é isso para a nossa implementação de um heap no próximo vídeo,
+
+05:03.240 --> 05:07.970
+vamos dar uma olhada em um uso específico de um heap chamado de fila de prioridade.
+
+05:08.040 --> 05:13.230
+Eu te vejo lá.
+
+05:13.320 --> 05:17.640
+&nbsp;
+
+05:17.670 --> 05:18.580
+&nbsp;

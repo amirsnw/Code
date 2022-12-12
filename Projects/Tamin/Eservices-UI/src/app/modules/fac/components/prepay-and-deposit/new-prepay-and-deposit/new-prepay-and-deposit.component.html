@@ -1,0 +1,71 @@
+<div class="panel col-6 col-s-6">
+  <div class="panel-title"> ثبت مشخصات حساب عملکرد پیمانکاری </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate (ngSubmit)="onSave(editForm.value)">
+      <div class="form-control-container">
+        <div class="panel col-12 col-s-12">
+          <div class="row">
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="endDate">منتهی به تاریخ</tamin-field-label>
+              <tamin-field-static-persian-date formControlName="endDate" placeholder=""></tamin-field-static-persian-date>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="prepaidTaxes">پیش پرداخت مالیات</tamin-field-label>
+              <tamin-field-validator  formControlName="prepaidTaxes" ></tamin-field-validator>
+              <tamin-field-number formControlName="prepaidTaxes"></tamin-field-number>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="prepaidInsurance">پیش پرداخت بیمه</tamin-field-label>
+              <tamin-field-validator  formControlName="prepaidInsurance" ></tamin-field-validator>
+              <tamin-field-text formControlName="prepaidInsurance"></tamin-field-text>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="prepaymentBuyingGoods">پیش پرداخت خرید کالا</tamin-field-label>
+              <tamin-field-validator  formControlName="prepaymentBuyingGoods" ></tamin-field-validator>
+              <tamin-field-number formControlName="prepaymentBuyingGoods"></tamin-field-number>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="prepaidServices">پیش پرداخت خدمات</tamin-field-label>
+              <tamin-field-validator  formControlName="prepaidServices" ></tamin-field-validator>
+              <tamin-field-text formControlName="prepaidServices"></tamin-field-text>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="prepaidContracts">پیش پرداخت قراردادها</tamin-field-label>
+              <tamin-field-validator  formControlName="prepaidContracts" ></tamin-field-validator>
+              <tamin-field-number formControlName="prepaidContracts"></tamin-field-number>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="depositsGoodPerformance">سپرده حسن انجام کار</tamin-field-label>
+              <tamin-field-validator  formControlName="depositsGoodPerformance" ></tamin-field-validator>
+              <tamin-field-number formControlName="depositsGoodPerformance"></tamin-field-number>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="insuranceDeposit">سپرده بیمه 5%</tamin-field-label>
+              <tamin-field-validator  formControlName="insuranceDeposit" ></tamin-field-validator>
+              <tamin-field-number formControlName="insuranceDeposit"></tamin-field-number>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="leaseDeposit">سپرده اجاره</tamin-field-label>
+              <tamin-field-validator  formControlName="leaseDeposit" ></tamin-field-validator>
+              <tamin-field-number formControlName="leaseDeposit"></tamin-field-number>
+            </div>
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="otherDeposits">سایر سپرده ها</tamin-field-label>
+              <tamin-field-validator  formControlName="otherDeposits" ></tamin-field-validator>
+              <tamin-field-number formControlName="otherDeposits"></tamin-field-number>
+            </div>
+          </div>
+          <div class="row">
+
+            <p>کاربر گرامی تمامی فیلدها باید مقدار داشته باشد چنانچه مقدار آن خالی است با  0 پر گردد .</p>
+            <p>کاربر گرامي، مبالغ به ریال میباشد. </p>
+          </div>
+        </div>
+        <div class="col-12 col-s-12">
+          <button #submitButton type="submit" class="button normal">ذحیره </button>
+          <button type="button" class="button normal orange" (click)="back()">انصراف</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

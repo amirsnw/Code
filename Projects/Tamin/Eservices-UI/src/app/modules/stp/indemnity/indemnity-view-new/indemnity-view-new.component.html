@@ -1,0 +1,61 @@
+<div class="alert alert-info">
+  درخواست غرامت دستمزد ایام بیماری
+</div>
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <app-stp-header-new #header requestTyp="غرامت دستمزد ایام بیماری"></app-stp-header-new>
+  <div class="panel" #panelData>
+    <div class="panel-title">مشخصات استراحت</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-6">
+          <tamin-field-label formControlName="branchName">آخرین شعبه بیمه پردازی</tamin-field-label>
+          <tamin-field-static-text formControlName="branchName"></tamin-field-static-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="bimSdateTimeStamp">تاریخ شروع استراحت</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="bimSdateTimeStamp"></tamin-field-static-persian-date>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bimEdateTimeStamp">تاریخ خاتمه استراحت</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="bimEdateTimeStamp" ></tamin-field-static-persian-date>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="bimDrname">پزشک معالج</tamin-field-label>
+          <tamin-field-static-text formControlName="bimDrname"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bimDrid">کد نظام پزشکی</tamin-field-label>
+          <tamin-field-static-text formControlName="bimDrid"></tamin-field-static-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <tamin-field-label formControlName="resultMessage">نتیجه ثبت درخواست</tamin-field-label>
+          <tamin-field-validator formControlName="resultMessage"></tamin-field-validator>
+          <tamin-field-static-multiline-text formControlName="resultMessage"></tamin-field-static-multiline-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="panel">
+  <div class="panel-title">نتیجه اقدامات انجام شده</div>
+  <div class="panel-body">
+    <app-request-result-new></app-request-result-new>
+  </div>
+</div>
+
+
+<div class="panel" #panelThree>
+  <div class="panel-title">تصاویر تجویز پزشک معالج</div>
+  <div class="panel-body">
+    <tamin-image-gallery-managed #imageGallery></tamin-image-gallery-managed>
+  </div>
+</div>
+
+

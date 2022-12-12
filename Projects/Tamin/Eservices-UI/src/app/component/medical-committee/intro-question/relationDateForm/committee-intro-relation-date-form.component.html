@@ -1,0 +1,19 @@
+<div class="panel" style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+  <div class="col-12">
+    <div class="part-title">
+      لطفا تاریخ بیمه پردازی پیشین خود را انتخاب کنید
+    </div>
+  </div>
+  <div class="col-12">
+    <form [formGroup]="dateForm" autocomplete="off" novalidate>
+      <div class="col-3">
+        <tamin-field-label formControlName="insuranceDate">تاریخ بیمه پردازی</tamin-field-label>
+        <tamin-field-persian-date formControlName="insuranceDate"></tamin-field-persian-date>
+      </div>
+      <div class="col-12">
+        <button (click)="continuePastDemandAction()" class="button normal">ادامه فرایند</button>
+        <button (click)="cancelPastDemand()" class="button normal gold">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>

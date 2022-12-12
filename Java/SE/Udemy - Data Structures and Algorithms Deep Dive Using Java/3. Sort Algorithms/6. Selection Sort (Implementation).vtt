@@ -1,0 +1,187 @@
+WEBVTT
+
+00:05.300 --> 00:05.770
+Tudo bem.
+
+00:05.780 --> 00:07.460
+Então, vamos implementar o tipo de seleção.
+
+00:07.460 --> 00:13.330
+Agora, como eu disse, quando implementei bubble sort eu não vou mais criar os projetos na tela,
+
+00:13.370 --> 00:15.020
+então criei um novo projeto.
+
+00:15.080 --> 00:19.410
+Eu estou colocando o código na academia de pacotes não aprendo programação, mas tipo de seleção.
+
+00:19.450 --> 00:21.430
+Eu adicionei nossa matriz.
+
+00:21.440 --> 00:26.870
+Eu adicionei o código para imprimir a matriz e adicionei o método de troca que eu escrevi nos vídeos de classificação
+
+00:26.870 --> 00:32.270
+de bolhas, então se você não assistiu aquele vídeo ou precisa de uma revisão do que este método está fazendo, você
+
+00:32.270 --> 00:33.570
+pode voltar e assista esse vídeo.
+
+00:33.620 --> 00:36.230
+Então vamos começar a classificar.
+
+00:36.230 --> 00:45.880
+Então, vamos dizer para o último índice não classificado igual e mais uma vez este será o Interrail Lentz
+
+00:46.010 --> 00:52.880
+menos um, porque no início da implementação toda a matriz não está classificada.
+
+00:52.880 --> 01:00.050
+Está na partição não classificada e, portanto, o último índice não ordenado será o último índice
+
+01:00.050 --> 01:09.470
+válido na matriz que possui 6 Slint menos 1 e queremos continuar enquanto o último índice não classificado for maior que
+
+01:09.470 --> 01:09.950
+zero.
+
+01:09.950 --> 01:12.810
+Uma vez que atinge 0 Isso significa que toda a matriz é classificada.
+
+01:12.890 --> 01:16.060
+E vamos prejudicar isso em cada iteração.
+
+01:16.070 --> 01:19.050
+Então isso está começando exatamente da mesma maneira.
+
+01:19.100 --> 01:20.930
+Tipo de bolha começou.
+
+01:20.930 --> 01:28.940
+Então, vamos inicializar nosso maior índice para zero, então agora estamos dizendo que na partição não classificada o
+
+01:28.940 --> 01:33.980
+maior elemento está na posição zero porque ainda não vimos nada.
+
+01:33.980 --> 01:40.670
+E então vamos economizar para ele por igual a 1 é menor ou igual ao último.
+
+01:40.670 --> 01:51.470
+Índice não selecionado mais plus e o que queremos fazer é que queremos atravessar a partição não classificada e procurar os maiores
+
+01:51.470 --> 01:54.460
+elementos, então vamos começar em 1.
+
+01:54.470 --> 02:00.500
+Porque nós inicializamos o maior para zero, então queremos dizer que o elemento na posição 1 é maior do
+
+02:00.500 --> 02:05.450
+que o maior elemento que conhecemos até agora, porque se é e precisamos atualizar o maior
+
+02:05.450 --> 02:09.670
+e vamos fazer isso até que Acertar o final da partição não classificada.
+
+02:09.710 --> 02:15.920
+Agora, ao contrário do bubble sort, nós precisamos verificar se o elemento na última posição em bubble
+
+02:15.980 --> 02:23.000
+sort nós não precisávamos dos equals porque estávamos comparando com plus 1 e então o último índice que queríamos
+
+02:23.000 --> 02:24.530
+verificar era o último.
+
+02:24.530 --> 02:29.060
+Índice não selecionado menos 1 em relação ao último índice não classificado.
+
+02:29.060 --> 02:34.010
+Mas aqui onde podemos comparar cada elemento com o que é maior? Então, precisamos comparar
+
+02:34.010 --> 02:35.520
+este último elemento também.
+
+02:35.540 --> 02:39.640
+Então é isso que os iguais estão fazendo aqui e é isso que queremos fazer.
+
+02:39.640 --> 02:49.190
+Queremos dizer se o intervalo é maior do que o Interrail maior porque esse é o maior elemento que conhecemos até
+
+02:49.190 --> 02:53.390
+agora, então queremos aumentar o maior para o AI.
+
+02:53.480 --> 02:58.880
+Então, vamos comparar 35 contra 20 nesta primeira iteração.
+
+02:58.880 --> 03:04.810
+35 é maior que 20 e então o maior será atualizado para 1 e então na próxima iteração
+
+03:04.820 --> 03:09.710
+vamos comparar com 35 porque esse é o maior elemento que encontramos até agora.
+
+03:09.710 --> 03:15.710
+Então, quando abandonarmos esse loop, o que queremos fazer quando queremos trocar o maior
+
+03:15.710 --> 03:20.570
+elemento que encontramos com o último elemento na partição não classificada.
+
+03:20.570 --> 03:29.500
+Então, com o elemento sentado no último índice não classificado e, portanto, podemos usar o nosso prático método SWAT para fazer isso, então
+
+03:29.510 --> 03:30.370
+vamos passar.
+
+03:30.380 --> 03:33.180
+Interessante e vamos passar.
+
+03:33.350 --> 03:40.030
+Índice maior e último e classificado e é isso.
+
+03:40.040 --> 03:42.560
+Nós implementamos o tipo de seleção.
+
+03:42.560 --> 03:47.990
+Então, se mais uma vez, se você está tendo problemas para entender este comentário, o último vídeo em que vamos
+
+03:47.990 --> 03:49.510
+passar por isso com o slide.
+
+03:49.520 --> 03:56.210
+Então, o loop externo é aquele que aumenta a partição ordenada por um, crescendo da direita para a
+
+03:56.210 --> 04:02.090
+esquerda e o loop interno é o que procura o maior elemento e, depois, analisamos
+
+04:02.090 --> 04:07.280
+todos os elementos e sabemos qual deles é o maior Nesse ponto, vamos trocar
+
+04:07.280 --> 04:11.190
+o maior elemento pelo último elemento da partição não classificada.
+
+04:11.210 --> 04:17.510
+E quando olhamos para trás, é claro, nesse ponto nós aumentamos a partição ordenada em um e então subtraímos
+
+04:17.510 --> 04:23.270
+um do último e um tipo de índice, então vamos rodar isso, vamos ver se isso realmente funciona.
+
+04:26.530 --> 04:37.150
+E aqui está nossa matriz ordenada menos 20 a menos 15 1 7 2035 e 55 e eu vou fechar isso.
+
+04:37.150 --> 04:39.780
+Agora, como eu disse, este é um algoritmo quadrático.
+
+04:39.790 --> 04:42.490
+0 para a praça para mais uma vez, temos dois loops.
+
+04:42.510 --> 04:48.940
+E eu disse que isso é uma dica porque geralmente cada loop pode ser considerado N e então temos um tempo
+
+04:49.180 --> 04:51.750
+e isso nos dá 0 ao final ao quadrado.
+
+04:51.760 --> 04:55.230
+Então, isso é uma espécie de seleção em cada travessia.
+
+04:55.230 --> 05:00.580
+Adorei o array que seleciona o maior valor e o adiciona na partição ordenada.
+
+05:00.580 --> 05:02.140
+Eu vou te ver no próximo vídeo.

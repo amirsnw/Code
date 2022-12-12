@@ -1,0 +1,25 @@
+<div class="panel">
+  <div class="panel-title">انتخاب دریافت مننده دفترچه</div>
+  <div class="panel-body">
+    <form [formGroup]="theForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="bookletReciever">دریافت کننده دفترچه بیمه</tamin-field-label>
+          <tamin-field-validator formControlName="bookletReciever"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="bookletReciever" placeHolder="انتخاب کنید ..."
+                                        [dataItems]="insuredAndSubdominants"
+                                        displayField="name"
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="nationalCode">کد ملی</tamin-field-label>
+          <tamin-field-validator formControlName="nationalCode"></tamin-field-validator>
+          <tamin-field-static-text formControlName="nationalCode"></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+    <div class="button-container">
+      <button style="float: right; margin-bottom: 5px" class="button button-default normal"(click)="onNextStep()">مرحله بعد: انتخاب عکس دریافت کننده</button>
+    </div>
+  </div>
+</div>

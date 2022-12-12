@@ -1,0 +1,706 @@
+WEBVTT
+
+00:05.310 --> 00:05.750
+Tudo bem.
+
+00:05.760 --> 00:09.420
+Então, vamos implementar uma classe de pilha simples.
+
+00:09.490 --> 00:16.650
+Eu criei um projeto de código é uma academia para aprender programação tem pilhas e eu adicionei
+
+00:16.650 --> 00:23.420
+a classe Employee usual para o projeto, digamos, copiar e colar trabalhos, então nada de novo aqui.
+
+00:23.640 --> 00:28.330
+Então, vamos começar implementando a pilha usando uma matriz.
+
+00:28.410 --> 00:32.380
+Portanto, nossa implementação de pilha será apoiada por um array.
+
+00:32.400 --> 00:35.790
+Matrizes são ótimos para acesso aleatório, como aprendemos.
+
+00:35.790 --> 00:37.980
+Precisamos de acesso aleatório para a pilha.
+
+00:37.980 --> 00:42.680
+Bem, não, nós não, porque só vamos estar trabalhando com o primeiro item na pilha.
+
+00:42.690 --> 00:47.420
+Nós nunca vamos dizer nos dar o item 10 na pilha que não faz sentido.
+
+00:47.520 --> 00:55.440
+As pilhas dizem que você só pode trabalhar com o item de topo porque está em Last In First Out.
+
+00:55.440 --> 00:59.250
+A outra coisa sobre arrays é claro que eles são de tamanho fixo.
+
+00:59.250 --> 01:00.370
+Eles não são dinâmicos.
+
+01:00.390 --> 01:07.440
+E assim, usando uma matriz para fazer backup de uma pilha, teremos que fornecer um tamanho inicial para a matriz.
+
+01:07.530 --> 01:13.830
+E se tentarmos empurrar alguma coisa para a pilha quando a matriz estiver cheia, obviamente isso
+
+01:13.830 --> 01:14.620
+não funcionará.
+
+01:14.670 --> 01:18.560
+Agora, pelas mesmas razões, usar uma lista não seria ótimo.
+
+01:18.570 --> 01:24.610
+E quando digo lista quero dizer a lista de matriz ou a classe de vetor porque lá como sabemos, apoiado por uma matriz
+
+01:24.610 --> 01:27.320
+para que eles tenham os mesmos problemas que as matrizes fazem.
+
+01:27.330 --> 01:34.440
+A estrutura de dados ideal para fazer backup de uma pilha é uma lista vinculada e voltaremos a isso mais tarde, apesar dos
+
+01:34.440 --> 01:36.390
+problemas de uso de uma matriz.
+
+01:36.390 --> 01:41.170
+Eles são comumente usados ​​para fazer back-ups de implementações, então vamos começar com isso.
+
+01:41.190 --> 01:42.890
+Então você pode ver como é feito.
+
+01:42.990 --> 01:47.100
+OK, então vamos começar nossa implementação de uma pilha.
+
+01:47.250 --> 01:53.280
+Então, vou adicionar uma classe chamada pilha de array para deixar claro que essa implementação é apoiada
+
+01:53.280 --> 01:54.290
+por um array.
+
+01:54.750 --> 02:00.570
+Então eu direi a nova pilha de classes de classe Java.
+
+02:00.990 --> 02:05.930
+Vamos precisar de um campo para o array que será usado para fazer o backup da pilha.
+
+02:05.970 --> 02:12.810
+E também precisamos rastrear o índice da posição superior na pilha e você verá por que
+
+02:12.810 --> 02:13.490
+precisamos disso.
+
+02:13.500 --> 02:16.190
+Quando implementamos os métodos push e pop.
+
+02:16.260 --> 02:19.530
+Então, vamos dizer funcionário privado.
+
+02:20.390 --> 02:25.930
+E nós queremos uma pilha de matriz e top privado de Gantt.
+
+02:26.030 --> 02:30.750
+E assim temos nossa matriz de apoio e temos um campo que vai rastrear onde está o topo
+
+02:30.750 --> 02:31.320
+da pilha.
+
+02:31.320 --> 02:36.510
+Então, precisamos adicionar um construtor, porque vamos deixar o chamador nos dizer o tamanho que eles querem que
+
+02:36.570 --> 02:37.470
+a pilha seja.
+
+02:37.470 --> 02:44.860
+Então, em outras palavras, a capacidade da pilha, então vamos dizer pilha pública de array e vamos
+
+02:45.150 --> 02:54.510
+aceitar uma capacidade de entrada e, em seguida, dentro do construtor vamos criar nossa matriz sem pêlos pilha igual a novo
+
+02:55.290 --> 02:58.240
+funcionário e terá um comprimento de capacidade.
+
+02:58.500 --> 03:04.680
+Portanto, lembre-se de que a capacidade será o número máximo de itens que podemos armazenar na pilha, porque é
+
+03:04.710 --> 03:08.150
+o número máximo de itens que podemos armazenar na matriz.
+
+03:08.160 --> 03:14.270
+Não vamos inicializar explicitamente a primeira impressão de que ela será inicializada como zero por padrão.
+
+03:14.340 --> 03:17.490
+Então, no topo é zero a pilha está vazia.
+
+03:17.490 --> 03:21.010
+OK, então agora vamos implementar o método push.
+
+03:21.390 --> 03:23.560
+Então, vamos economizar o impulso público.
+
+03:23.580 --> 03:26.910
+Nós não recebemos nada quando empurramos um funcionário.
+
+03:26.910 --> 03:32.730
+Mas é claro que precisamos aceitar a instância do funcionário que vamos empurrar para a pilha.
+
+03:32.850 --> 03:35.770
+E a primeira coisa que precisamos verificar é se a pilha está cheia.
+
+03:35.900 --> 03:48.720
+Então, eu vou dizer se top é igual a Lentz empilhada, então a pilha está cheia, o topo sempre será o índice onde nós
+
+03:48.830 --> 03:50.800
+empurraríamos o próximo elemento.
+
+03:50.820 --> 03:54.240
+E assim como acabei de mencionar, top será inicializado como zero.
+
+03:54.240 --> 03:59.940
+E então o primeiro elemento que nós empurramos será empurrado para a posição 0 e então o topo será incrementado
+
+03:59.940 --> 04:00.570
+para 1.
+
+04:00.570 --> 04:03.220
+E assim o próximo elemento seria empurrado para a posição 1.
+
+04:03.240 --> 04:09.390
+Portanto, se a Lance de pontuação igual for superior, significa que a próxima posição disponível é igual ao comprimento da
+
+04:09.390 --> 04:12.120
+matriz e que, na verdade, está fora dos limites.
+
+04:12.150 --> 04:16.000
+E assim, do topo igual empilhado no lenth, sabemos que o array está cheio.
+
+04:16.050 --> 04:18.500
+Então, o que vamos fazer é redimensionar o array.
+
+04:18.570 --> 04:23.770
+Então, eu vou colocar aqui precisa redimensionar o array de apoio.
+
+04:24.060 --> 04:34.650
+Então, vamos dizer que a nova matriz de funcionários é igual a um novo funcionário e não queremos aumentá-lo apenas com 1 lente porque
+
+04:34.660 --> 04:40.410
+isso significa que, se pressionarmos outro elemento, voltaremos a redimensionar a matriz novamente.
+
+04:40.410 --> 04:40.740
+&nbsp;
+
+04:40.740 --> 04:46.050
+Portanto, uma maneira comum de redimensionar o array é dobrar o mês e é isso que vamos fazer.
+
+04:46.320 --> 04:55.320
+Então, vamos dizer duas vezes lente stockpot e agora vamos ter que copiar todos os elementos que
+
+04:55.410 --> 04:59.340
+existem atualmente na pilha para esta nova matriz.
+
+04:59.340 --> 05:03.560
+Então, digamos que a cópia da matriz System Daut que você deseja copiar da pilha.
+
+05:03.600 --> 05:08.330
+Queremos começar do primeiro elemento que você deseja copiar para o novo array.
+
+05:08.900 --> 05:16.340
+E queremos copiar a partir do primeiro elemento e queremos copiar elementos de comprimento empilhados
+
+05:16.340 --> 05:22.040
+e, finalmente, vamos atribuir a nova matriz ao campo de pilha.
+
+05:22.040 --> 05:25.840
+E assim nosso array de backing foi redimensionado.
+
+05:26.030 --> 05:34.070
+Então, agora que fizemos isso, podemos dizer que o topo da pilha mais mais é igual ao empregado.
+
+05:34.070 --> 05:35.740
+E esse é o método push.
+
+05:35.750 --> 05:41.690
+Então, nós entramos e verificamos se a pilha está cheia se redimensionarmos, dobrando o número de elementos
+
+05:41.690 --> 05:44.960
+que ela pode conter, então dobramos a capacidade essencialmente.
+
+05:44.960 --> 05:51.140
+E então, uma vez que estamos certos de que o topo da estatística não nos dará uma exceção de array
+
+05:51.140 --> 05:56.150
+fora dos limites, nós colocamos o funcionário no topo e depois, é claro, incrementamos o topo.
+
+05:56.150 --> 06:03.170
+Agora, por causa disso, talvez tenhamos que redimensionar a matriz dessa operação, e empurrar a complexidade de tempo é
+
+06:03.170 --> 06:07.280
+o de n. Essa declaração aqui é 0 0 de 1.
+
+06:07.280 --> 06:13.160
+Quero dizer, para fazer esta operação, o número de etapas não depende de quantos itens estão na
+
+06:13.190 --> 06:16.920
+pilha, mas, no pior dos casos, temos que redimensionar uma pilha.
+
+06:17.030 --> 06:23.690
+E porque isso significa que temos que copiar todos os elementos existentes, e colocar o pior caso de push
+
+06:23.780 --> 06:25.130
+é o de n.
+
+06:25.340 --> 06:28.900
+Então, o pior caso para empurrar para uma pilha é o tempo linear.
+
+06:28.900 --> 06:31.550
+Tudo bem, então vamos em frente e implementar pop.
+
+06:31.580 --> 06:37.790
+Então, vamos dizer funcionário público, porque lembre-se quando nós colocamos algo fora da pilha, vamos
+
+06:37.790 --> 06:40.250
+levar o topo do item pop.
+
+06:41.180 --> 06:47.200
+E nós queremos verificar se a pilha está vazia agora, porque se a pilha estiver vazia, não há nada para aparecer.
+
+06:47.450 --> 06:49.670
+Então, vamos adicionar o método vazio.
+
+06:49.680 --> 06:51.430
+Eu farei isso depois do método pop.
+
+06:51.440 --> 06:54.980
+Então, eu direi que o booleano público está vazio
+
+06:58.190 --> 07:05.390
+e a pilha está vazia se top for igual a zero, porque lembre-se de que top sempre mantém a
+
+07:05.540 --> 07:07.350
+próxima posição disponível na pilha.
+
+07:07.350 --> 07:10.450
+E então vamos retornar top igual a zero.
+
+07:10.700 --> 07:13.750
+E assim, quando top é igual a zero, nossa pilha está vazia.
+
+07:13.760 --> 07:19.070
+Então, se queremos tirar algo da pilha, primeiro verificamos se a pilha está vazia.
+
+07:19.070 --> 07:22.530
+Então, vamos dizer se está vazio.
+
+07:22.790 --> 07:25.360
+Agora, se é que podemos voltar ao normal.
+
+07:25.370 --> 07:28.070
+Mas, em vez disso, vamos lançar uma exceção.
+
+07:28.070 --> 07:34.440
+Nós vamos dizer lançar novos e como você pode ver, há uma exceção de pilha vazia no trabalho ADOT
+
+07:34.460 --> 07:37.020
+até a aula, então vamos usar isso.
+
+07:37.790 --> 07:41.240
+E isso diria ao chamador e o chamador teria que lidar com isso.
+
+07:41.270 --> 07:44.080
+Você está tentando tirar algo de uma pilha vazia.
+
+07:44.240 --> 07:53.420
+Se a pilha não estiver vazia, vamos dizer que funcionário empregado é igual a pilha e o que vamos fazer é
+
+07:53.420 --> 07:57.410
+usar um operador de prefixo para reduzir o topo.
+
+07:57.680 --> 08:04.850
+E então lembre-se top all é sempre contém o índice da próxima posição disponível na matriz.
+
+08:04.940 --> 08:11.810
+E então não há nada no topo, não há nada armazenado no topo, o item na pilha é realmente
+
+08:11.840 --> 08:13.580
+armazenado no topo menos 1.
+
+08:13.570 --> 08:20.630
+E então o que nós queremos fazer é diminuir o topo e usar o resultado como o índice na pilha.
+
+08:20.720 --> 08:22.860
+Então, digamos que o top seja cinco.
+
+08:22.940 --> 08:27.220
+Isso significa que o funcionário no topo da pilha está na posição quatro.
+
+08:27.230 --> 08:33.170
+Então, nós queremos entrar aqui e vamos mudar de cima para quatro e, em seguida, vamos tomar a posição do
+
+08:33.200 --> 08:38.690
+empregado para o mesmo ponto que o funcionário no topo da pilha em um sinal para empregado e top
+
+08:38.690 --> 08:40.950
+é agora 4 e é isso que queremos.
+
+08:40.970 --> 08:47.930
+Porque porque nós estouramos a posição do empregado quatro posições quatro é agora a próxima posição
+
+08:47.930 --> 08:49.300
+disponível na pilha.
+
+08:49.310 --> 08:57.890
+Então, o que vamos fazer é definir essa posição para saber porque colocamos o funcionário no
+
+08:58.250 --> 08:59.960
+topo da posição.
+
+08:59.990 --> 09:03.420
+E agora queremos saber tudo isso.
+
+09:03.470 --> 09:08.900
+E finalmente retornamos o empregado e esse é o nosso método pop.
+
+09:09.170 --> 09:15.380
+Agora poderíamos nos preocupar com o redimensionamento do array neste método, digamos que começamos com uma capacidade
+
+09:15.380 --> 09:22.820
+de 10 e depois redimensionamos o array para 20, vamos um push nos fez redimensionar o array para 20 e então
+
+09:22.820 --> 09:28.960
+vamos dizer que eventualmente redimensionamos o array para 40 e então nós colocamos 30 itens da pilha.
+
+09:29.150 --> 09:33.080
+Bem, agora a nossa matriz de tamanho 40 tem apenas 10 itens.
+
+09:33.080 --> 09:34.970
+Então, há muito espaço desperdiçado.
+
+09:35.000 --> 09:40.670
+Então, se quiséssemos ser realmente diligentes, poderíamos fazer uma verificação aqui e, se vemos que há muito espaço
+
+09:40.670 --> 09:46.040
+vazio na forma como fazemos a verificação, é comparar o valor superior com o comprimento da matriz.
+
+09:46.100 --> 09:51.680
+E se vemos que há uma tonelada de espaço vazio, poderíamos considerar o redimensionamento da matriz, mas não
+
+09:51.680 --> 09:52.240
+precisamos fazê-lo.
+
+09:52.250 --> 10:00.080
+Portanto, se não nos preocuparmos com o redimensionamento do array, a operação do PAUP sempre será feita em tempo constante,
+
+10:00.200 --> 10:06.590
+porque não depende do número de itens que você está aqui, dependendo do número de itens
+
+10:06.590 --> 10:07.440
+na pilha.
+
+10:07.460 --> 10:13.100
+Mas se quisermos ser diligentes e queremos nos preocupar em redimensionar o array se houver muito
+
+10:13.100 --> 10:18.920
+espaço vazio, então a operação pop se tornará uma operação linear que terá uma complexidade de tempo
+
+10:19.120 --> 10:19.790
+de evento.
+
+10:19.820 --> 10:27.560
+Agora, redimensionar o array no método pop vem com o risco, porque se nós, então, empurrarmos mais itens,
+
+10:27.560 --> 10:32.070
+poderemos acabar tendo que redimensionar o array novamente, tornando-o maior.
+
+10:32.090 --> 10:37.910
+E por causa disso, você verá implementações de pilha que se preocupam com o redimensionamento do array no método
+
+10:37.910 --> 10:40.620
+pot e você verá implementações que não o fazem.
+
+10:40.640 --> 10:47.270
+Agora, se você espera empurrar uma tonelada de itens para a pilha e, em seguida, estourar itens ao longo do
+
+10:47.270 --> 10:53.390
+tempo e nunca empurrar itens novamente, o redimensionamento no método do pote pode fazer sentido se a memória for
+
+10:53.390 --> 10:54.060
+um problema.
+
+10:54.080 --> 10:58.310
+Mas se você vai ser você sabe empurrando itens e, em seguida, estourando alguns e, em
+
+10:58.310 --> 11:04.340
+seguida, empurrando mais popping algum extrato se você estiver indo para redimensionar o array em um pop você poderia correr o risco de
+
+11:04.340 --> 11:07.470
+redimensionar o array para baixo e depois ter que redimensione novamente.
+
+11:07.490 --> 11:12.860
+Portanto, se a memória não é um problema, provavelmente é melhor deixar a matriz no tamanho em que
+
+11:12.860 --> 11:14.090
+você está exibindo itens.
+
+11:14.090 --> 11:16.400
+OK, então isso é push e pop.
+
+11:16.400 --> 11:22.370
+Há mais uma operação de pilha de operações com a qual precisamos nos preocupar e isso é o máximo
+
+11:22.370 --> 11:28.250
+e você se lembrará de que, quando espreitamos uma pilha, acessamos o item principal, mas não o colocamos.
+
+11:28.250 --> 11:33.420
+E assim, obtemos o item mais alto na pilha, mas esse item permanece na pilha.
+
+11:33.680 --> 11:38.760
+Então, vamos salvar funcionário público p.
+
+11:38.880 --> 11:40.850
+Nós não temos que passar nada.
+
+11:41.570 --> 11:46.220
+E vamos fazer a mesma coisa com a exceção se essa for a pilha vazia se você estiver
+
+11:46.220 --> 11:49.280
+tentando dar uma olhada em uma pilha que ainda não tem nada.
+
+11:49.280 --> 11:56.370
+Vamos lançar uma exceção, se não for o caso, vamos retornar o topo da
+
+11:56.370 --> 11:57.640
+pilha menos um.
+
+11:57.800 --> 12:00.220
+Nós não queremos Decora significava top aqui.
+
+12:00.230 --> 12:04.810
+Não queremos usar esse operador porque isso realmente altera o valor do topo.
+
+12:04.820 --> 12:10.460
+E lembre-se de que não estamos mudando a pilha de forma alguma e, portanto, queremos que o valor ensinado permaneça o mesmo.
+
+12:10.460 --> 12:15.530
+Então, vamos apenas subtrair um e depois retornar o que está lá, porque lembre-se de que
+
+12:15.530 --> 12:22.400
+o topo sempre aponta para a próxima posição disponível na pilha e, portanto, o item principal está localizado na parte superior do
+
+12:22.400 --> 12:23.330
+índice menos um.
+
+12:23.330 --> 12:28.370
+Agora, se queremos um método de tamanho, um método que nos diz quantos itens estão na pilha Bem,
+
+12:28.370 --> 12:34.100
+isso é fácil o suficiente para ser o valor de topo porque quando há um item no topo da pilha
+
+12:34.100 --> 12:39.830
+é igual a um certo porque esse item será localizado na posição zero e então o topo será um porque
+
+12:39.830 --> 12:41.850
+está apontando para a próxima posição disponível.
+
+12:41.870 --> 12:48.090
+Se houver cinco itens no topo da pilha, haverá cinco, porque o primeiro item da pilha estará localizado
+
+12:48.090 --> 12:52.720
+na posição 4 e será cinco, porque essa é a próxima posição disponível.
+
+12:52.730 --> 12:59.260
+E então o método de tamanho é bastante simples em tamanho público.
+
+13:00.050 --> 13:02.010
+E acabamos de voltar ao topo.
+
+13:02.600 --> 13:07.430
+E, finalmente, adicionarei um método para imprimir a pilha, de modo que, quando voltarmos ao nosso método principal
+
+13:07.430 --> 13:10.820
+e começarmos a empurrar e estourar itens, possamos imprimir o material para fora.
+
+13:10.820 --> 13:18.390
+Então, eu vou dizer public void print stacked now ou stack é um array então isso deve ser bastante direto.
+
+13:18.410 --> 13:23.370
+Todos dizem que int i é igual a top menos um.
+
+13:23.450 --> 13:31.010
+Lembre-se que o item do topo está localizado na posição top menos um é maior que igual
+
+13:31.010 --> 13:37.910
+a zero menos menos, digamos que o Sistema sai da pilha de linha de impressão.
+
+13:37.940 --> 13:42.180
+Então, estamos imprimindo nossa pilha de cima para baixo e é isso.
+
+13:42.200 --> 13:45.200
+É isso para nossa implementação simples de pilha.
+
+13:45.200 --> 13:52.580
+Então, vamos passar para o nosso método principal agora e vamos jogar com nossas stacks, então eu vou dizer que o stack de pilha
+
+13:52.610 --> 13:57.930
+de apagamento é igual a pilha de novo e eu vou começar com uma capacidade de 10.
+
+13:57.980 --> 14:01.790
+Nós só vamos empurrar os funcionários para cinco, na verdade.
+
+14:02.060 --> 14:10.700
+E então eu vou dizer empilhar e vamos empurrar a Jane Jones.
+
+14:11.000 --> 14:12.310
+Um dois três.
+
+14:12.320 --> 14:14.290
+Você já viu isso antes.
+
+14:14.450 --> 14:16.000
+Empilhou-se empurrar.
+
+14:16.080 --> 14:19.160
+O novo empregado
+
+14:21.620 --> 14:30.220
+John Doe e quatro cinco seis sete empurraram.
+
+14:30.220 --> 14:41.480
+Nova funcionária Mary Smith 22 empilhados empurrar novo funcionário Mike
+
+14:43.850 --> 14:47.360
+Wilson e 3-4.
+
+14:47.360 --> 14:50.340
+E finalmente vamos dar conta imediatamente.
+
+14:50.390 --> 14:59.030
+Conta e nova conta de empregado e 78 para um ID.
+
+15:00.290 --> 15:01.910
+E então vamos empilhar a impressora.
+
+15:02.000 --> 15:09.950
+Então vamos correr.
+
+15:10.130 --> 15:15.590
+E aqui está nossa pilha e lembre-se de que estamos imprimindo de cima para baixo, então
+
+15:15.590 --> 15:20.540
+vamos ver isso na ordem inversa, então temos Bill Mike Mary Jane e John.
+
+15:20.540 --> 15:28.970
+Então deixe um pico no topo da pilha, então eu direi que o sistema subiu a pilha de crinolina e isso deve nos dar Bill porque Bill está
+
+15:30.910 --> 15:35.630
+no topo da pilha, então eu vou comentar isso, então nós vencemos. Não ver todos eles
+
+15:35.630 --> 15:38.150
+impressos e vamos correr e vemos Bill agora
+
+15:40.940 --> 15:46.520
+Bill ainda está no topo do pico da pilha não remove quaisquer itens para que Bill ainda está sentado
+
+15:46.520 --> 15:51.400
+no topo da pilha e eu acho que poderíamos ver que se eu copiar esta linha
+
+15:51.410 --> 15:52.160
+e nós
+
+15:54.990 --> 15:56.980
+imprimimos o estoque novamente vamos executar novamente.
+
+15:58.560 --> 16:00.920
+E vamos ver estamos vendo duas vezes agora isso.
+
+16:00.960 --> 16:03.010
+Esta impressão está vindo do pico.
+
+16:03.030 --> 16:08.280
+E então esta seção aqui está imprimindo a pilha, então nós a escolhemos.
+
+16:08.280 --> 16:10.260
+Bill Bill ainda está na pilha.
+
+16:10.350 --> 16:12.950
+E então, finalmente, vamos colocar alguns itens.
+
+16:13.050 --> 16:25.180
+Vou comentar que a pilha de impressão e deixar o sistema sair da linha de impressão um bolso mais ponto pop e depois
+
+16:27.300 --> 16:29.250
+vamos chamar espiada novamente.
+
+16:29.250 --> 16:35.850
+Então, devemos ver Bill sendo impresso e, nesse momento, Mike deve estar no topo
+
+16:35.850 --> 16:36.590
+da pilha.
+
+16:36.630 --> 16:38.360
+Então, quando chegarmos ao pico, devemos pegar o Mike.
+
+16:38.370 --> 16:48.980
+Então, vamos correr OK assim que esta conta é daqui quando olhamos para Bill e, em seguida, nós estourou conta do empregado e.
+
+16:49.050 --> 16:55.020
+E então, quando chegamos ao pico de Mike no topo da pilha, porque Bill se foi agora, se voltarmos para a nossa
+
+16:55.020 --> 16:58.710
+classe stat apagar apenas isso para baixo, então eu disse que para empurrar.
+
+16:58.710 --> 17:04.730
+O pior caso é o de N porque podemos ter que redimensionar o array para um pop.
+
+17:04.740 --> 17:12.240
+É 0 de 1 se você não está preocupado em redimensionar o array e é O de e se você está em
+
+17:12.240 --> 17:19.800
+uma espiada é sempre 0 de 1 porque você nunca fará qualquer redimensionamento Então, uma operação de pico com uma pilha que
+
+17:19.800 --> 17:23.030
+é apoiada por uma matriz é sempre hora constante.
+
+17:23.020 --> 17:29.790
+Poucos sabem o número máximo de itens de dados que você terá na frente, em seguida, você será capaz de
+
+17:29.910 --> 17:36.040
+definir a capacidade apropriada para a matriz e você não terá que se preocupar com a matriz sendo redimensionada.
+
+17:36.060 --> 17:41.430
+Isso significa que todas as suas operações de pilha podem ser feitas em tempo constante, o que seria fantástico.
+
+17:41.430 --> 17:46.230
+Agora, é claro, se você não sabe o tamanho do seu conjunto de dados, uma matriz pode
+
+17:46.230 --> 17:51.060
+não ser a melhor implementação. Nesse caso, você pode querer ter uma pilha suportada por uma lista vinculada.
+
+17:51.060 --> 17:56.370
+Portanto, em resumo, se você não espera que o array precise ser redimensionado com frequência, usar uma matriz para
+
+17:56.370 --> 17:58.400
+implementar uma pilha é uma boa escolha.
+
+17:58.440 --> 18:02.310
+Mas se você não sabe quantos itens acabarão sendo colocados na pilha.
+
+18:02.310 --> 18:07.170
+E assim é possível que o array precise ser redimensionado com frequência ou se você tiver que
+
+18:07.170 --> 18:12.540
+se preocupar em redimensionar o array em um pop, digamos que a memória seja realmente restrita por algum motivo,
+
+18:12.540 --> 18:17.940
+então você não quer muito espaço desperdiçado No array de suporte, um array pode não ser uma boa escolha.
+
+18:17.940 --> 18:18.370
+Tudo bem.
+
+18:18.390 --> 18:22.830
+Então, essa é uma implementação de pilha simples usando uma matriz para fazer o backup da pilha.
+
+18:22.830 --> 18:30.990
+Nós vamos seguir em frente no próximo vídeo, vamos olhar para a classe disponível nas pilhas do JDK 4.
+
+18:30.990 --> 18:31.910
+Eu te vejo lá.

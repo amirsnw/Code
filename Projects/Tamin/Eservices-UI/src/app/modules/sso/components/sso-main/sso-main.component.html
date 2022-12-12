@@ -1,0 +1,140 @@
+<div class="sso-main-container">
+  <div class="sso-main-top-container">
+    <div class="sso-main-flag"></div>
+    <div class="sso-main-logo"></div>
+  </div>
+  <div class="row">
+    <div style="padding: 10px">
+      <div style="background-color: darkslateblue; padding: 5px">
+        <h2 style="text-align: center;color:white">
+          به سامانه اختصاصی همکاران سازمانی خوش آمدید
+        </h2>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="group-title"><span>مشاهده درخواست های ثبت شده</span></div>
+      <button style="width: 100%;" class="button normal blue" (click)="redirectTo('sso/request')">مشاهده درخواست های ثبت
+        شده
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/thirty-seventy')">
+        مشاهده سرویس های 3070
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/pilot-requests')">
+        مشاهده سرویس های پایلوت
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/mofasa')">
+        مشاهده سرویس های ماده 38
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/wage-assignment-request/list')">ابطال کسر اقساط
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue " (click)="redirectTo('sso/account')">
+        استعلام حساب بانکی
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/workshop-history')">
+        مشاهده سوابق لیست های ارسالی
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('release-note')">
+        مشاهده تغییرات نسخه ها
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/workshop-history')">
+        مشاهده سوابق لیست های ارسالی
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/crm-full-info')">
+        مشاهده دسته بندی تیکت مشتریان
+      </button>
+    </div>
+    <div class="col-4">
+      <div class="group-title"><span>ارتباط با مشتری</span></div>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('health/search-customers')">
+        مراکز درمانی طرف قرارداد
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('health/search-proprietary')">
+        مراکز ملکی طرف قرارداد
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('/sso/sso-show-requests')">
+        مشاهده درخواست های تعهدات کوتاه مدت
+      </button>
+      <button style="width:100%" type="button" class="button normal blue"
+              (click)="redirectTo('sso-deserved-treatment')">
+        استعلام استحقاق درمان
+      </button>
+      <button style="width:100%" type="button" class="button normal blue"
+              (click)="redirectTo('/sso/sso-history')">
+        استعلام سابقه
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/announcements')">
+        مشاهده ابلاغ الکترونیک کارگاه ها
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/crm-workshops-debit')">
+        مشاهده بدهی کارگاه
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/crm-workshops-payment-sheets')">
+        مشاهده برگ پرداخت های کارگاه
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/crm-insured-payment-sheets')">
+        مشاهده برگ پرداخت های بیمه شده
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/workshop-insurance-procrastination')">
+        ثبت نام کارگاه های مشمول امهال حق بیمه
+      </button>
+      <button style="width:100%" type="button" class="button normal blue"
+              (click)="redirectTo('/sso/sso-inspection')">
+        مشاهده کلیه بازرسی ها
+      </button>
+      <button style="width:100%" type="button" class="button normal blue"
+              (click)="redirectTo('/sso/sso-medical-booklet')">
+        درخواست دفترچه
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/conscription')">
+        محاسبه خرید خدمت سربازی
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/sso-edict')">
+        مشاهده حکم مستمری بگیران
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/sso-pension-account')">
+        مشاهد شماره حساب مستمری بگیران
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/edict-payment')">
+        مشاهده فیش حقوقی مستمری بگیران
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/sso-specific-person')">
+        معرفی اطلاعات اشخاص
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('health/patient-history-report')">
+        گزارش نسخ الکترونیک بیمار
+      </button>
+    </div>
+    <div class="col-4">
+      <div class="group-title"><span>گزارشات</span></div>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/request-statistics')">
+        گزارش آماری درخواست
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue"
+              (click)="redirectTo('sso/announcement-statistics')">
+        گزارش آماری ابلاغ الکترونیک
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/sms')">
+        پیامک های ارسالی
+      </button>
+      <button style="width: 100%;" type="button" class="button normal blue" (click)="redirectTo('sso/statistics')">
+        گزارش آماری سرویس های استعلامی
+      </button>
+
+    </div>
+  </div>
+</div>

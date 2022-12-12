@@ -1,0 +1,73 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>امکان مشاهده اعتراض های مربوط به ابلاغ</span>
+  <br/>
+  <i class="icon-lightbulb"></i>
+  <span>بروی کارگاه مورد نظر کلیک کنید</span>
+</div>
+<div class="panel">
+  <div class="page-title">جستجوی کارگاه</div>
+  <div class="panel-body">
+    <form [formGroup]="workshopSearchForm" autocomplete="off" novalidate (ngSubmit)="onSearchSubmit()">
+      <div class="form-control-container row">
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="workshopId">شماره کارگاه:</tamin-field-label>
+          <tamin-field-validator formControlName="workshopId"></tamin-field-validator>
+          <tamin-field-text formControlName="workshopId" placeholder="شماره کارگاه"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="branchCode">کد شعبه:</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-text formControlName="branchCode" placeholder="کد شعبه"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <p style="margin-top:5px;">
+          <button type="submit" class="button normal">جستجو</button>
+          <button type="button" class="button normal orange" (click)="resetWorkshopForm()">نمایش همه</button>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="page-title">لیست کارگاه ها</div>
+  <div class="panel-body">
+    <tamin-data-grid #workshopsGrid (itemSelect)="clickWorkshopGridItem($event)"></tamin-data-grid>
+  </div>
+</div>
+<div class="panel">
+  <div class="page-title">جستجوی بدهی</div>
+  <div class="panel-body">
+    <form [formGroup]="workshopDebitSearchForm" autocomplete="off" novalidate (ngSubmit)="onDebitSearchSubmit()">
+      <div class="form-control-container row">
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="debitNumber">شماره بدهی:</tamin-field-label>
+          <tamin-field-validator formControlName="debitNumber"></tamin-field-validator>
+          <tamin-field-text formControlName="debitNumber" placeholder="شماره بدهی"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="peymanSequence">ردیف پیمان:</tamin-field-label>
+          <tamin-field-validator formControlName="peymanSequence"></tamin-field-validator>
+          <tamin-field-text formControlName="peymanSequence" placeholder="ردیف پیمان"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <p style="margin-top:5px;">
+          <button type="submit" class="button normal">جستجو</button>
+          <button type="button" class="button normal orange" (click)="resetDebitForm()">نمایش همه</button>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="page-title">لیست بدهی های قابل اعتراض</div>
+  <div class="panel-body">
+    <tamin-data-grid #workshopsDebitGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+  </div>
+</div>
+<tamin-modal #theModal title="مشاهده درخواست">
+  <tamin-document-viewer #documentViewer width="100%"></tamin-document-viewer>
+</tamin-modal>
+

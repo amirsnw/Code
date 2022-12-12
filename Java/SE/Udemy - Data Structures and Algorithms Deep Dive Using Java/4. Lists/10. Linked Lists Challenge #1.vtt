@@ -1,0 +1,49 @@
+WEBVTT
+
+00:05.540 --> 00:13.430
+OK, el primer desafío en esta sección es implementar el método ADD antes del empleado.
+
+00:13.460 --> 00:15.230
+Clase de lista doblemente enlazada.
+
+00:15.230 --> 00:21.440
+Este método tomará dos empleados: el primer empleado será el empleado que desee agregar a la lista
+
+00:21.650 --> 00:27.740
+y el segundo empleado será un empleado existente en la lista y lo que hará el método
+
+00:27.740 --> 00:33.890
+previo al anuncio es insertar el nuevo empleado en la lista. justo antes del empleado existente.
+
+00:33.890 --> 00:43.700
+Entonces, si llama antes y pasa James Bond como el nuevo empleado y John Doe como el empleado existente, entonces este
+
+00:43.730 --> 00:50.870
+método debería hacer es insertar la tasa de James Bond antes que Jondo en la lista.
+
+00:50.870 --> 00:54.850
+Ahora hay un proyecto inicial en la sección de recursos que puede usar.
+
+00:54.860 --> 01:00.670
+Tiene todo el código que necesita para que tenga el código para la lista vinculada.
+
+01:00.670 --> 01:05.840
+Es la misma lista enlazada que implementamos cuando implementamos la lista enlazada.
+
+01:05.840 --> 01:12.090
+Y también tiene un método de agregar antes vacío dentro de la clase de lista doblemente vinculada de los empleados.
+
+01:12.170 --> 01:18.320
+Y si observas el método Main en el archivo principal de Java, verás que hay un código
+
+01:18.320 --> 01:21.680
+allí y ese código debería funcionar cuando hayas terminado.
+
+01:21.680 --> 01:27.740
+Entonces, una vez que haya implementado el método ADD antes, ejecute el método principal y verá que
+
+01:27.740 --> 01:31.790
+soy el nuevo empleado agregado antes del empleado que usted especificó.
+
+01:31.790 --> 01:35.360
+Entonces, buena suerte con este desafío y te veré en el video de la solución.

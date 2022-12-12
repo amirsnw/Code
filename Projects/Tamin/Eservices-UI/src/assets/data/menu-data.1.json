@@ -1,0 +1,1174 @@
+﻿{
+  "status": 500,
+  "family": "",
+  "reason": "",
+  "data": {
+    "caption": "root",
+    "disable": false,
+    "url": "",
+    "url-type": "none",
+    "tags": [],
+    "smallIcon": "",
+    "largeIcon": "",
+    "items": [
+      {
+        "caption": "صفحه نخست",
+        "disable": false,
+        "url": "main",
+        "url-type": "none",
+        "tags": [],
+        "smallIcon": "",
+        "largeIcon": ""
+      },
+      {
+        "caption": "بیمه شدگان",
+        "disable": false,
+        "url": "",
+        "url-type": "none",
+        "tags": [],
+        "smallIcon": "",
+        "largeIcon": "",
+        "items": [
+          {
+            "caption": "خدمات عمومی",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "موقعیت تمامی شعب و کارگزاری ها",
+                "disable": false,
+                "url": "/all-sso-locations",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "موقعیت تمامی مراکز درمانی",
+                "disable": false,
+                "url": "/sso-health-center-location",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "لیست تمامی مراکز",
+                "disable": false,
+                "url": "/search-sso-location",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "خدمات نام نویسی",
+            "disable": true,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "/personal/-1",
+            "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "نام نویسی بیمه شدگان برای اولین بار",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01/01-newUser.png",
+                "backColor": ""
+              },
+              {
+                "caption": "اعلام تغییرات بیمه ای",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01/02-edit.png",
+                "backColor": ""
+              },
+              {
+                "caption": "نمایش و اعلام تغییرات افراد خانواده(افراد تحت پوشش)",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01/03-tahtepooshesh.png",
+                "backColor": ""
+              },
+
+              {
+                "caption": "استعلام اطلاعات هویتی و شماره تامین اجتماعی",
+                "disable": false,
+                "url": "/personal-info",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01/04-info.png",
+                "backColor": ""
+              },
+
+              {
+                "caption": "استعلام ارتباط فعال با سازمان تامین اجتماعی",
+                "disable": false,
+                "url": "/relation-tamin",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01/05-relation.png",
+                "backColor": ""
+              },
+              {
+                "caption": "استعلام شماره حسابهای ثبت شده",
+                "disable": false,
+                "url": "/accountlist",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "اعلام شماره حساب بانکی",
+                "disable": false,
+                "url": "/request-account/-1/update",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مشاهده و ثبت افراد تبعی توسط بیمه شده اصلی ",
+                "disable": false,
+                "url": "/subdominant",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "دریافت عکس از پایگاه ثبت احوال ",
+                "disable": false,
+                "url": "/personal-image",
+                "url-type": "none",
+                "tags": ["registration"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/01-namnevisi.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "خدمات پرونده الکترونیک",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/02-parvande.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "پرونده الکترونیک من",
+                "disable": false,
+                "url": "/erecords",
+                "url-type": "none",
+                "tags": ["favorite"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/02/01-parvandeMan.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "خدمات سابقه",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/03-sabeghe.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "کلیه سوابق",
+                "disable": false,
+                "url": "/history",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/03/01-all.png",
+                "backColor": ""
+              },
+              {
+                "caption": "سوابق و ریز دستمزد بعد از سال 86",
+                "disable": false,
+                "url": "/salary",
+                "url-type": "none",
+                "tags": ["history"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/03/02-riz.png",
+                "backColor": ""
+              },
+              {
+                "caption": "سوابق تلفیقی",
+                "disable": false,
+                "url": "/combined",
+                "url-type": "none",
+                "tags": ["history"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/03/03-talfighi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "سابقه به تفکیک شغل",
+                "disable": false,
+                "url": "/occupation",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/03-sabeghe.png",
+                "backColor": ""
+              },
+              {
+                "caption": "اعتراض به سابقه دارای کسری کارکرد یا اشکال",
+                "disable": false,
+                "url": "/objection-deviation",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/03-sabeghe.png",
+                "backColor": ""
+              },
+              {
+                "caption": "اعتراض به سوابق ناموجود",
+                "disable": false,
+                "url": "/objection-noexist",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/03-sabeghe.png",
+                "backColor": ""
+              },
+              {
+                "caption": "محاسبه میانگین دستمزد دو سال آخر",
+                "disable": false,
+                "url": "/twolastyearhistory",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/03-sabeghe.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "خدمات درمانی و دفترچه",
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/04-booklet.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "درخواست دفترچه غیر حضوری",
+                "disable": false,
+                "url": "booklet",
+                "url-type": "none",
+                "tags": ["booklet"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/04/01-reqBooklet.png",
+                "backColor": ""
+              },
+              {
+                "caption": "استعلام برخورداری از حمایت درمانی",
+                "disable": false,
+                "url": "deserved-treatment",
+                "url-type": "none",
+                "tags": [
+                  "booklet"
+                ],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/04/02-esteelam.png",
+                "backColor": ""
+              },
+              {
+                "caption": "راهنمای تصویری استفاده از بخش  خدمات درمانی و دفترچه",
+                "disable": false,
+                "url": "https://www.aparat.com/v/fSbyO",
+                "url-type": "external",
+                "tags": [
+                  "booklet"
+                ],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/04/03-help.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "حمایت های کوتاه مدت",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "استعلام استحقاق دریافت هدیه ازدواج",
+                "disable": false,
+                "url": "stp/marriage-history-calc",
+                "url-type": "none",
+                "tags": ["short-term"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست غرامت دستمزد بیماری",
+                "disable": false,
+                "url": "stp/indemnity",
+                "url-type": "none",
+                "tags": ["short-term"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست کمک هزینه بارداری",
+                "disable": false,
+                "url": "stp/pregnancy",
+                "url-type": "none",
+                "tags": ["short-term"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست اروتز پروتز",
+                "disable": false,
+                "url": "stp/orthosis-prosthesis",
+                "url-type": "none",
+                "tags": ["short-term"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست هدیه ازدواج",
+                "disable": false,
+                "url": "stp/marriage",
+                "url-type": "none",
+                "tags": ["short-term"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست کمک هزینه مراسم ترحیم ",
+                "disable": false,
+                "url": "stp/funeral",
+                "url-type": "none",
+                "tags": ["short-term"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مشاهده درخواست های ثبت شده",
+                "disable": false,
+                "url": "stp",
+                "url-type": "none",
+                "tags": ["short-term"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/05-hemayat.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "بازرسی های انجام شده از محل اشتغال",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/06-bazresi.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "مشاهده بازرسی انجام شده توسط سازمان",
+                "disable": false,
+                "url": "/inspection-list/0",
+                "url-type": "none",
+                "tags": ["inspection"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/06/01-bazresiShow.png",
+                "backColor": ""
+              },
+              {
+                "caption": "ثبت درخواست برای افراد فاقد بازرسی",
+                "disable": false,
+                "url": "/inspection-objection-insured",
+                "url-type": "none",
+                "tags": ["inspection"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/06/02-person.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "امور فنی بیمه شدگان",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/07-omoreFaani.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "محاسبه خرید خدمت سربازی",
+                "disable": false,
+                "url": "conscription",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/07/01-soldier.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "بازنشستگی",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/08-pensioner-2.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "نحوه محاسبه مبلغ مستمری بازنشستگی",
+                "disable": false,
+                "url": "edict-calc",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/08-pensioner-2.png",
+                "backColor": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "caption": "کارفرمایان",
+        "disable": false,
+        "url": "",
+        "url-type": "none",
+        "tags": [],
+        "smallIcon": "",
+        "largeIcon": "",
+        "items": [
+          {
+            "caption": "خدمات نام نویسی کارفرمایان",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/workshop/01-namnevisi.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "نام نویسی غیر حضوری کارگاه جدید",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["favorite"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "کارگاههای کارفرما",
+                "disable": false,
+                "url": "workshop-registration/workshop-full-info",
+                "url-type": "none",
+                "tags": ["workshop"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01/02-kargah.png",
+                "backColor": ""
+              },
+              {
+                "caption": "پیمان های کارگاه",
+                "disable": false,
+                "url": "workshop-registration/contract-by-workshop",
+                "url-type": "none",
+                "tags": ["workshop"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01/03-peyman.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست تغییر نام کارگاه",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["workshop"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست تغییر آدرس کارگاه",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["workshop"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست تغییر فعالیت کارگاه",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["workshop"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست ثبت پیمان جدید",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست تغییر کارفرما",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/01-namnevisi.png",
+                "backColor": ""
+              },
+              {
+                "caption": "نامنویسی غیر حضوری بیمه شده",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/06-rizeMabani.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "خدمات ارسال لیست حق بیمه",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/workshop/02-list.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "ارسال لیست حق بیمه بصورت اینترنتی",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/02/01-list.png",
+                "backColor": ""
+              },
+              {
+                "caption": "تهیه لیست بیمه",
+                "disable": true,
+                "url": "il/list-full-operation",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/02/02-list.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مشاهده و پرداخت حق بیمه",
+                "disable": true,
+                "url": "il/pursue-list",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/02/03-list.png",
+                "backColor": ""
+              },
+              {
+                "caption": "دریافت نرم افزار موبایل برای ارسال لیست حق بیمه کارگاههای کمتر از 20 نفر",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "بازرسی های کارگاهی",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/workshop/03-workshop.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "مشاهده و اعتراض به گزارشات بازرسی های کارگاهی",
+                "disable": false,
+                "url": "/inspection-list/1",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/03/01-bazresiShow.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "مکاتبات و ابلاغ ها",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/workshop/04-mokatebat.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "مشاهده مکاتبات و ابلاغ های انجام شده توسط سازمان",
+                "disable": false,
+                "url": "announcement",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/04/01.png",
+                "backColor": ""
+              },
+              {
+                "caption": "اعتراض به ابلاغ",
+                "disable": false,
+                "url": "announcement-objection",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/04-mokatebat.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "مطالباتی کارگاه",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "استعلام بدهی کارگاه",
+                "disable": false,
+                "url": "workshop-registration/workshops-debit",
+                "url-type": "none",
+                "tags": ["claim"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05/01-esteelam.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست اعلام آخرین وضعیت مطالباتی کارگاه",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست مشاهده مراحل مطالباتی جهت هر شماره بدهی اعلام نتایج ابلاغ بدهی دستی و مکانیزه",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست صدور برگه پرداخت جهت هر یک از شماره بدهیهای کارگاه و امکان پرداخت حق بیمه از سامانه غیرحضوری",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست صدور صورتحساب تجمیعی به روز",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "امکان تکمیل فرم درخواست تقسیط در خصوص بدهیهای قطعی شده و یا بدهیهای برآوردی که کارفرما تمایل به پرداخت آن را دارد",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مفاصاحساب درخواست نقل و انتقال(ماده 37 قانون)",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مفاصاحساب ردیف پیمان(ماده 38 قانون)",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مفاصاحساب درخواست صدور پروانه",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مفاصاحساب درخواست تمديد كارت بازرگاني",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مفاصاحساب درخواست پرداخت وام",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مفاصاحساب درخواست ترهين ملك",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              },
+              {
+                "caption": "بیلان و صورتحساب",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/05-motalebat.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "ریز مبانی محاسباتی",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/workshop/06-rizeMabani.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "درخواست مشاهده ریز مبانی محاسباتی (گردش حساب قطعی، نتایج ریاضی و فنی، ریز محاسبات برآوردی و ....)",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/06-rizeMabani.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مشاهده ریزمبانی محاسباتی در حوزه های مطالباتی و پیمان",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/workshop/06-rizeMabani.png",
+                "backColor": ""
+              }
+
+            ]
+          }
+
+
+        ]
+      },
+      {
+        "caption": "مستمری بگیران",
+        "disable": false,
+        "url": "",
+        "url-type": "none",
+        "tags": [],
+        "smallIcon": "",
+        "largeIcon": "",
+        "items": [
+          {
+            "caption": "راهنما",
+            "disable": false,
+            "url": "/pensioner-intro",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+            "backColor": ""
+          },
+          {
+            "caption": "فیش حقوقی مستمری بگیران",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "مشاهده فیش حقوقی مستمری بگیران",
+                "disable": false,
+                "url": "/edict-payment",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01/01-show.png",
+                "backColor": ""
+              },
+              {
+                "caption": "مشاهده شماره حساب مستمری بگیران",
+                "disable": false,
+                "url": "/pension-account",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01/02-card.png",
+                "backColor": ""
+              },
+              {
+                "caption": "صدور گواهی حقوق مستمری بگیران",
+                "disable": false,
+                "url": "/payment-certificate",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01/03-certificate.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "حکم مستمری بگیران",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/02-hokm.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "مشاهده حکم مستمری بگیران",
+                "disable": false,
+                "url": "/edict",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/02/01-show.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "استعلام با تایید اصالت",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/03-esteelam.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "استعلام وضعیت دریافت مستمری",
+                "disable": true,
+                "url": "/",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/03-esteelam.png",
+                "backColor": ""
+              },
+              {
+                "caption": "تایید اصالت گواهی حقوق مستمری بگیر",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/03-esteelam.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "درخواست برقراری مستمری",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "بازنشستگی",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+                "backColor": ""
+              },
+              {
+                "caption": "بازماندگان",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+                "backColor": ""
+              },
+              {
+                "caption": "ازکارافتادگی",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": ["pension"],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "خدمات پرونده الکترونیک",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/02-parvande.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "پرونده الکترونیک من",
+                "disable": false,
+                "url": "/erecords",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/02/01-parvandeMan.png",
+                "backColor": ""
+              },
+              {
+                "caption": "درخواست انتقال پرونده به سایر شعب",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/insured/02-parvande.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "مشاغل سخت و زیان آور",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "فرم درخواست رسیدگی به مشاغل سخت و زیان آور",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+                "backColor": ""
+              },
+              {
+                "caption": "فرم انصراف از سنوات ارفاقی مشاغل سخت و زیان آور",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "تغییرات وضعیت احکام مستمری بگیران",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "درخواست رسیدگی به تغییرات دستمزد و سابقه بعد از بازنشستگی",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "تغییرات وضعیت افراد تبعی",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "درخواست تغییرات وضعیت افراد تبعی مستمری بگیران",
+                "disable": true,
+                "url": "",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/01-fish.png",
+                "backColor": ""
+              }
+            ]
+          },
+          {
+            "caption": "بازنشستگی",
+            "disable": false,
+            "url": "",
+            "url-type": "none",
+            "tags": [],
+            "smallIcon": "",
+            "largeIcon": "assets/images/menu/mobile/insured/08-pensioner-2.png",
+            "backColor": "",
+            "items": [
+              {
+                "caption": "نحوه محاسبه مبلغ مستمری بازنشستگی",
+                "disable": false,
+                "url": "edict-calc",
+                "url-type": "none",
+                "tags": [],
+                "smallIcon": "",
+                "largeIcon": "assets/images/menu/mobile/pensioner/09/01-mohasebe.png",
+                "backColor": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

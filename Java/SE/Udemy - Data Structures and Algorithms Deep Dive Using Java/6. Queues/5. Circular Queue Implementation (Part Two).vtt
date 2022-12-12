@@ -1,0 +1,841 @@
+WEBVTT
+
+00:05.450 --> 00:12.630
+Então, no final do último vídeo, aprendemos que a forma como estamos redimensionando o array não funcionará para um Q arrebatado que,
+
+00:12.670 --> 00:19.670
+quando redimensionamos o array para uma sugestão empacotada, temos que redefinir a sugestão e trazer todos os elementos de volta para
+
+00:19.670 --> 00:21.080
+a frente da matriz.
+
+00:21.080 --> 00:27.620
+Então, vamos copiar os elementos se olharmos para este comentário aqui, vamos copiar os elementos da frente
+
+00:27.980 --> 00:34.060
+para o final do array, então copiaremos Mike e Bill para as posições 0 e 1
+
+00:34.060 --> 00:40.580
+a nova matriz redimensionada e, em seguida, vamos copiar do início da matriz para o último elemento
+
+00:40.580 --> 00:41.730
+na fila.
+
+00:41.840 --> 00:48.200
+Então, Mike e Bill serão seguidos por Jane e John, e a parte de trás será a próxima posição
+
+00:48.200 --> 00:49.540
+disponível no novo array.
+
+00:49.550 --> 00:52.040
+Então, vamos modificar o código aqui.
+
+00:52.040 --> 00:57.540
+Então, a primeira coisa que vamos fazer é economizar no tamanho atual porque precisaremos mais tarde.
+
+00:57.650 --> 01:06.500
+Então eu vou dizer isso. itens é igual a tamanho porque teremos que usar isso depois de redimensionarmos
+
+01:06.620 --> 01:13.670
+o array e vamos usar isso para definir o ponteiro de volta, de modo que o novo layout do novo funcionário
+
+01:13.700 --> 01:14.930
+não seja novidade.
+
+01:14.930 --> 01:20.840
+Nós vamos dobrar os comprimentos e também vamos no final de tudo atribuir nova matriz
+
+01:20.840 --> 01:21.780
+para Q.
+
+01:21.860 --> 01:25.110
+Mas vamos mudar o que estamos fazendo aqui.
+
+01:26.180 --> 01:31.660
+Então, a primeira coisa que queremos fazer é copiar os elementos da frente para o final da matriz.
+
+01:31.790 --> 01:35.100
+Então, digamos que a cópia da matriz do sistema.
+
+01:35.120 --> 01:41.990
+E queremos copiar da fila que queremos começar na frente porque o que queremos fazer é copiar a
+
+01:42.080 --> 01:43.380
+partir de Mike.
+
+01:43.460 --> 01:49.820
+Vamos copiar para o novo array na posição zero, porque no novo array estaremos copiando a frente
+
+01:50.120 --> 01:53.290
+da sugestão de volta para a posição zero.
+
+01:54.080 --> 02:00.360
+E nós queremos copiar Q lent menos itens da frente.
+
+02:00.740 --> 02:07.310
+Então, se dermos uma olhada aqui, temos Mike na frente e a duração da sugestão é cinco.
+
+02:07.310 --> 02:14.150
+Então, vamos copiar cinco menos três porque frontis três que é igual a dois itens e é
+
+02:14.150 --> 02:15.610
+quantos itens temos aqui.
+
+02:15.740 --> 02:21.710
+E assim, essa cópia da matriz vai levar Mike e salvar e copiá-los para a frente da nova matriz.
+
+02:21.710 --> 02:28.250
+Então, isso está redefinindo a fila para a frente e, em seguida, a segunda parte disso é que temos que copiar
+
+02:28.250 --> 02:31.120
+Jane e John para trás de Mike e Bill.
+
+02:31.250 --> 02:35.570
+Então, vamos dizer a cópia do array System Daut.
+
+02:35.570 --> 02:39.680
+Nós vamos copiar da fila novamente, mas desta vez vamos começar na posição zero
+
+02:39.680 --> 02:41.030
+na frente da matriz.
+
+02:41.030 --> 02:46.260
+Nós vamos copiar para o novo array, mas não queremos copiar para a posição zero.
+
+02:46.280 --> 02:50.000
+E vamos copiar para o comprimento da fila menos a frente.
+
+02:50.000 --> 02:55.620
+Agora, esses dois cálculos são os mesmos que vimos aqui e descobrimos que tínhamos dois itens.
+
+02:55.640 --> 03:03.350
+Então, copiamos esses dois itens para a nova matriz e, por isso, queremos começar a copiar na posição o
+
+03:03.350 --> 03:06.730
+número de itens, porque essa posição também será.
+
+03:06.860 --> 03:12.830
+Se tivermos dois itens da frente da fila até o final da matriz na fila original, então teremos
+
+03:12.830 --> 03:17.510
+copiado esses dois itens para 0 e 1, se tivermos três itens, eles serão
+
+03:17.510 --> 03:19.460
+copiados para 0 1 2 etc. . E quantos itens queremos copiar?
+
+03:19.610 --> 03:21.790
+Bem para trás os itens certos.
+
+03:21.800 --> 03:24.310
+Porque a fila é empacotada nos pontos traseiros da frente para a primeira posição disponível de volta.
+
+03:24.350 --> 03:31.010
+Basicamente sempre é igual ao número de itens que foram colocados na frente.
+
+03:31.010 --> 03:34.900
+E essa é a nossa cópia de duas matrizes, então as cópias da matriz estão levando isso e produzindo isso.
+
+03:35.060 --> 03:43.340
+E então eles estão desembrulhando a sugestão e redefinindo a frente da fila para zero.
+
+03:43.340 --> 03:48.170
+Então, temos duas coisas a fazer depois de atribuirmos o novo array a você. Precisamos definir a
+
+03:48.500 --> 03:53.570
+frente e o backfield para que a frente seja zero e o back seja o número de itens.
+
+03:53.570 --> 03:59.340
+Não podemos simplesmente chamar o tamanho aqui porque o verso ainda está definido para as antigas.
+
+03:59.540 --> 04:03.840
+Então você sabe que definimos a frente como zero e de volta ainda estaríamos sentados em 2.
+
+04:03.890 --> 04:09.430
+Portanto, nossa posição para trás não é mais válida e é por
+
+04:09.440 --> 04:16.370
+isso que tivemos que economizar o tamanho aqui e usá-lo para atribuir de volta.
+
+04:16.370 --> 04:17.150
+Então, quando saímos desse código, frente e verso agora são válidos.
+
+04:17.150 --> 04:21.970
+Eles foram atualizados e este Q seria agora parecido com isto.
+
+04:22.010 --> 04:27.710
+Então, se o Q foi quebrado, ele foi redefinido.
+
+04:27.710 --> 04:30.290
+Agora, se o Q não foi embrulhado e onde redimensioná-lo.
+
+04:30.290 --> 04:34.000
+Isso ainda funciona, mas faremos uma cópia redundante aqui.
+
+04:34.040 --> 04:38.360
+Portanto, é uma cópia desnecessária e, se quiséssemos, poderíamos verificar isso.
+
+04:38.420 --> 04:42.890
+Poderíamos colocar um F aqui e tentar descobrir se o Q foi empacotado ou não.
+
+04:42.890 --> 04:47.780
+Mas vou deixar aqui porque quando você está usando um círculo lá.
+
+04:47.840 --> 04:51.730
+A menos que você esteja apenas adicionando coisas e adicione uma
+
+04:51.730 --> 04:58.910
+tonelada de coisas antes de removê-las na maior parte do tempo, o acusado vai ao rap em algum momento.
+
+04:58.910 --> 05:01.600
+OK, agora que redimensionamos corretamente nossa sugestão e atualizamos esse código que é o método add atualizado.
+
+05:02.300 --> 05:11.610
+Então, vamos dar uma olhada no método Remove.
+
+05:11.610 --> 05:14.360
+Isso não é tão complicado.
+
+05:14.370 --> 05:16.080
+O método Add está realmente no método.
+
+05:16.080 --> 05:18.780
+Isso é provavelmente o mais difícil de entender.
+
+05:18.840 --> 05:22.110
+Nós não temos que fazer tantas mudanças.
+
+05:22.140 --> 05:24.180
+Ainda vamos lançar uma exceção se a fila estiver vazia.
+
+05:24.180 --> 05:28.140
+Ainda vamos devolver a frente do funcionário Q e ainda vamos limpar.
+
+05:28.140 --> 05:33.070
+Q frente ainda vamos redefinir a fila.
+
+05:33.070 --> 05:36.530
+Se o tamanho for zero, então, se tivermos
+
+05:36.630 --> 05:42.540
+o único funcionário na fila, é seguro colocar a frente e voltar a zero.
+
+05:42.540 --> 05:44.200
+Mas agora temos que
+
+05:44.280 --> 05:51.120
+nos preocupar com a frente, porque se voltarmos a esta situação, digamos que nós retiramos o microfone.
+
+05:51.120 --> 05:52.520
+E assim Frank é incrementado para quatro e depois nós saímos.
+
+05:52.590 --> 05:56.190
+BILL Bem, neste ponto não estávamos à frente para embrulhar em torno de 2 0 para Jane.
+
+05:56.190 --> 06:00.950
+E então temos que verificar esse caso.
+
+06:01.020 --> 06:03.180
+Então, vamos ter um outro aqui
+
+06:03.180 --> 06:08.460
+e vamos dizer se ainda há itens na sugestão, então se frente igual a
+
+06:09.930 --> 06:14.110
+Lentz e isso deve ser um duplo igual a ele.
+
+06:17.730 --> 06:19.570
+É por isso que o compilador está gritando comigo.
+
+06:19.590 --> 06:22.320
+Então, queremos envolver a frente até o começo.
+
+06:22.530 --> 06:25.350
+Agora lembre-se quando estamos fazendo este teste já incrementamos a frente.
+
+06:25.350 --> 06:29.580
+Então, se tirarmos o microfone, vamos incrementar a frente para
+
+06:29.940 --> 06:35.970
+quatro e, em seguida, extraímos a nota para frente, para 5 e, em seguida, vamos
+
+06:35.970 --> 06:42.390
+fazer esse teste e vamos dizer que a frente é igual à duração da pista. .
+
+06:42.390 --> 06:42.840
+Bem, sim, é neste caso porque o comprimento da sugestão é cinco.
+
+06:42.840 --> 06:46.970
+Então, vamos voltar para 0 se a frente for
+
+06:47.010 --> 06:53.400
+menor que o comprimento da sugestão, então isso significa que há mais espaço além daqui.
+
+06:53.400 --> 06:55.980
+Por isso, é seguro ter frente
+
+06:55.980 --> 07:01.800
+sentado aqui não vai ser um índice de exceção de limites e é isso.
+
+07:01.800 --> 07:02.320
+Isso é tudo para remover.
+
+07:02.340 --> 07:03.350
+Disse que seria mais fácil
+
+07:03.360 --> 07:08.730
+muito mais fácil do que um anúncio, na verdade, como eu disse, o método que provavelmente será o mais difícil de entender e exigiu a maioria das alterações.
+
+07:08.730 --> 07:13.640
+Nós não temos que mudar o método de espiar nada.
+
+07:13.680 --> 07:16.170
+Ainda vamos lançar uma exceção se a
+
+07:16.170 --> 07:21.060
+fila estiver vazia e, caso contrário, apenas um retornará o funcionário na frente da fila.
+
+07:21.060 --> 07:22.860
+Agora, nosso método de tamanho terá
+
+07:22.860 --> 07:28.800
+que mudar, pois subtrair a parte de trás da frente não funcionará mais. É possível que a frente seja
+
+07:28.860 --> 07:33.930
+maior do que a traseira e, se esse for o caso, acabaremos com um número negativo.
+
+07:33.930 --> 07:34.540
+Então, vamos ter que testar
+
+07:34.560 --> 07:39.090
+aqui se o Q está empacotado e a maneira que podemos fazer isso é que podemos dizer se o francês é menor ou igual a esse tempo, sabemos que o Q não está empacotado.
+
+07:39.180 --> 07:45.710
+Porque a parte de trás ainda é maior do que a frente e assim
+
+07:45.720 --> 07:51.800
+frente a direção é mais para a frente da matriz de volta é.
+
+07:51.810 --> 07:52.910
+Portanto, não temos a
+
+07:52.920 --> 07:57.960
+situação em que temos a frente na parte de trás da matriz e voltamos para a frente da matriz.
+
+07:57.960 --> 07:59.300
+E assim, se frente é
+
+07:59.310 --> 08:04.710
+menor e igual a volta, o Q não está empacotado e, nesse caso, podemos apenas fazer o que estávamos fazendo antes.
+
+08:04.710 --> 08:06.570
+Então, vou copiar isso e colocar aqui.
+
+08:06.570 --> 08:10.040
+Se esse não é o caso, então precisamos retornar de volta menos a frente mais Q Atlantis.
+
+08:10.200 --> 08:19.590
+Então, o que isso está fazendo aqui?
+
+08:19.680 --> 08:21.030
+Bem, vamos dar uma olhada em nossas duas situações aqui atrás.
+
+08:21.030 --> 08:24.120
+Então, se o Q não tiver empacotado, se o Q
+
+08:24.120 --> 08:29.550
+não tiver empacotado, temos essa situação, então podemos dizer que quatro menos zero é igual a quatro.
+
+08:29.550 --> 08:31.130
+Nós temos quatro itens no Q.
+
+08:31.140 --> 08:32.730
+Mas se o Q tem envolvido neste caso frente é três mbak é dois e o comprimento do Q é cinco.
+
+08:32.940 --> 08:40.200
+Nós ainda vamos dizer de volta menos frente.
+
+08:40.200 --> 08:43.890
+Então, isso vai ser dois menos três.
+
+08:43.890 --> 08:45.720
+Isso nos dá menos 1
+
+08:45.720 --> 08:51.060
+e depois vamos adicionar o comprimento do Q que é 5 e isso nos dará 4.
+
+08:51.060 --> 08:51.950
+E na verdade nós temos quatro elementos no q.
+
+08:52.080 --> 08:55.120
+Então, é assim que esse cálculo funcionará, adicionando o comprimento da sugestão, podemos
+
+08:55.200 --> 09:01.200
+ajustar o número negativo para o número real de itens na sugestão e isso é tudo o que temos que fazer para o método de tamanho.
+
+09:01.200 --> 09:05.970
+Nada muito complicado.
+
+09:05.970 --> 09:07.580
+Agora, o último método que
+
+09:07.590 --> 09:13.920
+temos que mudar é a nossa fila de impressão, porque obviamente imprimir a sugestão da frente para trás agora não vai
+
+09:13.920 --> 09:19.530
+funcionar, porque as costas poderiam estar menos na frente e então faremos algo parecido com o que fizemos para Tamanho.
+
+09:19.620 --> 09:21.210
+Vamos verificar se o frontis é menor ou igual a back.
+
+09:21.210 --> 09:23.800
+Porque se esse for o caso, o Q não é empacotado.
+
+09:23.820 --> 09:26.660
+E se for esse o caso, vamos apenas fazer o que estávamos fazendo antes.
+
+09:26.730 --> 09:30.030
+Se o Q envolver, então imprimiremos o Q em duas partes.
+
+09:30.030 --> 09:34.850
+Primeiro, vamos imprimir essa peça, então vamos imprimir da
+
+09:34.980 --> 09:40.770
+frente até o final da sugestão e depois imprimiremos essa peça.
+
+09:40.770 --> 09:41.270
+Então,
+
+09:41.310 --> 09:50.100
+vamos imprimir do início da sugestão para trás e dizer que vou copiar isso aqui em Plunkitt para o nosso método de fila de impressão,
+
+09:50.100 --> 09:58.680
+portanto, se a frente é menor ou igual a voltar e, se for, faremos o que estávamos fazendo antes porque SECU não está embrulhado.
+
+09:58.680 --> 10:01.500
+Caso contrário, vamos dizer que 4 polegadas é igual a frente e menos.
+
+10:01.560 --> 10:09.120
+Q querida alta mais mais e nós vamos apenas imprimir o que é essa posição.
+
+10:09.130 --> 10:18.890
+Eu apenas copio e colo esta linha aqui para que este código imprima
+
+10:18.900 --> 10:27.390
+o que estiver na frente da fila até o final da matriz.
+
+10:27.390 --> 10:30.360
+E depois de termos feito isso, queremos dizer que quatro polegadas é igual a zero.
+
+10:31.260 --> 10:37.610
+Menos que voltar eu mais mais.
+
+10:37.730 --> 10:41.580
+E nós vamos imprimir o que é isso.
+
+10:41.580 --> 10:43.020
+P eu e assim este código estará imprimindo Jane
+
+10:43.030 --> 10:43.850
+e John e é isso.
+
+10:47.000 --> 10:51.710
+Nós agora atualizamos nossa classe Q array para que seja uma fila circular.
+
+10:51.710 --> 10:56.650
+Eu acho que provavelmente o add é o mais difícil de entender.
+
+10:56.960 --> 11:00.670
+Então, se estamos lutando com o código, passemos por esses casos com caneta e papel.
+
+11:00.670 --> 11:06.700
+Eu acho que isso tornará o código mais claro.
+
+11:06.740 --> 11:08.580
+OK, agora que atualizamos para uma
+
+11:08.810 --> 11:13.520
+fila circular Vamos voltar para o método principal e temos isso, você sabe adicionar dois funcionários
+
+11:13.520 --> 11:19.190
+e, em seguida, estamos nos movendo adicionando estamos nos movendo adicionando Agora vimos com a fila não circular que quando
+
+11:19.190 --> 11:25.580
+viemos adicionar Jane Jones, redimensionamos a matriz que atingimos o ponto de quebra que estava redimensionando a matriz porque já adicionamos cinco funcionários.
+
+11:25.580 --> 11:29.560
+E assim, quando chegamos para adicionar o empregado seis o
+
+11:29.570 --> 11:35.580
+ponteiro de volta foi igual a Q lenth E assim nós redimensionamos o array.
+
+11:35.890 --> 11:36.610
+Mas desta vez vamos checar por Q-Bot Outlands menos um.
+
+11:36.620 --> 11:41.000
+Então isso nunca deve acontecer agora porque
+
+11:41.000 --> 11:48.200
+estamos verificando o tamanho e o tamanho nunca será maior que 2.
+
+11:48.200 --> 11:48.690
+Certo.
+
+11:48.710 --> 11:49.090
+Porque só temos dois funcionários no array.
+
+11:49.100 --> 11:52.470
+E então vou colocar um ponto de ruptura aqui.
+
+11:52.640 --> 11:54.890
+E assim, se acertarmos isso, estamos tentando
+
+11:55.040 --> 12:00.950
+redimensionar o array e eu só quero ter certeza de que todo o outro código está comentado e
+
+12:00.950 --> 12:06.820
+então desta vez não esperamos que o array seja redimensionado, não esperamos que este breakpoint seja acertar.
+
+12:06.860 --> 12:07.840
+Então deixe-me executar o depurador e com certeza o ponto de interrupção não foi atingido.
+
+12:08.120 --> 12:13.830
+Nós terminamos o processo.
+
+12:13.840 --> 12:15.300
+Temos Bill e Jane na fila, que é o que esperamos.
+
+12:15.310 --> 12:18.900
+E nós não tentamos redimensionar o array.
+
+12:18.910 --> 12:21.680
+E assim melhoramos nossa implementação porque
+
+12:21.820 --> 12:27.670
+com a implementação anterior, 80% da matriz estava vazia, entramos e estávamos redimensionando.
+
+12:27.760 --> 12:31.290
+Tudo bem.
+
+12:31.360 --> 12:32.320
+Vamos voltar ao nosso
+
+12:32.710 --> 12:38.290
+método principal e vou comentar esse código e vamos executar o código que corremos para testar nossa implementação não circular.
+
+12:38.290 --> 12:42.010
+Então, a primeira coisa que faremos é adicionar cinco funcionários e depois imprimir a fila.
+
+12:42.010 --> 12:47.850
+Então, vamos executar e temos nossos cinco funcionários na ordem em que foram adicionados.
+
+12:48.700 --> 12:55.330
+Agora, se eu colocar um ponto de interrupção aqui, o que eu já fiz se eu executar isso no depurador, esperamos que
+
+12:55.590 --> 13:02.100
+o array seja redimensionado, porque lembre-se de que agora estamos verificando o tamanho em relação ao Q Dot land menos um.
+
+13:02.160 --> 13:09.180
+E assim, quando adicionamos Jane John Merrion, Mike terá quatro funcionários na fila.
+
+13:09.240 --> 13:15.900
+Quando nós entramos para adicionar Bill para será igual ao comprimento menos um e depois temos que redimensionar e alugamos.
+
+13:15.960 --> 13:23.030
+Nós passamos por que temos que fazer isso.
+
+13:23.040 --> 13:24.950
+Temos que fazer isso porque não podemos voltar ao zero porque zero é ocupado por Jane.
+
+13:24.960 --> 13:32.700
+Então, se você esqueceu que talvez tenha assistido o último vídeo
+
+13:32.780 --> 13:38.640
+há um tempo atrás e assistir ao último vídeo.
+
+13:38.640 --> 13:39.160
+Se você não tiver certeza do porque estamos redimensionando quando temos apenas quatro funcionários na fila.
+
+13:39.180 --> 13:45.400
+Então, estamos redimensionando quando ainda temos um espaço vazio na matriz, mas
+
+13:45.480 --> 13:51.780
+é muito melhor do que redimensionar quando 80% da matriz está vazia.
+
+13:51.780 --> 13:54.220
+Mas essa implementação só será redimensionada quando tivermos apenas um espaço restante.
+
+13:54.300 --> 13:59.580
+Então deixe-me executar o depurador agora.
+
+13:59.580 --> 14:01.550
+E como esperávamos, estamos redimensionando o array
+
+14:01.980 --> 14:09.830
+e podemos ver que o topo do Atlantas é 5 e voltar é para Atlantis 5 e se eu olhar para onde estamos no método principal.
+
+14:10.490 --> 14:14.610
+Com certeza estamos chegando e estamos tentando adicionar Bill.
+
+14:14.610 --> 14:18.170
+E assim está tudo funcionando como esperávamos.
+
+14:18.300 --> 14:20.670
+Eu só vou dizer ao depurador para terminar a corrida em que eu vou desligar isso.
+
+14:20.670 --> 14:26.060
+Tudo bem, então vamos remover dois funcionários e
+
+14:26.070 --> 14:34.260
+depois imprimiremos novamente. Vou comentar essa fila de impressão e fazer isso.
+
+14:34.290 --> 14:35.930
+E assim esperamos ver Mary Mike e Bill permanecendo no Q e com certeza há Mary, minha lata Bill.
+
+14:36.330 --> 14:44.630
+OK, então vamos espiar a Maria.
+
+14:44.700 --> 14:48.420
+Acho que foi o que fizemos no outro vídeo, então não vou comentar.
+
+14:48.420 --> 14:52.490
+Este sistema de pico de linha de impressão do cão.
+
+14:52.500 --> 14:56.230
+Vamos executar e esta é a impressão desta fila de impressão e, em seguida, olhamos
+
+14:56.250 --> 14:56.870
+para Mary.
+
+14:59.380 --> 15:04.730
+Então, tudo ainda está funcionando bem.
+
+15:04.750 --> 15:06.600
+OK, então eu vou
+
+15:06.700 --> 15:14.050
+comentá-los e depois vamos remover os três funcionários restantes no Q e eu vou comentar
+
+15:14.050 --> 15:20.680
+esta fila de impressão aqui porque queremos ver que não há nada na fila.
+
+15:20.680 --> 15:21.420
+Então, vamos correr e não esperamos ver nada impresso.
+
+15:21.490 --> 15:25.050
+Isso é bom.
+
+15:26.140 --> 15:26.900
+E nada desagradável aconteceu.
+
+15:26.900 --> 15:28.210
+Nós não tivemos exceções.
+
+15:28.210 --> 15:29.650
+Então, agora vamos tentar remover o funcionário 60
+
+15:29.650 --> 15:32.170
+ver o que acontece lá, devemos obter uma exceção de nenhum tal elemento agora.
+
+15:34.890 --> 15:38.420
+E fazemos a linha 43.
+
+15:40.400 --> 15:43.540
+Então, tudo está funcionando como estamos esperando, vamos comentar isso
+
+15:43.640 --> 15:50.290
+e agora vamos adicionar o Mike na fila e isso só vai mostrar que quando pegamos o último funcionário da fila, a
+
+15:50.710 --> 15:56.030
+frente e o verso foram configurados corretamente, então vamos em frente e o Mike está ligado nossa fila.
+
+15:56.030 --> 16:01.610
+Portanto, nossa implementação circular em Q está funcionando.
+
+16:01.620 --> 16:04.940
+Então agora que sabemos que nossa implementação está funcionando.
+
+16:05.010 --> 16:07.980
+Deixe-me apenas comentar este comentário.
+
+16:07.980 --> 16:10.800
+Todo esse código novamente e deixe-me comentar.
+
+16:10.800 --> 16:13.470
+O primeiro código que nós rodamos, porque este é o caso onde nós estamos indo para quebrar a fila.
+
+16:13.470 --> 16:19.200
+Na verdade, não encerramos a fila porque estamos adicionando 5 funcionários em uma fila
+
+16:19.230 --> 16:25.440
+e, assim, acabamos redimensionando a fila em vez de envolvê-la como vimos quando executamos o depurador.
+
+16:25.440 --> 16:29.040
+Mas vamos ver o que acontece quando encerramos a fila aqui e acho que vamos envolvê-la.
+
+16:29.130 --> 16:33.620
+Eu não tenho certeza onde.
+
+16:33.660 --> 16:35.340
+Então vamos colocar dois breakpoints
+
+16:35.340 --> 16:42.120
+aqui e então eu vou remover este breakpoint e nós vamos rodar no debugger e vamos ver onde vamos quebrar.
+
+16:42.120 --> 16:44.970
+Eu esperaria que isso envolvesse um
+
+16:44.970 --> 16:52.920
+desses funcionários, provavelmente, Jane, mas vamos a essa altura, adicionamos Jane e John e depois removemos.
+
+16:52.920 --> 16:55.780
+Jane nós adicionamos Mary nós removemos John nós adicionamos Mike.
+
+16:55.860 --> 16:59.580
+Nós entramos nesse método, então eu vou entrar nisso.
+
+16:59.580 --> 17:03.530
+Então agora estamos no nosso método add para que possamos dar uma olhada em como nossa fila se parece.
+
+17:03.870 --> 17:08.340
+Então aqui está o nosso Q E você verá que nós temos
+
+17:08.340 --> 17:15.840
+apenas um funcionário na fila neste ponto porque aqui nós adicionamos Jane e John nós removemos Jane nós adicionamos Mary removida.
+
+17:15.840 --> 17:22.990
+John, nós adicionamos Mike, nós removemos Mary, então quando estamos na chamada agora, estamos adicionando
+
+17:23.190 --> 17:29.790
+contas e, neste momento, apenas Mike está no Q. Então, não devemos redimensionar.
+
+17:29.790 --> 17:35.030
+Então, eu vou passar por cima dessa linha e se nós estamos indo para redimensionar teria entrado aqui.
+
+17:35.040 --> 17:42.840
+E então tudo o que fazemos aqui é um sinal de que o funcionário esteja no final da fila.
+
+17:42.990 --> 17:48.000
+E se eu for em frente e continuar indo para
+
+17:48.090 --> 17:55.810
+o código, linha por linha, vamos testar se voltar é menor que Q-Bot lent menos 1.
+
+17:55.860 --> 17:57.080
+Neste ponto, a parte de trás é 4 e Q Dot Lentz menos um é 4 e então este teste deve falhar.
+
+17:57.120 --> 18:04.360
+E assim, neste momento, vamos encerrar a fila.
+
+18:04.410 --> 18:06.730
+Então, vamos olhar para nossa fila antes de fazermos isso.
+
+18:06.750 --> 18:09.040
+Os primeiros três elementos estão vazios.
+
+18:09.120 --> 18:10.910
+E então, na posição três, temos Mike nessa posição, pois temos Bill.
+
+18:10.920 --> 18:15.890
+E então o que vamos fazer neste ponto, porque temos espaço
+
+18:15.990 --> 18:20.220
+vazio na frente dos arrays, vamos voltar a zero.
+
+18:20.220 --> 18:22.310
+E então estamos fazendo isso porque a
+
+18:22.350 --> 18:28.890
+parte de trás, que é quatro, não é menor que o comprimento de Q-Bot menos 1, que também é 4.
+
+18:28.890 --> 18:29.810
+E assim, se eu passar por isso, deveríamos ver voltar para 0 e nós fazemos.
+
+18:29.850 --> 18:35.210
+E assim acabamos de encerrar a fila.
+
+18:35.250 --> 18:37.530
+Quero dizer, os elementos na fila ainda não estão envolvidos
+
+18:37.530 --> 18:41.760
+porque não há nada no zero, mas vamos dar uma olhada no que acontece quando adicionamos uma corrente.
+
+18:41.760 --> 18:44.270
+Então, eu vou apenas dar uma corrida aqui.
+
+18:44.320 --> 18:46.670
+Tudo bem.
+
+18:46.800 --> 18:47.250
+Então terminamos a ligação para adicionar a conta e depois removemos o Mike e agora vamos adicionar a Jane.
+
+18:47.250 --> 18:52.480
+Então vamos fazer a mesma coisa que fizemos antes.
+
+18:52.500 --> 18:54.770
+Vamos entrar no nosso método Add.
+
+18:54.930 --> 18:58.050
+Não esperamos redimensionar porque encerramos a fila.
+
+18:58.050 --> 19:01.800
+Nós só temos uma conta de funcionário
+
+19:01.920 --> 19:09.270
+na fila, então não há necessidade de redimensionar a fila, então vamos continuar.
+
+19:09.270 --> 19:10.680
+Vamos atribuir Jane a Q. Voltar e voltar é zero porque encapsulamos a fila.
+
+19:10.680 --> 19:16.140
+Então, depois que fizermos isso, se olharmos para nossa fila agora, veremos que temos funcionários na posição 0.
+
+19:16.140 --> 19:22.720
+Isso é Jane e uma posição para a qual é Bill e nós veremos
+
+19:22.740 --> 19:31.200
+que a frente da fila é para porque as contas na frente da fila e a parte de
+
+19:31.200 --> 19:36.410
+trás da fila são atualmente zero porque nós não incrementamos isto.
+
+19:36.410 --> 19:36.540
+Então, agora vamos fazer esse teste novamente e menos na fila para emprestar menos um.
+
+19:36.540 --> 19:40.720
+Bem, sim, é porque volta zero.
+
+19:40.720 --> 19:42.680
+E desta vez vamos incrementar e lá vamos nós.
+
+19:42.690 --> 19:47.410
+E assim, quando deixamos este método, frontis for back é aquele que é a próxima posição disponível na fila.
+
+19:47.430 --> 19:54.010
+E temos Billett e Jane na posição 0.
+
+19:54.060 --> 19:58.590
+Então, nós encerramos nossa sugestão e porque
+
+19:58.590 --> 20:05.340
+estamos encerrando a fila, nunca entramos aqui e redimensionamos a fila.
+
+20:05.340 --> 20:05.700
+Então, porque refazendo a adição alternativa, removendo a remoção, nossa matriz nunca fica cheia.
+
+20:05.700 --> 20:12.030
+Vou apenas executar o depurador agora para conclusão.
+
+20:12.090 --> 20:14.820
+OK, então essa é a fila circular.
+
+20:15.180 --> 20:17.650
+É definitivamente uma melhoria em relação a uma fila que
+
+20:17.730 --> 20:23.940
+não envolve e que é tudo para implementar filas no próximo vídeo. Vamos dar uma olhada no que está disponível no JDK for Qs.
+
+20:24.000 --> 20:28.650
+Então te vejo lá.
+
+20:28.650 --> 20:29.780
+&nbsp;

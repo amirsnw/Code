@@ -1,0 +1,217 @@
+WEBVTT
+
+00:05.610 --> 00:08.510
+Podemos hablar sobre el algoritmo heapsort.
+
+00:08.570 --> 00:12.310
+Este será el algoritmo de clasificación final que vemos en el curso.
+
+00:12.310 --> 00:14.760
+Entonces, ¿cómo funciona este algoritmo?
+
+00:14.880 --> 00:16.300
+Bueno, necesitas un montón.
+
+00:16.320 --> 00:19.580
+Entonces, este algoritmo de clasificación solo puede ordenar un montón.
+
+00:19.650 --> 00:25.260
+Y cuando trabajamos con Max heaps, puede obtener la información equivalente y luego la
+
+00:25.260 --> 00:29.130
+implementación sería ligeramente diferente, pero los conceptos serían los mismos.
+
+00:29.130 --> 00:31.180
+Entonces vamos a suponer que estamos lidiando con un máximo.
+
+00:31.200 --> 00:35.030
+Y cuando se trata de un montón máximo, sabemos que la ruta tiene el valor más grande.
+
+00:35.090 --> 00:42.360
+Entonces, si tenemos una matriz que es un montón y queremos ordenar esa matriz, lo que hacemos es intercambiar la ruta con el último
+
+00:42.510 --> 00:47.800
+elemento de la matriz y lo que quiero decir con eso es el último elemento en el montón.
+
+00:47.880 --> 00:53.730
+Y entonces tomamos la ruta que es el valor máximo que intercambiamos con el último elemento en el montón y
+
+00:53.730 --> 00:59.630
+luego eso significa que la ruta está en su posición ordenada correcta en relación con todo lo demás en el montón.
+
+00:59.820 --> 01:02.400
+Y luego tenemos el montón de FI el árbol.
+
+01:02.460 --> 01:03.770
+Tenemos que mantener ify el montón.
+
+01:03.840 --> 01:12.900
+Pero excluimos el último nodo, por lo que ahora excluimos la raíz porque ahora la raíz está en ese último nodo y
+
+01:12.900 --> 01:15.630
+no la incluimos cuando almacenamos el montón.
+
+01:15.630 --> 01:19.920
+Porque si lo hiciéramos, terminaríamos moviendo la ruta de vuelta al Rahu y no queremos hacer eso.
+
+01:19.950 --> 01:28.860
+Y entonces tomamos el valor 0 del elemento, lo cambiamos por el último elemento del montón y luego lo almacenamos
+
+01:28.950 --> 01:31.950
+todo hasta el último elemento menos uno.
+
+01:32.130 --> 01:37.680
+Y después de que hayamos hecho eso, la nueva ruta será el segundo elemento más grande en el montón.
+
+01:37.680 --> 01:39.020
+Y luego enjuagamos y repetimos.
+
+01:39.030 --> 01:44.700
+Y entonces tomamos la nueva ruta y la cambiamos con el último valor en el nuevo
+
+01:44.700 --> 01:51.600
+calor que hemos reducido en uno porque cuando cambiamos la ruta hasta el final, reducimos el tamaño del calor en
+
+01:51.600 --> 01:53.820
+uno y acumulamos eso. cinta reducida
+
+01:53.940 --> 02:00.030
+Y después de que hayamos hecho eso, la nueva ruta será el segundo elemento más grande que estaba en el montón
+
+02:00.030 --> 02:00.410
+original.
+
+02:00.420 --> 02:04.680
+Y entonces enjuagamos y repetimos que vamos a cambiar eso con el último elemento en el nuevo montón.
+
+02:04.770 --> 02:08.400
+Y ahora desafiamos, reducimos el calor en 1 de nuevo.
+
+02:08.400 --> 02:11.570
+Entonces, nuestro montón se reducirá en dos elementos.
+
+02:11.580 --> 02:17.300
+Mantenemos un fuego con lo que queda y, cuando terminemos, la ruta será el tercer elemento más grande en el conjunto
+
+02:17.310 --> 02:17.950
+de datos.
+
+02:17.940 --> 02:20.440
+Y así nuevamente enjuagamos y repetimos.
+
+02:20.550 --> 02:26.250
+Entonces, si recuerdas cuando hicimos el método de eliminación y estábamos, tuvimos una solución aquí, el método bajo, y teníamos el
+
+02:26.250 --> 02:30.240
+último parámetro de índice de calor y dije que íbamos a necesitarlo para el heapsort.
+
+02:30.240 --> 02:31.260
+Bueno, esta es la razón por la que necesitamos.
+
+02:31.290 --> 02:32.860
+Vamos a necesitar ese parámetro.
+
+02:32.910 --> 02:39.990
+Esto se debe a que en cada iteración el calor se reduce en 1 y así el último índice de calor se
+
+02:39.990 --> 02:43.620
+documenta por uno en cada iteración y lo verá en la implementación.
+
+02:43.620 --> 02:45.330
+Entonces este es el calor que hemos estado viendo.
+
+02:45.330 --> 02:47.420
+Esto es lo que parece en la matriz.
+
+02:47.520 --> 02:55.920
+Y entonces nuestro último índice de calor cuando comenzamos es siete y vamos a cambiar el calor cero con el último índice de calor.
+
+02:55.920 --> 02:58.880
+Hay un error tipográfico que debería ser una I mayúscula
+
+02:58.920 --> 03:02.120
+Y entonces vamos a cambiar 80 con 67.
+
+03:02.250 --> 03:05.760
+Y luego de que hayamos hecho eso, esta es una situación que tenemos ahora.
+
+03:05.760 --> 03:08.310
+Esto no es un montón si miramos todo.
+
+03:08.310 --> 03:16.320
+No es un montón, pero lo que vamos a hacer es decir que nuestro montón termina en el índice 6 y
+
+03:16.320 --> 03:18.780
+vamos a acumular lo que queda.
+
+03:18.790 --> 03:26.040
+Entonces, de los índices cero a seis Ahora desafiaremos esa sección de la matriz y una vez que hayamos hecho eso,
+
+03:26.070 --> 03:28.580
+esta será la apariencia de la matriz.
+
+03:28.620 --> 03:34.440
+Y como dije, nuestro último índice de calor ahora es seis setenta y cinco, ahora es la nueva ruta.
+
+03:34.440 --> 03:35.880
+Y entonces vamos a enjuagarnos y repetir.
+
+03:35.880 --> 03:40.440
+Así que vamos a cambiar 75 con el último índice de calor, así que ahora es 52.
+
+03:40.440 --> 03:42.820
+Así que vamos a cambiar 75 por 52.
+
+03:42.990 --> 03:50.160
+Y ahora vamos a reducir el tamaño del calor en uno, así que ahora vamos a decir que nuestro montón consiste
+
+03:50.250 --> 03:55.360
+en elementos de cero a cinco y vamos a encontrar esta parte de la matriz.
+
+03:55.440 --> 03:58.770
+Y después de que hayamos hecho eso, tendremos esta situación.
+
+03:58.770 --> 04:00.960
+Entonces estos dos ya no son parte del montón.
+
+04:00.990 --> 04:06.330
+Han estado en orden ahora y ahora tenemos el tercer elemento más grande en la parte superior
+
+04:06.330 --> 04:07.160
+de la matriz.
+
+04:07.230 --> 04:09.380
+El último índice de calor es cinco.
+
+04:09.510 --> 04:13.360
+Así que este es nuestro peso ahora y vamos a enjuagar y repetir.
+
+04:13.380 --> 04:14.400
+No vamos a continuar
+
+04:14.400 --> 04:20.730
+Ahora creo que entiendes la idea, pero lo que haríamos sería cambiar 68 por 40 y luego mantendríamos un elementos fi
+
+04:20.850 --> 04:27.030
+0 a 4 y cuando hayamos terminado, sesenta y siete deberían estar en la raíz porque ahora es el valor más
+
+04:27.030 --> 04:31.380
+grande del el montón restante y nuestro calor consistirían en elementos de cero a cuatro.
+
+04:31.380 --> 04:37.080
+Así que el último índice de calor se reduciría a cuatro y seguiremos haciéndolo hasta que, por supuesto, solo golpeemos
+
+04:37.080 --> 04:39.840
+el elemento uno y en ese punto nuestro heapsort.
+
+04:39.870 --> 04:45.510
+Ahora es posible que haya más aere más allá, pero esta parte de la matriz nunca fue parte del montón.
+
+04:45.570 --> 04:49.170
+De acuerdo, así es para cómo funciona esto.
+
+04:49.230 --> 04:52.130
+Avancemos ahora e implementemos el algoritmo.
+
+04:52.140 --> 04:53.340
+Te veré en el próximo video.

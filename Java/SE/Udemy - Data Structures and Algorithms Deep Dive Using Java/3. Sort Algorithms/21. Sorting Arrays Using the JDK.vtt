@@ -1,0 +1,256 @@
+WEBVTT
+
+00:05.310 --> 00:12.490
+Tudo bem, acabamos de cobrir um monte de algoritmos de ordenação e implementamos esses algoritmos em Java.
+
+00:12.540 --> 00:17.160
+Então, suponha que você tenha uma matriz que queira classificar em um aplicativo Java.
+
+00:17.310 --> 00:23.580
+Você implementa um desses algoritmos para classificar o array, especialmente quando você pode usar um dos
+
+00:23.580 --> 00:27.540
+algoritmos de classificação linear que faz suposições sobre os dados.
+
+00:27.630 --> 00:32.700
+Mas se você não pode fazer isso se você não pode fazer nenhuma suposição sobre os dados de contagem de taxa
+
+00:32.700 --> 00:38.340
+de ordenação x tipo não é adequado você vai em frente e implementa um dos algoritmos enquanto você não faz metade porque hey
+
+00:38.370 --> 00:39.230
+é Java .
+
+00:39.240 --> 00:46.170
+Temos o JDK à nossa disposição e o JDK contém em uma classe de corrida e essa classe tem métodos que ordenam
+
+00:46.170 --> 00:46.940
+o apagamento.
+
+00:47.060 --> 00:49.040
+Então, vamos dar uma olhada nos arrays.
+
+00:49.050 --> 00:51.350
+Java Doc eu tenho na tela.
+
+00:51.420 --> 00:58.520
+Então, no topo, diz que esta classe contém vários métodos para manipular arrays, como ordenação.
+
+00:58.950 --> 01:01.950
+Então, vamos descer e dar uma olhada nos métodos de classificação.
+
+01:06.990 --> 01:11.420
+E assim você pode ver muitos métodos aqui e boom de olhar para todos esses métodos também.
+
+01:11.420 --> 01:17.100
+Então, esses são todos os métodos para tipos primitivos, mas você verá que também pode classificar objetos.
+
+01:17.150 --> 01:23.510
+Agora, se você quiser classificar os objetos, é claro que você precisa dizer ao tempo de execução
+
+01:23.510 --> 01:27.020
+como ordenar esses objetos e, assim, implementar a interface comparável.
+
+01:27.020 --> 01:32.060
+Isso é o que a ordenação natural de pedidos seria baseada no comparável.
+
+01:32.090 --> 01:35.210
+Você também notará que existem métodos de classificação que ordenam.
+
+01:35.210 --> 01:38.880
+Toda a matriz inteira ou apenas uma parte da matriz.
+
+01:39.050 --> 01:43.440
+Então você não precisa implementar esses métodos de classificação quando quiser classificar e treinar Jaba.
+
+01:43.550 --> 01:48.250
+Como eu disse, temos uma biblioteca inteira à nossa disposição e a classe de frase tem um método de ordenação.
+
+01:48.260 --> 02:00.980
+Então vamos voltar para a ideia agora e chamar o método de ordenação apropriado em nosso array de exemplo usual.
+
+02:01.090 --> 02:06.730
+Então, criei um projeto que coloquei o código na academia para aprender programação sobre ordenação de
+
+02:06.770 --> 02:08.980
+matrizes e criei nossa matriz usual.
+
+02:08.980 --> 02:14.710
+Voltamos à nossa matriz de sete elementos com a qual estávamos trabalhando antes de vermos classificar e classificar x
+
+02:14.710 --> 02:18.050
+classificar e eu tenho o código usual para imprimir a matriz.
+
+02:18.100 --> 02:23.290
+Então, queremos classificar essa matriz, então vamos apenas chamar nosso tipo de corrida.
+
+02:23.290 --> 02:28.150
+E vamos apenas passar a nossa bandeja e vamos correr
+
+02:32.190 --> 02:39.730
+e lá vamos nós menos 20 a menos 15 1 7 20 35 e 55.
+
+02:39.810 --> 02:41.370
+Então isso é maravilhoso.
+
+02:41.370 --> 02:47.360
+Mas agora que sabemos sobre todos esses algoritmos de classificação, podemos perguntar qual algoritmo de classificação é esse que está sendo usado.
+
+02:47.370 --> 02:57.280
+Então, vamos ao código-fonte para isso, então vou clicar com o botão direito e dizer ir para a declaração.
+
+02:57.480 --> 03:04.320
+E aqui estamos nós e veremos que está usando algo chamado quicksort de pivot duplo e podemos
+
+03:04.320 --> 03:11.640
+ver nos comentários que essa é uma forma modificada de quicksort que não diminui tanto para conjuntos de dados
+
+03:11.640 --> 03:16.680
+maiores e é tipicamente mais rápida do que quicksort que usa um pivô.
+
+03:16.680 --> 03:22.620
+Portanto, esse algoritmo oferece um fim ao desempenho de log in em muitos conjuntos de dados que fazem com que
+
+03:22.620 --> 03:25.100
+outros tipos rápidos diminuam para o desempenho quadrático.
+
+03:25.110 --> 03:31.860
+Lembre-se que eu mencionei que no pior caso o quicksort é um algoritmo quadrático mas você sabe que no caso
+
+03:31.860 --> 03:38.490
+médio é 0 e log e também diz que um pivô dual é tipicamente mais rápido que o algoritmo
+
+03:38.490 --> 03:40.530
+de quicksort de um pivot tradicional.
+
+03:40.530 --> 03:46.470
+Então, se você estiver interessado em ver como funciona esse algoritmo de quicksort de pivô duplo,
+
+03:46.470 --> 03:52.830
+provavelmente encontrará um artigo na Web em algum lugar que explique o que está fazendo, mas podemos
+
+03:52.830 --> 03:59.700
+adivinhar que ele está usando dois pivots, em vez de uma classe de arrays. um monte de métodos de
+
+03:59.820 --> 04:07.190
+ordenação paralelos, então vamos voltar para a nossa classe principal aqui e vamos chamar a classificação paralela em vez de
+
+04:07.830 --> 04:10.240
+simplesmente um tipo de classificação paralela.
+
+04:10.380 --> 04:16.050
+Está me dando este erro porque, embora eu esteja usando o Java 9 por alguma razão, o nível de linguagem nos conjuntos
+
+04:16.050 --> 04:17.850
+é algumas vezes menor do que isso.
+
+04:17.850 --> 04:20.990
+Então, isso só está disponível no Java 8.
+
+04:21.120 --> 04:25.740
+E então, se você ver que uma lâmpada deve surgir onde a lâmpada vai e, em seguida, você pode dizer
+
+04:25.740 --> 04:28.380
+apenas definir o meu nível de linguagem para Java 8 por favor.
+
+04:28.380 --> 04:29.350
+E lá vamos nós.
+
+04:29.430 --> 04:30.930
+É assim que você conserta esse erro.
+
+04:31.170 --> 04:31.950
+Então vamos
+
+04:35.280 --> 04:40.380
+rodar e mais uma vez nós temos nossos valores classificados menos 22 até 55.
+
+04:40.390 --> 04:41.930
+Mas o que isso está fazendo?
+
+04:42.190 --> 04:44.820
+Bem, vamos ao código-fonte.
+
+04:44.880 --> 04:54.550
+Então clique direito ir para a declaração fecha por um minuto e se rolarmos para cima, vamos ver que é um algoritmo
+
+04:54.580 --> 04:55.840
+híbrido das sortes.
+
+04:55.840 --> 05:03.100
+É uma mesclagem de classificação paralela que divide a matriz em subarray que são classificados e depois mesclados.
+
+05:03.250 --> 05:11.050
+Mas quando o comprimento do array de metrô atinge uma granularidade mínima, o sub array é classificado usando o método
+
+05:11.080 --> 05:14.300
+de classificação Eraste apropriado que sabemos ser quicksort.
+
+05:14.350 --> 05:22.900
+Então, ele está fazendo o tipo Amerge, mas quando ele está lidando com partições menores, ele está classificando-as usando quicksort, em
+
+05:22.900 --> 05:28.840
+vez de apenas percorrer as matrizes e copiar o elemento menor em um array temporário.
+
+05:29.050 --> 05:30.890
+Também está usando threads.
+
+05:31.000 --> 05:33.800
+E é por isso que é chamado de classificação paralela.
+
+05:33.820 --> 05:37.930
+Portanto, esse tipo pode ser mais rápido para um conjunto de dados maior.
+
+05:37.930 --> 05:44.020
+Portanto, se você tiver um conjunto de dados maior usando saur paralelo, poderá resultar em uma classificação mais rápida.
+
+05:44.020 --> 05:49.630
+Você teria que executar alguns benchmarks para decidir se deveria apenas chamar sort ou parallel sort.
+
+05:49.780 --> 05:55.120
+E isso é tudo o que eu queria fazer neste vídeo, no ponto em que é bom
+
+05:55.120 --> 06:00.070
+entender os diferentes tipos de algoritmos de classificação, mas você não precisa necessariamente implementá-los e verá
+
+06:00.070 --> 06:03.960
+a mesma coisa quando olharmos para alguns as próximas estruturas de dados.
+
+06:03.970 --> 06:09.550
+Java tem muito suporte para estruturas de dados comumente usadas, então você raramente precisa implementar a estrutura de
+
+06:09.550 --> 06:10.840
+dados por conta própria.
+
+06:10.840 --> 06:14.650
+Muitas vezes há uma classe no JDK que já fez isso para você.
+
+06:14.650 --> 06:20.020
+Ou, se não houver, você geralmente encontrará uma biblioteca de terceiros que tenha uma implementação que
+
+06:20.020 --> 06:21.070
+possa ser usada.
+
+06:21.070 --> 06:26.930
+Portanto, a linha de fundo aqui é que você não precisa escrever o código de classificação quando quiser classificar um array.
+
+06:27.040 --> 06:30.000
+Você tem métodos disponíveis para você no JDK.
+
+06:30.160 --> 06:35.590
+E a menos que você queira usar contagem ou ordem radix, a menos que por algum motivo você não
+
+06:35.590 --> 06:41.680
+queira usar um quicksort de pivô duplo ou não queira usar um híbrido de classificação rápida de mesclagem, você normalmente irá
+
+06:41.680 --> 06:44.830
+em frente e usará um dos métodos de classificação no JDK.
+
+06:44.830 --> 06:50.350
+E se você quiser classificar uma matriz de objetos, lembre-se de que você terá que implementar
+
+06:50.470 --> 06:56.460
+a interface comparável para que o método saiba como deve ordenar seus objetos quando estiver fazendo o tipo.
+
+06:56.660 --> 06:58.600
+Tudo bem, vejo vocês no próximo vídeo.

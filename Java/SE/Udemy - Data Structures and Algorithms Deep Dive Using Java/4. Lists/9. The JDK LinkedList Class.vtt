@@ -1,0 +1,466 @@
+WEBVTT
+
+00:05.760 --> 00:10.790
+Tudo bem, então esta é uma estrutura de dados e algoritmos para curso de Java.
+
+00:10.800 --> 00:15.870
+E se você quiser usar uma lista vinculada em Java, provavelmente usará a classe da lista
+
+00:15.870 --> 00:16.940
+vinculada no JDK.
+
+00:16.950 --> 00:22.110
+Então, aqui estamos no documento Java para a classe de lista vinculada e a primeira coisa
+
+00:22.110 --> 00:25.710
+que notamos é que essa é uma implementação de lista duplamente vinculada.
+
+00:25.710 --> 00:31.080
+Então, se você usa essa classe, na verdade você está obtendo uma lista duplamente vinculada e não uma única lista vinculada.
+
+00:31.080 --> 00:36.900
+Também notaremos que ele implementa a interface de lista e a interface de desenfileiramento.
+
+00:36.900 --> 00:41.140
+Nós vamos olhar para Qs mais tarde agora porque implementa a interface da lista.
+
+00:41.160 --> 00:49.620
+Todos os métodos na interface da lista estão na classe de lista
+
+00:49.620 --> 00:58.360
+vinculada, portanto, temos métodos como adicionar índice de tamanho à remoção de matriz.
+
+00:58.890 --> 01:06.510
+Agora, essa classe usa genéricos para que você possa usar essa classe de lista vinculada com qualquer tipo de objeto,
+
+01:06.510 --> 01:08.160
+incluindo nosso objeto Employee.
+
+01:08.160 --> 01:09.910
+Agora, e a classe Node?
+
+01:09.920 --> 01:15.540
+Bem, a classe da lista vinculada tem sua própria implementação da classe Node, portanto, não
+
+01:15.540 --> 01:17.610
+precisamos escrever uma classe de nós.
+
+01:17.610 --> 01:21.230
+Agora é importante observar que essa classe não está sincronizada.
+
+01:21.240 --> 01:27.330
+Esta implementação não está sincronizada, portanto, se você quiser usar uma instância de lista vinculada de vários segmentos, você terá
+
+01:27.330 --> 01:33.240
+que sincronizar as chamadas para qualquer um dos métodos de lista vinculada que você terá que fazer por conta própria.
+
+01:33.240 --> 01:38.870
+Tudo bem, vamos ao ID.
+
+01:39.110 --> 01:40.660
+Então eu criei um novo projeto.
+
+01:40.700 --> 01:47.870
+Coloquei o código na academia de pacotes para aprender a programar listas vinculadas do JDK e criei as
+
+01:47.870 --> 01:50.600
+instâncias usuais dos funcionários para fazer isso.
+
+01:50.600 --> 01:55.940
+Eu obviamente copiei sobre a classe Employee que estamos usando e é exatamente a mesma classe
+
+01:55.940 --> 02:00.170
+que eu copiei e colei o código de um dos outros projetos.
+
+02:00.170 --> 02:11.690
+Então vamos criar uma lista encadeada para nossos funcionários, então diremos que uma lista de funcionários da lista encadeada é igual à nova lista encadeada e vai me pedir para aumentar o meu nível
+
+02:11.690 --> 02:12.350
+de linguagem
+
+02:15.520 --> 02:21.330
+porque o nível de idioma padrão é 1. 6
+
+02:21.330 --> 02:25.290
+E eu acredito que isso precisa de 1. 7 então eu quero que a lâmpada apareça.
+
+02:25.290 --> 02:27.050
+Não aquele um vermelho.
+
+02:27.420 --> 02:28.180
+Aí está.
+
+02:28.190 --> 02:30.940
+E eu só vou dizer Set Language Level to 7.
+
+02:30.960 --> 02:31.290
+ESTÁ BEM.
+
+02:31.290 --> 02:36.870
+Então, vamos fazer o que fizemos antes de adicionar um grupo de funcionários à frente da lista,
+
+02:36.870 --> 02:39.270
+então vou dizer listar Daut add first.
+
+02:39.480 --> 02:45.660
+Portanto, esse é o método que você chama se quiser adicionar um item à frente da lista vinculada e
+
+02:45.660 --> 02:46.900
+ele adicionará a lista
+
+02:50.080 --> 02:50.600
+Jane Jones.
+
+02:50.630 --> 03:02.270
+Inicialmente, John Doe listou inicialmente Mary Smiths e listou o pensamento no início.
+
+03:02.780 --> 03:08.660
+Mike Wilson, a classe de lista vinculada, não tem um método prático de lista
+
+03:08.660 --> 03:12.560
+de impressão, mas tem um iterador, então é assim
+
+03:16.790 --> 03:24.380
+que vamos imprimir o que está na lista, então vamos dizer iterador e eu vou chamá-lo de eiter
+
+03:24.380 --> 03:33.050
+igual e você Vou notar que há várias opções aqui para o iterador, então vou pressionar enter e quero o trabalho
+
+03:33.070 --> 03:42.990
+sobre você até que o iterador seja igual ao iterador da lista e, em seguida, chame ou use um X para imprimi-lo ou pontuá-lo.
+
+03:43.100 --> 03:52.010
+Nós também poderíamos usar um loop para imprimir a lista todos colocar isso como um comentário para que pudéssemos salvar para funcionário empregado
+
+03:52.010 --> 04:01.400
+no sistema de lista saiu do empregado linha de impressão para que pudéssemos fazer isso e eu vou colocar isso em um comentário apenas
+
+04:01.400 --> 04:03.220
+para que você possa ver.
+
+04:03.470 --> 04:05.330
+Então, ambos irão imprimir o ouvinte.
+
+04:05.330 --> 04:08.570
+Obviamente, não vai ter a boa flecha que tivemos.
+
+04:08.570 --> 04:12.230
+Nós vamos imprimir cada funcionário em uma única linha.
+
+04:12.380 --> 04:21.230
+Bem, eu suponho que eu poderia acrescentar isso em mim mesmo, então eu direi que o sistema não está fora do padrão de impressão, praticamente faz
+
+04:24.050 --> 04:26.020
+a mesma coisa que fizemos antes.
+
+04:26.020 --> 04:33.350
+E então eu vou mudar isso para imprimir e então eu vou dizer System outdraw print e nós vamos fazer o double Lero porque
+
+04:33.350 --> 04:35.200
+esta é uma lista duplamente ligada.
+
+04:35.210 --> 04:40.810
+E então no final eu vou imprimir não.
+
+04:42.530 --> 04:47.180
+Então, agora estamos fazendo a mesma coisa que fizemos em nossa
+
+04:47.180 --> 04:54.530
+lista de impressão, exceto pelo fato de estarmos usando um iterador para imprimir os itens que serão executados.
+
+04:54.590 --> 04:56.730
+Agora vamos ver que temos a mesma coisa que tivemos antes.
+
+04:56.740 --> 05:05.220
+Nós temos a nossa cabeça e, em seguida, temos Mike Wilson Mary Smiths John Doe e Jane Jones.
+
+05:05.520 --> 05:09.400
+Então, digamos que queremos adicionar Bill e ao final da lista.
+
+05:09.420 --> 05:11.700
+Então agora temos primeiro anúncio.
+
+05:12.060 --> 05:17.220
+E então deixe-me criar uma conta e um empregado todos o adicionam aqui.
+
+05:17.220 --> 05:25.980
+Então, conta do empregado e é igual a nova conta do empregado e.
+
+05:26.620 --> 05:30.500
+E eu acho que a ID dele, o último vídeo, foi setenta e oito.
+
+05:30.510 --> 05:34.700
+Agora não podemos usar o anúncio primeiro porque o anúncio é o primeiro anúncio na frente da lista.
+
+05:34.830 --> 05:40.010
+Então, em vez disso, usamos o método de anúncio.
+
+05:40.020 --> 05:46.470
+Assim, para a lista de links, o anúncio adiciona um item ao final da lista.
+
+05:46.500 --> 05:52.080
+Teve isto ao fim de rabo assim nós queremos somar conta e não a rabo.
+
+05:52.610 --> 05:55.410
+Você sabe copiar este código.
+
+05:56.370 --> 06:00.100
+Eu suponho que eu poderia colocar isso em um método, mas vamos apenas com isso por enquanto.
+
+06:01.420 --> 06:08.800
+Não precisa declarar o iterador novamente, vamos executar.
+
+06:09.320 --> 06:15.210
+E assim Mike ainda está na frente da lista, todos estão na mesma posição, exceto que no final
+
+06:15.210 --> 06:22.430
+temos Bill e por isso é importante lembrar quando você está trabalhando com o JDK na última aula do método add.
+
+06:22.440 --> 06:29.460
+A implementação do método add a partir da interface da lista adiciona o item ao final da
+
+06:29.460 --> 06:30.400
+lista vinculada.
+
+06:30.510 --> 06:34.230
+Se você quiser um item adicionado à frente, você deve usar o método Adicionar primeiro.
+
+06:34.230 --> 06:39.090
+Por isso, é importante ler a descrição do método que você deseja usar para se certificar de que
+
+06:39.090 --> 06:40.860
+está adicionando o item onde deseja adicioná-lo.
+
+06:40.860 --> 06:44.760
+Agora nós também podemos usar add last.
+
+06:44.820 --> 06:53.540
+Então, se eu mudar isso para adicionar por último e executar, nós obteremos a mesma coisa.
+
+06:53.620 --> 06:58.390
+Então, veremos que a fatura foi adicionada ao final, para que você possa adicionar ou se quiser deixar claro
+
+06:58.630 --> 07:00.820
+que está adicionando o item ao final da lista.
+
+07:00.820 --> 07:02.380
+Você pode usar add last.
+
+07:02.600 --> 07:04.260
+OK agora fecha novamente.
+
+07:04.270 --> 07:07.550
+E vamos ver o código da lista vinculada.
+
+07:07.870 --> 07:16.720
+Então, vou clicar com o botão direito e dizer ir para a declaração e veremos que ela está usando uma classe de nó primeiro
+
+07:16.840 --> 07:22.020
+e último, então primeiro é basicamente a cabeça e a última é o detalhe.
+
+07:22.060 --> 07:23.370
+Tem tamanho.
+
+07:23.410 --> 07:25.600
+E isso parece familiar, não é?
+
+07:25.600 --> 07:28.690
+Agora, qual é a estrutura de dados subjacente que está sendo usada para a lista vinculada.
+
+07:28.690 --> 07:34.160
+Lembre-se de quando analisamos listas de vetores e vetores descobrimos que era uma matriz.
+
+07:34.270 --> 07:39.700
+Bem, veremos que a classe estende a lista sequencial abstrata e, se observarmos isso, veremos
+
+07:44.000 --> 07:50.390
+que esse tipo de implementação fornece uma implementação da interface de lista do Scalia leedle para reduzir a
+
+07:50.390 --> 07:54.090
+quantidade de trabalho necessária para as classes que desejam implementar Lista.
+
+07:54.230 --> 07:59.090
+Então, basicamente, se você quiser implementar a interface da lista e não quiser começar do zero e
+
+07:59.090 --> 08:05.540
+precisar implementar cada método em vez de apenas implementar a lista, podemos estender essa classe se você quiser uma lista sequencial e
+
+08:05.540 --> 08:10.190
+obter um monte de coisas de graça e, em seguida, você pode simplesmente substituir o que
+
+08:10.190 --> 08:15.650
+você deseja substituir e isso é tudo bem e dandy mas como é uma lista vinculada sendo armazenada.
+
+08:15.650 --> 08:17.780
+Bem, você pode ver como está sendo armazenado.
+
+08:17.780 --> 08:25.100
+É exatamente semelhante à maneira como implementamos nossa lista simples e única e lista duplamente vinculada à
+
+08:25.100 --> 08:28.510
+própria lista vinculada é a estrutura de dados.
+
+08:28.520 --> 08:35.650
+Então, não está sendo apoiado por qualquer coisa que a lista encadeada contenha apenas referências a uma cabeça e uma cauda.
+
+08:35.660 --> 08:37.960
+E esta classe de nó.
+
+08:38.270 --> 08:39.500
+Vamos dar uma olhada nisso.
+
+08:42.680 --> 08:50.180
+Tem o item que está no nosso caso seria o empregado e depois tem o próximo e o anterior.
+
+08:50.180 --> 08:53.360
+Portanto, a lista vinculada em si é a estrutura de dados.
+
+08:53.360 --> 08:55.430
+Não há nada que esteja apoiando isso.
+
+08:55.520 --> 09:00.320
+E como passamos por uma implementação simples de uma lista vinculada, isso deve parecer familiar e é por isso
+
+09:00.320 --> 09:05.000
+que passamos por essas implementações simples para que você tenha uma ideia do que está acontecendo embaixo das
+
+09:05.000 --> 09:07.080
+capas quando estiver trabalhando com a lista vinculada.
+
+09:07.160 --> 09:09.200
+OK, então vamos voltar ao método principal.
+
+09:09.200 --> 09:11.030
+Então nós adicionamos funcionários.
+
+09:11.030 --> 09:12.270
+Como podemos removê-los.
+
+09:12.320 --> 09:17.900
+Bem, se você adivinhou que há um primeiro remover e remover os últimos métodos aqui certo.
+
+09:17.930 --> 09:19.730
+Então vamos em frente aqui.
+
+09:19.730 --> 09:22.490
+Eu só vou copiar essa coisa toda
+
+09:26.360 --> 09:35.360
+em vez de adicionar por último Vamos remover o primeiro e não temos que passar nada, porque nós estamos sempre indo para
+
+09:35.420 --> 09:38.690
+remover o primeiro item aqui e vamos correr
+
+09:41.500 --> 09:46.200
+e vamos ver que Mike é ido porque chamamos de remover primeiro.
+
+09:46.330 --> 09:48.840
+Maria é agora o primeiro item da lista.
+
+09:48.850 --> 10:04.300
+E se formos até o fim, o Bill ainda estará lá, mas se eu copiar esse código novamente e disser que a remoção de listas, a última conta deve
+
+10:04.300 --> 10:08.470
+agora ser retirada da lista e vamos verificá-la.
+
+10:08.470 --> 10:14.680
+Então, Mary ainda é a primeira da lista, mas se você for até o fim, verá que a conta já se foi.
+
+10:14.890 --> 10:20.010
+E assim, você remove os itens da frente e do final da lista.
+
+10:20.110 --> 10:26.770
+Você tem que ter cuidado, porque nós apenas fechamos quando estávamos falando e eu disse que se você chamar o
+
+10:26.770 --> 10:32.890
+método de anúncios, ele adicionará um item ao final da lista, enquanto no caso de remover, se você
+
+10:32.890 --> 10:40.890
+acabou de chamar, remova assim. irá remover o primeiro item da lista, então como eu disse, certifique-se de que você sempre quer dizer que
+
+10:41.180 --> 10:42.310
+alguns fazem isso.
+
+10:42.310 --> 10:47.560
+Certifique-se de sempre ler a descrição do método que você está usando para ter certeza de que ele
+
+10:47.560 --> 10:51.490
+estará operando no final das listas que você quer que ele esteja operando.
+
+10:51.490 --> 10:53.110
+Portanto, existem outros métodos de remoção.
+
+10:53.110 --> 10:58.690
+Por exemplo, você pode remover um funcionário específico, é claro, o que significa que o método deve pesquisar
+
+10:58.690 --> 11:00.400
+a lista para esse empregado.
+
+11:00.400 --> 11:02.860
+E assim será uma operação mais lenta.
+
+11:02.860 --> 11:08.000
+Há também métodos que permitem inserir um funcionário ou um nó em um ponto específico da lista.
+
+11:08.020 --> 11:13.470
+Você sabe que pode dizer algo como inserir Joan como o 6º funcionário da lista.
+
+11:13.540 --> 11:16.800
+Mas, novamente, se você fizer isso, essas operações serão mais lentas.
+
+11:16.870 --> 11:21.330
+As operações mais rápidas serão aquelas que estão trabalhando na cabeça ou na cauda.
+
+11:21.340 --> 11:26.800
+De qualquer forma eu encorajo você a dar uma olhada na classe de lista vinculada e ver o que está disponível.
+
+11:26.800 --> 11:31.270
+O ponto importante aqui é que, se você quiser usar uma lista vinculada em Java, poderá usar
+
+11:31.270 --> 11:36.860
+a classe da lista vinculada, desde que não se importe com a sobrecarga extra de memória devido aos campos seguinte e anterior.
+
+11:36.880 --> 11:42.010
+Se você precisar de muitos nós na memória, você pode querer considerar outro
+
+11:42.010 --> 11:47.560
+tipo de estrutura de dados ou, se fizer sentido, implementar uma única lista vinculada.
+
+11:47.560 --> 11:50.300
+Mas a maior parte do tempo a memória não será um problema.
+
+11:50.350 --> 11:54.610
+Agora, antes de sairmos das listas de links, apenas mencionarei que há outro tipo de
+
+11:54.640 --> 11:56.460
+lista vinculada, chamada de lista vinculada circular.
+
+11:56.500 --> 12:02.980
+E isso é uma variação da lista ligada individualmente e, nessa variação, o último nó da lista não
+
+12:02.980 --> 12:03.970
+aponta para nenhum.
+
+12:03.970 --> 12:07.900
+Em vez disso, volta e aponta para o topo da lista.
+
+12:07.930 --> 12:13.310
+E uma vantagem para isso é que você pode percorrer toda a lista a partir de qualquer nó.
+
+12:13.330 --> 12:19.330
+Portanto, se por algum motivo esse recurso for importante para seu aplicativo, uma lista vinculada circular poderá
+
+12:19.330 --> 12:20.250
+funcionar para você.
+
+12:20.290 --> 12:25.780
+Então, eu só queria mencionar isso também, você não vai implementá-lo, mas há uma variação chamada
+
+12:25.780 --> 12:30.500
+lista ligada circular, onde o último nó da lista aponta para o nó principal.
+
+12:30.580 --> 12:31.990
+OK, isso é tudo para lista vinculada.
+
+12:31.990 --> 12:33.160
+Eu vou te ver no próximo vídeo.

@@ -1,0 +1,169 @@
+WEBVTT
+
+00:05.370 --> 00:09.990
+Neste vídeo vamos em frente e para baixo que instalar o kit de desenvolvimento Java também
+
+00:09.990 --> 00:11.220
+conhecido como o JDK.
+
+00:11.220 --> 00:15.410
+Vamos instalá-lo no Linux especificamente, vamos instalá-lo em um Bluetooth.
+
+00:15.420 --> 00:17.270
+Dezesseis pontos quatro.
+
+00:17.550 --> 00:21.360
+Então, se você está adquirindo uma versão diferente do Linux, você deve ser capaz de acompanhar
+
+00:21.360 --> 00:23.080
+e fazer algo semelhante para sua destruição.
+
+00:23.460 --> 00:29.820
+E também tenha em mente que se você estiver executando em uma máquina Windows ou em um computador Mac, na verdade, temos
+
+00:29.820 --> 00:33.670
+vídeos separados para seus sistemas operacionais porque o processo é um pouco diferente.
+
+00:33.670 --> 00:38.020
+Máquinas diferentes acompanham porque você está no lugar certo.
+
+00:38.040 --> 00:40.810
+Qual é a primeira coisa que queremos fazer é colocar uma janela de comando.
+
+00:40.890 --> 00:42.380
+Então eu vou abrir um
+
+00:45.600 --> 00:48.620
+terminal e eu vou trazer isso e ampliar um pouco.
+
+00:48.860 --> 00:56.990
+E o que faremos primeiro é com todo o pseudo-tempero IPT dash obter atualização de tempero e atualizar o Índice de Pacotes
+
+00:57.370 --> 00:59.230
+no topo da sua senha.
+
+01:00.790 --> 01:05.050
+Você tem um momento para concluir e você diz que foi bem rápido.
+
+01:05.050 --> 01:16.450
+Então, a próxima coisa que vamos fazer agora é tipo pseudo spice adicionar dash dash dash tempero PPK Koeln
+
+01:16.710 --> 01:29.220
+web EPD ICT equipe para a frente barra Java você tem um momento para concluir coloca em Uma vez que terminar.
+
+01:29.250 --> 01:33.600
+Nós fazemos um pseudo-tempero IAPT apenas apimentar-se
+
+01:37.350 --> 01:38.260
+quando terminar.
+
+01:38.260 --> 01:49.390
+Vamos fazer um pseudo-tempero tempero kit tempero Stolpe Arkel spice Java ITW instalador de traço e muito
+
+01:51.890 --> 01:52.640
+deprimido.
+
+01:52.640 --> 01:58.240
+Sim, eles selecionam Sim, o epicentro era como por que eu deveria dizer de qualquer maneira.
+
+01:58.720 --> 02:04.140
+Agora vamos passar por este pequeno guia de configuração, então vou pressioná-lo, exceto o
+
+02:04.190 --> 02:06.270
+código binário da Oracle, Lawsons.
+
+02:06.320 --> 02:14.590
+Sim, vou insistir em dizer que eles vão baixar o JDK.
+
+02:14.800 --> 02:16.030
+Então, dê-lhes um momento para concluir.
+
+02:16.030 --> 02:19.130
+Eu só vou avançar este vídeo para o
+
+02:22.200 --> 02:28.960
+final do download do candidato como completo, você pode dizer que está terminando a configuração e agora está
+
+02:28.960 --> 02:35.170
+completo e o que faremos agora é mais alternativas de atualização de pseudo-tempero de Taupin para
+
+02:37.690 --> 02:43.780
+a ciência moderna em outras palavras, config espaço Java e você pode dizer que há uma
+
+02:43.780 --> 02:44.350
+opção lá.
+
+02:44.840 --> 02:48.440
+Podemos selecionar qualquer dispositivo, mas a opção correta está brilhando para mim.
+
+02:48.490 --> 02:51.160
+Você pode dizer que é o Java 8 da Shari Oracle.
+
+02:51.250 --> 02:58.180
+Portanto, dependendo da sua instalação do Linux, você pode ter outras versões do Java, talvez abrir o JDK ou uma versão diferente
+
+02:58.180 --> 03:01.440
+do Java, para que você possa selecionar a opção relevante.
+
+03:01.450 --> 03:03.920
+Mas neste caso a opção padrão está correta.
+
+03:04.030 --> 03:05.040
+Pode ser bom ir.
+
+03:05.170 --> 03:08.570
+Então eu vou apenas Precentor para eles não fazerem nada.
+
+03:08.860 --> 03:12.260
+E a última coisa a fazer é apenas falar em tempero Java.
+
+03:12.310 --> 03:18.510
+DASCHLE tentou a versão de teste.
+
+03:18.690 --> 03:21.470
+Pato afortunado uma versão de Dessch da especiaria de Java.
+
+03:21.600 --> 03:26.490
+Isso é o que eu estava tentando fazer pela primeira vez e isso confirma que eu teria instalado o
+
+03:26.670 --> 03:27.420
+Java com sucesso.
+
+03:27.580 --> 03:33.420
+E você pode dizer que isso mostra que estamos executando neste caso em particular, construir $ 25 um para 4 você pode
+
+03:33.420 --> 03:34.930
+ver na linha anterior até aqui.
+
+03:35.070 --> 03:38.420
+Buddh um ponto oito zero analítico um para quatro.
+
+03:38.580 --> 03:40.780
+Então esse duplo pode ser diferente para você.
+
+03:40.950 --> 03:47.030
+1:44 indica o lançamento da compilação neste caso o Java desenvolveu o McKidd hoje à noite.
+
+03:47.280 --> 03:49.490
+Mas o ponto é que podemos ir.
+
+03:49.820 --> 03:54.650
+Isso não é baixado e instalado corretamente e o que podemos fazer com esse trabalho é que
+
+03:54.660 --> 03:59.780
+podemos falar em Java Sea, que é o compilador Java apenas para confirmar que isso realmente funcionou.
+
+03:59.790 --> 04:03.740
+Isso é parte do kit de desenvolvimento Java e se você disser que isso é
+
+04:03.750 --> 04:07.270
+bom também, e se quisermos, poderemos fazer a mesma coisa com uma versão.
+
+04:09.200 --> 04:11.820
+Basta dizer um ponto oito ponto zero e um para a frente.
+
+04:11.820 --> 04:16.770
+Então, em outras palavras, temos um kit de desenvolvimento Java instalado e podemos prosseguir e passar para
+
+04:16.770 --> 04:17.650
+o próximo vídeo.

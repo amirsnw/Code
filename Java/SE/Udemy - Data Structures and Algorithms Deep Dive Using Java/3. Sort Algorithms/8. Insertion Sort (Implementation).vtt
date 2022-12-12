@@ -1,0 +1,286 @@
+WEBVTT
+
+00:05.290 --> 00:05.730
+Tudo bem.
+
+00:05.750 --> 00:07.710
+Então, vamos implementar o tipo de inserção.
+
+00:07.720 --> 00:09.240
+Eu já criei um projeto.
+
+00:09.260 --> 00:14.140
+Eu vou colocar o código na Academia para aprender a inserção de programação.
+
+00:14.150 --> 00:20.750
+Eu adicionei o array e o código usuais para imprimir o array e esta implementação não precisa do
+
+00:20.750 --> 00:21.470
+método swap.
+
+00:21.500 --> 00:27.190
+Nós não trocamos os elementos shift, então eu não adicionei o método swap porque não precisamos dele.
+
+00:27.260 --> 00:28.830
+OK, então vamos começar sozinho.
+
+00:28.820 --> 00:35.860
+Digamos que int primeiro índice não classificado seja igual a 1.
+
+00:35.870 --> 00:43.130
+Porque lembre-se que esta implementação começa assumindo que o elemento posição 0 está na partição ordenada
+
+00:43.130 --> 00:49.850
+e então o primeiro índice não ordenado começará em 1 e então continuaremos enquanto o
+
+00:49.880 --> 00:54.660
+primeiro índice não ordenado for menor que o comprimento a matriz.
+
+00:54.710 --> 01:00.920
+Portanto, examinaremos todos os elementos até o final da matriz e, após cada iteração,
+
+01:00.950 --> 01:04.640
+o primeiro índice não classificado será incrementado em 1.
+
+01:04.640 --> 01:10.430
+Porque estamos crescendo a partição classificada da esquerda para a direita e assim o
+
+01:10.430 --> 01:14.630
+primeiro índice não-ordenado vai aumentar em um após cada iteração.
+
+01:14.630 --> 01:20.590
+OK, então a primeira coisa que vamos fazer é salvar o valor do elemento
+
+01:20.600 --> 01:27.560
+que vamos inserir em novo elemento porque, como você viu nos slides quando fazemos a mudança dessa
+
+01:27.560 --> 01:34.670
+posição, o elemento será sobrescrito e, por isso, precisa salvar o valor, então vamos economizar em Turei
+
+01:34.670 --> 01:42.750
+primeiro índice não-ordenado e eu vou declarar que eu estou fora do loop porque eu preciso dele depois do loop.
+
+01:43.010 --> 01:49.040
+E agora vamos codificar o loop que percorre a partição ordenada e procura a
+
+01:49.310 --> 01:52.400
+posição correta para inserir um novo elemento.
+
+01:52.520 --> 02:00.620
+Então, vamos dizer que para o meu primeiro índice não classificado, porque quando começamos, o elemento que queremos inserir
+
+02:00.620 --> 02:06.950
+é o primeiro índice ordenado não classificado e vamos continuar a fazer o loop.
+
+02:07.130 --> 02:12.650
+Em outras palavras, nós vamos continuar a olhar e continuar mudando itens, desde
+
+02:12.650 --> 02:17.640
+que ele seja maior que zero, porque isso significa que não atingimos
+
+02:22.860 --> 02:32.630
+a frente da matriz e continuaremos, desde que seja qual for o intervalo de intervalo menos um é maior que um novo elemento.
+
+02:33.170 --> 02:35.660
+Então, o que isso está fazendo só para passar por isso novamente.
+
+02:35.660 --> 02:42.050
+Queremos continuar procurando a posição de inserção, desde que não tenhamos atingido a parte frontal da matriz, porque se atingirmos
+
+02:42.050 --> 02:47.060
+a frente da matriz, isso significa que o elemento que estamos tentando inserir é o menor
+
+02:47.060 --> 02:50.640
+elemento que vimos até agora na posição de inserção correta é zero.
+
+02:50.810 --> 02:52.810
+E nós queremos continuar procurando.
+
+02:52.880 --> 02:58.910
+Contanto que o elemento que estamos vendo na partição classificada seja maior do que aquele que estamos
+
+02:58.910 --> 02:59.780
+tentando inserir.
+
+02:59.780 --> 03:06.110
+Porque se o elemento em menos 1 for maior que o elemento que estamos tentando inseri-los, ainda não encontramos
+
+03:06.110 --> 03:11.300
+a posição de inserção correta no momento em que atingimos a frente da matriz ou no
+
+03:11.300 --> 03:17.090
+momento em que atingimos um elemento menor que ou igual ao elemento que estamos tentando responder, encontramos a
+
+03:17.090 --> 03:20.790
+posição de inserção correta e em cada iteração vamos decrementar I.
+
+03:20.840 --> 03:26.630
+Porque lembre-se de que estamos atravessando a partição ordenada e fazendo as comparações da direita para a
+
+03:26.930 --> 03:29.480
+esquerda e, portanto, estamos descendo a partição classificada.
+
+03:29.600 --> 03:33.580
+OK, então por que queremos fazer se não tivermos atingido a frente da matriz.
+
+03:33.620 --> 03:38.770
+E se o elemento um vinho A-minus for maior que o elemento que estamos inserindo enquanto.
+
+03:38.840 --> 03:46.190
+Se for esse o caso, queremos deslocar o elemento em menos 1 para a direita porque precisamos dar espaço
+
+03:46.580 --> 03:48.260
+para esse novo elemento.
+
+03:48.260 --> 03:55.450
+Então, o que vamos fazer é atribuir Ray II ao Inter.
+
+03:56.180 --> 03:57.630
+Menos um.
+
+03:58.770 --> 04:01.150
+E então é aí que estamos fazendo o deslocamento.
+
+04:01.280 --> 04:04.780
+Estamos mudando da esquerda para a direita.
+
+04:04.790 --> 04:08.040
+Então, por exemplo, quando queremos inserir menos 15.
+
+04:08.030 --> 04:13.280
+Suponha que fizemos a primeira iteração e 20 e 35 estão na partição ordenada quando queremos
+
+04:13.310 --> 04:16.620
+inserir menos 15, o primeiro índice não ordenado será 2.
+
+04:16.730 --> 04:21.030
+Então eu vou ser assim também diria que é maior que zero Sim, é.
+
+04:21.070 --> 04:25.310
+É o valor adicionar em re 1 que é 35.
+
+04:25.310 --> 04:27.030
+Isso é maior que menos 15?
+
+04:27.030 --> 04:28.100
+Enquanto sim é.
+
+04:28.130 --> 04:35.400
+Então esta condição é satisfeita e então o que vamos fazer é atribuir Interrail ao Interrail menos um
+
+04:35.650 --> 04:42.350
+que esteja em primeiro lugar ou efetivamente atribuir 35 para a posição 2 e vimos isso no
+
+04:42.350 --> 04:42.800
+slide.
+
+04:42.800 --> 04:47.510
+Então, se você está tendo dificuldade em entender o que está acontecendo aqui, vá em frente e olhe para
+
+04:47.510 --> 04:53.140
+os slides e então nós o diminuiremos para um, e assim por diante, a segunda iteração dirá que é maior que zero.
+
+04:53.140 --> 05:00.110
+Embora sim, é porque é um e vamos dizer que está em Turei 1 menos 1, que é Interrail 0 é maior que
+
+05:00.110 --> 05:01.040
+o novo elemento.
+
+05:01.040 --> 05:06.660
+Bem, sim, é porque 20 é maior que menos 15 Então vamos mudar 20 para a direita.
+
+05:06.660 --> 05:12.610
+Então, vamos dizer que em Turei um é igual a digitar re um menos um que é zero.
+
+05:12.750 --> 05:18.900
+Então, 20 serão atribuídos à posição 1 e, em seguida, daremos uma volta e subtrairemos um de II.
+
+05:19.050 --> 05:20.880
+E neste momento eu vou ser zero.
+
+05:20.880 --> 05:22.560
+Então, vamos dizer que eu sou maior que zero.
+
+05:22.560 --> 05:23.700
+Bem, não, não é.
+
+05:23.700 --> 05:26.660
+Então, sairemos do loop porque atingimos a frente da matriz.
+
+05:26.730 --> 05:29.960
+Agora, quando encontramos a posição correta, o que precisamos fazer.
+
+05:30.030 --> 05:38.590
+Bem, nossa etapa final quando abandonarmos esse loop é atribuir a integração com o novo elemento.
+
+05:38.760 --> 05:42.370
+Então, no caso, apenas observamos quando abandonamos o loop é zero.
+
+05:42.390 --> 05:47.880
+Então, vamos atribuir menos 15 ao Interrail zero e é exatamente isso que queremos colocar
+
+05:47.880 --> 05:51.720
+menos 15 na frente e mudamos 20 e 35 para 1.
+
+05:51.780 --> 05:54.150
+E é assim que essa implementação funciona.
+
+05:54.150 --> 05:57.780
+E terminamos de codificar a implementação.
+
+05:57.780 --> 06:02.730
+E assim o loop externo é aquele que está crescendo o tipo de partição pelo vinho e
+
+06:02.730 --> 06:08.610
+o laço interno é aquele que está procurando a posição correta para inserir cada elemento e está fazendo o deslocamento.
+
+06:08.610 --> 06:11.650
+Então, vamos executar isso para garantir que isso realmente funcione.
+
+06:13.080 --> 06:14.130
+E de fato faz.
+
+06:14.130 --> 06:21.160
+Ficamos com menos 22 menos 15 1 7 2035 e 55.
+
+06:21.240 --> 06:22.970
+Vamos apenas fechar isso e não.
+
+06:23.010 --> 06:25.010
+E isso é ordenação de inserção.
+
+06:25.080 --> 06:30.510
+Ele funciona tomando cada elemento e inserindo-o em sua posição correta na partição ordenada e no
+
+06:30.510 --> 06:36.260
+final, quando passamos por todos os elementos, a matriz inteira é o final da partição ordenada.
+
+06:36.450 --> 06:37.400
+E assim terminamos.
+
+06:37.530 --> 06:42.180
+OK, agora, como você pode imaginar, às vezes isso envolverá muita mudança, por exemplo.
+
+06:42.180 --> 06:44.460
+Eu acho que devo remover essa vírgula lá eu farei isso.
+
+06:44.460 --> 06:50.150
+Por exemplo, em nossa matriz, o menor valor na matriz está no final da matriz.
+
+06:50.160 --> 06:55.170
+Então, quando finalmente chegarmos a menos 22, teremos que fazer muita mudança, vamos ter que
+
+06:55.200 --> 07:00.650
+mudar todos os outros elementos da matriz para a direita, para dar espaço para menos 22.
+
+07:00.660 --> 07:03.110
+Pode haver muita mudança com este algoritmo.
+
+07:03.150 --> 07:09.690
+E talvez haja uma maneira de melhorar esse algoritmo e existe e vamos ver isso
+
+07:09.720 --> 07:10.930
+no próximo vídeo.
+
+07:10.950 --> 07:11.910
+Eu te vejo lá.

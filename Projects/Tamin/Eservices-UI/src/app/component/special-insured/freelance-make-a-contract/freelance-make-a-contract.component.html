@@ -1,0 +1,71 @@
+<div class="row">
+  <form [formGroup]="theForm" autocomplete="off" novalidate>
+    <div class="form-control-container">
+      <tamin-field-validator formControlName="commitment1"></tamin-field-validator>
+      <tamin-field-checkbox *ngIf="alldisabled" (change)="onCommitment1()" formControlName="commitment1">
+        <p style="direction:rtl;text-align:right;">
+          اینجانب {{personalInfo?.firstName + ' ' + personalInfo?.lastName}} دارای کد ملی
+          شماره {{personalInfo?.nationalId}} با آگاهی کامل از مفاد آئین نامه و مقررات بیمه صاحبان حرف و مشاغل آزاد و با
+          سلامت کامل عقل، صحت اطلاعات و اسناد مربوطه را تایید می نمایم و چنانچه در هر زمان خلاف آن ثابت
+          گردد،
+          قرارداد منعقده باطل بوده و از این نظر هیچگونه حقی نخواهم داشت و ملزم به جبران خسارات احتمالی وارده به سازمان
+          تامین اجتماعی خواهم بود.
+        </p>
+      </tamin-field-checkbox>
+      <tamin-field-checkbox *ngIf="!alldisabled" onclick="return false;" (change)="onCommitment1()"
+        formControlName="commitment1">
+        <p style="direction:rtl;text-align:right;">
+          اینجانب {{personalInfo?.firstName + ' ' + personalInfo?.lastName}} دارای کد ملی
+          شماره {{personalInfo?.nationalId}} با آگاهی کامل از مفاد آئین نامه و مقررات بیمه صاحبان حرف و مشاغل آزاد و با
+          سلامت کامل عقل، صحت اطلاعات و اسناد مربوطه را تایید می نمایم و چنانچه در هر زمان خلاف آن ثابت
+          گردد،
+          قرارداد منعقده باطل بوده و از این نظر هیچگونه حقی نخواهم داشت و ملزم به جبران خسارات احتمالی وارده به سازمان
+          تامین اجتماعی خواهم بود.
+        </p>
+      </tamin-field-checkbox>
+      <br>
+      <tamin-field-checkbox *ngIf="alldisabled" (change)="onCommitment2()" formControlName="commitment2">
+        <p style="direction:rtl;text-align:right;">
+          درخواست بیمه صاحبان حرف و مشاغل آزاد و انعقاد قرارداد با نرخ {{percent}} درصد ، {{cntDrmn}} و دستمزد مبنا {{salary}} و تاریخ
+          شروع {{startDate}} را تایید می نمایم.
+        </p>
+      </tamin-field-checkbox>
+      <tamin-field-checkbox *ngIf="!alldisabled" onclick="return false;" (change)="onCommitment2()"
+        formControlName="commitment2">
+        <p style="direction:rtl;text-align:right;">
+          درخواست بیمه صاحبان حرف و مشاغل آزاد و انعقاد قرارداد با نرخ {{percent}} درصد ، {{cntDrmn}} و دستمزد مبنا {{salary}} و تاریخ
+          شروع {{startDate}} را تایید می نمایم.
+        </p>
+      </tamin-field-checkbox>
+      <tamin-field-validator formControlName="commitment2"></tamin-field-validator>
+      <br>
+      <div class="row">
+        <button *ngIf="isMake" #buttonsavecontract class="button normal green" (click)="onSaveContract()"
+          [disabled]="!commitment1 || !commitment2 || !alldisabled">انعقاد
+          قرارداد
+        </button>
+        <button *ngIf="!isMake" #buttonsavecontract class="button normal green" (click)="onUpdateContract()"
+          [disabled]="!commitment1 || !commitment2 || alldisabled">ویرایش
+          قرارداد
+        </button>
+        <button class="button normal green" (click)="onPrintContract()" [disabled]="!savedContract ">مشاهده
+          قرارداد</button>
+        <!--   <button *ngIf="examination" class="button normal green" (click)="onIntroduceToExamination()" [disabled]="alldisabled">
+            فرم معرفی به مرجع
+            معاینه
+          </button> -->
+        <button class="button normal green" (click)="payInsurancePremium()" [disabled]="!savedContract">پرداخت حق بیمه
+        </button>
+        <button *ngIf="!isMake" #buttonsavecontract class="button normal red" (click)="onDeleteContract()"
+        [disabled]="!commitment1 || !commitment2">غیر فعال کردن
+        قرارداد
+      </button>
+      <button class="button normal red" (click)="redirectTo('/')"> خروج
+      </button>
+      </div>
+    </div>
+  </form>
+</div>
+<tamin-modal #theModal title="نمایش pdf">
+  <tamin-document-viewer #documentViewer width="100%"></tamin-document-viewer>
+</tamin-modal>

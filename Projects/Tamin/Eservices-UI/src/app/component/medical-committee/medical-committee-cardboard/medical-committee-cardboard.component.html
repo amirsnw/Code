@@ -1,0 +1,280 @@
+<ng-container *ngIf="state === 'result' || state === 'objection'">
+  <div class="panel">
+    <div class="page-title">
+      نتیجه رأی
+    </div>
+    <div class="panel-body">
+      <div class="panel">
+        <div class="alert alert-info" style="padding: 10px;
+                                          margin: 10px;">
+          <p><i class="icon-check"></i>
+            {{demandItem?.committeePollType?.pollInsuredDesc}}
+          </p>
+          <p>
+            تاریخ رأی: {{dateTemp}}
+          </p>
+        </div>
+        <div class="panel-title" style="border-radius: 7px;
+                                    width: 98%;
+                                    margin: auto;">نوع رأی
+        </div>
+        <div class="panel-body">
+          <div class="row" style="padding: 20px;">
+            <div class="col-6">
+              <div class="alert alert-warning">
+                <p style="color: black"><i class="icon-lightbulb"></i>
+                  {{demandItem?.committeePollType?.pollDeatilDesc}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-title" style="border-radius: 7px;
+                                    width: 98%;
+                                    margin: auto;">متن رأی
+        </div>
+        <div class="panel-body">
+          <div class="row" style="padding: 20px;">
+            <div class="col-6">
+              <div class="alert alert-warning">
+                <p style="color: black"><i class="icon-lightbulb"></i>
+                  {{demandItem.commissionPollDesc}}
+                </p>
+              </div>
+            </div>
+            <div class="row customized-row" style="align-content: center;">
+              <div class="col-12">
+                <button class="button normal green icon-download" (click)="downloadForm()" type="button"> دانلود فرم
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="state === 'objection'">
+  <div class="panel">
+    <div class="page-title">
+      اعتراض به کمیسیون
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="objectionForm" autocomplete="off" autocomplete="off" novalidate>
+        <div class="panel">
+          <div class="panel-body">
+            <div class="row customized-row">
+              <div class="col-6" style="justify-content: center;
+                                    padding: 20px;">
+                <div class="col-12">
+                  <h3 style="text-align: center;">درخواست خود را برای اعتراض در حداکثر 1000 کاراکتر بنویسید</h3>
+                </div>
+                <div class="alert alert-info">
+                  <p><i class="icon-lightbulb"></i>
+                    متقاضی محترم چنانچه به رای صادره اعتراض دارید از تاریخ ابلاغ رای 30 روز مهلت اعتراض برای شما فراهم
+                    می
+                    باشد.
+                  </p>
+                </div>
+                <div class="col-12" style="padding: 3px;">
+                  <tamin-field-label formControlName="objectionMessage">متن اعتراض:</tamin-field-label>
+                  <ng-container
+                    *ngIf="objectionForm.controls.objectionMessage?.touched && !objectionForm.controls.objectionMessage?.valid">
+                  <span *ngIf="objectionForm.controls.objectionMessage.errors.required" class="tamin-form-control-error"
+                        style="color: #b00020;">
+                    لطفا متن اعتراض خود را بنویسید
+                  </span>
+                    <span *ngIf="objectionForm.controls.objectionMessage.errors.pattern"
+                          class="tamin-form-control-error"
+                          style="color: #b00020;">
+                    متن اعتراض حداکثر 1000 کاراکتر میباشد.
+                  </span>
+                  </ng-container>
+                  <!--<tamin-field-text-area formControlName="objectionMessage"></tamin-field-text-area>-->
+                  <textarea disabled class="tamin-form-control-input tamin-form-control-valid"
+                            style="resize: none;height: 7em" rows="4" cols="50">اینجانب نسبت به رأی صادره کمیسیون پزشکی اعتراض دارم.</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px">
+          <button (click)="onObjectionSubmit()" class="button normal" type="button">ثبت اعتراض
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="state === 'reject-detail'">
+  <div class="panel">
+    <div class="page-title">
+      دلایل عدم تایید
+    </div>
+    <div class="panel-body">
+      <div class="row alert alert-warning">
+        <ul style="color: black; padding-right: 18px">
+          <li *ngIf="demandItem.committeeDisapprovalType">
+            {{demandItem?.committeeDisapprovalType?.disapprovalDesc}}
+          </li>
+          <li *ngIf="demandItem.committeeDisapprovalType">
+            {{demandItem?.committeeDisapprovalType?.disapprovalDescAdditional}}
+          </li>
+          <li *ngIf="demandItem.branchDisapprovalDesc">
+            {{demandItem.branchDisapprovalDesc}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="state === 'miss-document'">
+  <div class="panel">
+    <div class="page-title" style="margin: 0 !important;">
+      تکمیل مدرک
+    </div>
+    <div class="panel-body">
+      <div class="row alert alert-warning" style="padding-right: 20px; margin: 10px 0">
+        <h4>علت عدم تایید</h4>
+        <ul style="color: black; padding-right: 40px">
+          <li *ngIf="demandItem.committeeDisapprovalType">
+            {{demandItem?.committeeDisapprovalType?.disapprovalDesc}}
+          </li>
+          <li *ngIf="demandItem.committeeDisapprovalType">
+            {{demandItem?.committeeDisapprovalType?.disapprovalDescAdditional}}
+          </li>
+          <li *ngIf="demandItem.branchDisapprovalDesc">
+            {{demandItem.branchDisapprovalDesc}}
+          </li>
+        </ul>
+      </div>
+      <div class="part-title" [hidden]="message === ''">
+        <p style="margin: 8px;">
+          {{message}}
+        </p>
+      </div>
+      <div class="panel"
+           style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto"
+           [hidden]="message !== ''">
+        <div class="part-title">
+          <p style="margin-bottom: 8px;">
+            متقاضی گرامی جهت ارسال پرونده ضروری است کلیه مدارک مورد نیاز بارگذاری شود.
+          </p>
+          <p>
+            توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+          </p>
+          <div class="alert alert-info" style="padding: 10px;
+                                          margin: 10px;">
+            <p>
+              مهلت ارسال مدارک تا تاریخ  {{dateTemp}} می باشد و بعد از این تاریخ بارگذاری مدارک امکانپذیر نمیباشد.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row" style="align-content: center;" [hidden]="demandItem?.status === '05'">
+          <div class="part-title" style="background-color: #D8973C;color: #fff;">
+            دانلود و بارگذاری فرم های نقص مدارک کمیسیون
+          </div>
+          <div class="col-12">
+            <button *ngFor="let letterId of letterScanIds;let num = index;" (click)="downloadMissDocForm(letterId)"
+                    class="button normal"
+                    style="margin-top: 12px; margin-right: 13px;">
+              <span><i class="icon-download"></i><span>دانلود فرم پیوست {{num + 1}}</span></span>
+            </button>
+            <!--<button class="button normal green icon-download" (click)="downloadMissDocForm()" type="button"> دانلود فرم نقص مدارک کمیسیون
+            </button>-->
+          </div>
+        </div>
+        <div class="row" [hidden]="!missMainDocumentGalleryMissing">
+          <div class="col-12">
+            <div class="alert alert-danger">
+              خطا در ورود اطلاعات
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <form [formGroup]="documentForm">
+            <div class="row document-struct">
+              <div class="col-6">
+                <tamin-field-label formControlName="selectedItem">نوع مدرک</tamin-field-label>
+                <tamin-field-combo-box-static #mainDocTypeCombo displayField="title"
+                                              formControlName="selectedItem"
+                                              placeHolder="انتخاب کنید ..."
+                                              valueField="id"></tamin-field-combo-box-static>
+              </div>
+              <button *ngIf="showMainDownloader" (click)="downloadDocument(1)" class="button normal"
+                      style="margin-top: 12px; margin-right: 13px;">
+                <span><i class="icon-download"></i><span>دانلود مدرک</span></span>
+              </button>
+              <button (click)="uploadMissMainDocument()" [disabled]="documentForm.value.selectedItem === ''"
+                      class="button normal"
+                      style="margin-top: 12px; margin-right: 13px;">
+                <span><i class="icon-plus"></i><span>بارگذاری مدرک جدید</span></span>
+              </button>
+              <div [ngClass]="{'missing': missMainDocumentGalleryMissing}" class="col-12">
+                <tamin-image-gallery-managed #missMainDocumentGallery
+                                             [maxImageSize]="500"></tamin-image-gallery-managed>
+              </div>
+            </div>
+          </form>
+          <form [formGroup]="documentForm" [hidden]="demandItem?.status === '05'">
+            <br>
+            <hr>
+            <br>
+            <div class="row document-struct">
+              <div class="part-title" style="background-color: #D8973C;color: #fff;">
+                بارگذاری مجدد فرم ها و پاسخ های مرتبط
+              </div>
+              <div class="col-6">
+                <tamin-field-label formControlName="selectedItem2">نوع مدرک</tamin-field-label>
+                <tamin-field-combo-box-static #docTypeCombo displayField="title"
+                                              formControlName="selectedItem2"
+                                              placeHolder="انتخاب کنید ..."
+                                              valueField="id"></tamin-field-combo-box-static>
+              </div>
+              <button *ngIf="showDownloader" (click)="downloadDocument(2)" class="button normal"
+                      style="margin-top: 12px; margin-right: 13px;">
+                <span><i class="icon-download"></i><span>دانلود مدرک</span></span>
+              </button>
+              <button (click)="uploadMissDocument()" [disabled]="documentForm.value.selectedItem2 === ''"
+                      class="button normal"
+                      style="margin-top: 12px; margin-right: 13px;">
+                <span><i class="icon-plus"></i><span>بارگذاری مجدد فرم و پاسخ مرتبط</span></span>
+              </button>
+              <div [ngClass]="{'missing': missDocumentGalleryMissing}" class="col-12">
+                <tamin-image-gallery-managed #missDocumentGallery [maxImageSize]="500"></tamin-image-gallery-managed>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div style="padding: 8px">
+          <button (click)="onMissSubmit()" style="padding: 10px 8%;" class="button normal green">ذخیره مدارک
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div class="panel" [hidden]="state !== 'turn'">
+  <div class="page-title">نوبت دهی کمیسیون</div>
+  <div class="panel-body">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="row" style="padding: 20px;">
+          <div class="col-10">
+            <tamin-data-grid #sessionGrid></tamin-data-grid>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ---- -->
+
+<div style="padding: 8px">
+  <button (click)="onBack()" class="button normal green">بازگشت</button>
+</div>

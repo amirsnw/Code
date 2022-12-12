@@ -1,0 +1,118 @@
+WEBVTT
+
+00:05.290 --> 00:12.060
+De acuerdo, pensé en hacer un breve video sobre tipos de datos abstractos porque Lisp es el primer tipo de datos abstractos.
+
+00:12.070 --> 00:19.210
+Vamos a ver en el curso, por lo que un tipo de datos abstracto no es una estructura de datos concreta en el
+
+00:19.210 --> 00:20.900
+sentido de que es una matriz.
+
+00:20.920 --> 00:25.050
+No dicta cómo se organizan los datos con matrices.
+
+00:25.060 --> 00:31.330
+Sabemos que tenemos que almacenar todos los elementos como un bloque contiguo y las matrices también dictan que cada elemento
+
+00:31.330 --> 00:34.500
+de la matriz debe ocupar la misma cantidad de memoria.
+
+00:34.510 --> 00:39.370
+Entonces las matrices nos dicen cómo deben almacenarse los datos, pero las listas no lo hacen.
+
+00:39.370 --> 00:49.210
+Las listas son más una idea conceptual y dictan las operaciones que podemos realizar en el conjunto de datos, no los elementos en sí mismos, sino que son un
+
+00:49.210 --> 00:54.340
+tipo de datos abstracto que no hace algo así como decir que solo se pueden
+
+00:54.340 --> 00:55.540
+multiplicar estos elementos juntos.
+
+00:55.540 --> 00:59.230
+Es más que dicta cómo podemos acceder a los artículos.
+
+00:59.230 --> 01:01.330
+¿Podemos hacer acceso aleatorio?
+
+01:01.390 --> 01:04.180
+¿Podemos llegar al primer elemento que agregamos?
+
+01:04.210 --> 01:06.550
+¿Podemos llegar al último elemento que agregamos?
+
+01:06.550 --> 01:14.650
+Por lo tanto, un tipo de datos abstracto es más sobre el comportamiento en las operaciones que puede hacer ahora en Java;
+
+01:14.650 --> 01:18.840
+una estructura de datos concreta, como una matriz, suele ser una clase.
+
+01:18.850 --> 01:21.220
+Arrays podría ser una excepción a eso.
+
+01:21.280 --> 01:25.750
+Entonces lo verán a medida que avanzamos en el núcleo. Entonces observamos otras estructuras de datos concretas, generalmente
+
+01:25.750 --> 01:29.940
+hay una clase para ellos y el JDK cuando se trata de un tipo de datos abstracto.
+
+01:29.980 --> 01:35.500
+Normalmente, esas son interfaces que tienen sentido porque no le dicen cómo almacenar los
+
+01:35.500 --> 01:41.080
+datos, sino que especifican el comportamiento, y eso se hace comúnmente con una interfaz.
+
+01:41.110 --> 01:48.550
+Y, básicamente, cualquier estructura de datos se puede utilizar para implementar un tipo de datos abstractos siempre que tenga una
+
+01:48.550 --> 01:52.820
+clase que implemente la interfaz para el tipo de datos abstractos.
+
+01:52.840 --> 02:00.370
+Cualquier clase puede comportarse como ese tipo de datos abstractos, por lo que en el caso de las listas, cualquier clase que implemente la
+
+02:00.370 --> 02:02.490
+interfaz de la lista es una lista.
+
+02:02.590 --> 02:06.700
+Y entonces podrías tener una clase que use una matriz para la lista.
+
+02:06.700 --> 02:10.500
+Si esa clase implementa la interfaz de lista, puede tratarse como una lista.
+
+02:10.510 --> 02:15.490
+Podría tener una clase, esto sería algo terrible de hacer, pero podría tener una clase que tenga
+
+02:15.490 --> 02:17.650
+campos individuales para cada elemento de la lista.
+
+02:17.650 --> 02:23.690
+Mientras esa clase implemente la interfaz de lista, es una lista que puede tratar como una lista.
+
+02:23.710 --> 02:29.170
+Entonces, cuando se trata de un tipo de datos abstracto no hay estructuras de datos concretas,
+
+02:29.170 --> 02:36.580
+no dictan cómo se pueden almacenar los datos, pero sí dictan las operaciones que puede hacer en el tipo de datos abstractos.
+
+02:36.590 --> 02:41.590
+Entonces, por ejemplo, woodlice digamos que puede agregar un elemento, puede quitar un elemento, puede obtener el
+
+02:41.590 --> 02:44.200
+índice de un elemento, etc. pero ellos no dicen.
+
+02:44.230 --> 02:47.040
+Y esta es la forma en que debe almacenar los elementos en la lista.
+
+02:47.050 --> 02:48.100
+Ellos no dicen eso.
+
+02:48.100 --> 02:54.220
+Entonces, ahora que tenemos una idea de qué tipo de datos abstracto es, pasemos a mirar listas en
+
+02:54.220 --> 02:54.940
+el JDK.
+
+02:54.940 --> 02:56.230
+Te veré en el próximo video.

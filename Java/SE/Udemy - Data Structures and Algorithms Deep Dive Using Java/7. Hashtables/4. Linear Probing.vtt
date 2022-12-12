@@ -1,0 +1,820 @@
+WEBVTT
+
+00:05.340 --> 00:05.820
+Tudo bem.
+
+00:05.820 --> 00:12.750
+Então, no último vídeo, fizemos uma implementação simples de tabela de hash, mas nossa implementação não lida
+
+00:12.750 --> 00:13.530
+com colisões.
+
+00:13.530 --> 00:17.390
+E obviamente isso significa que não é tão útil para uma tabela de hash.
+
+00:17.400 --> 00:21.600
+Então, vamos dar uma olhada em duas estratégias comuns para lidar com colisões.
+
+00:21.600 --> 00:25.020
+O primeiro é chamado Open dressing.
+
+00:25.080 --> 00:33.210
+Então, abrir e se vestir é o que fazemos se tentarmos colocar um funcionário na mesa e descobrirmos
+
+00:33.210 --> 00:40.080
+que já existe um funcionário no slot onde queremos colocar o novo funcionário, então procuramos
+
+00:40.140 --> 00:42.100
+outra posição na matriz.
+
+00:42.120 --> 00:47.780
+Se voltarmos ao nosso método principal aqui quando chamamos push com Mary Smith e sabemos que Smith
+
+00:47.780 --> 00:52.260
+chega a cinco e sabemos que Ching Jones já está na posição 5.
+
+00:52.260 --> 00:55.590
+Então, o que faríamos é dizer que a posição OK 5 é queda.
+
+00:55.590 --> 01:00.820
+Então, vamos procurar outra posição na matriz chamada Abrir e vestir.
+
+01:00.840 --> 01:04.790
+Existem diferentes maneiras pelas quais podemos procurar outras posições.
+
+01:04.800 --> 01:12.780
+Vamos usar o que é chamado de sondagem linear com pro-Beijing linear quando descobrimos que uma posição para
+
+01:12.840 --> 01:16.590
+um valor de chave hash já está ocupada.
+
+01:16.590 --> 01:21.950
+Nós incrementamos o valor do hash em um e depois verificamos o índice resultante.
+
+01:21.990 --> 01:29.190
+Assim, no nosso caso, quando chegamos para colocar Mary Smith, descobrimos que a posição 5 da tabela de hash dos
+
+01:29.190 --> 01:30.630
+boops já está ocupada.
+
+01:30.630 --> 01:35.880
+E assim, vamos incrementar 5 a 6 e depois verificaremos a tabela de hash 6.
+
+01:35.910 --> 01:41.970
+E se já estiver ocupado, aumentaremos para 7 e continuaremos fazendo isso até encontrarmos um espaço
+
+01:41.970 --> 01:45.180
+vazio ou verificamos toda a tabela de hash.
+
+01:45.360 --> 01:50.150
+Se a tabela de hash estiver cheia, não podemos adicionar o funcionário à tabela de hash.
+
+01:50.160 --> 01:56.900
+É chamado de sondagem linear porque cada vez que incrementamos o índice, estamos fazendo isso de maneira linear e
+
+01:57.000 --> 01:59.910
+cada incremento do índice é chamado de teste.
+
+02:00.000 --> 02:05.910
+Então, se tivermos que incrementar o índice uma vez antes de encontrarmos uma posição vazia, tivemos que usar uma sonda.
+
+02:05.940 --> 02:11.460
+Se tivermos que incrementar o índice três vezes antes de encontrarmos uma posição vazia, tivemos que usar
+
+02:11.460 --> 02:12.240
+três testes.
+
+02:12.240 --> 02:15.540
+E, obviamente, quanto menor o número de sondas, melhor.
+
+02:15.540 --> 02:20.310
+Então, vamos atualizar nossa implementação simples de tabela de hash para usar a análise linear.
+
+02:20.310 --> 02:27.090
+Então, vamos voltar para a nossa turma e a primeira coisa que vou fazer é adicionar um método que
+
+02:27.090 --> 02:30.000
+verifique se uma determinada posição já está ocupada.
+
+02:31.100 --> 02:34.580
+Então eu vou fazer isso aqui embaixo da nossa função de chave de hash.
+
+02:34.580 --> 02:38.030
+Então eu vou dizer privado ocupado booleano.
+
+02:38.660 --> 02:45.980
+E queremos aceitar um índice porque vamos verificar se uma posição específica está ocupada
+
+02:46.100 --> 02:53.250
+e retornar a tabela de hash e o índice não é igual a não.
+
+02:53.930 --> 02:58.030
+Então, se há algo já sentado nesse índice, então ele está ocupado.
+
+02:58.040 --> 03:00.630
+Então, se não é igual a agora, retornamos verdadeiro.
+
+03:00.680 --> 03:05.180
+Se é igual a Nol significa que está vazio e então retornamos falso.
+
+03:05.180 --> 03:09.030
+Então, agora vamos atualizar nosso método Put para usar sondagem linear.
+
+03:09.080 --> 03:14.150
+Então, ainda vamos alterar nossa chave e, assim que tivermos o valor de hash resultante,
+
+03:14.150 --> 03:17.360
+verificaremos se essa posição na matriz já está ocupada.
+
+03:17.360 --> 03:27.860
+Então, vamos dizer se a chave hashed ocupada, se já está ocupada, precisamos fazer a sondagem linear.
+
+03:28.160 --> 03:35.540
+Se não for, então vamos apenas vir aqui e ainda é possível que não possamos colocar
+
+03:35.540 --> 03:37.190
+o item no array.
+
+03:37.200 --> 03:42.860
+Não vai mudar isso para ocupar embora porque o método ocupado é essencialmente fazendo
+
+03:42.860 --> 03:45.890
+isso agora, então eu vou dizer se ocupado
+
+03:48.540 --> 03:54.700
+hash chave agora isso aconteceria se quando estamos fazendo nosso sondagem Verificamos toda a matriz.
+
+03:54.840 --> 03:59.670
+E assim, se a matriz está cheia, não importa se vamos fazer sondagem linear, não vamos
+
+03:59.670 --> 04:00.720
+encontrar um local vazio.
+
+04:00.720 --> 04:07.040
+Então, quando sairmos desse bloco, se o slot da chave hash estiver ocupado, ficaremos sem sorte.
+
+04:07.140 --> 04:11.830
+Se não estiver ocupado, podemos ir em frente e para o empregado nessa posição.
+
+04:11.880 --> 04:14.290
+Então vamos fazer a sondagem linear.
+
+04:14.370 --> 04:21.140
+Então, a primeira coisa que vamos fazer é parar no X, porque precisamos saber quando parar de procurar.
+
+04:21.390 --> 04:24.790
+Então, precisamos saber quando analisamos a matriz inteira.
+
+04:24.810 --> 04:27.350
+Agora esta implementação está prestes a ser finalizada.
+
+04:27.450 --> 04:33.660
+Se chegarmos ao fim da matriz, quando entrarmos com Mary Smiths, vamos alterar seu valor
+
+04:33.660 --> 04:35.120
+de chave para cinco.
+
+04:35.220 --> 04:39.090
+Nós vamos checar se cinco estão ocupados e vamos nos tornar verdade então vamos
+
+04:39.090 --> 04:40.160
+fazer alguma sondagem linear.
+
+04:40.230 --> 04:43.480
+Então, vamos incrementar a chave com hash para seis.
+
+04:43.500 --> 04:48.910
+Verificamos essa posição se tudo estiver pronto, vamos para 7 e continuaremos.
+
+04:48.930 --> 04:53.060
+É possível que todos os slots até o final da matriz estejam cheios.
+
+04:53.160 --> 04:58.470
+E assim, se chegarmos ao fim da matriz, queremos retornar a zero, mas precisamos saber quando parar,
+
+04:58.470 --> 05:03.180
+porque, então, vamos percorrer a matriz de zero para cima e não queremos passar pela
+
+05:03.180 --> 05:06.910
+direita para o final da matriz novamente porque já verificamos algumas dessas posições.
+
+05:06.990 --> 05:13.620
+E assim, vamos definir um índice de parada e esse índice será igual à chave com hash porque já verificamos
+
+05:13.620 --> 05:18.840
+a posição que vamos incrementar em um e, se continuarmos, daremos a volta e atingiremos essa
+
+05:18.840 --> 05:21.920
+posição novamente isso significa que verificamos toda a matriz.
+
+05:21.990 --> 05:23.460
+Então vamos dizer isso.
+
+05:23.730 --> 05:26.330
+Parar o índice é igual à chave hash.
+
+05:26.610 --> 05:33.780
+E então, vamos dar uma volta até encontrarmos um ponto vazio ou atingirmos o índice
+
+05:33.780 --> 05:45.720
+de parada e, em seguida, vamos dizer se a chave Hashd é igual a tabelas de hash ou lenth menos 1, queremos defini-la como zero.
+
+05:45.720 --> 05:47.020
+Esse é o embrulho.
+
+05:47.250 --> 05:53.070
+Então, isso está configurando a primeira sonda e se a posição que acabamos de verificar é o último slot na matriz,
+
+05:53.070 --> 05:56.930
+queremos fazer o loop na próxima posição que vamos verificar, é a posição zero.
+
+05:56.940 --> 06:01.050
+E então vamos dizer que isso é zero se
+
+06:01.050 --> 06:06.070
+não for esse o caso, então vamos incrementar a chave de hash.
+
+06:06.140 --> 06:12.570
+E assim todo esse código está fazendo aqui este código aqui está criando o primeiro valor para o primeiro teste.
+
+06:12.650 --> 06:17.580
+E assim, no caso de Maria, entraremos e descobriremos que a posição 5 está ocupada.
+
+06:17.750 --> 06:23.690
+5 não é igual a tabela de hash que comprimento menos 1 e então vamos apenas incrementar 5 a 6, então 6
+
+06:23.690 --> 06:25.310
+será a primeira sonda que usamos.
+
+06:25.430 --> 06:29.180
+Se nós estivéssemos chegando com um sobrenome com nove letras.
+
+06:29.420 --> 06:31.660
+E então nós temos o valor de hash 9.
+
+06:31.730 --> 06:37.190
+Se esse slot já estava ocupado, não queremos incrementar o Cascada 10, porque vamos obter uma exceção
+
+06:37.190 --> 06:38.680
+de array fora dos limites.
+
+06:38.930 --> 06:46.080
+Nesse caso, nove seria igual ao tamanho da tabela de hash menos 1 e, portanto, o primeiro valor pro que queremos é zero.
+
+06:46.100 --> 06:49.260
+Você quer voltar para a frente da matriz.
+
+06:49.270 --> 06:56.630
+Tudo bem então agora que temos o nosso primeiro valor, queremos loop-los, queremos dizer que chamamos de chave de hash
+
+06:56.630 --> 06:57.110
+ocupar.
+
+06:57.110 --> 07:05.570
+Então Wall the slot que estamos olhando está ocupado e nossa chave hash não é igual ao índice de Stoffe, porque
+
+07:05.690 --> 07:09.080
+se formos nós olhamos para toda a matriz.
+
+07:09.140 --> 07:17.240
+Nós apenas queremos continuar incrementando a chave do hash e vamos dizer que a chave hash é igual à chave hash
+
+07:17.240 --> 07:20.770
+mais uma do tamanho da nossa tabela de hash.
+
+07:24.050 --> 07:25.200
+Agora, por que isso.
+
+07:25.220 --> 07:28.280
+Bem, podemos querer envolver a frente da matriz em algum momento.
+
+07:28.280 --> 07:31.120
+Este código aqui apenas define o primeiro valor.
+
+07:31.130 --> 07:35.530
+Então, se nós viemos com um valor de 7 digamos e sete foi ocupado.
+
+07:35.660 --> 07:38.930
+E assim nós incrementamos o hash Kieta 8 e lá estávamos.
+
+07:38.990 --> 07:40.350
+Nós vamos verificar a posição 8.
+
+07:40.370 --> 07:42.330
+Bem, digamos que a posição 8 está ocupada.
+
+07:42.380 --> 07:48.230
+Então entramos nós vamos dizer oito mais um é nove modificado por 10 é nove, então tudo bem.
+
+07:48.230 --> 07:50.470
+Nós vamos dar uma volta e checar a posição 9.
+
+07:50.510 --> 07:51.940
+Vamos dizer que isso é ocupado.
+
+07:51.950 --> 07:55.210
+Então, vamos entrar e vamos dizer OK nove mais um é 10.
+
+07:55.220 --> 07:56.980
+Nós não queremos verificar a posição 10.
+
+07:57.000 --> 07:58.470
+Tão fora dos limites.
+
+07:58.640 --> 08:01.400
+Então, vamos dizer que 10 mod 10 é zero.
+
+08:01.670 --> 08:05.210
+E isso envolve a chave de volta para o início da matriz.
+
+08:05.240 --> 08:12.580
+Portanto, este código aqui define a primeira posição pro e, em seguida, em cada iteração de loop, isso definirá a
+
+08:12.760 --> 08:13.420
+próxima posição.
+
+08:13.430 --> 08:15.130
+E cuida do embrulho.
+
+08:15.230 --> 08:16.110
+E é isso.
+
+08:16.190 --> 08:18.350
+Esse é o nosso método de venda atualizado.
+
+08:18.380 --> 08:26.570
+E assim, se entrarmos com Maria e descobrirmos que a posição 5 está ocupada, definiremos o valor da
+
+08:26.570 --> 08:27.590
+primeira sonda.
+
+08:27.680 --> 08:32.450
+Vamos verificar a posição na primeira sonda e se isso ainda ocupar, definiremos o valor da
+
+08:32.450 --> 08:33.340
+próxima sonda, etc. Então, quando
+
+08:33.350 --> 08:40.190
+desistimos desse loop, encontramos uma posição vazia ou saímos porque analisamos todas as posições.
+
+08:40.190 --> 08:41.300
+E assim, se a posição estiver ocupada, isso significa que a matriz está cheia.
+
+08:41.300 --> 08:46.410
+Nós não podemos no empregado.
+
+08:46.410 --> 08:47.840
+Caso contrário, vamos em frente
+
+08:47.840 --> 08:54.200
+e no funcionário, se entrarmos e a primeira posição que verificarmos não estiver ocupada, não vamos fazer nenhuma investigação linear, porque isso retornará falso.
+
+08:54.200 --> 08:57.950
+Nós vamos sair daqui e vamos fazer o teste novamente.
+
+08:57.950 --> 09:00.740
+É redundante, mas é um cheque cronometrado constante, então não é tão grande assim.
+
+09:00.800 --> 09:05.430
+E isso retornará False novamente e nós apenas iremos adiante e designaremos o funcionário.
+
+09:05.450 --> 09:10.710
+Então, vamos voltar ao nosso método principal e vamos executar o método principal.
+
+09:10.730 --> 09:15.070
+Vou descomentar esta tabela de hash de impressão.
+
+09:15.080 --> 09:18.290
+Então, vamos correr e desta vez nós não recebemos o oops desculpe não pode
+
+09:18.290 --> 09:19.100
+colocar Mary na
+
+09:21.970 --> 09:28.390
+mesa de hash e como você pode ver Mary foi colocado para posicionar a posição de John três Jain's em 5 mykes seis e Mary em sete.
+
+09:28.390 --> 09:35.950
+Então, a nossa sondagem linear olhou para a posição 5 viu que estava ocupada olhou para a posição 6
+
+09:35.980 --> 09:42.190
+viu que estava ocupada olhou para a posição 7 e bingo encontrou uma posição vazia.
+
+09:42.190 --> 09:47.260
+E isso está funcionando.
+
+09:47.290 --> 09:48.980
+Mas agora vamos tentar recuperar a Mary.
+
+09:49.360 --> 09:52.140
+Então eu vou copiar essa linha e talvez você possa adivinhar o que vai acontecer aqui.
+
+09:52.150 --> 09:58.250
+Então, em vez de recuperar a chave Wilson, vamos recuperar
+
+09:58.300 --> 10:02.830
+as chaves e vamos em frente e correr.
+
+10:06.200 --> 10:10.140
+E nós recuperamos a chave Smith e UPS Temos Jane.
+
+10:10.360 --> 10:14.590
+Agora, isso aconteceu porque não atualizamos o método get,
+
+10:14.590 --> 10:19.770
+então, se voltarmos à matemática, eles ficarão completamente indiferentes sobre sondagem linear.
+
+10:19.770 --> 10:24.660
+Então, ele ainda está fazendo o que estava fazendo antes de ir adiante e
+
+10:24.670 --> 10:29.860
+fazer o hashing da chave e, em seguida, apenas retornar o que está lá.
+
+10:29.860 --> 10:30.910
+Agora, se estamos usando sondagem linear no método put, também temos que usar isso no método get.
+
+10:30.910 --> 10:36.370
+Então, em vez de presumir que, se obtivermos um valor hash
+
+10:36.400 --> 10:42.490
+de 5, que é onde a chave está, temos que ver e ver
+
+10:42.490 --> 10:50.890
+se o funcionário nessa posição foi adicionado à chave que está sendo usada para recuperar um funcionário.
+
+10:51.190 --> 10:52.100
+Mas é claro que temos um problema agora porque temos uma matriz de funcionários.
+
+10:52.180 --> 10:56.860
+A única coisa que estamos armazenando em nossa tabela de hash é o funcionário.
+
+10:56.860 --> 11:00.290
+Não temos ideia de quais chaves foram adicionadas aos funcionários.
+
+11:00.340 --> 11:04.100
+Então, teremos que armazenar a chave e o valor na matriz.
+
+11:04.210 --> 11:09.430
+Já não é bom o suficiente apenas armazenar o valor e alguns vão
+
+11:09.430 --> 11:16.620
+criar uma nova classe chamada empregado armazenado e esta classe terá dois campos que terá a chave e terá
+
+11:16.620 --> 11:18.180
+o empregado e eu
+
+11:22.290 --> 11:27.600
+vou fazê-los public para que eu não precise criar sets e get porque isso
+
+11:27.600 --> 11:32.370
+significa que o código na tabela de hash não será tão confuso.
+
+11:32.370 --> 11:35.020
+Então, eu vou dizer chave pública de string.
+
+11:35.160 --> 11:39.090
+Essa é a chave bruta.
+
+11:39.360 --> 11:40.800
+Este não é o
+
+11:40.800 --> 11:47.760
+valor de hash porque quando chegamos para recuperar a memória, temos a chave Smyth e que hashes para cinco.
+
+11:47.760 --> 11:49.210
+E quando olhamos para a
+
+11:49.350 --> 11:55.980
+posição 5, precisamos saber se o funcionário foi adicionado com a chave Smyth's, sabemos que eles foram adicionados com o valor de hash de 5.
+
+11:56.130 --> 11:58.730
+Então, isso seria uma informação redundante, mas precisamos
+
+11:58.740 --> 12:04.710
+olhar para o funcionário e dizer que tudo bem, vemos Jane Jones aqui, acrescentou ela com a chave Smith.
+
+12:04.710 --> 12:07.390
+E então precisamos da chave bruta.
+
+12:07.410 --> 12:10.080
+E é claro que
+
+12:10.110 --> 12:19.890
+precisamos armazenar o empregado empregado e eu terei a ideia de gerar um construtor para mim.
+
+12:19.890 --> 12:20.680
+OK e isso é tudo que precisamos em nossa classe de funcionários armazenados.
+
+12:24.790 --> 12:27.930
+Então, agora que temos que ter que voltar e atualizar nossa classe de tabela ou hash.
+
+12:28.180 --> 12:34.570
+Precisamos de uma variedade de funcionários armazenados armazenados pelo funcionário.
+
+12:34.600 --> 12:39.300
+E assim teremos que atualizar nosso construtor para criar uma matriz de
+
+12:39.370 --> 12:44.140
+funcionários armazenados e para baixo aqui, em vez de apenas colocar o
+
+12:46.740 --> 12:52.560
+funcionário na tabela de hash que precisamos para criar uma instância de funcionário armazenado.
+
+12:52.560 --> 12:53.650
+Então, estamos dizendo novo empregado armazenado e queremos a chave no empregado.
+
+12:53.640 --> 13:00.510
+Então, nada mais precisa mudar aqui.
+
+13:01.020 --> 13:03.050
+Estamos apenas mudando o que armazenamos.
+
+13:03.090 --> 13:04.670
+Mas agora precisamos atualizar
+
+13:04.680 --> 13:10.740
+nosso método Get, pois não podemos mais apenas retornar cegamente o funcionário no índice de hash.
+
+13:10.770 --> 13:11.340
+Temos que
+
+13:11.340 --> 13:16.320
+verificar para ver se temos a chave certa e se não temos, então temos que usar a sonda linear para continuar procurando.
+
+13:16.320 --> 13:17.250
+Então, adicionarei um
+
+13:17.250 --> 13:24.180
+método de chave de localização e usaremos isso para encontrar o funcionário que estamos procurando com a chave fornecida.
+
+13:24.180 --> 13:25.490
+Então, eu vou dizer private chave find e vamos aceitar a chave bruta como um parâmetro.
+
+13:25.490 --> 13:33.780
+Então, a primeira coisa que vamos fazer é usar hash porque o primeiro local que
+
+13:33.810 --> 13:37.770
+vamos ver é o valor do hash.
+
+13:37.770 --> 13:39.310
+Então, na chave da
+
+13:39.420 --> 13:51.570
+lixeira é igual a chave de hash e agora queremos saber se o funcionário armazenado no índice de chave hash foi adicionado à chave em que estamos interessados.
+
+13:51.570 --> 13:55.860
+Então, vamos dizer se a chave hash
+
+13:55.860 --> 14:10.710
+da tabela hash não é igual a todas e a chave hash da chave hash dot é a chave em que estamos interessados.
+
+14:11.580 --> 14:14.790
+Então nós encontramos nossos funcionários, então podemos apenas retornar a chave com hash.
+
+14:14.790 --> 14:19.770
+E isso está dizendo que se a chave que foi usada para armazenar o funcionário e
+
+14:20.400 --> 14:27.450
+a chave hash é igual à chave que estamos usando para recuperar o funcionário, então podemos ir em frente e retornar o valor
+
+14:27.450 --> 14:33.750
+do hash, porque isso significa que o funcionário chave hash da tabela hash foi armazenada usando a chave que estamos procurando.
+
+14:33.750 --> 14:41.250
+E assim, se estivéssemos olhando para recuperar Geeing Jones chamamos get com a chave Jones e
+
+14:41.250 --> 14:49.260
+Jones iria hash a cinco e, em seguida, veríamos a tabela de hash 5 e olhamos para
+
+14:49.260 --> 14:55.170
+o valor-chave o valor-chave na instância de funcionário não armazenada e é Jones
+
+14:55.170 --> 14:57.270
+Essa é a chave para o funcionário que queremos recuperar e, assim, podemos apenas retornar a chave em que encontramos o funcionário.
+
+14:57.300 --> 15:02.970
+Agora, se esse não é o caso, temos que usar o teste linear
+
+15:02.970 --> 15:08.310
+e temos que fazer da mesma maneira que fizemos no método get.
+
+15:08.340 --> 15:09.090
+Quer dizer, você
+
+15:09.090 --> 15:14.570
+não pode adicionar um a cada índice no método get e, em seguida, quando se trata de encontrar um funcionário, você adicionará cinco para cada problema.
+
+15:14.570 --> 15:16.430
+Isso não funcionaria.
+
+15:16.440 --> 15:17.330
+Então vamos ter que fazer da mesma maneira.
+
+15:17.340 --> 15:19.560
+E então vou copiar o código daqui.
+
+15:19.560 --> 15:22.230
+Nós vamos modificá-lo.
+
+15:22.230 --> 15:23.290
+Isso nos dará uma vantagem.
+
+15:23.310 --> 15:29.560
+Então, nós não nos importamos agora se a posição está ocupada, nós nos importamos
+
+15:29.700 --> 15:37.320
+se a chave que foi usada para armazenar o empregado naquela posição corresponde àquela em que estamos interessados.
+
+15:37.320 --> 15:41.010
+Então vou tirar essa linha daqui.
+
+15:41.010 --> 15:42.830
+Assim, o índice de parada será
+
+15:42.960 --> 15:48.600
+definido da mesma maneira na primeira sonda será definido da mesma maneira e realmente reformatar o código agora.
+
+15:48.690 --> 15:49.850
+Então é mais fácil para nós ver o que está sendo feito.
+
+15:49.860 --> 15:51.810
+Então eu vou até codificar reformatar o código de pagamento e isso puxa tudo.
+
+15:51.810 --> 16:01.030
+Então, definimos nossa primeira sonda e agora queremos manter o loop da seguinte forma.
+
+16:01.050 --> 16:09.780
+Então, enquanto a chave hash não é igual a parar o índice, porque se é,
+
+16:09.780 --> 16:17.700
+então, nós examinamos todas as posições na matriz e a chave hash da tabela
+
+16:17.700 --> 16:29.640
+de hash não é igual a tudo que é igual ao Knol, nós obviamente não queremos olhar para ela .
+
+16:29.640 --> 16:30.510
+Obviamente não conterá o funcionário que estamos procurando.
+
+16:30.570 --> 16:33.660
+E a chave na chave hash da tabela de hash também não é a que procuramos.
+
+16:33.660 --> 16:39.300
+Portanto, a chave de hash da tabela de hash não é igual à chave.
+
+16:39.400 --> 16:45.940
+Nesse caso, queremos continuar procurando.
+
+16:46.050 --> 16:48.100
+Então, nós não olhamos para toda a
+
+16:48.390 --> 16:54.570
+matriz e a posição que estamos olhando não é o funcionário que foi adicionado com a chave que nos interessa,
+
+16:54.570 --> 16:59.490
+então vamos para a próxima sonda e fazer um loop ao redor e continue procurando.
+
+16:59.490 --> 17:01.410
+E assim, quando abandonamos
+
+17:01.410 --> 17:07.860
+esse loop, há duas possibilidades: Nós examinamos toda a matriz ou encontramos o funcionário.
+
+17:07.860 --> 17:11.110
+Então, vamos dizer se o índice de
+
+17:11.190 --> 17:19.670
+parada for igual à chave com hash e, em seguida, analisamos o apagamento total que retornaremos menos um.
+
+17:19.680 --> 17:21.650
+Caso contrário, vamos retornar a chave com hash e esqueci meu semicólon aqui.
+
+17:22.140 --> 17:30.410
+OK, então usamos a mesma técnica de sondagem linear para procurar o
+
+17:30.450 --> 17:37.020
+funcionário que foi adicionado à tabela com essa chave.
+
+17:37.020 --> 17:38.010
+Se acharmos que
+
+17:38.040 --> 17:44.670
+o funcionário que retornamos quando abandonarmos esse ciclo, estaremos na posição em que esse funcionário foi armazenado.
+
+17:44.670 --> 17:45.510
+OK, então agora que temos o método de chave de busca, vamos voltar ao nosso método Get.
+
+17:45.510 --> 17:50.300
+E isso não vai ser muito ruim, vamos dizer na chave da lixeira
+
+17:50.400 --> 17:59.120
+e desta vez vamos dizer chave encontrar e, em seguida, vamos verificar o sinal de menos se a chave Hashd é igual a menos um.
+
+17:59.120 --> 18:04.450
+Nós só vamos retornar não porque isso significa que
+
+18:04.460 --> 18:10.370
+não há nenhum funcionário com a chave que estamos procurando.
+
+18:10.370 --> 18:10.790
+Caso contrário,
+
+18:10.790 --> 18:17.210
+vamos devolver o funcionário e, como estamos armazenando instâncias de funcionários armazenados na tabela de hash, precisamos adicionar o funcionário da Daut aqui e pronto.
+
+18:17.210 --> 18:21.570
+Esse é o nosso método get atualizado.
+
+18:21.650 --> 18:23.360
+Então, vamos em frente e executar
+
+18:23.360 --> 18:24.580
+e desta vez recuperamos
+
+18:27.910 --> 18:35.890
+Mary Smith, mas temos que atualizar nosso método de impressão, porque agora temos funcionários armazenados e não temos instâncias de funcionários, então vamos fazer isso agora.
+
+18:35.890 --> 18:39.810
+E há outra coisa que temos que fazer também.
+
+18:41.300 --> 18:43.720
+É claro que é possível que uma posição de tabela de hash esteja vazia.
+
+18:43.730 --> 18:48.060
+Isso não importava antes, porque estávamos apenas imprimindo tabelas de hash.
+
+18:48.080 --> 18:51.490
+Mas agora precisamos imprimir a tabela de hash.
+
+18:51.530 --> 18:53.400
+Eu pontuo empregado e por isso precisamos verificar Nalls.
+
+18:53.430 --> 18:56.780
+Então, vamos dizer se a tabela de hash II
+
+18:56.780 --> 19:06.920
+é igual a não, então eu vou dizer que o sistema saiu da linha de impressão e eu vou dizer vazio e senão nós vamos imprimir
+
+19:06.920 --> 19:17.030
+o funcionário e tudo mais alguns detalhes aqui Eu vou dizer posição mais eu mais dois pontos em um espaço mais o empregado que nos interessa.
+
+19:17.030 --> 19:30.150
+Então vamos correr de novo.
+
+19:30.170 --> 19:31.670
+E agora temos os empregados de novo,
+
+19:33.870 --> 19:40.970
+podemos ver as posições de John Doe três cinco mykes de Jain seis Marys às sete e quando vamos buscar Mary de volta desta vez, conseguimos Mary em vez de ficar com Jane.
+
+19:40.980 --> 19:47.650
+E é assim que funciona o linier sealing.
+
+19:48.420 --> 19:50.920
+Se a posição no valor de hash da
+
+19:51.690 --> 19:58.590
+chave já estiver ocupada, você continuará incrementando o índice e batendo até a frente, se necessário, até encontrar um ponto vazio.
+
+19:58.890 --> 20:03.340
+E como você pode ver, lidar com colisões complica as coisas e também afeta o desempenho.
+
+20:03.480 --> 20:09.010
+Se tivermos que usar o teste se houver uma colisão,
+
+20:09.060 --> 20:16.140
+adicionar um item à tabela de hash não será mais um tempo constante.
+
+20:16.140 --> 20:17.490
+O pior caso é o 0
+
+20:17.490 --> 20:22.980
+linear do final, porque é possível que tenhamos que pesquisar toda a tabela antes de chegarmos ao último ponto vazio no array.
+
+20:22.980 --> 20:26.640
+Mas como eu disse na prática, pode ser difícil criar uma função
+
+20:26.640 --> 20:31.290
+de hash que retorne valores únicos e, muitas vezes, a quantidade de espaço que você tem
+
+20:31.290 --> 20:38.220
+na estrutura de dados que está apoiando a tabela pode não ser grande o suficiente segure todos os itens que você deseja adicionar.
+
+20:38.220 --> 20:41.700
+Nesse caso, não importa quão boa seja sua função de hashing, as colisões serão inevitáveis.
+
+20:41.700 --> 20:47.340
+Agora nós conversamos sobre o fator de carga que pode obviamente afetar quantas colisões você
+
+20:47.340 --> 20:52.710
+terá e quão bem a sondagem de sonda linear funciona, porque se sua matriz
+
+20:52.710 --> 20:58.620
+estiver quase cheia, então você terá que usar muitas sondas para encontre um lugar vazio.
+
+20:58.620 --> 21:02.970
+Mas se você mantiver o fator de carga razoável e, assim, ocasionalmente, redimensionar a
+
+21:02.970 --> 21:09.000
+matriz para criar mais pontos vazios, isso reduzirá o número no número médio de probes que você precisa usar.
+
+21:09.000 --> 21:14.440
+&nbsp;

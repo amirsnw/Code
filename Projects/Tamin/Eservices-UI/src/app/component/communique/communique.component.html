@@ -1,0 +1,66 @@
+<div class="panel">
+  <div class="panel-title">جستجو</div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="test">کد طرف حساب</tamin-field-label>
+            <tamin-field-auto-complete-data-grid formControlName="test"></tamin-field-auto-complete-data-grid>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="test">ردیف پیمان</tamin-field-label>
+            <tamin-field-auto-complete-data-grid formControlName="test"></tamin-field-auto-complete-data-grid>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="test">شماره حکم</tamin-field-label>
+            <tamin-field-text formControlName="test"></tamin-field-text>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="test">نوع حکم</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="test"></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="test">وضعیت</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="test"></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="test">شماره پرونده</tamin-field-label>
+            <tamin-field-text formControlName="test"></tamin-field-text>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="test">از تاریخ صدور</tamin-field-label>
+            <tamin-field-persian-date formControlName="test"></tamin-field-persian-date>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="test">تا تاریخ صدور</tamin-field-label>
+            <tamin-field-persian-date formControlName="test"></tamin-field-persian-date>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="test">از تاریخ تغییر وضعیت</tamin-field-label>
+            <tamin-field-persian-date formControlName="test"></tamin-field-persian-date>
+          </div>
+
+          <div class="col-4">
+            <tamin-field-label formControlName="test">تا تاریخ تغییر وضعیت</tamin-field-label>
+            <tamin-field-persian-date formControlName="test"></tamin-field-persian-date>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="button-container">
+              <button type="submit" class="button normal" (click)="searchFormSubmit()">جستجو</button>
+              <button type="button" class="button normal dark" (click)="resetForm()">نمایش همه</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

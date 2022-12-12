@@ -1,0 +1,81 @@
+<div class="alert alert-info">
+درخواست کمک هزینه مراسم ترحیم
+</div>
+<app-stp-header-funeral-no-presence #header></app-stp-header-funeral-no-presence>
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <div class="panel" *ngIf="deadNew">
+    <div class="panel-title">  مشخصات متوفی </div>
+    <div class="panel-body">
+      <div class="row">
+          <div class="col-3">
+          <tamin-field-label formControlName="deadNationalId">کد ملی متوفی</tamin-field-label>
+          <tamin-field-validator formControlName="deadNationalId"></tamin-field-validator>
+          <tamin-field-natioanl-id formControlName="deadNationalId" placeholder=""></tamin-field-natioanl-id>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="deadName">نام و نام خانوادگی متوفی</tamin-field-label>
+          <tamin-field-static-text formControlName="deadName" placeholder=""></tamin-field-static-text>
+          </div>
+           <div class="col-3">
+          <tamin-field-label formControlName="deadRelation">نسبت متوفی</tamin-field-label>
+          <tamin-field-static-text formControlName="deadRelation" placeholder=""></tamin-field-static-text>
+          </div>
+         
+      </div>
+      <div class="button-container" style="margin: 3px">
+  <button class="button normal" (click)="onValidateDead()">
+    <i class="icon-ok"></i>
+    <span> احراز شرایط  </span>
+  </button>
+</div>
+    </div>
+  </div>
+    <div class="panel" #dataPanel4 *ngIf="deadEdit">
+    <div class="panel-title">مشخصات متوفی</div>
+    <div class="panel-body">
+      <!--<div class="row">
+          <div class="col-3">
+          <tamin-field-label formControlName="deadNationalId">کد ملی متوفی</tamin-field-label>
+          <tamin-field-static-text formControlName="deadNationalId" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="deadName">نام و نام خانوادگی متوفی</tamin-field-label>
+          <tamin-field-static-text formControlName="deadName" placeholder=""></tamin-field-static-text>
+          </div>
+      </div>-->
+         <div class="row">
+            <div class="col-3">
+          <tamin-field-label formControlName="weddingDateTimeStamp">تاریخ فوت</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="weddingDateTimeStamp"></tamin-field-static-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="partnerNationalId">کد ملی متوفی</tamin-field-label>
+          <tamin-field-static-text formControlName="partnerNationalId" placeholder=""></tamin-field-static-text>
+        </div>
+        <!--<div class="col-3">
+          <tamin-field-label formControlName="kddateTimeStamp">تاریخ گواهی فوت</tamin-field-label>
+          <tamin-field-static-persian-date  formControlName="kddateTimeStamp" placeholder=""></tamin-field-static-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="dtype">متوفی</tamin-field-label>
+          <tamin-field-static-text formControlName="dtype"></tamin-field-static-text>
+        </div>-->
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <button class="button normal" (click)="onReConfirmRequest()">
+            <span>مشکل شماره حساب  را برطرف نموده ام</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="button-container" style="margin: 3px">
+  <button class="button normal" (click)="onSendRequest()">
+    <i class="icon-ok"></i>
+    <span>تایید و ادامه </span>
+  </button>
+</div>

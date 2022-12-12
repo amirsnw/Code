@@ -1,0 +1,169 @@
+WEBVTT
+
+00:05.280 --> 00:05.700
+Tudo bem.
+
+00:05.700 --> 00:12.780
+Assim, o desafio era modificar a implementação dos tipos Mirch, que ordena os inteiros em ordem
+
+00:12.810 --> 00:13.460
+decrescente.
+
+00:13.530 --> 00:19.380
+E este é o projeto inicial que estava na seção de recursos, portanto, se formos em frente
+
+00:19.410 --> 00:27.740
+e executarmos agora, veremos que a classificação de mesclagem está sendo classificada em ordem crescente, porque esse é essencialmente o código que fizemos no
+
+00:27.740 --> 00:28.840
+tipo de mesclagem.
+
+00:28.840 --> 00:30.050
+Vídeo que queremos.
+
+00:30.050 --> 00:31.310
+Ordem decrescente.
+
+00:31.430 --> 00:33.060
+Então vamos em frente e olhar o código.
+
+00:33.140 --> 00:35.650
+Agora a fase de divisão não precisa mudar.
+
+00:35.650 --> 00:40.660
+Quero dizer, toda a fase de divisão é dividir a matriz em duas, não importa se você
+
+00:40.670 --> 00:43.450
+está classificando em uma ordem de envio ou descendente.
+
+00:43.490 --> 00:46.460
+Portanto, não precisamos alterar o método de classificação de mesclagem.
+
+00:46.760 --> 00:53.000
+O que temos que mudar é a etapa de mesclagem, porque é um passo quando comparamos elementos nos arrays
+
+00:53.000 --> 00:58.610
+direito e esquerdo uns contra os outros e os escrevemos em ordem de classificação para um array temporário.
+
+00:58.640 --> 01:04.370
+Então, quando estamos fazendo isso, em vez de classificá-los em uma ordem de envio, queremos classificá-los em
+
+01:04.370 --> 01:04.960
+ordem decrescente.
+
+01:05.090 --> 01:08.780
+Portanto, há dois lugares que temos que mudar nesse método de mesclagem.
+
+01:08.780 --> 01:11.100
+O primeiro lugar é essa otimização.
+
+01:11.120 --> 01:15.710
+Nós, no vídeo de fusão, passamos pelo que esta otimização está fazendo.
+
+01:15.710 --> 01:21.680
+É essencialmente verificar se você realmente tem que fazer qualquer fusão, porque se essa condição for verdadeira quando
+
+01:21.680 --> 01:27.140
+estamos classificando em uma ordem permanente, isso significa que todos os elementos na matriz esquerda são menores
+
+01:27.140 --> 01:29.460
+que todos os elementos da matriz correta.
+
+01:29.480 --> 01:34.100
+E como o array do lado esquerdo do cérebro direito está em ordem de classificação, isso
+
+01:34.100 --> 01:40.420
+significa que, se os copiámos para um array temporário, acabamos copiando o array temporário de volta para o array de entrada.
+
+01:40.460 --> 01:44.210
+E nenhum dos elementos mudaria as posições de nenhum dos elementos.
+
+01:44.390 --> 01:47.380
+E assim, essa otimização evita trabalho desnecessário.
+
+01:47.390 --> 01:53.900
+Mas se estamos classificando em ordem decrescente, isso não faz mais sentido. O que queremos saber agora é
+
+01:53.900 --> 02:00.540
+se todos os elementos da matriz à esquerda são maiores ou iguais a todos os elementos da matriz correta.
+
+02:00.650 --> 02:03.440
+Porque se esse é o caso, então não precisamos fazer nenhum trabalho.
+
+02:03.440 --> 02:08.150
+Então, nossa primeira mudança aqui será maior ou igual.
+
+02:08.180 --> 02:13.250
+E assim, se todos os elementos da matriz à esquerda forem maiores ou iguais que todos os
+
+02:13.250 --> 02:16.100
+elementos da matriz correta, não precisaremos fazer nenhuma fusão.
+
+02:16.130 --> 02:21.740
+Se fôssemos mesclá-los, acabaríamos colocando o array direito no final do array
+
+02:21.740 --> 02:27.590
+esquerdo e então teríamos todo o intervalo de elementos classificados em ordem decrescente.
+
+02:27.590 --> 02:32.450
+Agora o segundo lugar que temos que mudar é quando estamos realmente fazendo uma mesclagem
+
+02:32.450 --> 02:38.930
+e estamos atravessando as partições esquerda e direita e estamos comparando elementos no array esquerdo contra elementos no array correto.
+
+02:38.930 --> 02:44.810
+Então, aqui estamos dizendo que se o elemento na matriz esquerda for menor ou igual ao elemento
+
+02:44.810 --> 02:49.400
+na matriz correta, então escrevemos o elemento na matriz esquerda para a temporização.
+
+02:49.490 --> 02:55.460
+Obviamente, se vamos classificar em ordem decrescente, queremos escrever o maior dos dois elementos
+
+02:55.580 --> 02:59.720
+na matriz temporária primeiro, não o menor dos dois elementos.
+
+02:59.720 --> 03:03.370
+E então, mais uma vez, vamos mudar isso para maior e igual a.
+
+03:03.380 --> 03:09.750
+Agora, manter isso igual é extremamente importante porque o tipo Mirch deve ser um tipo estável.
+
+03:09.770 --> 03:16.790
+E assim, se temos uma situação em que o elemento nas matrizes esquerdas é igual a 5 e o elemento na
+
+03:16.790 --> 03:22.550
+matriz correta é igual a 5, queremos que o da matriz à esquerda seja escrito primeiro, porque
+
+03:22.670 --> 03:25.590
+isso preservará a ordem relativa das duplicatas .
+
+03:25.700 --> 03:31.520
+E assim nós queremos um igual aqui se isso fosse apenas maior do que resultaria no elemento na matriz correta
+
+03:31.520 --> 03:36.410
+sendo escrito antes daquele no array à esquerda e que transformaria o merge sort em um tipo
+
+03:36.500 --> 03:38.480
+instável e nós não queremos aquele.
+
+03:38.570 --> 03:44.900
+E é isso que é tudo o que precisamos fazer para alterar essa implementação para classificar os inteiros em ordem
+
+03:44.900 --> 03:45.230
+decrescente.
+
+03:45.230 --> 03:49.480
+Então vamos correr e lá vai você.
+
+03:49.490 --> 03:56.370
+Cinquenta e cinco trinta e cinco e vinte e sete um menos 15 e menos 22.
+
+03:56.540 --> 03:59.750
+Então isso foi muito fácil apenas para nos aquecer.
+
+03:59.750 --> 04:00.190
+Tudo bem.
+
+04:00.200 --> 04:03.300
+Então, vamos seguir em frente para o desafio número dois.

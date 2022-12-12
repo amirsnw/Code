@@ -1,0 +1,28 @@
+WEBVTT
+
+00:05.300 --> 00:11.340
+Hasta ahora, nuestro segundo desafío, quiero que cambies la implementación del tipo de inserción.
+
+00:11.340 --> 00:16.870
+Que revisamos en el video de inserción para que sea una implementación recursiva.
+
+00:16.970 --> 00:20.210
+Por lo tanto, quiero que ordene la matriz de ejemplo habitual.
+
+00:20.240 --> 00:25.730
+Y en la sección de recursos para este video, encontrará un proyecto inicial que esencialmente contendrá
+
+00:25.730 --> 00:29.420
+el código que cubrimos en el video de ordenación por inserción.
+
+00:29.450 --> 00:36.740
+Por lo tanto, si necesita revisar el video en recursividad y, por supuesto, el video en ordenación por inserción,
+
+00:36.740 --> 00:38.170
+si necesita revisarlo también.
+
+00:38.180 --> 00:44.910
+Entonces, esencialmente, el desafío es tomar la implementación iterativa y cambiarla a una implementación recursiva.
+
+00:44.990 --> 00:47.850
+Buena suerte y te veré en el video de la solución.

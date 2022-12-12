@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="claimDebitFlowReport" pageWidth="595" pageHeight="842" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="01b38f08-1bb7-493a-a8e4-d9dcceb88f09">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="bb50c57f-24bc-4241-9b11-7c69a0dd0cac"/>
+	<parameter name="EXE_LETDAT" class="java.lang.String"/>
+	<parameter name="EXE_LETNO" class="java.lang.String"/>
+	<parameter name="BRHPROVINC" class="java.lang.String"/>
+	<parameter name="LNAME" class="java.lang.String"/>
+	<parameter name="EXE_MASTCUSTCODE" class="java.lang.String"/>
+	<parameter name="EXE_PAGNO" class="java.lang.Integer"/>
+	<parameter name="BRHNAME" class="java.lang.String"/>
+	<parameter name="RAEES_SHOB" class="java.lang.String"/>
+	<parameter name="RAEES_EJRA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="802" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1]]></printWhenExpression>
+			<rectangle radius="30">
+				<reportElement x="1" y="2" width="565" height="799" uuid="5fe76bdf-b242-4c75-a092-b49d87e675ac"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</rectangle>
+			<elementGroup/>
+			<image hAlign="Center">
+				<reportElement x="229" y="66" width="85" height="19" uuid="24c0c1bf-a0a7-4e9e-ab34-e3d4d67136a8"/>
+				<imageExpression><![CDATA["/reports/Images/vezarat.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="280" y="269" width="269" height="30" uuid="20d5f8b4-86b5-43fb-b801-957d60dbb8aa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[احتراما بپیوست یکجلد پرونده اجرایی شرکت/کارگاه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="328" width="504" height="30" uuid="d28fc8b3-ed1b-46ff-bb35-14050a9d80aa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[مطالبات معوقه سازمان و در اجرای فصل هشتم آئین نامه اجرایی ماده 50  ارسال میگردد. خواهشمند]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="239" width="39" height="30" uuid="0b66a16f-4b32-4119-8b63-372519387d79"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[با سلام]]></text>
+			</staticText>
+			<image hAlign="Right">
+				<reportElement x="79" y="37" width="41" height="22" uuid="0787b207-b847-48a8-a962-98a83ec85353"/>
+				<imageExpression><![CDATA["/reports/Images/shomareh.png"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="215" y="545" width="127" height="20" uuid="ca204942-f5e5-407a-a753-26ca8c246cca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RAEES_SHOB}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="352" y="299" width="100" height="30" uuid="25356ed1-f242-4f10-9c70-a8184251c69a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EXE_MASTCUSTCODE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="170" width="54" height="32" uuid="89df0045-a93d-4d8a-a4e6-5356f498efff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="true" pdfFontName="/reports/Fonts/tahomabd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[مزایده]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="209" width="39" height="30" uuid="31475913-a24f-4e29-95b4-f7ca006bda85"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[اداره کل]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="56" y="545" width="127" height="20" uuid="5ed68615-3285-454d-ac1d-0df42aacd2c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RAEES_EJRA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="452" y="299" width="97" height="30" uuid="ff203a67-ccc6-46a3-b74c-7266a210c01b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[به شماره کارگاهی]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="236" y="48" width="70" height="19" uuid="789faf3c-f974-4f42-99bb-dd6c3de04338"/>
+				<imageExpression><![CDATA["/reports/Images/jomhouri.png"]]></imageExpression>
+			</image>
+			<image hAlign="Right">
+				<reportElement x="72" y="81" width="48" height="33" uuid="4985cb77-e72c-49ae-abf8-ee9563860aaa"/>
+				<imageExpression><![CDATA["/reports/Images/peyvast.png"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="6" y="59" width="73" height="22" uuid="f9ccde1b-7aaa-4a9f-a79c-9454bedc559b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" pdfFontName="/reports/Fonts/Arial.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EXE_LETDAT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="45" y="299" width="219" height="30" uuid="8afad749-e276-452e-a648-4ce39b444a48"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[برگ جهت انجام تشریفات مزایده و استیفای ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="388" width="504" height="30" uuid="58bbb07a-f451-42f7-aa74-376c81e8f3d6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[مزایده  عمومی اموال  منقول/اموال غیر منقول  شرکت فـوق الذکر طبق  پرینت پیوست  در روزنامه های  ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="324" y="209" width="186" height="30" uuid="0f1cbda8-73de-431f-ac0d-ba2cf9477d67"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BRHPROVINC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="45" y="358" width="504" height="30" uuid="1e466f2d-6953-475f-85b7-c694d2f8bac3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[است دستور فرمائید در  صـــورت صلاحدید وفق بخشنامه شماره 10 جدید درآمد نسبت  به  درج آگهی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="503" width="49" height="20" uuid="edbc73ee-5735-406f-9404-874bfe229f0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[شعبه]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="229" y="86" width="85" height="19" uuid="73e035fe-9daa-4412-b9f3-39c0eb97c90b"/>
+				<imageExpression><![CDATA["/reports/Images/besmellah.png"]]></imageExpression>
+			</image>
+			<image hAlign="Right">
+				<reportElement x="442" y="35" width="107" height="72" uuid="67bd9398-29e3-4900-bb54-229746f2e0ea"/>
+				<imageExpression><![CDATA["/reports/Images/logo.png"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="6" y="37" width="73" height="22" uuid="8f06890a-ce18-4a24-b908-7f76756304be"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" pdfFontName="/reports/Fonts/Arial.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EXE_LETNO}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Right">
+				<reportElement x="79" y="59" width="41" height="22" uuid="0b7e3492-e1ba-47bc-a371-a18d49481c69"/>
+				<imageExpression><![CDATA["/reports/Images/tarikh.png"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="159" y="503" width="105" height="20" uuid="2bb014ba-1c94-4ff9-b2f9-8c1cd1ed2388"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BRHNAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="45" y="418" width="504" height="30" uuid="2a48c5b9-9496-42c7-9673-6730a5ce68d8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="false" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[کثیر الانتشار اقدام و از نتیجه این شعبه را مطلع نمایند.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="45" y="269" width="235" height="30" uuid="fb099328-ed21-4c63-89b0-5e46e6886d51"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LNAME}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center">
+				<reportElement x="229" y="29" width="85" height="19" uuid="823792f0-e7b4-4317-9ccb-37d3404ab438"/>
+				<imageExpression><![CDATA["/reports/Images/allah.png"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="264" y="299" width="34" height="30" uuid="82a7c585-bb6a-4dfb-9397-f47dd47ebcf5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" pdfFontName="/reports/Fonts/Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EXE_PAGNO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="68" y="503" width="91" height="20" uuid="749d2a33-e277-4144-a302-aef5e0646d78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[تامین اجتماعی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="299" width="54" height="30" uuid="45db2455-3b5d-460e-80cf-37e84f56b4f9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" pdfFontName="/reports/Fonts/Tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[محتوی]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+</jasperReport>

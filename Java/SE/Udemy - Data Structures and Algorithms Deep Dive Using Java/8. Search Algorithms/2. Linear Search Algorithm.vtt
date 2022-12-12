@@ -1,0 +1,157 @@
+WEBVTT
+
+00:05.270 --> 00:10.400
+Tudo bem neste vídeo, vamos olhar para o algoritmo de busca linear e isso é muito
+
+00:10.400 --> 00:13.760
+simples, então não há slides, não há vídeo de teoria.
+
+00:13.880 --> 00:21.620
+É um algoritmo de busca que todo mundo pensaria se alguém dissesse para você escrever código para
+
+00:21.620 --> 00:23.820
+encontrar 15 negativos nesta pesquisa.
+
+00:23.870 --> 00:29.360
+O que você vai fazer enquanto você vai iterar sobre o array e você vai dizer que
+
+00:29.380 --> 00:30.940
+é Interrail 0 menos 15.
+
+00:30.950 --> 00:31.490
+Não.
+
+00:31.500 --> 00:36.200
+OK, bem, incremente o índice está em Turei 1 menos 50.
+
+00:36.200 --> 00:36.740
+Não.
+
+00:36.740 --> 00:43.970
+OK vamos incrementar o índice é Interrail para menos 15 enquanto sim é tão bingo encontramos o item
+
+00:43.970 --> 00:45.260
+que estamos procurando.
+
+00:45.260 --> 00:50.630
+E é por isso que ele é chamado de busca linear. Basicamente, você está apenas incrementando o índice
+
+00:50.630 --> 00:55.400
+de maneira linear, e você vai desde o começo da matriz até o final da matriz
+
+00:55.400 --> 01:01.730
+e vai encontrar o item que você re procurando ou você vai atingir o final da matriz e se você fizer eo
+
+01:01.760 --> 01:06.500
+último item na matriz não é igual ao que você está procurando, então você pode estar
+
+01:06.500 --> 01:10.010
+certo de que a matriz não contém o valor que você está procurando.
+
+01:10.010 --> 01:11.900
+Então vamos em frente e escrever o código para isso.
+
+01:11.900 --> 01:13.280
+Tenho certeza que você poderia fazer isso sozinho.
+
+01:13.280 --> 01:15.200
+Mas vamos em frente.
+
+01:15.200 --> 01:21.680
+Então, eu vou dizer public static int porque vamos retornar o índice de onde o item está sendo
+
+01:21.680 --> 01:26.240
+procurado ou retornaremos menos um dos itens que não estão no array.
+
+01:26.510 --> 01:28.280
+Então, vamos dizer pesquisa linear.
+
+01:28.430 --> 01:33.890
+E queremos o array de entrada e queremos o valor que queremos encontrar.
+
+01:33.890 --> 01:36.410
+Então, vamos dizer que quatro polegadas é igual a zero.
+
+01:36.410 --> 01:50.860
+Eu Lassan input dot lenth Eu mais plus gif input é igual ao valor então nós terminamos nós vamos retornar I se desistirmos desse loop e não tivermos acertado o valor
+
+01:51.950 --> 01:57.530
+que estamos procurando então retornamos menos 1 porque isso significa que o
+
+01:57.530 --> 02:00.040
+valor não está na matriz.
+
+02:00.050 --> 02:02.710
+Então, vamos tentar nossa busca linear.
+
+02:02.930 --> 02:11.620
+Então eu vou dizer sistema fora da linha de pesquisa linear de pesquisa em duas matriz e uma matriz.
+
+02:11.990 --> 02:16.760
+E vamos procurar menos 15 menos 15.
+
+02:18.110 --> 02:30.410
+E então vamos dizer que o sistema saiu da linha de pesquisa linear em Turei, vamos procurar um e faremos mais
+
+02:30.410 --> 02:31.250
+alguns.
+
+02:31.250 --> 02:33.630
+Então eu vou copiar essas duas linhas.
+
+02:37.490 --> 02:41.050
+Vamos procurar por algo que não esteja no array, então 888.
+
+02:41.060 --> 02:44.110
+E vamos procurar menos 22.
+
+02:44.210 --> 02:46.030
+A última posição na matriz.
+
+02:46.160 --> 02:46.970
+Então vamos correr
+
+02:52.850 --> 02:53.280
+OK.
+
+02:53.280 --> 03:01.500
+Então, para menos de 15 nós temos dois e isso é verdade porque menos 15 é aquele índice 2 para um deles, temos cinco.
+
+03:01.570 --> 03:02.730
+Isso também está correto.
+
+03:02.790 --> 03:13.080
+0 1 2 3 4 5 temos menos 1 para 8 8 8 8 8 porque não está na matriz e temos 6 para menos 22 e
+
+03:13.080 --> 03:14.820
+isso é pesquisa linear.
+
+03:14.850 --> 03:18.470
+Agora você pode descobrir a complexidade do tempo para esse algoritmo.
+
+03:18.540 --> 03:20.700
+Bem, é 0 evento certo.
+
+03:20.700 --> 03:25.590
+O pior caso é que estamos procurando o último item da matriz, o que significa
+
+03:25.590 --> 03:32.550
+que temos que percorrer todo o array, o que significa que ele nos levará em etapas para chegar ao último item e
+
+03:32.790 --> 03:34.680
+é isso para pesquisa linear .
+
+03:34.740 --> 03:37.160
+Quero dizer, em comparação com alguns algoritmos desse tipo, nós olhamos.
+
+03:37.160 --> 03:41.460
+Este é realmente fácil, mas deve haver um caminho melhor.
+
+03:41.460 --> 03:45.410
+Quer dizer, tem que haver uma maneira mais rápida de encontrar um valor e existe.
+
+03:45.420 --> 03:48.240
+E assim, no próximo vídeo, vamos dar uma olhada na pesquisa binária.
+
+03:48.240 --> 03:49.160
+Eu te vejo lá.

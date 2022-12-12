@@ -1,0 +1,18 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>ثبت درخواست کفالت</span>
+</div>
+<div class="row">
+  <div class="panel">
+    <div class="col-12">
+      <div class="panel-title">جستجو</div>
+      <div class="panel-body">
+        <app-guardian-search (submitTicket)="onSearch($event)" ></app-guardian-search>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <router-outlet></router-outlet>
+</div>
+

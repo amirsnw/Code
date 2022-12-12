@@ -1,0 +1,319 @@
+<div class="page-title">
+  فرم درخواست کمیسیون پزشکی
+</div>
+<div class="row" [hidden]="!formValidationError">
+  <div class="col-12">
+    <div class="alert alert-danger">
+      خطا در ورود اطلاعات
+    </div>
+  </div>
+</div>
+<div class="alert alert-info" *ngIf="model.isMainInsured">
+  <p><i class="icon-lightbulb"></i>
+    لطفا سوابق بیمه پردازی خود را در قسمت "
+    <a href="/view/#/history" style="color: #ff9800">کلیه سوابق</a>
+    " بررسی نمایید و در صورت عدم وجود اشکال نسبت به ثبت درخواست اقدام فرمایید.
+  </p>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <form [formGroup]="formOne" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="insuranceNumber">شماره بیمه شده اصلی</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'شماره بیمه اصلی'" formControlName="insuranceNumber"
+          ></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="isuTypeDesc">نوع بیمه</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'نوع بیمه'"
+                                   formControlName="isuTypeDesc"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="isuStatusTypeDesc">وضعیت بیمه شده</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'وضعیت بیمه شده'"
+                                   formControlName="isuStatusTypeDesc"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="branchName">شعبه</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'شعبه بیمه پردازی'" formControlName="branchName"
+          ></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <div class="alert alert-info">
+      <p><i [ngClass]="{'icon-user-male': model.gender === 'm', 'icon-user-female': model.gender === 'f' }"></i>
+        متقاضی ارجاع به کمیسیون پزشکی
+      </p>
+    </div>
+    <form [formGroup]="formOne" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="commRelationTypeCode">متقاضی ارجاع به کمیسیون پزشکی</tamin-field-label>
+          <tamin-field-validator formControlName="commRelationTypeCode"></tamin-field-validator>
+          <tamin-field-combo-box-static *ngIf="!model.demandStage" [dataItems]="commRelationTypeCodeList" displayField="name"
+                                        formControlName="commRelationTypeCode" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+          <input *ngIf="model.demandStage" [value]="commRelationTypeTemp == undefined ? '' : commRelationTypeTemp" class="tamin-form-control-input"
+                 readonly="readonly" style="background-color: #efeff0; border-color: #cacacb;" type="text">
+        </div>
+      </div>
+      <div [hidden]="model.isMainInsured" class="row">
+        <div class="col-12">
+          <p><i class="icon-lightbulb"></i>
+            اطلاعات هویتی (کد ملی و تاریخ تولد) فرد مورد نظر را جهت ثبت درخواست کمیسیون پزشکی وارد نمایید.
+          </p>
+        </div>
+      </div>
+      <div class="row customized-row" style="justify-content: end;
+                                              align-items: flex-end;">
+
+        <!-- Identity Box -->
+        <div class="col-12 identityBox" [hidden]="!model.lockIdentity && !model.isMainInsured">
+          <div *ngIf="!model.isMainInsured" class="col-12">
+            <button (click)="unlockIdentity()" class="button normal green"
+                    style="margin: 10px auto;" type="button">دریافت مجدد اطلاعات از سامانه کفالت
+            </button>
+          </div>
+          <div class="col-3">
+            <tamin-field-label formControlName="commNationalCode">کدملی متقاضی</tamin-field-label>
+            <tamin-field-static-text formControlName="commNationalCode"></tamin-field-static-text>
+          </div>
+          <div class="col-3">
+            <tamin-field-label formControlName="commBirthDate">تاریخ تولد</tamin-field-label>
+            <input [value]="birthDateTemp" class="tamin-form-control-input"
+                   readonly="readonly" style="background-color: #efeff0; border-color: #cacacb;" type="text">
+          </div>
+        </div>
+        <div class="col-12 identityBox" [hidden]="model.lockIdentity || model.isMainInsured">
+          <div class="col-12">
+            <button (click)="getIdentity()" class="button normal green"
+                    style="margin: 10px auto;" type="button">دریافت اطلاعات از سامانه کفالت
+            </button>
+          </div>
+          <div class="col-3">
+            <tamin-field-label formControlName="commNationalCode">کدملی متقاضی</tamin-field-label>
+            <ng-container
+              *ngIf="formOne.controls.commNationalCode?.touched && !formOne.controls.commNationalCode?.valid">
+              <span *ngIf="formOne.controls.commNationalCode.errors.required" class="tamin-form-control-error">
+                <span style="color: #b00020;">مقدار فیلد الزامی می باشد</span>
+              </span>
+              <span *ngIf="formOne.controls.commNationalCode.errors.pattern" class="tamin-form-control-error">
+              <span style="color: #b00020;">مقدار 10 رقمی وارد شود</span>
+            </span>
+            </ng-container>
+            <tamin-field-mask formControlName="commNationalCode"
+                              regex="^[۰۱۲۳۴۵۶۷۸۹0-9]{1,10}$" [placeHolder]="'کدملی متقاضی'"></tamin-field-mask>
+          </div>
+          <div class="col-3">
+            <tamin-field-label formControlName="commBirthDate">تاریخ تولد</tamin-field-label>
+            <tamin-field-persian-date formControlName="commBirthDate"></tamin-field-persian-date>
+          </div>
+        </div>
+        <!-- ---- -->
+
+        <div class="col-3">
+          <tamin-field-label formControlName="commFirstName">نام متقاضی</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'نام متقاضی'" formControlName="commFirstName"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commLastName">نام خانوادگی متقاضی</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'نام خانوادگی متقاضی'"
+                                   formControlName="commLastName"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commFatherName">نام پدر متقاضی</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'نام پدر متقاضی'"
+                                   formControlName="commFatherName"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commIdNumber">شماره شناسنامه متقاضی</tamin-field-label>
+          <tamin-field-static-text [placeHolder]="'شماره شناسنامه متقاضی'"
+                                   formControlName="commIdNumber"></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commExpCityName">محل صدور شناسنامه متقاضی</tamin-field-label>
+          <tamin-field-static-text [hidden]="formOne.value.commRelationTypeCode !== '01'" [placeHolder]="'محل صدور شناسنامه'" formControlName="commExpCityName"
+                            ></tamin-field-static-text>
+          <tamin-field-auto-complete-data-grid [hidden]="formOne.value.commRelationTypeCode === '01'" formControlName="commExpCityCodeCombo"
+                                               placeholder="شهر محل صدور" #expCityCombo>
+          </tamin-field-auto-complete-data-grid>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <form [formGroup]="formFive" autocomplete="off" novalidate>
+      <div class="row customized-row" style="justify-content: end;
+                                              align-items: flex-end;">
+        <div class="col-3">
+          <tamin-field-label formControlName="lastJobDesc">آخرین شغل بیمه شده اصلی</tamin-field-label>
+          <tamin-field-validator formControlName="lastJobDesc"></tamin-field-validator>
+          <tamin-field-static-text *ngIf="!noJobFound" [placeHolder]="'آخرین شغل بیمه شده اصلی'" formControlName="lastJobDesc"></tamin-field-static-text>
+          <tamin-field-text *ngIf="noJobFound" [placeHolder]="'آخرین شغل بیمه شده اصلی'" formControlName="lastJobDesc"></tamin-field-text>
+        </div>
+        <div class="col-6" style="margin: -7px 0px">
+          <tamin-field-label formControlName="jobHistoryDesc">سوابق شغلی قبلی بیمه شده اصلی</tamin-field-label>
+          <tamin-field-text-area formControlName="jobHistoryDesc" style="height: 3em !important;"></tamin-field-text-area>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ---- -->
+<div class="panel">
+  <div class="panel-body">
+    <form [formGroup]="formTwo" autocomplete="off" novalidate>
+      <div class="row customized-row" style="justify-content: end;
+                                              align-items: flex-end;">
+        <div class="col-3">
+          <tamin-field-label formControlName="commResidenceProvinceCode">استان محل اقامت</tamin-field-label>
+          <tamin-field-auto-complete-data-grid formControlName="commResidenceProvinceCode" placeholder="استان محل اقامت"
+                                               #liveProvince>
+          </tamin-field-auto-complete-data-grid>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commResidenceCityCode">شهر محل اقامت</tamin-field-label>
+          <tamin-field-combo-box-static [dataItems]="liveCityList" displayField="name"
+                                        formControlName="commResidenceCityCode" placeHolder="انتخاب کنید ..."
+                                        valueField="value"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commTelephoneNumber">تلفن ثابت متقاضی</tamin-field-label>
+          <ng-container *ngIf="formOne.controls.commTelephoneNumber?.touched && !formOne.controls.commTelephoneNumber?.valid">
+              <span *ngIf="formOne.controls.commTelephoneNumber.errors.required" class="tamin-form-control-error">
+                <span style="color: #b00020;">مقدار فیلد الزامی می باشد</span>
+              </span>
+            <span *ngIf="formOne.controls.commTelephoneNumber.errors.pattern" class="tamin-form-control-error">
+              <span style="color: #b00020;">شماره تلفن به همراه پیش شماره شهر وارد شود</span>
+            </span>
+          </ng-container>
+          <tamin-field-mask [placeHolder]="'شماره تلفن'" formControlName="commTelephoneNumber"
+                            regex="^[۰۱۲۳۴۵۶۷۸۹0-9]{1,11}$"></tamin-field-mask>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commMobileNumber">شماره همراه متقاضی</tamin-field-label>
+          <ng-container *ngIf="formOne.controls.commMobileNumber?.touched && !formOne.controls.commMobileNumber?.valid">
+              <span *ngIf="formOne.controls.commMobileNumber.errors.required" class="tamin-form-control-error">
+                <span style="color: #b00020;">مقدار فیلد الزامی می باشد</span>
+              </span>
+            <span *ngIf="formOne.controls.commMobileNumber.errors.pattern" class="tamin-form-control-error">
+              <span style="color: #b00020;">شماره همراه بدرستی وارد نشده</span>
+            </span>
+          </ng-container>
+          <tamin-field-mask [placeHolder]="'شماره همراه متقاضی'" formControlName="commMobileNumber"
+                            regex="^[۰۱۲۳۴۵۶۷۸۹0-9]{1,11}$"></tamin-field-mask>
+        </div>
+        <div class="col-6" style="margin: -7px 0px">
+          <tamin-field-label formControlName="commAddress">محل سکونت (آدرس کامل)</tamin-field-label>
+          <tamin-field-text-area formControlName="commAddress"
+                                 style="height: 3em !important;"></tamin-field-text-area>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commPostalCode">کدپستی</tamin-field-label>
+          <ng-container
+            *ngIf="formOne.controls.commPostalCode?.touched && !formOne.controls.commPostalCode?.valid">
+              <span *ngIf="formOne.controls.commPostalCode.errors.required" class="tamin-form-control-error">
+                <span style="color: #b00020;">مقدار فیلد الزامی می باشد</span>
+              </span>
+            <span *ngIf="formOne.controls.commPostalCode.errors.pattern" class="tamin-form-control-error">
+              <span style="color: #b00020;">مقدار 10 رقمی وارد شود</span>
+            </span>
+          </ng-container>
+          <tamin-field-mask [placeHolder]="'کدپستی'" formControlName="commPostalCode"
+                            regex="^[۰۱۲۳۴۵۶۷۸۹0-9]{1,10}$"></tamin-field-mask>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <form [formGroup]="formThree" autocomplete="off" novalidate>
+      <div class="row customized-row" style="justify-content: end;
+                                              align-items: flex-end;">
+        <div class="col-3">
+          <tamin-field-label formControlName="commMarriageStatus">وضعیت تاهل</tamin-field-label>
+          <tamin-field-validator formControlName="commMarriageStatus"></tamin-field-validator>
+          <tamin-field-combo-box-static [dataItems]="commMarriageStatusList" displayField="name"
+                                        formControlName="commMarriageStatus" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commGender">جنسیت</tamin-field-label>
+          <tamin-field-validator formControlName="commGender"></tamin-field-validator>
+          <tamin-field-combo-box-static [dataItems]="commGenderList" displayField="name"
+                                        formControlName="commGender" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="commNationality">ملیت</tamin-field-label>
+          <tamin-field-validator formControlName="commNationality"></tamin-field-validator>
+          <tamin-field-combo-box-static [dataItems]="commNationalityList" displayField="name"
+                                        formControlName="commNationality" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <form [formGroup]="formFour" autocomplete="off" novalidate>
+      <div class="row" *ngIf="model.isFortyPercent">
+        <div class="col-12">
+          <tamin-field-checkbox formControlName="noDarmanCheck"></tamin-field-checkbox>
+          <tamin-field-label formControlName="noDarmanCheck">
+            خواستار ثبت درخواست کمیسیون پزشکی در خصوص حادثه ناشی از کار، قبل از قرارداد، میباشم
+          </tamin-field-label>
+        </div>
+      </div>
+      <div class="row" style="justify-content: end;
+                                              align-items: flex-end;">
+        <div class="col-3">
+          <tamin-field-label formControlName="demandTypeCode">نوع تقاضا</tamin-field-label>
+          <tamin-field-validator formControlName="demandTypeCode"></tamin-field-validator>
+          <tamin-field-combo-box-static [dataItems]="demandTypeCodeList" displayField="name"
+                                        formControlName="demandTypeCode" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="referTypeCode">نوع مراجعه</tamin-field-label>
+          <tamin-field-validator formControlName="referTypeCode"></tamin-field-validator>
+          <tamin-field-combo-box-static [dataItems]="referTypeCodeList" displayField="name"
+                                        formControlName="referTypeCode" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row" *ngIf="showNintyCheckBox">
+        <div class="col-12">
+          <tamin-field-checkbox formControlName="financialWealthCheck"></tamin-field-checkbox>
+          <tamin-field-label formControlName="financialWealthCheck">
+            اینجانب تمکن مالی برای پرداخت مابه‌التفاوت حق بیمه تا سقف 10 سال را دارا میباشم
+          </tamin-field-label>
+          <button style="padding: 8px 12px;margin: 0px 6px;" class="button normal green icon-download"
+                  (click)="downloadFinancialForm()" type="button"> دانلود فرم
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

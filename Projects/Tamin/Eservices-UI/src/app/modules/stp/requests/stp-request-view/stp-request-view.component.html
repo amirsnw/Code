@@ -1,0 +1,94 @@
+<tamin-modal title="نمایش درخواست ثبت شده" #theModal>
+
+  <!-- <indemity> -->
+  <ng-container *ngIf="requestHelpType == '01'">
+    <form [formGroup]="indemityForm">
+      <div class="row">
+
+        <div class="col-4">
+          <tamin-field-label formControlName="risuid">شماره بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="risuid"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="fullName">نام و نام خانوادگی</tamin-field-label>
+          <tamin-field-static-text formControlName="fullName"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="insuranceTypeDesc">نوع بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="insuranceTypeDesc"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="insuranceStatusDesc">وضعیت بیمه</tamin-field-label>
+          <tamin-field-static-text formControlName="insuranceStatusDesc"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bankAccount">شماره حساب</tamin-field-label>
+          <tamin-field-static-text formControlName="bankAccount"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bankName">نام بانک</tamin-field-label>
+          <tamin-field-static-text formControlName="bankName"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="workshopName">نام کارگاه</tamin-field-label>
+          <tamin-field-static-text formControlName="workshopName"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="branchName">نام آخرین شعبه فعال</tamin-field-label>
+          <tamin-field-static-text formControlName="branchName"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="requestHelpTypeDesc">نوع درخواست</tamin-field-label>
+          <tamin-field-static-text formControlName="requestHelpTypeDesc"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="requestId">سریال موقت</tamin-field-label>
+          <tamin-field-static-text formControlName="requestId"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="requestDate">تاریخ درخواست</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="requestDate"></tamin-field-static-persian-date>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="statusName">وضعیت درخواست</tamin-field-label>
+          <tamin-field-static-text formControlName="statusName"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bimSDate">تاریخ شروع استراحت</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="bimSDate"></tamin-field-static-persian-date>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bimEdate">تاریخ خاتمه استراحت</tamin-field-label>
+          <tamin-field-static-persian-date formControlName="bimEdate"></tamin-field-static-persian-date>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bimDrname">پزشک معالج</tamin-field-label>
+          <tamin-field-static-text formControlName="bimDrname"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="bimDrid">کد نظام پزشکی</tamin-field-label>
+          <tamin-field-static-text formControlName="bimDrid"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="mobile">تلفن همراه</tamin-field-label>
+          <tamin-field-static-text formControlName="mobile"></tamin-field-static-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <tamin-field-label formControlName="resultMessage">نتیجه ثبت درخواست</tamin-field-label>
+          <tamin-field-static-multiline-text formControlName="resultMessage"></tamin-field-static-multiline-text>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col-12">
+        <tamin-image-gallery #indemityImageGallery></tamin-image-gallery>
+      </div>
+    </div>
+
+  </ng-container>
+
+  <!-- </indemity> -->
+</tamin-modal>

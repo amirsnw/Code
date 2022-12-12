@@ -1,0 +1,325 @@
+WEBVTT
+
+00:05.360 --> 00:05.920
+Tudo bem.
+
+00:05.960 --> 00:12.620
+Então, neste vídeo, vamos dar uma olhada em algumas das classes e interfaces no JDK relacionadas
+
+00:12.620 --> 00:13.670
+a sugestões.
+
+00:13.670 --> 00:19.490
+Mas antes de fazermos isso, eu só queria dizer que a complexidade de tempo para AQ
+
+00:19.490 --> 00:23.970
+que é apoiada por uma matriz será, naturalmente, constante ou linear, será constante.
+
+00:23.990 --> 00:28.400
+Tudo isso se não tivermos que redimensionar o array e linear se o fizermos.
+
+00:28.460 --> 00:34.320
+Agora eu não vou passar pela implementação de um q com uma lista encadeada de uma lista encadeada.
+
+00:34.340 --> 00:37.280
+Uma lista duplamente vinculada é perfeita para filas.
+
+00:37.280 --> 00:43.750
+Quero dizer, você adiciona itens ao final da lista e remove itens do topo da lista.
+
+00:43.760 --> 00:52.190
+É perfeito e todas as operações que o Add Remove e Peek operações seriam realizadas em
+
+00:52.190 --> 00:55.160
+tempo constante para implementar a fila.
+
+00:55.160 --> 00:58.970
+Fazemos exatamente o que fizemos quando implementamos uma pilha usando uma lista vinculada.
+
+00:58.970 --> 01:06.110
+Colocaríamos a classe de lista vinculada com outra classe que chamaríamos de fila, digamos, e
+
+01:06.110 --> 01:10.130
+apenas exporíamos os métodos Add Remove e peek.
+
+01:10.190 --> 01:14.340
+E então eu não vou passar por isso novamente porque é simples de fazer.
+
+01:14.390 --> 01:21.140
+E se você precisar revisar o que fizemos com a pilha, pode ir em frente e assistir ao vídeo sobre o backup de
+
+01:21.170 --> 01:26.300
+uma pilha com uma lista de links e a única diferença com uma fila seria que, em vez
+
+01:26.300 --> 01:30.960
+de expor os métodos push push e peek, você exporia os métodos Add Remove and peek.
+
+01:31.100 --> 01:37.490
+OK, com isso fora do caminho, vamos dar uma olhada em algumas das classes no JDK, agora que o JDK tem
+
+01:37.490 --> 01:43.490
+uma interface de fila que podemos usar e, como você pode ver, há um grande número de classes que implementam
+
+01:43.490 --> 01:43.770
+isso.
+
+01:43.770 --> 01:48.320
+Agora, se dermos uma olhada nos métodos que veremos, não há muitos que incluam o método add.
+
+01:48.320 --> 01:51.010
+O método de pico e o método Remove.
+
+01:51.010 --> 01:52.490
+Há também uma pesquisa.
+
+01:52.550 --> 01:57.260
+Ele diz que recupera e remove antes dessa fila ou retorna o Knol se a fila estiver vazia.
+
+01:57.260 --> 02:03.950
+Então, com a remoção, acredito que, se a fila estiver vazia, vamos verificar se você obterá a exceção de nenhum tal elemento.
+
+02:03.950 --> 02:08.090
+Então a diferença entre puxar e remover está no caso Remover.
+
+02:08.090 --> 02:13.400
+Se a fila estiver vazia, você receberá uma exceção e, no caso de pesquisa, se estiver vazia, você obterá
+
+02:13.400 --> 02:14.110
+um valor nulo.
+
+02:14.120 --> 02:18.680
+Há também oferecendo que você vai dizer aqui que insere o elemento especificado.
+
+02:18.680 --> 02:22.970
+Se for possível fazê-lo sem violar as restrições de capacidade.
+
+02:23.090 --> 02:24.730
+Então isso retorna um booleano.
+
+02:24.800 --> 02:28.610
+Você terá um retorno verdadeiro se for capaz de inserir o elemento e falso caso contrário.
+
+02:28.640 --> 02:31.420
+Então Q não é uma interface muito complexa.
+
+02:31.490 --> 02:41.030
+Só está no JDK desde 1. 5 por isso é bastante novo e como acabamos de ver o add remove e
+
+02:41.060 --> 02:45.640
+o element eles estão usando o element for peak que eles lançam uma exceção.
+
+02:45.680 --> 02:51.590
+Se você não puder completá-lo e nessa interface, a oferta da Poland Peke retornará um valor
+
+02:51.590 --> 02:54.810
+especial, então, quando implementamos o pico, lançamos uma exceção.
+
+02:54.830 --> 02:59.590
+Então nós meio que implementamos os métodos que estão nesta coluna.
+
+02:59.630 --> 03:04.460
+Não usei os mesmos nomes porque não estávamos implementando o comando E os métodos
+
+03:04.460 --> 03:09.960
+nesta chamada não lançam exceções se eles não podem fazer algo, embora avisem, retornando um valor específico.
+
+03:10.280 --> 03:12.960
+OK, então aqui está um bloqueio você.
+
+03:13.050 --> 03:18.580
+E se formos para aquela, veremos que é uma fila de bloqueio limitada suportada por uma matriz e,
+
+03:18.580 --> 03:22.520
+é claro, a fila ordena os elementos FIFO primeiro em primeiro a sair.
+
+03:22.520 --> 03:28.040
+Agora este é um bloqueio limitado Q Portanto, não redimensiona o array.
+
+03:28.040 --> 03:31.810
+Diz uma vez criado que a capacidade não pode ser alterada.
+
+03:31.820 --> 03:38.390
+As tentativas de colocar um elemento em uma fila completa resultarão no bloqueio da operação se um
+
+03:38.390 --> 03:40.970
+encadeamento tentar incluir um elemento nessa fila.
+
+03:40.970 --> 03:47.270
+Ele irá bloquear até que algum outro segmento tenha surgido e retirado um elemento da fila e
+
+03:47.270 --> 03:48.550
+o mesmo seja removido.
+
+03:48.560 --> 03:53.540
+Se você chamar remover e a fila estiver vazia, você irá bloquear até que algo seja adicionado
+
+03:53.540 --> 03:54.290
+à fila.
+
+03:54.290 --> 03:59.600
+E se dermos uma olhada no pacote, veremos que isso está no pacote simultâneo do utilitário
+
+03:59.630 --> 04:04.610
+Java, então ele deve ser usado quando mais de um thread estiver acessando a fila.
+
+04:04.700 --> 04:11.510
+Então, muitas vezes esse tipo de fila é usado em cenários de consumidores de produtores, então digamos, por exemplo,
+
+04:11.510 --> 04:18.020
+que mensagens estão sendo passadas por uma rede de um produtor para um consumidor, o produtor ou o
+
+04:18.020 --> 04:23.240
+remetente adiciona mensagens à fila e o consumidor ou destinatário removerá mensagens da fila.
+
+04:23.240 --> 04:28.610
+Agora, se o produtor ou o remetente tentar adicionar uma mensagem à fila e a fila estiver cheia,
+
+04:28.610 --> 04:32.510
+ela será bloqueada até que o destinatário tenha removido uma mensagem da fila.
+
+04:32.510 --> 04:38.060
+E, claro, se o receptor vai tirar uma mensagem da fila, não há nada lá que
+
+04:38.060 --> 04:41.690
+vai bloquear até que o remetente tenha enviado outra mensagem.
+
+04:41.690 --> 04:48.320
+Portanto, esse cenário de consumidor de produtor é um cenário perfeito para um comportamento fiel quando você deseja que as mensagens
+
+04:48.320 --> 04:51.340
+sejam lidas na ordem em que foram enviadas corretamente.
+
+04:51.350 --> 04:57.020
+Você pode usar um Q para adicionar mensagens no final da fila e, no outro extremo, o receptor
+
+04:57.020 --> 05:02.300
+vai retirar as mensagens da frente da fila e, assim, o receptor estará processando as mensagens na
+
+05:02.300 --> 05:03.850
+ordem em que estavam. enviei.
+
+05:03.980 --> 05:10.230
+E então isso implementa a interface da fila, você verá que há também uma interface de fila de bloqueio
+
+05:10.230 --> 05:11.560
+e implementa isso também.
+
+05:11.560 --> 05:17.950
+Agora, se voltarmos para a interface da fila, veremos que há outra classe chamada fila vinculada simultânea e essa
+
+05:18.640 --> 05:25.300
+é uma fila segura de encadeamento ilimitada baseada em nós vinculados, portanto, isso é baseado em uma lista encadeada.
+
+05:25.300 --> 05:30.450
+Ele também está no pacote simultâneo do utilitário Javid porque ele deve ser usado por
+
+05:30.460 --> 05:36.490
+vários threads, mas você notará que este está usando um algoritmo eficiente de não bloqueio e, portanto, ele
+
+05:37.240 --> 05:43.840
+não bloqueia e uma outra coisa a notar é: na maioria das coleções O método de Assayas não é uma
+
+05:43.840 --> 05:50.440
+operação de tempo constante, agora, normalmente, para obter o tamanho, o número de etapas não depende do número de itens
+
+05:50.620 --> 05:54.200
+na lista, porque geralmente você está apenas mantendo um contador.
+
+05:54.220 --> 06:00.520
+Mas como essa implementação de uma fila pode ser acessada por vários encadeamentos, a determinação do número
+
+06:00.520 --> 06:07.110
+de elementos exige uma travessia dos elementos e, portanto, essa não será uma operação de tempo constante.
+
+06:07.120 --> 06:12.430
+Então, vamos voltar para a interface da fila e como eu disse há um número de filas aqui e
+
+06:12.430 --> 06:17.370
+apenas como com a lista se você quiser implementar sua própria fila, você pode querer começar com
+
+06:17.380 --> 06:22.660
+a classe Q abstrata porque isso terá implementado os métodos para Q e você pode simplesmente substituir os que
+
+06:22.660 --> 06:23.670
+você deseja personalizar.
+
+06:23.680 --> 06:30.700
+Agora veremos que a classe de lista vinculada antiga simples implementa Q e Como eu disse que podemos incluir essa
+
+06:30.700 --> 06:35.490
+classe exatamente como fizemos para pilhas e expor apenas os métodos relacionados a filas.
+
+06:35.590 --> 06:40.030
+E antes de sairmos deste tópico, deixarei você explorar as outras classes por conta própria.
+
+06:40.030 --> 06:48.230
+Eu quero olhar para a interface Q, então nós vimos essa interface quando estávamos olhando para pilhas e um d q
+
+06:49.550 --> 06:55.620
+suporta inserção e remoção em ambas as extremidades e dequeue é curto para double ended.
+
+06:55.620 --> 06:57.310
+Q E é geralmente pronunciado morto.
+
+06:57.350 --> 06:59.390
+E então eu tenho pronunciado errado.
+
+06:59.390 --> 07:01.690
+É uma daquelas coisas que não digo com muita frequência.
+
+07:01.690 --> 07:04.310
+Eu provavelmente tenho em minhas anotações em algum lugar para pronunciá-lo.
+
+07:04.420 --> 07:05.710
+Então você vai.
+
+07:05.720 --> 07:13.820
+Imprimir é pronunciar deck e há algumas tabelas abaixo que resumem como você trabalha na cabeça como você trabalha
+
+07:13.820 --> 07:18.680
+na mesa e, em seguida, uma comparação dos métodos Q e deck.
+
+07:18.680 --> 07:25.590
+Agora eu sei dizer que o seu deck agora como vimos quando olhamos pilhas Java tem uma classe de
+
+07:25.610 --> 07:26.580
+deck array aqui.
+
+07:27.510 --> 07:30.620
+E esta é uma implementação de matriz redimensionável.
+
+07:30.690 --> 07:32.960
+Portanto, não há restrições de capacidade.
+
+07:32.970 --> 07:39.240
+Agora essa classe foi adicionada apenas no Java 1. 6 por isso é muito novo e porque implementa
+
+07:39.240 --> 07:46.950
+a interface Sadec tem métodos para ADD primeiro e finalmente porque com um deck podemos adicionar no início e no final
+
+07:46.950 --> 07:47.990
+de uma fila.
+
+07:48.000 --> 07:52.740
+E, claro, uma lista vinculada também implementa essa interface de convés.
+
+07:52.740 --> 07:55.090
+Vimos isso quando estávamos vendo listas vinculadas.
+
+07:55.140 --> 08:01.770
+Então, se você tem uma situação onde você quer que você possa adicionar ou remover itens de ambas as extremidades, então
+
+08:01.890 --> 08:06.300
+usar uma das classes que implementa a interface do deck seria bom para você.
+
+08:06.300 --> 08:09.460
+As sugestões são usadas com mais frequência do que as dicas com final duplo.
+
+08:09.510 --> 08:13.630
+Então é por isso que entramos em mais detalhes sobre sugestões.
+
+08:13.650 --> 08:18.090
+E isso é basicamente tudo o que vou dizer sobre daks ou pistas com final duplo.
+
+08:18.120 --> 08:19.800
+Então, eu vou te ver no próximo vídeo.

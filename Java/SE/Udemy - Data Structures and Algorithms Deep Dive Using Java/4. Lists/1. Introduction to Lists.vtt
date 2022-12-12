@@ -1,0 +1,121 @@
+WEBVTT
+
+00:05.300 --> 00:07.910
+Nesta seção, vamos ver as listas.
+
+00:08.090 --> 00:10.700
+A lista é um tipo de dados abstrato.
+
+00:10.730 --> 00:18.260
+E no próximo vídeo, vamos repassar a lista de tipos de dados abstratos e tomar uma estrutura de
+
+00:18.260 --> 00:19.250
+dados concreta.
+
+00:19.250 --> 00:21.010
+É um tipo de dados abstrato.
+
+00:21.140 --> 00:27.290
+E quando se trata de tipos de dados abstratos, normalmente há uma interface envolvida e a lista não é exceção.
+
+00:27.350 --> 00:34.370
+Em Java, as listas que vamos examinar nesta seção, todas implementam a interface da lista de utilitários Java, e é
+
+00:34.380 --> 00:36.470
+isso que eu tenho na tela.
+
+00:36.470 --> 00:42.950
+As classes que implementam a interface da lista representam uma coleção ordenada também conhecida como uma sequência.
+
+00:42.950 --> 00:45.600
+Existem algumas classes que implementam a lista.
+
+00:45.600 --> 00:48.890
+Nós não vamos olhar para todos eles, mas vamos olhar para alguns.
+
+00:48.890 --> 00:50.870
+Nós vamos olhar para a lista de matrizes.
+
+00:50.870 --> 00:53.760
+Nós vamos olhar para uma lista vinculada.
+
+00:53.870 --> 00:55.670
+Nós vamos olhar para aqueles dois nesta seção.
+
+00:55.670 --> 00:57.230
+Nós também vamos olhar para o Vector.
+
+00:57.230 --> 01:01.820
+Há também uma classe de lista abstrata e uma lista sequencial abstrata.
+
+01:01.880 --> 01:09.260
+Se você deseja implementar a interface de lista, você deseja criar uma implementação personalizada em vez de
+
+01:09.260 --> 01:12.370
+começar com a própria lista e implementá-la.
+
+01:12.440 --> 01:18.020
+É uma boa idéia, em vez disso, estender a lista abstrata e abstrair as listas sequenciais, pois são
+
+01:18.020 --> 01:23.000
+implementações da interface de lista do Skoll e assim elas dão a você uma vantagem inicial
+
+01:23.000 --> 01:27.560
+e tudo o que você precisa fazer é sobrescrever os métodos que você deseja especificamente implemento.
+
+01:27.560 --> 01:29.270
+Se você quiser um comportamento personalizado.
+
+01:29.270 --> 01:35.490
+Então, se você pretende implementar uma lista personalizada, é recomendável estender uma dessas duas classes.
+
+01:35.510 --> 01:38.590
+Então, vamos apenas olhar alguns dos métodos aqui.
+
+01:38.990 --> 01:43.160
+Você verá que temos ADD para que possamos adicionar itens à lista.
+
+01:43.160 --> 01:49.970
+Podemos verificar para ver se a lista contém um objeto, podemos obter um objeto da lista, se tivermos
+
+01:49.970 --> 01:54.160
+seu índice, podemos encontrar o índice de um objeto na lista.
+
+01:54.170 --> 01:57.090
+Podemos verificar se uma lista está vazia.
+
+01:57.350 --> 01:59.530
+Podemos remover objetos da lista.
+
+01:59.570 --> 02:06.320
+Podemos descobrir usando o método de tamanho quantos itens estão na lista e podemos obter o array que está
+
+02:06.470 --> 02:11.480
+fazendo o back list e vamos ver o que isso significa nos próximos vídeos.
+
+02:11.480 --> 02:17.300
+Agora, algumas das classes que vamos ver nesta seção, como a lista de arrays com que você provavelmente trabalhou
+
+02:17.300 --> 02:22.070
+antes de listar, é uma classe muito popular, mas vamos cavar um pouco mais. Veja
+
+02:22.070 --> 02:26.270
+alguns dos códigos sem chuva para ver o que está acontecendo embaixo das capas.
+
+02:26.270 --> 02:33.200
+OK, então, quando você está lidando com listas, estamos lidando com uma sequência ordenada, para que os dados sejam
+
+02:33.200 --> 02:35.870
+organizados sequencialmente, exatamente como estão em uma matriz.
+
+02:35.870 --> 02:41.720
+E vamos ver em alguns vídeos que uma maneira popular de implementar a interface da lista é
+
+02:41.720 --> 02:42.710
+usar uma matriz.
+
+02:42.740 --> 02:46.880
+Então, vamos seguir em frente e dar uma olhada rápida no que é um tipo de dados abstrato.
+
+02:46.880 --> 02:48.020
+Eu vou te ver no próximo vídeo.

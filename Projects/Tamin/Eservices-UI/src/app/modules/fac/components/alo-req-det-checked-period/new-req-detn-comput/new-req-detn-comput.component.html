@@ -1,0 +1,25 @@
+<div class="panel col-4 col-s-4">
+  <div class="panel-title"> دوره های غیر محاسباتی </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate >
+      <div class="form-control-container">
+        <div class="row col-12 col-s-12">
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="fromDate">از تاریخ</tamin-field-label>
+            <tamin-field-validator formControlName="fromDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="fromDate" placeholder=""></tamin-field-persian-date>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="toDate">تا تاریخ</tamin-field-label>
+            <tamin-field-validator formControlName="toDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="toDate" placeholder=""></tamin-field-persian-date>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-s-12">
+        <button type="button" class="button normal" (click)="doApply()">ذحیره </button>
+        <button type="button" class="button normal orange" (click)="doCancel()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>

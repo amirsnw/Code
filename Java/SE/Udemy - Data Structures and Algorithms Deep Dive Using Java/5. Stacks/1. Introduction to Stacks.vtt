@@ -1,0 +1,19 @@
+WEBVTT
+
+00:05.330 --> 00:13.880
+Nesta seção, vamos dar uma olhada no Stax, em vez de ditar como armazenamos os itens, as pilhas determinam quais operações
+
+00:13.880 --> 00:20.500
+podemos fazer nos itens e, portanto, uma pilha é conhecida como um tipo de dados abstrato.
+
+00:20.540 --> 00:26.780
+Então, vamos passar para o próximo vídeo. Vamos dar uma olhada nas pilhas e nas operações que
+
+00:26.780 --> 00:30.670
+podemos fazer em uma pilha e depois implementaremos uma pilha simples.
+
+00:30.740 --> 00:36.360
+E depois disso, vamos dar uma olhada no suporte que o JDK tem para pilhas.
+
+00:36.380 --> 00:37.760
+Então, eu vou te ver no próximo vídeo.

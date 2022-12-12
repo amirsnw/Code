@@ -1,0 +1,52 @@
+<div class="panel">
+  <div class="page-title">اطلاعات هویتی</div>
+  <div class="panel-body">
+    <form [formGroup]="viewForm" autocomplete="off" novalidate #theForm>
+      <div class="form-control-container">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="insuranceNumber">شماره بیمه:</tamin-field-label>
+            <tamin-field-static-text formControlName="insuranceNumber" placeholder="شماره بیمه"></tamin-field-static-text>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="firstName"> نام:</tamin-field-label>
+            <tamin-field-static-text formControlName="firstName" placeholder="نام "></tamin-field-static-text>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="lastName"> نام خانوادگی:</tamin-field-label>
+            <tamin-field-static-text formControlName="lastName" placeholder="نام خانوادگی"></tamin-field-static-text>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="nationalID"> کد ملی:</tamin-field-label>
+            <tamin-field-static-text formControlName="nationalID" placeholder="کد ملی "></tamin-field-static-text>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="identityNumber">شماره شناسنامه:</tamin-field-label>
+            <tamin-field-static-text formControlName="identityNumber" placeholder="شماره شناسنامه"></tamin-field-static-text>
+
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="issueplaceName">محل صدور:</tamin-field-label>
+            <tamin-field-static-text formControlName="issueplaceName" placeholder=" محل صدور"></tamin-field-static-text>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="fatherName"> نام پدر:</tamin-field-label>
+            <tamin-field-static-text formControlName="fatherName" placeholder="نام پدر "></tamin-field-static-text>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="serial1">شماره مسلسل:</tamin-field-label>
+            <tamin-field-static-text formControlName="serial1" placeholder="شماره مسلسل"></tamin-field-static-text>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="birthDate">تاریخ تولد:</tamin-field-label>
+            <tamin-field-static-text formControlName="birthDate" placeholder="تاریخ تولد"></tamin-field-static-text>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

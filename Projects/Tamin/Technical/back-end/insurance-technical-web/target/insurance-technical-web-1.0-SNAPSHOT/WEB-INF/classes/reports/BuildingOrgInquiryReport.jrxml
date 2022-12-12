@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BuildingOrgInquiryReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1aa60845-47c7-479a-8b6f-e8567ad5958e">
+	<property name="ireport.zoom" value="1.331000000000001"/>
+	<property name="ireport.x" value="1"/>
+	<property name="ireport.y" value="99"/>
+	<parameter name="sFullName" class="java.lang.String"/>
+	<parameter name="ReqNo" class="java.lang.String"/>
+	<parameter name="ReqDate" class="java.lang.String"/>
+	<parameter name="BrhName" class="java.lang.String"/>
+	<parameter name="sLetMedDate" class="java.lang.String"/>
+	<background>
+		<band height="802">
+			<rectangle>
+				<reportElement uuid="2121c0de-a2d0-435f-bec1-cae531cdc431" x="0" y="0" width="555" height="802"/>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0f88d935-a355-4dc3-903b-a18d18dd87bb" x="104" y="20" width="34" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="11" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dc06a0c1-cac1-4dda-8067-bc41d043730c" x="104" y="40" width="34" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="11" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5952fee0-6a38-4460-a08d-95fc431eb1d2" x="104" y="60" width="34" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="11" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[پیوست:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a0a72d3-ac5a-4ac1-9cd0-5059714e420a" x="340" y="80" width="200" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/BTitr.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[سازمان نظام مهندسی ساختمان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6ded9ded-ae0f-4812-8370-01634132927c" x="440" y="100" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/BTitr.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[موضوع: آقای/ خانم]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b1fee2ab-11d1-4450-b916-25f92b4c23b3" x="76" y="100" width="364" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/BTitr.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sFullName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="63b8fc17-eb68-4d47-8d35-63f348807ab9" x="0" y="132" width="555" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="378" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1b97f1f7-50ab-4dd7-be3e-3270202bc0e9" x="461" y="13" width="79" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با سلام]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cc8015ba-0b9b-47d1-8c59-ba55786179ba" x="450" y="33" width="90" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بازگشت به نامه شماره]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="83103e95-4200-4503-b192-8d0b284c4a95" x="352" y="33" width="23" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مورخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="83c6d2e2-9911-4bb7-9818-281ee01fa046" x="19" y="33" width="263" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به استحضار می رساند:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8f2b8efe-5063-4726-9358-5ec279c53610" x="19" y="53" width="521" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با عنایت به اینکه نامبرده حائز شرایط مقرر در بخشنامه 670 فنی قرار دارد لذا مقتضی است دستور فرمائید نسبت به تنظیم لیست و پرداخت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5e05daca-3105-4b58-bfc5-4c557f4bc3bc" x="440" y="73" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[حق بیمه نامبرده از تاریخ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4bbad3a5-2d72-4dba-8f87-dbf2349198f9" x="19" y="73" width="356" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(ثبت معرفی نامه در دبیرخانه شعبه فرم پیوست شماره 1) وفق ماده 39 قانون تامین اجتماعی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca0cf89e-594c-4a59-a400-440af0e0ca2f" x="31" y="93" width="509" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[اقدام لازم بعمل آورند.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2d66b606-ab2d-4f09-9445-ca3c56a918bb" x="386" y="163" width="36" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شعبه  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2e1f2685-6627-4543-ba4c-c9b37857c3e6" x="401" y="202" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مسئول شعبه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7b7483d8-8177-4228-bc93-92b8affba2ea" x="53" y="202" width="170" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مسئول امور فنی بیمه شدگان]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="bded0964-8015-4b7c-88e6-1e9e8e679228" x="375" y="33" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="13" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReqNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7babe389-c75c-4a83-a102-daa727818b1e" x="282" y="33" width="70" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="13" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReqDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="58c9aa16-6924-4141-8180-b91b25de6e6b" x="376" y="73" width="64" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="13" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sLetMedDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30a8bba5-6b39-4805-b0ad-6f9f796e5c75" x="60" y="163" width="326" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="13" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BrhName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

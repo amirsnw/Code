@@ -1,0 +1,34 @@
+<div class="panel">
+  <div class="page-title">اطلاعات هویتی</div>
+  <div class="panel-body">
+    <form [formGroup]="viewForm" autocomplete="off" novalidate>
+      <div class="row">
+        <!--<div class="col-4">-->
+          <!--<tamin-field-label formControlName="id">شماره بیمه:</tamin-field-label>-->
+          <!--<tamin-field-static-text formControlName="id" placeholder="شماره بیمه"></tamin-field-static-text>-->
+        <!--</div>-->
+        <div class="col-4">
+          <tamin-field-label formControlName="firstName"> نام:</tamin-field-label>
+          <tamin-field-static-text formControlName="firstName" placeholder="نام "></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="lastName"> نام خانوادگی:</tamin-field-label>
+          <tamin-field-static-text formControlName="lastName" placeholder="نام خانوادگی"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="fatherName"> نام پدر:</tamin-field-label>
+          <tamin-field-static-text formControlName="fatherName"></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="nationalId"> کد ملی:</tamin-field-label>
+          <tamin-field-static-text formControlName="nationalId" placeholder="کد ملی "></tamin-field-static-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="idCardNumber">شماره شناسنامه:</tamin-field-label>
+          <tamin-field-static-text formControlName="idCardNumber" placeholder=" محل صدور"></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

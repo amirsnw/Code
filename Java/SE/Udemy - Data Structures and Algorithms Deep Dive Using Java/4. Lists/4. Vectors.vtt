@@ -1,0 +1,247 @@
+WEBVTT
+
+00:05.230 --> 00:12.730
+Bem, isso vai ser um vídeo curto, porque a classe vetorial é essencialmente uma lista de matriz segura,
+
+00:12.910 --> 00:15.220
+mas o vetor realmente veio primeiro.
+
+00:15.240 --> 00:20.720
+E vamos dar uma olhada no vetor Java doc e veremos se rolamos um pouco para baixo.
+
+00:20.710 --> 00:23.790
+Esse vetor está lá desde o começo.
+
+00:23.800 --> 00:28.780
+Está no JDK desde o KDK 1. 0
+
+00:28.810 --> 00:30.840
+Se chegarmos ao topo aqui.
+
+00:30.940 --> 00:40.840
+Agora, se eu voltar para a lista de matriz, esta é a classe de lista de matrizes que só foi adicionada ao JDK
+
+00:40.840 --> 00:45.180
+na versão 1 do JDK. 2
+
+00:45.190 --> 00:51.280
+Agora, se você estiver usando o Java, contanto que você se lembre de quando a lista de matrizes foi
+
+00:51.280 --> 00:54.640
+introduzida antes que a lista vá para a classe fosse vetor.
+
+00:54.730 --> 01:01.900
+E a questão é se o vetor estava na versão 1 do JDK. 0 e tem praticamente os mesmos métodos que a matriz lista
+
+01:01.930 --> 01:06.120
+a classe por que a lista de matrizes foi adicionada ao JDK.
+
+01:06.280 --> 01:09.590
+Bem, a resposta está na documentação.
+
+01:09.790 --> 01:14.290
+Se rolarmos para cima, veremos aqui em letras grandes em negrito para a lista de matriz.
+
+01:14.290 --> 01:17.910
+Esta implementação não está sincronizada.
+
+01:17.920 --> 01:27.240
+E se voltarmos para a classe vetorial, ela diz que ao contrário do vetor de implementações da nova coleção é sincronizado.
+
+01:27.310 --> 01:33.790
+Portanto, o vetor é thread safe, o que significa que não há problema em usá-lo a partir de threads diferentes sem
+
+01:33.790 --> 01:37.200
+que você precise sincronizar o código, mas um realista não é.
+
+01:37.390 --> 01:42.110
+Portanto, se você só ler uma lista de matriz, é seguro usá-la para vários segmentos.
+
+01:42.190 --> 01:48.100
+Nenhum dado será danificado, mas se você usar a lista de matriz com vários encadeamentos e um ou mais
+
+01:48.100 --> 01:53.770
+desses encadeamentos estiverem gravando na lista de matrizes adicionando a definição de exclusão ou alterando objetos na lista.
+
+01:53.770 --> 01:56.590
+Então você pode se deparar com um conflito.
+
+01:56.620 --> 02:02.800
+Você poderia ter conflitos de encadeamento e, nesse caso, você usaria o vetor em vez da lista de arrays.
+
+02:03.070 --> 02:05.430
+Então, se você precisar de vetor de uso de segurança de thread.
+
+02:05.440 --> 02:06.940
+Se você não usa a lista de arrays.
+
+02:06.940 --> 02:14.080
+Agora, a razão pela qual a lista de matrizes surgiu é que a sincronização tem uma sobrecarga envolvida, o que reduz
+
+02:14.080 --> 02:15.320
+a velocidade das coisas.
+
+02:15.400 --> 02:22.060
+E assim, quando apenas a classe vetorial estava disponível e o vetor é sincronizado se ele quisesse usar uma lista apoiada
+
+02:22.060 --> 02:26.950
+por um array e você quisesse usar a classe e o JDK, você seria forçado
+
+02:26.950 --> 02:31.180
+a usar uma classe sincronizada mesmo se não o fizesse precisa de sincronização.
+
+02:31.270 --> 02:37.630
+E assim, por causa dessa lista de matrizes foi eventualmente adicionada ao JDK, de modo que se você não precisa de
+
+02:37.750 --> 02:43.180
+sincronização, você teria uma classe suportada por uma matriz que você poderia usar e que não tivesse a
+
+02:43.180 --> 02:44.470
+sobrecarga envolvida na sincronização.
+
+02:44.590 --> 02:51.670
+E é por isso que o R-ALA surgiu porque os desenvolvedores estavam dizendo "Ei, nós gostamos de vetor", mas por que fazemos,
+
+02:51.670 --> 02:55.610
+se não precisarmos de sincronização, não queremos a sobrecarga associada a ele.
+
+02:55.630 --> 02:58.700
+E então algumas versões mais tarde um lançamento veio junto.
+
+02:58.810 --> 03:05.710
+E assim, aqui, você verá que a documentação da própria lista de matrizes diz que, se uma implementação segura
+
+03:05.710 --> 03:09.600
+de thread não for necessária, recomenda-se usar a lista de matrizes.
+
+03:09.610 --> 03:14.580
+Então você só quer usar a classe vetorial se precisar de sincronização.
+
+03:14.680 --> 03:19.630
+Se você não precisar dele e usar a classe de vetores, usará uma implementação mais lenta
+
+03:19.630 --> 03:27.100
+sem nenhum motivo e é por isso que deseja usar a lista de matrizes, a menos que precise de uma implementação segura de thread.
+
+03:27.100 --> 03:31.680
+Então, se você precisar de thread safe para usar o vetor, se você não usar a lista de matrizes.
+
+03:31.870 --> 03:34.320
+OK, então digamos que queremos usar vetor.
+
+03:34.390 --> 03:37.830
+Bem vector é apoiado por uma matriz apenas como lista de matriz é.
+
+03:37.840 --> 03:41.130
+Então, vamos voltar à ideia agora e eu
+
+03:44.850 --> 03:51.690
+criei um projeto e adicionei a mesma classe de funcionários que tínhamos no vídeo da lista de matriz.
+
+03:51.690 --> 03:56.180
+Mesmo campo mesmo praticamente tudo copiado e colado desse projeto.
+
+03:56.190 --> 03:59.040
+E agora eu tenho isso usando uma lista de matriz.
+
+03:59.040 --> 04:06.590
+Agora, se você quiser usar o vetor porque estamos atribuindo isso a uma lista de instâncias de funcionários, em vez
+
+04:06.610 --> 04:15.200
+de empregar a lista de matrizes, tudo o que precisamos fazer é alterar isso para vetor, porque o vetor também implementa a lista.
+
+04:15.210 --> 04:22.110
+E é por isso que, em vez de usar uma implementação de elemento específico na declaração,
+
+04:22.110 --> 04:29.010
+é sempre melhor usar a interface que a implementação está usando porque você pode alternar para
+
+04:29.010 --> 04:33.990
+outra classe implementa a mesma interface sem precisar alterar nenhum código.
+
+04:33.990 --> 04:37.450
+Então, vamos dar uma olhada no construtor de vetores.
+
+04:37.590 --> 04:41.640
+Vamos para a declaração e vamos para isso.
+
+04:41.640 --> 04:46.940
+Nós teremos que seguir isso até finalmente chegarmos ao código real onde ele está fazendo o trabalho.
+
+04:46.980 --> 04:52.030
+Nós vamos continuar.
+
+04:52.150 --> 04:55.840
+E aqui estamos nós e vamos ver que uma matriz é criada.
+
+04:56.020 --> 05:03.940
+Então, é usar uma matriz de backing da mesma forma que a lista de array é se voltarmos para o
+
+05:03.940 --> 05:06.720
+Main agora e darmos uma olhada na
+
+05:11.380 --> 05:15.520
+implementação do ADD e desta vez eu quero para o vetor.
+
+05:15.880 --> 05:17.080
+Ai está.
+
+05:17.200 --> 05:18.910
+Está sincronizado.
+
+05:19.000 --> 05:25.720
+E essa é a diferença entre o método add para a lista de arrays e o método add para o vetor.
+
+05:25.720 --> 05:27.720
+Vamos dar uma olhada na lista de arrays.
+
+05:27.730 --> 05:36.850
+Adicionar matemática tudo vai para o outro projeto o outro projeto inteligente para lista de matriz.
+
+05:36.870 --> 05:41.710
+Então, aqui estamos de volta ao projeto com o qual trabalhamos no último vídeo e se eu for
+
+05:48.400 --> 05:54.190
+a esse anúncio Massett, o anúncio mais frágil verá que não há palavras-chave sincronizadas aqui e, por isso, quero reiterar que,
+
+05:54.190 --> 05:57.060
+se você não precisa de segurança de thread, não use vetor.
+
+05:57.070 --> 06:00.300
+Você não quer a sobrecarga que vem com a sincronização.
+
+06:00.340 --> 06:05.890
+E se você precisa de segurança de thread, então você quer usar vetor ao invés de usar listas
+
+06:05.890 --> 06:12.550
+de array, porque se você usar a lista de arrays, você será responsável por sincronizar todas as chamadas para os métodos
+
+06:12.640 --> 06:13.900
+de lista de arrays.
+
+06:13.900 --> 06:19.300
+E então, por que fazer o trabalho quando a classe vetorial já fez tudo isso para você e é isso.
+
+06:19.300 --> 06:23.440
+Isso é tudo o que vou dizer sobre vetor porque é praticamente o mesmo que uma lista de
+
+06:23.440 --> 06:24.510
+matriz, exceto que é sincronizado.
+
+06:24.700 --> 06:27.590
+Os dois últimos vídeos sobre lista de vetores e vetores.
+
+06:27.650 --> 06:31.200
+Eles provavelmente foram revisados ​​por alguns de vocês.
+
+06:31.300 --> 06:37.750
+Eu só queria ter certeza de que nós cobrimos as duas classes mais populares no JDK quando
+
+06:37.750 --> 06:41.070
+se trata de apenas ter uma lista sequencial simples.
+
+06:41.080 --> 06:46.270
+Então, no próximo vídeo, vamos passar para outro tipo de lista chamada de lista encadeada.
+
+06:46.300 --> 06:47.330
+Eu te vejo lá.

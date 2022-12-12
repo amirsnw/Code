@@ -1,0 +1,41 @@
+<div class="panel-body">
+  <form [formGroup]="searchForm" autocomplete="off" novalidate>
+    <div class="form-control-container row">
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="requestType">نوع درخواست</tamin-field-label>
+        <tamin-field-combo-box-static formControlName="requestType" valueField="value" displayField="name"
+                                      [dataItems]="requestTypes"></tamin-field-combo-box-static>
+      </div>
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="requestStatus">وضعیت درخواست</tamin-field-label>
+        <tamin-field-combo-box-static formControlName="requestStatus" valueField="value"
+                                      displayField="name" #requestStatus></tamin-field-combo-box-static>
+        <!--<tamin-field-combo-box formControlName="requestStatus" #requestStatus></tamin-field-combo-box>-->
+      </div>
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="refCode">کد پیگیری:</tamin-field-label>
+        <tamin-field-validator formControlName="refCode"></tamin-field-validator>
+        <tamin-field-text formControlName="refCode" placeholder="کد پیگیری"></tamin-field-text>
+      </div>
+
+<!--      <div class="col-6 col-6-1" style="padding: 3px;">-->
+<!--        <tamin-field-label formControlName="requestType">نوع درخواست</tamin-field-label>-->
+<!--        <tamin-field-combo-box-static formControlName="requestType" valueField="value" displayField="name"-->
+<!--                                      [dataItems]="requestTypes"></tamin-field-combo-box-static>-->
+<!--      </div>-->
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="userName">کد ملی:</tamin-field-label>
+        <tamin-field-validator formControlName="userName"></tamin-field-validator>
+        <tamin-field-text formControlName="userName" placeholder="کد ملی"></tamin-field-text>
+      </div>
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="branch">شعبه</tamin-field-label>
+        <tamin-field-auto-complete-data-grid formControlName="branch" #branch></tamin-field-auto-complete-data-grid>
+      </div>
+    </div>
+    <p style="margin-top:5px;">
+      <button type="button" class="button normal" (click)="searchFormSubmit()" [disabled]="!searchForm.valid">جستجو</button>
+      <button type="button" class="button normal dark" (click)="resetForm()">نمایش همه</button>
+    </p>
+  </form>
+</div>

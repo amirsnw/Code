@@ -1,0 +1,23 @@
+export const environment = {
+  production: true,
+  accessToken: 'access_token',
+  expiresIn: 'expires_in',
+  redirectUrl: 'http://172.16.14.25:7001/erequest/auth/access',
+  baseUrl: 'http://172.16.14.25:7001/erequest',
+  authenticationEndpoint: 'http://idm-server.tamin.org:9001/auth/server/authorize',
+  verifyEndpoint: '',
+  logoutUrl: 'http://idm-server.tamin.org:9001/auth/signout',
+  responseType: 'assertion',
+  clientId: 'centralized-pension-js',
+  getUserNameUrl: 'http://172.16.14.25:7001/erequest/api/users/current-user',
+  restTimeout: 30000,
+  baseurl_base: 'http://172.16.14.25:7001/erequest/api',
+  baseurl_stp: 'http://e-dashab2.tamin.org:7001/self-service/api',
+  baseurl_gov: 'http://172.16.14.25:7001/api',
+  baseurl_sabeghe2: 'http://m_hoseini.tamin.org:7001/history-objection/api',
+  baseurl_eblagh2: 'https://eblagh2.tamin.ir/announcement/api',
+  baseurl_baje: 'http://172.16.13.164:7001/insurance-list/api',
+  baseurl_account: 'https://me.tamin.ir/api',
+  baseurl_ep: 'https://ep.tamin.ir/api',
+  theme: 'theme-web'
+};

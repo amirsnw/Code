@@ -1,0 +1,778 @@
+WEBVTT
+
+00:05.420 --> 00:12.580
+Ok, então nos últimos vídeos nós olhamos para uma estratégia para lidar com colisões chamada sondagem linear.
+
+00:12.580 --> 00:16.930
+Neste vídeo vamos olhar para a segunda estratégia para lidar com colisões e é chamada
+
+00:17.080 --> 00:20.530
+de treinamento e é muito mais simples do que o teste linear.
+
+00:20.530 --> 00:28.900
+Quando usamos o encadeamento em vez de armazenar o valor diretamente na matriz, cada posição da matriz contém
+
+00:28.900 --> 00:30.490
+uma lista encadeada.
+
+00:30.520 --> 00:37.840
+E assim, para o nosso exemplo, em vez de armazenar os funcionários ou as instâncias de funcionários armazenados,
+
+00:37.870 --> 00:38.750
+armazenaríamos vinculados.
+
+00:38.800 --> 00:47.110
+E se formos adicionar um funcionário e a chave que usamos tiver um valor de hash que colide com o valor de
+
+00:47.110 --> 00:53.200
+hash para outra chave enquanto isso estiver correto, porque nessa posição na matriz há uma lista
+
+00:53.410 --> 00:56.560
+vinculada e uma lista vinculada não tem limites .
+
+00:56.740 --> 01:02.320
+Eles não são delimitados pelo tamanho e, portanto, podemos apenas adicionar esse segundo funcionário à
+
+01:02.320 --> 01:04.390
+lista vinculada nessa posição de matriz.
+
+01:04.390 --> 01:09.980
+Então, nunca temos o conceito de desculpe, a posição de Saray já está preenchida.
+
+01:10.060 --> 01:15.930
+E então não precisamos nos preocupar com o incremento de índices e todas essas coisas.
+
+01:15.940 --> 01:20.140
+Agora, claro, a desvantagem é que há uma lista vinculada em todas as posições.
+
+01:20.170 --> 01:27.580
+E assim, quando você vai para recuperar ou excluir um item, você deve pesquisar a lista vinculada para encontrar o item com
+
+01:27.640 --> 01:29.770
+a chave em que está interessado.
+
+01:29.920 --> 01:35.800
+Mas se você tiver uma boa função hash e se tiver um bom fator de carga, essas listas
+
+01:35.800 --> 01:37.310
+encadeadas serão geralmente curtas.
+
+01:37.330 --> 01:39.520
+Então, vamos pular direto para a implementação.
+
+01:39.520 --> 01:44.920
+Eu criei um novo projeto que copiei sobre o código do último projeto.
+
+01:44.920 --> 01:50.110
+Algumas delas eu não tenho a última recuperação que fizemos Eu tenho o nosso funcionário armazenado porque
+
+01:50.110 --> 01:55.210
+isso será o que armazenamos na lista vinculada, porque vamos ter que procurar na lista vinculada pela
+
+01:55.210 --> 01:56.620
+chave que estamos interessado em.
+
+01:56.650 --> 02:02.680
+Eu tenho a classe Employee usual e eu criei uma classe chamada hash table encadeada e copiei a nossa
+
+02:02.680 --> 02:06.060
+função hash porque vamos usar a mesma função de hash.
+
+02:06.070 --> 02:10.290
+Quero dizer, a função hash ainda tem que produzir um índice de array.
+
+02:10.300 --> 02:15.160
+A única diferença aqui é que a lista vinculada estará nesse índice de matriz.
+
+02:15.160 --> 02:22.710
+OK, então vamos precisar de um campo e essa é a nossa tabela de hash, então vamos dizer lista vinculada privada.
+
+02:22.710 --> 02:29.890
+Vamos usar apenas a classe de lista vinculada no JDK e será uma lista vinculada de funcionário armazenado e
+
+02:30.220 --> 02:34.840
+queremos uma matriz de listas vinculadas e vamos chamá-la de tabela de hash.
+
+02:34.870 --> 02:42.880
+E assim, quando nosso construtor precisarmos criar nossa tabela de hash, direi uma tabela de hash pública encadeada e diremos
+
+02:42.880 --> 02:47.410
+que a tabela de hash é igual à nova lista vinculada.
+
+02:47.440 --> 02:57.280
+E nós queremos 10 elementos e então nós temos que inicializar cada posição de array onde eles ligaram list
+
+02:57.280 --> 03:06.760
+e empty linked list então vamos dizer que int é igual a zero ou menor que a tabela
+
+03:06.790 --> 03:08.410
+hash Ian plus.
+
+03:08.570 --> 03:16.230
+Então, vamos dizer que a tabela de hash é igual a uma nova lista de funcionários armazenados.
+
+03:16.720 --> 03:17.740
+E é isso.
+
+03:17.740 --> 03:25.180
+Então, criamos nossa tabela de hash, é uma matriz de tamanho 10, mas em vez de ser uma matriz de funcionários
+
+03:25.180 --> 03:31.300
+armazenada, ela conterá listas vinculadas e, em seguida, é claro que criaremos uma instância da lista vinculada
+
+03:31.300 --> 03:35.310
+em todas as posições que pudéssemos fazer no método Add .
+
+03:35.320 --> 03:39.550
+Você sabe que nós poderíamos verificar e ver bem, há uma lista
+
+03:39.550 --> 03:44.530
+encadeada lá, mas fazer isso simplifica as coisas da outra maneira que poderíamos implementar
+
+03:44.530 --> 03:53.860
+isso e você pode ver isso se você olhar para outras implementações é que criamos uma matriz de objetos e depois nós armazenamos um empregado armazenado.
+
+03:53.860 --> 04:00.150
+Se houver apenas um item ou uma colisão, alteramos isso para uma lista vinculada.
+
+04:00.160 --> 04:03.640
+Mas acho que apenas começando com Linked Lists é muito mais simples.
+
+04:03.730 --> 04:12.520
+OK, então vamos em frente e no método put e assim economizaremos public void put e precisamos, como de costume, que os pares de
+
+04:12.520 --> 04:19.840
+valores-chave digam chave de string e valor de funcionário ou eu chamo um funcionário como fizemos nos outros vídeos e
+
+04:20.470 --> 04:24.220
+a primeira coisa que vamos fazer como sempre é a chave.
+
+04:24.220 --> 04:29.480
+Então, vamos dizer em chave Hash igual a chave-chave de hash.
+
+04:30.370 --> 04:34.190
+E agora tudo o que precisamos fazer é adicionar o funcionário à lista.
+
+04:34.210 --> 04:36.860
+Isso é no caso de hash da posição.
+
+04:36.860 --> 04:45.520
+Então, vai dizer hash tabela hash key dot add porque há uma lista vinculada em cada índice e vai
+
+04:45.640 --> 04:52.680
+dizer novo empregado armazenado e passará a chave e, em seguida, o empregado e é isso.
+
+04:52.750 --> 04:57.940
+Muito mais simples e não importa se adicionamos funcionários ao início ou ao fim da lista,
+
+04:57.940 --> 05:01.450
+porque não temos ideia de qual ordem eles serão recuperados.
+
+05:01.450 --> 05:04.920
+Então vai ser seis de uma meia dúzia do outro tipo de coisa.
+
+05:04.930 --> 05:10.810
+E assim como você pode ver, é muito mais simples, não temos que nos preocupar com
+
+05:10.810 --> 05:18.430
+o médico já ocupado e se continuar incrementando nesta temporada e ficar de olho na travessia de toda a matriz, etc.
+
+05:18.550 --> 05:25.350
+é muito mais simples, mas requer mais memória, porque você tem os campos seguinte e anterior.
+
+05:25.450 --> 05:28.040
+Então vamos implementar agora.
+
+05:28.060 --> 05:35.740
+E assim vai dizer funcionário público porque vamos devolver o empregado chegar e precisamos da chave e vamos
+
+05:35.740 --> 05:37.530
+dizer em chave na
+
+05:40.030 --> 05:44.140
+lixeira é igual a chave de hash a chave.
+
+05:44.140 --> 05:51.500
+E agora o que precisamos fazer é pesquisar a lista de links na posição Hashd para o empregado armazenado que
+
+05:51.610 --> 05:53.060
+corresponde a essa chave.
+
+05:53.080 --> 05:55.570
+Então, vamos usar um iterador de lista para fazer isso.
+
+05:55.630 --> 06:01.150
+Então, todos dizem iterador de lista e vai ser um iterador de empregado armazenado, porque é isso
+
+06:01.150 --> 06:03.110
+que temos armazenado em nossas listas.
+
+06:03.310 --> 06:10.870
+Iterator é igual ao operador listado na chave de hash do hash table.
+
+06:11.410 --> 06:15.290
+E agora vamos usar esse iterador para encontrar o funcionário que tem nossa chave.
+
+06:15.310 --> 06:27.750
+Então, nós vamos dizer funcionário empregado da loja é igual a Knol e depois vamos dizer Wall iterador Daut tem em
+
+06:27.760 --> 06:43.540
+seguida vamos definir o empregado para o ponto iterador próximo e depois vamos dizer se empregado ponto chave Daut é igual à chave que estamos procurando
+
+06:43.540 --> 06:46.660
+pois então encontramos nosso empregado.
+
+06:46.750 --> 06:54.130
+E então vamos apenas devolver o empregado empregado Daut e pronto.
+
+06:54.130 --> 07:00.040
+Agora, se desistirmos desse loop, significa que percorremos toda a lista e não encontramos uma instância de
+
+07:00.190 --> 07:05.260
+funcionário da loja que corresponda à chave e, assim, vamos apenas retornar NULL E ISSO
+
+07:05.260 --> 07:06.920
+É NOSSO Get Massad .
+
+07:07.030 --> 07:11.650
+É muito mais fácil escrever do que usar sondagem linear.
+
+07:11.650 --> 07:21.310
+Então, finalmente vamos adicionar métodos de remoção, então eu vou dizer funcionário público remover e precisamos da chave e eu vou copiar
+
+07:21.310 --> 07:24.350
+este código aqui porque é bastante semelhante.
+
+07:28.230 --> 07:32.250
+Então, vamos começar obtendo a chave de hash. Vamos obter o
+
+07:32.250 --> 07:38.070
+iterador exatamente como fizemos antes, disse um funcionário da loja para conhecer e interagir sobre os funcionários.
+
+07:38.100 --> 07:43.520
+Mas ao invés de retornar aqui, nós vamos apenas quebrar.
+
+07:43.800 --> 07:46.890
+E quando saímos do loop há duas possibilidades.
+
+07:46.890 --> 07:53.700
+Percorremos completamente a lista e não encontramos uma instância de funcionário armazenada que corresponda ou o campo
+
+07:53.850 --> 07:59.190
+de funcionário do funcionário da loja agora contenha o funcionário no qual estamos interessados.
+
+07:59.190 --> 08:06.120
+Então, vamos dizer se o funcionário é igual ao Knol, enquanto isso significa que percorremos toda a lista e não
+
+08:06.120 --> 08:12.480
+encontramos o funcionário que estamos procurando por um retorno simples. Ou então encontramos o funcionário que você estava procurando,
+
+08:12.480 --> 08:14.630
+então queremos para removê-lo da lista.
+
+08:14.670 --> 08:28.280
+Então, vamos dizer que o hash da tabela de hash Kii remove o funcionário e nós vamos devolvê-lo ao funcionário empregado do ponto.
+
+08:28.290 --> 08:34.620
+Lembre-se que este campo local de funcionário é na verdade um funcionário da loja e não precisamos
+
+08:37.460 --> 08:43.610
+deste retorno NULO e isso funciona e provavelmente poderíamos extraí-lo e refatorá-lo para que este seja um
+
+08:43.650 --> 08:48.660
+método separado, mas podemos melhorar esse método porque como estamos fazendo agora, vamos acabar
+
+08:48.660 --> 08:52.430
+repetindo a lista duas vezes porque estamos interagindo com ela.
+
+08:52.430 --> 08:59.490
+Aqui para encontrar o empregado que tem a chave e, em seguida, quando chamamos o método Remove com o objeto, o método Remove
+
+08:59.700 --> 09:04.680
+na classe de lista vinculada terá que fazer uma iteração na lista novamente para encontrar esse
+
+09:04.680 --> 09:10.620
+objeto, porque lembre-se de uma lista vinculada ve got apenas para a lista ligada JDK só temos a cabeça
+
+09:10.620 --> 09:11.920
+na cauda da lista.
+
+09:12.000 --> 09:16.920
+E não estamos pedindo para remover da cabeça ou da cauda que estamos dizendo para remover esse funcionário aleatório
+
+09:16.920 --> 09:21.350
+que você tem na lista e a forma como a lista tem que fazer é percorrer a lista.
+
+09:21.630 --> 09:23.260
+Bem, nós já fizemos isso aqui.
+
+09:23.340 --> 09:27.900
+Então, vamos alterar esse código para saber onde estamos na lista.
+
+09:27.900 --> 09:34.650
+E depois há outra forma do método Remove, onde podemos passar um índice para que possamos dizer delete
+
+09:34.650 --> 09:36.380
+employee 5 na lista.
+
+09:36.480 --> 09:41.610
+E dependendo de como a lista é implementada no backend, isso pode ser mais rápido.
+
+09:41.640 --> 09:46.530
+Pode ainda ter que percorrer a lista, mas pelo menos não terá que fazer todas as comparações
+
+09:46.530 --> 09:46.850
+novamente.
+
+09:46.860 --> 09:52.470
+Porque com este tem que percorrer a lista e para cada elemento da lista que ele tem a dizer é que o
+
+09:52.470 --> 09:55.670
+funcionário que estou procurando é o funcionário que estou procurando X tal.
+
+09:55.680 --> 09:59.830
+Considerando que, se dissermos apenas remover o cara que é o quinto cara da lista.
+
+09:59.910 --> 10:04.050
+Ele pode ter que passar para o quinto na lista, mas então pode simplesmente deletá-lo e não
+
+10:04.050 --> 10:06.870
+ter que continuar comparando ao longo do caminho que seria mais rápido.
+
+10:06.870 --> 10:10.880
+Então, aqui em cima, vou dizer que o índice final é igual a zero.
+
+10:10.890 --> 10:19.660
+E então, toda vez que extraímos algo do iterador, todos incrementam esse índice e, em seguida, ouvimos que
+
+10:19.660 --> 10:25.210
+vamos dizer que o removemos e, em vez disso, passaremos o índice.
+
+10:25.410 --> 10:31.390
+E isso é apenas uma pequena melhoria de desempenho e porque estamos fazendo isso aqui eu não vou
+
+10:32.170 --> 10:35.900
+tirar nada daqui porque estamos precisando fazer algo diferente na remoção.
+
+10:35.980 --> 10:37.140
+Ok e é isso.
+
+10:37.150 --> 10:42.790
+Quero dizer, é que removê-lo usando listas vinculadas torna a implementação mais fácil, porque há sempre
+
+10:42.790 --> 10:49.270
+espaço no local com hash, mas isso não significa que o encadeamento seja melhor do que o rastreamento linear.
+
+10:49.270 --> 10:55.390
+Na verdade, em média, quando o desempenho é melhor que o encadeamento, isso significa apenas que a implementação
+
+10:55.390 --> 10:57.100
+é um pouco mais simples.
+
+10:57.100 --> 11:03.310
+Tudo bem, então um ditado final é implementar nossas tabelas de hash de impressão que salvam a tabela
+
+11:03.310 --> 11:05.530
+de hash de impressão de voz pública.
+
+11:06.330 --> 11:11.730
+E o que vamos ter que fazer aqui é atravessar a lista ligada em todas as posições,
+
+11:11.730 --> 11:15.190
+então vamos dizer que 4 polegadas pi é igual a zero.
+
+11:15.340 --> 11:25.840
+Eu ri e hash table dot dot plus mais e vamos dizer se uma tabela de hash está vazia.
+
+11:25.960 --> 11:30.330
+Quer dizer, não queremos atravessar uma lista encadeada vazia, apenas o sistema extrairá.
+
+11:30.340 --> 11:45.540
+Posição da linha de impressão mais I mais o espaço do Colon vazio.
+
+11:45.660 --> 11:51.980
+Agora, se a lista vinculada não estiver vazia, precisamos atravessar Syllis. Mais uma vez, usaremos um iterador de lista.
+
+11:51.990 --> 11:53.460
+Então eu vou
+
+11:56.770 --> 11:58.310
+começar dizendo posição.
+
+11:58.440 --> 12:00.540
+Basicamente, isso me permite apenas copiar isso.
+
+12:00.540 --> 12:01.390
+Vai ser mais
+
+12:04.820 --> 12:11.560
+rápido, exceto mover o MT no final e, em seguida, vamos obter um iterador de lista como fizemos antes, então
+
+12:11.560 --> 12:12.400
+vou listá-lo.
+
+12:12.400 --> 12:13.740
+Lista.
+
+12:13.750 --> 12:24.310
+O iterador empregado pelo iterador armazenado é igual à tabela hash pela lista Daut.
+
+12:24.310 --> 12:31.900
+Iterator e, em seguida, tags de ponto do iterador de parede em seguida.
+
+12:32.140 --> 12:36.340
+Queremos imprimir o campo do empregado neste empregado armazenado.
+
+12:36.380 --> 12:40.390
+Então vamos dizer sistema fora Daut.
+
+12:40.450 --> 12:42.770
+Eu vou mudar isso aqui para imprimir.
+
+12:42.770 --> 12:51.190
+Então, eu vou dizer sistema não soltar impressão iterador ponto próximo ponto empregado.
+
+12:51.820 --> 12:53.700
+E então irá imprimir uma seta aqui.
+
+12:53.720 --> 12:56.680
+O sistema saiu de impressão de pontos.
+
+12:56.740 --> 12:57.940
+Eu vou fazer uma única flecha.
+
+12:57.940 --> 13:03.230
+Embora tenhamos aprendido que a lista vinculada do JDK é, na verdade, uma lista duplamente vinculada.
+
+13:03.310 --> 13:11.440
+E quando saímos daqui, todos fazem o sistema sair da linha de impressão e eu digo não, porque o final de cada lista
+
+13:11.440 --> 13:18.340
+apontará para o Knol e é isso para nossa tabela de hash de impressão e é isso para nossa implementação.
+
+13:18.340 --> 13:25.100
+Então vamos voltar ao nosso método principal e agora tudo é compilado, então eu acho que nunca precisei de
+
+13:25.150 --> 13:27.230
+Bill, eu o removerei desse arquivo.
+
+13:28.000 --> 13:34.150
+E assim criamos uma tabela de hash de cadeia que adicionamos para os funcionários e imprimimos a tabela de hash e depois pegamos
+
+13:34.260 --> 13:38.020
+Smiths e depois removemos Doe e Jane e imprimimos a tabela de hash novamente.
+
+13:38.020 --> 13:41.220
+Então, vamos fazer isso passo a passo, então vou comentar isso.
+
+13:41.230 --> 13:45.320
+Vamos correr.
+
+13:45.320 --> 13:49.360
+OK, então aqui está a nossa tabela de hash que veremos.
+
+13:49.430 --> 13:51.710
+Como de costume, as primeiras três posições estão vazias.
+
+13:51.710 --> 13:58.400
+John Doe está na posição 3 e, desta vez, quando tivermos uma colisão, veremos que temos uma posição de lista vinculada
+
+13:58.400 --> 14:00.950
+5 Enquanto esta também é uma lista encadeada.
+
+14:01.040 --> 14:04.310
+Mas nós temos uma lista vinculada com mais de um funcionário.
+
+14:04.310 --> 14:08.390
+Então, na posição 5 temos Jane e depois temos Maria.
+
+14:08.420 --> 14:13.700
+Então, quando estávamos usando sondas lineares, continuamos procurando por um lugar vazio e Mary foi colocada
+
+14:13.700 --> 14:14.640
+na posição 7.
+
+14:14.660 --> 14:19.030
+Mas agora há sempre espaço no valor de hash da chave.
+
+14:19.070 --> 14:22.990
+Então adicionamos Mary na lista e temos dois itens na lista.
+
+14:23.000 --> 14:24.440
+E Mike está na posição 6.
+
+14:24.450 --> 14:25.150
+Como de
+
+14:28.500 --> 14:32.870
+costume Então, vamos experimentar nossa recuperação para ter certeza de que funciona.
+
+14:32.880 --> 14:33.950
+Então, vamos pegar Mary.
+
+14:34.020 --> 14:38.520
+Então, o que vai acontecer é que vamos entrar e vamos
+
+14:38.520 --> 14:44.960
+procurar esta lista de links para um funcionário que foi adicionado com a chave Smaltz.
+
+14:45.080 --> 14:45.980
+E aqui vamos nós.
+
+14:45.980 --> 14:48.370
+Nós temos Mary Smith.
+
+14:48.500 --> 14:56.630
+E, finalmente, vamos tentar remover alguns itens e todos os comentários para fora desta tabela de hash de impressão para que não fique
+
+14:56.630 --> 14:57.450
+no caminho.
+
+14:59.170 --> 15:03.510
+E estamos recebendo uma exceção, então vamos ter que verificar por que isso está acontecendo e está acontecendo
+
+15:03.560 --> 15:03.930
+na sala.
+
+15:03.940 --> 15:05.290
+Então vamos para a remoção.
+
+15:05.320 --> 15:11.750
+E isso está acontecendo aqui, o que está acontecendo aqui é que estamos ficando fora dos limites e eu posso ver porque
+
+15:11.750 --> 15:15.100
+é porque o primeiro item da lista está na posição 0.
+
+15:15.110 --> 15:17.030
+O segundo item está na posição 1.
+
+15:17.030 --> 15:25.040
+O terceiro item é essa posição 2 etc. mas aqui nós estamos entrando e inicializando o índice para 0 e então nós
+
+15:25.070 --> 15:31.130
+retiramos o primeiro item e nós incrementamos o índice para 1 quando realmente o índice ainda deve ser zero porque nós
+
+15:31.130 --> 15:36.260
+só olhamos para um item e alguém quando olhamos para o primeiro item no índice deve ser zero.
+
+15:36.290 --> 15:39.050
+Quando olhamos para isso como um índice de item deve ser 1 etc. Então, vou mudar isso para negativo, de modo que, quando chegarmos aqui, aumentemos para zero.
+
+15:39.050 --> 15:45.660
+E se, se olharmos para toda a matriz e não encontrarmos nada, o funcionário será não.
+
+15:45.740 --> 15:52.050
+Portanto, não tentaremos remover nada se a lista estiver vazia.
+
+15:52.070 --> 15:55.820
+Empregado será não.
+
+15:55.820 --> 15:57.200
+Então, não vamos tentar remover nada.
+
+15:57.200 --> 15:59.110
+E isso deve funcionar.
+
+15:59.120 --> 16:00.330
+OK, então deixe-me puxar para baixo e vamos tentar correr novamente e cruzar os dedos.
+
+16:00.350 --> 16:04.830
+Nós agora não vamos entrar em uma exceção e nós não.
+
+16:04.880 --> 16:07.760
+Então, de volta ao método principal, removemos Jondo.
+
+16:07.760 --> 16:08.480
+Então, ele
+
+16:11.120 --> 16:17.540
+saiu da posição três e nós removemos Jane Jones e ela agora foi retirada da lista na posição 5.
+
+16:17.540 --> 16:21.010
+E nós apenas temos Mary lá e, finalmente, vamos tentar recuperar Mary,
+
+16:21.020 --> 16:26.510
+porque lembre-se com a sondagem linear antes de nós adicionamos o código para refazer a tabela em uma remoção.
+
+16:26.510 --> 16:31.930
+Uma vez que removemos Jane, não conseguimos encontrar Mary, mas não teremos o
+
+16:32.000 --> 16:39.170
+mesmo problema com o encadeamento. Então, vamos adicionar Mary e vamos correr e ainda podemos ver Mary.
+
+16:39.230 --> 16:46.320
+Então isso está mudando.
+
+16:46.330 --> 16:47.450
+É muito mais simples de implementar que o teste linear.
+
+16:47.440 --> 16:51.040
+Mas como eu disse, isso não significa que quando você está investigando é pior
+
+16:51.040 --> 16:56.350
+e mudar isso significa apenas que você tem mais código para escrever e a implementação é um pouco mais complexa.
+
+16:56.500 --> 16:59.980
+Então, o que você acha que a complexidade do tempo de recuperar um item com base em uma chave é quando usamos o encadeamento.
+
+16:59.980 --> 17:06.020
+Bem, no pior dos casos, todas as instâncias teriam o mesmo valor de hash e, portanto,
+
+17:06.160 --> 17:12.400
+digamos que você tivesse essa função de hash ruim e não importava o que você dava.
+
+17:12.400 --> 17:16.460
+Cada chave única hash para o valor 3.
+
+17:16.480 --> 17:19.650
+Enquanto isso significa que todos os itens serão colocados na lista encadeada na posição 3.
+
+17:19.660 --> 17:25.990
+E assim, quando você quiser recuperar algo, você provavelmente
+
+17:25.990 --> 17:31.870
+terá que percorrer cada item na tabela de hash.
+
+17:31.870 --> 17:33.190
+E assim, o pior caso para o encadeamento é o tempo linear.
+
+17:33.190 --> 17:37.940
+Quando você vai recuperar alguma coisa.
+
+17:38.230 --> 17:39.830
+Mas a chave aqui é que
+
+17:39.880 --> 17:46.360
+nenhum trocadilho com intenção é o algoritmo de hash que queremos na função de hashing que resultará no menor número de colisões.
+
+17:46.360 --> 17:48.580
+Agora, é claro, o melhor caso é não haver colisões, mas isso pode ser difícil de conseguir na prática.
+
+17:48.580 --> 17:53.650
+Mas no caso médio, vamos supor que temos uma
+
+17:53.650 --> 17:59.950
+função de hashing decente, então suas listas vinculadas não serão tão longas.
+
+17:59.950 --> 18:01.870
+Então, se dissermos que K
+
+18:01.960 --> 18:09.460
+é a duração média de uma lista encadeada em sua tabela de hash, a recuperação será toda de uma mais K. o que corresponde ao cálculo do valor do hash e a essa posição do array, e o K
+
+18:09.460 --> 18:17.380
+fornece uma ideia do comprimento médio de uma lista encadeada.
+
+18:17.380 --> 18:22.370
+E assim, se a complexidade do tempo vai estar mais próxima do tempo
+
+18:22.420 --> 18:28.540
+constante ou do tempo linear, dependerá da função de hashing e também do fator de carga.
+
+18:28.540 --> 18:32.140
+Agora, por que isso depende do fator de carga neste caso.
+
+18:32.140 --> 18:34.660
+Bem, se você está tentando espremer cem
+
+18:34.660 --> 18:42.790
+valores em uma matriz de 10, você terá uma matriz muito mais completa em termos de listas vinculadas que estão realmente tendo valores.
+
+18:42.820 --> 18:46.680
+E se você tentar espremer 100 itens em uma matriz de tamanho 50, porque
+
+18:46.680 --> 18:52.510
+lembre-se na função hash, se voltarmos para a tabela de hash da cadeia, estamos sempre dividindo pelo tamanho da tabela de hash.
+
+18:52.740 --> 18:58.240
+Então, se isso aumentar, seus valores serão distribuídos de maneira mais uniforme.
+
+18:58.280 --> 19:03.010
+Por exemplo, quando nossa matriz é da lente 10, os números 5 e 15 estão indo para a posição 5.
+
+19:03.010 --> 19:11.030
+Mas se dobrássemos a matriz para emprestar vinte e cinco, entraríamos
+
+19:11.050 --> 19:17.290
+na posição 5, mas 15 ficariam na posição 15.
+
+19:17.290 --> 19:18.030
+E se nós fizéssemos isso 30 e 40 e 50 então se nós estivéssemos armazenando valores mais altos eles seriam distribuídos mais uniformemente.
+
+19:18.070 --> 19:25.150
+E como eu disse antes, é importante entender que a função de hash e o fator
+
+19:25.180 --> 19:30.190
+de carga serão importantes para determinar o desempenho da tabela de hash.
+
+19:30.190 --> 19:34.850
+De qualquer forma, agora que olhamos para a mudança e quando você está investigando,
+
+19:34.850 --> 19:40.720
+podemos ver por que ter uma função hash que não produza muitas colisões resultará em melhor desempenho.
+
+19:40.720 --> 19:44.210
+OK, então uma nota final antes de irmos para a função air hashing, estamos usando os elementos-chave.
+
+19:44.300 --> 19:50.310
+Agora poderíamos estar chamando o método do código hash na classe string.
+
+19:50.320 --> 19:54.700
+E então vou comentar isso porque muitas vezes é assim que você faz.
+
+19:54.700 --> 19:58.120
+Você vai realmente chamar o método de código hash na classe.
+
+19:58.120 --> 20:01.060
+Eu não fiz isso porque queria que nos concentrássemos no restante da implementação.
+
+20:01.060 --> 20:05.790
+Mas agora que entendemos e vimos tudo, vamos usar o método de código de
+
+20:05.800 --> 20:11.980
+hash de strings em vez de apenas usar os comprimentos de chave de todo retorno seguro e vou
+
+20:11.980 --> 20:18.760
+dizer valor absoluto de mascote porque o método de código de hash para string pode realmente produzir negativo números.
+
+20:18.760 --> 20:22.960
+E então nós temos que ter o valor absoluto e vamos dizer que ele tem
+
+20:22.960 --> 20:28.390
+código hash e vamos mod isso pelo hash de mesa de ponto Dot em uma função de hash você sempre
+
+20:28.390 --> 20:35.470
+vai estar modificando-o pelo tamanho de a matriz porque você precisa ter certeza de que os valores que você está retornando são índices de matriz válidos.
+
+20:35.470 --> 20:41.020
+E então eu vou comentar todos esses caras aqui que estão removendo coisas da tabela de hash.
+
+20:41.080 --> 20:46.800
+Mas vou remover o comentário desta tabela de hash de impressão e vamos executar novamente e ver como isso muda as coisas.
+
+20:46.810 --> 20:52.200
+E você verá que nossos funcionários agora estão distribuídos de forma diferente.
+
+20:52.720 --> 20:56.640
+John Doe e Mike Wilson agora atingem um valor zero.
+
+20:56.730 --> 21:01.120
+Jones hashes para um valor de 1 e Smith hashes para um valor de sete.
+
+21:01.180 --> 21:05.740
+Agora estamos tendo colisões aqui porque temos uma matriz tão pequena.
+
+21:05.740 --> 21:09.300
+Se tivéssemos uma matriz maior, é possível que não estivéssemos tendo nenhuma colisão.
+
+21:09.310 --> 21:13.280
+E é isso para tabelas de hash
+
+21:13.360 --> 21:20.770
+no próximo vídeo, vamos dar uma olhada no que está disponível no JDK.
+
+21:20.770 --> 21:21.880
+Eu te vejo lá.
+
+21:21.880 --> 21:22.820
+&nbsp;

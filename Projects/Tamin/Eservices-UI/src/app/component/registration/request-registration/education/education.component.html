@@ -1,0 +1,31 @@
+<div class="alert alert-info">
+  <p>- در این قسمت می توانید اطلاعات مربوط به تحصیلات خود را ثبت کنید. در صورت عدم تمایل می توانید مراحل بعدی را ادامه دهید.</p>
+  <p>- تاریخ اعلان یا تاریخ ثبت درخواست را به عنوان تاریخ شروع ثبت کنید.</p>
+</div>
+<div class="panel-body">
+  <form [formGroup]="formeducationdata" novalidate
+        (ngSubmit)="confirmClickk(formeducationdata.value, formeducationdata.valid)">
+    <div class="form-control-container row">
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="dateOfStart">تاریخ شروع</tamin-field-label>
+        <tamin-field-persian-date formControlName="dateOfStart"></tamin-field-persian-date>
+      </div>
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="education">آخرین مقطع تحصیلی</tamin-field-label>
+        <tamin-field-auto-complete-data-grid formControlName="education" placeholder="آخرین مقطع تحصیلی"
+                                             #education></tamin-field-auto-complete-data-grid>
+      </div>
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="educationfield">رشته تحصیلی</tamin-field-label>
+        <tamin-field-auto-complete-data-grid formControlName="educationfield" placeholder="رشته تحصیلی"
+                                             #educationfield></tamin-field-auto-complete-data-grid>
+      </div>
+      <div class="col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="dateOfGraduate">تاریخ اخذ مدرک</tamin-field-label>
+        <tamin-field-persian-date formControlName="dateOfGraduate"></tamin-field-persian-date>
+      </div>
+      <button type="submit" class="button normal">ذخیره اطلاعات تحصیلی</button>
+    </div>
+  </form>
+
+</div>

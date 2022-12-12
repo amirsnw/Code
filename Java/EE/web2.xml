@@ -1,0 +1,140 @@
+<web-app>
+	<display-name>Flight Register</display-name>
+	<context-param>
+		<param-name>author</param-name>
+		<param-value>Amir Khalighi</param-value>
+	</context-param>
+	
+	<welcome-file-list>
+		<welcome-file>console.html</welcome-file>
+		<welcome-file>console.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- specify servlet class and mapping -->
+	<servlet>
+		<servlet-name>ticketRegistration</servlet-name>
+		<servlet-class>controller.TicketRegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ticketRegistration</servlet-name>
+		<url-pattern>/ticketregister</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>airplaneRegistration</servlet-name>
+		<servlet-class>controller.AirplaneRegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>airplaneRegistration</servlet-name>
+		<url-pattern>/airplaneregister</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>statistic</servlet-name>
+		<servlet-class>controller.TicketProviderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>statistic</servlet-name>
+		<url-pattern>/statistic</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>controller.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Specify Authentication Filter -->
+	<filter>
+		<filter-name>userAuthFilter</filter-name>
+		<filter-class>UserAuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>userAuthFilter</filter-name>
+		<servlet-name>ticketRegistration</servlet-name>
+		<servlet-name>statistic</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>adminAuthFilter</filter-name>
+		<filter-class>AdminAuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>adminAuthFilter</filter-name>
+		<servlet-name>airplaneRegistration</servlet-name>
+		<servlet-name>statistic</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<!-- FORM-based authentication -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+		<form-login-page>/login.jsp</form-login-page>
+		<form-error-page>/403.html</form-error-page>
+		</form-login-config>
+	</login-config>
+	
+	<!-- System Roles -->
+	<security-role>
+		<role-name>user</role-name>
+		<role-name>admin</role-name>
+	</security-role>
+	
+	<!-- Declarative security : USER -->
+	<security-constraint>
+		<!-- Web resource collection -->
+		<web-resource-collection>
+			<web-resource-name>flight security</web-resource-name>
+			<url-pattern>/console.jsp</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>flight security</web-resource-name>
+			<url-pattern>/view.jsp</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<!-- Authorization constraint -->
+		<auth-constraint>
+			<role-name>user</role-name>
+			<role-name>admin</role-name>
+		</auth-constraint>
+		<!-- data constraint -->
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	<!-- Declarative security : ADMIN -->
+	<security-constraint>
+		<!-- Web resource collection -->
+		<web-resource-collection>
+			<web-resource-name>airplane security</web-resource-name>
+			<url-pattern>/air-view.jsp</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<!-- Authorization constraint -->
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+		<!-- data constraint -->
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	<!-- Error Code Related Error Pages -->
+   <error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+   </error-page>
+   <error-page>
+		<error-code>403</error-code>
+		<location>/403.html</location>
+	</error-page>
+   
+</web-app>

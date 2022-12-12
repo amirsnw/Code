@@ -1,0 +1,601 @@
+WEBVTT
+
+00:05.180 --> 00:10.690
+En el último video, revisamos las características de los árboles generales en este video.
+
+00:10.700 --> 00:16.790
+Vamos a ir a través de las características de un árbol binario y luego vamos a pasar a los árboles de
+
+00:16.790 --> 00:21.310
+búsqueda binarios, que es lo que vamos a ver para el resto de esta sección.
+
+00:21.320 --> 00:29.170
+Entonces, un árbol binario es un árbol en el que cada nodo tiene 0 1 o 2 hijos.
+
+00:29.270 --> 00:35.680
+Y es por eso que se llama árbol binario porque la cantidad máxima de hijos que un nodo puede tener es dos.
+
+00:35.690 --> 00:40.010
+Ahora recuerde que cuando miramos árboles generales y no podíamos tener tantos hijos como
+
+00:40.010 --> 00:46.030
+quisiera, podría tener 3 5 10 50 lo que sea, pero en un árbol binario cada nodo puede tener 0.
+
+00:46.040 --> 00:49.590
+Lo que significa que sería una hoja de uno o dos niños.
+
+00:49.730 --> 00:55.310
+Ahora, como cada nodo puede tener como máximo dos hijos cuando estamos trabajando con un árbol binario, nos
+
+00:55.310 --> 00:59.600
+referimos a los posibles niños como el niño izquierdo y el niño derecho.
+
+00:59.600 --> 01:05.030
+Y en la práctica, no solo usamos un árbol binario antiguo normal sino que usamos un árbol de búsqueda
+
+01:05.030 --> 01:06.420
+binario y lo veremos luego.
+
+01:06.440 --> 01:12.390
+Y entonces aquí hay un árbol binario en este árbol, cada nodo solo tiene 0 1 o 2 hijos.
+
+01:12.470 --> 01:19.850
+Y el niño izquierdo de 15 años tendría 22 años y el hijo derecho de 15 sería cuatro y así es
+
+01:19.850 --> 01:26.390
+como normalmente se los representa yendo a la izquierda y yendo a la derecha el niño izquierdo para cuatro
+
+01:26.390 --> 01:34.640
+sería 18 y el niño correcto lo haría ser tres 22 tiene un hijo izquierdo 19 pero no tiene un hijo derecho y
+
+01:34.640 --> 01:38.860
+18 tiene un hijo derecho 14 pero no tiene un hijo izquierdo.
+
+01:39.050 --> 01:47.770
+Ahora se completa un árbol binario si todos los niveles, excepto el último nivel, tienen dos hijos.
+
+01:47.810 --> 01:53.830
+Y en el último nivel, todos los nodos están lo más alejados posible, por lo que este es un árbol binario completo.
+
+01:53.840 --> 01:59.120
+Todos los nodos tienen dos hijos, excepto las notas de la hoja que es el último nivel y 4.
+
+01:59.180 --> 02:05.600
+Pero notará que los niños están todos a la izquierda tanto como sea posible si tres eran el niño correcto.
+
+02:05.600 --> 02:07.960
+Y teníamos un lugar vacío aquí.
+
+02:07.970 --> 02:10.050
+Esto no sería un árbol completo.
+
+02:10.070 --> 02:14.410
+Entonces, con un árbol completo en todos los niveles, excepto en el último nivel.
+
+02:14.450 --> 02:17.920
+Y este es el último nivel es completamente fallido.
+
+02:18.020 --> 02:25.430
+Y entonces todos los nodos interiores deben tener dos hijos y luego, en el último nivel, todos los nodos deben estar
+
+02:25.430 --> 02:28.100
+a la izquierda tanto como sea posible.
+
+02:28.100 --> 02:35.750
+Ahora bien, un árbol binario completo es también un árbol completo, pero con un árbol binario completo, cada nodo que no
+
+02:35.750 --> 02:38.000
+sea hojas debe tener dos hijos.
+
+02:38.030 --> 02:44.330
+Y entonces este no es un árbol binario completo porque cuatro no tiene dos hijos, solo
+
+02:44.330 --> 02:46.820
+tiene uno, pero es un árbol completo.
+
+02:46.820 --> 02:54.380
+Este árbol está lleno y, por definición, también está completo porque cada nodo del árbol, excepto las
+
+02:54.380 --> 02:55.950
+hojas, tiene dos hijos.
+
+02:56.000 --> 03:00.970
+Y como dije, los árboles binarios completos también se consideran árboles binarios completos.
+
+03:00.980 --> 03:07.580
+Porque si volvemos al árbol binario completo, la definición de un árbol completo está en todos los
+
+03:07.580 --> 03:13.820
+niveles, excepto que el último es fallido y con un árbol binario completo de cada nivel, incluidos
+
+03:13.820 --> 03:17.960
+los árboles binarios completos, por lo que también son árboles completos.
+
+03:17.960 --> 03:21.140
+Ahora está bien tener árboles binarios incompletos.
+
+03:21.200 --> 03:23.220
+Si subimos al árbol lo miramos primero.
+
+03:23.230 --> 03:30.530
+Esto es incompleto porque nos falta un nodo aquí y las notas en el nivel inferior no están a
+
+03:30.530 --> 03:31.760
+la izquierda más.
+
+03:31.760 --> 03:37.950
+Entonces está completamente bien tener árboles binarios incompletos.
+
+03:37.960 --> 03:42.390
+Ahora bien, este no es un árbol binario porque cuatro tiene tres hijos.
+
+03:42.430 --> 03:46.590
+Y entonces este árbol no es un árbol binario, es un árbol binario.
+
+03:46.600 --> 03:52.440
+Cada nodo tiene 0 1 o 2 hijos y la raíz también tiene tres hijos en este.
+
+03:52.440 --> 03:54.840
+Entonces este es un árbol binario.
+
+03:54.850 --> 03:56.850
+Este no es un árbol binario.
+
+03:56.860 --> 04:04.090
+En la práctica, generalmente no usamos cualquier árbol binario antiguo, sino un árbol de búsqueda binario.
+
+04:04.090 --> 04:11.320
+Y la razón por la que los árboles de búsqueda binarios son populares es que podemos realizar inserciones, eliminaciones y
+
+04:11.320 --> 04:14.410
+recuperaciones en todo el registro y el tiempo.
+
+04:14.410 --> 04:21.610
+También tienen una búsqueda más rápida que las matrices no ordenadas para respaldar una complejidad de tiempo equivalente a las matrices
+
+04:21.630 --> 04:22.060
+clasificadas.
+
+04:22.060 --> 04:27.310
+Recuerde cuando nosotros cuando buscamos una matriz ordenada utilizando el algoritmo de búsqueda binaria podemos hacerlo y
+
+04:27.310 --> 04:28.990
+todo el registro y la hora.
+
+04:28.990 --> 04:33.540
+Por lo tanto, tiene el tiempo de búsqueda equivalente cuando se trata de un árbol de búsqueda binario.
+
+04:33.550 --> 04:37.640
+El hijo izquierdo siempre tiene un valor menor que su padre.
+
+04:37.900 --> 04:41.930
+Y el niño correcto siempre tiene un valor mayor que su padre.
+
+04:42.100 --> 04:49.000
+Y esto significa que todo a la izquierda de la raíz o a la izquierda de un elemento primario es menor que el valor de la
+
+04:49.180 --> 04:55.390
+raíz o del elemento primario y todo a la derecha de la raíz o del elemento primario es mayor que el valor de
+
+04:55.390 --> 04:56.890
+la raíz o su padre.
+
+04:56.890 --> 05:03.610
+Y debido a eso, es realmente fácil hacer una búsqueda binaria en un árbol de búsqueda binario porque miramos el
+
+05:03.610 --> 05:04.850
+valor de la raíz.
+
+05:04.900 --> 05:07.320
+Si es igual al valor que queremos que se haga el trabajo.
+
+05:07.330 --> 05:14.890
+Si no es así y es menor que el valor en la raíz, entonces sabemos ir a ver el subárbol izquierdo, porque todo a la izquierda
+
+05:14.890 --> 05:18.060
+de la raíz es menor que el valor de la raíz.
+
+05:18.100 --> 05:23.080
+Si el valor que estamos buscando es mayor que el de la raíz, entonces sabemos que debemos ir al subárbol correcto, porque
+
+05:23.080 --> 05:26.550
+todo a la derecha de la raíz es mayor que el valor de la raíz.
+
+05:26.560 --> 05:33.220
+De modo que inmediatamente, al verificar la ruta, reducimos el número de valores que tenemos que buscar por la mitad y
+
+05:33.220 --> 05:34.330
+luego enjuagamos y repetimos.
+
+05:34.330 --> 05:39.400
+Entonces, si buscáramos en el subárbol izquierdo, descenderíamos al hijo izquierdo de la raíz
+
+05:39.400 --> 05:41.490
+y comparamos el valor con eso.
+
+05:41.560 --> 05:46.210
+Si es menor que el valor vamos al subárbol izquierdo que es mayor para el subárbol derecho.
+
+05:46.210 --> 05:51.850
+Así que, en esencia, los árboles binarios de búsqueda son ideales para realizar búsquedas binarias y es por eso que se
+
+05:52.180 --> 05:53.650
+llaman árboles de búsqueda binarios.
+
+05:53.860 --> 06:00.670
+Y debido a esa característica también podemos hacer inserciones, eliminaciones y recuperaciones. Gottes está buscando un valor, así
+
+06:00.670 --> 06:03.240
+que obviamente todo vuelve a ser legal.
+
+06:03.250 --> 06:09.910
+Podemos hacer todo eso y todo el registro y la hora porque solo nos lleva a todos los registros y pasos
+
+06:09.910 --> 06:14.860
+para encontrar el punto de inserción o para encontrar el valor que queremos eliminar o recuperar.
+
+06:14.950 --> 06:17.590
+Y este es un árbol de búsqueda binario.
+
+06:17.620 --> 06:20.130
+Entonces la ruta es 15.
+
+06:20.200 --> 06:25.840
+Todo a la izquierda de la ruta es menor que 15 y todo a la derecha de la ruta es mayor
+
+06:25.840 --> 06:29.540
+que 15 y esto tiene que ser cierto para cada nodo en el árbol.
+
+06:29.590 --> 06:36.790
+Entonces, si miramos, di tres tres tiene un hijo 2 y 2 es menos de 3 y dos tiene que ir a la izquierda.
+
+06:36.850 --> 06:42.670
+Si ponemos dos aquí, este no sería un árbol de búsqueda binario porque violaría la regla de que todo a
+
+06:42.670 --> 06:48.610
+la izquierda tiene que ser menor que y todo lo de la derecha tiene que ser mayor que 22 es mayor
+
+06:48.610 --> 06:49.150
+que 15.
+
+06:49.150 --> 06:50.920
+Entonces va a la derecha.
+
+06:51.070 --> 06:57.730
+18 es menor que 22, por lo que va a la izquierda 19 es mayor que 18, por lo que va a la derecha.
+
+06:58.030 --> 07:02.110
+Y 25 es mayor que 22 y por lo tanto va a la derecha.
+
+07:02.140 --> 07:05.240
+Y así cumple los requisitos de un árbol de búsqueda binario.
+
+07:05.300 --> 07:08.730
+Digamos que entramos y queremos encontrar el valor 18.
+
+07:08.890 --> 07:13.390
+Entonces entramos y comparamos 18 a 15 mientras que 18 es más grande que 15.
+
+07:13.390 --> 07:15.680
+Entonces sabemos que tiene que estar a la derecha de la raíz.
+
+07:15.700 --> 07:19.680
+Así que bajamos al niño adecuado 18 es menor que 22.
+
+07:19.690 --> 07:26.400
+Entonces sabemos que tiene que estar a la izquierda de esta nota porque todo a la izquierda es menos de 22.
+
+07:26.470 --> 07:29.590
+Entonces bajamos que el niño izquierdo 18 es igual a 18.
+
+07:29.590 --> 07:30.340
+Boom, hemos terminado.
+
+07:30.340 --> 07:33.590
+Encontramos 18 en solo tres pasos.
+
+07:33.670 --> 07:40.210
+Por lo tanto, se denomina árbol de búsqueda binaria porque está organizado de forma natural para que pueda realizar
+
+07:40.210 --> 07:47.350
+una búsqueda binaria simplemente comparando los valores con un nodo y luego dependiendo del resultado que vaya a la izquierda o
+
+07:47.350 --> 07:48.120
+hacia la derecha.
+
+07:48.130 --> 07:53.340
+Entonces, cada vez que corte los valores en la mitad de los valores, debe buscar.
+
+07:53.350 --> 07:55.480
+Ahora que pasa con los valores duplicados.
+
+07:55.480 --> 07:57.670
+¿Cómo funcionaban ésos en los árboles de búsqueda binarios?
+
+07:57.670 --> 08:00.130
+Bueno, hay un par de enfoques para esto.
+
+08:00.130 --> 08:02.590
+Algunas implementaciones solo dicen que no están permitidas.
+
+08:02.590 --> 08:06.350
+Entonces, si intenta insertar un valor duplicado, no está permitido.
+
+08:06.400 --> 08:08.170
+Y eso soluciona el problema.
+
+08:08.170 --> 08:14.830
+Si desea permitirles una forma de manejarlos es almacenar siempre los duplicados en el subárbol izquierdo o en el
+
+08:14.890 --> 08:18.470
+subárbol derecho, tiene que elegir uno y atenerse a él.
+
+08:18.490 --> 08:21.970
+Un tercer enfoque debe tener un contador con cada nodo.
+
+08:22.030 --> 08:27.220
+Entonces, en lugar de agregar un nodo separado para un valor duplicado, simplemente incrementaría un contador,
+
+08:27.220 --> 08:35.380
+así que, si lo hiciéramos de esa manera, y si ingresáramos y quisiéramos insertar el valor 22 en lugar de ir, es 22 menos que
+
+08:35.500 --> 08:41.400
+son mayores que 15, es mayor entonces entonces vamos a la derecha y luego golpeamos 22 y en
+
+08:41.400 --> 08:44.500
+lugar de decir es 22 Oh es igual Wow.
+
+08:44.520 --> 08:46.200
+Vamos a insertarlo a la izquierda o a la derecha.
+
+08:46.200 --> 08:48.840
+En su lugar, simplemente incrementa un contador aquí para dos.
+
+08:48.900 --> 08:50.030
+Entonces esa es otra forma.
+
+08:50.120 --> 08:57.030
+OK y aquí hay otro ejemplo de árbol de búsqueda binaria, por lo que esta vez 25 es la raíz, todo a la
+
+08:57.030 --> 09:03.630
+izquierda de 25 es menor que 25 y todo a la derecha de 25 es mayor que 25 y eso se aplicará
+
+09:03.630 --> 09:04.620
+a todos los nodos.
+
+09:04.680 --> 09:12.060
+Entonces, para 2015 está a la izquierda porque es más pequeño. 22 está a la derecha porque es más grande para 27
+
+09:12.060 --> 09:19.930
+26 es a la izquierda 30 es más grande que 27 y 29 es menor que 30 y 32 es mayor que 30.
+
+09:19.950 --> 09:22.220
+OK, entonces, ¿cómo vamos a construir este árbol?
+
+09:22.290 --> 09:25.140
+Qué inserciones hicimos para obtener este árbol.
+
+09:25.140 --> 09:30.330
+Ahora el orden en el que inserta el no va a influir en la apariencia final del árbol y
+
+09:30.330 --> 09:33.630
+lo comprenderá un poco mejor a medida que avanzamos en esta inserción.
+
+09:33.630 --> 09:37.360
+Entonces, la primera nota que vamos a insertar es de 25 autos que terminaron en la raíz.
+
+09:37.410 --> 09:42.950
+Cuando inserta un valor en un árbol de búsqueda binario vacío, siempre lo coloca en la raíz.
+
+09:43.050 --> 09:48.360
+Entonces, como dije, el orden en el que insertas los elementos puede influir en cómo se
+
+09:48.360 --> 09:54.470
+ve el árbol, porque si comenzáramos con otro valor, la ruta tendría un valor diferente y las comparaciones serían
+
+09:54.480 --> 09:57.240
+obviamente diferentes y no estaríamos comparando contra 25.
+
+09:57.300 --> 10:03.760
+De acuerdo, entonces, cuando vayamos a una de las inserciones, 20 20 es menos de 25, así que lo colocamos a la izquierda antes de insertar 15.
+
+10:03.810 --> 10:05.610
+15 es menos de 25.
+
+10:05.610 --> 10:11.130
+Así que vamos a la izquierda 15 es menos de 20, así que vamos a la izquierda y golpeamos un lugar vacío.
+
+10:11.130 --> 10:15.700
+Y así es como va para 27 27 es mayor que 25.
+
+10:15.720 --> 10:17.310
+Así que lo ponemos a la derecha ahora.
+
+10:17.370 --> 10:21.480
+Si aún no te has dado cuenta de esto cuando hacemos inserciones, siempre insertamos la nota
+
+10:21.480 --> 10:23.340
+en el primer lugar vacío que encontramos.
+
+10:23.340 --> 10:25.170
+Entonces, ¿dónde cree que va el 30?
+
+10:25.230 --> 10:28.840
+Mientras que 30 es mayor que 25, vamos a ir a la derecha.
+
+10:28.950 --> 10:32.240
+30 es mayor que 27, así que vamos a ir a la derecha.
+
+10:32.340 --> 10:40.460
+Y así, el 30 termina siendo almacenado, ya que el hijo brillante de 27 por 29 29 es mayor que 25 sufriendo.
+
+10:40.500 --> 10:41.690
+Iremos a la derecha.
+
+10:41.700 --> 10:45.130
+29 es mayor que 27, así que vamos a ir a la derecha.
+
+10:45.180 --> 10:47.440
+29 es menos de 30.
+
+10:47.580 --> 10:50.490
+Entonces vamos a ir a la izquierda por 26.
+
+10:50.490 --> 10:56.220
+Eso va a terminar aquí como el hijo izquierdo de 27 porque 26 es mayor que 25.
+
+10:56.220 --> 10:57.480
+Entonces vamos a la derecha.
+
+10:57.570 --> 11:00.670
+26 es menos de 27, así que vamos a la izquierda.
+
+11:00.720 --> 11:03.450
+¿Puedes imaginar dónde va a terminar el 22?
+
+11:03.450 --> 11:05.580
+Bueno, 22 es menos de 25.
+
+11:05.580 --> 11:08.590
+Así que vamos a la izquierda 22 es mayor que 20.
+
+11:08.610 --> 11:09.910
+Entonces vamos a la derecha.
+
+11:10.050 --> 11:11.970
+Y finalmente para 32.
+
+11:11.970 --> 11:13.440
+¿Puedes entender esto?
+
+11:13.540 --> 11:15.390
+Treinta y dos es mayor que 25.
+
+11:15.390 --> 11:16.650
+Entonces vamos a la derecha.
+
+11:16.770 --> 11:19.930
+32 es mayor que 27, así que vamos a la derecha.
+
+11:20.040 --> 11:21.790
+32 es mayor que 30.
+
+11:21.810 --> 11:24.630
+Entonces vamos a la derecha y así es como construimos nuestro árbol.
+
+11:24.630 --> 11:30.420
+Ahora bien, si mezclábamos el orden de inserción de estos valores, los mezclamos de forma aleatoria y luego terminamos construyendo
+
+11:30.420 --> 11:33.530
+un árbol diferente porque los diferentes valores entrarán en la raíz.
+
+11:33.540 --> 11:40.980
+Y nuestras comparaciones pueden terminar poniendo 20 aquí si terminamos con 15 ya que la raíz y luego 20
+
+11:40.980 --> 11:42.760
+terminarían en el subárbol correcto.
+
+11:42.840 --> 11:48.210
+Por lo tanto, el orden en que realiza las inserciones influirá en el aspecto de su árbol cuando termine
+
+11:48.210 --> 11:48.870
+de construirlo.
+
+11:48.870 --> 11:54.090
+Ahora, una característica realmente importante a tener en cuenta para los árboles binarios es que puede obtener
+
+11:54.090 --> 11:58.940
+el valor mínimo en el árbol simplemente siguiendo los bordes izquierdos hasta llegar a la hoja.
+
+11:59.040 --> 12:05.460
+Y entonces el valor mínimo en este árbol es 15 porque si seguimos los bordes izquierdos hasta que golpeamos una
+
+12:05.610 --> 12:06.840
+hoja, llegamos a 15.
+
+12:06.840 --> 12:11.620
+Y si quiere el valor máximo en el árbol, haga lo mismo con los bordes de la derecha.
+
+12:11.670 --> 12:18.250
+Entonces sigues los bordes hacia abajo y tocamos 32 y 32 es el valor máximo en el árbol.
+
+12:18.270 --> 12:23.670
+Entonces, cuando tiene un árbol de búsqueda binaria, puede obtener los valores mínimo y máximo muy rápidamente.
+
+12:23.670 --> 12:29.130
+Simplemente recorre todo el camino hacia la izquierda para el valor mínimo y todo el camino hacia la derecha para
+
+12:29.130 --> 12:30.210
+obtener el valor máximo.
+
+12:30.210 --> 12:37.600
+Ahora bien, esto puede parecer contra-intuitivo, pero si inserta datos ordenados en un árbol de búsqueda binario, terminará
+
+12:37.620 --> 12:43.580
+con esta situación ahora, en este caso los datos están ordenados en orden descendente.
+
+12:43.620 --> 12:48.030
+Y entonces insertamos 25 20 es menos de 25.
+
+12:48.030 --> 12:49.830
+Así que vamos a poner 20 aquí.
+
+12:49.860 --> 12:54.630
+15 es menos de 20, por lo que irá a la izquierda y 10 a menos de 15.
+
+12:54.630 --> 12:56.130
+Entonces va a la izquierda.
+
+12:56.130 --> 13:00.470
+Si los tuviéramos en una orden permanente obtendríamos la misma situación pero a la derecha.
+
+13:00.480 --> 13:06.780
+Entonces, si ponemos 10 primero y luego ponemos 15 15 iríamos a la derecha y luego pondríamos 20 20 irían a la
+
+13:06.780 --> 13:08.780
+derecha y 25 irían a la derecha.
+
+13:08.790 --> 13:12.590
+Terminamos con esta situación cuando insertamos datos que ya se han ordenado.
+
+13:12.600 --> 13:14.460
+Y esta no es una buena situación.
+
+13:14.460 --> 13:16.510
+Esto es esencialmente una lista vinculada.
+
+13:16.560 --> 13:22.730
+Entonces, en lugar de tener un árbol de búsqueda binario y podemos buscarlo en todo el registro y la hora,
+
+13:22.770 --> 13:24.380
+terminamos con una lista vinculada.
+
+13:24.390 --> 13:30.000
+Esta es esencialmente una lista vinculada y si busca esto no obtendrá todo el registro y
+
+13:30.000 --> 13:31.620
+el tiempo, obtendrá tiempo lineal.
+
+13:31.620 --> 13:38.150
+Todo n Idealmente, cuando estás construyendo un árbol de búsqueda binaria, intentas mantener Daughtry lo más equilibrado posible
+
+13:38.150 --> 13:43.710
+y eso significa que las alturas del subárbol izquierdo en el subárbol derecho no difieren mucho.
+
+13:43.790 --> 13:51.080
+Y entonces hay árboles de búsqueda binarios que son árboles de búsqueda binaria autoequilibrantes después de cada inserción o
+
+13:51.110 --> 13:57.290
+eliminación que miran al árbol y si el árbol está empezando a desestabilizarse, reequilibran el árbol
+
+13:57.290 --> 14:02.470
+cambiando nodos no vamos a míralos en este curso porque están más avanzados.
+
+14:02.470 --> 14:08.240
+Pero solo quería mencionar que existen dos de los más comunes de los que escuchará son los árboles A-V
+
+14:08.270 --> 14:09.950
+y los árboles rojos y negros.
+
+14:10.070 --> 14:16.450
+Entonces, con eso fuera del camino, implementemos un árbol de búsqueda binario. Nos veremos en el próximo video.

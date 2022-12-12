@@ -1,0 +1,109 @@
+WEBVTT
+
+00:05.440 --> 00:05.940
+Tudo bem.
+
+00:05.940 --> 00:11.470
+Então, antes de encerrarmos o curso, a última coisa que vamos ver é muito breve.
+
+00:11.550 --> 00:18.720
+Os conjuntos são um tipo de dados abstrato, porque eles não se aplicam a nenhuma estrutura de dados. Tudo o que é um conjunto
+
+00:18.750 --> 00:21.360
+é um conjunto de dados que não contém duplicatas.
+
+00:21.400 --> 00:26.060
+E assim, se algo é um conjunto, ele não pode conter valores duplicados.
+
+00:26.070 --> 00:33.060
+Agora o JDK tem suporte para conjuntos que conheci a interface do conjunto aqui e aqui vai ver que é
+
+00:33.060 --> 00:35.420
+uma coleção que não contém elementos duplicados.
+
+00:35.490 --> 00:37.760
+E eles explicam o que isso significa para o Java.
+
+00:37.770 --> 00:46.190
+Isso significa que nenhum par de elementos pode existir no conjunto, de modo que cada um ponto igual a e 2 seja verdadeiro.
+
+00:46.260 --> 00:52.380
+E assim, se o método equals vai retornar true para duas instâncias e essas duas instâncias
+
+00:52.410 --> 00:58.570
+não podem pertencer ao mesmo conjunto e eles dizem que o conjunto pode conter um elemento no.
+
+00:58.710 --> 01:03.870
+Então você pode entrar e ler o restante da documentação aqui se estiver interessado.
+
+01:03.900 --> 01:07.760
+Há muito suporte para conjuntos que podemos ver aqui, há um conjunto abstrato.
+
+01:07.760 --> 01:12.750
+Então, assim como as outras interfaces, se você quiser implementar o seu próprio conjunto personalizado, em
+
+01:12.960 --> 01:17.930
+vez de implementar a interface, se você estender o conjunto abstrato, você terá uma vantagem inicial.
+
+01:17.970 --> 01:20.100
+Podemos ver que temos um conjunto de hash.
+
+01:20.100 --> 01:26.100
+E se chegarmos aqui, esta é uma implementação do conjunto que é apoiada por uma tabela de hash que eles dizem
+
+01:26.100 --> 01:27.340
+realmente um mapa hash.
+
+01:27.450 --> 01:30.020
+E isso é uma implementação do conjunto.
+
+01:30.030 --> 01:37.070
+Temos um conjunto de hash vinculado e que diz que a tabela de hash e a implementação da lista vinculada de uma interface definida.
+
+01:37.110 --> 01:38.510
+Nós temos um conjunto de árvores.
+
+01:38.520 --> 01:41.220
+Eu mencionei isso na seção de árvores.
+
+01:41.220 --> 01:46.800
+E então esta é uma implementação de conjunto navegável Naveed baseada em um mapa de árvore.
+
+01:46.890 --> 01:52.940
+E assim, se você quisesse construir uma árvore que não tivesse elementos duplicados, você poderia usar essa classe.
+
+01:52.940 --> 01:58.770
+Então, eu rapidamente quis mencionar os conjuntos porque eles são um tipo de dados abstrato e há
+
+01:58.770 --> 02:01.410
+muito suporte para eles em seu JDK.
+
+02:01.410 --> 02:07.200
+Então, se chegarmos aqui aos métodos e dissermos que vemos o método add, ele diz, adiciona o elemento especificado.
+
+02:07.200 --> 02:14.100
+Se já não está presente aqui para a documentação para eles eles entram em detalhes novamente sobre
+
+02:14.100 --> 02:17.120
+o que eles consideram ser um elemento duplicado.
+
+02:17.160 --> 02:23.430
+Se voltarmos para a lista de métodos, agora podemos ver que há também um contém, como geralmente há
+
+02:23.430 --> 02:28.980
+um iterador, há uma remoção e você pode converter o conjunto para uma matriz, se quiser.
+
+02:29.050 --> 02:31.330
+E então não há nada de novo aqui.
+
+02:31.440 --> 02:36.960
+E é por isso que eu não queria gastar muito tempo com isso, porque se você entender
+
+02:36.960 --> 02:43.500
+as outras estruturas de dados que vimos, isso é uma espécie de camada extra de um requisito e o requisito é
+
+02:43.500 --> 02:47.340
+que você não pode adicionar itens duplicados e é isso para conjuntos.
+
+02:47.340 --> 02:48.720
+Eu vou te ver no próximo vídeo.

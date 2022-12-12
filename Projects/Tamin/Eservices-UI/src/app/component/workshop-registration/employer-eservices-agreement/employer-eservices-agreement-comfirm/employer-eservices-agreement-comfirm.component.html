@@ -1,0 +1,66 @@
+<div (window:resize)="onResize($event)" class="page-title">تعهدنامه خدمات غیرحضوری کارفرمایان</div>
+<div  *ngIf="mobileSize" class="status-selected width-state-one">
+    <p class="is-active">ورود اطلاعات</p>
+      <p class="is-active">نمایش اطلاعات کارفرمایی</p>
+        <p class="is-active">تائید نهایی تعهد نامه </p>
+  </div>
+  <div *ngIf="!mobileSize" class="status-selected width-state-one">
+    <span class="is-active">ورود اطلاعات</span> &#8592;
+    <span class="is-active">نمایش اطلاعات کارفرمایی</span> &#8592;
+    <span class="is-active">تائید نهایی تعهد نامه </span>
+  </div>
+<div class="panel margin-mobil">
+  <div style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+    <p style="font-size: 15px;">اینجانب<span style="font-weight: bold;"> {{firstName}} {{lastName}}</span> به شماره ملی <span style="font-weight: bold;">{{nationalCode}} </span>ضمن تائید مشخصات مذکور، با
+      اطلاع از قواعد خدمات و ابلاغ الکترونیک سازمان تامین اجتماعی و پذیرفتن مقررات، متعهد می‌باشم با رعایت ضوابط مذکور
+      نسبت به تبادل اطلاعات و ارتباطات الکترونیک با سازمان تامین اجتماعی اقدام نمایم:</p>
+    <ul style="padding: 20px; text-align: justify;">
+      <li>
+        <span style="font-weight: bold;">1- </span>
+        در خصوص انجام تعهدات و تکالیف مقرر در قانون تامین اجتماعی و ضوابط و مقررات اجرایی از طریق سامانه خدمات الکترونیک
+        و غیرحضوری سازمان تامین اجتماعی به نشانی https://eservices.tamin.ir مکاتبه و ارائه اسناد و مدارک مورد نیاز را از
+        طریق حساب کاربری ایجاد شده اقدام خواهم نمود.
+        <br>
+      </li>
+      <li>
+        <span style="font-weight: bold;">2- </span>
+        در ابلاغ الکترونیکی، با اطلاع از اينکه تاریخ ثبت اوراق در سامانه خدمات الکترونیک و غیرحضوری سازمان تامین اجتماعی
+        و وصول آن در حساب کاربری به منزله ابلاغ بوده و با ارسال پیامک به شماره همراه معرفی شده، اطلاع رسانی خواهد شد و
+        خودداری از مراجعه به حساب کاربری به منزله استنکاف از قبول اوراق مو ضوع ماده(۷۰) قانون آیین دادرسی دادگاه های
+        عمومی و انقلاب در امور مدنی محسوب می گردد، موظفم با ورود به حساب کاربری نسبت به رویت اوراق ابلاغ شده که به منزله
+        رسید می باشد، اقدام نمایم.
+        <br>
+      </li>
+      <li>
+        <span style="font-weight: bold;">3- </span>
+        ‏ترتیبی اتخاذ می نمایم تا پیامک‌های اطلاع‌رسانی، کدهای امنیتی و رمز های یک بار مصرف سامانه خدمات غیرحضوری را از
+        طریق شماره تلفن همراه مذکور اعلام شده دریافت نموده و با اهتمام در حفظ و نگهداری اطلاعات امنیتی ازسوء استفاده‌های
+        احتمالی جلوگیری نموده و در صورت افشا، مراتب را بلافاصله به سازمان تامین‌اجتماعی اعلام نمایم.
+      </li>
+      <li>
+        <span style="font-weight: bold;">4- </span>
+        در صورت هرگونه اشتباه یا تغییر در مشخصات اعلام شده، در اسرع وقت نسبت به ثبت مشخصات صحیح یا تغیبرات اقدام نمایم.
+        درغیراین صورت ابلاغ یا ارسال احکام یا مکاتبات به نشانی سابق مبنای اقدامات سازمان تامین اجتماعی بوده و ازاعتبار
+        قانونی برخوردار خواهد بود.
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <form [formGroup]="theForm" autocomplete="off" novalidate>
+      <div class="form-control-container" style="margin: 5px;">
+        <tamin-field-validator formControlName="commitment1"></tamin-field-validator>
+        <tamin-field-checkbox (change)="onCommitment1()" formControlName="commitment1">
+          <p style="direction:rtl;text-align:right;">
+            با اطلاع از شرایط و قواعد خدمات الکترونیک سازمان تامین اجتماعی و ابلاغ الکترونیک، متعهد به رعایت ضوابط مذکور
+            می باشم.
+          </p>
+        </tamin-field-checkbox>
+      </div>
+    </form>
+  </div>
+  <div class="button-container">
+    <button class="button normal" [disabled]="!commitment1" (click)="onAgree()">موافقم</button>
+    <button class="button normal red" (click)="onDisagree()">موافق نیستم</button>
+    <button class="button normal red" (click)="onRollback()">بازگشت</button>
+  </div>
+</div>

@@ -1,50 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7642a54c-f94b-415e-b351-fe64f3357049" name="Default Changelist" comment="" />
+    <list default="true" id="b7c2ad5c-abc4-488e-be12-3eb9a7836198" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="2Inj1fULdUdOBdw7Gx97KYnAbDP" />
+  <component name="ProjectId" id="2IntLFwcB1TEEwJtcaeWI5mgtaL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cdi-qualifier-type-safe-injection" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jax-rs-exception-handling" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Snowman\Code\Java\EE\ejb-and-cdi-example\src\main\java\com\scope\stateless" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.scope.stateful" />
-      <recent name="com.scope.stateless" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Snowman\Code\Java\EE\ejb-and-cdi-example\src\main\java\com\scope\stateful" />
-      <recent name="D:\Snowman\Code\Java\EE\ejb-and-cdi-example\src\main\java\com\scope\stateless" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,16 +40,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7642a54c-f94b-415e-b351-fe64f3357049" name="Default Changelist" comment="" />
-      <created>1670824027552</created>
+      <changelist id="b7c2ad5c-abc4-488e-be12-3eb9a7836198" name="Default Changelist" comment="" />
+      <created>1670829117509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670824027552</updated>
-      <workItem from="1670824035096" duration="3555000" />
-      <workItem from="1670936492681" duration="452000" />
-      <workItem from="1670937084991" duration="87000" />
-      <workItem from="1670937449772" duration="21000" />
-      <workItem from="1670941751344" duration="2186000" />
+      <updated>1670829117509</updated>
+      <workItem from="1670829119563" duration="970000" />
+      <workItem from="1670939705439" duration="78000" />
+      <workItem from="1670944750288" duration="1356000" />
     </task>
     <servers />
   </component>

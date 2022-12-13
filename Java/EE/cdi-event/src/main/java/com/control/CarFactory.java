@@ -6,14 +6,13 @@ import com.entity.Specification;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.UUID;
 
 @Dependent
 public class CarFactory {
 
     @Inject
-    @Named("defaultColor")
+    @Diesel
     Color defaultCarColor;
 
     public Car createCar(Specification specification) {

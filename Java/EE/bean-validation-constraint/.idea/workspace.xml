@@ -18,6 +18,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -41,6 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670829117509</updated>
       <workItem from="1670829119563" duration="970000" />
+      <workItem from="1670939785576" duration="1338000" />
     </task>
     <servers />
   </component>
@@ -52,7 +58,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

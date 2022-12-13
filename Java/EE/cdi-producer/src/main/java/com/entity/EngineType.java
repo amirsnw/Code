@@ -1,4 +1,4 @@
-package com.sebastian_daschner.learning_java_ee.entity;
+package com.entity;
 
 public enum EngineType {
 

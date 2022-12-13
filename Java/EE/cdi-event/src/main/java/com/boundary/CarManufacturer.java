@@ -1,7 +1,6 @@
 package com.boundary;
 
 import com.control.CarFactory;
-import com.control.CarRepository;
 import com.entity.Car;
 import com.entity.CarCreated;
 import com.entity.Specification;
@@ -17,14 +16,10 @@ public class CarManufacturer {
     CarFactory carFactory;
 
     @Inject
-    CarRepository carRepository;
-
-    @Inject
     Event<CarCreated> carCreated;
 
     public Car manufactureCar(Specification specification) {
         Car car = carFactory.createCar(specification);
-        carRepository.store(car);
         carCreated.fire(new CarCreated(car.getIdentifier()));
         return car;
     }

@@ -1,0 +1,150 @@
+<!-- <div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>ردیف لیست بیمه : </span>
+</div> -->
+<div class="panel-body">
+  <div class="row">
+    <form [formGroup]="detailForm" autocomplete="off" novalidate>
+      <!--  class="msform" -->
+      <div style="margin-top: 15px;">
+        <fieldset style='padding: 5px;'>
+          <div style="padding-left: 9px;" class="col-4 col-s-4">
+            <div style="margin-top: 14px;" class="col-2 col-s-2">
+              <h3>کد ملی :</h3>
+            </div>
+            <div class="col-8 col-s-8" style="margin-top: 4px;">
+              <tamin-field-natioanl-id formControlName="nationalCode"></tamin-field-natioanl-id><!-- regex="^\d+$"-->
+            </div>
+            <div class="col-2 col-s-2">
+              <p style="margin: 3px 5px 5px 5px;">
+                <button type="button" class="button normal dark" (click)="selectNotionalCode()">انتخاب</button>
+              </p>
+            </div>
+            <h3 style="margin-top: 56px;">نام :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{
+              lDIRModel?.firstName }}</h3>
+          </div>
+          <div class="col-4 col-s-4">
+            <div class="confirmation">
+              <h3 style="margin-top: 14px;">تاریخ تولد : {{ lDIRModel?.birthDateDisplay }}</h3>
+            </div>
+            <h3 style="margin-top: 20px;">نام خوانوادگی : {{ lDIRModel?.lastName }}</h3>
+          </div>
+          <div class="col-4 col-s-4">
+            <div class="confirmation">
+              <h3 style="margin-top: 14px;">ملیت : {{ lDIRModel?.nationality }}</h3>
+            </div>
+            <h3 style="margin-top: 20px;">نام پدر : {{ lDIRModel?.fatherName }}</h3>
+          </div>
+        </fieldset>
+      </div>
+      <div style="margin-top: 10px;">
+        <fieldset style='padding: 5px;'>
+          <div class="col-12 col-s-12">
+            <div style="padding-left: 5px;" class="col-3 col-s-3">
+              <tamin-field-label formControlName="jobCode">عنوان شغل بیمه شده</tamin-field-label>
+              <tamin-field-validator formControlName="jobCode"></tamin-field-validator>
+              <tamin-field-auto-complete-data-grid formControlName="jobCode" #jobDataGrid placeholder="عنوان شغل بیمه شده"></tamin-field-auto-complete-data-grid>
+            </div>
+            <div style="padding-left: 5px;" class="col-3 col-s-3">
+              <tamin-field-label formControlName="dailyWage">دستمزد روزانه</tamin-field-label>
+              <tamin-field-validator formControlName="dailyWage"></tamin-field-validator>
+              <tamin-field-number formControlName="dailyWage" regex="^\d+$"></tamin-field-number>
+            </div>
+            <div style="padding-left: 5px;" class="col-3 col-s-3">
+              <tamin-field-label formControlName="workingDays">روزهای کارکرد</tamin-field-label>
+              <tamin-field-validator formControlName="workingDays"></tamin-field-validator>
+              <tamin-field-number formControlName="workingDays" regex="^\d+$"></tamin-field-number>
+            </div>
+            <!-- <h3 class="col-2 col-s-2" style="margin-top: 40px;">دستمزد ماهانه : {{ lDIRModel?.monthlyWageDiplay }}</h3> -->
+            <div class="col-3 col-s-3">
+              <tamin-field-label formControlName="monthlyWageDiplay">دستمزد ماهانه</tamin-field-label>
+              <tamin-field-static-text formControlName="monthlyWageDiplay" placeholder="نام کارگاه"></tamin-field-static-text>
+            </div>
+          </div>
+          <div class="col-12 col-s-12">
+            <div style="padding-left: 5px;" class="col-6 col-s-6">
+              <fieldset style="box-shadow: none; padding:5px;">
+                <!-- border: solid 0.5px cadetblue; -->
+                <legend>&nbsp; مشمول : &nbsp;</legend>
+                <div>
+                  <div style="margin-top: 14px;" class="col-4 col-s-4">
+                    <h3>مزایای ماهانه (مستمری)</h3>
+                  </div>
+                  <div class="col-8 col-s-8">
+                    <tamin-field-number formControlName="includedContinuousBonus" regex="^\d+$"></tamin-field-number>
+                  </div>
+                </div>
+                <div>
+                  <div style="margin-top: 14px;" class="col-4 col-s-4">
+                    <h3>ایای ماهانه (غیر مستمری)</h3>
+                  </div>
+                  <div class="col-8 col-s-8">
+                    <tamin-field-number formControlName="includedDiscontinuousBonus" regex="^\d+$"></tamin-field-number>
+                  </div>
+                </div>
+                <h3 style="margin-top: 20px;">مزایای مشمول حق بیمه مانند:اضافه کار</h3>
+              </fieldset>
+            </div>
+            <div class="col-6 col-s-6">
+              <fieldset style="box-shadow: none;height: 149px; padding:5px;">
+                <!-- border: solid 0.5px cadetblue;-->
+                <legend>&nbsp; غیر مشمول : &nbsp;</legend>
+                <div>
+                  <tamin-field-label formControlName="excludedBonus">مزایای ماهانه (غیر مستمری)</tamin-field-label>
+                  <tamin-field-validator formControlName="excludedBonus"></tamin-field-validator>
+                  <tamin-field-number formControlName="excludedBonus" regex="^\d+$"></tamin-field-number>
+                </div>
+                <h3 style="margin-top: 20px;">مزایای غیر مشمول حق بیمه مانند: بن کارگری ، اضافه کاری</h3>
+              </fieldset>
+            </div>
+          </div>
+          <div>
+            <div class="col-4 col-s-4" style='padding: 5px;'>
+              <tamin-field-label formControlName="salaryPlusIncludedBonusDisplay">جمع دستمزد و مزایای مشمول</tamin-field-label>
+              <tamin-field-static-text formControlName="salaryPlusIncludedBonusDisplay" placeholder="نام کارگاه"></tamin-field-static-text>
+            </div>
+            <div class="col-4 col-s-4" style='padding: 5px;'>
+              <tamin-field-label formControlName="salaryPlusIncludedAndExcludedBonusDisplay">جمع دستمزد و مزایای مشمول
+                و غیر مشمول</tamin-field-label>
+              <tamin-field-static-text formControlName="salaryPlusIncludedAndExcludedBonusDisplay" placeholder="نام کارگاه"></tamin-field-static-text>
+            </div>
+            <div class="col-4 col-s-4" style='padding: 5px;'>
+              <tamin-field-label formControlName="employeePortionOfPremium1Display">حق بیمه سهم بیمه شده</tamin-field-label>
+              <tamin-field-static-text formControlName="employeePortionOfPremium1Display" placeholder="نام کارگاه"></tamin-field-static-text>
+            </div>
+          </div>
+          <div class="col-12 col-s-12">
+            <fieldset style="box-shadow: none; padding:5px;">
+              <!-- border: solid 0.5px cadetblue;-->
+              <div style="padding-left: 10px;" class="col-4 col-s-4">
+                <div style="margin-top: 14px;" class="col-3 col-s-3">
+                  <h3>تارخ آغازبه کار</h3>
+                </div>
+                <div class="col-8 col-s-8">
+                  <tamin-field-persian-date formControlName="workStartDate"></tamin-field-persian-date>
+                </div>
+              </div>
+              <div class="col-4 col-s-4">
+                <div style="margin-top: 14px;" class="col-3 col-s-3">
+                  <h3>تارخ ترک کار</h3>
+                </div>
+                <div class="col-8 col-s-8">
+                  <tamin-field-persian-date formControlName="workEndDate"></tamin-field-persian-date>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        </fieldset>
+
+        <!-- <div class="button-container col-12 col-s-12" style="margin:5px;"> -->
+        <div class="col-12 col-s-12" style="margin-top:10px;">
+          <button type="submit" class="button normal" (click)="newCustomer(detailForm.value)">ذخیره</button>
+          <button type="button" class="button normal gray" (click)="backToPanelClick()">بازگشت به صفحه نخست</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-list-detail-item-row-modal #listDetailItemRowModalComponent (selectedNotionalCode)="selectedNotionalCode()"></app-list-detail-item-row-modal>

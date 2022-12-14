@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ir.tamin.framework.web:common-web-components:0.0.3-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ir/tamin/framework/web/common-web-components/0.0.3-SNAPSHOT/common-web-components-0.0.3-20170509.135853-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/ir/tamin/framework/web/common-web-components/0.0.3-SNAPSHOT/common-web-components-0.0.3-20170509.135853-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/ir/tamin/framework/web/common-web-components/0.0.3-SNAPSHOT/common-web-components-0.0.3-20170509.135853-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

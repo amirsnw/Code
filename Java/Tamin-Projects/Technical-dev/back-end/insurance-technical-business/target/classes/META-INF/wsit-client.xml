@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        name="mainclientconfig"
+>
+    <import location="SsupPermitsMain.asmx.xml" namespace="http://tempuri.org/SSupPermit/SsupServices"/>
+</definitions>

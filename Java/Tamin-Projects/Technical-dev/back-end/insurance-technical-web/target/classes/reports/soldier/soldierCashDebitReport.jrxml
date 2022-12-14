@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="soldierCashDebitReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d9d4a445-e074-446d-9821-313086ccba65">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="297"/>
+	<parameter name="solDat" class="java.lang.String"/>
+	<parameter name="orcOrdrcpda" class="java.lang.String"/>
+	<parameter name="solsdat1" class="java.lang.String"/>
+	<parameter name="solsdat2" class="java.lang.String"/>
+	<parameter name="soledat1" class="java.lang.String"/>
+	<parameter name="soledat2" class="java.lang.String"/>
+	<field name="risuname" class="java.lang.String"/>
+	<field name="risuid" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="solno" class="java.lang.String"/>
+	<field name="brhname" class="java.lang.String"/>
+	<field name="solday1" class="java.lang.String"/>
+	<field name="solday2" class="java.lang.String"/>
+	<field name="solmonth1" class="java.lang.String"/>
+	<field name="solmonth2" class="java.lang.String"/>
+	<field name="solamntb" class="java.math.BigDecimal"/>
+	<field name="brhaccount" class="java.lang.String"/>
+	<field name="subject1" class="java.lang.String"/>
+	<field name="subject2" class="java.lang.String"/>
+	<background>
+		<band height="802">
+			<rectangle>
+				<reportElement uuid="4b8a8e3c-25ca-4686-afac-80ef4f33ea24" x="0" y="-10" width="555" height="802"/>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="165" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="45578f46-b1ca-4b17-abaa-2e486403c821" x="12" y="32" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04f54497-66d9-4501-be1c-83e6e0039a25" x="12" y="11" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره :
+]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="f59dc7e4-cc59-425e-885e-66d1e8415809" x="12" y="52" width="533" height="109"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="f5985b6f-0053-4dc3-851b-5d479a374332" x="461" y="73" width="73" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[خانم / آقای ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="130" y="73" width="108" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ به شماره بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="429" y="103" width="108" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[موضوع :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="429" y="141" width="108" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نشانی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="308" y="93" width="169" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[خدمت نظام وظیفه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="308" y="113" width="169" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[حضور داوطلبانه در جبهه]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6bd2e31a-3702-413f-845f-42dc5c799d21" x="308" y="113" width="169" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="130" y="12" width="331" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="16" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[اعلامیه بدهی]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4984bbfc-cbd0-447a-b20b-642a294cf7d3" x="16" y="73" width="429" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{risuname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c9b0b5d6-c351-4268-9d42-40aebe0d4a06" x="-299" y="73" width="429" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{risuid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7fb6ab8d-456e-4b8f-850c-f154ab35107e" x="-26" y="141" width="429" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="c5e42b7e-8862-4f6e-a7f5-3df6fe9025dc" x="309" y="97" width="11" height="11"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="c5e42b7e-8862-4f6e-a7f5-3df6fe9025dc" x="309" y="116" width="11" height="11"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="f83aee9c-42da-4d93-86b9-50c1634598c7" x="312" y="97" width="13" height="20"/>
+				<textElement>
+					<font pdfFontName="/reports/Fonts/Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subject1}== null ? " ":"√"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e1df8282-1b81-481d-b026-007e113a7171" x="308" y="115" width="16" height="20"/>
+				<textElement>
+					<font pdfFontName="/reports/Fonts/Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subject2}== null ? " ":"√"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="629" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="347" y="57" width="204" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[عطف به درخواست وارده به شماره ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="441" y="17" width="108" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با سلام]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="203" y="57" width="46" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مورخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-4" y="57" width="134" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ به آگاهی میرساند  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-19" y="93" width="570" height="71"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[برابر بررسیهای بعمل آمده از مدارک ارسالی و در اجرای ماده "3 "آئین نامه اجرائی قانون اصلاح تبصره
+
+ماده "14" قانون کار و الحاق یک تبصره به آن مصوب 8/4/84 هیات وزیران حق بیمه متعلقه جنابعالی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="271" y="166" width="279" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بابت پذیرش مدت خدمت نظام وظیفه از تاریخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="169" y="166" width="56" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[لغایت ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="74" y="166" width="56" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بمدت  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-19" y="164" width="56" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ماه و]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="190" y="186" width="311" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[روز و  همچنین حضور داوطلبانه در جبهه از تاریخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-19" y="206" width="133" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ریال میباشد که ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="489" y="206" width="56" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بمدت  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="37" y="186" width="56" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[لغایت ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="347" y="206" width="56" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ماه و]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="190" y="206" width="104" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[روز و به مبلغ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="190" y="226" width="360" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بمنظور احتساب سوابق دوره  مذکور  خواهشمند است :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-95" y="246" width="646" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-1 حداکثر تا پایان ماه بعد از تسلیم این اعلامیه با مراجعه به شعبه جهت دریافت برگ پرداخت حق بیمه ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="325" y="266" width="224" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[و واریزمبلغ آن به حساب شماره ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-12" y="266" width="250" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[این شعبه نزد بانک مربوطه اقدام نمائید.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-154" y="298" width="705" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-2 چنانچه مایل به تقسیط بدهی خود میباشید شخصا در مهلت مذکور به این شعبه مراجعه و فرم درخواست]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="227" y="319" width="324" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تقسیط را تکمیل تا اقدام لازم بعمل آید.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="500" y="366" width="50" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تذکر:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-39" y="386" width="589" height="77"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[پذیرش سوابق مذکور منوط به پرداخت حق بیمه متعلقه در مهلت مقرر یاد شده میباشد. در غیر اینصورت احتساب سوابق مورد نظر بر اساس تقاضای مجدد و تجدید محاسبه حق بیمه طبق ضوابط و مقررات امکانپذیر خواهد بود.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="142" y="496" width="107" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ شعبه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="212" y="516" width="107" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ رئیس شعبه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="-19" y="516" width="215" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مسئول امور فنی بیمه شدگان]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="54fe59b3-94a6-420c-b658-bf7c00ec9b3a" x="12" y="569" width="533" height="46"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="2a614305-dcbc-4e8d-ab1e-b30c0904b260" x="461" y="584" width="76" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ ابلاغ]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="8530f8fd-ef0f-4190-8a43-1697b0b21c91" x="445" y="569" width="1" height="46"/>
+			</line>
+			<textField>
+				<reportElement uuid="f78bcc71-0e9a-492b-8c97-70196186c6aa" x="-80" y="58" width="429" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="faa9dc98-ff71-4e32-89d5-95e05d826d87" x="-204" y="57" width="429" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{solDat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2466c458-4af9-489e-b234-ea6bb6dc6e5c" x="-287" y="496" width="429" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brhname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d646dd09-be47-4545-afa4-632ab59acab6" x="0" y="584" width="429" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{orcOrdrcpda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="177754c5-ba3f-4a29-a632-67c3a68c122f" x="197" y="166" width="122" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{solsdat1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="262c735b-d4ce-432e-be8e-ee6e3a579e0e" x="104" y="186" width="99" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{solsdat2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0c8a2461-48c9-4c7e-92a8-73a5ad368c6c" x="82" y="166" width="121" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{soledat1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d5f4f6aa-855a-45a5-ac4e-fd7c3e884d37" x="-50" y="186" width="111" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{soledat2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="67f6b2de-de3d-4eae-bd89-ef455a9e80f5" x="472" y="186" width="79" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solday1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2accda15-4fc6-4c30-8dc1-e5ea58b0f236" x="271" y="206" width="107" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solday2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3c749fb4-97a0-41e8-a5ac-7c993374cabc" x="-23" y="166" width="116" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solmonth1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0625747f-9b64-4685-867b-4de563398a9a" x="403" y="206" width="97" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solmonth2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="03e2d867-0202-4309-8a84-18bc1c562fc1" x="169" y="266" width="178" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brhaccount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="57699645-c8bb-4dbe-90ed-bfc372102c96" x="86" y="206" width="104" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solamntb}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

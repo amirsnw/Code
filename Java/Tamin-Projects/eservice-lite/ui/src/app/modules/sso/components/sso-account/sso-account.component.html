@@ -1,0 +1,19 @@
+<div class="alert alert-info">
+  مشاهده شماره حساب
+</div>
+<div class="panel">
+  <div class="panel-title">جستجو</div>
+  <div class="panel-body">
+    <app-sso-account-search #ssoAccountSearchComponent (afterSubmit)="onSearch($event)"></app-sso-account-search>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-title">لیست</div>
+  <div class="panel-body">
+    <app-sso-account-list #ssoAccountListComponent></app-sso-account-list>
+  </div>
+</div>
+<p style="margin:5px;">
+  <button type="button" class="button normal gray" (click)="redirectTo('/sso')"><i class=" icon-right-big"></i><span>بازگشت به صفحه نخست</span>
+  </button>
+</p>

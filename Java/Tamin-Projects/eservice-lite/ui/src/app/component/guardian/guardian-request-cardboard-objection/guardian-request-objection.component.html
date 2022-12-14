@@ -1,0 +1,35 @@
+<form [formGroup]="theForm" autocomplete="off" autocomplete="off" novalidate>
+  <div class="panel">
+    <div class="panel-title">اعتراض به کفالت</div>
+    <div class="panel-body">
+      <div class="row customized-row">
+        <div class="col-6" style="justify-content: center;
+                                    padding: 20px;">
+          <div class="col-12">
+            <h3 style="text-align: center;">درخواست خود را برای اعتراض در حداکثر 1000 کاراکتر بنویسید</h3>
+          </div>
+          <div class="col-12" style="padding: 3px;">
+            <tamin-field-label formControlName="objectionMessage">متن اعتراض:</tamin-field-label>
+            <ng-container
+              *ngIf="theForm.controls.objectionMessage?.touched && !theForm.controls.objectionMessage?.valid">
+              <span *ngIf="theForm.controls.objectionMessage.errors.required" class="tamin-form-control-error"
+                    style="color: #b00020;">
+                لطفا متن اعتراض خود را بنویسید
+              </span>
+              <span *ngIf="theForm.controls.objectionMessage.errors.pattern" class="tamin-form-control-error"
+                    style="color: #b00020;">
+                متن اعتراض حداکثر 1000 کاراکتر میباشد.
+              </span>
+            </ng-container>
+            <tamin-field-text-area formControlName="objectionMessage"></tamin-field-text-area>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 8px">
+    <button (click)="saveData()" class="button normal" type="button">ثبت اعتراض
+    </button>
+    <button (click)="return()" class="button normal red" type="button">انصراف</button>
+  </div>
+</form>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MedicalIntroductionReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="720784cb-3273-471f-93cc-0be2d5bd17dd">
+	<property name="ireport.zoom" value="0.8264462809917354"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="112"/>
+	<parameter name="birthDate" class="java.lang.String"/>
+	<parameter name="reqDate" class="java.lang.String"/>
+	<parameter name="dMohlat" class="java.lang.String"/>
+	<field name="agreementCategoryDesc" class="java.lang.String"/>
+	<field name="firstName" class="java.lang.String"/>
+	<field name="lastName" class="java.lang.String"/>
+	<field name="fatherName" class="java.lang.String"/>
+	<field name="idCardNumber" class="java.lang.String"/>
+	<field name="nationalId" class="java.lang.String"/>
+	<field name="risuid" class="java.lang.String"/>
+	<field name="branchName" class="java.lang.String"/>
+	<background>
+		<band height="802">
+			<rectangle>
+				<reportElement uuid="dd8edd59-41f3-407d-84fa-ede37a0f1fe5" x="0" y="3" width="554" height="799"/>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="213" y="19" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بسمه تعالی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="109" y="86" width="354" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="B Nazanin" size="18" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[فرم معرفی متقاضیان بیمه با ماهیت اختیاری (غیر اجباری)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="a4078cea-77ef-4f18-94a5-80cee53dcc22" x="13" y="39" width="85" height="94"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="508" y="19" width="34" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="508" y="39" width="34" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="24" y="59" width="62" height="62"/>
+				<textElement textAlignment="Center">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[محل الصاق عکس متقاضی ممهور به مهر شعبه]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="651" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="188" y="19" width="354" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[کمیسیون پزشکی مستقر در  .....................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="493" y="49" width="49" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با سلام]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="0" y="69" width="542" height="38"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[    در اجرای بند 2 یک هزار و سیصد و پنجمین و بند 16 یک هزار و سیصد و بیست و ششمین جلسه هیات مدیره محترم مورخ21/6/91 و  1/8/91 موضوع دستور اداری شماره2413/92/1000 مورخ 20/3/92بدینوسیله متقاضی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="0" y="109" width="290" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با مشخصات ذیل:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="493" y="145" width="49" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="313" y="145" width="64" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام خانوادگی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="137" y="145" width="51" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نام پدر:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="481" y="511" width="61" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[آقای / خانم :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="278" y="165" width="99" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره شناسنامه:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="113" y="165" width="75" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[کد ملی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="467" y="185" width="75" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[وضعیت تاهل:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="302" y="185" width="75" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره بیمه:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="113" y="185" width="75" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ درخواست:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="435" y="205" width="107" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[آخرین روز مهلت معاینه:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="0" y="225" width="542" height="50"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[جهت انجام معاینه اولیه قبل از بیمه پردازی معرفی می گردد، خواهشمند است در این خصوص اقدام لازم معمول و نتیجه را به این شعبه اعلام فرمایید.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="414" y="275" width="128" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ضمنا نامبرده:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="0" y="300" width="542" height="30"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-1 دارای کارت معافیت پزشکی از خدمت زیر پرچم می باشد/نمی باشد و علت معافیت ......................................... است.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="0" y="330" width="542" height="30"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-2 ....................... برگ سوابق انجام معاینات و شرکت در کمیسیون پزشکی پیوست می باشد.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="0" y="360" width="542" height="30"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-3 گزارش سوابق پرداخت حق بیمه ضمیمه می باشد.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="302" y="390" width="37" height="23"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="16" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شعبه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="388" y="431" width="79" height="23"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="16" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[رئیس شعبه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="98" y="431" width="166" height="23"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="16" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مسئول امور فنی بیمه شدگان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="493" y="477" width="49" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[رونوشت:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="493" y="165" width="49" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ تولد:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="278" y="511" width="49" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به نشانی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff692b3-e68c-45f4-b3a5-b660b2744db6" x="0" y="531" width="542" height="30"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[جهت اطلاع و مراجعه به کمسیون پزشکی جهت انجام معاینات.]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b6a7eaf7-f9c3-40d9-b815-25e7b4728081" x="313" y="108" width="229" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{agreementCategoryDesc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9ec5a08e-d5c3-48d5-86ae-4d38c94819b7" x="393" y="142" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{firstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4aede0bd-8284-42c1-982c-71a734d9ee9b" x="202" y="142" width="108" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d3fbac36-7aab-427d-b473-50d22762e1c0" x="37" y="142" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fatherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1f458245-3f5c-439f-a2f8-8738f01b05be" x="393" y="162" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{birthDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="94ab7eb3-a834-490a-b8ed-79bca4bc678b" x="188" y="162" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idCardNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c491fa69-f270-4c53-8129-a51affd84380" x="13" y="162" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nationalId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="27676a68-9620-4ab4-9c5f-ff2872480909" x="202" y="182" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{risuid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="afc7981b-1d00-4a16-b4c1-1aa999856b67" x="13" y="182" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reqDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c6b6ea97-e006-4ac9-8c03-27cbd46e4665" x="335" y="202" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dMohlat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="353dbcdc-8c5f-4074-9896-fdcf6f8471c9" x="160" y="389" width="142" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

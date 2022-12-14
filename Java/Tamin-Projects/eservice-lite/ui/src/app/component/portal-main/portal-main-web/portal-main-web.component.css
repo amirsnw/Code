@@ -1,0 +1,263 @@
+.portal-main-container {
+  height: calc(100% - 96px);
+}
+
+.portal-main-top-container {
+  position: relative;
+  text-align: center;
+  background-image: url(/assets/images/headerbg3.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 60%;
+}
+
+.portal-main-middle-container {
+  position: relative;
+  text-align: center;
+  height: 40%;
+}
+
+.portal-main-dr-noorbakhsh {
+  position: absolute;
+  background-image: url(/assets/images/dr3.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 44%;
+  top: 28%;
+  left: 2%;
+}
+
+.portal-main-version {
+  position: absolute;
+  background-image: url(/assets/images/version_ribbon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  top: 0%;
+  right: 0%;
+}
+
+.portal-main-flag {
+  position: absolute;
+  background-image: url(/assets/images/flag.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 25%;
+  height: 25%;
+  top: 0%;
+  left: 0%;
+}
+
+.portal-main-logo {
+  position: absolute;
+  background-image: url(/assets/images/logo-green.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 30%;
+  top: 10%;
+  animation-name: portal-main-logo-anim;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
+.portal-main-top-text {
+  position: absolute;
+  background-image: url(/assets/images/portal-main-top-text.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 42%;
+  width: 100%;
+  height: 9%;
+  animation-name: portal-main-logo-anim;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
+.portal-main-bottom-text {
+  position: absolute;
+  background-image: url(/assets/images/portal-main-bottom-text3.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 54%;
+  width: 100%;
+  height: 11%;
+  animation-name: portal-main-logo-anim;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
+.portal-main-top-buttons-container {
+  position: absolute;
+  top: 84%;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: portal-main-top-button-anim;
+  animation-duration: 3.5s;
+  animation-delay: -1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  z-index: 10;
+}
+
+.portal-main-top-button {
+  min-width: 150px;
+  font-size: 2vh;
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 767px) {
+  /* For tablets: */
+  .portal-main-top-container {
+    height: 60%;
+  }
+
+  .portal-main-middle-container {
+    height: 40%;
+  }
+}
+
+@keyframes portal-main-logo-anim {
+  from {
+    filter: blur(100px) opacity(0%);
+  }
+  to {
+    filter: blur(0px) opacity(100%);
+  }
+}
+
+@keyframes portal-main-top-button-anim {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes portal-main-text-top-anim {
+  0% {
+    left: 0px;
+    top: 2000px;
+  }
+  25% {
+    left: -4px;
+    top: -4px;
+  }
+  50% {
+    left: 4px;
+    top: 4px;
+  }
+  75% {
+    left: 4px;
+    top: -4px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.portal-main-middle-image {
+  width: auto;
+  height: 100%;
+  filter: grayscale(90%) brightness(90%);
+  transition: 0.2s;
+}
+
+.portal-main-middle-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(228, 241, 253);
+  overflow: hidden;
+  width: 100%;
+  height: 20%;
+  transition: .5s ease;
+  filter: opacity(70%);
+  cursor: pointer;
+}
+
+.portal-main-middle-container:hover .portal-main-middle-image {
+  filter: grayscale(0%) brightness(100%);
+}
+
+.portal-main-middle-container:hover .portal-main-middle-overlay {
+  height: 100%;
+}
+
+.portal-main-middle-text {
+  color: rgb(0, 0, 0);
+  font-size: calc(100vh/50);
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  overflow: hidden;
+  width: 90%;
+  padding: calc(100vh/70);
+}
+
+.portal-main-middle-insured {
+  background-image: url(/assets/images/2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.portal-main-middle-workshop {
+  background-image: url(/assets/images/1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.portal-main-middle-pensioner {
+  background-image: url(/assets/images/03-3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.portal-main-middle-me {
+  background-image: url(/assets/images/04.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.portal-main-video {
+  width: 100%;
+  height: auto;
+  border: solid #555 1px;
+}
+
+
+.tags {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tag-item  {
+  border: dot-dash 1px #cacaca;
+  padding: 10px;
+  background-color: #00aaff;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.selected-tag-category {
+  background-color: #0099cc;
+}

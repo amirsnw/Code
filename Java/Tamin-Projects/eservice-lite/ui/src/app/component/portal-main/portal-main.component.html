@@ -1,0 +1,10 @@
+<app-portal-main-web *ngIf="getIsWeb()"
+    (buttonClicked)="onAppChildButtonClicked($event)"
+    (tagClicked)="onAppChildTagClicked($event)"
+    (handleMenu)="onAppChildHandleMenu($event)">
+</app-portal-main-web>
+<app-portal-main-mobile *ngIf="!getIsWeb()"
+    (buttonClicked)="onAppChildButtonClicked($event)"
+    (tagClicked)="onAppChildTagClicked($event)"
+    (handleMenu)="onAppChildHandleMenu($event)">
+</app-portal-main-mobile>

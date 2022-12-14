@@ -1,0 +1,111 @@
+<div (window:resize)="onResize($event)" class="page-title">قرارداد بیمه صاحبان حرف و مشاغل آزاد</div>
+<div *ngIf="mobileSize" class="status-selected width-state-one">
+  <p [ngClass]="isAgreement ? 'is-active': 'de-active'">تایید ضوابط و مقررات</p>
+  <p [ngClass]="isAgreement && isAprovee ? 'is-active': 'de-active'">تایید اطلاعات</p>
+  <p [ngClass]="isAgreement && isSatisfied && isAprovee ? 'is-active': 'de-active'">کنترل شرایط لازم</p>
+  <p [ngClass]="isAgreement && premiumValidity  && isAprovee ? 'is-active': 'de-active'">تایید حق بیمه ماهانه</p>
+  <p *ngIf="!exemptionValidity"
+    [ngClass]="isAgreement && (!exemptionValidity && premiumValidity) && isAprovee? 'is-active': 'de-active'">معرفی به
+    مرجع معاینه</p>
+  <p [ngClass]="isAgreement && savedContract ? 'is-active': 'de-active'">انعقاد قرارداد</p>
+  <p Class="de-active">پرداخت حق بیمه</p>
+</div>
+<div *ngIf="!mobileSize" class="status-selected width-state-one">
+  <span [ngClass]="isAgreement ? 'is-active': 'de-active'">تایید ضوابط و مقررات</span> &#8592;
+  <span [ngClass]="isAgreement && isAprovee ? 'is-active': 'de-active'">تایید اطلاعات</span> &#8592;
+  <span [ngClass]="isAgreement && isSatisfied && isAprovee ? 'is-active': 'de-active'">کنترل شرایط لازم</span> &#8592;
+  <span [ngClass]="isAgreement && premiumValidity  && isAprovee ? 'is-active': 'de-active'">تایید حق بیمه ماهانه</span>
+  &#8592;
+  <span *ngIf="!exemptionValidity"
+    [ngClass]="isAgreement && (!exemptionValidity && premiumValidity) && isAprovee? 'is-active': 'de-active'">معرفی به
+    مرجع معاینه</span> <span *ngIf="!exemptionValidity"> &#8592; </span>
+  <span [ngClass]="isAgreement && savedContract ? 'is-active': 'de-active'">انعقاد قرارداد</span> &#8592;
+  <span Class="de-active">پرداخت حق بیمه</span>
+</div>
+<div class="panel">
+  <div class="panel-title">اطلاعات هویتی</div>
+  <div class="panel-body">
+    <app-special-insured-info #specialInsuredInfoComponent></app-special-insured-info>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-title">مقررات و ضوابط انعقاد قرارداد</div>
+  <div class="panel-body">
+    <div class="row">
+      <button class="button normal green" (click)="onShowAggrement()">مشاهده ضوابط و مقررات
+      </button>
+      <!-- <button class="button normal green" (click)="onPrintContract()">تایید و ادامه
+  </button> -->
+      <button type="button" class="button normal green" (click)=redirectToContracts()>
+        قرارداد های ثبت شده
+       </button>
+       <button class="button normal red" (click)="redirectTo('/')"> انصراف
+       </button>
+    </div>
+  </div>
+</div>
+<div class="panel" *ngIf="isAgreement">
+  <div class="panel-body">
+    <app-freelance-check-istrue-contract #freelanceCheckIstrueContractComponent (approve)="onApprove()"
+      (deapprove)="onDeApprove()"></app-freelance-check-istrue-contract>
+  </div>
+</div>
+<div *ngIf="isAgreement" class="panel">
+  <div class="panel-title">کنترل شرایط لازم</div>
+  <div class="panel-body">
+    <div>
+      <span *ngIf="isSatisfied">
+        متقاضی محترم شما دارای شرایط لازم برای عقد قرارداد بیمه صاحبان حرف و مشاغل آزاد هستید.
+      </span>
+      <span *ngIf="!isSatisfied">
+        متقاضی محترم شما فاقد شرایط لازم برای عقد قرارداد بیمه صاحبان حرف و مشاغل آزاد هستید.
+      </span>
+      <button class="button normal green" (click)="onShowDetails()">مشاهده جزئیات</button>
+    </div>
+    <div *ngIf="!isSatisfied">
+      <span>
+        چنانجه به سابقه خود اعتراض دارید نسبت به ثبت اعتراض اقدام نمایید.
+      </span>
+      <button  class="button normal red" (click)="redirectTo('/objection-deviation')">اعتراض به
+        سابقه</button>
+    </div>
+  </div>
+</div>
+<div class="panel" *ngIf="isAprovee && isAgreement && isSatisfied">
+  <div class="panel-title">شعبه تامین اجتماعی</div>
+  <div class="panel-body">
+    <app-freelance-location #freelanceLocationComponent (provinceValue)="provinceValueRequest($event)"
+      (cityValue)="cityValueRequest($event)" (branchValue)="branchValueRequest($event)" [contractSelected]="contract" [isFraction]="false">
+    </app-freelance-location>
+  </div>
+</div>
+<div class="panel" *ngIf="isAprovee && isAgreement && isSatisfied">
+  <div class="panel-title">تعیین حق بیمه ماهانه</div>
+  <div class="panel-body">
+    <app-freelance-payment-premium #freelancePaymentPremiumComponent (validPremium)="checkPremiumValidity($event)"
+      (chageCntDram)="chageCntDram($event)" (changePremium)="checkPremiumValidityy($event)"
+      (medicalExemption)="checkExemptionValidity($event)" [personalInfo]="specialInsuredInfoComponent.getPersonalInfo()"
+      [contractSelected]="contract"></app-freelance-payment-premium>
+  </div>
+</div>
+
+<div class="panel" *ngIf="isAprovee && isAgreement && premiumValidity && !exemptionValidity">
+  <div class="panel-title">معرفی به مرجع معاین</div>
+
+  <div class="panel-body">
+
+    <app-freelance-introduce-to-examination #freelanceIntroduceToExaminationComponent
+      (commitmentChecked)="checkExaminationValidity($event)"></app-freelance-introduce-to-examination>
+  </div>
+</div>
+<div class="panel" *ngIf="isAprovee && isAgreement && (examinationValidity || (exemptionValidity && premiumValidity))">
+  <div class="panel-title">انعقاد قرارداد و پرداخت حق بیمه</div>
+  <div class="panel-body">
+    <app-freelance-make-a-contract #freelanceMakeAContractComponent
+      [personalInfo]="specialInsuredInfoComponent.getPersonalInfo()" [contractSelected]="contract"
+      [provinceValue]="provinceValue" [cityValue]="cityValue" [branchValue]="branchValue">
+    </app-freelance-make-a-contract>
+  </div>
+</div>
+<app-freelance-agreement (agree)="onAgree()" (disagree)="onDisagree()" #freelanceAgreementComponent>
+</app-freelance-agreement>

@@ -1,0 +1,21 @@
+<div class="alert alert-info">
+  <span>اعتراض به سوابق ناموجود</span>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <tamin-data-grid #dataGrid (itemAction)="onItemAction($event)"></tamin-data-grid>
+    <form [formGroup]="noteForm" autocomplete="off" novalidate>
+      <tamin-field-label formControlName="note">توضیحات</tamin-field-label>
+      <tamin-field-text-area formControlName="note"></tamin-field-text-area>
+    </form>
+    <p style="margin:5px;">
+      <button type="button" class="button normal" (click)="objectionNotexistNewEdit.show()">جدید</button>
+      <button type="button" class="button normal" (click)="historyObjectionAgreement.show()">تایید و ارسال</button>
+    </p>
+  </div>
+</div>
+<app-objection-notexist-new-edit #objectionNotexistNewEdit
+                                 (close)="exitNotexistNewEditForm()"></app-objection-notexist-new-edit>
+
+<app-history-onjection-agreement #historyObjectionAgreement (agree)="confirmNotexistRequest()"></app-history-onjection-agreement>

@@ -1,0 +1,237 @@
+<div class="panel" [hidden]="stage < 1" (window:resize)="onResize($event)">
+  <div *ngIf="mobileSize" class="status-selected width-state-one">
+    <p [ngClass]="stage > 0 ? 'is-active': 'de-active'">مرحله اول - اطلاعات هویتی</p>
+    <p [ngClass]="stage > 1 ? 'is-active': 'de-active'">مرحله دوم - سوابق عمومی</p>
+    <p [ngClass]="stage > 2 ? 'is-active': 'de-active'">مرحله سوم - سوابق بیماری</p>
+    <p [ngClass]="stage <= 0 ? 'is-active': 'de-active'">ارسال نهایی به شعبه</p>
+  </div>
+  <div *ngIf="!mobileSize" class="status-selected width-state-one">
+    <span [ngClass]="stage > 0 ? 'is-active': 'de-active'">مرحله اول - اطلاعات هویتی</span> &#8592;
+    <span [ngClass]="stage > 1 ? 'is-active': 'de-active'">مرحله دوم - سوابق عمومی</span> &#8592;
+    <span [ngClass]="stage > 2 ? 'is-active': 'de-active'">مرحله سوم - سوابق بیماری</span> &#8592;
+    <span [ngClass]="stage <= 0 ? 'is-active': 'de-active'">ارسال نهایی به شعبه</span>
+  </div>
+</div>
+<ng-template DCDirective></ng-template>
+<div class="row">
+  <div [hidden]="!diseaseAdded" class="col-12">
+    <form [formGroup]="checkForm" class="centeralize main-form" autocomplete="off"
+          novalidate>
+      <div class="col-12">
+        <tamin-field-checkbox formControlName="documentCheck"></tamin-field-checkbox>
+        <tamin-field-label formControlName="documentCheck">کلیه مدارک درمانی خود را بارگذاری نموده ام
+        </tamin-field-label>
+      </div>
+      <div class="col-12" [hidden]="model.isFamily" [ngClass]="model.isFamily ? '' : 'final-check-box'">
+        <tamin-field-checkbox formControlName="reviewCheck"></tamin-field-checkbox>
+        <tamin-field-label formControlName="reviewCheck">سوابق بیمه ای خود را مشاهده کرده و تایید مینمایم
+        </tamin-field-label>
+        <button style="padding: 10px" class="button normal green main-button" (click)="downloadFinalForm()"
+                *ngIf="diseaseAdded" type="button"> دانلود فرم
+        </button>
+      </div>
+      <div class="col-12">
+        <tamin-field-checkbox formControlName="noOtherRequest"></tamin-field-checkbox>
+        <tamin-field-label formControlName="noOtherRequest">بیماری دیگری غیر از بیماری فوق جهت ثبت درخواست ندارم
+        </tamin-field-label>
+      </div>
+    </form>
+  </div>
+  <div class="col-12">
+    <button (click)="previousStage()" [hidden]="stage < -1" class="button normal green main-button"
+            type="button">مرحله قبل
+    </button>
+    <button [ngStyle]="{'float':stage === stageMax ? 'none' : 'left' }" (click)="changeStage()"
+            *ngIf="(stage < stageMax) && stage > 0" class="button normal green main-button"
+            type="button">ذخیره و ادامه فرآیند
+    </button>
+    <!--<button style="float: left" (click)="startOver()" *ngIf="showDemandGrid"
+            class="button normal green main-button" type="button">ثبت تقاضای جدید
+    </button>-->
+    <button style="float: left; padding: 10px" (click)="onFinalSubmit()" *ngIf="diseaseAdded"
+            [disabled]="allowSubmit"
+            class="button normal green main-button"
+            type="button">تکمیل فرآیند و ارسال
+    </button>
+    <button style="float: left; padding: 10px" (click)="addNewDisease()" *ngIf="diseaseAdded && stage === stageMax"
+            [disabled]="checkForm.value.reviewCheck && checkForm.value.noOtherRequest && checkForm.value.documentCheck"
+            class="button normal green main-button" type="button">ثبت بیماری جدید
+    </button>
+    <button style="float: left" (click)="onStageThreeSubmit()" *ngIf="!diseaseAdded && stage === stageMax"
+            class="button normal green main-button"
+            type="button">ذخیره بیماری
+    </button>
+  </div>
+</div>
+
+<!-- Modal Box -->
+<tamin-modal #finalUploadModal
+             title="فرم تکمیل مدارک، تایید نهایی و ارسال تقاضا"
+             width="80%">
+  <div class="panel"
+       style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+    <div class="panel-title">متقاضی گرامی جهت ارسال پرونده ضروری است کلیه مدارک مورد نیاز بارگذاری شود</div>
+    <div class="row" [hidden]="!finalDocumentGalleryMissing">
+      <div class="col-12">
+        <div class="alert alert-danger">
+          خطا در ورود اطلاعات
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="documentForm">
+        <div class="row">
+          <div class="col-6">
+            <tamin-field-label formControlName="selectedItem">نوع مدرک</tamin-field-label>
+            <tamin-field-combo-box-static #uploadTypeCombo displayField="title"
+                                          formControlName="selectedItem"
+                                          placeHolder="انتخاب کنید ..."
+                                          valueField="id"></tamin-field-combo-box-static>
+          </div>
+          <div [ngClass]="{'missing': finalDocumentGalleryMissing}" class="col-12">
+            <button (click)="uploadFinalDocument()" [disabled]="documentForm.value.selectedItem === ''"
+                    class="button normal"
+                    style="margin: 12px">
+              <span><i class="icon-plus"></i><span>بارگذاری مدرک جدید</span></span>
+            </button>
+            <tamin-image-gallery-managed #finalDocumentGallery [maxImageSize]="500"></tamin-image-gallery-managed>
+            <div class="alert alert-info">
+              توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="button-container">
+    <button (click)="hideFinalModalAndSend()" class="button normal">ذخیره مدارک</button>
+    <button (click)="hideFinalMissDocument()" class="button normal red" type="button">انصراف</button>
+  </div>
+</tamin-modal>
+<!-- ---- -->
+
+<!-- Modal Box -->
+<tamin-modal #theAgreementModal
+             width="80%">
+  <div style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+    <p style="font-weight: bold">
+      متقاضی گرامی لطفاً مقررات ذیل را به دقت مطالعه فرمائید
+    </p>
+    <div class="part-title" style="background-color: #acd0e4; margin: 20px 0 0;">
+      بیمه شده اصلی :
+    </div>
+    <ul>
+      <ol style="padding: 20px; text-align: justify;">
+        <li>
+          کلیه متقاضیان مکلف به ارائه صادقانه مدارک درمانی، مستندات و اطلاعات لازم در همه مراحل رسیدگی به درخواست می
+          باشند، عدم ارائه و ارائه ناقص یا خلاف واقع مدارک و اطلاعات مذکور منجربه مختومه شدن فرآیند رسیدگی می گردد.
+        </li>
+        <li>
+          اگر قبلا به علت بیماری مورد درخواست در کمیسیون پزشکی شرکت کرده و از کار افتاده کلی نشده اید صرفاً در صورت تحقق شرایط
+          جدید و ارائه مدارک دال بر شدت بیماری و انجام اقدامات درمانی جدید مجاز به ثبت درخواست جدید هستید.
+        </li>
+        <li>
+          به ازای هر بیماری صرفاً فرم گواهی پزشک معالج (بازماندگان بیمه شدگان اصلی متوفی و افراد تبعی بیمه شدگان / مستمری بگیران اصلی) مرتبط با بیماری که درمان های تکمیلی را نزد وی انجام داده اید باید
+          ارائه شود و سایر پزشکان مربوط به همان بیماری در قسمت مربوطه (سایر پزشکان) بارگذاری گردد.
+        </li>
+        <li>
+          گواهی پزشک باید مشتمل بر مهر و امضاء پزشک، تاریخ صدور، اعلام تشخیص بیماری، درمانهای انجام شده، لاعلاج بودن
+          بیماری و تاریخ خاتمه درمان باشد.
+          <a href="/view/assets/pdfs/govahi-pezeshk.pdf" target="_blank" style="color: red">(جهت مشاهده نمونه گواهی
+            اینجا را کلیک کنید)</a>
+        </li>
+        <li>
+          درخواست از کار افتادگی برای بیماری هایی که با درمانهای کنترلی (مانند مصرف دارو، کاهش وزن، تغییر شرایط و ...)
+          مشکلی در ادامه اشتغال فعلی و یا شغل دیگر ایجاد نمی کند فاقد موضوعیت است.
+        </li>
+        <li>
+          بر اساس ماده 70 قانون تامین اجتماعی لازم است کلیه مراحل درمانی را برای علاج بیماری انجام داده باشید و صرفاً در
+          صورت عدم بهبودی بیماری با درمان داروئی، عمل جراحی و ... و عدم امکان توانبخشی مجاز به ثبت درخواست می باشید.
+        </li>
+        <li>
+          متقاضی مکلف است اصل یا تصویر برابر اصل مدارکی که در این سامانه بارگذاری می نماید را هنگام مراجعه به
+          کمیسیون پزشکی ارائه دهد.
+        </li>
+        <li>
+          متقاضی محترم اطمینان حاصل نمایید که برای هر بیماری درخواست ثبت نموده باشید. درصورت ارسال پرونده به کمیسیون
+          پزشکی امکان ثبت درخواست جدید میسر نمی باشد.
+        </li>
+        <li>
+          لطفا سوابق بیمه پردازی خود را در قسمت "
+          <a href="/view/#/history" style="color: #ff9800">کلیه سوابق</a>
+          " بررسی نمایید و در صورت عدم وجود اشکال نسبت به ثبت درخواست اقدام فرمایید.
+        </li>
+        <li>
+          پس از ذخیره تقاضا، تا تعیین تکلیف نهایی ارائه و ثبت تقاضای مجدد امکان پذیر نمی باشد.
+        </li>
+        <li>
+          چنانچه نتیجه معاینات ماده 90 در آخرین کارگاه، در دسترس نمی باشد نسبت به دانلود و آپلود "فرم استعلام معاینات
+          ماده 90 از کارفرما" اقدام نمایید.
+        </li>
+        <li>
+          چنانچه سابقه بستری در بیمارستان دارید نسبت به دانلود فرم درخواست پرونده بیمارستانی (فرم نمونه شماره 5)
+          اقدام نموده و پس از دریافت پرونده از بیمارستان، صرفا اوراق برگ پذیرش و خلاصه ترخیص، برگ شرح حال و معالینه بدنی، برگ خلاصه پرونده
+          و برگ گزارش عمل جراحی (در صورت وجود) را در قسمت مربوطه بارگذاری نمایید.
+          <a href="/view/assets/pdfs/hospital-docs-committee.pdf" target="_blank" style="color: red">(جهت مشاهده نمونه فرم ها
+            اینجا را کلیک کنید)</a>
+        </li>
+        <li>
+          استفاده از قانون تعیین تکلیف سوابق تامین اجتماعی (بازنشستگی با حداقل ده سال سابقه بیمه پردازی و بدون شرط سنی
+          در صورت تأیید از کار افتادگی) برای افرادی که فاقد شرایط معرفی به کمیسیون پزشکی (حسب اعلام شعبه مربوطه) می
+          باشند، در قسمت نوع تقاضا (استفاده از تسهیلات 19/1) فراهم می باشد.
+        </li>
+        <li>
+          برای بیمه شدگان صاحبان حرف و مشاغل آزاد با نرخ 12 و 14 درصد امکان ثبت تقاضا وجود ندارد.
+        </li>
+      </ol>
+    </ul>
+    <hr>
+    <div class="part-title" style="background-color: #acd0e4; margin: 20px 0 0;">
+      افراد خانواده :
+    </div>
+    <ul>
+      <ol style="padding: 20px; text-align: justify;">
+        <li>
+          کلیه متقاضیان مکلف به ارائه صادقانه مدارک درمانی، مستندات و اطلاعات لازم در همه مراحل رسیدگی به درخواست     می باشند، عدم ارائه و ارائه ناقص یا خلاف واقع مدارک و اطلاعات مذکور منجربه مختومه شدن فرآیند رسیدگی می گردد.
+        </li>
+        <li>
+          به ازای هر بیماری صرفاً گواهی پزشک معالج (بازماندگان بیمه شدگان اصلی متوفی) و (افراد تبعی بیمه شدگان/مستمری بگیران اصلی) مرتبط با بیماری که درمان های تکمیلی را نزد وی انجام
+          داده
+          اید باید ارائه شود و سایر پزشکان مربوط به همان بیماری در قسمت مربوطه (سایر پزشکان) بارگذاری گردد.
+          <a href="/view/assets/pdfs/committee-form4-a.pdf" target="_blank" style="color: red">دانلود فرم استعلام از پزشک</a><br>
+          <a href="/view/assets/pdfs/committee-form4-b.pdf" target="_blank" style="color: red">دانلود فرم استعلام از پزشک افراد تبعی بیمه شدگان / مستمری بگیران اصلی</a><br>
+          <a href="/view/assets/pdfs/committee-form4-c.pdf" target="_blank" style="color: red">دانلود فرم استعلام از پزشک بازماندگان بیمه شدگان اصلی متوفی</a>
+        </li>
+        <li>
+          متقاضی مکلف است اصل یا تصویر برابر اصل مدارکی که در این سامانه بارگذاری می نماید را هنگام مراجعه به کمیسیون پزشکی ارائه دهد.
+        </li>
+        <li>
+          متقاضی محترم اطمینان حاصل نمایید که برای هر بیماری درخواست ثبت نموده باشید. درصورت ارسال پرونده به کمیسیون پزشکی امکان ثبت درخواست جدید میسر نمی باشد.
+        </li>
+        <li>
+          پس از ذخیره تقاضا، تا تعیین تکلیف نهایی ارائه و ثبت تقاضای مجدد امکان پذیر نمی باشد.
+        </li>
+        <!--<li>
+          مندرجات گواهی پزشک معالج صرفأ ذکر بیماری و عدم توانایی انجام کار باشد.
+        </li>-->
+        <li>
+          نظر به اینکه امکان شرکت مجدد به کمیسیون پزشکی وجود ندارد، نسبت به ثبت کلیه بیماری های مربوطه اقدام نمایید.
+        </li>
+        <li>
+          چنانچه سابقه بستری در بیمارستان دارید نسبت به دانلود فرم درخواست پرونده بیمارستانی (فرم نمونه شماره 5) اقدام نموده و پس از دریافت پرونده از بیماستان، صرفأ اوراق " برگ پذیرش و خلاصه ترخیص ، برگ شرح حال و معاینه بدنی، برگ خلاصه پرونده، برگ گزارش عمل جراحی ( در صورت وجود) "را در قسمت مربوطه بارگذاری گردد.
+          <a href="/view/assets/pdfs/hospital-docs-committee.pdf" target="_blank" style="color: red">(جهت مشاهده نمونه فرم ها
+            اینجا را کلیک کنید)</a>
+        </li>
+        <li>
+          چنانچه داری سابقه پرداخت حق بیمه می باشید ، سامانه بصورت هوشمند، پرونده شمارا به عنوان بیمه شده اصلی به کمیسیون ارجاع می دهد تا مراتب در شعبه بررسی و نتیجه به شمادر قسمت درخواست های من اعلام گردد.
+        </li>
+      </ol>
+    </ul>
+  </div>
+  <div class="button-container">
+    <button (click)="onAgree()" class="button normal">متوجه شدم</button>
+    <button (click)="redirectTo('/me');" class="button normal red">خروج</button>
+  </div>
+</tamin-modal>
+<!-- ---- -->
+

@@ -1,0 +1,13 @@
+<div class="panel">
+<!--  <div class="page-title">3- اطلاعات مدیر یا مسئول پاسخگو</div>-->
+  <div class="panel-body"></div>
+  <div class="row">
+    <div class="page-title">3- اطلاعات مدیر یا مسئول پاسخگو</div>
+    <tamin-data-grid #dataGrid (itemAction)="onAction($event)"> "</tamin-data-grid>
+    <button type="button" class="button normal " (click)="onBackResponsible()">صفحه قبلی </button>
+    <button type="submit" class="button normal" (click)="onNew()">جدید</button>
+    <button type="button" class="button normal " (click)="onCompleteResponsible()">تکمیل اطلاعات(صفحه بعدی)</button>
+    <button type="button" class="button normal " (click)="back()">برگشت به صفحه اصلی</button>
+  </div>
+
+</div>

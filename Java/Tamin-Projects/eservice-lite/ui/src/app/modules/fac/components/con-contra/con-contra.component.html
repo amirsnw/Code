@@ -1,0 +1,45 @@
+<div class="panel">
+  <div class="page-title">جستجو</div>
+  <div class="panel-body">
+    <form [formGroup]="form" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row">
+          <div class="page-title">20- قراردادهای منعقده با پیمانکاران طی دوره درخواست</div>
+          <div class="col-4">
+            <tamin-field-label formControlName="workshopId">کد کارگاه</tamin-field-label>
+            <tamin-field-number formControlName="workshopId"></tamin-field-number>
+          </div><div class="col-4">
+          <tamin-field-label formControlName="treatyRow">ردیف پیمان</tamin-field-label>
+          <tamin-field-text formControlName="treatyRow"></tamin-field-text>
+        </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="isOk">وضعیت بررسی اطلاعات</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="isOk" displayField="name" valueField="value" #isOkComboBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="contractNumber">شماره قرارداد</tamin-field-label>
+            <tamin-field-number formControlName="contractNumber"></tamin-field-number>
+          </div><div class="col-4">
+        </div>
+      </div>
+      </div>
+    </form>
+    <p style="margin-top:5px;">
+      <button type="button" (click)="onSearch()" class="button normal" [disabled]="!form.valid">جستجو
+      </button>
+      <button type="button" class="button normal dark" (click)="resetSearch()">نمایش همه</button>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <tamin-data-grid #dataGrid (itemAction)="onAction($event)" ></tamin-data-grid>
+  <button type="submit" class="button normal" (click)="onNew()">جدید</button>
+  <button type="button" class="button normal orange" (click)="onBackCon()">صفحه قبلی</button>
+  <button type="button" class="button normal orange" (click)="onComplete()">تکمیل اطلاعات(صفحه بعدی)</button>
+  <button type="button" class="button normal orange" (click)="back()">برگشت به صفحه اصلی</button>
+</div>
+
+
+
+
+

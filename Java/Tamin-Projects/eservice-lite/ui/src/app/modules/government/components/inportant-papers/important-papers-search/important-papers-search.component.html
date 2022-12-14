@@ -1,0 +1,34 @@
+<div class="page-title">جستجوی</div>
+<div class="panel-body">
+  <form [formGroup]="detailForm" autocomplete="off" novalidate
+        (ngSubmit)="detailFormSubmit(detailForm.value, detailForm.valid)">
+    <div class="form-control-container row">
+      <div class="col-6 col-6-1" style='padding: 5px;'>
+        <tamin-field-label formControlName="id1">شماره گواهی (اصل حق بیمه 1195)</tamin-field-label>
+        <tamin-field-validator formControlName="id1"></tamin-field-validator>
+        <tamin-field-mask formControlName="id1" regex="^\d+$"></tamin-field-mask>
+        <!-- <tamin-field-text formControlName="workshopId" placeholder="شماره گواهی اوراق"></tamin-field-text> -->
+      </div>
+       <div class="col-6 col-s-6-1" style='padding: 5px;'>
+            <tamin-field-label formControlName="date1">تاریخ گواهی (اصل حق بیمه 1195)</tamin-field-label>
+          <tamin-field-persian-date formControlName="date1"></tamin-field-persian-date>
+        </div>
+    <div class="col-4 col-s-4-1" style='padding: 5px;'>
+        <tamin-field-label formControlName="ourag_namad">نماد معاملاتی</tamin-field-label>
+        <tamin-field-static-text formControlName="ourag_namad" placeholder="نماد معاملاتی"></tamin-field-static-text>
+      </div>
+      <div class="col-4 col-s-4-1" style='padding: 5px;'>
+        <tamin-field-label formControlName="ourag_count">اعتبار کل اوراق </tamin-field-label>
+        <tamin-field-static-text formControlName="ourag_count" placeholder="تعداد اوراق" ></tamin-field-static-text>
+      </div>
+      <div class="col-4 col-s-4-1" style='padding: 5px;'>
+          <tamin-field-label formControlName="organizationzname">دستگاه اجرایی اصلی</tamin-field-label>
+          <tamin-field-static-text formControlName="organizationzname" placeholder="تعداد اوراق" ></tamin-field-static-text>
+        </div>
+      <p style="margin-top:5px;">
+        <button type="submit" class="button normal" [disabled]="!detailForm.valid">جستجو</button>
+        <!-- <button type="button" class="button normal orange" (click)="resetForm()">نمایش همه</button> -->
+      </p>
+    </div>
+  </form>
+</div>

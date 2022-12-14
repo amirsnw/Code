@@ -1,0 +1,157 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>ثبت تقسیط بدهی کارگاه</span>
+</div>
+<div class="panel">
+  <div class="page-title">جستجوی کارگاه</div>
+  <div class="panel-body">
+    <form [formGroup]="workshopDebitSearchForm" autocomplete="off" novalidate (ngSubmit)="onSearchSubmit()">
+      <div class="form-control-container row">
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="nationalCode">کد ملی کارفرما:</tamin-field-label>
+          <tamin-field-validator formControlName="nationalCode"></tamin-field-validator>
+          <tamin-field-text formControlName="nationalCode" placeholder="کد ملی کارفرما"></tamin-field-text>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------->
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <tamin-field-label formControlName="ticketCode">کد اعتباری:</tamin-field-label>
+          <tamin-field-validator formControlName="ticketCode"></tamin-field-validator>
+          <tamin-field-text formControlName="ticketCode" placeholder="کد اعتباری"></tamin-field-text>
+        </div>
+        <p style="margin-top:5px;" class="col-12 col-12-1">
+          <button type="button" class="button normal orange" (click)="sendUserTicket()"
+                  [disabled]="!workshopDebitSearchForm.valid">دریافت کد
+            اعتباری
+          </button>
+          <button type="submit" class="button normal" [disabled]="!workshopDebitSearchForm.valid">جستجو</button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>تقسیط بدهی کارگاه</span>
+</div>
+<div class="alert alert-warning">
+  <i class="icon-lightbulb-1"></i>
+  <span>کارفرمایان گرامی امکان تقسیط سایر بدهی های غیراجرایی قبل از پایان پرداخت اقساط تقسیط غیرحضوری قبلی میسر نمی باشد.</span>
+</div>
+<div class="alert alert-warning">
+  <i class="icon-lightbulb-1"></i>
+  <span>با توجه به محدودیت های اعلامی از سوی بانک مرکزی ایران در انجام تراکنش های بانکی، تقسیط غیرحضوری بدهی های کارگاه با مبلغ اقساط کمتر از 500 میلیون ریال مجاز خواهد بود.</span>
+</div>
+<div class="alert alert-warning">
+  <i class="icon-lightbulb-1"></i>
+  <span>در صورت عدم بروزرسانی جرائم تاخیر پرداخت بدهی ها در زمان تقسیط، لازم است مانده بدهی تقسیط نشده از طریق منوی پرداخت غیرحضوری بدهی های کارگاه پرداخت شود.</span>
+</div>
+<div class="alert alert-warning">
+  <i class="icon-lightbulb-1"></i>
+  <span>در صورت عدم پرداخت اقساط در مهلت مقرر، تقسیط تبدیل به حال شده و امکان ادامه پرداخت اقساط میسر نخواهد بود.</span>
+</div>
+<div class="panel">
+  <div class="page-title">لیست کارگاه ها</div>
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>بروی کارگاه مورد نظر کلیک کنید</span>
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #workshopsGrid (itemSelect)="clickWorkshopGridItem($event)"></tamin-data-grid>
+  </div>
+</div>
+<div class="panel">
+  <div class="page-title">بدهی های حائز شرایط تقسیط که کلیه اسناد مطالباتی آنها تایید شده باشد</div>
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>بروی بدهی مورد نظر کلیک کنید تا در لیست بدهی های انتخابی قرار گیرد</span>
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #workshopsDebitGrid (itemSelect)="clickWorkshopDebitGridItem($event)"></tamin-data-grid>
+  </div>
+  <div class="page-title">لیست بدهی های انتخابی</div>
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>در صورت نیاز برای حذف بدهی انتخابی از منو عملیات گزینه حذف انتخاب گردد</span>
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #workshopsTempDebitGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+  </div>
+  <div class="row">
+    <h2 style="text-align: center">
+      <span>مجموع مانده بدهی های انتخابی:</span>
+    </h2>
+    <h2 style="text-align: center">
+      <span>{{getWithCommaSeperator(debitSum)}}</span>
+    </h2>
+    <h3 style="text-align: center">
+      <button type="button" class="button normal orange" (click)="installmentFormShow()">تقسیط بدهی های منتخب</button>
+    </h3>
+  </div>
+</div>
+<div *ngIf="installmentShow" class="panel">
+  <div class="panel-body">
+    <form [formGroup]="installmentForm" autocomplete="off" novalidate>
+      <div class="form-control-container row">
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="installmentAmount">جمع مبالغ انتخاب شده (ریال):</tamin-field-label>
+          <tamin-field-validator formControlName="installmentAmount"></tamin-field-validator>
+          <tamin-field-static-text formControlName="installmentAmount"
+                                   placeholder="جمع مبالغ انتخاب شده"></tamin-field-static-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="preInstallment">میزان پیش قسط (درصد):</tamin-field-label>
+          <tamin-field-validator formControlName="preInstallment"></tamin-field-validator>
+          <tamin-field-combo-box-static
+            formControlName="preInstallment"
+            valueField="value"
+            displayField="name"
+            [dataItems]="preInstallments">
+          </tamin-field-combo-box-static>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="installmentNumber">تعداد اقساط:</tamin-field-label>
+          <tamin-field-validator formControlName="installmentNumber"></tamin-field-validator>
+          <tamin-field-static-text formControlName="installmentNumber"
+                                   placeholder="تعداد اقساط"></tamin-field-static-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="firstInstallment">مبلغ قسط اول (ریال):</tamin-field-label>
+          <tamin-field-validator formControlName="firstInstallment"></tamin-field-validator>
+          <tamin-field-static-text formControlName="firstInstallment"
+                                   placeholder="مبلغ قسط اول"></tamin-field-static-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="eachInstallment">مبلغ هر اقساط (ریال):</tamin-field-label>
+          <tamin-field-validator formControlName="eachInstallment"></tamin-field-validator>
+          <tamin-field-static-text formControlName="eachInstallment"
+                                   placeholder="مبلغ هر اقساط"></tamin-field-static-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-4 col-4-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="dateFirstInstallment">سررسید پرداخت پیش قسط:</tamin-field-label>
+          <tamin-field-validator formControlName="dateFirstInstallment"></tamin-field-validator>
+          <tamin-field-static-persian-date formControlName="dateFirstInstallment"
+                                           placeholder="مهلت پرداخت پیش قسط"></tamin-field-static-persian-date>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+      </div>
+    </form>
+    <div class="button-container" style="margin: 3px">
+      <button class="button normal orange" (click)="onSaveInstallment()"><i class="icon-ok"></i><span>ثبت تقسیط</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+

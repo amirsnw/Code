@@ -1,0 +1,50 @@
+<div class="alert alert-info" *ngIf="!haal&&!success">
+  <i class="icon-lightbulb"></i>
+  <span>امکان پرداخت درخواست تقسیط بدهی</span>
+</div>
+<div class="alert alert-info" *ngIf="haal">
+  <i class="icon-lightbulb"></i>
+  <span>کارفرمای محترم بدهی/بدهی های تقسیط شده به دلیل گذشت مهلت حائز شرایط تبدیل به حال می باشد و میبایست به صورت یکجا پرداخت شود.</span>
+</div>
+<div class="alert alert-info" *ngIf="success">
+  <i class="icon-lightbulb"></i>
+  <span>کارفرمای محترم اقساط شما به طور کامل پرداخت شده است.</span>
+</div>
+
+<div class="alert alert-danger" *ngIf="paymentKey">
+  <p><i class="icon-attention"></i>
+    هشدار امنیتی:
+    کارفرما گرامی، پرداخت اقساط زیر، مستقیما از طریق درگاه بانکی همین سامانه، مجاز و قابل قبول است. سازمان تامین
+    اجتماعی، مسئولیتی در قبال پرداخت از طرق دیگر نظیر کارتخوان، انتقال وجه و ... ندارد و به حساب کارفرما منظور نخواهد
+    شد.
+  </p>
+</div>
+<div class="alert alert-warning" *ngIf="paymentKey">
+  <i class="icon-lightbulb-1"></i>
+  <span>در صورت عدم پرداخت اقساط در مهلت مقرر، تقسیط تبدیل به حال شده و امکان ادامه پرداخت اقساط میسر نخواهد بود.</span>
+</div>
+<div class="alert alert-warning" *ngIf="paymentKey">
+  <i class="icon-lightbulb-1"></i>
+  <span>برای پرداخت اقساط فعال سازی رمز پویای کارت بانکی ضروری می باشد.</span>
+</div>
+<div class="alert alert-warning" *ngIf="paymentKey">
+  <i class="icon-lightbulb-1"></i>
+  <span>با توجه به محدودیت های اعلامی از سوی بانک مرکزی ایران در انجام تراکنش های بانکی، تقسیط غیرحضوری بدهی های کارگاه با مبلغ اقساط کمتر از 50 میلیون ریال مجاز خواهد بود.</span>
+</div>
+
+<div class="page-title">
+  اطلاعات پرداخت تقسیط بدهی {{debitNumber}}
+</div>
+<div class="panel">
+  <div class="panel-body">
+    <div class="table-container" style="width: 60vw">
+      <!--<div class="panel-body">-->
+      <!--<tamin-data-grid #dataGrid></tamin-data-grid>-->
+      <!--</div>-->
+      <tamin-data-grid #dataGrid></tamin-data-grid>
+      <div class="col-12" style="padding: 5px;" *ngIf="paymentKey">
+        <button type="button" class="button normal green" (click)="onPayment()">پرداخت</button>
+      </div>
+    </div>
+  </div>
+</div>

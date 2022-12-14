@@ -1,0 +1,115 @@
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  padding: 1px;
+}
+
+
+th {
+  white-space: nowrap;
+}
+
+.desktop-table {
+  border-collapse: collapse;
+  border: 1px solid #cacaca;
+  width: 100%;
+}
+
+.desktop-table td {
+  border: 1px solid #cacaca;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.desktop-table th {
+  border: 1px solid #cacaca;
+  vertical-align: middle;
+  padding: 5px;
+  background-color: #ddd;
+}
+
+.desktop-table tr:hover {
+  background-color: #dddddd;
+}
+
+.mobile-table {
+  border-collapse: collapse;
+  border: 1px solid #cacaca;
+  width: 100%;
+}
+
+.mobile-table td {
+  border: 1px solid #cacaca;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.mobile-table th {
+  border: 1px solid #cacaca;
+  vertical-align: middle;
+  padding: 5px;
+  background-color: #ddd;
+}
+
+.odd {
+  background-color: #ddd;
+}
+
+.even {
+  background-color: white;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.cell-default {
+  text-align: center;
+}
+
+.cell-empty {
+  color: #cacaca;
+  text-align: center;
+}
+
+.cell-edited {
+  color: white;
+  background-color: #cacaca;
+  text-align: center;
+}
+
+.action-cell {
+  color: blue;
+  cursor: pointer;
+  text-align: center;
+}
+
+.action-cell-disabled {
+  color: #cacaca;
+  text-align: center;
+}
+
+.action-cell-mobile {
+  color: blue;
+  cursor: pointer;
+}
+
+.action-cell-mobile:hover {
+  font-weight: bold;
+}
+
+.action-cell:hover {
+  font-weight: bold;
+}
+
+.edited {
+  border-left: solid 3px rebeccapurple;
+}
+
+
+.mobile-edited {
+  background-color: #3659a5;
+}
+
+.mobile-day-cell {
+  color: #cacaca;
+  padding-right: 5px
+}

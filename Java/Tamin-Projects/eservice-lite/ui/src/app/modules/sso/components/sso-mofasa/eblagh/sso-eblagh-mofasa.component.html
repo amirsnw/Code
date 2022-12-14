@@ -1,0 +1,91 @@
+<div class="panel">
+  <div class="panel-title">
+    مشاهده وضعیت ابلاغیه های مربوط به سیستم پیمان قانون تامین اجتماعی
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-info">
+      <i class="icon-info-circled"></i>
+      <span>همکار گرامی، در این بخش امکان مشاهده وضعیت ابلاغیه های سیستم پیمان قانون تامین اجتماعی فراهم شده است.</span>
+    </div>
+    <div>
+      <form class="row" [formGroup]="searchForm">
+        <div class="col-4">
+          <tamin-field-label formControlName="workshopId">کد کارگاه پیمانکار</tamin-field-label>
+          <tamin-field-validator formControlName="workshopId"></tamin-field-validator>
+          <tamin-field-text formControlName="workshopId"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="contractRow">ردیف پیمان</tamin-field-label>
+          <tamin-field-validator formControlName="contractRow"></tamin-field-validator>
+          <tamin-field-text formControlName="contractRow"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="contractNumber">شماره قرارداد</tamin-field-label>
+          <tamin-field-validator formControlName="contractNumber"></tamin-field-validator>
+          <tamin-field-text formControlName="contractNumber"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="brchCode">کد شعبه پیمانکار</tamin-field-label>
+          <tamin-field-validator formControlName="brchCode"></tamin-field-validator>
+          <tamin-field-text formControlName="brchCode"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="nationalCode">کد ملی کارفرما</tamin-field-label>
+          <tamin-field-validator formControlName="nationalCode"></tamin-field-validator>
+          <tamin-field-text formControlName="nationalCode"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="aWorkshopId">کد کارگاه واگذارنده</tamin-field-label>
+          <tamin-field-validator formControlName="aWorkshopId"></tamin-field-validator>
+          <tamin-field-text formControlName="aWorkshopId"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="abrchCode">کد شعبه واگذارنده</tamin-field-label>
+          <tamin-field-validator formControlName="abrchCode"></tamin-field-validator>
+          <tamin-field-text formControlName="abrchCode"></tamin-field-text>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="sendFlag">وضعیت ابلاغ</tamin-field-label>
+          <tamin-field-validator formControlName="sendFlag"></tamin-field-validator>
+          <tamin-field-combo-box-static
+            formControlName="sendFlag"
+            [dataItems]="status"
+            displayField="name"
+            valueField="id">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="systemType">نوع ابلاغیه</tamin-field-label>
+          <tamin-field-validator formControlName="systemType"></tamin-field-validator>
+          <tamin-field-combo-box-static
+            formControlName="systemType"
+            [dataItems]="systemTypes"
+            displayField="name"
+            valueField="id">
+          </tamin-field-combo-box-static>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-12" style="text-align: end">
+          <button class="button white" (click)="clearSearch()" style="width: 150px; margin-left: 24px">نمایش همه
+          </button>
+          <button class="button normal" (click)="doSearch()" style="width:150px">
+            <i class="icon-search"></i>
+            <span>جستجو</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <tamin-data-grid #dataGrid (itemAction)="onShowDetails($event)"></tamin-data-grid>
+    <button class="button white" (click)="redirectTo('sso/main')" style="width: 150px">
+      <i class="icon-right-big"></i><span>بازگشت</span>
+    </button>
+  </div>
+</div>
+<tamin-modal #theModal title="رویت مکاتبه">
+  <tamin-tab-panel #smsTab>
+    <tamin-tab title="پی دی اف ضمیمه" #pdfTab>
+      <tamin-document-viewer #documentViewer width="100%"></tamin-document-viewer>
+    </tamin-tab>
+  </tamin-tab-panel>
+</tamin-modal>

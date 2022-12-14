@@ -1,0 +1,145 @@
+<!-- سابقه -->
+<div class="panel">
+  <div class="panel-body">
+    <div class="page-title">
+      سوابق درمانی ( سرپائی )
+    </div>
+    <form [formGroup]="documentForm" [ngClass]="{'missing': documentGalleryMissing}">
+      <div class="row customized-row">
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="bloodTest"></tamin-field-checkbox>
+          <tamin-field-label formControlName="bloodTest">
+           آزمایش خون
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="angiography"></tamin-field-checkbox>
+          <tamin-field-label formControlName="angiography">
+            آنژیوگرافی
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="CTScan"></tamin-field-checkbox>
+          <tamin-field-label formControlName="CTScan">
+            سی تی اسکن
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="sonography"></tamin-field-checkbox>
+          <tamin-field-label formControlName="sonography">
+            سونوگرافی
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="earTape"></tamin-field-checkbox>
+          <tamin-field-label formControlName="earTape">
+            نوار گوش
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="MRI"></tamin-field-checkbox>
+          <tamin-field-label formControlName="MRI">
+            ام آر آی
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="lungTape"></tamin-field-checkbox>
+          <tamin-field-label formControlName="lungTape">
+            نوار ریه
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="echo"></tamin-field-checkbox>
+          <tamin-field-label formControlName="echo">
+            اکو
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="muscleTape"></tamin-field-checkbox>
+          <tamin-field-label formControlName="muscleTape">
+            نوار عضله
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="otherMedicalRecords"></tamin-field-checkbox>
+          <tamin-field-label formControlName="otherMedicalRecords">
+            سایر مدارک پزشکی
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="graphics"></tamin-field-checkbox>
+          <tamin-field-label formControlName="graphics">
+            گرافی
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="pathologyReport"></tamin-field-checkbox>
+          <tamin-field-label formControlName="pathologyReport">
+            گزارش پاتولوژی
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="doctorRecords"></tamin-field-checkbox>
+          <tamin-field-label formControlName="doctorRecords">
+            گواهی پزشک معالج
+          </tamin-field-label>
+        </div>
+        <div class="col-2">
+          <tamin-field-checkbox formControlName="outpatientRecords"></tamin-field-checkbox>
+          <tamin-field-label formControlName="outpatientRecords">
+            سایر مدارک سرپایی
+          </tamin-field-label>
+        </div>
+        <div class="col-12">
+          <button (click)="showModal()" class="button normal">بارگذاری مدارک</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- ---- -->
+
+<!-- Modal Box -->
+<tamin-modal #uploadModal
+             title="موافقتنامه بهره برداری از سرویس های غیر حضوری حوزه امور فنی بیمه شدگان سازمان تامین اجتماعی"
+             width="80%">
+  <div class="panel"
+       style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+    <div class="panel-title">تصاویر مدارک و مستندات</div>
+    <div class="row" [hidden]="!documentGalleryMissing">
+      <div class="col-12">
+        <div class="alert alert-danger">
+          خطا در ورود اطلاعات
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="documentForm">
+        <div class="row">
+          <div class="col-6">
+            <tamin-field-label formControlName="selectedType">نوع مدرک</tamin-field-label>
+            <tamin-field-combo-box-static #uploadTypeCombo displayField="title"
+                                          formControlName="selectedType"
+                                          placeHolder="انتخاب کنید ..."
+                                          valueField="tag"></tamin-field-combo-box-static>
+          </div>
+          <div [ngClass]="{'missing': documentGalleryMissing}" class="col-12">
+            <button (click)="uploadDocument()" [disabled]="documentForm.value.selectedType === ''" class="button normal"
+                    style="margin: 12px">
+              <span><i class="icon-plus"></i><span>بارگذاری مدرک جدید</span></span>
+            </button>
+            <tamin-image-gallery-managed #documentGallery [maxImageSize]="500"></tamin-image-gallery-managed>
+            <div class="alert alert-info">
+              توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="button-container">
+    <button (click)="hideModal()" class="button normal">اتمام بارگذاری</button>
+    <button (click)="uploadModal.hide();" class="button normal red" type="button">انصراف</button>
+  </div>
+</tamin-modal>
+<!-- ---- -->

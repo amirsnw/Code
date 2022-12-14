@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertVoucher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="systemActivity" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="voucherParameter" type="tns:VoucherParameters"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VoucherParameters">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActivityId" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ReferenceId" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DataTables" type="tns:NameObjectCollection"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:ArrayOfParameter"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentUserInfo" type="tns:UserInfo"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CuSSUP_BK" type="tns:ArrayOfSSUP_BK"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NameObjectCollection"/>
+      <s:complexType name="ArrayOfParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Parameter" nillable="true" type="tns:Parameter"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Parameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MembershipUser">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+              <s:element minOccurs="1" maxOccurs="1" name="OwnerRate" type="s:boolean"/>
+              <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string"/>
+              <s:element minOccurs="1" maxOccurs="1" name="BranchId" nillable="true" type="s:decimal"/>
+              <s:element minOccurs="1" maxOccurs="1" name="IsBackOffice" type="s:boolean"/>
+              <s:element minOccurs="1" maxOccurs="1" name="YearId" nillable="true" type="s:decimal"/>
+              <s:element minOccurs="0" maxOccurs="1" name="WorkDate" type="s:string"/>
+              <s:element minOccurs="1" maxOccurs="1" name="MarketScope" nillable="true" type="s:decimal"/>
+              <s:element minOccurs="1" maxOccurs="1" name="LoggedInBranchId" nillable="true" type="s:decimal"/>
+              <s:element minOccurs="1" maxOccurs="1" name="OwnerBranchId" nillable="true" type="s:decimal"/>
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerBranchCode" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerBranchName" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="CashAccountNo" type="s:string"/>
+              <s:element minOccurs="1" maxOccurs="1" name="BackOffice" nillable="true" type="s:decimal"/>
+              <s:element minOccurs="0" maxOccurs="1" name="AccBranchCode" type="s:string"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MembershipUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IsApproved" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="LastLoginDate" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="LastActivityDate" type="s:dateTime"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSSUP_BK">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SSUP_BK" nillable="true" type="tns:SSUP_BK"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SSUP_BK">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowSeq" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RISUID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RISULNAME" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RISUFNAME" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="REQ_HLPTYP" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="REQ_HLPTYPDSC" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="REQ_DATE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="REQ_SERIAL" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PAY_AMT" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PAY_DOCNO" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PAY_DOCDAT" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PAY_RECIEVER" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PAY_RCVDSC" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="VAK_NAME" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BANKCODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BANKNAME" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BANKBRHCODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BNKBRHNAME" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RISUACCNO" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ISUTYPEDESC" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ISUTYPECODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ISUSTATCODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ISUSTATDESC" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="REQ_ACCIDENTCODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RISUNATCODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SSN" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BRCHCODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="VOCHER_ID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="VOCHER_HEADER_ID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ACC_DATE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ACC_CHAK" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ACC_CODE" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ACC_DES" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="REQ_ACCIDENT" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CHAK_AMOUNT" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertVoucherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertVoucherResult" type="tns:ServiceResult"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultException" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherHeaderID" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="reverseVoucher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DebitNo" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RadifNo" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reverseVoucherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reverseVoucherResult" type="tns:ServiceResult"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertVoucherSoapIn">
+    <wsdl:part name="parameters" element="tns:insertVoucher"/>
+  </wsdl:message>
+  <wsdl:message name="insertVoucherSoapOut">
+    <wsdl:part name="parameters" element="tns:insertVoucherResponse"/>
+  </wsdl:message>
+  <wsdl:message name="reverseVoucherSoapIn">
+    <wsdl:part name="parameters" element="tns:reverseVoucher"/>
+  </wsdl:message>
+  <wsdl:message name="reverseVoucherSoapOut">
+    <wsdl:part name="parameters" element="tns:reverseVoucherResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="insertVoucher">
+      <wsdl:input message="tns:insertVoucherSoapIn"/>
+      <wsdl:output message="tns:insertVoucherSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="reverseVoucher">
+      <wsdl:input message="tns:reverseVoucherSoapIn"/>
+      <wsdl:output message="tns:reverseVoucherSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="insertVoucher">
+      <soap:operation soapAction="http://tempuri.org/insertVoucher" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverseVoucher">
+      <soap:operation soapAction="http://tempuri.org/reverseVoucher" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="insertVoucher">
+      <soap12:operation soapAction="http://tempuri.org/insertVoucher" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverseVoucher">
+      <soap12:operation soapAction="http://tempuri.org/reverseVoucher" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://172.16.16.108:8072/VoucherSevices.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://172.16.16.108:8072/VoucherSevices.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendAccBillBack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blbc" type="tns:BillBack" />
+            <s:element minOccurs="0" maxOccurs="1" name="blbcFile" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BillBack">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_NAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillBack_SIZE" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_RCV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_SND" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_KIND" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_STAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_GTDT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_YY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillBack_MON" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendAccBillBackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendAccBillBackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewSend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newelm" type="tns:NewElam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NewElam">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="WEB_ELH_SEQ" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_SERIALNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WEB_STAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_ENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_EDATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOW_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELM_RCVVAHED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELM_SNDVAHED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_YY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_CASE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATTRIBSEC" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AMOUNT" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_KOL" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_MOI" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_TAF" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SND_DT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AMOU_BED" type="tns:ArrayOfLong" />
+          <s:element minOccurs="0" maxOccurs="1" name="AMOU_BES" type="tns:ArrayOfLong" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMD_DESC" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="VERSION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewSendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewSendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewSendElmWithAtch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newelm" type="tns:NewElam" />
+            <s:element minOccurs="0" maxOccurs="1" name="atch" type="tns:Attach" />
+            <s:element minOccurs="0" maxOccurs="1" name="binaryF" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Attach">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_NAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ATCH_SIZE" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_RCV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_SND" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_KIND" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_STAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATCH_GTDT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VERSION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewSendElmWithAtchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewSendElmWithAtchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewwriteBinaryFELM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binaryF" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="atch" type="tns:Attach" />
+            <s:element minOccurs="0" maxOccurs="1" name="elm" type="tns:NewElam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewwriteBinaryFELMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewwriteBinaryFELMResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSanad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="snd" type="tns:Sanad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Sanad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SEQ_HEADER" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="SANAD_YY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VAHEDCODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_DOC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HEAD_DESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYS_TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_KOL" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_MOI" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_TAF" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_JOZ" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_RIZ" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DETAIL_DESC" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="AMOU_BED" type="tns:ArrayOfLong" />
+          <s:element minOccurs="0" maxOccurs="1" name="AMOU_BES" type="tns:ArrayOfLong" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE_DOC" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CHECK_DATE" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getSanadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSanadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="req_f_r">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ramz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="esk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="req_f_rResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req_f_rResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendDataToTemp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Voucher" type="tns:AccVoucherEntity" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAutoInsert" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccVoucherEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Header" type="tns:HeadEntity" />
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="tns:ArrayOfDetailEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HeadEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VAHEDCODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FADATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DETAIL_DESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYS_TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YEAR" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetailEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DetailEntity" nillable="true" type="tns:DetailEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetailEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VAHEDCODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SEQ_DETAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_KOL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_MOI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_TAF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_JOZ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_RIZ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DETAIL_DESC" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AMOU_BED" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AMOU_BES" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE_DOC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALUE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CHECK_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YEAR" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendDataToTempResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendDataToTempResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetServiceErrorList" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetServiceMessageList" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoucherSequenceInAcc" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceResultObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="bill" type="tns:ArrayOfArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxStdtl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="grp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="serial" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="subgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amou_amar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="docrow" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxSend9230">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="eno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rcvcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="yy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="relhesab" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="prnno" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxSend9210">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="eno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rcvcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="yy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="relhesab" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="prnno" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxRecv9240">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="eno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sndcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="yy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="relhesab" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="prnno" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxRecv9220">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="eno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sndcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="yy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="relhesab" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="prnno" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxLinkJoz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_kol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_taf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_joz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_riz" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5580">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code_j" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="coment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="code_r" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5570">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lenatr" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="sum" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5560">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date_doc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5550">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_hes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="des_hes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_kol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_taf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="kind_mad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_mad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_doc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amou_bed" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="amou_bes" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_haz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="confrm_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date_rsid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount_" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="who" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_date" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5540">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_kol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_taf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_hes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="des_hes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="debit" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="credit" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5530">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="c_source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_c" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5520">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_riz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nam_haz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_joz" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf5510">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_indep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nam_indep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="addres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descript" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf3100">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_kol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_taf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hes_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mandeh_bd" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="mandeh_bs" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="jari_bd" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="jari_bs" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="kind_act" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_indep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="kind_hes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="c_source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="close" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_amar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bdjamnt" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf2110">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mada1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mada2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mada3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxHesf2100">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_kol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_taf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_joz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_riz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descdoc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descdoc3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amou_bed" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="amou_bes" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="confrm_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date_rsid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="radif" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="who" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="atrib_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="code_j" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="code_r" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxFixamar">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="amou_amar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="grp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="serial" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxDtil9240">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bed" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="bes" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="hesab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="atrib_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_amar" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxDtil9230">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bed" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="bes" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="hesab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="atrib_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_amar" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxDtil9220">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bed" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="bes" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="hesab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="atrib_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_amar" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxDtil9210">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bed" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="bes" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="hesab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="atrib_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheq_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_amar" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxChkPaper">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="book" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="chkno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="radif" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxChkBook">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="book" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="chkno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="no_doc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="radif" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxBankCheq">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="hescode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheqno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bankdate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bed" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="bes" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxAmarPar">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="grp_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titl_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="des" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="len" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="formul" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sumflag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fixed" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="foxAmarGrp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="des" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BillGetType" />
+      <s:element name="GetFinancialStatements">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strVahedCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsKar" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FinancialStatementsEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LstEntVWSOORATMALI" type="tns:ArrayOfEntVWSOORATMALI" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstEntVWSOORAT_AMARAMALKARD" type="tns:ArrayOfEntVWSOORAT_AMARAMALKARD" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstEntVWSOORAT_VAZIYAT" type="tns:ArrayOfEntVWSOORAT_VAZIYAT" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstMsg" type="tns:ArrayOfMessege" />
+          <s:element minOccurs="0" maxOccurs="1" name="res" type="tns:ServiceResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntVWSOORATMALI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntVWSOORATMALI" nillable="true" type="tns:EntVWSOORATMALI" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntVWSOORATMALI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CODKOL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CREDIT_JARI" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DEBIT_JARI" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CREDIT_PER" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DEBIT_PER" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntVWSOORAT_AMARAMALKARD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntVWSOORAT_AMARAMALKARD" nillable="true" type="tns:EntVWSOORAT_AMARAMALKARD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntVWSOORAT_AMARAMALKARD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CODKOL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MANDEH_JARI" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MANDEH_PER" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntVWSOORAT_VAZIYAT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntVWSOORAT_VAZIYAT" nillable="true" type="tns:EntVWSOORAT_VAZIYAT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntVWSOORAT_VAZIYAT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CODKOL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MANDEH_JARI" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MANDEH_PER" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessege">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Messege" nillable="true" type="tns:Messege" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Messege">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFinancialStatementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFinancialStatementsResult" type="tns:FinancialStatementsEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemainBank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strVahedCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsKar" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListRemainBankEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RemainBankEntityLst" type="tns:ArrayOfRemainBankEntity" />
+          <s:element minOccurs="0" maxOccurs="1" name="res" type="tns:ServiceResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRemainBankEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RemainBankEntity" nillable="true" type="tns:RemainBankEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RemainBankEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COD_HES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mali_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MONTH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REMAINDAF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REMAINBANK" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRemainBankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRemainBankResult" type="tns:ListRemainBankEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvForm5_1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strVahedCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListInvForm5_1Entity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Invform5_1EntityLst" type="tns:ArrayOfInvform5_1" />
+          <s:element minOccurs="0" maxOccurs="1" name="res" type="tns:ServiceResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInvform5_1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Invform5_1" nillable="true" type="tns:Invform5_1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Invform5_1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="invNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="invName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mojudiGblShmaresh" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="rialGblShmaresh" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="numEzafi" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="rialEzafi" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="numKasri" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="rialKasri" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="mojudiTbgShmreshAnbar" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="rialTbgShmreshAnbar" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="sendOp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sendDt" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInvForm5_1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvForm5_1Result" type="tns:ListInvForm5_1Entity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFinancialConfirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strVahedCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsKar" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FinancialConfirmEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="res" type="tns:ServiceResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="FRSTUSER_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FRSTUSERNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FRSTDATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LSTUSER_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LSTUSERNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LSTDATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE_TAEID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFinancialConfirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFinancialConfirmResult" type="tns:FinancialConfirmEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTokenOAM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTokenOAMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTokenOAMResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallRestService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestEntity" type="tns:httpsRequestEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="httpsRequestEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostData" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReqMethod" type="tns:Method" />
+          <s:element minOccurs="0" maxOccurs="1" name="Headers" type="tns:ArrayOfEntHead" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContentType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestServiceTimeOut" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Method">
+        <s:restriction base="s:string">
+          <s:enumeration value="Post" />
+          <s:enumeration value="Put" />
+          <s:enumeration value="Get" />
+          <s:enumeration value="Delete" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfEntHead">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntHead" nillable="true" type="tns:EntHead" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntHead">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceCallResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="tns:ArrayOfArrayOfResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfArrayOfResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfResponse" nillable="true" type="tns:ArrayOfResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Response" nillable="true" type="tns:Response" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CallRestServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallRestServiceResult" type="tns:ServiceCallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeserializeObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jSonObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeserializeObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeserializeObjectResult" type="tns:ArrayOfResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFromFtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFromFtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFromFtpResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFromFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFromFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFromFolderResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TaminEtebarRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TaminEtebarRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaminEtebarRelationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewElamDaramad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="elm" type="tns:ElmDaramad" />
+            <s:element minOccurs="1" maxOccurs="1" name="isTahator" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ElmDaramad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TahatorKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Elam_Atrib_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_SERIALNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ELAMH_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_rcvno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_rcvdt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_srvahed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_yy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_prnno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_case" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vahedcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="web_stat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_desc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bnh_seq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elamh_lstmon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Acc_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amou_Bed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amou_Bes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Elamd_Desc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Current_Year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ElamAccCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="elm_seq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RWSHID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RWSHNAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateNewElamDaramadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewElamDaramadResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFreeCheqList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strYear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FreeCheqListEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheqNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFreeCheqListEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FreeCheqListEntity" nillable="true" type="tns:FreeCheqListEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFreeCheqListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFreeCheqListResult" type="tns:ArrayOfFreeCheqListEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReverseDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocSequense" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReverseDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReverseDocumentResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SeqDetailSequense" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="isTemp" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteDocumentResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isKar" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBillResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendUnknowElam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_unknowElam" type="tns:UnknowElam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UnknowElam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SndVahedcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RcvVahedcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsWRKShop" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkShopID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RisuID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RcvNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ElmDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SenderId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSnd" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendUnknowElamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendUnknowElamResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUnknowElamStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="unitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isSend" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUnknowElamStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUnknowElamStatusResult" type="tns:ServiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendAccBillBackSoapIn">
+    <wsdl:part name="parameters" element="tns:SendAccBillBack" />
+  </wsdl:message>
+  <wsdl:message name="SendAccBillBackSoapOut">
+    <wsdl:part name="parameters" element="tns:SendAccBillBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewSendSoapIn">
+    <wsdl:part name="parameters" element="tns:NewSend" />
+  </wsdl:message>
+  <wsdl:message name="NewSendSoapOut">
+    <wsdl:part name="parameters" element="tns:NewSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewSendElmWithAtchSoapIn">
+    <wsdl:part name="parameters" element="tns:NewSendElmWithAtch" />
+  </wsdl:message>
+  <wsdl:message name="NewSendElmWithAtchSoapOut">
+    <wsdl:part name="parameters" element="tns:NewSendElmWithAtchResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewwriteBinaryFELMSoapIn">
+    <wsdl:part name="parameters" element="tns:NewwriteBinaryFELM" />
+  </wsdl:message>
+  <wsdl:message name="NewwriteBinaryFELMSoapOut">
+    <wsdl:part name="parameters" element="tns:NewwriteBinaryFELMResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSanadSoapIn">
+    <wsdl:part name="parameters" element="tns:getSanad" />
+  </wsdl:message>
+  <wsdl:message name="getSanadSoapOut">
+    <wsdl:part name="parameters" element="tns:getSanadResponse" />
+  </wsdl:message>
+  <wsdl:message name="req_f_rSoapIn">
+    <wsdl:part name="parameters" element="tns:req_f_r" />
+  </wsdl:message>
+  <wsdl:message name="req_f_rSoapOut">
+    <wsdl:part name="parameters" element="tns:req_f_rResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendDataToTempSoapIn">
+    <wsdl:part name="parameters" element="tns:SendDataToTemp" />
+  </wsdl:message>
+  <wsdl:message name="SendDataToTempSoapOut">
+    <wsdl:part name="parameters" element="tns:SendDataToTempResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFinancialStatementsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFinancialStatements" />
+  </wsdl:message>
+  <wsdl:message name="GetFinancialStatementsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFinancialStatementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRemainBankSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRemainBank" />
+  </wsdl:message>
+  <wsdl:message name="GetRemainBankSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRemainBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvForm5_1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvForm5_1" />
+  </wsdl:message>
+  <wsdl:message name="GetInvForm5_1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvForm5_1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetFinancialConfirmSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFinancialConfirm" />
+  </wsdl:message>
+  <wsdl:message name="GetFinancialConfirmSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFinancialConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenOAMSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTokenOAM" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenOAMSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTokenOAMResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallRestServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:CallRestService" />
+  </wsdl:message>
+  <wsdl:message name="CallRestServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:CallRestServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeserializeObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:DeserializeObject" />
+  </wsdl:message>
+  <wsdl:message name="DeserializeObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:DeserializeObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFromFtpSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFromFtp" />
+  </wsdl:message>
+  <wsdl:message name="GetFromFtpSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFromFtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFromFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFromFolder" />
+  </wsdl:message>
+  <wsdl:message name="GetFromFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFromFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="TaminEtebarRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:TaminEtebarRelation" />
+  </wsdl:message>
+  <wsdl:message name="TaminEtebarRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:TaminEtebarRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewElamDaramadSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewElamDaramad" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewElamDaramadSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewElamDaramadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeCheqListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFreeCheqList" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeCheqListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFreeCheqListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReverseDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:ReverseDocument" />
+  </wsdl:message>
+  <wsdl:message name="ReverseDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:ReverseDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDocument" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBill" />
+  </wsdl:message>
+  <wsdl:message name="GetBillSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendUnknowElamSoapIn">
+    <wsdl:part name="parameters" element="tns:SendUnknowElam" />
+  </wsdl:message>
+  <wsdl:message name="SendUnknowElamSoapOut">
+    <wsdl:part name="parameters" element="tns:SendUnknowElamResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUnknowElamStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUnknowElamStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUnknowElamStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUnknowElamStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="SendAccBillBack">
+      <wsdl:input message="tns:SendAccBillBackSoapIn" />
+      <wsdl:output message="tns:SendAccBillBackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewSend">
+      <wsdl:input message="tns:NewSendSoapIn" />
+      <wsdl:output message="tns:NewSendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewSendElmWithAtch">
+      <wsdl:input message="tns:NewSendElmWithAtchSoapIn" />
+      <wsdl:output message="tns:NewSendElmWithAtchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewwriteBinaryFELM">
+      <wsdl:input message="tns:NewwriteBinaryFELMSoapIn" />
+      <wsdl:output message="tns:NewwriteBinaryFELMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSanad">
+      <wsdl:input message="tns:getSanadSoapIn" />
+      <wsdl:output message="tns:getSanadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="req_f_r">
+      <wsdl:input message="tns:req_f_rSoapIn" />
+      <wsdl:output message="tns:req_f_rSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDataToTemp">
+      <wsdl:input message="tns:SendDataToTempSoapIn" />
+      <wsdl:output message="tns:SendDataToTempSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialStatements">
+      <wsdl:input message="tns:GetFinancialStatementsSoapIn" />
+      <wsdl:output message="tns:GetFinancialStatementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainBank">
+      <wsdl:input message="tns:GetRemainBankSoapIn" />
+      <wsdl:output message="tns:GetRemainBankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvForm5_1">
+      <wsdl:input message="tns:GetInvForm5_1SoapIn" />
+      <wsdl:output message="tns:GetInvForm5_1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialConfirm">
+      <wsdl:input message="tns:GetFinancialConfirmSoapIn" />
+      <wsdl:output message="tns:GetFinancialConfirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTokenOAM">
+      <wsdl:input message="tns:GetTokenOAMSoapIn" />
+      <wsdl:output message="tns:GetTokenOAMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallRestService">
+      <wsdl:input message="tns:CallRestServiceSoapIn" />
+      <wsdl:output message="tns:CallRestServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeObject">
+      <wsdl:input message="tns:DeserializeObjectSoapIn" />
+      <wsdl:output message="tns:DeserializeObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFtp">
+      <wsdl:input message="tns:GetFromFtpSoapIn" />
+      <wsdl:output message="tns:GetFromFtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFolder">
+      <wsdl:input message="tns:GetFromFolderSoapIn" />
+      <wsdl:output message="tns:GetFromFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TaminEtebarRelation">
+      <wsdl:input message="tns:TaminEtebarRelationSoapIn" />
+      <wsdl:output message="tns:TaminEtebarRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewElamDaramad">
+      <wsdl:input message="tns:CreateNewElamDaramadSoapIn" />
+      <wsdl:output message="tns:CreateNewElamDaramadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeCheqList">
+      <wsdl:input message="tns:GetFreeCheqListSoapIn" />
+      <wsdl:output message="tns:GetFreeCheqListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseDocument">
+      <wsdl:input message="tns:ReverseDocumentSoapIn" />
+      <wsdl:output message="tns:ReverseDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <wsdl:input message="tns:DeleteDocumentSoapIn" />
+      <wsdl:output message="tns:DeleteDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBill">
+      <wsdl:input message="tns:GetBillSoapIn" />
+      <wsdl:output message="tns:GetBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUnknowElam">
+      <wsdl:input message="tns:SendUnknowElamSoapIn" />
+      <wsdl:output message="tns:SendUnknowElamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnknowElamStatus">
+      <wsdl:input message="tns:UpdateUnknowElamStatusSoapIn" />
+      <wsdl:output message="tns:UpdateUnknowElamStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendAccBillBack">
+      <soap:operation soapAction="http://tempuri.org/SendAccBillBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSend">
+      <soap:operation soapAction="http://tempuri.org/NewSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSendElmWithAtch">
+      <soap:operation soapAction="http://tempuri.org/NewSendElmWithAtch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewwriteBinaryFELM">
+      <soap:operation soapAction="http://tempuri.org/NewwriteBinaryFELM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSanad">
+      <soap:operation soapAction="http://tempuri.org/getSanad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="req_f_r">
+      <soap:operation soapAction="http://tempuri.org/req_f_r" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDataToTemp">
+      <soap:operation soapAction="http://tempuri.org/SendDataToTemp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialStatements">
+      <soap:operation soapAction="http://tempuri.org/GetFinancialStatements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainBank">
+      <soap:operation soapAction="http://tempuri.org/GetRemainBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvForm5_1">
+      <soap:operation soapAction="http://tempuri.org/GetInvForm5_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialConfirm">
+      <soap:operation soapAction="http://tempuri.org/GetFinancialConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTokenOAM">
+      <soap:operation soapAction="http://tempuri.org/GetTokenOAM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallRestService">
+      <soap:operation soapAction="http://tempuri.org/CallRestService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeObject">
+      <soap:operation soapAction="http://tempuri.org/DeserializeObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFtp">
+      <soap:operation soapAction="http://tempuri.org/GetFromFtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFolder">
+      <soap:operation soapAction="http://tempuri.org/GetFromFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaminEtebarRelation">
+      <soap:operation soapAction="http://tempuri.org/TaminEtebarRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewElamDaramad">
+      <soap:operation soapAction="http://tempuri.org/CreateNewElamDaramad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeCheqList">
+      <soap:operation soapAction="http://tempuri.org/GetFreeCheqList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseDocument">
+      <soap:operation soapAction="http://tempuri.org/ReverseDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <soap:operation soapAction="http://tempuri.org/DeleteDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBill">
+      <soap:operation soapAction="http://tempuri.org/GetBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUnknowElam">
+      <soap:operation soapAction="http://tempuri.org/SendUnknowElam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnknowElamStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateUnknowElamStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendAccBillBack">
+      <soap12:operation soapAction="http://tempuri.org/SendAccBillBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSend">
+      <soap12:operation soapAction="http://tempuri.org/NewSend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSendElmWithAtch">
+      <soap12:operation soapAction="http://tempuri.org/NewSendElmWithAtch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewwriteBinaryFELM">
+      <soap12:operation soapAction="http://tempuri.org/NewwriteBinaryFELM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSanad">
+      <soap12:operation soapAction="http://tempuri.org/getSanad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="req_f_r">
+      <soap12:operation soapAction="http://tempuri.org/req_f_r" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDataToTemp">
+      <soap12:operation soapAction="http://tempuri.org/SendDataToTemp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialStatements">
+      <soap12:operation soapAction="http://tempuri.org/GetFinancialStatements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainBank">
+      <soap12:operation soapAction="http://tempuri.org/GetRemainBank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvForm5_1">
+      <soap12:operation soapAction="http://tempuri.org/GetInvForm5_1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialConfirm">
+      <soap12:operation soapAction="http://tempuri.org/GetFinancialConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTokenOAM">
+      <soap12:operation soapAction="http://tempuri.org/GetTokenOAM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallRestService">
+      <soap12:operation soapAction="http://tempuri.org/CallRestService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeserializeObject">
+      <soap12:operation soapAction="http://tempuri.org/DeserializeObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFtp">
+      <soap12:operation soapAction="http://tempuri.org/GetFromFtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFolder">
+      <soap12:operation soapAction="http://tempuri.org/GetFromFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaminEtebarRelation">
+      <soap12:operation soapAction="http://tempuri.org/TaminEtebarRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewElamDaramad">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewElamDaramad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeCheqList">
+      <soap12:operation soapAction="http://tempuri.org/GetFreeCheqList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseDocument">
+      <soap12:operation soapAction="http://tempuri.org/ReverseDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBill">
+      <soap12:operation soapAction="http://tempuri.org/GetBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUnknowElam">
+      <soap12:operation soapAction="http://tempuri.org/SendUnknowElam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnknowElamStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUnknowElamStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://172.16.13.220:8071/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://172.16.13.220:8071/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

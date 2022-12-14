@@ -1,0 +1,22 @@
+<div class="page-title">جست وجو</div>
+<div class="panel-body">
+  <form [formGroup]="searchForm" autocomplete="off" novalidate
+        (ngSubmit)="searchFormSubmit(searchForm.value, searchForm.valid)">
+    <div class="form-control-container row">
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="workshopId">شماره کارگاه:</tamin-field-label>
+        <tamin-field-validator formControlName="workshopId"></tamin-field-validator>
+        <tamin-field-text formControlName="workshopId" placeholder="شماره کارگاه"></tamin-field-text>
+      </div>
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="branchCode">کد شعبه:</tamin-field-label>
+        <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+        <tamin-field-text formControlName="branchCode" placeholder="کد شعبه"></tamin-field-text>
+      </div>
+      <p style="margin-top:5px;">
+        <button type="submit" class="button normal" [disabled]="!searchForm.valid">تایید</button>
+        <button type="button" class="button normal orange" (click)="resetForm()">پاک کردن فرم</button>
+      </p>
+    </div>
+  </form>
+</div>

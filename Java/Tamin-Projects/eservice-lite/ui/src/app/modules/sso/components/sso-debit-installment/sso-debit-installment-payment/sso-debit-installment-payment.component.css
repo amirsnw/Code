@@ -1,0 +1,115 @@
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  padding: 5px;
+}
+
+th {
+  white-space: nowrap;
+}
+
+.desktop-table {
+  border-collapse: collapse;
+  border: 1px solid #cacaca;
+  width: calc(100% - 6px);
+  margin: 3px;
+}
+
+.desktop-table td {
+  border: 1px solid #cacaca;
+  vertical-align: middle;
+  padding: 5px;
+  text-align: center;
+}
+
+.desktop-table th {
+  border: 1px solid #cacaca;
+  vertical-align: middle;
+  padding: 5px;
+  background-color: #ddd;
+}
+
+.odd {
+  background-color: #ddd;
+}
+
+.even {
+  background-color: white;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.table-container {
+  overflow-x:auto;
+}
+
+.payList {
+  padding: 8px 10px 5px;
+  border-bottom: ridge;
+  border-width: 2px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-columns: 53px;
+  align-items: end;
+  justify-content: center;
+}
+.soldierCalculateForm {
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 560px) {
+  .soldierCalculateForm {
+    grid-template-columns: 133px 35px 37px 35px 100px 35px 96px;
+    grid-auto-rows: minmax(55px, auto);
+    direction: ltr;
+  }
+  .soldierCalculateForm span {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 560px) {
+  .soldierCalculateForm {
+    margin: 20px;
+  }
+  .soldierCalculateForm:nth-child(2):after {
+    margin: 17px auto 0px;
+    content: "...............................";
+  }
+  .soldierCalculateForm span {
+    padding: 5px 15px;
+  }
+}
+
+.soldierCalculateForm span {
+  background-color: white;
+  color: #3498db;
+  border-radius: 5px;
+}
+
+.installmentList {
+  border: solid 1px #cacaca;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.installmentList span{
+  background-color:darkseagreen;
+  border-radius: 5px;
+  white-space: nowrap;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  margin: 2px;
+}
+

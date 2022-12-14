@@ -1,0 +1,30 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>امکان پرداخت اقساط بدهی غیرحضوری</span>
+</div>
+<div class="alert alert-danger">
+  <p><i class="icon-attention"></i>
+    هشدار امنیتی:
+    کارفرما گرامی، پرداخت اقساط زیر، مستقیما از طریق درگاه بانکی همین سامانه، مجاز و قابل قبول است. سازمان تامین
+    اجتماعی، مسئولیتی در قبال پرداخت از طرق دیگر نظیر کارتخوان، انتقال وجه و ... ندارد و به حساب کارفرما منظور نخواهد
+    شد.
+  </p>
+</div>
+<div class="alert alert-warning">
+  <i class="icon-lightbulb-1"></i>
+  <span>کارفرمایان گرامی با توجه به محدودیت های اعلامی از سوی بانک مرکزی ایران در انجام تراکنش های بانکی ، پرداخت برخط و غیرحضوری بدهی ها حداکثر تا مبلغ 500 میلیون ریال میسر می باشد.</span>
+</div>
+
+<div class="page-title">
+  اطلاعات پرداخت بدهی {{debitNumber}}
+</div>
+<div class="panel">
+  <div class="panel-body">
+    <div class="table-container" style="width: 60vw">
+      <tamin-data-grid #dataGrid></tamin-data-grid>
+      <div class="col-12" style="padding: 5px;">
+        <button type="button" class="button normal green" (click)="onPayment()">پرداخت</button>
+      </div>
+    </div>
+  </div>
+</div>

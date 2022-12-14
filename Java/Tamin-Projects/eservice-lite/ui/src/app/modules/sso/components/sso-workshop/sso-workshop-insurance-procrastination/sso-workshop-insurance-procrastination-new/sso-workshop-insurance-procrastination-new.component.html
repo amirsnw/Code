@@ -1,0 +1,170 @@
+<tamin-modal #theModal title="فرم ثبت نام کارگاه های مشمول امهال حق بیمه">
+  <form [formGroup]="newForm" autocomplete="off" novalidate>
+    <div class="form-control-container">
+      <div class="row">
+        <!---------------------------------------------------------------------------------------------------------->
+        <div style='padding: 5px;'>
+          <p>کارفرمای محترم، شما مشمول امهال پرداخت حداکثر 20 درصد حق بیمه سهم کارفرمایی ماه های ذیل می باشید.
+            خواهشمند است در صورت تمایل به استفاده از تسهیلات پیشنهاد شده، نسبت
+            به تکمیل اطلاعات و تعیید میزان (درصد) استفاده از تسهیلات مذکور اقدام فرمایید:
+          </p>
+          <div *ngIf="showText">
+            <p style="font-weight: bold;color: #2aa1c0;">درخواست بهره مندی از امهال حق بیمه برای این کارگاه، آخرین بار در تاریخ &nbsp;{{approveDateTime}}&nbsp; مورد تائید قرار گرفته و به شعبه ارسال شده است.</p>
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------->
+        <div class="button-container">
+          <div class="col-3 col-s-3-1">
+            <div class="col-2 col-s-2-1">
+              <p>1- </p>
+            </div>
+            <div class="col-10 col-s-10-1">
+              <tamin-field-checkbox class="col-2 col-s-6" formControlName="selected1">
+              </tamin-field-checkbox>
+              <tamin-field-label class="col-10 col-s-6" formControlName="selected1">اسفند 1398
+              </tamin-field-label>
+            </div>
+          </div>
+          <div class="col-2 col-s-2-1" >
+            <tamin-field-checkbox class="col-2 col-s-6" formControlName="bikari1">
+            </tamin-field-checkbox>
+            <tamin-field-label class="col-10 col-s-6" formControlName="bikari1">بیمه بیکاری
+            </tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3-1" >
+            <tamin-field-checkbox class="col-2 col-s-6" formControlName="haghbime1">
+            </tamin-field-checkbox>
+            <tamin-field-label class="col-10 col-s-6" formControlName="haghbime1">حق بیمه سهم بیمه شده
+            </tamin-field-label>
+          </div>
+          <div class="col-4 col-s-4-1" style='padding: 5px;'>
+            <tamin-field-label formControlName="yeramon1">میزان استفاده از تسهیلات (حق بیمه سهم کارفرما)
+            </tamin-field-label>
+            <tamin-field-validator formControlName="yeramon1"></tamin-field-validator>
+            <div>
+              <div class="col-2 col-s-1-2">
+                <p style="margin-top:8px;font-size:17px;">&nbsp;&nbsp;</p>
+              </div>
+              <div class="col-3 col-s-3-1">
+                <tamin-field-text formControlName="yeramon1" regex="^[0-9]*$"></tamin-field-text>
+              </div>
+              <div class="col-7 col-s-7-1">
+                <p style="margin-top:8px;font-size:17px;">&nbsp;%&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------->
+        <div class="button-container">
+          <div class="col-3 col-s-3-1" >
+            <div class="col-2 col-s-2-1">
+              <p>2- </p>
+            </div>
+            <div class="col-10 col-s-10-1">
+              <tamin-field-checkbox class="col-2 col-s-6" formControlName="selected2">
+              </tamin-field-checkbox>
+              <tamin-field-label class="col-10 col-s-6" formControlName="selected2">فروردین 1399
+              </tamin-field-label>
+            </div>
+          </div>
+          <div class="col-2 col-s-2-1" >
+            <tamin-field-checkbox class="col-2 col-s-6" formControlName="bikari2">
+            </tamin-field-checkbox>
+            <tamin-field-label class="col-10 col-s-6" formControlName="bikari2">بیمه بیکاری
+            </tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3-1" >
+            <tamin-field-checkbox class="col-2 col-s-6" formControlName="haghbime2">
+            </tamin-field-checkbox>
+            <tamin-field-label class="col-10 col-s-6" formControlName="haghbime2">حق بیمه سهم بیمه شده
+            </tamin-field-label>
+          </div>
+          <div class="col-4 col-s-4-1" style='padding: 5px;'>
+            <tamin-field-label formControlName="yeramon2">میزان استفاده از تسهیلات (حق بیمه سهم کارفرما)
+            </tamin-field-label>
+            <tamin-field-validator formControlName="yeramon2"></tamin-field-validator>
+            <div>
+              <div class="col-2 col-s-1-2">
+                <p style="margin-top:8px;font-size:17px;">&nbsp;&nbsp;</p>
+              </div>
+              <div class="col-3 col-s-3-1">
+                <tamin-field-text formControlName="yeramon2" regex="^[0-9]*$"></tamin-field-text>
+              </div>
+              <div class="col-7 col-s-7-1">
+                <p style="margin-top:8px;font-size:17px;">&nbsp;%&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------->
+        <div class="button-container">
+          <div class="col-3 col-s-3-1">
+            <div class="col-2 col-s-2-1">
+              <p>3- </p>
+            </div>
+            <div class="col-10 col-s-10-1">
+              <tamin-field-checkbox class="col-2 col-s-6" formControlName="selected3">
+              </tamin-field-checkbox>
+              <tamin-field-label class="col-10 col-s-6" formControlName="selected3">اردیبهشت 1399
+              </tamin-field-label>
+            </div>
+          </div>
+          <div class="col-2 col-s-2-1" >
+            <tamin-field-checkbox class="col-2 col-s-6" formControlName="bikari3">
+            </tamin-field-checkbox>
+            <tamin-field-label class="col-10 col-s-6" formControlName="bikari3">بیمه بیکاری
+            </tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3-1" >
+            <tamin-field-checkbox class="col-2 col-s-6" formControlName="haghbime3">
+            </tamin-field-checkbox>
+            <tamin-field-label class="col-10 col-s-6" formControlName="haghbime3">حق بیمه سهم بیمه شده
+            </tamin-field-label>
+          </div>
+          <div class="col-4 col-s-4-1" style='padding: 5px;'>
+            <tamin-field-label formControlName="yeramon3">میزان استفاده از تسهیلات (حق بیمه سهم کارفرما)
+            </tamin-field-label>
+            <tamin-field-validator formControlName="yeramon3"></tamin-field-validator>
+            <div>
+              <div class="col-2 col-s-1-2">
+                <p style="margin-top:8px;font-size:17px;">&nbsp;&nbsp;</p>
+              </div>
+              <div class="col-3 col-s-3-1">
+                <tamin-field-text formControlName="yeramon3" regex="^[0-9]*$"></tamin-field-text>
+              </div>
+              <div class="col-7 col-s-7-1">
+                <p style="margin-top:8px;font-size:17px;">&nbsp;%&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------->
+        <div style='padding: 5px;'>
+          <p>تذکرات مهم:<br>
+            1- قبل از ارسال لیست های کارکرد فوق الذکر، می بایست نسبت به تکمیل این فرم اقدام نمایید.<br>
+            2- بهره مندی از تسهیلات امهال منوط به پرداخت مبالغ 3% بیمه بیکاری و حق بیمه سهم بیمه شده می باشد.<br>
+            3- درصد حق بیمه سهم کارفرما بین 0 الی 20 درصد می باشد.<br>
+            4- جهت تعیین تکلیف بدهی حق بیمه سهم کارفرما به صورت نقدی و یا تقسیط بدهی، می بایست حداکثر تا پایان تیرماه
+            سال 1399 به شعبه مربوطه مراجعه نمایند تا وفق مقررات اقدام لازم مبذول گردد.<br>
+            5- درخصوص کارگاه های مشمول معافیت از پرداخت حق بیمه سهم کارفرمایی که حداکثر5نفر کارگر دارند،نیازی به ثبت نام در این سامانه نمی باشد.<br>
+            6- چنانچه مبلغ حق بیمه واریزی کمتر از میزان 10 درصد ( حق بیمه سهم بیمه شده و 2 درصد حق بیمه بیکاری ) باشد ، کارگاه از مشمول تسهیلات مقرر خارج خواهند شد.
+          </p>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------->
+      </div>
+      <div class="row">
+        <div class="col-12" style="padding-top: 10px">
+          <div class="button-container">
+            <button type="button" [hidden]="!isSavehide" class="button normal"
+              (click)="saveForm(newForm.value)">ذخیره</button>
+            <button type="button" [hidden]="!isEdithide" class="button normal"
+              (click)="EditForm(newForm.value)">ذخیره</button>
+            <button type="button" [hidden]="!isApprovhide" class="button normal"
+              (click)="isApprovehide(newForm.value)">تایید نهایی</button>
+            <button type="button" class="button normal dark" (click)="hide()">انصراف</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</tamin-modal>

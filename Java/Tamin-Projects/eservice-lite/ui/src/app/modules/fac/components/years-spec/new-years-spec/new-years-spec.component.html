@@ -1,0 +1,91 @@
+<tamin-modal #theModal title="">
+  <div>
+    <form [formGroup]="modalForm" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row col-12 col-s-12">
+          <div class="page-title">دوره های غیر محاسباتی</div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="sealedNumber">شماره پلمپ دفاتر</tamin-field-label>
+            <tamin-field-text formControlName="sealedNumber" ></tamin-field-text>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="sealedDate">تاریخ پلمپ دفاتر</tamin-field-label>
+            <tamin-field-validator formControlName="sealedDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="sealedDate" placeholder=""></tamin-field-persian-date>
+          </div>
+         </div>
+        <button type="button" class="button normal" (click)="doAddToGrid()">ذحیره</button>
+        <button type="button" class="button normal orange" (click)="doCancel()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</tamin-modal>
+
+<div class="panel col-8 col-s-8">
+  <div class="panel-title">  مشخصات دفاتر سالهای مورد درخواست </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate (ngSubmit)="onSave(editForm.value)">
+      <div class="form-control-container">
+        <div class="row col-12 col-s-12">
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="endDate">منتهی به تاریخ</tamin-field-label>
+            <tamin-field-static-persian-date formControlName="endDate" placeholder=""></tamin-field-static-persian-date>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="financialDocumentsNumber">تعداد کل اسناد مالی</tamin-field-label>
+            <tamin-field-validator formControlName="financialDocumentsNumber"></tamin-field-validator>
+            <tamin-field-number formControlName="financialDocumentsNumber" ></tamin-field-number>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="bindersNumber">تعداد کل کلاسورها</tamin-field-label>
+            <tamin-field-validator formControlName="bindersNumber"></tamin-field-validator>
+            <tamin-field-number formControlName="bindersNumber" ></tamin-field-number>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="insurancePersonnelNumber">تعداد پرسنل بیمه ای</tamin-field-label>
+            <tamin-field-validator formControlName="insurancePersonnelNumber"></tamin-field-validator>
+            <tamin-field-number formControlName="insurancePersonnelNumber" ></tamin-field-number>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="nonStaffPersonnelNumber">تعداد پرسنل غیر بیمه ای</tamin-field-label>
+            <tamin-field-validator formControlName="nonStaffPersonnelNumber"></tamin-field-validator>
+            <tamin-field-number formControlName="nonStaffPersonnelNumber" ></tamin-field-number>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="isFinancialSystem">سیستم مالی دارد؟</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="isFinancialSystem" displayField="name" valueField="value" #isFinancialSystemComboBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="FinancialSystemTypes">سیستم مالی</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="FinancialSystemTypes" displayField="name" valueField="value" #FinancialSystemTypesComboBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="finantialSystemName">نام سیستم مالی</tamin-field-label>
+            <tamin-field-validator formControlName="finantialSystemName"></tamin-field-validator>
+            <tamin-field-text formControlName="finantialSystemName" ></tamin-field-text>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="costContractsNumber">تعداد قراردادهای هزینه ای</tamin-field-label>
+            <tamin-field-validator formControlName="costContractsNumber"></tamin-field-validator>
+            <tamin-field-number formControlName="costContractsNumber" ></tamin-field-number>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="incomeContractsNumber">تعداد قراردادهای درآمدی</tamin-field-label>
+            <tamin-field-validator formControlName="incomeContractsNumber"></tamin-field-validator>
+            <tamin-field-number formControlName="incomeContractsNumber" ></tamin-field-number>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row  col-8 col-s-8">
+          <tamin-data-grid #dataGrid (itemAction)="onAction($event)"></tamin-data-grid>
+          <button type="submit" class="button normal" (click)="onNew()">جدید دوره های  غیر محاسباتی</button>
+        </div>
+      </div>
+      <div class="col-12 col-s-12">
+        <button #submitButton type="submit" class="button normal">ذحیره </button>
+        <button type="button" class="button normal orange" (click)="back()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>

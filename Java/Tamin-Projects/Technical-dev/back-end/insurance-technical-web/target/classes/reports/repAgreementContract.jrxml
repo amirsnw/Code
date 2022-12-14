@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="repAgreementContract" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8f61df17-bcb1-4eec-9398-177f3306f1de">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="1.1000000000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="381"/>
+	<parameter name="id" class="java.lang.String"/>
+	<parameter name="currentDate" class="java.lang.String"/>
+	<parameter name="centerName" class="java.lang.String"/>
+	<parameter name="fullName" class="java.lang.String"/>
+	<parameter name="fatherName" class="java.lang.String"/>
+	<parameter name="nationalCode" class="java.lang.String"/>
+	<parameter name="idNumber" class="java.lang.String"/>
+	<parameter name="insuranceNumber" class="java.lang.String"/>
+	<parameter name="birthDate" class="java.lang.String"/>
+	<parameter name="history" class="java.lang.String"/>
+	<parameter name="workshopName" class="java.lang.String"/>
+	<parameter name="workshopId" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="requestNumber" class="java.lang.String"/>
+	<parameter name="requestDate" class="java.lang.String"/>
+	<parameter name="amount" class="java.lang.String"/>
+	<parameter name="number" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="branchName" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="10" width="37" height="20" uuid="d9c8df7b-478d-4a62-96da-fc78476e3626"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="30" width="37" height="20" uuid="1efdbc1d-e56f-47cc-819b-d5bf30381d6c">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="50" width="414" height="40" uuid="3682aed2-2687-44ac-b6ed-af2d3f8e09a6">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[قرارداد بیمه کارفرمایان صنفی (اشخاص حقیقی) و مدیران اشخاص
+حقوقی غیر دولتی]]></text>
+			</staticText>
+			<image>
+				<reportElement x="468" y="0" width="80" height="69" uuid="293fdf1f-f010-4430-9c49-b7a510f04825">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["/reports/images/sazman.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="27" y="30" width="84" height="20" uuid="35cb3018-d0d0-4e34-8724-b5ad10c2362e">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="11" width="120" height="19" uuid="b0d3adab-649e-47ab-b9ef-976240cc17ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="710" splitType="Stretch">
+			<staticText>
+				<reportElement x="330" y="10" width="218" height="30" uuid="40285e7a-9589-40ee-afbf-1e8787f5529b">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[این قرارداد بین سازمان تامین اجتماعی شعبه/نمایندگی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="10" width="56" height="30" uuid="69cbd7ec-0d74-461b-8f2b-14891fd277f2">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[و آقای / خانم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="524" y="40" width="24" height="30" uuid="902314ee-4171-4102-8432-e805b0c18781">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[فرزند]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="40" width="78" height="30" uuid="80fae3a7-2600-4ae6-a4bd-400516188545">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به شماره شناسنامه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="40" width="28" height="30" uuid="ef2321e9-33b2-4d7e-aebf-471c7e62fff2">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[متولد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="196" y="40" width="46" height="30" uuid="8b317229-d681-4fb8-98a2-561314f20e11">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره ملی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="40" width="60" height="30" uuid="45f4f008-f5a3-48a9-9b31-2e0b729abe24">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به شماره بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="70" width="28" height="30" uuid="1b6981e8-9690-41f1-8d93-bfdb7a706bc9">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[دارای]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="70" width="228" height="30" uuid="db0076af-b5a1-4cf7-b541-5c8efec966c9">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[روز سابقه پرداخت حق‌بیمه قابل قبول و کارفرمای کارگاه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="70" width="40" height="30" uuid="40d1bf44-330e-4b05-b3f7-ac1895c9baeb">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به شماره]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="100" width="48" height="30" uuid="9b5bc71a-6f0f-47e5-a716-74c84908de15">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به نشانی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="130" width="478" height="25" uuid="9fd176d3-4ee1-4865-8c12-7dd198b3668a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[با آگاهی کامل از مفاد آئین نامه اجرائی تبصره 5 الحاقی به ماده 4 قانون تامین اجتماعی و بر اساس درخواست کتبی که طی شماره]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="155" width="28" height="25" uuid="e81d2a54-0bb7-4734-a5a8-c34190cd27dc">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مورخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="155" width="446" height="25" uuid="31c37b34-68a7-4ae5-aeee-cbf650f310a6">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ثبت دفتر واحد تامین اجتماعی مزبور گردیده به منظور برخورداری از حمایت‌های بیمه بازنشستگی ، از کار افتادگی کلی و]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="180" width="288" height="25" uuid="f98740ab-a81f-48b7-83e2-241ff1371f2b">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[فوت و درمان با نرخ  %27بر اساس دستمزد مبنای پرداخت حق‌بیمه به میزان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="180" width="148" height="25" uuid="1c20d91d-d539-424a-bc50-29c15a8003c0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ریال منعقد می‌‍گردد و از ابتدای هر سال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="205" width="536" height="25" uuid="d97323a5-1967-45f1-b620-0ce3328eb44c">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[به میزان درصدی که طبق مقررات مصوب شورای‌عالی کار به سطوح دستمزد شاغلین اضافه می‌گردد، مبنای کسر حق بیمه افزایش خواهد یافت.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="230" width="536" height="30" uuid="c91ca990-2d77-4f78-9cf8-2f2a59dea6a4">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[-1 شروع و پرداخت حق بیمه این قبیل افراد از تاریخ انعقاد قرارداد و با رعایت ماده 39 قانون تامین اجتماعی خواهد بود.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="260" width="536" height="40" uuid="d1a00bac-a9c2-4e36-8b1b-f7a8322e03dd">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[-2 متقاضی طرف قرارداد قبل از انعقاد قرارداد به لحاظ سنجش میزان از کارافتادگی به کمیسیون پزشکی معرفی و چنانچه از کارافتاده کلی شناخته شود به اعتبار بیماریهای مندرج در نظریه کمیسیون پزشکی مربوطه که طی شماره]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="300" width="536" height="40" uuid="155c1954-2966-4f1c-96ab-3bd1bfa6baef">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[نمی‌تواند از تعهد از کارافتادگی استفاده نماید مگر به عارضه یا بیماری دیگری مبتل شود و به اعتبار بیماری یا عارضه جدید مجددا در کمیسیون پزشکی شرکت و شرایط قانونی را احراز نماید.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="280" width="28" height="20" uuid="7e2f7803-72d3-42b1-aa95-7493277bcd3d">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[مورخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="280" width="70" height="20" uuid="985eb607-b129-4dd5-8bbe-8f23f860409a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ثبت گردیده است،]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="340" width="536" height="107" uuid="e524f4de-91dc-4338-b79a-4e0dbafe1afa">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[-3 بعد از انعقاد قرارداد، بیمه شده مکلف است حق بیمه تعیین شده را قبل از انقضای مهلت مقرر با رعایت ماده 39 قانون تامین اجتماعی با تنظیم لیست به سازمان تامین اجتماعی پرداخت نماید و در صورتیکه پرداخت حق‌بیمه از طرف بیمه شده متوقف گردد و انقطاع در پرداخت حق‌بیمه بیش از 3 ماه باشد قرارداد منعقده ملغی و ادامه بیمه موکول به تسلیم درخواست مجدد و انعقاد قرارداد با رعایت مقررات مربوطه خواهد بود.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="447" width="536" height="75" uuid="86fea452-38cc-4f34-ba60-cccf83508e9c">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[-4 با آگاهی از تعاریف و ضوابط مقرر در قانون تامین اجتماعی قبول دارم که مشمول دریافت غرامت دستمزد ایام بیماری ، کمک بارداری و کمک ازدواج نبوده و در آینده نیز مادامیکه به این طریق بیمه پرداز سازمان تامین اجتماعی می‌باشم هیچگونه ادعایی نخواهم داشت.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="487" width="536" height="100" uuid="0c4b1d3a-d255-429a-be9d-e2f065b28254">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[ضمنا اعلم میدارم که در تاریخ انعقاد قرارداد مشمول هیچیک از نظام های حمایتی بیمه ای (اشتغال در کارگاههای مشمول قانون تامین اجتماعی و نظام بیمه ای خاص) نمی‌باشم و چنانچه خلف آن ثابت گردد قرارداد منعقده باطل بوده و از این نظر هیچگونه حقی برای خود متصور نمی‌باشم.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="558" width="219" height="50" uuid="77da7e47-de52-47d5-aa2e-2543723aceba">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[نام و نام خانوادگی رئیس واحد اجرائی صندوق
+امضا]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="609" width="248" height="50" uuid="2a3f6e78-e412-4735-b382-0e09640f41ca">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[نام و نام خانوادگی مسئول واحد امور فنی بیمه شدگان
+امضا]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="659" width="148" height="50" uuid="dca19ce2-510d-4bcf-9cde-12b7a377fe64">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[نام و نام خانوادگی اقدام کننده
+امضا]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="581" width="148" height="50" uuid="8a75d04c-5244-4157-a602-f5f1cb4c21b0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[امضاء و اثرانگشت متقاضی]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="208" y="10" width="135" height="30" uuid="ba99a1f6-b1bc-43f3-9b14-543a31649326"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{branchName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="10" width="140" height="30" uuid="c3693583-44fb-4497-a302-b49d26cc9cf1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="40" width="75" height="30" uuid="5e8145bb-bbfe-4569-9736-dbae13b4f740"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fatherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="40" width="70" height="30" uuid="2d0adf8d-c47f-4ce4-b859-0c263df190cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{idNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="40" width="76" height="30" uuid="2dc3afec-16ae-47e6-a3aa-ed4b86f8e959"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nationalCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="40" width="60" height="30" uuid="4a9781d9-9082-48ba-931c-bd91c126c1d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{insuranceNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="70" width="60" height="30" uuid="b85e642e-7344-4fd9-aec6-7bb1fe0eeab9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{history}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="70" width="110" height="30" uuid="929172bf-45a3-428f-ad5f-3c1da6daf054"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{workshopName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="70" width="82" height="30" uuid="b7b972be-a030-4c0b-a5e8-b7e0321a0dc0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{workshopId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="100" width="460" height="30" uuid="d555e864-8b2c-46a6-b7f6-4620398b6d4b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="155" width="70" height="25" uuid="2832037c-2498-496b-96b6-01bd1804f826">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{requestDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="130" width="80" height="25" uuid="dcdb2fbb-1525-4472-9f42-e4e29644d2d1">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{requestNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="180" width="101" height="24" uuid="b4e213ed-a54e-4902-9a0e-1e2c0abfe122"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="280" width="79" height="20" uuid="876cfc87-da4f-4ba4-b3d0-d49e1584ca7e">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="280" width="67" height="20" uuid="43781233-5a79-45a6-a94a-df8ae2ce2391"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="245" y="40" width="54" height="30" uuid="e053216d-1a6b-484c-aa86-a47874ab4a6a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" pdfFontName="/reports/Fonts/BNaznnBd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{birthDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

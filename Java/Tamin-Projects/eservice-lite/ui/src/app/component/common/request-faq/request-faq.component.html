@@ -1,0 +1,25 @@
+<div class="alert alert-info">
+  پرسش و پاسخ های متداول
+</div>
+<app-request-faq-search #requestFaqSearch  (afterSearch)="onSearch($event)"></app-request-faq-search>
+<div class="panel">
+  <div class="panel-title">لیست</div>
+  <div class="panel-body">
+    <tamin-data-grid #dataGrid (itemSelect)="dataGridItemSelect($event)"
+                     (itemAction)="onDataGridAction($event)"></tamin-data-grid>
+    <!--    <div class="alert alert-success" *ngIf="answer !== ''">-->
+    <!--      <h4 style="color: white; font-weight: bold">جواب</h4>-->
+    <!--      <hr>-->
+    <!--      <p style="margin-top: 10px">{{answer}}</p>-->
+    <!--    </div>-->
+  </div>
+  <div class="button-container">
+    <button class="button normal" (click)="faqNew.open()">جدید</button>
+  </div>
+
+  <app-request-faq-new #faqNew (closed)="dataGrid.refreshData()">{{edit}}</app-request-faq-new>
+  <tamin-modal  title="پاسخ" #answerModal>
+    <p style="margin-top: 10px">{{answer}}</p>
+  </tamin-modal>
+
+</div>

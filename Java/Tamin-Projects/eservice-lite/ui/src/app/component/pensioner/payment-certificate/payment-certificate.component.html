@@ -1,0 +1,84 @@
+<div class="alert alert-success">
+  <p>صدور گواهی حقوق مستمری بگیران</p>
+</div>
+<div class="alert alert-info">
+  <p style="border-bottom: dotted 1px white">
+    <span>در این فرم شما می توانید نسبت به ارسال گواهی حقوق خود به صندوق شخصی (جهت استعلام سایر دستگاهها) اقدام نمایید.</span>
+  </p>
+  <br/>
+  <p>
+    <span>- این گواهی پس از صدور به تاریخ روز، به صندوق شخصی شما ارسال خواهد شد.</span>
+  </p>
+  <p>
+    <span>- نام مرکز دریافت کننده گواهی را (در قسمت مربوطه) جهت درج در نامه ذکر نمایید.</span>
+  </p>
+</div>
+<div class="panel">
+  <div class="part-title">
+    صدور گواهی حقوق مستمری بگیران
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="formPaymentCert" novalidate (ngSubmit)="confirmClick(formPaymentCert.value, formPaymentCert.valid)">
+      <div class="form-control-container row">
+
+<!--        <div class="form-control-container col-6 col-s-6">-->
+<!--          <tamin-field-label formControlName="pensionerId">شماره مستمری درخواست کننده</tamin-field-label>-->
+<!--          <tamin-field-validator formControlName="pensionerId"></tamin-field-validator>-->
+<!--&lt;!&ndash;          <tamin-field-text formControlName="pensionerId" placeholder="شماره مستمری درخواست کننده"></tamin-field-text>&ndash;&gt;-->
+<!--          <tamin-field-combo-box-static formControlName="pensionerId" [dataItems]="pensionerList" valueField="value"-->
+<!--                                        displayField="name" #pensioner-->
+<!--                                        placeholder="شماره مستمری درخواست کننده "></tamin-field-combo-box-static>-->
+<!--        </div>-->
+        <div class="form-control-container col-4 col-s-4"[hidden]="isWrite">
+
+          <tamin-field-label formControlName="pensionerId">شماره مستمری درخواست کننده:</tamin-field-label>
+          <tamin-field-validator formControlName="pensionerId"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="pensionerId" [dataItems]="pensionerList" valueField="value"
+                                        displayField="name" #pensioner
+                                        placeholder="شماره مستمری "></tamin-field-combo-box-static>
+          <button type="button" class="button normal orange" style="padding: 3px"(click)="wirteClick()">نوشتن شماره مستمری</button>
+        </div>
+        <div class="form-control-container col-4 col-s-4" [hidden]="!isWrite">
+          <tamin-field-label formControlName="pensionerId">شماره مستمری درخواست کننده</tamin-field-label>
+          <tamin-field-validator formControlName="pensionerId"></tamin-field-validator>
+          <tamin-field-mask mask="0000000000" formControlName="pensionerId"></tamin-field-mask>
+          <button type="button" class="button normal orange" style="padding: 3px"(click)="selectClick()">انتخاب شماره مستمری از لیست</button>
+        </div>
+
+        <div class="form-control-container col-4 col-s-4" >
+          <tamin-field-label formControlName="recipient">جهت ارائه به (دریافت کننده گواهی)</tamin-field-label>
+          <tamin-field-validator formControlName="recipient"></tamin-field-validator>
+          <tamin-field-combo-box formControlName="recipient" placeholder="گیرنده " #recipient></tamin-field-combo-box>
+          <div class="hint"><i class="icon-lightbulb"></i><span>در صورتی که در لیست موجود نبود نامشخص رو انتخاب نمایید.</span></div>
+        </div>
+
+        <div class=" form-control-container col-4 col-s-4 "[ngStyle]="{'display' : showRecipient ? 'block' : 'none'}">
+          <tamin-field-label formControlName="target">جهت ارائه به (دریافت کننده گواهی)</tamin-field-label>
+          <tamin-field-validator formControlName="target"></tamin-field-validator>
+          <tamin-field-text formControlName="target" placeholder="جهت ارائه به"></tamin-field-text>
+
+        </div>
+
+        <div class=" form-control-container col-4 col-s-4"[ngStyle]="{'display' : showBranchName ? 'block' : 'none'}">
+          <tamin-field-label formControlName="branchName">نام شعبه(دریافت کننده گواهی)</tamin-field-label>
+          <tamin-field-validator formControlName="branchName"></tamin-field-validator>
+          <tamin-field-text formControlName="branchName" placeholder="نام شعبه"></tamin-field-text>
+        </div>
+
+        <!--        <div class=" col-6 ">-->
+        <!--          <tamin-field-label formControlName="recipient">جهت ارائه به (دریافت کننده گواهی)</tamin-field-label>-->
+        <!--          <tamin-field-validator formControlName="recipient"></tamin-field-validator>-->
+        <!--          <tamin-field-text formControlName="recipient" placeholder="جهت ارائه به"></tamin-field-text>-->
+        <!--        </div>-->
+
+
+        <div class="col-12 col-s-12">
+          <button type="submit" class="button normal">
+            <i class="icon-upload"></i>
+            <span>صدور و ارسال به صندوق شخصی</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

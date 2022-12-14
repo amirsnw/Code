@@ -1,0 +1,85 @@
+    <form [formGroup]="theForm" novalidate autocomplete="off">
+
+
+      <div class="tabs">
+        <div class="tab-2">
+          <label for="tab2-1">اطلاعات هویتی</label>
+          <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+          <div>
+            <div class="row">
+              <div class="col-12">
+                <img id="image1" [attr.src]="userImage" alt="a"
+                     class="circletag"/>
+              </div>
+              <div class="col-6">
+                <tamin-field-label formControlName="firstName">نام</tamin-field-label>
+                <tamin-field-static-text formControlName="firstName" placeholder="نام"></tamin-field-static-text>
+              </div>
+              <div class="col-6">
+                <tamin-field-label formControlName="lastName"> نام خانوادگی</tamin-field-label>
+                <tamin-field-static-text formControlName="lastName"
+                                         placeholder="نام خانوادگی"></tamin-field-static-text>
+              </div>
+              <div class="col-6">
+                <tamin-field-label formControlName="nationalCode"> کد ملی</tamin-field-label>
+                <tamin-field-static-text formControlName="nationalCode"
+                                         placeholder="کد ملی"></tamin-field-static-text>
+              </div>
+              <div class="col-6">
+                <tamin-field-label formControlName="insuranceId"> شماره بیمه</tamin-field-label>
+                <tamin-field-static-text formControlName="insuranceId"
+                                         placeholder=" شماره بیمه"></tamin-field-static-text>
+              </div>
+              <div class="col-6" *ngIf="userImage === 'assets/images/icons/user.png'">
+                <tamin-field-label formControlName="serialId">سریال پشت کارت ملی هوشمند/کد رهگیری مندرج در رسید کارت
+                  ملی
+                </tamin-field-label>
+                <tamin-field-text formControlName="serialId"
+                                  placeholder=" سریال پشت کارت ملی هوشمند/کد رهگیری مندرج در رسید کارت ملی"></tamin-field-text>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <button class="button white" (click)="doSearch()" style="float: left"
+                        *ngIf="userImage === 'assets/images/icons/user.png'">
+                  <i class="icon-search"></i>
+                  <span>دریافت اطلاعات</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-2">
+          <label for="tab2-2">افراد تحت کفالت</label>
+          <input id="tab2-2" name="tabs-two" type="radio">
+          <div class="row" style="align-content: right">
+            <div class="col-12">
+              <img id="image2" [attr.src]="userImageSub" alt=""
+                   class="circletag" hidden="true"/>
+
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="nationalCodeSub">کد ملی تبعی</tamin-field-label>
+              <tamin-field-validator formControlName="nationalCodeSub"></tamin-field-validator>
+              <tamin-field-combo-box-static formControlName="nationalCodeSub" placeholder="کد ملی تبعی"
+                                            [dataItems]="this.subdominant" displayField="name"
+                                            valueField="value"></tamin-field-combo-box-static>
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="serialIdSub">سریال پشت کارت ملی هوشمند/کد رهگیری مندرج در رسید کارت
+                ملی
+              </tamin-field-label>
+              <tamin-field-text formControlName="serialIdSub"
+                                placeholder=" سریال پشت کارت ملی هوشمند/کد رهگیری مندرج در رسید کارت ملی"></tamin-field-text>
+            </div>
+            <div class="col-12" style="text-align: end">
+              <button class="button white" (click)="doSearchSub()">
+                <i class="icon-search"></i>
+                <span>دریافت اطلاعات</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+

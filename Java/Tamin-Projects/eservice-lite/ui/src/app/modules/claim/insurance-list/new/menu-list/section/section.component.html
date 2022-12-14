@@ -1,0 +1,11 @@
+<div class="section">
+  <div class="section-top" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+    <h3>
+      <ng-content select="[title]"></ng-content>
+    </h3>
+    <ng-content select="[body]"></ng-content>
+  </div>
+  <div class="section-bottom" (click)="redirectTo(targetUrl)">
+    <ng-content select="[summary]"></ng-content>
+  </div>
+</div>

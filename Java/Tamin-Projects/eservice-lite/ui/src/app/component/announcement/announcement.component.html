@@ -1,0 +1,106 @@
+<div class="alert alert-success">صندوق شخصی من</div>
+<div class="alert alert-success">
+  - در این صفحه فضایی شخصی برای شما در نظر گرفته شده است که می توانید از طریق دکمه "ارسال به صندوق شخصی" در سایر سرویس ها مستنداتی
+  را جهت نگهداری یا استعلام سایر دستگاهها به آن ارسال نمایید.
+  <br/> - همچنین مستندات و مکاتباتی که از طرف سازمان برای شما ارسال شده است در این صفحه قابل نمایش و پیگیری خواهد بود.
+  <br/> - مواردی را که خود شما به صندوق شخصی ارسال می کنید از فضای ذخیره سازی شما کسر می شود و همچنین بعدا قابل حذف خواهند بود.
+  <br/> - مواردی که بصورت اتوماتیک و از طرف سازمان به صندوق شخصی شما ارسال می شوند قابل حذف نخواهند بود. بدیهی است که این مستندات
+  از فضای ذخیره سازی شما کسر نمی شود.
+  <br/> - شما می توانید با انتخاب گزینه "صدور مجوز استعلام" در منوی عملیات و دریافت رمز، یک ردیف از اطلاعات موجود در صندوق شخصی
+  خود را اشتراک گذاری نمایید.
+</div>
+<div class="row">
+  <div class="col-12">
+    <div style="border: solid 1px #555; margin: 3px;">
+      <div class="progress-text">{{quotaText}}</div>
+      <div class="progress">
+        <div class="bar" [style.width]="quota"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="panel">
+      <div class="panel-title">جستجو</div>
+      <div class="panel-body">
+        <app-announcement-search (afterSubmit)="onSearch($event)"></app-announcement-search>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="panel">
+      <div class="panel-title">لیست</div>
+      <tamin-data-grid #dataGrid (itemAction)="onView($event)" (beforeRefreshData)="selectedItem = null" (itemSelect)="selectedItem = $event"></tamin-data-grid>
+    </div>
+  </div>
+  <div class="col-12" [hidden]="!selectedItem">
+    <div class="panel" [hidden]="selectedItem?.type.typeCode==0005 ||
+     selectedItem?.type.typeCode==0006
+     || !selectedItem?.details ">
+      <div class="panel-title">جزییات</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>شماره:</td>
+                <td>{{selectedItem?.details?.eblaghNo}}</td>
+              </tr>
+              <tr>
+                <td>تاریخ صدور:</td>
+                <td>{{getPersianDate(selectedItem?.details?.docDate)}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>نام کارگاه:</td>
+                <td>{{selectedItem?.details?.workshopName}}</td>
+              </tr>
+              <tr>
+                <td>کدکارگاه:</td>
+                <td>{{selectedItem?.details?.workshopCode}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>کدشعبه:</td>
+                <td>{{selectedItem?.details?.branchCode}}</td>
+              </tr>
+              <tr>
+                <td>نام شعبه:</td>
+                <td>{{selectedItem?.details?.branchName}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-4">
+            <table>
+              <tr>
+                <td>ردیف پیمان:</td>
+                <td>{{selectedItem?.details?.pymanSEQ}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<tamin-modal #theModal title="رویت مکاتبه">
+  <tamin-tab-panel #smsTab>
+    <tamin-tab title="متن پیامک">
+      <p #text></p>
+    </tamin-tab>
+    <tamin-tab title="پی دی اف ضمیمه" #pdfTab>
+      <tamin-document-viewer #documentViewer width="100%"></tamin-document-viewer>
+    </tamin-tab>
+    <tamin-tab title="تصاویر ضمیمه" #imageTab>
+      <img alt="none" #image class="responsive">
+    </tamin-tab>
+  </tamin-tab-panel>
+</tamin-modal>
+<app-announcement-enquiry #enquiry (dataChanged)="dataGrid.refreshData()"></app-announcement-enquiry>
+
+<button type="button" class="button normal dark" (click)="backToPanelClick()">بازگشت به تامین اجتماعی من</button>

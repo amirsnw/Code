@@ -1,0 +1,45 @@
+<tamin-modal #mapModal>
+  <div [attr.id]="id" style="width: 100%; height: 400px" class="map" dir="ltr" #theMap></div>
+</tamin-modal>
+
+<div class="panel">
+  <div class="page-title">جستجو</div>
+  <div class="panel-body">
+   <form [formGroup]="form" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="requestId">شماره درخواست</tamin-field-label>
+            <tamin-field-number formControlName="requestId"></tamin-field-number>
+          </div><div class="col-4">
+          <tamin-field-label formControlName="workshopId">شماره کارگاه</tamin-field-label>
+          <tamin-field-number formControlName="workshopId"></tamin-field-number>
+        </div>
+          <div class="col-4 col-s-4"  [hidden]=setHiddenBranch>
+            <tamin-field-label formControlName="branchCode">کد شعبه</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="branchCode"   [dataItems]="branchCodes" displayField="name" valueField="value"
+                                          #branchCode></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="status">وضعیت درخواست</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="status" [dataItems]="statusTypes" valueField="value"
+                                          displayField="name"></tamin-field-combo-box-static>
+           </div>
+        </div>
+      </div>
+    </form>
+    <p style="margin-top:5px;">
+      <button type="button" (click)="onSearch()" class="button normal" [disabled]="!form.valid">جستجو
+      </button>
+      <button type="button" class="button normal dark" (click)="resetSearch()">نمایش همه</button>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <tamin-data-grid #dataGrid (itemAction)="onView($event)" ></tamin-data-grid>
+</div>
+
+
+
+
+

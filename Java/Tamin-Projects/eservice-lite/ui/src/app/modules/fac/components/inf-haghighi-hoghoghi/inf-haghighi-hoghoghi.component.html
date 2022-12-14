@@ -1,0 +1,83 @@
+<div class="panel">
+  <div class="page-title">1-مشخصات اشخاص  حقوقي/ حقيقي</div>
+  <div class="panel-body">
+   <form [formGroup]="form" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row col-12 col-s-12">
+          <div class="col-1">
+            <tamin-field-label formControlName="workshopName">نام شخص حقيقي/حقوقی</tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3">
+          <tamin-field-static-text formControlName="workshopName"></tamin-field-static-text>
+          </div>
+          <div class="col-1">
+          <tamin-field-label formControlName="workshopId">کد کارگاه</tamin-field-label>
+        </div>
+          <div class="col-3 col-s-3">
+          <tamin-field-static-text formControlName="workshopId"></tamin-field-static-text>
+         </div>
+        </div>
+        <div class="row col-12 col-s-12">
+          <div class="col-1">
+            <tamin-field-label formControlName="branch">شعبه تامين اجتماعی</tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3">
+          <tamin-field-static-text formControlName="branch"></tamin-field-static-text>
+            </div>
+          <div class="col-1">
+            <tamin-field-label formControlName="workshopOldName">نام  سابق</tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3">
+          <tamin-field-static-text formControlName="workshopOldName"></tamin-field-static-text>
+          </div>
+        </div>
+        <div class="row col-12 col-s-12">
+          <div class="col-1">
+            <tamin-field-label formControlName="workshopTypeDesc">نوع شرکت</tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3">
+          <tamin-field-static-text formControlName="workshopTypeDesc"></tamin-field-static-text>
+          </div>
+          <div class="col-1">
+            <tamin-field-label formControlName="workshopActivityDesc">موضوع فعاليت</tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3">
+            <tamin-field-static-text formControlName="workshopActivityDesc"></tamin-field-static-text>
+          </div>
+        </div>
+        <div class="row col-12 col-s-12">
+          <div class="col-1">
+            <tamin-field-label formControlName="nationalCode"> شناسه ملي کارگاه/کارفرما</tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3">
+          <tamin-field-static-text formControlName="nationalCode"></tamin-field-static-text>
+             </div>
+        </div>
+        <div>
+          <div class="col-1">
+            <tamin-field-label formControlName="registerNumber">شماره ثبت شرکت</tamin-field-label>
+          </div>
+          <div class="col-3 col-s-3">
+          <tamin-field-static-text formControlName="registerNumber"></tamin-field-static-text>
+        </div>
+          <div class="col-1">
+            <tamin-field-label formControlName="registerDate">تاريخ ثبت</tamin-field-label>
+          </div>      <div class="col-3 col-s-3">
+             <tamin-field-static-persian-date formControlName="registerDate"></tamin-field-static-persian-date>
+          </div>
+
+        </div>
+      </div>
+     <div class="row">
+       <div class="col-12">
+         <div class="button-container">
+           <button type="submit" class="button normal" (click)="EditForm()">{{buttonTitle}}</button>
+           <button type="button" class="button normal orange" (click)="onCompleteInfHaghighiHoghoghi()">تکمیل اطلاعات(صفحه بعدی)</button>
+           <button type="button" class="button normal orange" (click)="back()">صفحه اصلی</button>
+         </div>
+       </div>
+     </div>
+    </form>
+  </div>
+</div>
+

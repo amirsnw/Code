@@ -1,0 +1,30 @@
+<div class="panel">
+  <div class="page-title">تایید اطلاعات هویتی</div>
+  <div class="panel-body">
+    <form [formGroup]="viewForm" autocomplete="off" novalidate #theForm>
+      <div class="form-control-container">
+        <app-special-insured-info></app-special-insured-info>
+        <div class="row">
+          <div class="col-12">
+            <input type="radio" value="correctInfo" name="checkInfo" formControlName="checkInfo" required ngModel (click)="onCheckInfoClick()">اطلاعات
+            نمایش داده شده نادرست است و باید اصلاح شود.
+            <br>
+            <input type="radio" value="confirmInfo" name="checkInfo" formControlName="checkInfo" required ngModel (click)="onConfirmInfoClick()">اطلاعات نمایش داده شده صحیح است.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="button-container">
+              <button class="button normal" (click)="redirectToRegistrationPage()" [disabled]="editInfoBtnDisabled"><i class="icon-edit"></i> <span>درخواست اصلاح اطلاعات</span>
+              </button>
+              <button class="button normal" (click)="redirectToContractPage()" [disabled]="continueBtnDisabled"><i class="icon-ok"></i>
+                <span>تایید و ادامه</span></button>
+              <button type="button" class="button normal orange" (click)="resetForm()"><i class="icon-cancel"></i>
+                <span>انصراف</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

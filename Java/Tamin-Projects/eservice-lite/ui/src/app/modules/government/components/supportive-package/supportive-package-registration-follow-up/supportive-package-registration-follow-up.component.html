@@ -1,0 +1,37 @@
+<div class="panel">
+  <div class="panel-title">پیگیری درخواست دریافت سبد حمایتی دولت</div>
+  <div class="panel-body">
+    <form [formGroup]="theForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="referenceId">کد پیگیری</tamin-field-label>
+          <tamin-field-validator formControlName="referenceId"></tamin-field-validator>
+          <tamin-field-text formControlName="referenceId" placeholder=""></tamin-field-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="nationalId">کد ملی</tamin-field-label>
+          <tamin-field-validator formControlName="nationalId"></tamin-field-validator>
+          <tamin-field-natioanl-id formControlName="nationalId" placeholder=""></tamin-field-natioanl-id>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px">
+        <div class="col-4">
+          <img [attr.src]="captcha?.image" alt="" width="150px" height="50px" #captchaImage>
+          <a href="javascript:void(0)" (click)="getCaptcha()" style="margin-right:5px" [class.disabled]="loading"><i
+            class="icon-arrows-cw"></i><span>تصویر جدید</span></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="captchaCode">کد امنیتی</tamin-field-label>
+          <tamin-field-validator formControlName="captchaCode"></tamin-field-validator>
+          <tamin-field-text formControlName="captchaCode"
+                            placeHolder="کد تصویر بالا را در این قسمت وارد کنید"></tamin-field-text>
+        </div>
+      </div>
+    </form>
+    <button type="button" class="button normal" style="margin-top: 10px" (click)="send()">ارسال</button>
+  </div>
+</div>

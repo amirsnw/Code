@@ -1,0 +1,29 @@
+<div class="panel">
+  <div class="page-title">
+    اعتراض های ثبت شده
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-12">
+        <tamin-data-grid #dataGrid (itemSelect)="onItemSelect($event)" (beforeRefreshData)="beforeRefreshData()">
+        </tamin-data-grid>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel">
+  <div class="page-title">
+    جزییات اعتراض
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-12">
+        <p><strong>نام کارگاه: </strong><span>{{selectedItem?.workshopName}}</span></p>
+        <p><strong>آدرس کارگاه: </strong><span>{{selectedItem?.workshopAddress}}</span></p>
+        <p><strong>نام کارفرما: </strong><span>{{selectedItem?.workshopManager}}</span></p>
+        <p><strong>شرح اعتراض: </strong><span>{{selectedItem?.requestDescription}}</span></p>
+        <p><strong>علت عدم تایید: </strong><span>{{selectedItem?.rejectDescription}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

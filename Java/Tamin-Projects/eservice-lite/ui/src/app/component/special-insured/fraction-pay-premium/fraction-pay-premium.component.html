@@ -1,0 +1,69 @@
+<div class="page-title">پرداخت حق بیمه کسری از ماه</div>
+<p>
+  متقاضی محترم:
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  1- دراین فرم نحوه محاسبه حق بیمه کسری از ماه  شما نمایش داده شده است.
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  2- کلیه افرادی که درخواست تکمیل سوابق به صورت کسری از ماه را دارند پس از انعقاد قرارداد و درصورت وجود کسری از ماه (سابقه) می توانندحق بیمه مربوطه راپرداخت نموده و سوابق ماهانه خود را تکمیل نمایند
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  3- محاسبه کسری از ماه صرفا برای ماه هایی محاسبه خواهد شد که حداقل یک روز کارکرد عادی لیست(بیمه اجباری) داشته باشند و برای ماه های فاقد کارکرد(سابقه صفر)محاسبه ای صورت نمی پذیرد.
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  4-مهلت پرداخت حق بیمه نیمسال اول لغایت اسفند ماه می باشد.
+</p>
+<p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+  5-مهلت پرداخت حق بیمه نیمسال دوم لغایت مرداد ماه می باشد.
+</p>
+<div class="panel">
+  <div class="panel-title">اطلاعات هویتی</div>
+  <div class="panel-body">
+    <app-special-insured-info></app-special-insured-info>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-title">پرداخت حق بیمه</div>
+  <div class="panel-body">
+    <div *ngIf="hasPaymentHistory">
+      <span>
+        پرداخت های انجام شده توسط شما
+      </span>
+      <button class="button normal green"  (click)="onShowPaymentHistory()">مشاهده سوابق
+        پرداخت</button>
+    </div>
+    <hr>
+    <div class="row">
+      <fieldset>
+        <div class="col-12 col-s-12">
+          <div class="col-6 col-s-6">
+            <div class="confirmation">
+              <h3 style="margin-top: 10px;">شروع دوره پرداخت : {{ startDate}}</h3>
+              <h3 style="margin-top: 10px;">قابل پرداخت : {{ getPersianCurrency(total)}}</h3>
+            </div>
+          </div>
+          <div class="col-6 col-s-6">
+            <div class="confirmation">
+              <h3 style="margin-top: 10px;">پایان دوره پرداخت: {{ endDate}}</h3>
+
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="row">
+    <button class="button normal green" [disabled]="allDesabled" (click)="onCalcPremium()">محاسبه حق بیمه</button>
+    <button class="button normal green" (click)="onDisplayCalcDetail()"
+      [disabled]="!checkCalcPremium || allDesabled">مشاهده جزئیات
+      محاسبه
+    </button>
+    <button class="button normal green" (click)="onPayPremium()" [disabled]="!checkCalcPremium || allDesabled">پرداخت حق
+      بیمه
+    </button>
+
+  </div>
+</div>
+<app-fraction-display-detail-pay-premium #fractiondisplayDetailPayPremiumComponent>
+</app-fraction-display-detail-pay-premium>

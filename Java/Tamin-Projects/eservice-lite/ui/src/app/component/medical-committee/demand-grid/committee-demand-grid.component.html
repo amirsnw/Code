@@ -1,0 +1,286 @@
+<div class="panel">
+  <div class="page-title">
+    لیست تقاضاهای ثبت شده
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #demandDataGrid (itemAction)="onRequestAction($event)"></tamin-data-grid>
+  </div>
+</div>
+<!-- Modal Box -->
+<tamin-modal #resultModal
+             title="نتیجه کمیسیون"
+             width="80%">
+  <div class="panel">
+    <div class="alert alert-info" style="padding: 10px;
+                                          margin: 10px;">
+      <p><i class="icon-check"></i>
+        {{model.gridItem?.committeePollType?.pollInsuredDesc}}
+      </p>
+      <p>
+        تاریخ رأی: {{dateTemp}}
+      </p>
+    </div>
+    <div class="panel-title" style="border-radius: 7px;
+                                    width: 98%;
+                                    margin: auto;">نوع رأی
+    </div>
+    <div class="panel-body">
+      <div class="row" style="padding: 20px;">
+        <div class="col-6">
+          <div class="alert alert-warning">
+            <p style="color: black"><i class="icon-lightbulb"></i>
+              {{model.gridItem?.committeePollType?.pollDeatilDesc}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-title" style="border-radius: 7px;
+                                    width: 98%;
+                                    margin: auto;">متن رأی
+    </div>
+    <div class="panel-body">
+      <div class="row" style="padding: 20px;">
+        <div class="col-6">
+          <div class="alert alert-warning">
+            <p style="color: black"><i class="icon-lightbulb"></i>
+              {{message}}
+            </p>
+          </div>
+        </div>
+        <div class="row customized-row" style="align-content: center;">
+          <div class="col-12">
+            <button class="button normal green icon-download" (click)="downloadForm()" type="button">دانلود رأی کمیسیون پزشکی بدوی
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="hideResult()" class="button normal green">بستن</button>
+</tamin-modal>
+<!-- ---- -->
+
+<!-- Modal Box -->
+<tamin-modal #rejectDetailModal
+             title="دلایل عدم تایید"
+             width="80%">
+  <div class="panel">
+    <div class="row" style="padding: 20px;">
+      <div class="panel-body">
+        <div class="col-12">
+          <div *ngIf="message != null" class="alert alert-warning">
+            <p style="color: black"><i class="icon-lightbulb"></i>
+              {{message}}
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div *ngIf="messageTwo != null" class="alert alert-warning">
+            <p style="color: black"><i class="icon-lightbulb"></i>
+              {{messageTwo}}
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div *ngIf="messageThree != null" class="alert alert-warning">
+            <p style="color: black"><i class="icon-lightbulb"></i>
+              {{messageThree}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="hideRejectDetail()" class="button normal green">بستن</button>
+</tamin-modal>
+<!-- ---- -->
+
+<!-- Modal Box -->
+<tamin-modal #objectionModal
+             title="اعتراض به کمیسیون"
+             width="80%">
+  <form [formGroup]="objectionForm" autocomplete="off" autocomplete="off" novalidate>
+    <div class="panel">
+      <div class="panel-title">اعتراض به کمیسیون</div>
+      <div class="panel-body">
+        <div class="row customized-row">
+          <div class="col-9" style="justify-content: center;
+                                    padding: 20px;">
+            <div class="col-12">
+              <h3 style="text-align: center;">درخواست خود را برای اعتراض در حداکثر 1000 کاراکتر بنویسید</h3>
+            </div>
+            <div class="alert alert-info">
+              <p><i class="icon-lightbulb"></i>
+                متقاضی محترم چنانچه به رای صادره اعتراض دارید از تاریخ ابلاغ رای 30 روز مهلت اعتراض برای شما فراهم می
+                باشد.
+              </p>
+            </div>
+            <div class="col-12" style="padding: 3px;">
+              <tamin-field-label formControlName="objectionMessage" [disabled]="true">متن اعتراض:</tamin-field-label>
+              <ng-container
+                *ngIf="objectionForm.controls.objectionMessage?.touched && !objectionForm.controls.objectionMessage?.valid">
+                  <span *ngIf="objectionForm.controls.objectionMessage.errors.required" class="tamin-form-control-error"
+                        style="color: #b00020;">
+                    لطفا متن اعتراض خود را بنویسید
+                  </span>
+                <span *ngIf="objectionForm.controls.objectionMessage.errors.pattern" class="tamin-form-control-error"
+                      style="color: #b00020;">
+                    متن اعتراض حداکثر 1000 کاراکتر میباشد.
+                  </span>
+              </ng-container>
+              <!--<tamin-field-text-area formControlName="objectionMessage"></tamin-field-text-area>-->
+              <textarea disabled class="tamin-form-control-input tamin-form-control-valid"
+                        style="resize: none;height: 7em" rows="4" cols="50">اینجانب نسبت به رأی صادره کمیسیون پزشکی اعتراض دارم.</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding: 8px">
+      <button (click)="onObjectionSubmit()" class="button normal" type="button">ثبت اعتراض
+      </button>
+      <button (click)="objectionModal.hide();" class="button normal red" type="button">انصراف</button>
+    </div>
+  </form>
+</tamin-modal>
+<!-- ---- -->
+
+<!-- Modal Box -->
+<tamin-modal #turnModal
+             title="نوبت دهی کمیسیون"
+             width="80%">
+  <div class="panel">
+    <div class="panel-body">
+      <div class="row" style="padding: 20px;">
+        <div class="col-10">
+          <tamin-data-grid #sessionGrid></tamin-data-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="turnModal.hide()" class="button normal green">بستن</button>
+</tamin-modal>
+<!-- ---- -->
+
+<!-- Modal Box -->
+<tamin-modal #missDocumentModal
+             title="تکمیل مدرک"
+             width="80%">
+  <div class="panel"
+       style="border: solid 1px #ccc; padding: 10px; margin-bottom: 10px;max-height: 60vh; overflow: auto">
+    <div class="part-title">
+      <p style="margin-bottom: 8px;">
+        متقاضی گرامی جهت ارسال پرونده ضروری است کلیه مدارک مورد نیاز بارگذاری شود.
+      </p>
+      <p>
+        توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+      </p>
+      <div class="alert alert-info" style="padding: 10px;
+                                          margin: 10px;" *ngIf="model.gridItem.status === '06'">
+        <p>
+          مهلت ارسال مدارک تا تاریخ  {{dateTemp}} می باشد و بعد از این تاریخ بارگذاری مدارک امکانپذیر نمیباشد.
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div class="row" style="align-content: center;" [hidden]="model.gridItem?.status === '05'">
+      <div class="part-title" style="background-color: #D8973C;color: #fff;">
+        دانلود و بارگذاری فرم های نقص مدارک کمیسیون
+      </div>
+      <div class="col-12">
+        <button *ngFor="let letterId of letterScanIds;let num = index;" (click)="downloadMissDocForm(letterId)" class="button normal"
+                style="margin-top: 12px; margin-right: 13px;">
+          <span><i class="icon-download"></i><span>دانلود فرم پیوست {{num + 1}}</span></span>
+        </button>
+        <!--<button class="button normal green icon-download" (click)="downloadMissDocForm()" type="button"> دانلود فرم نقص مدارک کمیسیون
+        </button>-->
+      </div>
+    </div>
+    <div class="row" [hidden]="!missMainDocumentGalleryMissing">
+      <div class="col-12">
+        <div class="alert alert-danger">
+          خطا در ورود اطلاعات
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="documentForm">
+        <div class="row document-struct">
+          <div class="part-title">
+            بارگذاری مدارک جدید
+          </div>
+          <div class="col-6">
+            <tamin-field-label formControlName="selectedItem">نوع مدرک</tamin-field-label>
+            <tamin-field-combo-box-static #mainDocTypeCombo displayField="title"
+                                          formControlName="selectedItem"
+                                          placeHolder="انتخاب کنید ..."
+                                          valueField="id"></tamin-field-combo-box-static>
+          </div>
+          <button *ngIf="showMainDownloader" (click)="downloadDocument(1)" class="button normal"
+                  style="margin-top: 12px; margin-right: 13px;">
+            <span><i class="icon-download"></i><span>دانلود مدرک</span></span>
+          </button>
+          <button *ngFor="let item of downloadItems" (click)="downloadDocument(1, item)" class="button normal"
+                  style="margin-top: 12px; margin-right: 13px;">
+            <span><i class="icon-download"></i><span>دانلود مدرک</span></span>
+          </button>
+          <button (click)="uploadMissMainDocument()" [disabled]="documentForm.value.selectedItem === ''"
+                  class="button normal"
+                  style="margin-top: 12px; margin-right: 13px;">
+            <span><i class="icon-plus"></i><span>بارگذاری مدرک جدید</span></span>
+          </button>
+          <div [ngClass]="{'missing': missMainDocumentGalleryMissing}" class="col-12">
+            <tamin-image-gallery-managed #missMainDocumentGallery [maxImageSize]="500"></tamin-image-gallery-managed>
+          </div>
+        </div>
+      </form>
+      <form [formGroup]="documentForm" [hidden]="model.gridItem?.status === '05'">
+        <br>
+        <hr>
+        <br>
+        <div class="row document-struct">
+          <div class="part-title" style="background-color: #D8973C;color: #fff;">
+            بارگذاری مجدد فرم ها و پاسخ های مرتبط
+          </div>
+          <div class="col-6">
+            <tamin-field-label formControlName="selectedItem2">نوع مدرک</tamin-field-label>
+            <tamin-field-combo-box-static #docTypeCombo displayField="title"
+                                          formControlName="selectedItem2"
+                                          placeHolder="انتخاب کنید ..."
+                                          valueField="id"></tamin-field-combo-box-static>
+          </div>
+          <button *ngIf="showDownloader" (click)="downloadDocument(2)" class="button normal"
+                  style="margin-top: 12px; margin-right: 13px;">
+            <span><i class="icon-download"></i><span>دانلود مدرک</span></span>
+          </button>
+          <button (click)="uploadMissDocument()" [disabled]="documentForm.value.selectedItem2 === ''"
+                  class="button normal"
+                  style="margin-top: 12px; margin-right: 13px;">
+            <span><i class="icon-plus"></i><span>بارگذاری مجدد فرم و پاسخ مرتبط</span></span>
+          </button>
+          <div [ngClass]="{'missing': missDocumentGalleryMissing}" class="col-12">
+            <tamin-image-gallery-managed #missDocumentGallery [maxImageSize]="500"></tamin-image-gallery-managed>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div style="padding: 8px">
+    <button (click)="hideMissModalAndSend()" class="button normal green">ذخیره و ارسال مدارک</button>
+    <button (click)="missDocumentModal.hide()" class="button normal red">انصراف</button>
+  </div>
+</tamin-modal>
+<!-- ---- -->
+
+<!-- Modal Box -->
+<tamin-modal #requestListModal
+             title="لیست بیماری های ثبت شده"
+             width="80%">
+  <div class="panel">
+    <div class="panel-body">
+      <app-request-list-medical-committee #requestListComponent></app-request-list-medical-committee>
+    </div>
+  </div>
+  <button (click)="requestListModal.hide()" class="button normal green">بستن</button>
+</tamin-modal>

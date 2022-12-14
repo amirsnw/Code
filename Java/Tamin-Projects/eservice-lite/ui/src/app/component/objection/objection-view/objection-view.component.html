@@ -1,0 +1,22 @@
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <div class="form-control-container">
+    <div class="panel" #panel>
+      <div class="panel-title">مشاهده درخواست</div>
+      <div class="panel-body">
+        <div class="row">
+          <div [hidden]="isHidden">
+            <tamin-field-label formControlName="objectionDesc">شرح اعتراض</tamin-field-label>
+            <tamin-field-static-multiline-text formControlName="objectionDesc"></tamin-field-static-multiline-text>
+          </div>
+          <div>
+            <tamin-field-label formControlName="objectionDesc">مدارک</tamin-field-label>
+            <tamin-image-gallery-managed #imageGallery></tamin-image-gallery-managed>
+          </div>
+        </div>
+      </div>
+      <div class="button-container" style="margin: 3px">
+        <button class="button normal" (click)="redirectTo('/app-request')">بازگشت</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,20 @@
+<div class="alert alert-info">
+  مشاهده درخواست های ثبت شده
+</div>
+<div class="panel">
+  <div class="panel-title">جستجو</div>
+  <div class="panel-body">
+    <app-sso-request-search #ssoRequestSearch (afterSubmit)="onSearch($event)"></app-sso-request-search>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-title">لیست</div>
+  <div class="panel-body">
+    <app-sso-request-list #ssoRequestList></app-sso-request-list>
+  </div>
+</div>
+<p style="margin:5px;">
+  <button type="button" class="button normal gray" (click)="redirectTo('/sso')"><i class=" icon-right-big"></i><span>بازگشت به صفحه نخست</span>
+  </button>
+</p>
+

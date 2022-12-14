@@ -1,0 +1,65 @@
+<div class="panel col-6 col-s-6">
+  <div class="panel-title"> ثبت اطلاعات سال (های) مالی شرکت بر مبنای دوره درخواست بازرسی دفاتر قانونی </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate (ngSubmit)="onSave(editForm.value)">
+      <div class="form-control-container">
+        <div class="panel col-12 col-s-12">
+        <div class="row">
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="type">نوع</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="type" displayField="name" valueField="value" #typeComboBox></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="nationalId">{{nationalName}} </tamin-field-label>
+            <tamin-field-natioanl-id formControlName="nationalId"></tamin-field-natioanl-id>
+          </div>
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="birthDate">تاریخ تولد</tamin-field-label>
+            <tamin-field-validator  formControlName="birthDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="birthDate" placeholder=""></tamin-field-persian-date>
+          </div>
+        </div>
+        </div>
+        <div class="panel col-12 col-s-12">
+        <div class="row">
+          <div class=" col-12 col-s-12">
+            <tamin-field-label formControlName="auditorName">نام موسسه و یا حسابرس مستقل</tamin-field-label>
+            <tamin-field-validator formControlName="auditorName"></tamin-field-validator>
+            <tamin-field-text formControlName="auditorName"></tamin-field-text>
+          </div>
+        </div>
+          <div class="row">
+          <div class=" col-6 col-s-6">
+            <tamin-field-label formControlName="reportResult">نتیجه گزارش</tamin-field-label>
+             <tamin-field-combo-box-static formControlName="reportResult" displayField="name" valueField="value" #reportResultComboBox></tamin-field-combo-box-static>
+          </div>
+            <div class=" col-6 col-s-6">
+            <tamin-field-label formControlName="endDate">منتهی به تاریخ</tamin-field-label>
+              <tamin-field-validator  formControlName="endDate"></tamin-field-validator>
+            <tamin-field-persian-date formControlName="endDate" placeholder=""></tamin-field-persian-date>
+          </div>
+            <div class=" col-6 col-s-6">
+            <tamin-field-label formControlName="phoneNumber">تلفن</tamin-field-label>
+              <tamin-field-validator formControlName="phoneNumber"></tamin-field-validator>
+            <tamin-field-number formControlName="phoneNumber"></tamin-field-number>
+          </div>
+            <div class=" col-6 col-s-6">
+            <tamin-field-label formControlName="postCode">کد پستی</tamin-field-label>
+              <tamin-field-validator formControlName="postCode"></tamin-field-validator>
+            <tamin-field-number formControlName="postCode"></tamin-field-number>
+          </div>
+          <div class=" col-12 col-s-12">
+            <tamin-field-label formControlName="address">آدرس</tamin-field-label>
+            <tamin-field-validator formControlName="address"></tamin-field-validator>
+            <tamin-field-text-area formControlName="address"></tamin-field-text-area>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="panel col-12 col-s-12">
+        <button #submitButton type="submit" class="button normal">ذحیره </button>
+        <button type="button" class="button normal orange" (click)="back()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i><span>با انتخاب کارگاه، مشخصات کارگاه انتخاب شده در کادرهای مربوطه نمایش داده خواهد شد. سپس با انتخاب فایل های مربوطه و انتخاب گزینه "بارگذاری فایل ها"، فایل های انتخابی به سرویس دهنده مرکزی ارسال شده و در صورت نبود هیچگونه خطا در فایل های ارسال شده، سیستم شما را به مرحله بعدی ("مشاهده اطلاعات لیست") هدایت خواهد کرد. در صورتیکه فایل های ارسال شده دارای خطا باشند، سیستم آنرا شناسایی نموده و پیامی نشان داده خواهد. </span>
+</div>
+<div class="panel-body">
+  <form [formGroup]="newForm" novalidate>
+    <div class="form-control-container row">
+      <div class="col-12 col-s-12" style="padding-right:5px;">
+        <tamin-field-label formControlName="workshopCode">کارگاه</tamin-field-label>
+        <tamin-field-validator formControlName="workshopCode"></tamin-field-validator>
+        <tamin-field-auto-complete-data-grid formControlName="workshopCode" placeholder="کارگاه" #workshopSpecification></tamin-field-auto-complete-data-grid>
+      </div>
+      <h3 class="col-6 col-s-6" style="margin-top: 25px;">نام کارگاه : {{
+        workshopName }}</h3>
+      <h3 class="col-6 col-s-6" style="margin-top: 25px;">کد شعبه : {{
+        branchCode }}</h3>
+      <h3 class="col-6 col-s-6" style="margin-top: 25px;">ردیف پیمان : {{
+        rcntrow }}</h3>
+      <h3 class="col-6 col-s-6" style="margin-top: 25px;">عنوان پیمان : {{
+        rcntassignname }}</h3>
+      <!-------------------------------------------------------------------->
+      <div class="col-6 col-s-6">
+        <h4 style="margin-top: 10px;">تصویر :</h4>
+        <tamin-field-image-upload #pbl1 controlName="DesignGuid1" [imageGuid]="documentModelUi?.DesignGuid1" [restUrl]="restUrlImages"
+          (change)="pbl1.uploadBase64($event)" (onImageDeleted)="onImageGuidDeleted1($event)" (onImageUploaded)="onImageGuidUploaded1($event)">
+        </tamin-field-image-upload>
+        <input type="text" formControlName="DesignGuid1" value="" style="background-color: #eee;display:none;" />
+        <!-- <label class="labelInlineValidation" [hidden]="documenteditForm.controls.DesignGuid1.valid || documenteditForm.controls.imageGuid.pristine">
+            تصویر را انتخاب نمایید
+        </label> -->
+      </div>
+      <!-------------------------------------------------------------------->
+      <div class="col-6 col-s-6">
+        <h4 style="margin-top: 10px;">پرسشنامه :</h4>
+        <tamin-field-image-upload #pbl2 controlName="DesignGuid2" [imageGuid]="documentModelUi?.DesignGuid2" [restUrl]="restUrlImages"
+          (change)="pbl2.uploadBase64($event)" (onImageDeleted)="onImageGuidDeleted2($event)" (onImageUploaded)="onImageGuidUploaded2($event)">
+        </tamin-field-image-upload>
+        <input type="text" formControlName="DesignGuid2" value="" style="background-color: #eee;display:none;" />
+        <!-- <label class="labelInlineValidation" [hidden]="documenteditForm.controls.DesignGuid1.valid || documenteditForm.controls.imageGuid.pristine">
+            تصویر را انتخاب نمایید
+        </label> -->
+      </div>
+      <!-------------------------------------------------------------------->
+    </div>
+  </form>
+</div>

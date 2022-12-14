@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="insurance-technical-business:ejb">
+    <output-path>$PROJECT_DIR$/insurance-technical-business/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>insurance-technical-business</module>
+        <packaging>ejb</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="insurance-technical-business-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="insurance-technical-business:ejb exploded" />
+    </root>
+  </artifact>
+</component>

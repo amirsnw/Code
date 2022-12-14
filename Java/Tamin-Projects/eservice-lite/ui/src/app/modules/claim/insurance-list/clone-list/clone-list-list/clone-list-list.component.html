@@ -1,0 +1,50 @@
+<div class="panel-body">
+  <tamin-data-grid #taminDataGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+  <!-- <p style="margin:5px;">
+    <button type="button" class="button normal green" (click)="newClick()">ثبت درخواست جدید</button>
+    <button type="button" class="button normal dark" (click)="backToPanelClick()">بازگشت به صفحه نخست</button>
+  </p> -->
+</div>
+<tamin-modal #theModal style="width:100px;" title="برگ صادر شده">
+  <form [formGroup]="newForm" autocomplete="off" novalidate (ngSubmit)="newFormSubmit(newForm.value, newForm.valid)">
+    <div class="form-control-container row">
+      <!---------------------------------------------------------------------------------------------------------->
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="displayDate">از دروه</tamin-field-label>
+        <tamin-field-static-text formControlName="displayDate" placeholder="از دوره"></tamin-field-static-text>
+      </div>
+      <!---------------------------------------------------------------------------------------------------------->
+      <div class="col-6 col-6-1" style="padding: 3px;">
+        <tamin-field-label formControlName="newDate">به دوره</tamin-field-label>
+        <tamin-field-persian-date formControlName="newDate"></tamin-field-persian-date>
+      </div>
+      <!---------------------------------------------------------------------------------------------------------->
+      <div style="padding-left: 10px;" class="col-12 col-s-12">
+        <p style="margin-top:5px;">
+          <button type="submit" class="button normal" [disabled]="!newForm.valid">انتقال لیست</button>
+          <button type="button" class="button normal dark" (click)="hide()">انصراف</button>
+        </p>
+      </div>
+    </div>
+  </form>
+</tamin-modal>
+<tamin-modal #theNewModal style="width:100px;" title="برگ صادر شده">
+  <form [formGroup]="newForm" autocomplete="off" novalidate (ngSubmit)="AskYes(newForm.value, newForm.valid)">
+    <div class="form-control-container row">
+      <!---------------------------------------------------------------------------------------------------------->
+      <p style="margin-top:5px;">
+        اطلاعات دوره {{ Askyear }} / {{ Askmon }} به دوره {{ AskmcurrentYear }} / {{ AskmcurrentMonth }} انتقال خواهد
+        يافت.<br />
+        جهت انتقال ليست بدون تغيير روي بله و براي ويرايش ليست، قبل از ارسال روي خير کليک کنيد
+      </p>
+      <!---------------------------------------------------------------------------------------------------------->
+      <div style="padding-left: 10px;" class="col-12 col-s-12">
+        <p style="margin-top:5px;">
+          <button type="submit" class="button normal" [disabled]="!newForm.valid">بله</button>
+          <button type="button" class="button normal red" (click)="AskNo(newForm.value, newForm.valid)">خیر</button>
+          <button type="button" class="button normal dark" (click)="Askhide()">انصراف</button>
+        </p>
+      </div>
+    </div>
+  </form>
+</tamin-modal>

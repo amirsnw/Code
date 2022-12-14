@@ -1,0 +1,27 @@
+<div class="row" [hidden]="!formValidationError">
+  <div class="col-12">
+    <div class="alert alert-danger">
+      خطا در ورود اطلاعات
+    </div>
+  </div>
+</div>
+<app-stage-three-history-medical-committee #historyComponent
+                                           (formError)="showErrorBox()"
+                                           [mainModel]="this.model"
+                                           [diseaseModel]="this.diseaseModel"
+                                           [hidden]="showDoctorGrid">
+</app-stage-three-history-medical-committee>
+<app-stage-three-document-medical-committee #documentComponent
+                                            (formError)="showErrorBox()"
+                                            [mainModel]="this.model"
+                                            [diseaseModel]="this.diseaseModel"
+                                            [hidden]="showDoctorGrid">
+</app-stage-three-document-medical-committee>
+<div class="panel" [hidden]="!showDoctorGrid">
+  <div class="page-title">
+    لیست بیماریهای ثبت شده
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #requestDiseaseGrid (itemAction)="onRequestAction($event)"></tamin-data-grid>
+  </div>
+</div>

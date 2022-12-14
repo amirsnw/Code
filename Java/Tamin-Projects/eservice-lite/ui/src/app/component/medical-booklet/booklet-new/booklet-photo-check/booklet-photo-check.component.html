@@ -1,0 +1,62 @@
+<div class="panel">
+  <div class="panel-title">انتخاب تصویر دریافت کننده</div>
+  <div class="panel-body">
+    <ng-container *ngIf="hasPhoto">
+      <div class="row">
+        <div class="col-9">
+          <h4>
+            <span>در صورتیکه مایلید از تصویر مقابل جهت درج در دفترچه بیمه درمانی استفاده شود گزینه</span>
+            &nbsp;<span style="color: #27AE60">از این عکس در دفترچه بیمه درمانی استفاده شود</span>
+            &nbsp;<span>را انتخاب نمایید.</span>
+          </h4>
+          <br>
+          <h4>
+            <span>در صورتیکه مایلید ار تصویر دیگری در دفترجه استفاده شود گزینه</span>
+            &nbsp;<span style="color:crimson">از این عکس در دفترچه بیمه درمانی استفاده نشود</span>
+            &nbsp;<span>را انتخاب نمایید.</span>
+          </h4>
+        </div>
+        <div class="col-3" style="border:solid 1px #cacaca;text-align: center">
+          <img [attr.src]="imageSource">
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px">
+        <div class="col-12 button-container">
+          <button type="button" class="button normal green">
+            <i class="icon-ok"></i>
+            <span>از این عکس در دفترچه بیمه درمانی استفاده شود</span>
+          </button>
+          <button type="button" class="button normal red">
+            <i class="icon-cancel"></i>
+            <span>از این عکس در دفترچه بیمه درمانی استفاده نشود</span>
+          </button>
+          <button type="button" class="button normal gray">
+            <i class=" icon-left-big"></i>
+            <span>بازگشت به مرحله قبل (انتخاب دریافت کننده دفترچه)</span>
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!hasPhoto">
+      <p>
+        توضیحات
+      </p><br>
+      <div class="row">
+        <div class="col-s-4">
+          <button type="button" class="button normal green" style="width: 100%"
+                  (click)="downloadNationalCardPhoto.open()">
+            <i class="icon-ok"></i>
+            <span>دارای کارت ملی جدید می باشم و مایلم از تصویر آن استفاده شود</span>
+          </button>
+          <br>
+          <button type="button" class="button normal green" style="width: 100%" (click)="nextStep.emit()">
+            <i class="icon-ok"></i>
+            <span>الصاق تصویر فیزیکی با مراجعه به کارگزاری</span>
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<app-download-national-card-photo #downloadNationalCardPhoto></app-download-national-card-photo>

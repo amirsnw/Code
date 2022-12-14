@@ -1,0 +1,12 @@
+Ext.define('IncomeBank.tamin.form.field.TimestampDateField', {
+    extend: 'IncomeBank.tamin.form.field.PDate',
+    alias: 'widget.timestampdatefield',
+    msgTarget: 'side',
+    setValue: function (value) {
+        if (value !== null) {
+            value = new Date(value);
+        }
+        this.callParent(arguments);
+    }
+});
+

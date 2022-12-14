@@ -1,0 +1,41 @@
+<tamin-modal #mapModal>
+    <div [attr.id]="id" style="width: 100%; height: 400px" class="map" dir="ltr" #theMap></div>
+</tamin-modal>
+
+<div class="panel">
+  <div class="page-title">جستجو</div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row">
+          <div class="col-4">
+            <tamin-field-label formControlName="type">نوع مرکز</tamin-field-label>
+            <tamin-field-combo-box-static formControlName="type" [dataItems]="types" valueField="value"
+                                          displayField="name"></tamin-field-combo-box-static>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="city">شهر</tamin-field-label>
+            <tamin-field-text formControlName="city"></tamin-field-text>
+          </div>
+          <div class="col-4">
+            <tamin-field-label formControlName="name">نام</tamin-field-label>
+            <tamin-field-text formControlName="name"></tamin-field-text>
+          </div>
+          <div class="col-12">
+            <tamin-field-label formControlName="address">آدرس</tamin-field-label>
+            <tamin-field-text formControlName="address"></tamin-field-text>
+          </div>
+        </div>
+      </div>
+    </form>
+    <p style="margin-top:5px;">
+      <button type="button" (click)="onSearch()" class="button normal" [disabled]="!searchForm.valid">جستجو
+      </button>
+      <button type="button" class="button normal dark" (click)="resetSearch()">نمایش همه</button>
+    </p>
+  </div>
+</div>
+
+<div class="alert alert-info">با انتخاب هر سطر می توانید مکان مرکز را بر روی نقشه مشاهده کنید</div>
+<tamin-data-grid #dataGrid (itemAction)="onSelect($event)"></tamin-data-grid>
+

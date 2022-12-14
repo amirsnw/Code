@@ -1,0 +1,35 @@
+<div class="page-title">
+  <p>مشاهده درخواست های تعهدات کوتاه مدت</p>
+</div>
+<div class="panel-body">
+  <form [formGroup]="calculateDataForm" autocomplete="off" novalidate>
+    <div class="row">
+      <div class="col-2">
+        <tamin-field-label formControlName="nationalId">کد ملی</tamin-field-label>
+        <tamin-field-static-text formControlName="nationalId"></tamin-field-static-text>
+      </div>
+      <div class="col-2">
+        <tamin-field-label formControlName="insuranceNumber">شماره بیمه</tamin-field-label>
+        <tamin-field-static-text formControlName="insuranceNumber"></tamin-field-static-text>
+      </div>
+      <div class="col-2">
+        <tamin-field-label formControlName="firstName">نام</tamin-field-label>
+        <tamin-field-static-text formControlName="firstName"></tamin-field-static-text>
+      </div>
+      <div class="col-2">
+        <tamin-field-label formControlName="lastName">نام خانوادگی</tamin-field-label>
+        <tamin-field-static-text formControlName="lastName"></tamin-field-static-text>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-12">
+      <div class="panel">
+        <div class="panel-title">لیست درخواست ها</div>
+        <tamin-data-grid #dataGrid></tamin-data-grid>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="button normal dark" (click)="backToPanelClick()">بازگشت به صفحه نخست</button>
+
+</div>

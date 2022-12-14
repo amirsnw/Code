@@ -1,0 +1,47 @@
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <div class="form-control-container">
+    <div class="panel">
+      <div class="panel-title">مشاهده درخواست</div>
+      <div class="panel-body">
+        <div class="row">
+          <div [hidden]="isHidden">
+            <tamin-field-label formControlName="objectionDesc">شرح اعتراض</tamin-field-label>
+            <tamin-field-static-multiline-text formControlName="objectionDesc"></tamin-field-static-multiline-text>
+          </div>
+          <div>
+            <tamin-field-label formControlName="objectionDesc">مدارک</tamin-field-label>
+            <tamin-image-gallery-managed #imageGallery></tamin-image-gallery-managed>
+          </div>
+        </div>
+      </div>
+      <div class="button-container" style="margin: 3px">
+        <button class="button normal green" (click)="onAnswer('2502')" [disabled]="isDisabled" [hidden]="isBtnHidden">بازنگری محاسبات</button>
+        <button class="button normal blue" (click)="onAnswer('2503')" [disabled]="isDisabled" [hidden]="isBtnHidden">طرح در هیئت</button>
+        <button class="button normal red" (click)="onAnswer('2603')" [disabled]="isDisabled" [hidden]="!isBtnHidden"><i
+          class="icon-cancel"></i><span>رد درخواست</span></button>
+        <button class="button normal green" (click)="onAnswer('2602')" [disabled]="isDisabled" [hidden]="!isBtnHidden">
+          <i class="icon-ok"></i><span>تایید درخواست</span></button>
+        <button class="button normal orange" (click)="onShowDefect()" [disabled]="isDisabled" [hidden]="!isDefectHide">نقص مدارک</button>
+        <button class="button normal" (click)="redirectTo('/sso/request')">بازگشت</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<tamin-modal #theModal title="نقص مدارک">
+  <div>
+    <form [formGroup]="modalForm" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row col-12 col-s-12">
+          <div class="col-12 col-s-12">
+            <tamin-field-label formControlName="defectDesc">توضیحات</tamin-field-label>
+            <tamin-field-validator formControlName="defectDesc"></tamin-field-validator>
+            <tamin-field-text-area formControlName="defectDesc"></tamin-field-text-area>
+          </div>
+        </div>
+        <button type="button" class="button normal" (click)="onSaveDefect()">ارسال</button>
+        <button type="button" class="button normal orange" (click)="onHideDefect()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</tamin-modal>

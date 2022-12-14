@@ -1,0 +1,44 @@
+import { ListDetailModel } from "./listDetail.model";
+
+export class ListDetailItemRowModel  {
+    dateOfBirth: string;
+    birthDate: string;
+    birthDateDisplay: string;
+    dailyWage: string;
+    employeePremium: Number;
+    excludedBonus: string;
+    fatherName: string;
+    firstName: string;
+    gender: string;
+    id: string;
+    idCardNumber: string;
+    nationalId: string;
+    identityIssuDate: string;
+    identityIssuPlace: string;
+    employeePortionOfPremium1: Number;
+    employeePortionOfPremium1Display: string;
+    salaryPlusIncludedBonus: Number;
+    salaryPlusIncludedBonusDisplay: string;
+    salaryPlusIncludedAndExcludedBonusDisplay: string;
+    salaryPlusIncludedAndExcludedBonus: Number;
+    identityNumber: string;
+    includedContinuousBonus: string;
+    includedDiscontinuousBonus: string;
+    inclusiveBenefit: number;
+    inclusiveWageAndBenefit: Number;
+    insuranceNumber: string;
+    jobCode: string;
+    insuranceJob: string;
+    jobDescription: string;
+    lastName: string;
+    listId: ListDetailModel;
+    jobDescriplistIndextion: string;
+    monthlyWage: Number;
+    monthlyWageDiplay: string;
+    nationalCode: string;
+    nationality: string;
+    wageAndBenefit: Number;
+    workEndDate: string;
+    workStartDate: string;
+    workingDays: string;
+     }

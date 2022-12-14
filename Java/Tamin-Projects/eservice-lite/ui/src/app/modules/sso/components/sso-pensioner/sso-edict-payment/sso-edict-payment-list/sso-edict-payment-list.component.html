@@ -1,0 +1,99 @@
+<div class="page" *ngIf="items && items.length != 0" id="data">
+  <div class="row">
+    <h2 style="text-align: center">
+      سازمان تامین اجتماعی
+    </h2>
+    <h4 style="text-align: center">
+      <span>فیش مستمری</span>&nbsp;<span>{{month}}</span>&nbsp;<span>ماه</span>&nbsp;<span>{{year | persianNumber}}</span>
+    </h4>
+    <div class="col-12">
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <p><span>نام:</span>&nbsp;<strong>{{firstName}}</strong></p>
+            <p><span>نام خانوادگی:</span>&nbsp;<strong>{{lastName}}</strong></p>
+            <p><span>شماره مستمری:</span>&nbsp;<strong>{{pensionerId | persianNumber}}</strong></p>
+            <p><span>نوع پرداخت:</span>&nbsp;<strong>{{paymentType}}</strong></p>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 col-s-4">
+      <table>
+        <thead>
+        <tr>
+          <th>پرداخت های انجام شده</th>
+          <th>مبلغ (ریال)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let dataItem of items1">
+          <td> {{ dataItem.tprDesc  | persianNumber}}</td>
+          <td style="text-align: left">{{ dataItem.sumAmount | persianNumber:'cs'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4 col-s-4">
+      <table>
+        <thead>
+        <tr>
+          <th>کسر پرداخت</th>
+          <th>مبلغ (ریال)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let dataItem of items2">
+          <td> {{ dataItem.tprDesc  | persianNumber}}</td>
+          <td style="text-align: left">{{ abs(dataItem.sumAmount) | persianNumber:'cs'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4 col-s-4">
+      <table>
+        <thead>
+        <tr>
+          <th>مانده وام و کسورات</th>
+          <th>مبلغ (ریال)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let dataItem of items3">
+          <td> {{ dataItem.tprDesc  | persianNumber}}</td>
+          <td style="text-align: left">{{ dataItem.sumAmount | persianNumber:'cs'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12">
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <p>
+              <span>خالص پرداختی:</span>&nbsp;
+              <strong>{{getTotal() | persianNumber:'cs'}}</strong>&nbsp;
+              <strong>({{numToPersian(getTotal())}})</strong> &nbsp;<span>ریال</span></p>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div style="margin-top: 10px">
+        <h3 *ngFor="let dataItem of items6" style="text-align: center">
+          <strong>
+            {{dataItem.infDesc}}
+          </strong>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="padding: 5px;margin: 5px" *ngIf="items && items.length != 0">
+  <button type="button" class="button normal" (click)="print()">چاپ فیش مستمری</button>
+  <button type="button" class="button normal" (click)="sendToAnnoncment()">صدور و ارسال به صندوق شخصی</button>
+</div>

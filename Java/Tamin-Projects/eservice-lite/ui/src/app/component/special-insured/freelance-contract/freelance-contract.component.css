@@ -1,0 +1,81 @@
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  padding: 5px;
+}
+@media only screen and (min-width: 767px) {
+  .is-active {
+    background-color: #27ae60;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    height: 30px;
+  }
+
+  .de-active {
+    background-color: #999999;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+  }
+
+  .status-selected {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 82%;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .send-approve {
+    margin-right: 86%;
+  }
+
+  .confirm-approve {
+    margin-right: 89%;
+  }
+
+  .width-state-one {
+    width: 82%;
+  }
+
+  .width-state-two {
+    width: 354px;
+    font-size: 15px;
+  }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+  .is-active {
+    background-color: #27ae60;
+    padding: 5px;
+    color: white;
+    height: 30px;
+    text-align: center;
+  }
+
+  .de-active {
+    background-color: #999999;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    height: 30px;
+  }
+
+  .status-selected {
+    height: 199px;
+    font-size: 17px;
+  }
+
+  .margin-mobil {
+    margin-top: 60px;
+  }
+
+  .button-margin {
+    margin-top: 30px;
+  }
+}

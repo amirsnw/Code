@@ -1,0 +1,276 @@
+<!-- اگر حداقل در یک شعبه نامنویسی شده باشد (مستمری بگیر است) -->
+<div class="row" [hidden]="!committeeFormValidationError">
+  <div class="col-12">
+    <div class="alert alert-danger">
+      خطا در ورود اطلاعات
+    </div>
+  </div>
+</div>
+
+<!-- وضعیت خدمت سربازی -->
+<div class="panel" [hidden]="model.gender === 'f' || this.model.militaryDutyDisable">
+  <div class="panel-body">
+    <div class="page-title">
+      وضعیت خدمت سربازی
+    </div>
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-combo-box-static [dataItems]="militaryHaveOrNotHave" displayField="name"
+                                        formControlName="militaryStatusCode" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!hasPendingMilitary">
+          <div class="alert alert-info" style="margin-bottom: 20px; border-radius: 12px 2px 2px 6px;">
+            <p><i class=""></i>
+              فرم عدم اقدام
+            </p>
+          </div>
+          <div class="row customized-row" style="align-content: center;">
+            <div class="col-12">
+              <button class="button normal green icon-download" (click)="downloadForm9PDF()" type="button"> دانلود فرم عدم اقدام
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-4" [hidden]="!hasMilitary" [ngClass]="{'missing': militaryDutyGalleryMissing}">
+          <tamin-image-gallery-managed #militaryDutyGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('40',2)"
+                                       (afterInsert)="onInsertImage('40',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadMilitaryHistoryFile()"
+                  [disabled]="model.militaryDutyUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری مدارک
+          </button>
+        </div>
+        <div class="col-4" [hidden]="!hasPendingMilitary" [ngClass]="{'missing': pendingMilitaryDutyGalleryMissing}">
+          <tamin-image-gallery-managed #pendingMilitaryDutyGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('80',1)"
+                                       (afterInsert)="onInsertImage('80',1)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadPendingMilitaryHistoryFile()"
+                  [disabled]="model.pendingMilitaryDutyUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری فرم
+          </button>
+        </div>
+        <div class="col-12">
+          <div [hidden]="!hasMilitary && !hasPendingMilitary" class="alert alert-warning">
+            توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- ---- -->
+
+<!-- دیگر سوابق -->
+<div class="panel">
+  <div class="panel-body">
+    <div class="page-title">
+      دیگر سوابق
+    </div>
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-4" *ngIf="this.model.formCase === 1">
+          دادنامه دیوان عدالت اداری دارم ؟
+        </div>
+        <div class="col-2" *ngIf="this.model.formCase === 1">
+          <tamin-field-combo-box-static [dataItems]="committeeHaveOrNotHave" displayField="name"
+                                        formControlName="divan" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!hasDivan" [ngClass]="{'missing': divanGalleryMissing}">
+          <tamin-image-gallery-managed #divanGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('126',2)"
+                                       (afterInsert)="onInsertImage('126',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadDivanFile()"
+                  [disabled]="model.divanUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری مدارک
+          </button>
+        </div>
+      </div>
+
+      <div class="row" [hidden]="!model.noEmployee || model.ninteenOneChecked">
+        <div class="col-4">
+          آیا معاینات قبل از استخدام انجام شده است ؟
+        </div>
+        <div class="col-2">
+          <tamin-field-combo-box-static [dataItems]="committeeHaveOrNotHave" displayField="name"
+                                        formControlName="hasVisitBeforeJob" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="form.value.hasVisitBeforeJob == undefined ||
+                                    (hasVisitBeforeJob || this.model.lightWork)">
+          <div class="alert alert-info" style="margin-bottom: 20px; border-radius: 12px 2px 2px 6px;">
+            <p><i class=""></i>
+              فرم استعلام از کارفرما
+            </p>
+          </div>
+          <div class="row customized-row" style="align-content: center;">
+            <div class="col-12">
+              <!--<a href="/view/assets/pdfs/committeeForm4.pdf"  download>-->
+              <button class="button normal green icon-download" (click)="downloadForm1PDF()" type="button"> دانلود فرم استعلام از کارفرما
+              </button>
+              <!--</a>-->
+            </div>
+            <!--<div class="col-12">
+              <div class="alert alert-info">
+                <p><i class="icon-lightbulb"></i>
+                  بارگذاری فرم استعلام از کارفرما الزامی است، لطفا فایل آن را دانلود و چاپ نموده، پس از تکمیل توسط پزشک
+                  معالج، آن را
+                  اسکن
+                  و بارگذاری نمایید.
+                </p>
+              </div>
+            </div>-->
+          </div>
+        </div>
+        <div class="col-3" [hidden]="!hasVisitBeforeJob" [ngClass]="{'missing': visitBeforeJobGalleryMissing}">
+          <tamin-image-gallery-managed #visitBeforeJobGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('103',2)"
+                                       (afterInsert)="onInsertImage('103',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadVisitBeforeJobFile()"
+                  [disabled]="model.visitBeforeJobUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری فرم
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          آیا در دوره اشتغال مورد معاینه پزشکی قرار گرفته اید ؟
+        </div>
+        <div class="col-2">
+          <tamin-field-combo-box-static [dataItems]="committeeHaveOrNotHave" displayField="name"
+                                        formControlName="hasVisitInJob" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!hasVisitInJob" [ngClass]="{'missing': visitInJobGalleryMissing}">
+          <tamin-image-gallery-managed #visitInJobGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('152',2)"
+                                       (afterInsert)="onInsertImage('152',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadVisitInJobFile()"
+                  [disabled]="model.visitInJobUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری مدارک
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          آیا سابقه دریافت کارت مهارت شغلی دارید ؟
+        </div>
+        <div class="col-2">
+          <tamin-field-combo-box-static [dataItems]="committeeHaveOrNotHave" displayField="name"
+                                        formControlName="hasExpertJob" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!hasExpertJob" [ngClass]="{'missing': expertJobGalleryMissing}">
+          <tamin-image-gallery-managed #expertJobGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('94',2)"
+                                       (afterInsert)="onInsertImage('94',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadExpertJobFile()"
+                  [disabled]="model.expertJobUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری مدارک
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          آیا دارای قرارداد یا حکم کارگزینی هستید ؟
+        </div>
+        <div class="col-2">
+          <tamin-field-combo-box-static [dataItems]="committeeHaveOrNotHave" displayField="name"
+                                        formControlName="hasContract" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!hasContract" [ngClass]="{'missing': contractGalleryMissing}">
+          <tamin-image-gallery-managed #contractGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('98',2)"
+                                       (afterInsert)="onInsertImage('98',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadContractFile()"
+                  [disabled]="model.contractUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری مدارک
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          آیا سابقه گواهی سلامت و بهداشت دارید ؟
+        </div>
+        <div class="col-2">
+          <tamin-field-combo-box-static [dataItems]="committeeHaveOrNotHave" displayField="name"
+                                        formControlName="hasHealthyCertificate" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!hasHealthyCertificate" [ngClass]="{'missing': healthyCertificateGalleryMissing}">
+          <tamin-image-gallery-managed #healthyCertificateGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('92',2)"
+                                       (afterInsert)="onInsertImage('92',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadHealthyCertificateFile()"
+                  [disabled]="model.healthyCertificateUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری مدارک
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          آیا سابقه دریافت گواهینامه رانندگی دارید ؟
+        </div>
+        <div class="col-2">
+          <tamin-field-combo-box-static [dataItems]="committeeHaveOrNotHave" displayField="name"
+                                        formControlName="hasDrivingCertificate" placeHolder="انتخاب کنید ..."
+                                        valueField="value">
+          </tamin-field-combo-box-static>
+        </div>
+        <div class="col-3" [hidden]="!hasDrivingCertificate" [ngClass]="{'missing': drivingCertificateGalleryMissing}">
+          <tamin-image-gallery-managed #drivingCertificateGallery
+                                       [maxImageSize]="500"
+                                       (afterRemove)="onRemoveImage('97',2)"
+                                       (afterInsert)="onInsertImage('97',2)">
+          </tamin-image-gallery-managed>
+          <button (click)="uploadDrivingCertificateFile()"
+                  [disabled]="model.drivingCertificateUploadExceed"
+                  class="button normal blue icon-upload" type="button"> بارگذاری مدارک
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div [hidden]="!hasVisitBeforeJob && !hasExpertJob
+                && !hasContract && !hasHealthyCertificate && !hasDrivingCertificate"
+               class="alert alert-warning">
+            توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- ---- -->

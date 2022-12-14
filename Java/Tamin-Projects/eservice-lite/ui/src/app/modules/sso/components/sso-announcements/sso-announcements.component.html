@@ -1,0 +1,15 @@
+<div class="alert alert-info">
+  مشاهده مکاتبات سازمانی
+</div>
+<div class="panel">
+  <div class="panel-title">جستجو</div>
+  <div class="panel-body">
+    <app-sso-announcements-search #ssoAnnouncementsSearch
+                                  (afterSubmit)="onSearch($event)"></app-sso-announcements-search>
+  </div>
+</div>
+<app-sso-announcements-list #ssoAnnouncementsList></app-sso-announcements-list>
+<p style="margin:5px;">
+  <button type="button" class="button normal gray" (click)="redirectTo('/sso')"><i class=" icon-right-big"></i><span>بازگشت به صفحه نخست</span>
+  </button>
+</p>

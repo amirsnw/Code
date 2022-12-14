@@ -1,0 +1,7 @@
+<div class="alert alert-info">
+  مشاهده حکم مستمری
+</div>
+<app-edict-view #viewComponent></app-edict-view>
+<app-edict-search (afterSubmit)="loadData($event)" #searchComponent></app-edict-search>
+<app-edict-list #listComponent [insuranceNumber]="viewComponent.getInsuranceNumber()"></app-edict-list>
+<app-edict-list-subdominant #subdominantComponent></app-edict-list-subdominant>

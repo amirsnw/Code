@@ -1,0 +1,32 @@
+<div class="panel">
+  <div class="page-title">جستجو</div>
+  <div class="panel-body">
+    <!-- <form [formGroup]="searchForm" autocomplete="off" novalidate (ngSubmit)="searchFormSubmit()"> -->
+    <form [formGroup]="searchForm" autocomplete="off" novalidate>
+      <div class="form-control-container">
+        <div class="row">
+          <div class="col-3">
+            <tamin-field-label formControlName="nationalCode">کد ملی:</tamin-field-label>
+            <tamin-field-validator formControlName="nationalCode"></tamin-field-validator>
+            <tamin-field-natioanl-id formControlName="nationalCode" placeholder="کدملی"></tamin-field-natioanl-id>
+          </div>
+          <div class="col-2">
+            <tamin-field-label formControlName="ticketCode">کد اعتباری:</tamin-field-label>
+            <tamin-field-validator formControlName="ticketCode"></tamin-field-validator>
+            <tamin-field-text formControlName="ticketCode" placeholder="کد اعتباری"></tamin-field-text>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="button-container">
+              <button type="button" class="button normal" (click)="sendUserTicket()" [disabled]="!searchForm.valid">دریافت کد اعتباری</button>
+              <!--[disabled]="!searchForm.valid"-->
+              <button type="submit" class="button normal" (click)="searchFormSubmit(searchForm.value)" [disabled]="!isDesabled"  >جستجو</button>
+              <button type="button" class="button normal orange" (click)="resetForm()">پاک کردن فرم</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

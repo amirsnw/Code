@@ -1,0 +1,85 @@
+<div class="row main-container" style="padding: 1px; height: 100%;">
+  <div class="col-12 col-s-12" style="padding: 1px 0px;">
+    <div class="page-title" style="margin-bottom: 1px;">
+      خدمات غیرحضوری مرتبط با بیمه شدگان
+    </div>
+  </div>
+  <!--========================================================================-->
+  <!--Is Web-->
+  <!--========================================================================-->
+  <div *ngIf="isWeb" class="col-12 col-s-12" style="padding: 1px 0px;">
+    <div class="col-4 col-s-4" style="padding: 1px 0px; text-align: center;">
+      <div style="margin-bottom: -15px;">
+        <img class="insured-side-image" src="assets/images/portal/01.png">
+      </div>
+      <div style="text-align: justify; padding: 1px 15px 15px 15px;">
+        در این قسمت شما می توانید از انواع سرویس های غیر حضوری سازمان تامین اجتماعی مرتبط با حوزه بیمه شدگان مطلع شده و از این خدمات
+        الکترونیک بهره مند شوید. جهت استفاده از سرویس های ذیل لازم است قبلا در پرتال ثبت نام کرده و نام کاربری و رمز دریافت
+        نمایید.
+      </div>
+    </div>
+    <div class="col-8 col-s-8" style="padding: 1px 0px;">
+      <div class="part-title" style="background-color: #acd0e4">
+        فهرست سرویس های سازمان در حوزه بیمه شدگان :
+      </div>
+      <tamin-accordion-group>
+        <tamin-accordion *ngFor="let item of accordionItems" [title]="item.caption">
+          <div *ngFor="let child of item.items">
+            <div class="accordion-subitem" (click)="clickFavItem(child);" [ngClass]="{'disable':child.disable}">
+              <div class="insured-subitem-image"></div>
+              {{ child.caption }}
+            </div>
+          </div>
+        </tamin-accordion>
+      </tamin-accordion-group>
+    </div>
+  </div>
+  <!--========================================================================-->
+  <!--Is Not Web-->
+  <!--========================================================================-->
+  <div *ngIf="!isWeb" class="col-12 col-s-12" style="padding: 1px 0px; background-color: #f1f1f1; height: 100%;">
+    <div class="col-12 col-s-12" style="padding: 1px 0px; text-align: center;">
+      <div class="mobile-top-image">
+        در این قسمت شما می توانید از انواع سرویس های غیر حضوری سازمان تامین اجتماعی مرتبط با حوزه بیمه شدگان مطلع شده و از این خدمات
+        الکترونیک بهره مند شوید. جهت استفاده از سرویس های ذیل لازم است قبلا در پرتال ثبت نام کرده و نام کاربری و رمز دریافت
+        نمایید.
+      </div>
+    </div>
+    <div class="col-12 col-s-12" style="padding: 1px 0px;">
+      <div class="row">
+        <div *ngFor="let item of accordionItems" class="col-4 col-s-4">
+          <div class="mobile-group-button" (click)="clickGroupItem(item);" [ngClass]="{'disable':item.disable}">
+            <div>
+              <div class="mobile-group-button-icon">
+                <img src={{item.largeIcon}} alt='' style="width: 40%;" />
+              </div>
+            </div>
+            <div class="mobile-group-button-overlay">
+              <div class="mobile-group-button-title">
+                {{item.caption}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<tamin-modal #theModal title="">
+  <div class="row">
+    <div *ngFor="let child of selectedSubMenu" class="col-4 col-s-4">
+      <div class="mobile-group-button" (click)="clickFavItem(child);">
+        <div>
+          <div class="mobile-group-button-icon">
+            <img src={{child.largeIcon}} alt='' style="width: 35%;"/>
+          </div>
+        </div>
+        <div class="mobile-group-button-overlay">
+          <div class="mobile-group-button-title">
+            {{child.caption}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</tamin-modal>

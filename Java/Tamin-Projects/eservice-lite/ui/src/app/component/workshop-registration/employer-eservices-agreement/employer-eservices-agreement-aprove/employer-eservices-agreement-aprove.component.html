@@ -1,0 +1,50 @@
+<div (window:resize)="onResize($event)" class="page-title">تعهدنامه خدمات غیرحضوری کارفرمایان</div>
+<div *ngIf="mobileSize" class="status-selected width-state-one">
+  <p class="is-active">ورود اطلاعات</p>
+  <p class="de-active">نمایش اطلاعات کارفرمایی</p>
+  <p class="de-active">تایید نهایی تعهد نامه </p>
+</div>
+<div *ngIf="!mobileSize" class="status-selected width-state-one">
+  <span class="is-active">ورود اطلاعات</span> &#8592;
+  <span class="de-active">نمایش اطلاعات کارفرمایی</span> &#8592;
+  <span class="de-active">تایید نهایی تعهد نامه </span>
+</div>
+<div class="page-title margin-mobil">احراز هویت</div>
+<div class="panel-body">
+  <form [formGroup]="contractSearchForm" autocomplete="off" novalidate (ngSubmit)="oSendtiket()">
+    <div class="form-control-container row">
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="mobile">تلفن همراه:</tamin-field-label>
+        <tamin-field-validator formControlName="mobile"></tamin-field-validator>
+        <tamin-field-text formControlName="mobile" placeholder="تلفن همراه"></tamin-field-text>
+      </div>
+    </div>
+    <div class="form-control-container row">
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="email">پست الکترونیک:</tamin-field-label>
+        <tamin-field-validator formControlName="email"></tamin-field-validator>
+        <tamin-field-text formControlName="email" placeholder="پست الکترونیک"></tamin-field-text>
+      </div>
+      <br>
+      <p class="send-approve">
+        <button type="submit" class="button normal" [disabled]="!contractSearchForm.valid">ارسال پیامک اعتبارسنجی</button>
+      </p>
+      <br/>
+      <div class="form-control-container row">
+        <div class="status-selected width-state-two">
+          <hr>
+          <p>لطفا کد پیامک شده را وارد و سپس کلید تایید و ادامه را بزنید</p>
+        </div>
+        <div class="status-selected" style="width:100px;">
+          <tamin-field-validator formControlName="tiket"></tamin-field-validator>
+          <tamin-field-text   formControlName="tiket">
+          </tamin-field-text>
+        </div>
+        <p class="confirm-approve button-margin">
+          <button type="button" [disabled]="!isApprove" class="button normal" (click)="onAprove()">تایید و ادامه</button>
+          <button type="button" class="button normal red" (click)="onRollback()">بازگشت</button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>

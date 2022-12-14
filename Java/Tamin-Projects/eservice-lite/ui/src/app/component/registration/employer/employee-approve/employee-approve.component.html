@@ -1,0 +1,182 @@
+<!--<div class="alert alert-info">
+  <p>- در صورت اطمینان از درستی و کامل بودن اطلاعات ، با تایید نهایی، فرآیند ثبت درخواست را تکمیل و منتظر دریافت پاسخ
+    باشید.</p>
+</div>-->
+<div class="panel-body">
+  <div class="row">
+    <div class="alert alert-info">
+      <span>خلاصه اطلاعات نامنویسی </span> &nbsp; <span>{{persoanlData?.nationalId | persianNumber}}</span>
+    </div>
+
+    <button class="accordion">اطلاعات هویتی</button>
+    <div class="panel">
+      <table class="vtable">
+        <tr>
+          <td>کد ملی</td>
+          <td>{{persoanlData?.nationalId | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ تولد</td>
+          <td>{{getPersianDate(persoanlData?.dateOfBirth) | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>نام</td>
+          <td>{{persoanlData?.firstName }}</td>
+        </tr>
+        <tr>
+          <td>نام خانوادگی</td>
+          <td>{{persoanlData?.lastName }}</td>
+        </tr>
+        <tr>
+          <td>شهر محل تولد</td>
+          <td>{{persoanlData?.cityOfBirth}}</td>
+        </tr>
+        <tr>
+          <td>شهر محل صدور</td>
+          <td>{{persoanlData?.cityOfIssue}}</td>
+        </tr>
+
+      </table>
+    </div>
+
+    <button class="accordion" [hidden]="persoanlData?.relationWithTamin === null">ارتباط بیمه ای</button>
+    <div class="panel" *ngIf="persoanlData?.relationWithTamin !== null">
+      <table class="vtable">
+        <tr>
+          <td>شعبه</td>
+          <td>{{persoanlData?.relationWithTamin?.organizationId}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ شروع ارتباط</td>
+          <td>{{getPersianDate(persoanlData?.relationWithTamin?.dateOfStart) | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>نوع ارتباط</td>
+          <td>{{persoanlData?.relationDescription}}</td>
+        </tr>
+        <tr>
+          <td>کارگاه</td>
+          <td>{{persoanlData?.relationWithTamin?.workshopId}}</td>
+        </tr>
+
+      </table>
+    </div>
+
+    <button class="accordion" [hidden]="persoanlData?.subdominants === null">افراد تحت تکفل</button>
+    <div class="panel" *ngIf="persoanlData?.subdominants !== null">
+      <table class="htable">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>کد ملی</th>
+          <th>نام</th>
+          <th>نام خانوادگی</th>
+          <th>تاریخ تولد</th>
+          <th>نسبت</th>
+          <th>شهر محل تولد</th>
+          <th>شهر محل صدور</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of persoanlData?.subdominants, let i = index">
+          <td>{{(i+1) | persianNumber }}</td>
+          <td>{{item.nationalId | persianNumber}}</td>
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{getPersianDate(item.dateOfBirth) | persianNumber}}</td>
+          <td>{{item.dependency.dependencyDesc}}</td>
+          <td>{{item.cityOfBirthId}}</td>
+          <td>{{item.cityOfIssueId}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="accordion" [hidden]="persoanlData?.account === null">اطلاعات حساب بانکی</button>
+    <div class="panel" *ngIf="persoanlData?.account !== null">
+      <table class="vtable">
+        <tr>
+          <td>تاریخ شروع</td>
+          <td>{{getPersianDate(persoanlData?.account?.dateOfStart) | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>نام بانک</td>
+          <td>{{persoanlData?.account?.bank}}</td>
+        </tr>
+        <tr>
+          <td>نوع حساب</td>
+          <td>{{persoanlData?.account?.accounttype }}</td>
+        </tr>
+        <tr>
+          <td>شماره حساب</td>
+          <td>{{persoanlData?.account?.accountNumber | persianNumber}}</td>
+        </tr>
+
+      </table>
+    </div>
+    <button class="accordion" [hidden]="persoanlData?.education === null">اطلاعات تحصیلی</button>
+    <div class="panel" *ngIf="persoanlData?.education !== null">
+      <table class="vtable">
+        <tr>
+          <td>تاریخ شروع</td>
+          <td>{{getPersianDate(persoanlData?.education?.dateOfStart) | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>آخرین مقطع تحصیلی</td>
+          <td>{{persoanlData?.education?.education}}</td>
+        </tr>
+        <tr>
+          <td>رشته تحصیلی</td>
+          <td>{{persoanlData?.education?.educationfield}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ اخذ مدرک</td>
+          <td>{{getPersianDate(persoanlData?.education?.dateOfGraduate) | persianNumber}}</td>
+        </tr>
+
+      </table>
+    </div>
+    <button class="accordion" [hidden]="persoanlData?.contact === null">اطلاعات تماس</button>
+    <div class="panel" *ngIf="persoanlData?.contact !== null">
+      <table class="vtable">
+        <tr>
+          <td>تاریخ شروع</td>
+          <td>{{getPersianDate(persoanlData?.contact?.dateOfStart) | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>شهر</td>
+          <td>{{persoanlData?.contact?.cityId}}</td>
+        </tr>
+        <tr>
+          <td>کد پستی</td>
+          <td>{{persoanlData?.contact?.zipCode}}</td>
+        </tr>
+        <tr>
+          <td>شماره تلفن</td>
+          <td>{{persoanlData?.contact?.phoneNumber | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>تلفن همراه</td>
+          <td>{{persoanlData?.contact?.mobile | persianNumber}}</td>
+        </tr>
+        <tr>
+          <td>نشانی</td>
+          <td>{{persoanlData?.contact?.address}}</td>
+        </tr>
+
+      </table>
+    </div>
+    <button class="accordion" [hidden]="persoanlData?.documents === null">پرونده الکترونیک</button>
+    <div class="panel" [hidden]="persoanlData?.documents !== null">
+
+      <div class="panel-body">
+        <tamin-image-gallery #imageGallery></tamin-image-gallery>
+      </div>
+    </div>
+    <div class="col-12 col-s-12">
+      <!--<button type="button" class="button normal" (click)="ApproveClick()">تایید نهایی و ارسال درخواست</button>-->
+      <button type="button" class="button normal gray" [hidden]=ishiddenAddButton (click)="AddPersonal()">اتمام و افزودن پرسنل جدید</button>
+      <button type="button" class="button normal gray" (click)="redirectTo('/employer-registration/personal-list')">اتمام و بازگشت به لیست پرسنل</button>
+    </div>
+  </div>
+</div>
+

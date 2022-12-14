@@ -1,0 +1,42 @@
+<div class="alert alert-info">
+  <i class="icon-lightbulb"></i>
+  <span>امکان مشاهده پرداخت بدهی غیرحضوری</span>
+</div>
+<div class="panel">
+  <div class="page-title">جستجوی پرداخت</div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off" novalidate (ngSubmit)="onSearchSubmit()">
+      <div class="form-control-container row">
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="debitNumber">شماره بدهی:</tamin-field-label>
+          <tamin-field-validator formControlName="debitNumber"></tamin-field-validator>
+          <tamin-field-text formControlName="debitNumber" placeholder="شماره بدهی"></tamin-field-text>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <div class="col-6 col-6-1" style="padding: 3px;">
+          <!---------------------------------------------------------------------------------------------------------->
+          <tamin-field-label formControlName="paymentDate">تاریخ پرداخت:</tamin-field-label>
+          <tamin-field-validator formControlName="paymentDate"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="paymentDate" placeholder="تاریخ پرداخت"></tamin-field-persian-date>
+          <!---------------------------------------------------------------------------------------------------------->
+        </div>
+        <p style="margin-top:5px;">
+          <button type="submit" class="button normal">جستجو</button>
+          <button type="button" class="button normal orange" (click)="resetSerachForm()">نمایش همه</button>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="page-title">لیست پرداخت ها</div>
+  <div class="alert alert-info">
+    <i class="icon-lightbulb"></i>
+    <span>برای رویت برگه پرداخت بروی هر رکورد کلیک کنید</span>
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #theGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+  </div>
+</div>
+<tamin-modal #theModal title="رسید پرداخت">
+  <tamin-document-viewer #documentViewer width="100%"></tamin-document-viewer>
+</tamin-modal>

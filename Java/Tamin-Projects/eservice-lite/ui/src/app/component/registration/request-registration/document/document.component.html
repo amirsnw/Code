@@ -1,0 +1,50 @@
+<div class="panel">
+  <div class="alert alert-info">
+    <p>- در این قسمت، فایل اسناد مورد نیاز ، شامل عکس، صفحه اول شناسنامه، و روی کارت ملی را بارگذاری نمایید.</p>
+    <p>- در صورتی که اطلاعات افراد تحت پوشش خود را ثبت کرده اید، فایل تصویر صفحه دوم شناسنامه خود را نیز بارگذاری
+      کنید.</p>
+    <p>- در صورتی که مشخصات شما تغییر کرده و در شناسنامه توضیحات مربوط به آن ذکر شده است، صفحه دوم را نیز بارگذاری
+      کنید.</p>
+  </div>
+
+  <div class="panel-body">
+    <button class="button normal blue" (click)="addImage('تصویر پرسنلی', 'image1')"
+            *ngIf="!hasImage('image1')">
+      <span style="font-size: 0.9em">افزودن تصویر پرسنلی</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('صفحه اول پرسشنامه', 'image2')"
+            *ngIf="!hasImage('image2')">
+      <span style="font-size: 0.9em">افزودن تصویر اول پرسشنامه</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('صفحه دوم پرسشنامه', 'image8')"
+            *ngIf="!hasImage('image8')">
+      <span style="font-size: 0.9em">افزودن تصویر دوم پرسشنامه</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('صفحه اول شناسنامه', 'image3')"
+            *ngIf="!hasImage('image3')">
+      <span style="font-size: 0.9em">افزودن صفحه اول شناسنامه</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('صفحه دوم شناسنامه', 'image4')"
+            *ngIf="!hasImage('image4')">
+      <span style="font-size: 0.9em">افزودن صفحه دوم شناسنامه</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('صفحه توضیحات شناسنامه', 'image7')"
+            *ngIf="!hasImage('image7')">
+      <span style="font-size: 0.9em">افزودن تصویر توضیحات شناسنامه</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه اول کارت ملی', 'image5')"
+            *ngIf="!hasImage('image5')">
+      <span style="font-size: 0.9em">افزودن تصویر صفحه اول کارت ملی</span>
+    </button>
+    <button class="button normal blue" (click)="addImage('تصویر صفحه دوم کارت ملی', 'image6')"
+            *ngIf="!hasImage('image6')">
+      <span style="font-size: 0.9em">افزودن تصویر صفحه دوم کارت ملی</span>
+    </button>
+
+    <tamin-image-gallery-managed [maxImageSize]="500" #imageGallery ></tamin-image-gallery-managed>
+    <div class="alert alert-info">
+      توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+    </div>
+
+  </div>
+</div>

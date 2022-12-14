@@ -1,0 +1,32 @@
+
+<div class="panel col-6 col-s-6">
+   <div class="page-title">6- سال (های) مالی شرکت بر مبنای دوره درخواست بازرسی دفاتر قانونی</div>
+    <div class="panel-body">
+      <form [formGroup]="formCompanyAccount" novalidate>
+        <div class="panel col-12 col-s-12">
+          <div class="panel-title">دوره درخواست بازرسی دفاتر قانونی</div>
+           <div class="row">
+           <div class="form-control-container col-1 col-s-1" >
+            <tamin-field-label formControlName="fiscalStart">از</tamin-field-label>
+          </div>
+            <div class="form-control-container col-3 col-s-3" >
+              <tamin-field-static-text formControlName="fiscalStart"></tamin-field-static-text>
+            </div>
+            <div class="form-control-container col-1 col-s-1" >
+              <tamin-field-label formControlName="fiscalEnd">لغایت</tamin-field-label>
+            </div>
+            <div class="form-control-container col-3 col-s-3" >
+              <tamin-field-static-text formControlName="fiscalEnd"></tamin-field-static-text>
+            </div>
+          </div>
+        </div>
+         <div class="row">
+            <tamin-data-grid #dataGrid (itemAction)="onAction($event)"> "</tamin-data-grid>
+            <button type="submit" class="button normal" (click)="onNew()">جدید</button>
+           <button type="button" class="button normal orange" (click)="onBackCompany()">صفحه قبلی</button>
+           <button type="button" class="button normal orange" (click)="onComplete()">تکمیل اطلاعات(صفحه بعدی)</button>
+            <button type="button" class="button normal orange" (click)="back()">برگشت به صفحه اصلی</button>
+        </div>
+      </form>
+    </div>
+</div>

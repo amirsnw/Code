@@ -1,0 +1,42 @@
+<tamin-pdf-viewer #pdfViewer></tamin-pdf-viewer>
+<div class="alert alert-info" style="direction: ltr">
+  <div style="direction: rtl">
+    <i class="icon-lightbulb"></i>
+    <span>برقراری ارتباط الکترونیکی میان اداره کل ثبت شرکت‌ها و مؤسسات غیرتجاری و سازمان تأمین اجتماعی برای مرحله
+      ثبت‌نام کارگران در سازمان تأمین اجتماعی و اخذ کدکارگاهی شرکت‌های جدیدالتأسیس بدون مراجعه ارباب رجوع به سازمان
+      تأمین اجتماعی و از طریق درگاه الکترونیکی اداره کل ثبت شرکت‌ها و مؤسسات غیرتجاری</span>
+  </div>
+  <div style="direction:ltr">
+    <i class="icon-lightbulb"></i>
+    <span>Establishment of electronic communication between the Companies Registration Office and the Social Security
+      Organization for the Procedure of Enroll workers in the social security program at the Iranian Labor Department
+      and Obtain a workplace number without referral to the Social Security Organization through the electronic portal
+      of the Companies Registration Office</span>
+  </div>
+</div>
+<div class="panel">
+  <div class="page-title">جستجو / search</div>
+  <div class="panel-body">
+    <form [formGroup]="businessStartersIndicatorSearchForm" autocomplete="off" novalidate (ngSubmit)="onSearchSubmit()">
+      <div class="form-control-container row">
+          <div class="col-6 col-6-1">
+            <!---------------------------------------------------------------------------------------------------------->
+            <tamin-field-label formControlName="legalId">شناسه ملی / national id:</tamin-field-label>
+            <tamin-field-validator formControlName="legalId"></tamin-field-validator>
+            <tamin-field-text formControlName="legalId" placeholder="شناسه ملی / national id"></tamin-field-text>
+            <!---------------------------------------------------------------------------------------------------------->
+          </div>
+        <div class="col-12 ">
+          <p style="margin-top:5px;">
+            <button type="submit" class="button normal">جستجو / apply</button>
+            <button type="button" class="button normal orange" (click)="resetForm()">نمایش همه / refresh</button>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="page-title">لیست درخواست ها / request's list</div>
+  <div class="panel-body">
+    <tamin-data-grid #BusinessStartersIndicatorGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+  </div>
+</div>

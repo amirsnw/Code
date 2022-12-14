@@ -1,0 +1,247 @@
+<div class="row portal-main-container" style="min-width: 350px;">
+  <div class="col-12 col-s-12 portal-main-top-container">
+<!--    <div class="portal-main-version"></div>-->
+    <div class="portal-main-flag"></div>
+    <div class="portal-main-dr-noorbakhsh mobile-hide"></div>
+    <div class="portal-main-logo"></div>
+    <div class="portal-main-top-text"></div>
+    <div class="portal-main-bottom-text"></div>
+    <div *ngIf="securityService.currentUser" class="portal-main-top-buttons-container">
+      <div>
+        <img alt="" style="width: 54px;height: 54px; object-fit: cover; border-radius: 50%" [attr.src]="userImage">
+      </div>
+      <span style="color:#fff; font-size:0.9em;">
+        کاربر گرامی، {{securityService.currentUser.firstName + ' ' + securityService.currentUser.lastName}}
+        ، به درگاه متمرکز خدمات الکترونیکی سازمان تامین اجتماعی خوش آمدید.
+      </span>
+    </div>
+    <div *ngIf="!securityService.currentUser" class="portal-main-top-buttons-container">
+      <button type="button" class="portal-main-top-button button normal blue" (click)="onButtonClicked('registration')">
+        <i class="icon-user-plus"></i>
+        <span style="margin-right: 3px">ثبت نام</span>
+      </button>
+      <button type="button" class="portal-main-top-button button normal green"
+              (click)="onButtonClicked('register-pursue')">
+        <i class="icon-info"></i>
+        <a>پیگیری ثبت نام</a>
+      </button>
+      <button type="button" class="portal-main-top-button button normal orange" (click)="onButtonClicked('login')">
+        <i class="icon-user"></i>
+        <span>ورود به سامانه</span>
+      </button>
+      <!--<button type="button" class="portal-main-top-button button normal red" (click)="onButtonClicked('download-app')">
+        <i class="icon-mobile"></i>
+        <a>نرم افزار موبایل</a>
+      </button>-->
+    </div>
+  </div>
+  <div class="col-3 col-s-3 portal-main-middle-container" style="padding: 1px 0px;">
+    <div class="portal-main-middle-image portal-main-middle-insured"></div>
+    <div class="portal-main-middle-overlay" (click)="onButtonClicked('insured')">
+      <div class="portal-main-middle-text">
+        بیمه شدگان
+        <div style="font-size: 0.8em; margin-top: 20px; text-align: justify;">
+          در این بخش سرویس های غیر حضوری مرتبط با بیمه شدگان از قبیل نام نویسی، دفترچه، سابقه، حمایت های کوتاه مدت و ...
+          قرار داده
+          شده است
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 col-s-3 portal-main-middle-container" style="padding: 1px 0px;">
+    <div class="portal-main-middle-image portal-main-middle-workshop"></div>
+    <div class="portal-main-middle-overlay" (click)="onButtonClicked('workshop')">
+      <div class="portal-main-middle-text">
+        کارفرمایان
+        <div style="font-size: 0.8em; margin-top: 20px; text-align: justify;">
+          در این بخش سرویس های غیر حضوری مرتبط با کارفرمایان از قبیل نام نویسی، ارسال لیست حق بیمه، بازرسی، مفاصا حساب و
+          ... قرار داده
+          شده است
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 col-s-3 portal-main-middle-container" style="padding: 1px 0px;">
+    <div class="portal-main-middle-image portal-main-middle-pensioner"></div>
+    <div class="portal-main-middle-overlay" (click)="onButtonClicked('pensioner')">
+      <div class="portal-main-middle-text">
+        مستمری بگیران
+        <div style="font-size: 0.8em; margin-top: 20px; text-align: justify;">
+          در این بخش سرویس های غیر حضوری مرتبط با مستمری بگیران از قبیل درخواست برقراری مستمری، تغییرات بازماندگان،
+          مشاهده احکام و
+          ... قرار داده شده است
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 col-s-3 portal-main-middle-container" style="padding: 1px 0px;">
+    <div class="portal-main-middle-image portal-main-middle-me"></div>
+    <div class="portal-main-middle-overlay" (click)="onButtonClicked('me')">
+      <div class="portal-main-middle-text">
+        تامین اجتماعی من
+        <div style="font-size: 0.8em; margin-top: 20px; text-align: justify;">
+          در این بخش سرویس های کارتابل شما، امکان پیگیری درخواستها، سرویس های شخصی سازی شده و ... قرار داده شده است
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" style="padding: 1px; background-color: #efefef; border: solid 1px #bbb;">
+  <div class="page-title" style="background-color: #2e2e2e;">
+    سرویس های پر کاربرد
+  </div>
+  <div class="col-12 col-s-12" style="padding: 10px; background-color: #283772;">
+    <div class="row menu">
+      <div (click)="onTagClicked('')"
+           style="color: #2e2e2e;font-weight: bold; float:right; margin-right:5px; padding: 8px; background-color: #a1bcf1; border-radius: 0px 10px 10px 0px;">
+        جستجو توسط میانبر ها :
+      </div>
+      <ul>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'booklet'}" (click)="onTagClicked('booklet')"
+            style="cursor: pointer; float: right;"># دفترچه
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'history'}" (click)="onTagClicked('history')"
+            style="cursor: pointer; float: right;"># سابقه
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'registration'}"
+            (click)="onTagClicked('registration')" style="cursor: pointer; float: right;"># نام نویسی
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'pension'}" (click)="onTagClicked('pension')"
+            style="cursor: pointer; float: right;"># مستمری
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'self-employment'}"
+            (click)="onTagClicked('self-employment')"
+            style="cursor: pointer; float: right;"># بیمه شدگان اختیاری
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'short-term'}"
+            (click)="onTagClicked('short-term')" style="cursor: pointer; float: right;"># حمایت های کوتاه مدت
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'inspection'}"
+            (click)="onTagClicked('inspection')" style="cursor: pointer; float: right;"># بازرسی
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'workshop'}" (click)="onTagClicked('workshop')"
+            style="cursor: pointer; float: right;"># اطلاعات کارگاه
+        </li>
+        <li [ngClass]="{'selected-tag-category' : selectedHighlight === 'claim'}" (click)="onTagClicked('claim')"
+            style="cursor: pointer; float: right;"># بدهی کارگاه
+        </li>
+      </ul>
+    </div>
+    <div class="row" *ngIf="highlights.length != 0" class="tags">
+      <div *ngFor="let tag of highlights" class="tag-item">
+        <span style="width: 50px; height: 50px" (click)="onClickTag(tag.url, tag.urlType)">{{tag.caption}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-s-12" style="padding: 1px; background-color: #efefef; border: solid 1px #bbb;">
+    <!--<div class="page-title" style="margin-bottom: 10px; background-color: #424242;">-->
+    <!--سرویس های پرکاربرد-->
+    <!--</div>-->
+    <!--<ng-container *ngIf="menuFavorites.length !== 0">-->
+    <!--<div *ngFor="let item of menuFavorites" style="float: right; margin-left: 10px;text-align: center; border: solid 1px silver; padding:3px">-->
+    <!--<a (click)="onHandleMenu(item )" style="cursor: pointer;">-->
+    <!--<img src={{item.largeIcon}} alt={{item.caption}}>-->
+    <!--&lt;!&ndash;<img src="assets/images/icons/arrow-next-2-icon.png" alt={{item.caption}} >&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>{{item.caption}}</div>&ndash;&gt;-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</ng-container>-->
+  </div>
+  <!--<div class="col-6 col-s-6" style="padding: 1px; background-color: #efefef; border: solid 1px #bbb;">-->
+  <!--<div class="page-title" style="margin-bottom: 10px; background-color: #424242;">-->
+  <!--سرویس های پرکاربرد مرتبط با کارفرمایان-->
+  <!--</div>-->
+  <!--<ng-container *ngIf="menuFavorites.length !== 0">-->
+  <!--<div *ngFor="let item of menuFavorites" style="float: right;">-->
+  <!--<a (click)="onHandleMenu(item )" style="cursor: pointer;">-->
+  <!--<img src={{item.largeIcon}} alt={{item.caption}}>-->
+  <!--</a>-->
+  <!--</div>-->
+  <!--</ng-container>-->
+  <!--</div>-->
+</div>
+<!--<div class="row mobile-hide">-->
+<div class="row" style="background-color: #b9bcc7;">
+  <div class="col-12 col-s-12" style="padding: 0px;">
+    <div class="page-title" style="background-color: #2e2e2e;">
+      اطلاع رسانی و راهنما
+    </div>
+  </div>
+  <div class="col-6 col-s-6" style="padding: 20px;">
+    <h2>این سامانه چیست؟</h2>
+    <p style="text-align: justify;">با توجه به گسترش خدمات غیر حضوری سازمان تامین اجتماعی، این سامانه تمامی سرویس های
+      موجود و همچنین خدمات غیر حضوری جدید
+      سازمان را در یک درگاه مجتمع و یکپارچه در خود جای داده است.</p>
+    <p style="text-align: justify;">همچنین این پرتال مرجع مطمئن و سریعی را جهت آگاهی و استفاده از سرویس های جدید برای
+      مخاطبین سازمان فراهم آورده است.</p>
+    <br/>
+    <h2>چگونه از آن استفاده کنم؟</h2>
+    <p style="text-align: justify;">در صورتی که قبلا مشترک سرویس های متمرکز سازمان تامین اجتماعی (از قبیل پرتال نمایش
+      سابقه) بوده اید نیازی به ثبت نام مجدد
+      نیست. اما اگر برای اولین بار با این پرتال کار می کنید در صورتی که خدمات مورد نظر شما نیاز به احراز هویت داشته باشد
+      می بایست در پرتال ثبت نام کرده و نام کاربری (کدملی) و رمز دریافت کنید.</p>
+    <p>
+      لطفا توجه داشته باشید که جهت استفاده از سرویس های عمومی و شخصی انجام مراحل ثبت نام غیرحضوری کفایت می کند ولی
+      استفاده از سرویس
+      های کارفرمایی علاوه بر ثبت نام در سامانه، مستلزم مراجعه حضوری به شعبه جهت تکمیل فرم تعهد نامه خواهد بود.
+    </p>
+    <p>فیلم آموزشی در این مراحل شما را یاری خواهد کرد.</p>
+  </div>
+  <div class="col-6 col-s-6" style="padding: 10px;">
+    <style>
+      .h_iframe-aparat_embed_frame {
+        position: relative;
+      }
+
+      .h_iframe-aparat_embed_frame .ratio {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .h_iframe-aparat_embed_frame iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <style>
+      .h_iframe-aparat_embed_frame {
+        position: relative;
+      }
+
+      .h_iframe-aparat_embed_frame .ratio {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .h_iframe-aparat_embed_frame iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <div class="h_iframe-aparat_embed_frame">
+      <span style="display: block;padding-top: 57%"></span>
+      <iframe src="https://www.aparat.com/video/video/embed/videohash/YC1wj/vt/frame" allowFullScreen="true"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"></iframe>
+    </div>
+  </div>
+  <div class="col-12 col-s-12" style="padding: 0px 20px 20px 20px;">
+    <h2>مشکلات خود را چگونه پیگیری نمایم؟</h2>
+    <p style="text-align: justify;">در صورتی که در بخش هایی از فرایند ثبت و یا پیگیری درخواست مشکل دارید می توانید از
+      چند طریق اقدام نمایید:</p>
+    <p style="text-align: justify;">1- در زمان ثبت درخواست، در قسمت بالایی هر فرم، راهنمایی جهت استفاده همان فرم قرار
+      داده شده، لطفا راهنما را به دقت مطالعه نمایید.</p>
+    <p style="text-align: justify;">2- با مراجعه به صفحه تامین اجتماعی من، در قسمت نمایش درخواست ها، درخواست مورد نظر را
+      جستجو کنید و سپس در ستون انتهایی جدول روی دکمه عملیات کلیک نموده و گزینه راهنمای هوشمند را انتخاب کنید.</p>
+    <p style="text-align: justify;">3- با واحد ارتباط با مشتری سازمان از طریق سایت crm.tamin.ir و یا شماره تلفن 1420
+      تماس حاصل نمایید.</p>
+  </div>
+</div>

@@ -1,0 +1,233 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "menu1",
+      "icon": "fa fa-cogs",
+      "caption": "منوی سیستم",
+      "roles": [
+        "INCOME BANK SETAD USER",
+        "INCOME BANK BRANCH USER",
+        "INCOME BANK BRANCH ACCOUNTANT",
+        "INCOME BANK BRANCH BOSS",
+        "ALL USERS",
+        "INCOME BANK KARGZARI USER"
+      ],
+      "items": [
+        //                {
+        //                    "id": 2,
+        //                    "name": "editMenu",
+        //                    "icon": "fa fa-cogs",
+        //                    "caption": "ویرایش",
+        //                    "roles": [
+        //                        "INCOME BANK SETAD USER",
+        //                        "INCOME BANK BRANCH USER"
+        //                    ],
+        //                    "items": [
+        //                    {
+        //                        "id": 3,
+        //                        "name": "dftRoznameh",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "دفتر روزنامه",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 4,
+        //                        "name": "bankBill",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "صورتحساب بانک",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 5,
+        //                        "name": "cardBank",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "کارت بانک",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 6,
+        //                        "name": "bankInquiry",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "استعلام آني وصول برگ پرداخت",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 7,
+        //                        "name": "bankRcv",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "وجوه انتقالي بانک",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 8,
+        //                        "name": "oldLetterOffice",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "دفتر اعلاميه هاي صادره قديم",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 9,
+        //                        "name": "letterOffice",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "دفتر اعلاميه هاي صادره جديد",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 10,
+        //                        "name": "IncomingLetterOffice",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "دفتر اعلاميه هاي وارده",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 11,
+        //                        "name": "",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "صدور اعلامیه",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    },
+        //                    {
+        //                        "id": 12,
+        //                        "name": "bankList",
+        //                        "icon": "fa fa-cogs",
+        //                        "caption": "ليست بانکهاي عامل درآمد",
+        //                        "roles": [
+        //                            "INCOME BANK SETAD USER",
+        //                            "INCOME BANK BRANCH USER"
+        //                        ]
+        //                    }
+        //                    ]
+        //                },
+        {
+          "id": 13,
+          "name": "",
+          "icon": "fa fa-cogs",
+          "caption": "عملیات",
+          "roles": [
+            "INCOME BANK SETAD USER",
+            "INCOME BANK BRANCH USER",
+            "INCOME BANK BRANCH ACCOUNTANT",
+            "INCOME BANK BRANCH BOSS",
+            "ALL USERS",
+            "INCOME BANK KARGZARI USER"
+          ],
+          "items": [
+            {
+              "id": 161,
+              "name": "telInfo3070",
+              "icon": "fa fa-cogs",
+              "caption": "گزارش وصولی 3070",
+              "roles": [
+                "INCOME BANK SETAD USER",
+                "INCOME BANK BRANCH USER",
+                "INCOME BANK BRANCH ACCOUNTANT",
+                "INCOME BANK BRANCH BOSS",
+                "ALL USERS",
+                "INCOME BANK KARGZARI USER"
+              ]
+            } ,
+            {
+              "id": 162,
+              "name": "telInfoWindow",
+              "icon": "fa fa-cogs",
+              "caption": "گزارش وصولی پنجره واحد",
+              "roles": [
+                "INCOME BANK SETAD USER",
+                "INCOME BANK BRANCH USER",
+                "INCOME BANK BRANCH ACCOUNTANT",
+                "INCOME BANK BRANCH BOSS",
+                "ALL USERS",
+                "INCOME BANK KARGZARI USER"
+              ]
+            },
+            {
+              "id": 163,
+              "name": "telSumDaily",
+              "icon": "fa fa-cogs",
+              "caption": "گزارش سرجمع وصولی روزانه",
+              "roles": [
+                "INCOME BANK SETAD USER",
+                "INCOME BANK BRANCH USER",
+                "INCOME BANK BRANCH ACCOUNTANT",
+                "INCOME BANK BRANCH BOSS",
+                "ALL USERS",
+                "INCOME BANK KARGZARI USER"
+              ]
+            },
+            {
+              "id": 164,
+              "name": "receipt-paper-spec",
+              "icon": "fa fa-cogs",
+              "caption": "مشاهده برگه های وصولی",
+              "roles": [
+                "INCOME BANK SETAD USER",
+                "INCOME BANK BRANCH USER",
+                "INCOME BANK BRANCH ACCOUNTANT",
+                "INCOME BANK BRANCH BOSS",
+                "ALL USERS",
+                "INCOME BANK KARGZARI USER"
+              ]
+            },
+            {
+              "id": 165,
+              "name": "financial-doc-spec",
+              "icon": "fa fa-cogs",
+              "caption": "مشاهده و صدور سند مالی",
+              "roles": [
+                "INCOME BANK SETAD USER",
+                "INCOME BANK BRANCH USER",
+                "INCOME BANK BRANCH ACCOUNTANT",
+                "INCOME BANK BRANCH BOSS",
+                "ALL USERS",
+                "INCOME BANK KARGZARI USER"
+              ]
+            },
+            {
+              "id": 166,
+              "name": "cont-report-spec",
+              "icon": "fa fa-cogs",
+              "caption": "گزارش مغایرت بانک و دفتر",
+              "roles": [
+                "INCOME BANK SETAD USER",
+                "INCOME BANK BRANCH USER",
+                "INCOME BANK BRANCH ACCOUNTANT",
+                "INCOME BANK BRANCH BOSS",
+                "ALL USERS",
+                "INCOME BANK KARGZARI USER"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

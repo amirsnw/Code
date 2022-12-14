@@ -1,0 +1,37 @@
+<div class="panel">
+  <div class="panel-title">اطلاعات بیماری خاص</div>
+  <div class="panel-body">
+    <form [formGroup]="theForm">
+      <div class="form-control-container col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="specialDiseasesStartDate">تاریخ شروع بیماری خاص</tamin-field-label>
+        <tamin-field-persian-date formControlName="specialDiseasesStartDate"></tamin-field-persian-date>
+      </div>
+      <div class="form-control-container col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="specialDiseasesType">نوع بیماری خاص</tamin-field-label>
+        <tamin-field-auto-complete-data-grid formControlName="specialDiseasesType" placeholder="نوع بیماری های خاص" #specialDiseasesType></tamin-field-auto-complete-data-grid>
+      </div>
+      <div class="form-control-container col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="certificateNumber">شماره گواهی</tamin-field-label>
+        <tamin-field-validator formControlName="certificateNumber"></tamin-field-validator>
+        <tamin-field-text formControlName="certificateNumber"></tamin-field-text>
+      </div>
+      <div class="form-control-container col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="certificateDate">تاریخ گواهی</tamin-field-label>
+        <tamin-field-persian-date formControlName="certificateDate"></tamin-field-persian-date>
+      </div>
+      <div class="form-control-container col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="submitDate">تاریخ ثبت</tamin-field-label>
+        <tamin-field-persian-date formControlName="submitDate"></tamin-field-persian-date>
+      </div>
+      <div class="form-control-container col-6 col-s-6" style="padding-right:5px;">
+        <tamin-field-label formControlName="submitBaseCertificate">مرجع صادر کننده گواهی</tamin-field-label>
+        <tamin-field-auto-complete-data-grid formControlName="submitBaseCertificate" placeholder="مرجع صادر کننده گواهی" #submitBaseCertificate></tamin-field-auto-complete-data-grid>
+      </div>
+    </form>
+    <div class="button-container col-12 col-s-12" style="margin:5px;">
+      <button class="button normal">ذخیره</button>
+      <button class="button normal red">انصراف</button>
+    </div>
+  </div>
+  <!-- <div style="direction: ltr;border:solid 1px #ccc; padding:5px;margin-top:10px; background-color: white">{{formValues | json}}</div> -->
+</div>

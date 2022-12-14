@@ -1,0 +1,33 @@
+<div class="row">
+  <form [formGroup]="theForm" autocomplete="off" novalidate>
+    <div class="form-control-container">
+      <p>
+        متقاضی محترم:
+      </p>
+      <p style="margin-right: 10px"><i class="icon-lightbulb"></i>
+        <span style="text-align: right;">شما می بایست حداکثر ظرف مدت 2 ماه از تاریخ انعقاد قرارداد جهت انجام معاینات اولیه به مرجع معاینه مراجعه نمایید.</span>
+      </p><br>
+      <tamin-field-validator formControlName="commitment"></tamin-field-validator>
+      <tamin-field-checkbox *ngIf="!alldisabled" (change)="onCommitment()" formControlName="commitment"><p style="direction:rtl;text-align:right;">متقاضی محترم، با توجه به اینکه جهت
+        انعقاد قرارداد بیمه صاحبان حرف و مشاغل آزاد نیازمند انجام معاینه پزشکی قبل از بیمه پردازی می باشید و از طرفی با
+        عنایت به شیوع بیماری کرونا و تصمیمات متخذه تا اطلاع ثانوی نیازی به انجام معاینه پزشکی مربوطه نبوده و بدین وسیله
+        متعهد می گردید که بعد از عبور از بحران و عادی شدن شرایط به محض اطلاع رسانی این سازمان ظرف مدت تعیین شده نسبت به
+        انجام معاینه پزشکی اقدام نمایید.</p>
+      </tamin-field-checkbox>
+      <tamin-field-checkbox *ngIf="alldisabled"  onclick="return false;"  (change)="onCommitment()" formControlName="commitment"><p style="direction:rtl;text-align:right;">متقاضی محترم، با توجه به اینکه جهت
+        انعقاد قرارداد بیمه صاحبان حرف و مشاغل آزاد نیازمند انجام معاینه پزشکی قبل از بیمه پردازی می باشید و از طرفی با
+        عنایت به شیوع بیماری کرونا و تصمیمات متخذه تا اطلاع ثانوی نیازی به انجام معاینه پزشکی مربوطه نبوده و بدین وسیله
+        متعهد می گردید که بعد از عبور از بحران و عادی شدن شرایط به محض اطلاع رسانی این سازمان ظرف مدت تعیین شده نسبت به
+        انجام معاینه پزشکی اقدام نمایید.</p>
+      </tamin-field-checkbox>
+      <br>
+      <div class="col-3">
+        <button class="button normal green" (click)="onIntroduceToExamination()" [disabled]="!tickBox || alldisabled">
+          فرم معرفی به مرجع
+          معاینه
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+

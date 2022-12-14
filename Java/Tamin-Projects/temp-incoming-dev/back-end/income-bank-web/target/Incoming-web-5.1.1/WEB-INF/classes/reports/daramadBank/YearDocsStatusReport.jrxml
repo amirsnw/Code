@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="YearDocsStatusReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="15dc1ba5-1156-4f0e-ab96-1aa4b69e2fc0">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="recordDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="month" class="java.lang.String"/>
+	<field name="fishbaz" class="java.lang.Long"/>
+	<field name="fishpas" class="java.lang.Long"/>
+	<field name="chekbaz" class="java.lang.Long"/>
+	<field name="chekpas" class="java.lang.Long"/>
+	<field name="havbaz" class="java.lang.Long"/>
+	<field name="havpas" class="java.lang.Long"/>
+	<field name="elamye" class="java.lang.Long"/>
+	<field name="batel" class="java.lang.Long"/>
+	<field name="branchName" class="java.lang.String"/>
+	<field name="year" class="java.lang.String"/>
+	<variable name="sumNo" class="java.lang.Long">
+		<variableExpression><![CDATA[$F{fishbaz}+$F{fishpas}+$F{chekbaz}+$F{chekpas}+$F{havbaz}+$F{havpas}+$F{elamye}+$F{batel}]]></variableExpression>
+	</variable>
+	<variable name="total" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumNo}]]></variableExpression>
+	</variable>
+	<variable name="fish" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{fishbaz}+$F{fishpas}]]></variableExpression>
+	</variable>
+	<variable name="chek" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{chekbaz}+$F{chekpas}]]></variableExpression>
+	</variable>
+	<variable name="hav" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{havbaz}+$F{havpas}]]></variableExpression>
+	</variable>
+	<variable name="elamye1" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{elamye}]]></variableExpression>
+	</variable>
+	<variable name="batel1" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{batel}]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="166" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c489d2ff-4163-4883-b15a-db4e4360ea36" x="70" y="135" width="40" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[صفحه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8b097b4a-a657-4687-95e6-58b8c4eaac1e" x="220" y="100" width="131" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[گزارش وضعیت دفتر سال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de3b5224-7ac2-4360-8d29-8d9bbb7ddffa" stretchType="RelativeToTallestObject" x="430" y="135" width="68" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ گزارش :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ada2e91c-a78c-4bab-9fe3-7fdd02a069b4" x="217" y="50" width="121" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="13" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[سازمان تامین اجتماعی]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="14e7fd9a-8bd1-4b2c-8357-a2ff7481df6b" x="55" y="135" width="21" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="eff8607d-30a8-4498-86f3-5b08f6b8b56d" x="370" y="135" width="60" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{recordDate}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="c46097cc-4d8d-4955-b271-371c252fd4b8" x="252" y="0" width="50" height="50"/>
+				<imageExpression><![CDATA["/reports/Images/logoSmall.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="e3c9db88-846c-40c3-8672-909a52fc9fbf" x="180" y="73" width="195" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c8421be3-95a0-42b3-ba03-339d6970a882" x="190" y="100" width="42" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="13" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="3d697ec8-83ac-400c-94e3-9898f110714d" x="50" y="0" width="453" height="41" backcolor="#C0C0C0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b8fd87bc-691a-4a7a-818f-1fb92b436a9b" x="376" y="0" width="74" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[فیش]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="07f37098-458f-4cbe-ac72-e6cc59175111" x="302" y="0" width="73" height="21">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[چک]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f0cd781d-8517-4587-97ab-4b827820bdde" x="229" y="0" width="73" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[حواله]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="84bb6bdd-359c-41cd-a8ce-c6e0c68e8d03" x="169" y="10" width="60" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[اعلامیه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="237dbeaa-b435-4ccc-bcb4-145a352d651d" x="110" y="10" width="60" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[باطل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3678de86-488e-4327-a7b9-ba236bfb777d" x="50" y="10" width="60" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[جمع تعداد]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b19ec523-6161-4373-80dc-31a5e02391dd" x="110" y="0" width="1" height="41">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="8be20e0b-8160-4401-b98f-e9b8633ef82b" x="169" y="0" width="1" height="41">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="b3693f0e-725e-4b0d-9767-7ed6ef03239b" x="229" y="0" width="1" height="41">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="8f35896c-a878-4664-807f-48edfe796492" x="302" y="0" width="1" height="41">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="f4ffa2ae-3c3e-4302-b1cc-11d26692b070" x="375" y="0" width="1" height="41">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="0917c424-57a4-4fda-95c1-b65d73d84230" x="450" y="0" width="1" height="41">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement uuid="c63778ea-22dd-471c-a285-d903abe72df9" x="451" y="10" width="52" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ماه]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6ce64923-9184-432d-97da-8e543a4df990" x="230" y="20" width="220" height="1">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement uuid="36e48733-4b45-445f-8218-f5e7bb313b87" x="415" y="20" width="36" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[باز]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9605a2fe-cb48-4af6-ab10-a8fbc0f270a8" x="376" y="20" width="39" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[پاس]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="69a39f4e-4ef9-40db-9d8d-635cb95a12e1" x="415" y="21" width="1" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement uuid="46e2d480-ffd0-4a08-a575-80ab1809a023" x="301" y="21" width="39" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[پاس]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="524aa695-0c5b-4ce0-8b50-29234dc19269" x="340" y="21" width="36" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[باز]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0fd00c13-c61f-433d-a059-b0e5c208e10c" x="230" y="21" width="39" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[پاس]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5e0a07ef-a86d-434d-be97-38ac806941c9" x="269" y="20" width="33" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[باز]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="990ea6b7-cdb6-483f-b310-f0fc2c325330" x="340" y="21" width="1" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="cf68aaa3-a6cd-4cef-9f9c-57985644c142" x="268" y="21" width="1" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="487846b6-322f-4ba5-87dc-8b06f6b7ace3" x="50" y="0" width="453" height="25">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement uuid="47dd4b6b-15e4-4ce0-89c6-f91f613c0439" x="110" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="9d16fafb-4789-478d-a0ad-6bf76ad9cc58" x="169" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="07cd2872-2200-43e6-abe4-6ce775f0a27f" x="229" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="5efa1a30-e1d3-4203-a163-4bb5e2269c1d" x="302" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="22ba3f2f-4d4d-4379-8539-6c62cf5c8181" x="375" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="abcfc44a-2897-4f84-bb57-5674784f4e03" x="450" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement uuid="29e10553-ffbd-40cf-9c3b-82c424196459" x="451" y="2" width="50" height="21">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="11" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{month}.equals("01")) ? "فروردین" :
+(($F{month}.equals("02"))? "اردیبهشت" :
+(($F{month}.equals("03"))? "خرداد" :
+(($F{month}.equals("04"))? "تیر" :
+(($F{month}.equals("05"))? "مرداد" :
+(($F{month}.equals("06"))? "شهریور" :
+(($F{month}.equals("07"))? "مهر" :
+(($F{month}.equals("08"))? "آبان" :
+(($F{month}.equals("09"))? "آذر" :
+(($F{month}.equals("10"))? "دی" :
+(($F{month}.equals("11"))? "بهمن" :
+(($F{month}.equals("12"))? "اسفند":" "
+ )))))))))))]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="de22f330-c878-44f6-b69a-397d151850ff" x="418" y="2" width="30" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fishbaz}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="b758faff-5617-4859-9074-f4559771c6ae" x="376" y="2" width="38" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fishpas}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="28aabbcd-6f36-4043-881a-e340ea28fd1e" x="341" y="2" width="32" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chekbaz}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="72f4bf76-dda2-47f0-a929-efaa469680ad" x="303" y="2" width="35" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chekpas}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="c6a81223-fd2d-4c4a-8bcb-79279774c826" x="269" y="2" width="33" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{havbaz}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="532b3391-7ccf-4ee4-8e59-b019f08749a7" x="230" y="2" width="38" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{havpas}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="39474564-7b78-40f0-a204-d04d754da757" x="171" y="2" width="56" height="21">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{elamye}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="2d13ff50-0473-4da2-81c7-346eb8b01004" x="112" y="2" width="56" height="21">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{batel}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="f47dd858-2aa0-4158-a6f3-1f6b639ecdc3" x="50" y="0" width="60" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumNo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8947cd33-b54c-4f23-9d6c-268183ebfd6f" x="415" y="0" width="1" height="25">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="c60bca87-a4c6-4e7e-9899-f2be8ecc88d6" x="340" y="0" width="1" height="25">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="624a5f13-4802-47a9-9601-149fe5755754" x="268" y="0" width="1" height="25">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="76">
+			<rectangle>
+				<reportElement uuid="9339ad22-48ad-4fd5-800f-f1e688a2018e" x="50" y="0" width="453" height="25" backcolor="#E0E0E0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement uuid="e77a8c24-112d-4748-a7d1-218701b6bf0a" x="110" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="471110ad-65a7-4438-838d-d870b3a790a4" x="169" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="7ea9a5a5-49bf-4441-b40a-3d15d8a9aa4a" x="229" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="4097ee6e-7945-42a0-b87c-5194be08319a" x="302" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="8ed4977b-2563-4ae5-9af5-c68a06079994" x="375" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement uuid="808bda04-8a19-4b19-a1e5-5e32d8d79a1d" x="450" y="0" width="1" height="25">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement uuid="bcfa9eb6-2533-4b7b-807e-98b805205a1d" x="451" y="0" width="52" height="25">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[جمع کل]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement uuid="df67dcd6-c222-4d0b-a4cf-13737f3e88f3" x="52" y="2" width="57" height="21">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="11" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="f24c4095-9bc1-4919-a181-a802a899532d" x="380" y="2" width="68" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{fish}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="80b56d9a-dccc-4a50-82de-ddb60832ce68" x="303" y="2" width="70" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{chek}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="3977ff96-6d7b-40ef-9d24-d4ec31afae3a" x="233" y="2" width="68" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{hav}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="5b208d13-9925-422f-a7ab-ee0209e23d17" x="171" y="2" width="56" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{elamye1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="8bb61a01-cc05-4432-9e84-3ea77304aab4" x="112" y="2" width="54" height="20">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" isBold="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{batel1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

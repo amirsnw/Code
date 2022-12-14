@@ -1,0 +1,31 @@
+<tamin-modal #theModal title="قابلیت استعلام">
+  <form [formGroup]="enquiryForm" autocomplete="off" novalidate>
+    <div class="row"  style="border: solid 1px #2196F3;">
+      <div class="col-7 alert alert-info" style="margin: 0;">
+        کاربر گرامی :
+        <br/>این فرم جهت صدور مجوز استعلام (به اشتراک گذاری) اسناد یا اطلاعات موجود در صندوق شخصی شما تعبیه شده است.
+        <br/>اطلاعاتی که توسط این فرم به اشتراک گذاشته می شوند از طریق لینک "پنل مخصوص دستگاههای دولتی و مرجع استعلامات رسمی" که در قسمت حاشیه انتهایی سایت (Footer) قرار دارد، توسط مراجع بیرونی قابل استعلام خواهد بود.
+        <br/>امکان استعلام اسناد شما توسط سایرین فقط به واسطه ارائه کد ملی و رمز صادر شده در زمان به اشتراک گذاری امکان پذیر خواهد بود.
+        <br/> شما در این فرم می توانید نسبت به صدور مجوز استعلام در خصوص یکی از موارد صندوق شخصی خود به مدت مشخص (شروع از تاریخ روز جاری) اقدام نمایید.
+        <br/> بدیهی است پس از اتمام مدت تعیین شده مجوز استعلام بصورت اتوماتیک لغو خواهد شد.
+        <br/> لازم به ذکر است در صورتی که مایل به لغو مجوز استعلام بصورت دستی هستید میتوانید از طریق دکمه "لغو مجوز استعلام" اقدام
+        نمایید.
+      </div>
+      <!--<div class="col-4">-->
+      <!--<tamin-field-label formControlName="toDate">صدور مجوز استعلام به مدت:</tamin-field-label>-->
+      <!--<tamin-field-validator formControlName="toDate"></tamin-field-validator>-->
+      <!--<tamin-field-persian-date formControlName="toDate"></tamin-field-persian-date>-->
+      <!--</div>-->
+      <div class="col-5">
+        <div style="padding: 5px;">
+          <tamin-field-label formControlName="toDate">صدور مجوز استعلام به مدت:</tamin-field-label>
+          <tamin-field-validator formControlName="toDate"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="toDate" displayField="name" valueField="value" #toDateCombobBox></tamin-field-combo-box-static>
+        </div>
+        <div style="padding: 5px;">
+          <button type="button" class="button normal green" (click)="onSave()">صدور مجوز استعلام</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</tamin-modal>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SisChangeHisReqReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66d13f4b-3b13-4625-a80b-8dcb2b5bb383">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fname" class="java.lang.String"/>
+	<parameter name="lname" class="java.lang.String"/>
+	<parameter name="isuId" class="java.lang.String"/>
+	<parameter name="allhisghalibaf" class="java.math.BigDecimal"/>
+	<parameter name="allhismazad" class="java.math.BigDecimal"/>
+	<parameter name="kargahi" class="java.math.BigDecimal"/>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2624524f-c7ce-4f72-8940-ef2ec5febc0c" x="217" y="20" width="93" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بسمه تعالی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f3724145-2c98-4d4c-9056-95154682c93f" x="44" y="0" width="42" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[تاریخ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79bba214-bc82-4066-ab2d-d89e57e22ae1" x="44" y="20" width="42" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[شماره : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7bfb298f-0947-4e57-9001-7231ad6bda62" mode="Opaque" x="44" y="40" width="42" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[‍‍‍پیوست :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f1ae9272-b09a-474d-911d-7147ae1ae69c" mode="Transparent" x="1" y="96" width="552" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="false" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[درخواست تبدیل سابقه پرداخت حق بیمه مشمولین قانون قالیبافان قدیم (14درصد) به سابقه کامل]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="fcef1efc-34a1-402d-9277-c56788d16892" x="465" y="0" width="90" height="96"/>
+				<imageExpression><![CDATA["/reports/images/sazman.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="598" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4dc7da45-eafb-497a-943b-00f3b2e09de2" x="461" y="46" width="93" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[احتراما ، اینجانب]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="743b81d1-acfa-4d1e-abce-191fd0bcccec" x="367" y="46" width="89" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3d2be1ad-c778-4387-8ed1-f935095f8a59" x="215" y="46" width="152" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="270ebb22-d090-4f98-a05f-a9a05e086d3e" x="165" y="46" width="47" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[بیمه شده شماره]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ff051635-6ee9-42e8-abc7-2334620c2a4b" x="54" y="46" width="108" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{isuId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d69fa87d-8e4c-4711-9578-d460036ca2bb" x="28" y="46" width="16" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[که]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8fb851d6-a0f5-46e1-a070-6b3925e03863" x="419" y="68" width="120" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[به اعتبار اشتغال در کارگاه ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ef170a70-fac1-4039-81ca-4b805d413f3e" x="-1" y="91" width="540" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[مشمول قانون بیمه های اجتماعی قالیبافان ، بافندگان فرش و شاغلان صنایع دستی شناسه دار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="22253737-838a-41a7-959f-8ee084814071" x="217" y="67" width="44" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[به شماره]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="31b0fb62-c241-475d-9b78-e75201c6d26d" x="1" y="67" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[در زمره بیمه شدگان اجباری]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7e1c3c7-f581-4bfd-8379-e58f1a0c2b0c" x="456" y="116" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[قرار داشته و دارای]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="571573fc-c20f-4601-a872-b8115b0ce87d" x="202" y="116" width="139" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[روز سابقه پرداخت حق بیمه (14%) و]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7d706cd7-5ff2-44e9-8bbe-360e2d47724f" x="-1" y="116" width="107" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[روز سابقه مازاد سنی (14%) در]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="570c72b0-0142-4964-a2fc-d9e64e0e783e" x="1" y="136" width="555" height="126"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[ قالب قانون بیمه بازنشستگی ، فوت و از کار افتادگی بافندگان قالی ، قالیچه ، گلیم و زیلو می باشم ، متقاضی تبدیل سوابق یاد شده به سوابق کامل مطابق با مفاد بند 10 آیین نامه اجرائی قانون بیمه های اجتماعی قالیبافان ، بافندگان فرش و شاغلان صنایع دستی شناسه دار(کد دار) بوده و برابر ضوابط مورد عمل متعهد می شوم با تفهیم و آگاهی کامل از مفاد بند 10 آیین نامه اجرائی قانون مذکور که در ذیل این درخواست درج گردیده ، و همچنین با آگاهی کامل از اینکه مابه التفاوت تبدیل سوابق مربوطه پس از پرداخت به هیچ عنوان قابل استرداد نخواهد بود، ظرف مهلت تعیین شده در برگ پرداخت مابه التفاوت متعلقه نسبت به پرداخت حق بیمه های ناشی از پذیرش تقاضای صدرالذکر اقدام نمایم، به منزله انصراف از درخواست فوق تلقی و احتساب سوابق مورد نظر موکول به تسلیم درخواست جدید و رعایت مقررات مربوطه خواهد بود.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="393be297-300b-43ed-839a-686e28b6ed27" x="1" y="285" width="239" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[نام ، نام خانوادگی، امضاء و اثر انگشت متقاضی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3612ae3-1f91-4306-afca-a53f74c0c9db" x="509" y="366" width="44" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[نشانی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd27ed43-21a7-4a12-9baf-072d29364647" x="464" y="358" width="51" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[محل کار:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ec38abb4-79bd-49a4-a1ce-9423d3f345a2" x="464" y="378" width="51" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[منزل:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5253c915-6827-4231-af5b-3039db23f5a3" x="143" y="358" width="72" height="20"/>
+				<textElement>
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[تلفن تماس:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd8a3107-0924-4ee9-a869-5465e210c6a7" x="143" y="379" width="72" height="20"/>
+				<textElement>
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[تلفن تماس:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c4a8367-17df-4057-a11b-28f2932f5f94" x="323" y="418" width="230" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="false" isUnderline="true" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[شماره و تاریخ ثبت درخواست در شعبه: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c5917575-dc45-4703-a996-fb3d57c50097" x="0" y="462" width="555" height="136"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[مفاد بند 10 آیین نامه اجرائی قانون بیمه های اجتماعی قالیبافان، بافندگان فرش و شاغلان صنایع دستی شناسه دار(کددار) : سوابق مشمولان قانون بیمه بازنشستگی، فوت و از کار افتادگی بافندگان قالی، قالیچه ، گلیم و زیلو-مصوب 1367  - که به نحوی از اتحا از شمول قانون مذکور خارج شده و مشمول قانون این آئین نامه قرار گرفته و یا در کارگاههای مشمول قانون تامین اجتماعی – مصوب سال 1354- اشتغال به کار می یابند، یا درخواست بیمه شده و با پرداخت مابه التفاوت حق بیمه مربوطه جزء سنوات خدمت قابل قبول آنان در اجرای قانون تامین اجتماعی محسوب می شود ، در غیر اینصورت سابقه آنان به نسبت پنجاه درصد سنوات پرداخت حق بیمه به منظور بهره مندی از تعهدات قانونی ملاک عمل خواهد بود. ]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="00cafb94-34cb-4184-8065-b4ff51e89498" x="220" y="367" width="244" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="562aed13-58a9-4d3d-8369-8420393ecbf9" x="66" y="387" width="73" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="63a8089d-5035-4802-b5fa-96c6c2a5b589" x="351" y="116" width="87" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{allhisghalibaf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="127be76f-8d44-4bd8-a2fb-962c0971de89" x="108" y="116" width="82" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{allhismazad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="1d71c702-940d-4c37-aa39-8d1ed0d5d9df" x="269" y="78" width="147" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="96149eab-3397-492c-90a0-85d503899aff" x="108" y="78" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="91a771b6-b480-4e16-b897-f1b713440f92" x="220" y="387" width="244" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="ce475804-ce87-41d4-96c3-4115644b3742" x="66" y="368" width="71" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="9dd5f01e-4af2-40b8-beba-63a373ec1888" x="541" y="68" width="15" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Wingdings" pdfFontName="/reports/Fonts/Wingdings.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{kargahi}.equals( '0' )? " " : "þ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1d7883a-2a0d-4985-9ed7-ff940f25cc3c" x="541" y="91" width="15" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Wingdings" pdfFontName="/reports/Fonts/Wingdings.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{kargahi}.equals( '0' )? "þ" : " "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="93d3d1df-2879-45d7-820e-85c1c72def57" x="438" y="0" width="118" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[ریاست محترم شعبه ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b6ff7b38-64f0-43ef-9386-b7b0c5aba8b8" x="512" y="22" width="42" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" pdfFontName="/reports/Fonts/B Nazanin.ttf" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[با سلام]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

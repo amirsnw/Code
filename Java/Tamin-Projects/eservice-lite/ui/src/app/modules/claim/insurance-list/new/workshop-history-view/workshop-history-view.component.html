@@ -1,0 +1,286 @@
+<div class="panel">
+  <div CLASS="panel-title">جزییات لیست</div>
+  <div CLASS="panel-body">
+    <div class="badge-container">
+      <div class="row">
+        <div class="col-2">
+          <div class="badge">
+            <span class="badge-title">شماره پیگیری</span>
+            <span class="badge-value">{{summary?.workshopHistory.traceCode}}</span>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="badge">
+            <ng-container *ngIf="summary?.workshopHistory.status.id === 1">
+              <span class="badge-title"><i class="icon-hourglass-2"
+                                           style="margin-left: 5px;"></i><span>وضعیت درخواست</span></span>
+              <span class="badge-value">{{summary?.workshopHistory.status.statusDescription}}</span>
+            </ng-container>
+            <ng-container *ngIf="summary?.workshopHistory.status.id === 2">
+              <span class="badge-title"><i class="icon-hourglass-2"
+                                           style="margin-left: 5px;"></i><span>وضعیت درخواست</span></span>
+              <span class="badge-value">{{summary?.workshopHistory.status.statusDescription}}</span>
+            </ng-container>
+            <ng-container *ngIf="summary?.workshopHistory.status.id === 3">
+              <span class="badge-title"><i class="icon-hourglass-2"
+                                           style="margin-left: 5px;"></i><span>وضعیت درخواست</span></span>
+              <span class="badge-value">{{summary?.workshopHistory.status.statusDescription}}</span>
+            </ng-container>
+            <ng-container *ngIf="summary?.workshopHistory.status.id === 4">
+              <span class="badge-title"><i class="icon-ok-circled" style="color: green; margin-left: 5px;"></i><span>وضعیت درخواست</span></span>
+              <span class="badge-value"
+                    style="color: green;">{{summary?.workshopHistory.status.statusDescription}}</span>
+            </ng-container>
+            <ng-container *ngIf="summary?.workshopHistory.status.id === 5">
+              <span class="badge-title"><i class="icon-error-alt" style="color: red; margin-left: 5px;"></i><span>وضعیت درخواست</span></span>
+              <span class="badge-value" style="color: red;">{{summary?.workshopHistory.status.statusDescription}}</span>
+            </ng-container>
+            <ng-container *ngIf="summary?.workshopHistory.status.id === 6">
+              <span class="badge-title"><i class="icon-ok-circled" style="color: green; margin-left: 5px;"></i><span>وضعیت درخواست</span></span>
+              <span class="badge-value"
+                    style="color: green;">{{summary?.workshopHistory.status.statusDescription}}</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="badge">
+            <span class="badge-title">تاریخ تغییر وضعیت</span>
+            <span class="badge-value">{{summary?.workshopHistory.statusModificationTime | persianDateTime}}</span>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="badge">
+            <span class="badge-title">سال</span>
+            <span class="badge-value">{{summary?.workshopHistory.year}}</span>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="badge">
+            <span class="badge-title">ماه</span>
+            <span class="badge-value">{{summary?.workshopHistory.month.monthDescription}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <tamin-tabs tabPosition="top">
+      <tamin-tab-item>
+        <tamin-tab-label>ریز اطلاعات لیست</tamin-tab-label>
+        <tamin-tab-body>
+          <div class="row">
+            <div class="col-6" style="padding-left: 5px">
+              <table>
+                <tbody>
+                <tr>
+                  <td>کد کارگاه</td>
+                  <td>{{summary?.workshopHistory.workshop.code}}</td>
+                </tr>
+                <tr>
+                  <td>نام کارگاه</td>
+                  <td>{{summary?.workshopHistory.workshop.title}}</td>
+                </tr>
+                <tr>
+                  <td>ردیف پیمان</td>
+                  <td>{{summary?.workshopHistory.workshop.contractNumber}}</td>
+                </tr>
+                <tr>
+                  <td>عنوان پیمان</td>
+                  <td>{{summary?.workshopHistory.workshop.contractTitle}}</td>
+                </tr>
+                <tr>
+                  <td>نام کارفرما</td>
+                  <td>{{summary?.employerName}}</td>
+                </tr>
+                <tr>
+                  <td>آدرس کارفرما</td>
+                  <td>{{summary?.workshopAddress}}</td>
+                </tr>
+                <tr>
+                  <td>شماره لیست</td>
+                  <td>{{summary?.listNumber}}</td>
+                </tr>
+                <tr>
+                  <td>تعداد نفرات</td>
+                  <td>{{summary?.employeesCount | number}}</td>
+                </tr>
+                <tr>
+                  <td>جمع روزهای کارکرد</td>
+                  <td>{{summary?.totalWorkingDays | number}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-6" style="padding-right: 5px">
+              <table>
+                <tbody>
+                <tr>
+                  <td>جمع دستمزد روزانه</td>
+                  <td>{{summary?.totalDailyWages | number}}</td>
+                </tr>
+                <tr>
+                  <td>جمع دستمزد ماهانه</td>
+                  <td>{{summary?.totalMonthlyWages | number}}</td>
+                </tr>
+                <tr>
+                  <td>جمع مزایای ماهانه مشمول</td>
+                  <td>{{summary?.totalInclusiveBenefit | number}}</td>
+                </tr>
+                <tr>
+                  <td>جمع دستمزد و مزایای ماهانه مشمول</td>
+                  <td>{{summary?.totalInclusiveWageAndBenefit | number}}</td>
+                </tr>
+                <tr>
+                  <td>جمع کل دستمزد و مزایای ماهانه مشمول</td>
+                  <td>{{summary?.totalWageAndBenefit | number}}</td>
+                </tr>
+                <tr>
+                  <td>نوع حق بیمه</td>
+                  <td>{{summary?.premiumRate | number}}</td>
+                </tr>
+                <tr>
+                  <td>حق بیمه سهم بیمه شده</td>
+                  <td>{{summary?.totalEmployeePremium | number}}</td>
+                </tr>
+                <tr>
+                  <td>حق بیمه سهم کارفرما</td>
+                  <td>{{summary?.totalEmployerPremium  | number}}</td>
+                </tr>
+                <tr>
+                  <td>حق بیمه بیکاری</td>
+                  <td>{{summary?.totalUnemploymentPremium | number}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </tamin-tab-body>
+      </tamin-tab-item>
+      <tamin-tab-item>
+        <tamin-tab-label>کارکنان / بیمه شدگان</tamin-tab-label>
+        <tamin-tab-body>
+          <tamin-data-grid #workersDataGrid (itemAction)="onItemAction($event)"></tamin-data-grid>
+        </tamin-tab-body>
+      </tamin-tab-item>
+      <tamin-tab-item>
+        <tamin-tab-label>خطاها و هشدارها</tamin-tab-label>
+        <tamin-tab-body>
+          <tamin-data-grid #errorsDataGrid></tamin-data-grid>
+        </tamin-tab-body>
+      </tamin-tab-item>
+      <tamin-tab-item *ngIf="summary?.workshopHistory.status.id === 4">
+        <tamin-tab-label>پرداخت</tamin-tab-label>
+        <tamin-tab-body>
+          <div class="row">
+            <div class="col-4" style="padding: 5px">
+              <div style="border: solid 1px #cacaca; padding: 10px">
+                <p><strong>کارفرمای گرامی،</strong></p>
+                <br>
+                <p>برای پرداخت برگ پرداخت می توانید از یکی از دو روش اقدام نمایید.</p>
+                <br>
+                <p><span> 1- </span><span>مراجعه به کلیه شعب بانک های رفاه کارگران، تجارت، ملی، ملت، کشاورزی، صادرات، و واریز به حساب متمرکز اداره کل امور مالی کد 8150</span>
+                </p>
+                <br>
+                <p><span> 2- </span><span>پرداخت اینترنتی برگ پرداخت با استفاده از لینک درگاه بانک رفاه</span></p>
+                <br>
+                <a href=""><img src="assets/images/refah%20bank.jpg" alt="" style="width: 150px;height: auto"></a>
+              </div>
+            </div>
+            <div class="col-8" style="padding: 5px">
+              <div style="border: solid 1px #cacaca">bbbbb</div>
+            </div>
+          </div>
+        </tamin-tab-body>
+      </tamin-tab-item>
+    </tamin-tabs>
+    <div style="margin-top:5px;margin-bottom:5px;">
+      <button type="button" class="button normal" (click)="redirectTo('il/workshop-history')">بازگشت به لیست</button>
+      <button
+        type="button"
+        class="button normal"
+        (click)="onConfirm()"
+        *ngIf="summary?.workshopHistory.status.id === 1">تایید و ارسال
+      </button>
+    </div>
+  </div>
+</div>
+
+<tamin-modal #theModal title="جزییات اطلاعات بیمه شده">
+  <div class="row">
+    <div class="col-6" style="padding-left: 5px">
+      <table>
+        <tbody>
+        <tr>
+          <td>نام و نام خانوادگی</td>
+          <td>{{employee?.firstName}} {{employee?.lastName}}</td>
+        </tr>
+        <tr>
+          <td>شماره شناسنامه</td>
+          <td>{{employee?.identityNumber}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ صدور</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ملیت</td>
+          <td>{{employee?.nationality}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ شروع به کار</td>
+          <td>{{employee?.workStartDate}}</td>
+        </tr>
+        <tr>
+          <td>جمع دستمزد و مزایای ماهانه مشمول</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>حق بیمه سهم بیمه شده</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>کد شغل</td>
+          <td>{{employee?.jobCode}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-6" style="padding-right: 5px">
+      <table>
+        <tbody>
+        <tr>
+          <td>نام پدر</td>
+          <td>{{employee?.fatherName}}</td>
+        </tr>
+        <tr>
+          <td>محل صدور</td>
+          <td>{{employee?.identityIssuePlace}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ تولد</td>
+          <td>{{employee?.identityIssueDate}}</td>
+        </tr>
+        <tr>
+          <td>جنسیت</td>
+          <td>{{employee?.gender}}</td>
+        </tr>
+        <tr>
+          <td>تاریخ ترک کار</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>جمع کل دستمزد و مزایای ماهانه</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>نرخ پورسانتاژ</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</tamin-modal>

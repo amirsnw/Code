@@ -1,0 +1,161 @@
+.login-page-background {
+    background-image: url('/assets/images/places/eram-garden-shiraz.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.portal-login-all-content {
+    margin: auto;
+    zoom: 100%;
+}
+
+.portal-login {
+    /*background-color: rgba(255, 255, 255, 0.6);*/
+    background-image: url(/assets/images/portal/login_bg_big.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 667px;
+    height: 449px;
+    margin: 3% auto 30px;
+}
+
+.portal-login-form {
+    padding-left: 200px;
+    padding-right: 205px;
+    padding-top: 5px;
+}
+
+.portal-login-button-down {
+    background-image: url(/assets/images/portal/login_button-down.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 72px;
+    margin-top: 7px;
+    cursor: pointer;
+    line-height: 72px;
+    font-weight: bold;
+    color: white;
+}
+
+.portal-login-button-down:hover {
+    background-image: url(/assets/images/portal/login_button-down-hi.png);
+}
+
+.portal-login-button-down:active {
+    background-image: url(/assets/images/portal/login_button-down-hi.png);
+}
+
+.portal-login-button-up {
+    height: 107px;
+    cursor: pointer;
+    line-height: 107px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.portal-login-buttons {
+    max-width: 450px;
+    margin: 10px auto 10px auto;
+    padding: 1px;
+    text-align: center;
+}
+
+.button.login {
+    font-size: 12px;
+    width: 150px;
+    height: 36px;
+    opacity: 0.95;
+}
+
+.portal-advices {
+    background-color: rgba(255, 255, 255, 0.6);
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    padding: 1px;
+    max-width: 450px;
+    margin: 10px auto 10px auto;
+    /*zoom: 90%;*/
+}
+
+.login-input {
+    direction: ltr;
+    font-family: Calibri, Tahoma, Arial !important;
+    text-align: center !important;
+    font-size: 1.5em !important;
+    height: 2em !important;
+    opacity: 1 !important;;
+}
+
+#advice1 {
+    background: url(/assets/images/icons/safe-browser.png) no-repeat right;
+    background-size: 16px;
+    padding: 2px 25px 2px 0px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#advice2 {
+    background: url(/assets/images/icons/password3.png) no-repeat right;
+    background-size: 16px;
+    padding: 2px 25px 2px 0px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+#advice3 {
+    background: url(/assets/images/icons/keyboard.png) no-repeat right;
+    background-size: 16px;
+    padding: 2px 25px 2px 0px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#advice4 {
+    background: url(/assets/images/icons/logout3.png) no-repeat right;
+    background-size: 16px;
+    padding: 2px 25px 2px 0px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+#advice5 {
+    background: url(/assets/images/icons/ear.png) no-repeat right;
+    background-size: 16px;
+    padding: 2px 25px 2px 0px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.picture-info {
+    width: 100%;
+    height: 32px;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.219);
+    vertical-align: middle;
+    text-align: left;
+    font-size: 10px;
+    color: #fff;
+    padding: 7px;
+}
+
+@media only screen and (max-width: 800px) {
+    /* For tablets: */
+    .portal-login {
+        background-image: url(/assets/images/portal/login_bg_small.png);
+        width: 428px;
+        height: 449px;
+    }
+    .portal-login-form {
+        padding-left: 80px;
+        padding-right: 85px;
+        padding-top: 5px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .portal-login-all-content {
+        margin: auto;
+        zoom: 65%;
+        /*transform: scaleX(0.5) scaleY(0.5);*/
+    }
+}

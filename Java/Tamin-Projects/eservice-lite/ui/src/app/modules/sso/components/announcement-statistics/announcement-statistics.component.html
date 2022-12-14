@@ -1,0 +1,48 @@
+<div class="alert alert-info">
+  گزارش آماری ابلاغ الکترونیک
+</div>
+<div class="panel">
+  <div class="panel-title">جستجو</div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off">
+      <div class="form-control-container row">
+        <div class="col-3">
+          <tamin-field-label formControlName="type">نام سیستم</tamin-field-label>
+          <tamin-field-combo-box formControlName="type" #type></tamin-field-combo-box>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="subType">موضوع</tamin-field-label>
+          <tamin-field-combo-box formControlName="subType" #subType></tamin-field-combo-box>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="sentDateFrom">از تاریخ</tamin-field-label>
+          <tamin-field-persian-date formControlName="sentDateFrom"></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="sentDateTo">تا تاریخ</tamin-field-label>
+          <tamin-field-persian-date formControlName="sentDateTo"></tamin-field-persian-date>
+        </div>
+      </div>
+      <p style="margin-top:5px;">
+        <button type="submit" class="button normal" (click)="onSearch()">جستجو</button>
+        <button type="button" class="button normal dark" (click)="resetForm()">نمایش همه</button>
+      </p>
+    </form>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-title">آمار ابلاغ الکترونیک</div>
+  <div class="panel-body">
+    <tamin-data-grid #dataGrid></tamin-data-grid>
+    <div>
+      <p style="margin: 5px">
+        <button type="button" class="button normal" (click)="onExcelReport()">صدور به اکسل</button>
+        <button type="button" class="button normal gray" (click)="redirectTo('/sso')"><i
+          class=" icon-right-big"></i><span>بازگشت به صفحه نخست</span>
+        </button>
+      </p>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'node_modules/tamin-framework/assets/css/tamin-framework.css';
+
+html, body {
+  background-color: #fafaff !important;
+  /*-webkit-user-select: none; !* Chrome/Safari *!*/
+  /*-moz-user-select: none; !* Firefox *!*/
+  /*-ms-user-select: none; !* IE10+ *!*/
+
+  /* Rules below not implemented in browsers yet */
+  /*-o-user-select: none;*/
+  /*user-select: none;*/
+  height: 100%;
+}
+
+
+.page-caption {
+  margin-top: 5px;
+  padding: 10px;
+  background-color: chocolate;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.page-caption span {
+}
+
+
+.leaflet-tooltip {
+  font-family: main-font, tahoma, verdana !important;
+  direction: rtl;
+  text-align: center;
+}
+
+.div-icon {
+  height: 32px;
+  width: 32px;
+  background-repeat: no-repeat;
+  background-image: url(assets/icons/User-Green-icon.png);
+  display: inline-block;
+}
+
+.tour {
+  float: left;
+  cursor: pointer;
+}
+
+.leaflet-bottom {
+  display: none;
+}

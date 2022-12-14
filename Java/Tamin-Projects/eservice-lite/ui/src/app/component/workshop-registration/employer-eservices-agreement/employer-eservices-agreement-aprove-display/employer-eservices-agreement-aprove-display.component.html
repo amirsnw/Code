@@ -1,0 +1,27 @@
+<div (window:resize)="onResize($event)" class="page-title">تعهدنامه خدمات غیرحضوری کارفرمایان</div>
+<div  *ngIf="mobileSize" class="status-selected width-state-one">
+    <p class="is-active">ورود اطلاعات</p>
+      <p class="is-active">نمایش اطلاعات کارفرمایی</p>
+        <p class="de-active">تایید نهایی تعهد نامه </p>
+  </div>
+  <div *ngIf="!mobileSize" class="status-selected width-state-one">
+    <span class="is-active">ورود اطلاعات</span> &#8592;
+    <span class="is-active">نمایش اطلاعات کارفرمایی</span> &#8592;
+    <span class="de-active">تایید نهایی تعهد نامه </span>
+  </div>
+<div  class="panel margin-mobil">
+  <div class="panel-title">اطلاعات هویتی کارفرما</div>
+  <div class="panel-body">
+    <app-employer-eservices-agreement-insured-info #specialInsuredInfoComponent>
+    </app-employer-eservices-agreement-insured-info>
+  </div>
+<div class="page-title">لیست کارگاه ها و ردیف های پیمان</div>
+<div class="panel-body">
+  <tamin-data-grid #workshopDetail></tamin-data-grid>
+</div>
+<p>
+    <button type="button"  class="button normal" (click)="onlastApprove()">تائید اطلاعات و ادامه</button>
+    <button type="button"  class="button normal red" (click)="onRollback()">عدم تائید و انصراف</button>
+  </p>
+</div>
+

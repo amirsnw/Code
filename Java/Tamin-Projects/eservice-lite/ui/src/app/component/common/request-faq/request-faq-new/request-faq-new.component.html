@@ -1,0 +1,52 @@
+<tamin-modal #theModal title="پرسش جدید">
+
+  <form [formGroup]="theForm" autocomplete="off" novalidate>
+    <div class="panel">
+      <div class="panel-body">
+        <div class="form-control-container">
+          <div class="row">
+            <div class="col-6">
+              <tamin-field-label formControlName="requestTypeNew">نوع درخواست</tamin-field-label>
+              <!--              <tamin-field-text formControlName="requestTypeNew"></tamin-field-text>-->
+              <tamin-field-combo-box-static formControlName="requestTypeNew" valueField="value" displayField="name"
+                                            [dataItems]="requestTypes"></tamin-field-combo-box-static>
+            </div>
+
+            <div class="col-6">
+              <tamin-field-label formControlName="requestStatusNew">وضعیت درخواست</tamin-field-label>
+              <!--              <tamin-field-text formControlName="requestStatusNew"></tamin-field-text>-->
+              <tamin-field-combo-box-static formControlName="requestStatusNew" valueField="value" displayField="name"
+                                            [dataItems]="requestStatus"></tamin-field-combo-box-static>
+
+            </div>
+            <div class="col-6">
+              <tamin-field-label formControlName="isPublicNew">دسترسی</tamin-field-label>
+              <!--              <tamin-field-text formControlName="requestStatusNew"></tamin-field-text>-->
+              <tamin-field-combo-box-static formControlName="isPublicNew" valueField="value" displayField="name"
+                                            [dataItems]="isPublic"></tamin-field-combo-box-static>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <tamin-field-label formControlName="question">پرسش</tamin-field-label>
+              <tamin-field-text-area formControlName="question"></tamin-field-text-area>
+            </div>
+
+            <div class="col-12">
+              <tamin-field-label formControlName="reply">پاسخ</tamin-field-label>
+              <tamin-field-text-area formControlName="reply"></tamin-field-text-area>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button type="button" class="button normal" (click)="saveForm()">ثبت</button>
+      </div>
+    </div>
+<!--    <app-request-faq #theRequestFaq></app-request-faq>-->
+  </form>
+</tamin-modal>
+<!--<app-request-faq #theRequestFaq></app-request-faq>-->

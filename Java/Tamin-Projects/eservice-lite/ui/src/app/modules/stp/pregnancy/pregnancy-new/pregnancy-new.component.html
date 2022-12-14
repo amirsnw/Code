@@ -1,0 +1,105 @@
+<div class="alert alert-info">
+  درخواست غرامت دستمزد ایام بارداری
+</div>
+<app-stp-header-new requestTyp="غرامت دستمزد ایام بارداری" #header (dataLoaded)="chackGender()"></app-stp-header-new>
+<form [formGroup]="theForm" novalidate autocomplete="off">
+  <div class="panel" #dataPanel>
+    <div class="panel-title">اطلاعات درخواست</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-6">
+          <tamin-field-label formControlName="branchCode">آخرین شعبه بیمه پردازی</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="branchCode" placeholder="" [dataItems]="header.branchWorkshop" displayField="name" valueField="value"></tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="barSDateTimeStamp">تاریخ شروع استراحت</tamin-field-label>
+          <tamin-field-validator formControlName="barSDateTimeStamp"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="barSDateTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="barEDateTimeStamp">تاریخ خاتمه استراحت</tamin-field-label>
+          <tamin-field-validator formControlName="barEDateTimeStamp"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="barEDateTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="barDemDatTimeStamp">تاریخ زایمان(تاریخ تولد نوزاد)</tamin-field-label>
+          <tamin-field-validator formControlName="barDemDatTimeStamp"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="barDemDatTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="barDrname">نام پزشک معالج</tamin-field-label>
+          <tamin-field-validator formControlName="barDrname"></tamin-field-validator>
+          <tamin-field-persian-text formControlName="barDrname" placeholder=""></tamin-field-persian-text>
+        </div>
+
+        <div class="col-3">
+          <tamin-field-label formControlName="barDRid">کد نظام پزشکی پزشک معالج</tamin-field-label>
+          <tamin-field-validator formControlName="barDRid"></tamin-field-validator>
+          <tamin-field-mask formControlName="barDRid" placeholder="" mask="0000000000"></tamin-field-mask>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="barDd">تعداد روزهای استراحت</tamin-field-label>
+          <tamin-field-validator formControlName="barDd"></tamin-field-validator>
+          <tamin-field-static-text formControlName="barDd" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="barType">وضعیت بارداری</tamin-field-label>
+          <tamin-field-validator formControlName="barType"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="barType" placeholder="" [dataItems]="barTypes"
+                                        displayField="name" valueField="value"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="barChild">نوع بارداری</tamin-field-label>
+          <tamin-field-validator formControlName="barChild"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="barChild" placeholder="" [dataItems]="barChild"
+                                        valueField="value" displayField="name"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="babyNationalCode">کد ملی نوزاد</tamin-field-label>
+          <tamin-field-validator formControlName="babyNationalCode"></tamin-field-validator>
+          <tamin-field-natioanl-id formControlName="babyNationalCode" placeholder=""></tamin-field-natioanl-id>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="panel">
+  <div class="panel-title">مدارک مورد نیاز</div>
+  <div class="panel-body">
+    <button class="button normal" (click)="addImage('تصویر صفحه اول شناسنامه مادر', 'image1')" *ngIf="!hasImage1"><span>افزودن تصویر صفحه اول شناسنامه مادر</span>
+    </button>
+    <button class="button normal" (click)="addImage('تصویر صفحه دوم شناسنامه مادر', 'image2')" *ngIf="!hasImage2"><span>افزودن تصویر صفحه دوم شناسنامه مادر</span>
+    </button>
+<!--    <button class="button normal" (click)="addImage('تصویر صفحه اول شناسنامه فرزند', 'image3')" *ngIf="!hasImage3">-->
+<!--      <span>افزودن تصویر صفحه اول شناسنامه فرزند</span>-->
+<!--    </button>-->
+<!--    <button class="button normal" (click)="addImage('تصویر گواهی ولادت', 'image4')" *ngIf="!hasImage4"><span>افزودن تصویر گواهی ولادت</span>-->
+<!--    </button>-->
+    <button class="button normal" (click)="addImage('تصویر گواهی ولادت یا شناسنامه نوزاد', 'image6')" *ngIf="!hasImage6"><span>افزودن تصویر گواهی ولادت یا شناسنامه نوزاد</span>
+    </button>
+    <button class="button normal" (click)="addImage('تصویر استراحت پزشکی', 'image5')" *ngIf="!hasImage5"><span>افزودن تصویر استراحت پزشکی</span>
+    </button>
+    <tamin-image-gallery-managed [maxImageSize]="500"
+      #imageGallery
+      (afterRemove)="onRemoveImage($event)"
+      (afterInsert)="onInsertImage($event)"></tamin-image-gallery-managed>
+    <div class="alert alert-info">
+      توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+    </div>
+  </div>
+</div>
+
+<div class="button-container" style="margin: 3px">
+  <button class="button normal" (click)="onSendRequest()">
+    <i class="icon-ok"></i>
+    <span>ثبت درخواست</span>
+  </button>
+
+</div>
+
+

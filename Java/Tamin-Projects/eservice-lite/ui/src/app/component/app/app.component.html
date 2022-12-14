@@ -1,0 +1,36 @@
+<tamin-site-header *ngIf="showHeader" [showLogin]="showLogin()" (showProfile)="showProfile()"
+                   data-html2canvas-ignore></tamin-site-header>
+<tamin-site-top-menu *ngIf="isWeb && showMenu" [restUrl]="'assets/data/menu-data.json'"
+                     class="site-top-menu"></tamin-site-top-menu>
+<!--<div style="position: relative">-->
+<router-outlet (activate)="onActivateEvents($event)"></router-outlet>
+<!--</div>-->
+<tamin-site-footer *ngIf="showFooter"></tamin-site-footer>
+
+<div *ngIf="!isWeb && !isLoginPage" class="mobile-navbar">
+  <!--<div class="mobile-navbar">-->
+  <div class="row mobile-navbar-button-container">
+    <div class="mobile-navbar-button" (click)="onNavButtonClicked('insured')">
+      <img src='assets/images/icons/insured.png' alt='' class='mobile-navbar-button-img'/>
+    </div>
+    <div class="mobile-navbar-button" (click)="onNavButtonClicked('pensioner')">
+      <img src='assets/images/icons/pensioner.png' alt='' class='mobile-navbar-button-img'/>
+    </div>
+    <div class="mobile-navbar-button" (click)="onNavButtonClicked('main')">
+      <img src='assets/images/icons/home.png' alt='' class='mobile-navbar-button-img'/>
+    </div>
+    <div class="mobile-navbar-button" (click)="onNavButtonClicked('workshop')">
+      <img src='assets/images/icons/workshop.png' alt='' class='mobile-navbar-button-img'/>
+    </div>
+    <div class="mobile-navbar-button" (click)="onNavButtonClicked('me')">
+      <img src='assets/images/icons/pishkhan.png' alt='' class='mobile-navbar-button-img'/>
+    </div>
+  </div>
+</div>
+<div *ngIf="isUserAuthenticated && !isLoginPage">
+  <app-site-feedback #siteFeedBack></app-site-feedback>
+  <img data-html2canvas-ignore class="feedback" src="assets/images/icons/helpdesk.png" alt="ثبت اشکال در عملکرد"
+       width="42px"
+       height="42px" title="ثبت اشکال در عملکرد" (click)="onFeedbackClick()" style="z-index: 1000000">
+</div>
+<app-portal-user-profile #userProfile></app-portal-user-profile>

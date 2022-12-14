@@ -1,0 +1,71 @@
+<div class="panel col-6 col-s-6">
+  <div class="panel-title"> ثبت صورت ریز هزینه های اداری </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate (ngSubmit)="onSave(editForm.value)">
+      <div class="form-control-container">
+        <div class="panel col-12 col-s-12">
+        <div class="row">
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="endDate">منتهی به تاریخ</tamin-field-label>
+            <tamin-field-static-persian-date formControlName="endDate" placeholder=""></tamin-field-static-persian-date>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="wntAndComming">هزینه ایاب و ذهاب</tamin-field-label>
+            <tamin-field-validator  formControlName="wntAndComming" ></tamin-field-validator>
+            <tamin-field-number formControlName="wntAndComming"></tamin-field-number>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="lunch">هزینه ناهاری</tamin-field-label>
+            <tamin-field-validator  formControlName="lunch" ></tamin-field-validator>
+            <tamin-field-number formControlName="lunch"></tamin-field-number>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="rent">هزینه اجاره</tamin-field-label>
+            <tamin-field-validator  formControlName="rent" ></tamin-field-validator>
+            <tamin-field-number formControlName="rent"></tamin-field-number>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="installation">نگهداری تاسیسات</tamin-field-label>
+            <tamin-field-validator  formControlName="installation" ></tamin-field-validator>
+            <tamin-field-number formControlName="installation"></tamin-field-number>
+          </div>
+
+          <div class="col-6 col-s-6">
+          <tamin-field-label formControlName="repairs">تعمیرات ساختمان</tamin-field-label>
+            <tamin-field-validator  formControlName="repairs" ></tamin-field-validator>
+          <tamin-field-number formControlName="repairs"></tamin-field-number>
+        </div>
+          <div class="col-6 col-s-6">
+          <tamin-field-label formControlName="postAndTel">پست،تلفن و ...</tamin-field-label>
+            <tamin-field-validator  formControlName="postAndTel" ></tamin-field-validator>
+          <tamin-field-number formControlName="postAndTel"></tamin-field-number>
+        </div>
+          <div class="col-6 col-s-6">
+          <tamin-field-label formControlName="waterAndElectricity">آب و برق و ...</tamin-field-label>
+            <tamin-field-validator  formControlName="waterAndElectricity" ></tamin-field-validator>
+          <tamin-field-number formControlName="waterAndElectricity"></tamin-field-number>
+        </div>
+          <div class="col-6 col-s-6">
+          <tamin-field-label formControlName="others">سایر هزینه ها</tamin-field-label>
+            <tamin-field-validator  formControlName="others" ></tamin-field-validator>
+          <tamin-field-number formControlName="others"></tamin-field-number>
+        </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="totalSum">جمع کل</tamin-field-label>
+            <tamin-field-validator  formControlName="totalSum" ></tamin-field-validator>
+            <tamin-field-static-text formControlName="totalSum" placeholder=""></tamin-field-static-text>
+          </div>
+          <div class="row">
+            <p>کاربر گرامی تمامی فیلدها باید مقدار داشته باشد چنانچه مقدار آن خالی است با  0 پر گردد .</p>
+            <p>کاربر گرامي، مبالغ به ریال میباشد. </p>
+          </div>
+        </div>
+      </div>
+      </div>
+        <div class="col-12 col-s-12">
+        <button #submitButton type="submit" class="button normal">ذحیره </button>
+        <button type="button" class="button normal orange" (click)="back()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>

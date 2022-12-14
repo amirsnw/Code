@@ -1,0 +1,130 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "menu1",
+            "icon": "",
+            "caption": "امور فنی بیمه شدگان",
+            "items": [
+                //                {
+                //                    "id": 2,
+                //                    "name": "",
+                //                    "icon": "",
+                //                    "caption": "سیستم های سربازی",
+                //                    "items": [
+                //                        {
+                //                            "id": 3,
+                //                            "name": "soldier-list",
+                //                            "icon": "",
+                //                            "caption": "خدمت نظام وظیفه و حضور در جبهه در اجرای قانون تبصره ..."
+                //                        },
+                //                        {
+                //                            "id": 4,
+                //                            "name": "soldier-95-list",
+                //                            "icon": "",
+                //                            "caption": "خدمت نظام وظیفه در اجرا ماده 95 قانون تامین اجتماعی"
+                //                        },
+                //                        {
+                //                            "id": 5,
+                //                            "name": "isargaran-request-list",
+                //                            "icon": "",
+                //                            "caption": "احتساب سوابق ایثارگران"
+                //                        }
+                //
+                //                    ]
+                //                },
+                //                {
+                //                    "id": 6,
+                //                    "name": "building-eng-org-req-list",
+                //                    "icon": "",
+                //                    "caption": "سازمان نظام مهندسی ساختمان"
+                //                },
+                //                {
+                //                    "id": 7,
+                //                    "name": "transfer-Insured-to-Other-Funds-List",
+                //                    "icon": "",
+                //                    "caption": "انتقال حق بیمه از سازمان تامین اجتماعی به سایر صندوق ها"
+                //                },
+                //                {
+                //                    "id": 7,
+                //                    "name": "special-Insured",
+                //                    "icon": "",
+                //                    "caption": "بیمه شدگان خاص",
+                //                    "items":
+                //                    [
+                //                        {
+                //                            "id": 8,
+                //                            "name": "sislst-change-his",
+                //                            "icon": "",
+                //                            "caption": "سیستم تبدیل نرخ 14 به 27 درصد"
+                //                        }
+                //
+                //
+                //                    ]
+                //                },
+                {
+                    "id": 8,
+                    "name": "",
+                    "icon": "",
+                    "caption": "بازرسی فنی",
+                    "roles": [
+                        "PROV HEAD USER TECHNICAL",
+                        "GENERAL USER TECHNICAL",
+                        "HEAD USER TECHNICAL",
+                        "INSPECTOR USER TECHNICAL"
+                    ],
+                    "items": [
+                        {
+                            "id": 9,
+                            "name": "guardian-spec",
+                            "icon": "",
+                            "caption": "کفالت",
+                            "roles": [
+                                "PROV HEAD USER TECHNICAL",
+                                "GENERAL USER TECHNICAL",
+                                "HEAD USER TECHNICAL",
+                                "INSPECTOR USER TECHNICAL"
+                            ]
+                        },
+                        {
+                            "id": 10,
+                            "name": "refund-spec",
+                            "icon": "",
+                            "caption": "استرداد",
+                            "roles": [
+                                "PROV HEAD USER TECHNICAL",
+                                "GENERAL USER TECHNICAL",
+                                "HEAD USER TECHNICAL",
+                                "INSPECTOR USER TECHNICAL"
+                            ]
+                        },
+                        {
+                            "id": 11,
+                            "name": "insurance-agreement-spec",
+                            "icon": "",
+                            "caption": "بیمه ای توافقی",
+                            "roles": [
+                                "PROV HEAD USER TECHNICAL",
+                                "GENERAL USER TECHNICAL",
+                                "HEAD USER TECHNICAL",
+                                "INSPECTOR USER TECHNICAL"
+                            ]
+                        },
+                        {
+                            "id": 12,
+                            "name": "occur-spec",
+                            "icon": "",
+                            "caption": "بازرسی فنی (حادثه)",
+                            "roles": [
+                                "PROV HEAD USER TECHNICAL",
+                                "GENERAL USER TECHNICAL",
+                                "HEAD USER TECHNICAL",
+                                "INSPECTOR USER TECHNICAL"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

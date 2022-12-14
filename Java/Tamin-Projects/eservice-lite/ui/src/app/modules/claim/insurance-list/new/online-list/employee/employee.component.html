@@ -1,0 +1,173 @@
+<div class="panel">
+  <div class="panel-title">ریز کارکرد</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-6">
+        <table>
+          <tbody>
+          <tr>
+            <td>کد کارگاه</td>
+            <td>{{listData?.workshopCode}}</td>
+          </tr>
+          <tr>
+            <td>نام کارگاه</td>
+            <td>{{listData?.workshopTitle}}</td>
+          </tr>
+          <tr>
+            <td>نام کارفرما</td>
+            <td>{{listData?.employerName}}</td>
+          </tr>
+          <tr>
+            <td>ردیف پیمان</td>
+            <td>{{listData?.contactTitle}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-6">
+        <table>
+          <tbody>
+          <tr>
+            <td>شماره لیست</td>
+            <td>{{listData?.ListNo}}</td>
+          </tr>
+          <tr>
+            <td>آدرس</td>
+            <td>{{listData?.address}}</td>
+          </tr>
+          <tr>
+            <td>سال</td>
+            <td>{{listData?.year}}</td>
+          </tr>
+          <tr>
+            <td>ماه</td>
+            <td>{{listData?.monthName}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    <form [formGroup]="theForm" novalidate autocomplete="off">
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="insuranceNumber">شماره بیمه شده</tamin-field-label>
+          <tamin-field-validator formControlName="insuranceNumber"></tamin-field-validator>
+          <tamin-field-auto-complete-data-grid
+            formControlName="insuranceNumber"
+            #insuranceNumberAutoCompleteDataGrid>
+          </tamin-field-auto-complete-data-grid>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="nationalID">کد ملی</tamin-field-label>
+          <tamin-field-validator formControlName="nationalID"></tamin-field-validator>
+          <tamin-field-natioanl-id formControlName="nationalID"></tamin-field-natioanl-id>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="firstName">نام</tamin-field-label>
+          <tamin-field-validator formControlName="firstName"></tamin-field-validator>
+          <tamin-field-text formControlName="firstName"></tamin-field-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="lastName">نام خانوادگی</tamin-field-label>
+          <tamin-field-validator formControlName="lastName"></tamin-field-validator>
+          <tamin-field-text formControlName="lastName"></tamin-field-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="fatherName">نام پدر</tamin-field-label>
+          <tamin-field-validator formControlName="fatherName"></tamin-field-validator>
+          <tamin-field-text formControlName="fatherName"></tamin-field-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="gender">جنسیت</tamin-field-label>
+          <tamin-field-validator formControlName="gender"></tamin-field-validator>
+          <tamin-field-text formControlName="gender"></tamin-field-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="birthCertificateNo">شماره شناسنامه</tamin-field-label>
+          <tamin-field-validator formControlName="birthCertificateNo"></tamin-field-validator>
+          <tamin-field-text formControlName="birthCertificateNo"></tamin-field-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="placeOfIssue">محل صدور</tamin-field-label>
+          <tamin-field-validator formControlName="placeOfIssue"></tamin-field-validator>
+          <tamin-field-text formControlName="placeOfIssue"></tamin-field-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="dateOfIssue">تاریخ تولد</tamin-field-label>
+          <tamin-field-validator formControlName="dateOfIssue"></tamin-field-validator>
+          <tamin-field-text formControlName="dateOfIssue"></tamin-field-text>
+        </div>
+        <div class="col-12">
+          <hr>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="workDays">روزهای کارکرد</tamin-field-label>
+          <tamin-field-validator formControlName="workDays"></tamin-field-validator>
+          <tamin-field-number formControlName="workDays" min="0" max="31"></tamin-field-number>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="wage">دستمزد روزانه</tamin-field-label>
+          <tamin-field-validator formControlName="wage"></tamin-field-validator>
+          <tamin-field-number formControlName="wage"></tamin-field-number>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="includedSalary">دستمزد ماهانه مشمول</tamin-field-label>
+          <tamin-field-validator formControlName="includedSalary"></tamin-field-validator>
+          <tamin-tamin-field-calculable formControlName="includedSalary"
+                                        (calculate)="onCalculateSalary()"></tamin-tamin-field-calculable>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="continualIncludedSalary">مزایای ماهانه مشمول (مستمر)</tamin-field-label>
+          <tamin-field-validator formControlName="continualIncludedSalary"></tamin-field-validator>
+          <tamin-field-number formControlName="continualIncludedSalary"></tamin-field-number>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="temporaryIncludedSalary">مزایای ماهانه مشمول (غیر مستمر)
+          </tamin-field-label>
+          <tamin-field-validator formControlName="temporaryIncludedSalary"></tamin-field-validator>
+          <tamin-field-number formControlName="temporaryIncludedSalary"></tamin-field-number>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="job">شغل</tamin-field-label>
+          <tamin-field-validator formControlName="job"></tamin-field-validator>
+          <tamin-field-auto-complete-data-grid formControlName="job" #jobDataGrid></tamin-field-auto-complete-data-grid>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="debutDate">تاریخ آغاز به کار</tamin-field-label>
+          <tamin-field-validator formControlName="debutDate"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="debutDate"></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="severanceDate">تاریخ ترک کار</tamin-field-label>
+          <tamin-field-validator formControlName="severanceDate"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="severanceDate"></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="sumOfIncludedSalaryAndCompensation">جمع دستمزد و مزایای ماهانه مشمول
+          </tamin-field-label>
+          <tamin-field-validator formControlName="sumOfIncludedSalaryAndCompensation"></tamin-field-validator>
+          <tamin-field-number formControlName="sumOfIncludedSalaryAndCompensation"></tamin-field-number>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="sumOfIncludedAndTemporarySalaryAndCompensation">جمع دستمزد و مزایای مشمول
+            و غیر مشمول
+          </tamin-field-label>
+          <tamin-field-validator
+            formControlName="sumOfIncludedAndTemporarySalaryAndCompensation"></tamin-field-validator>
+          <tamin-field-number formControlName="sumOfIncludedAndTemporarySalaryAndCompensation"></tamin-field-number>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="insuredPremiumPortion">حق بیمه سهم بیمه شده</tamin-field-label>
+          <tamin-field-validator formControlName="insuredPremiumPortion"></tamin-field-validator>
+          <tamin-field-number formControlName="insuredPremiumPortion"></tamin-field-number>
+        </div>
+      </div>
+    </form>
+    <button class="button normal" (click)="saveData()">ذخیره</button>
+  </div>
+</div>

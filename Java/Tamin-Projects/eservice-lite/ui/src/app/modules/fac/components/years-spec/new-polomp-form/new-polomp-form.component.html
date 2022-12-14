@@ -1,0 +1,23 @@
+<div class="panel col-4 col-s-4">
+  <div class="panel-title"> دوره های غیر محاسباتی </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate (ngSubmit)="onSave(editForm.value)">
+      <div class="form-control-container">
+        <div class="row col-12 col-s-12">
+          <div class="col-4 col-s-4">
+            <tamin-field-label formControlName="sealedNumber">شماره پلمپ دفاتر</tamin-field-label>
+            <tamin-field-text formControlName="sealedNumber" ></tamin-field-text>
+          </div>
+          <div class="col-6 col-s-6">
+            <tamin-field-label formControlName="sealedDate">تاریخ پلمپ دفاتر</tamin-field-label>
+            <tamin-field-persian-date formControlName="sealedDate" placeholder=""></tamin-field-persian-date>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 col-s-4">
+        <button #submitButton type="submit" class="button normal">ذحیره </button>
+        <button type="button" class="button normal orange" (click)="back()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>

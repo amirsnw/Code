@@ -1,0 +1,84 @@
+<div class="alert alert-info">
+  درخواست کمک هزینه اروتز پروتز
+</div>
+<app-orthosis-and-prosthesis-no-presence-search #search (Submitt)="onSearchSubmit($event)" ></app-orthosis-and-prosthesis-no-presence-search>
+<app-orthosis-and-prosthesis-no-presence-header requestTyp="کمک هزینه اروتز و پروتز" #header (dataLoaded)="getMainAndSubdominantData($event)"></app-orthosis-and-prosthesis-no-presence-header>
+<form [formGroup]="theForm" novalidate autocomplete="off" [hidden]="!showPanel">
+  <div class="panel" #dataPanle>
+    <div class="panel-title">مشخصات استفاده کننده</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-6">
+          <tamin-field-label formControlName="branchCode">آخرین شعبه بیمه پردازی</tamin-field-label>
+          <tamin-field-validator formControlName="branchCode"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="branchCode" placeholder="" [dataItems]="header.branchWorkshop" displayField="name" valueField="value"></tamin-field-combo-box-static>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <tamin-field-label formControlName="risuid">شماره بیمه</tamin-field-label>
+          <tamin-field-validator formControlName="risuid"></tamin-field-validator>
+          <tamin-field-combo-box-static formControlName="risuid" placeholder="" valueField="value" displayField="name"
+                                        [dataItems]="mainAndSubdominantData"></tamin-field-combo-box-static>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="useTajTimeStamp">تاریخ تجویز</tamin-field-label>
+          <tamin-field-validator formControlName="useTajTimeStamp"></tamin-field-validator>
+          <tamin-field-persian-date formControlName="useTajTimeStamp" placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="risuFname">نام</tamin-field-label>
+          <tamin-field-static-text formControlName="risuFname" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="risuseLName">نام خانوادگی</tamin-field-label>
+          <tamin-field-static-text formControlName="risuseLName" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="relationShip">نسبت</tamin-field-label>
+          <tamin-field-static-text formControlName="relationShip" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="risuIdNo">شماره شناسنامه</tamin-field-label>
+          <tamin-field-static-text formControlName="risuIdNo" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="cityName">محل صدور شناسنامه</tamin-field-label>
+          <tamin-field-static-text formControlName="cityName" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="brithDate">تاریخ تولد</tamin-field-label>
+          <tamin-field-static-text formControlName="brithDate" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="nationalityCode">کد ملی</tamin-field-label>
+          <tamin-field-static-text formControlName="nationalityCode" placeholder=""></tamin-field-static-text>
+        </div>
+        <div class="col-3">
+          <tamin-field-label formControlName="noteBookDate">تاریخ خاتمه اعتبار دفترچه</tamin-field-label>
+          <tamin-field-static-text formControlName="noteBookDate" placeholder=""></tamin-field-static-text>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-title">مدارک مورد نیاز</div>
+    <div class="panel-body">
+      <button class="button normal" (click)="addImage('تصویر نسخه تجویز پزشک', 'image1')"
+              *ngIf="!hasImage1"><span>افزودن تصویر نسخه تجویز پزشک</span>
+      </button>
+      <button class="button normal" (click)="addImage('تصویر فاکتور خرید', 'image2')"
+              *ngIf="!hasImage2"><span>افزودن تصویر فاکتور خرید</span>
+      </button>
+      <tamin-image-gallery-managed [maxImageSize]="500" #imageGallery (afterRemove)="onRemoveImage($event)"
+                                   (afterInsert)="onInsertImage($event)"></tamin-image-gallery-managed>
+      <div class="alert alert-info">
+        توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container" style="margin: 3px">
+    <button class="button normal" (click)="onSendRequest()"><i class="icon-ok"></i><span>ثبت درخواست</span></button>
+  </div>
+</form>

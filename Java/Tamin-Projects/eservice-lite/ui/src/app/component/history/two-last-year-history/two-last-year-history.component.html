@@ -1,0 +1,29 @@
+<div class="alert alert-success">
+  <p>محاسبه میانگین دستمزد دو سال آخر</p>
+</div>
+<!--<div class="alert alert-info">-->
+<!--<p style="border-bottom: dotted 1px white">توجه</p>-->
+<!--<br>-->
+<!--<p><i class="icon-lightbulb"></i> <span>حداقل دستمزد هر سال بر اساس مصوبات شورای عالی کار تعیین و به تبع آن حداکثر دستمزد محاسبه میگردد.</span>-->
+<!--</p>-->
+<!--</div>-->
+<div class="panel">
+  <div class="panel-body" #calculated>
+    <form [formGroup]="staticDataForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="wageAverage">میانگین دستمزد دو سال آخر (ریال)</tamin-field-label>
+          <tamin-field-static-text formControlName="wageAverage"></tamin-field-static-text>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-salary-list #salaryList showDownloadButton="false"></app-salary-list>
+
+<div class="alert alert-info">
+  <p>با توجه به غیر قطعی بودن میزان سابقه، میانگین دستمزد دو سال آخر محاسبه شده قابل استناد در مراجع قانونی نمی
+    باشد.</p>
+</div>
+

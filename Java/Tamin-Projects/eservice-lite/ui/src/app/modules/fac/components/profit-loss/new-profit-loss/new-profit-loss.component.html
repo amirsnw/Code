@@ -1,0 +1,74 @@
+<div class="panel col-6 col-s-6">
+  <div class="panel-title"> مشخصات مندرج در حساب سود و زیان </div>
+  <div class="panel-body">
+    <form [formGroup]="editForm" autocomplete="off" novalidate (ngSubmit)="onSave(editForm.value)">
+      <div class="form-control-container">
+         <div class="panel col-12 col-s-12">
+          <div class="row">
+            <div class="col-6 col-s-6">
+              <tamin-field-label formControlName="endDate">منتهی به تاریخ</tamin-field-label>
+              <tamin-field-validator  formControlName="endDate" ></tamin-field-validator>
+              <tamin-field-static-persian-date formControlName="endDate" placeholder=""></tamin-field-static-persian-date>
+            </div>
+            <div class=" col-6 col-s-6">
+              <tamin-field-label formControlName="netSales">فروش خالص</tamin-field-label>
+              <tamin-field-validator  formControlName="netSales" ></tamin-field-validator>
+              <tamin-field-number formControlName="netSales"></tamin-field-number>
+            </div>
+          </div>
+           <div class=" col-6 col-s-6">
+              <tamin-field-label formControlName="otherIncome">سایر درآمدها</tamin-field-label>
+             <tamin-field-validator  formControlName="otherIncome" ></tamin-field-validator>
+              <tamin-field-number formControlName="otherIncome"></tamin-field-number>
+            </div>
+            <div class=" col-6 col-s-6">
+              <tamin-field-label formControlName="totalSalary">جمع کل حقوق</tamin-field-label>
+              <tamin-field-validator  formControlName="totalSalary" ></tamin-field-validator>
+              <tamin-field-number formControlName="totalSalary"></tamin-field-number>
+            </div>
+           <div class=" col-6 col-s-6">
+              <tamin-field-label formControlName="otherBenefits">سایر مزایا</tamin-field-label>
+             <tamin-field-validator  formControlName="otherBenefits" ></tamin-field-validator>
+              <tamin-field-number formControlName="otherBenefits"></tamin-field-number>
+            </div>
+           <div class=" col-6 col-s-6">
+             <tamin-field-label formControlName="totalSalary">هزینه حسابرسی</tamin-field-label>
+             <tamin-field-validator  formControlName="totalSalary" ></tamin-field-validator>
+             <tamin-field-number formControlName="totalSalary"></tamin-field-number>
+           </div>
+           <div class=" col-6 col-s-6">
+             <tamin-field-label formControlName="adviceCost">هزینه مشاوره</tamin-field-label>
+             <tamin-field-validator  formControlName="adviceCost" ></tamin-field-validator>
+             <tamin-field-number formControlName="adviceCost"></tamin-field-number>
+           </div>
+           <div class=" col-6 col-s-6">
+             <tamin-field-label formControlName="propagandaCost">هزینه تبلیغات</tamin-field-label>
+             <tamin-field-validator  formControlName="propagandaCost" ></tamin-field-validator>
+             <tamin-field-number formControlName="propagandaCost"></tamin-field-number>
+           </div>
+           <div class=" col-6 col-s-6">
+             <tamin-field-label formControlName="sakhtemaniCost">هزینه ساختمانی</tamin-field-label>
+             <tamin-field-validator  formControlName="sakhtemaniCost" ></tamin-field-validator>
+             <tamin-field-number formControlName="sakhtemaniCost"></tamin-field-number>
+           </div>
+           <div class=" col-6 col-s-6">
+             <tamin-field-label formControlName="otherCosts">سایر هزینه ها</tamin-field-label>
+             <tamin-field-validator  formControlName="otherCosts" ></tamin-field-validator>
+             <tamin-field-number formControlName="otherCosts"></tamin-field-number>
+           </div>
+           <p class="col-12 col-s-12">
+             *کاربر گرامی تمامی فیلدها باید مقدار داشته باشد چنانچه مقدار آن خالی است با  0 پر گردد .
+           </p>
+           <p class="col-12 col-s-12">
+             *کاربر گرامي، مبالغ به ریال میباشد.
+           </p>
+          </div>
+
+      </div>
+      <div class="panel col-12 col-s-12">
+        <button #submitButton type="submit" class="button normal">ذحیره </button>
+        <button type="button" class="button normal orange" (click)="back()">انصراف</button>
+      </div>
+    </form>
+  </div>
+</div>

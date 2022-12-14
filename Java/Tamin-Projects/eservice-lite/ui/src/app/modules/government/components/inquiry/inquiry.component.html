@@ -1,0 +1,57 @@
+<div class="alert alert-info">
+  استعلام از طریق ارائه کد پیگیری متقاضی
+</div>
+<div class="panel">
+  <div class="page-title">
+    جستجو
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="searchForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-6">
+          <tamin-field-label formControlName="code">شناسه (کد ملی / کد اشخاص حقوقی / کد کارگاه)</tamin-field-label>
+          <tamin-field-validator formControlName="code"></tamin-field-validator>
+          <tamin-field-text formControlName="code"></tamin-field-text>
+        </div>
+        <div class="col-6">
+          <tamin-field-label formControlName="password">کد رمز</tamin-field-label>
+          <tamin-field-validator formControlName="password"></tamin-field-validator>
+          <tamin-field-text formControlName="password"></tamin-field-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p style="margin-top:5px;">
+            <button type="button" class="button normal" (click)="search()">جستجو</button>
+          </p>
+        </div>
+      </div>
+    </form>
+    <button></button>
+  </div>
+</div>
+
+<div class="panel" *ngIf="showResult">
+  <div class="page-title">
+    نتیجه جستجو
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-info" *ngIf="docCode === '111'">
+      سوابق اعلام شده از طرف سازمان تامین اجتماعی بصورت الکترونیکی و بنا به درخواست نامبرده جهت ارائه به آن سازمان / موسسه تهیه و مورد تایید بوده و نیازی به مهر و امضا ندارد.
+    </div>
+    <form [formGroup]="resultForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="title">عنوان سند</tamin-field-label>
+          <tamin-field-static-text formControlName="title"></tamin-field-static-text>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <tamin-document-viewer #documentViewer *ngIf="showPdf"></tamin-document-viewer>
+          <div class="alert alert-info" *ngIf="!showPdf">سند جهت رویت وجود ندارد</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

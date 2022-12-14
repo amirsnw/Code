@@ -1,0 +1,55 @@
+<div class="page-title">جستجوی برگ پرداخت ها</div>
+<div class="panel-body">
+  <form [formGroup]="searchForm" autocomplete="off" novalidate
+        (ngSubmit)="searchFormSubmit(searchForm.value, searchForm.valid)">
+    <div class="form-control-container row">
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="paymentIdFrom">شماره برگ پرداخت از :</tamin-field-label>
+        <tamin-field-validator formControlName="paymentIdFrom"></tamin-field-validator>
+        <tamin-field-text formControlName="paymentIdFrom" placeholder="شماره برگ پرداخت از"></tamin-field-text>
+      </div>
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="paymentIdTo">شماره برگ پرداخت تا :</tamin-field-label>
+        <tamin-field-validator formControlName="paymentIdTo"></tamin-field-validator>
+        <tamin-field-text formControlName="paymentIdTo" placeholder="شماره برگ پرداخت تا"></tamin-field-text>
+      </div>
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="paymentSheetStatus">وضعیت برگ پرداخت</tamin-field-label>
+        <tamin-field-validator formControlName="paymentSheetStatus"></tamin-field-validator>
+        <tamin-field-combo-box-static formControlName="paymentSheetStatus" [dataItems]="paymentSheetStatus"
+                                      displayField="name"
+                                      placeHolder="انتخاب کنید ..."
+                                      valueField="value"></tamin-field-combo-box-static>
+      </div>
+    </div>
+    <div class="form-control-container row">
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="docDateFrom">تاریخ صدور از :</tamin-field-label>
+        <tamin-field-validator formControlName="docDateFrom"></tamin-field-validator>
+        <tamin-field-persian-date
+          formControlName="docDateFrom"
+          placeholder=""></tamin-field-persian-date>
+      </div>
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="docDateTo">تاریخ صدور تا :</tamin-field-label>
+        <tamin-field-validator formControlName="docDateTo"></tamin-field-validator>
+        <tamin-field-persian-date
+          formControlName="docDateTo"
+          placeholder=""></tamin-field-persian-date>
+      </div>
+      <div class="col-4 col-4-1" style="padding: 3px;">
+        <tamin-field-label formControlName="debitReason">علت ایجاد بدهی</tamin-field-label>
+        <tamin-field-validator formControlName="debitReason"></tamin-field-validator>
+        <tamin-field-combo-box-static formControlName="debitReason" valueField="value"
+                                      placeHolder="انتخاب کنید ..."
+                                      displayField="name" [dataItems]="debitReason"></tamin-field-combo-box-static>
+      </div>
+    </div>
+    <div class="form-control-container row">
+      <p style="margin-top:5px;">
+        <button type="submit" class="button normal" [disabled]="!searchForm.valid">جستجو</button>
+        <button type="button" class="button normal orange" (click)="resetForm()">نمایش همه</button>
+      </p>
+    </div>
+  </form>
+</div>

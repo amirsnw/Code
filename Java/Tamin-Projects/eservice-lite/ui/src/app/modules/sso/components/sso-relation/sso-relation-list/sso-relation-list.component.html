@@ -1,0 +1,52 @@
+<div class="panel">
+  <div class="page-title">
+    استعلام ارتباط فعال با سازمان تامین اجتماعی
+  </div>
+  <div class="alert alert-info">
+    <p>- در این قسمت شما می توانید از وضعیت ارتباط خود با سازمان تامین اجتماعی اعم از بیمه شده اصلی یا تبعی، اشتغال در یک یا چند کارگاه، مستری بگیر یا بازمانده و ... مطلع شوید.</p>
+  </div>
+  <div class="panel-body">
+    <tamin-data-grid #dataGrid (itemSelect)="onItemSelect($event)" (itemAction)="onGridAction($event)">
+    </tamin-data-grid>
+  </div>
+</div>
+<div class="panel" [hidden]="!subStatus">
+  <div class="part-title">
+    صدور گواهی استعلام وضعیت
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="theForm" novalidate (ngSubmit)="confirmClick(theForm.value, theForm.valid)">
+      <div class="form-control-container row">
+        <div class="form-control-container col-4 col-s-4" >
+          <tamin-field-label formControlName="recipient">جهت ارائه به (دریافت کننده گواهی)</tamin-field-label>
+          <tamin-field-validator formControlName="recipient"></tamin-field-validator>
+          <tamin-field-combo-box formControlName="recipient" placeholder="گیرنده " #recipient></tamin-field-combo-box>
+          <div class="hint"><i class="icon-lightbulb"></i><span>در صورتی که در لیست موجود نبود نامشخص رو انتخاب نمایید.</span></div>
+        </div>
+
+        <div class=" form-control-container col-4 col-s-4 " [hidden]="!showRecipient">
+          <tamin-field-label formControlName="target">جهت ارائه به (دریافت کننده گواهی)</tamin-field-label>
+          <tamin-field-validator formControlName="target"></tamin-field-validator>
+          <tamin-field-text formControlName="target" placeholder="جهت ارائه به"></tamin-field-text>
+        </div>
+
+        <div class=" form-control-container col-4 col-s-4" [hidden]="!showBranchName">
+          <tamin-field-label formControlName="branchName">نام شعبه(دریافت کننده گواهی)</tamin-field-label>
+          <tamin-field-validator formControlName="branchName"></tamin-field-validator>
+          <tamin-field-text formControlName="branchName" placeholder="نام شعبه"></tamin-field-text>
+        </div>
+
+        <div class="col-12 col-s-12">
+          <button type="submit" class="button normal">
+            <i class="icon-upload"></i>
+            <span>صدور و ارسال به صندوق شخصی</span>
+          </button>
+          <button type="button" class="button normal gray"  (click)="cancelButton()">
+            <i class=" icon-right-big"></i>
+            <span>انصراف</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

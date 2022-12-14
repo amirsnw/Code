@@ -1,0 +1,50 @@
+<div class="panel-body">
+  <div class="alert alert-info">
+    <span>
+      <p>
+        - اطلاعات افرادی از خانواده که تحت کفالت شما هستند را ثبت نمایید.
+      </p>
+      <p>- افراد خانواده تحت تکفل شامل همسر،فرزند،پدر و مادر می باشد.</p>
+
+    </span>
+  </div>
+  <div class="row">
+    <tamin-data-grid #subdomainGrid (itemAction)="onGridAction($event)"></tamin-data-grid>
+    <div class="col-12 col-s-12">
+      <button class="button normal green" (click)="NextFormClick()">
+        <i class="icon-plus"></i>
+        <span>اضافه کردن فرد جدید</span>
+      </button>
+
+      <!--<tamin-data-grid #subdomainGrid></tamin-data-grid> [dis]-->
+      <!--<button  class="button normal blue" (click)="addImage('صفحه اول شناسنامه', 'image1')" *ngIf="!hasImage('image1')">
+          <span style="font-size: 0.9em">افزودن صفحه اول شناسنامه</span>
+    </button>
+      <button class="button normal blue" (click)="addImage('صفحه دوم شناسنامه', 'image2')" *ngIf="!hasImage('image2')">
+      <span style="font-size: 0.9em">افزودن صفحه دوم شناسنامه</span>
+    </button>
+      <button class="button normal blue" (click)="addImage(' تصویر صفحه ی مراتب عقد در عقدنامه', 'image3')" *ngIf="!hasImage('image3')">
+      <span style="font-size: 0.9em"> افزودن تصویر صفحه ی مراتب عقد در عقدنامه </span>
+    </button>
+      <button class="button normal blue" (click)="addImage('تصویر گواهی اشتغال به تحصیل', 'image4')" *ngIf="!hasImage('image4')">
+      <span style="font-size: 0.9em">افزودن تصویر گواهی اشتغال به تحصیل</span>
+    </button>
+
+      <tamin-image-gallery-managed [maxImageSize]="500" #imageGallery></tamin-image-gallery-managed>
+      <div class="alert alert-info">
+        توجه: تصویر می بایست در قالب (jpeg) بوده و اندازه آن حداکثر ۵۰۰ کیلو بایت باشد.
+      </div>
+
+
+    </div>-->
+
+      <!--<app-subdomain-new #subdomainNew (closed)="loadData($event)" *ngIf="newSubdominant"></app-subdomain-new>-->
+
+      <!--<button class="button normal orange" *ngIf="isVisibleConfirm" (click)="ApproveClick()">
+        <i class="icon-ok"></i>
+        <span>تایید</span>
+      </button>-->
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Incoming-web:war">
+    <output-path>$PROJECT_DIR$/income-bank-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Incoming-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Incoming-web-5.1.1.war">
+      <element id="artifact" artifact-name="Incoming-web:war exploded" />
+    </root>
+  </artifact>
+</component>

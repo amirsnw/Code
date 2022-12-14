@@ -1,0 +1,3 @@
+Past this lib in maven repository then ...
+Put this line in persistance.xml:
+<jar-file>../lib/insurance-baseinfo-1.1-20180620.083354-2.jar</jar-file>

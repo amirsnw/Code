@@ -1,0 +1,42 @@
+<div CLASS="alert alert-info">
+  آمار سرویس ها
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+    <form [formGroup]="theForm" autocomplete="off" novalidate>
+      <!--      <div class="row">-->
+      <!--        <div class="col-6">-->
+      <!--          <tamin-field-label formControlName="type">نوع</tamin-field-label>-->
+      <!--          <tamin-field-validator formControlName="type"></tamin-field-validator>-->
+      <!--          <tamin-field-combo-box-static-->
+      <!--            formControlName="type"-->
+      <!--            displayField="name"-->
+      <!--            valueField="value"-->
+      <!--            [dataItems]="types"-->
+      <!--            placeholder=""></tamin-field-combo-box-static>-->
+      <!--        </div>-->
+      <div class="row">
+        <div class="col-4">
+          <tamin-field-label formControlName="createdateFrom">از تاریخ</tamin-field-label>
+          <tamin-field-validator formControlName="createdateFrom"></tamin-field-validator>
+          <tamin-field-persian-date
+            formControlName="createdateFrom"
+            placeholder=""></tamin-field-persian-date>
+        </div>
+        <div class="col-4">
+          <tamin-field-label formControlName="createdateTo">تا تاریخ</tamin-field-label>
+          <tamin-field-validator formControlName="createdateTo"></tamin-field-validator>
+          <tamin-field-persian-date
+            formControlName="createdateTo"
+            placeholder=""></tamin-field-persian-date>
+        </div>
+      </div>
+    </form>
+    <button type="button" class="button normal blue" (click)="onLoadData()">دریافت اطلاعات</button>
+  </div>
+
+</div>
+
+
+<app-sso-log-chart #chart></app-sso-log-chart>

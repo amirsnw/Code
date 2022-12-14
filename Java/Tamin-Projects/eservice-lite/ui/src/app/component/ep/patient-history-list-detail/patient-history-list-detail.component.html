@@ -1,0 +1,36 @@
+<tamin-modal #theModal title="جزئیات نسخه" width="95%">
+
+    <tamin-data-grid #dataGridDetail></tamin-data-grid>
+  <div class="row">
+    <div class="col-4 col-s-4">
+      <table>
+        <thead>
+        <tr>
+          <th>جمع کل نسخه :</th>
+          <th>{{ requestPrice | persianNumber:'cs'}} ریال </th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="col-4 col-s-4">
+      <table>
+        <thead>
+        <tr>
+          <th> جمع کل سهم سازمان :</th>
+          <th style="text-align: left">{{ headSsoPayment | persianNumber:'cs'}} ریال </th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="col-4 col-s-4">
+      <table>
+        <thead>
+        <tr>
+          <th>جمع کل سهم بیمه :</th>
+          <th>{{ headInsuPayment | persianNumber:'cs'}} ریال </th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</tamin-modal>

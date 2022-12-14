@@ -5,7 +5,37 @@
     <persistence-unit name="prod" transaction-type="JTA">
         <jta-data-source>jdbc/CustomerDS</jta-data-source>
     </persistence-unit>
-    <!--<persistence-unit name="dev" transaction-type="JTA">
-        <jta-data-source>jdbc/OperatorDS</jta-data-source>
+    <!--<persistence-unit name="${persistence.unitName}" transaction-type="JTA">
+        <jta-data-source>${datasource.jndiName}</jta-data-source>
+        <class>ir.tamin.insurance.order.ws.model.AncDetails</class>
+        <class>ir.tamin.insurance.order.ws.model.AnnouncementToUser</class>
+        <class>ir.tamin.insurance.order.ws.model.AnnouncementType</class>
+        <class>ir.tamin.insurance.order.ws.model.CountSend</class>
+        <class>ir.tamin.insurance.order.ws.model.ElectronicOrder</class>
+        <class>ir.tamin.insurance.order.ws.model.ElectronicOrderDebit</class>
+        <class>ir.tamin.insurance.order.ws.model.OrderType</class>
+        <class>ir.tamin.insurance.order.ws.model.OrgUser</class>
+        <class>ir.tamin.insurance.order.ws.model.Organization</class>
+        <class>ir.tamin.insurance.order.ws.model.Permission</class>
+        <class>ir.tamin.insurance.order.ws.model.PersonSign</class>
+        <class>ir.tamin.insurance.order.ws.model.SubType</class>
+        <class>ir.tamin.insurance.order.ws.model.Workshop</class>
+        <class>ir.tamin.insurance.order.ws.model.WorkshopMaster</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.cache.shared.default" value="false"/>
+            <property name="eclipselink.query-results-cache" value="false"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="${persistence.unitName.claim}" transaction-type="JTA">
+        <jta-data-source>${datasource.jndiName.claim}</jta-data-source>
+        <class>ir.tamin.insurance.order.ws.model.PollList</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.cache.shared.default" value="false"/>
+            <property name="eclipselink.query-results-cache" value="false"/>
+        </properties>
     </persistence-unit>-->
 </persistence>

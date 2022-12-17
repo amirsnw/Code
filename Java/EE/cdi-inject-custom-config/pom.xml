@@ -1,0 +1,222 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sebastian-daschner</groupId>
+    <artifactId>learning-java-ee</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.wadl.plugin>1.1.6</version.wadl.plugin>
+        <version.weblogic.plugin>12.1.3.0</version.weblogic.plugin>
+        <version.war.plugin>2.1.1</version.war.plugin>
+        <version.minify.plugin>1.7.4</version.minify.plugin>
+        <weblogic.url>t3://localhost:7001</weblogic.url>
+        <weblogic.user>weblogic</weblogic.user>
+        <weblogic.password>weblogic123</weblogic.password>
+        <weblogic.server>AdminServer</weblogic.server>
+        <weblogic.MW_HOME>C:////Snowman//Oracle_Home</weblogic.MW_HOME>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa</artifactId>
+            <version>2.5.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <!--<distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>corp1</id>
+            <name>Corporate Repository</name>
+            <url>file:///C://Users//a_khalighi//.m2</url>
+            <layout>default</layout>
+        </repository>
+    </distributionManagement>-->
+
+    <build>
+        <plugins>
+            <!--<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <files>
+                                <file>${basedir}/src/main/resources/application.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+            <plugin>
+                <!-- This is the configuration for the
+                     wls-maven-plugin
+                -->
+                <groupId>com.oracle.weblogic</groupId>
+                <artifactId>wls-maven-plugin</artifactId>
+                <version>${version.weblogic.plugin}</version>
+                <configuration>
+                    <middlewareHome>${weblogic.MW_HOME}</middlewareHome>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>wls-deploy</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <configuration>
+                            <!--The admin URL where the app is deployed.
+                                Here use the plugin's default value t3://localhost:7001-->
+                            <adminurl>${weblogic.url}</adminurl>
+                            <user>${weblogic.user}</user>
+                            <password>${weblogic.password}</password>
+                            <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
+                            <!--The location of the file or directory to be deployed-->
+                            <!--The target servers where the application is deployed.
+                                Here use the plugin's default value AdminServer-->
+                            <targets>${weblogic.server}</targets>
+                            <verbose>true</verbose>
+                            <name>${project.build.finalName}</name>
+                            <!--<nostage>false</nostage>
+                            <stage>true</stage>-->
+                        </configuration>
+                    </execution>
+                    <!--<execution>
+                        <id>default-cli</id>
+                        <configuration>
+                            &lt;!&ndash;The location of the file or directory to be deployed&ndash;&gt;
+                            <source>${project.build.directory}/${project.build.finalName}.${project.packaging}
+                            </source>
+                            <verbose>true</verbose>
+                            &lt;!&ndash;<nostage>false</nostage>
+                            <stage>true</stage>&ndash;&gt;
+                        </configuration>
+                    </execution>-->
+                </executions>
+                <!--<dependencies>
+                    <dependency>
+                        <groupId>com.oracle.weblogic</groupId>
+                        <artifactId>wlfullclient</artifactId>
+                        <version>${version.weblogic.plugin}</version>
+                    </dependency>
+                </dependencies>-->
+            </plugin>
+
+            <!--<plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.war.plugin}</version>
+                <configuration>
+                    <warSourceExcludes>
+                        WEB-INF/*.xml,
+                        index.jsp,
+                        index.html
+                    </warSourceExcludes>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp/WEB-INF</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>*.xml</include>
+                            </includes>
+                            <targetPath>WEB-INF</targetPath>
+                        </resource>
+                        <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>index.jsp</include>
+                                <include>index.html</include>
+                            </includes>
+                        </resource>
+                        <webResource>
+                            &lt;!&ndash; this is relative to the pom.xml directory &ndash;&gt;
+                            <directory>../../ui</directory>
+                            <filtering>false</filtering>
+                            <excludes>
+                                &lt;!&ndash; EXTJS login files&ndash;&gt;
+                                <exclude>index.js</exclude>
+                                <exclude>resources/index.js</exclude>
+                                <exclude>oauth/oauth-*.js</exclude>
+                                &lt;!&ndash; EXTJS URL files &ndash;&gt;
+                                <exclude>app/helper/Urls.js</exclude>
+                                <exclude>app/Application.js</exclude>
+                                <exclude>app/Constants.js</exclude>
+                                &lt;!&ndash; EXTJS home &ndash;&gt;
+                                <exclude>index.html</exclude>
+                                &lt;!&ndash; Possible project-specific files to be excluded &ndash;&gt;
+                                <exclude>*.iml</exclude>
+                                <exclude>.idea/**</exclude>
+                                <exclude>nbproject/**</exclude>
+                                <exclude>build.xml</exclude>
+                            </excludes>
+                            <targetPath>view</targetPath>
+                        </webResource>
+                        <webResource>
+                            &lt;!&ndash; this is relative to the pom.xml directory &ndash;&gt;
+                            <directory>../../ui</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                &lt;!&ndash; EXTJS login files&ndash;&gt;
+                                <include>index.js</include>
+                                <include>resources/index.js</include>
+                                <include>oauth/oauth-*.js</include>
+                                &lt;!&ndash; EXTJS URL files &ndash;&gt;
+                                <include>app/helper/Urls.js</include>
+                                <include>app/Application.js</include>
+                                <include>app/Constants.js</include>
+                                &lt;!&ndash; EXTJS home&ndash;&gt;
+                                <include>index.html</include>
+                            </includes>
+                            <targetPath>view</targetPath>
+                        </webResource>
+                    </webResources>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.samaxes.maven</groupId>
+                <artifactId>minify-maven-plugin</artifactId>
+                <version>${version.minify.plugin}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>minify</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <cssSourceDir>css</cssSourceDir>
+                            <jsSourceDir>js</jsSourceDir>
+                            <jsSourceIncludes>
+                                <jsSourceInclude>**/*.js</jsSourceInclude>
+                            </jsSourceIncludes>
+                            <jsSourceExcludes>
+                                <jsSourceExclude>**/*.min.js</jsSourceExclude>
+                            </jsSourceExcludes>
+                            <cssSourceIncludes>
+                                <cssSourceInclude>**/*.css</cssSourceInclude>
+                            </cssSourceIncludes>
+                            <cssSourceExcludes>
+                                <cssSourceExclude>**/*.min.css</cssSourceExclude>
+                            </cssSourceExcludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+        </plugins>
+    </build>
+</project>

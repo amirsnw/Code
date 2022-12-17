@@ -28,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../cdi-inject-custom-config" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -180,6 +180,7 @@
       <updated>1668922848509</updated>
       <workItem from="1668922851241" duration="12500000" />
       <workItem from="1668939781276" duration="7620000" />
+      <workItem from="1671260876101" duration="2045000" />
     </task>
     <servers />
   </component>

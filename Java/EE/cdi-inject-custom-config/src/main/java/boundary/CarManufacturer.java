@@ -2,8 +2,6 @@ package boundary;
 
 import control.CarCache;
 import control.CarFactory;
-import control.ProcessTracker;
-import control.Tracked;
 import entity.Car;
 import entity.Specification;
 
@@ -24,7 +22,6 @@ public class CarManufacturer {
     @Inject
     Consumer<Throwable> fatalLogger;
 
-    @Tracked(ProcessTracker.Category.MANUFACTURER)
     public Car manufactureCar(Specification specification) {
         Car car = carFactory.createCar(specification);
         carCache.cache(car);

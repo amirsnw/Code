@@ -16,7 +16,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../bean-validation-constraint" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Section-1" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -42,6 +42,8 @@
       <updated>1670829117509</updated>
       <workItem from="1670829119563" duration="970000" />
       <workItem from="1670939705439" duration="78000" />
+      <workItem from="1671264317958" duration="6000" />
+      <workItem from="1671264393717" duration="8000" />
     </task>
     <servers />
   </component>

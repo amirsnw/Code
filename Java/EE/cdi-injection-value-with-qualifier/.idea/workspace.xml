@@ -16,7 +16,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jax-rs-exception-handling" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,6 +56,7 @@
       <workItem from="1670937988358" duration="427000" />
       <workItem from="1670943963674" duration="291000" />
       <workItem from="1670944308056" duration="79000" />
+      <workItem from="1671264226616" duration="65000" />
     </task>
     <servers />
   </component>

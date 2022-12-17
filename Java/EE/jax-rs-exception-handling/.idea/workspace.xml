@@ -16,7 +16,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Udemy-Java-Enterprise-App-Java.EE.8.2/Section 1_Learning_Java_EE_8/Section-2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,6 +54,7 @@
       <workItem from="1670829119563" duration="970000" />
       <workItem from="1670939705439" duration="78000" />
       <workItem from="1671256296033" duration="3317000" />
+      <workItem from="1671264293180" duration="24000" />
     </task>
     <servers />
   </component>

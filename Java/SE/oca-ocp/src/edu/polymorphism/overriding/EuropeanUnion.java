@@ -6,7 +6,7 @@ package edu.polymorphism.overriding;
  * Created by © Matko Soric.
  */
 
-import edu.matkosoric.polymorphism.overriding.member.states.*;
+import edu.polymorphism.overriding.member.states.*;
 import edu.polymorphism.overriding.member.states.*;
 
 public class EuropeanUnion {

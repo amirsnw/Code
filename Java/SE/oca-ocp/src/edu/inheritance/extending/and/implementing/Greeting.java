@@ -25,6 +25,10 @@ public class Greeting extends abClass implements greetingInterface  {
     }
 
     @Override
+    public void interfaceGreeting3() { System.out.println("Greeting Hello!");
+    }
+
+    @Override
     public void abstractGreeting4() { System.out.println("Good day!");
     }
 
@@ -43,7 +47,7 @@ interface greetingInterface {
     void interfaceGreeting1 ();
     void interfaceGreeting2 ();
     default void interfaceGreeting3() {
-        System.out.println("Hello!");
+        System.out.println("Default Hi!");
     }
 
 //    @Override                                             // does not compile

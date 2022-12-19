@@ -6,13 +6,13 @@ package edu.inheritance.interface_.static_.method;
  * Created by © Matko Soric.
  */
 
-public class Gambling implements DiceThrow{
+public class Gambling implements DiceThrow {
 
     public static void main(String[] args) {
 
         // for loop with ten iterations
         for (int i = 0; i<10; i++) {
-            int a = diceRollingStatic();        // static method
+            int a = DiceThrow.diceRollingStatic();        // static method
             System.out.println("static roll'n: " + a);
         }
 

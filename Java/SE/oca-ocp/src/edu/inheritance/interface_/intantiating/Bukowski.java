@@ -14,7 +14,7 @@ public class Bukowski implements Writing{
 //        new Bukowski.writingWithPencil();       // does not compile
 //        writingWithPencil();                    // does not compile
 
-        writingWithPencil();
+        Writing.writingWithPencil();
 
     }
 }

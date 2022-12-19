@@ -9,7 +9,7 @@ package edu.inheritance.importing.destination;
 // 1. this import enables the use of static methods
 import edu.inheritance.importing.source.CanadianEconomy;
 import edu.inheritance.importing.source.ChineseEconomy;
-import edu.matkosoric.inheritance.importing.source.*;
+import edu.inheritance.importing.source.*;
 
 // 2. importing static with wildcard
 import static edu.inheritance.importing.source.UKeconomy.*;

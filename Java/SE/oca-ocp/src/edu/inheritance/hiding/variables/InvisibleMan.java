@@ -46,6 +46,5 @@ public class InvisibleMan extends InvisibilityPerSe {
         // reading instance variables from the child class
         System.out.println(new InvisibleMan().summary1);
         System.out.println(new InvisibleMan().summary2);        // this values is inherited from the parent class
-
     }
 }

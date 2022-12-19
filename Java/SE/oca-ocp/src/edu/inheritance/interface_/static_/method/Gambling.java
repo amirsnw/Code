@@ -31,6 +31,8 @@ public class Gambling implements DiceThrow {
             System.out.println("instance roll'n: " + a);
         }
 
+        // gambler.diceRollingStatic)()  Does not compile / impl has not access to static method
+
     }
 
     // implementation

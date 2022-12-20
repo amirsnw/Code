@@ -73,7 +73,7 @@ public class EuropeanUnion {
         be.outputCapitalCity();
 
 
-        // despite the fact that Italy instance is declared with a EuropeanUnion as a reference type,
+        // despite the fact that Italy instance is declared with a Europe as a reference type,
         // since methods are overridden in the child class (Italy),
         // method calls will use child class methods, while variables will have values as set in the parent class
         EuropeanUnion it = new Italy();
@@ -87,9 +87,9 @@ public class EuropeanUnion {
 
 
 
-        // in this case, France is declared with EuropeanUnion as a reference type,
+        // in this case, France is declared with Europe as a reference type,
         // but it does not have any overridden methods.
-        // therefore, all available methods are the ones declared in the EuropeanUnion class.
+        // therefore, all available methods are the ones declared in the Europe class.
         //
         EuropeanUnion fr = new France();
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~FRANCE");
@@ -112,7 +112,7 @@ public class EuropeanUnion {
         System.out.println(fr2.nationalDay);
 
 
-        // EuropeanUnion as a superclass has access only to the public members of its child classes
+        // Europe as a superclass has access only to the public members of its child classes
         // there is no inherited variables, and
         Spain es = new Spain();
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SPAIN");

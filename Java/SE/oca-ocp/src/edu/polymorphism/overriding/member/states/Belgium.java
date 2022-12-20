@@ -8,7 +8,7 @@ package edu.polymorphism.overriding.member.states;
 
 import edu.polymorphism.overriding.EuropeanUnion;
 
-public class Belgium extends EuropeanUnion{
+public class Belgium extends EuropeanUnion {
 
     public String capitalCity = "Brussels (BE)";
     public double GDP_per_capita = 44.881;

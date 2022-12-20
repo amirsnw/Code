@@ -12,6 +12,10 @@ import java.util.List;
 
 public class UnitedKingdom extends Europe {
 
+    public static void staticMethod () {
+        System.out.println("Child static method");
+    }
+
     // Approve
     @Override
     public void rule1() {}

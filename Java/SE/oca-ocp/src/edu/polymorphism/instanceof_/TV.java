@@ -6,7 +6,7 @@ package edu.polymorphism.instanceof_;
  * Created by © Matko Soric.
  */
 
-public class TV extends Radio{
+public class TV extends Radio {
 
     public static void main(String[] args) {
 

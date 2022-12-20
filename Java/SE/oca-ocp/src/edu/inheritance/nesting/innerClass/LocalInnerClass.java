@@ -8,33 +8,43 @@ package edu.inheritance.nesting.innerClass;
 
 public class LocalInnerClass {
 
-    public static void main(String[] args) {
+    private void getValue() {
+        // Note that local variable(sum) must be final till JDK 7
+        // hence this code will work only in JDK 8
+        int sum = 20;
 
-        LocalInnerClass topClassInstance = new LocalInnerClass();
-        numberSeven numberSevenInstance = new numberSeven();
+        // Local inner Class inside method
+        class Inner {
+            public int divisor;
+            public int remainder;
 
-//        sevenBeers sevenBeers = new sevenBeers();       // does not compile
-        LocalInnerClass.numberSeven.sevenTowns sevenTowns =
-                numberSevenInstance.new sevenTowns();        // valid statement
-//        TopClass.numberSeven.sevenHospitals sevenHospitalsInstance =
-//                new TopClass.numberSeven.sevenHospitals();          // does not compile
+            public Inner() {
+                divisor = 4;
+                remainder = sum % divisor;
+            }
 
-        numberSeven.sevenCows sevenCowsInstance = numberSevenInstance.new sevenCows();      // valid statement
+            private int getDivisor() {
+                return divisor;
+            }
 
+            private int getRemainder() {
+                return sum % divisor;
+            }
+
+            private int getQuotient() {
+                System.out.println("Inside inner class");
+                return sum / divisor;
+            }
+        }
+
+        Inner inner = new Inner();
+        System.out.println("Divisor = " + inner.getDivisor());
+        System.out.println("Remainder = " + inner.getRemainder());
+        System.out.println("Quotient = " + inner.getQuotient());
     }
 
-    // numberSeven is an inner static class
-    public static class numberSeven {
-
-        public String nameSeven = "Seven";
-        public double valueSeven = 7.0;
-
-        // second-layer inner classes
-        public class sevenCows {}
-        public class sevenTowns {}
-        public class sevenHospitals {}
-        public class sevenBeers {}
-        public class sevenBooks {}
-
+    public static void main(String[] args) {
+        LocalInnerClass outer = new LocalInnerClass();
+        outer.getValue();
     }
 }

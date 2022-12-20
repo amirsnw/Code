@@ -8,33 +8,27 @@ package edu.inheritance.nesting.innerClass;
 
 public class InnerClass {
 
-    public static void main(String[] args) {
+    private String greet = "Hi";
+    private String words = "H & I";
 
-        InnerClass topClassInstance = new InnerClass();
-        numberSeven numberSevenInstance = new numberSeven();
+    public class sevenCows {
+//        public static String words = "Hello"; // does not compile
+        public String words = "Hello";
 
-//        sevenBeers sevenBeers = new sevenBeers();       // does not compile
-        InnerClass.numberSeven.sevenTowns sevenTowns =
-                numberSevenInstance.new sevenTowns();        // valid statement
-//        TopClass.numberSeven.sevenHospitals sevenHospitalsInstance =
-//                new TopClass.numberSeven.sevenHospitals();          // does not compile
+        public void printInner () {
+            System.out.println(words);
+        }
 
-        numberSeven.sevenCows sevenCowsInstance = numberSevenInstance.new sevenCows();      // valid statement
-
+        public void printOuter () {
+            System.out.println(greet);
+        }
     }
 
-    // numberSeven is an inner static class
-    public static class numberSeven {
+    public static void main(String[] args) {
+        InnerClass outer = new InnerClass();
+        sevenCows inner = outer.new sevenCows();
 
-        public String nameSeven = "Seven";
-        public double valueSeven = 7.0;
-
-        // second-layer inner classes
-        public class sevenCows {}
-        public class sevenTowns {}
-        public class sevenHospitals {}
-        public class sevenBeers {}
-        public class sevenBooks {}
-
+        inner.printInner();
+        inner.printOuter();
     }
 }

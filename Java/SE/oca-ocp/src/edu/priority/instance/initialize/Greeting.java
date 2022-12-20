@@ -1,12 +1,12 @@
-package edu.priority.instance.initializer;
+package edu.priority.instance.initialize;
 
 public class Greeting {
 
     {
-        words = "Hello!";       // does not compile
+        // System.out.print(words);       // does not compile
     }
 
-    private String words;
+    private String words = "Hello!";
 
     public void sayWords() {
         System.out.println(words);

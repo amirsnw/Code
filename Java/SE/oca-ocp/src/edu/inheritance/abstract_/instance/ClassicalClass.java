@@ -12,9 +12,6 @@ abstract class abClass{
     abstract void abPrintMethod2();     //abstract method can not have a body, neither empty braces {}
 }
 
-
-
-
 public class ClassicalClass {
 
     public void classicalMethod () {

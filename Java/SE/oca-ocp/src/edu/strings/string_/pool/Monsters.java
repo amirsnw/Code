@@ -34,6 +34,14 @@ public class Monsters {
         // a new string will be added to the string pool, linked with monster1_original identifier
         monster1_Original = "Godzilla";
         System.out.println("\n" + monster2);
+        monster1_Original = "Loch Ness Monster";
+
+        System.out.println("\n" + "monster1 = monster2 ? " + (monster1_Original.equals(monster2)));
+        System.out.println("monster1 = monster3 ? " + (monster1_Original.equals(monster3)));
+
+        System.out.println("\n" + "Monster1 hash: " + monster1_Original.hashCode());
+        System.out.println("Monster2 hash: " + monster2.hashCode());
+        System.out.println("Monster3 hash: " + monster3.hashCode());
 
     }
 }

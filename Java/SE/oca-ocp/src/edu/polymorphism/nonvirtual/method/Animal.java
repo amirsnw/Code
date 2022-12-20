@@ -1,6 +1,7 @@
 package edu.polymorphism.nonvirtual.method;
 
 public class Animal {
+
     public void feedAnimal(Animal animal) {
         if(animal instanceof Cow) {
             ((Cow)animal).addHay();

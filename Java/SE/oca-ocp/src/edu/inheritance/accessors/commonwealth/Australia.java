@@ -26,12 +26,12 @@ public class Australia extends UnitedKingdom {
         System.out.println(ukAus.citizenship);
         System.out.println(ukAus.currency);
         System.out.println(ukAus.queen);
-//        System.out.println(ukAus.capitalCity);
+//        System.out.println(ukAus.capitalCity); // does not compile
 
         System.out.println(uk.citizenship);
         System.out.println(uk.currency);
         System.out.println(uk.queen);
-//        System.out.println(uk.capitalCity);
+//        System.out.println(uk.capitalCity); // does not compile
     }
 
 }

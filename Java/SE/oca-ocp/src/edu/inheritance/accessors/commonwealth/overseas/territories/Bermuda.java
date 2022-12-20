@@ -27,14 +27,14 @@ public class Bermuda extends UnitedKingdom {
 //        System.out.println(bermuda.capitalCity);     // does not compile, private access in the UK class
 
         System.out.println(ukBer.citizenship);
-//        System.out.println(ukBer.currency);
-//        System.out.println(ukBer.queen);
-//        System.out.println(ukBer.capitalCity);
+//        System.out.println(ukBer.currency); // does not compile
+//        System.out.println(ukBer.queen); // does not compile
+//        System.out.println(ukBer.capitalCity); // does not compile
 
         System.out.println(uk.citizenship);
-//        System.out.println(uk.currency);
-//        System.out.println(uk.queen);
-//        System.out.println(uk.capitalCity);
+//        System.out.println(uk.currency); // does not compile
+//        System.out.println(uk.queen); // does not compile
+//        System.out.println(uk.capitalCity); // does not compile
     }
 
 }

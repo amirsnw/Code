@@ -8,13 +8,7 @@ package edu.inheritance.accessors.commonwealth;
 
 import edu.inheritance.accessors.commonwealth.overseas.territories.Bermuda;
 
-public class UnitedKingdom {
-
-    public String citizenship = "British citizen";          // available to every class, everywhere
-    protected String currency = "Pound";                    // available to classes in the same package (both child and unrelated not), and to child classes in different packages
-    String queen = "Elisabeth II";                          // available to classes in the same package (both child and unrelated)
-    private String capitalCity = "London";                  // available only within UnitedKingdom class
-
+public class London extends UnitedKingdom {
 
     public static void main(String[] args) {
 
@@ -30,12 +24,11 @@ public class UnitedKingdom {
         System.out.println(ukBer.citizenship);
         System.out.println(ukBer.currency);
         System.out.println(ukBer.queen);
-        System.out.println(ukBer.capitalCity);
+//        System.out.println(ukBer.capitalCity); // does not compile
 
         System.out.println(uk.citizenship);
         System.out.println(uk.currency);
         System.out.println(uk.queen);
-        System.out.println(uk.capitalCity);
+//        System.out.println(uk.capitalCity); // does not compile
     }
-
 }

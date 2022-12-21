@@ -20,4 +20,7 @@ public interface DiceThrow {
 
     int diceRollingInstance();                      // instance method can not have a body
 
+    public static final String diceName = "ONE";
+
+    int diceNumber = 6;
 }

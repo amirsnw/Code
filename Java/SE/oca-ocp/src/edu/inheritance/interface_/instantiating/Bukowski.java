@@ -1,4 +1,4 @@
-package edu.inheritance.interface_.intantiating;
+package edu.inheritance.interface_.instantiating;
 
 /*
  * Code examples for Oracle Certified Associate (OCA) Exam

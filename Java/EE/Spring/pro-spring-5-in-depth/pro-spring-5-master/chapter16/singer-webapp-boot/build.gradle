@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/libs-snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/libs-milestone" }
+    }
+
+    dependencies {
+        classpath boot.springBootPlugin
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile boot.starterJta
+    compile  (boot.starterJpa) {
+       exclude group: 'org.hibernate', module: 'hibernate-core'
+    }
+    compile hibernate.core  // overwrite version of hibernate used so it works well with H2 2.0.206
+
+
+    compile db.h2, boot.starterWeb, boot.starterThyme, boot.starterSecurity,
+            web.thymeSecurity, web.bootstrap, web.jQuery
+    testCompile boot.starterTest, spring.springSecurityTest
+}
+
+jar {
+    manifest {
+        attributes("Created-By": "Iuliana Cosmina",
+                "Specification-Title": "Pro Spring 5",
+                "Main-Class"         : "com.apress.prospring5.ch16.SingerApplication",
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' '))
+    }
+}

@@ -38,5 +38,10 @@ public class HelloWorldController {
 		return messageSource.getMessage("good.morning.message", null, 
 									LocaleContextHolder.getLocale());
 	}
+	
+	@GetMapping(path = "/hello-world-internationalized-old")
+	public String helloWorldInternationalizedOld(@RequestHeader("Accept-Language", required=false) Locale locale) {
+		return messageSource.getMessage("good.morning.message", null, locale);
+	}
 
 }

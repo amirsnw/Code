@@ -1,12 +1,13 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Post {
@@ -14,12 +15,14 @@ public class Post {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
+	@Size(min = 10)
 	private String description;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnore
 	private User user;
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -46,7 +49,9 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return String.format("Post [id=%s, description=%s]", id, description);
+		return "Post [id=" + id + ", description=" + description + "]";
 	}
+
 	
+
 }

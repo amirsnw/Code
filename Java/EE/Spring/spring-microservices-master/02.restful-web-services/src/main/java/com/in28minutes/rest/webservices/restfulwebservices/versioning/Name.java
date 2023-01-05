@@ -4,6 +4,9 @@ public class Name {
 	private String firstName;
 	private String lastName;
 
+	public Name() {
+	}
+
 	public Name(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
@@ -14,13 +17,16 @@ public class Name {
 		return firstName;
 	}
 
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
 	public String getLastName() {
 		return lastName;
 	}
 
-	@Override
-	public String toString() {
-		return "Name [firstName=" + firstName + ", lastName=" + lastName + "]";
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 }

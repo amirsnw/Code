@@ -18,6 +18,7 @@ public class HelloWorldBean {
 
 	@Override
 	public String toString() {
-		return "HelloWorldBean [message=" + message + "]";
+		return String.format("HelloWorldBean [message=%s]", message);
 	}
+
 }

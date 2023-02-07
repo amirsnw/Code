@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.*;
 
 import java.util.stream.Stream;
 
@@ -70,9 +69,22 @@ public class CalculatorTest {
                 "Unexpected exception message");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings={"John", "Kate", "Alice"})
+    void valueSourceDemonstration(String firstName) {
+        System.out.println(firstName);
+        assertNotNull(firstName);
+    }
+
     @DisplayName("Test integer subtraction [minuend, subtrahend, expectedResult]")
     @ParameterizedTest
-    @MethodSource()
+    // @MethodSource()
+    /*@CsvSource({
+            "33, 1, 32",
+            "24, 1, 23",
+            "54, 1, 53"
+    })*/
+    @CsvFileSource(resources = "/integerSubtraction.csv")
     void integerSubtraction(int minuend, int subtrahend, int expectedResult) {
         int actualResult = calculator.integerSubtraction(minuend, subtrahend);
         System.out.println("Running Test " + minuend + "-" + subtrahend + " = " + expectedResult);
@@ -81,12 +93,12 @@ public class CalculatorTest {
                 () -> minuend + "-" + subtrahend + " did not produce " + expectedResult);
     }
 
-    private static Stream<Arguments> integerSubtraction() {
+    /*private static Stream<Arguments> integerSubtraction() {
 
         return Stream.of(
                 Arguments.of(33, 1, 32),
                 Arguments.of(54, 1, 53),
                 Arguments.of(24, 1, 23)
         );
-    }
+    }*/
 }

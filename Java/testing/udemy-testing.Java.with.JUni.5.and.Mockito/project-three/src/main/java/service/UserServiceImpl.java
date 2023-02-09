@@ -1,6 +1,6 @@
 package service;
 
-import main.io.UsersDatabase;
+import io.UsersDatabase;
 
 import java.util.Map;
 import java.util.UUID;

@@ -15,10 +15,19 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-two" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15390626" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Snowman\Code\Java\testing\udemy-testing.Java.with.JUni.5.and.Mockito\project-three\src\test\java" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Snowman\Code\Java\testing\udemy-testing.Java.with.JUni.5.and.Mockito\project-three\src\test" />
+      <recent name="C:\Snowman\Code\Java\testing\udemy-testing.Java.with.JUni.5.and.Mockito\project-three\src\main\java" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -32,6 +41,44 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JUnit.UserServiceImplTest">
+    <configuration name="UserServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestLifeCyclePerClassDemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.testCreateUser_whenProvidedWithValidDetails_returnsUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestLifeCyclePerClassDemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceImplTest" />
+      <option name="METHOD_NAME" value="testCreateUser_whenProvidedWithValidDetails_returnsUserId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.testUpdateUser_whenProvidedWithValidDetails_returnsUpdatedUserDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestLifeCyclePerClassDemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceImplTest" />
+      <option name="METHOD_NAME" value="testUpdateUser_whenProvidedWithValidDetails_returnsUpdatedUserDetails" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceImplTest" />
+        <item itemvalue="JUnit.UserServiceImplTest.testUpdateUser_whenProvidedWithValidDetails_returnsUpdatedUserDetails" />
+        <item itemvalue="JUnit.UserServiceImplTest.testCreateUser_whenProvidedWithValidDetails_returnsUserId" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -42,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675924818561</updated>
-      <workItem from="1675924819939" duration="267000" />
+      <workItem from="1675924819939" duration="2512000" />
     </task>
     <servers />
   </component>

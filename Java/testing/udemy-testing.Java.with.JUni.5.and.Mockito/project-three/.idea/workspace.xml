@@ -15,7 +15,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-two" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-four" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15390626" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -90,6 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675924818561</updated>
       <workItem from="1675924819939" duration="2512000" />
+      <workItem from="1676051274896" duration="597000" />
     </task>
     <servers />
   </component>
@@ -101,7 +102,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

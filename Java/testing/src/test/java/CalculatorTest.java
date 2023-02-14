@@ -12,7 +12,7 @@ public class CalculatorTest {
 
     Calculator calculator;
 
-    @BeforeAll
+    /*@BeforeAll
     static void setup() {
         System.out.println("Executing @BeforeAll method.");
     }
@@ -31,7 +31,7 @@ public class CalculatorTest {
     @AfterEach
     void afterEachTestMethod() {
         System.out.println("Executing @AfterEach method.");
-    }
+    }*/
 
     @DisplayName("Test 4/2 = 2")
     @Test
@@ -88,5 +88,16 @@ public class CalculatorTest {
                 Arguments.of(54, 1, 53),
                 Arguments.of(24, 1, 23)
         );
+    }
+
+    @Test
+    void TestMath() {
+        // Arrange
+
+        // Act
+        int currentResult = (int) Math.round(87777737.4549999);
+        System.out.println("Result = " + currentResult);
+
+        // Assert
     }
 }

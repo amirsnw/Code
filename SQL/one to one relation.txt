@@ -1,6 +1,0 @@
-fnReturn.setActivitydesc(entityManager.createNativeQuery("select a.activitydesc from" +
-                " regworkshopspec r , baseinfo.tb_activity a where  r.brch_code=? and  r.rwshid=?" +
-                " and  a.activitycode=r.activitycode")
-                .setParameter(1, branchCode)
-                .setParameter(2, prwshid)
-                .getSingleResult().toString());

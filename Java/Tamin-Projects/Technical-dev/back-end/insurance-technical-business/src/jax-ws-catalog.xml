@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://ssuppermits.tamin.ir:4040/ssuppermits/SsupPermitsMain.asmx?WSDL" uri="wsdl/ssuppermits.tamin.ir_4040/ssuppermits/SsupPermitsMain.asmx.wsdl"/>
-    <system systemId="http://10.30.145.197:2160/SanduqService.asmx?WSDL" uri="wsdl/10.30.145.197_2160/SanduqService.asmx.wsdl"/>
-</catalog>
